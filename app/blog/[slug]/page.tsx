@@ -38,9 +38,30 @@ export default async function BlogPostPage({
 
   const category = getCategory(post.category);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedDate,
+    author: {
+      "@type": "Person",
+      name: "Jio",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Genba",
+    },
+    mainEntityOfPage: `https://genbajapan.com/blog/${post.slug}`,
+  };
+
   return (
     <Container className="py-16 md:py-20">
       <div className="mx-auto max-w-prose">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
         <Link
           href="/blog"
           className="text-sm text-accent hover:underline"

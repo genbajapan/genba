@@ -31,6 +31,15 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Genba",
+  url: siteUrl,
+  description,
+  slogan: "Winning Japan Sales for SaaS & IT",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -39,6 +48,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col font-sans text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
