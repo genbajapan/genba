@@ -4,7 +4,7 @@ import { getAllPostsMeta } from "@/lib/posts";
 import { categoryList } from "@/lib/categories";
 
 export default function HomePage() {
-  const posts = getAllPostsMeta().slice(0, 3);
+  const posts = getAllPostsMeta().slice(0, 6);
 
   return (
     <>
@@ -39,7 +39,54 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-b border-line py-16">
+      <section className="py-16">
+        <Container>
+          <div className="mb-8 flex items-end justify-between">
+            <h2 className="font-serif text-2xl text-navy">Latest Insights</h2>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-accent hover:underline"
+            >
+              View all
+            </Link>
+          </div>
+          {posts.length === 0 ? (
+            <p className="text-sm text-slate">
+              First articles are in progress — check back soon.
+            </p>
+          ) : (
+            <div className="grid gap-8 md:grid-cols-3">
+              {posts.map((post) => {
+                const category = categoryList.find(
+                  (c) => c.id === post.category
+                );
+                return (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group block rounded-sm border border-line p-6 transition-colors hover:border-accent"
+                  >
+                    <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-accent">
+                      {category?.label}
+                    </span>
+                    <h3 className="mt-3 font-serif text-lg leading-snug text-ink group-hover:text-navy">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-slate">
+                      {post.publishedDate}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-slate">
+                      {post.excerpt}
+                    </p>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </Container>
+      </section>
+
+      <section className="border-y border-line py-16">
         <Container>
           <div className="grid gap-10 md:grid-cols-3">
             <div>
@@ -77,51 +124,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-16">
-        <Container>
-          <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-serif text-2xl text-navy">Latest Insights</h2>
-            <Link
-              href="/blog"
-              className="text-sm font-medium text-accent hover:underline"
-            >
-              View all
-            </Link>
-          </div>
-          {posts.length === 0 ? (
-            <p className="text-sm text-slate">
-              First articles are in progress — check back soon.
-            </p>
-          ) : (
-            <div className="grid gap-8 md:grid-cols-3">
-              {posts.map((post) => {
-                const category = categoryList.find(
-                  (c) => c.id === post.category
-                );
-                return (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className="group block rounded-sm border border-line p-6 transition-colors hover:border-accent"
-                  >
-                    <p className="text-xs font-medium uppercase tracking-wide text-accent">
-                      {category?.label}
-                    </p>
-                    <h3 className="mt-3 font-serif text-lg leading-snug text-ink group-hover:text-navy">
-                      {post.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate">
-                      {post.excerpt}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </Container>
-      </section>
-
-      <section className="border-t border-line bg-navy py-16 text-white">
+      <section className="bg-navy py-16 text-white">
         <Container className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="font-serif text-2xl">

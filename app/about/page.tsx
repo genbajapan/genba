@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Genba is the independent advisory practice of Jio, built on years of running enterprise sales inside foreign companies entering Japan.",
+    "Genba is an independent Japan sales advisory practice, built on years of running enterprise sales inside foreign companies entering Japan.",
   alternates: { canonical: "/about" },
 };
 
@@ -41,20 +41,45 @@ export default function AboutPage() {
             about how you sell.
           </p>
 
-          <h2>Background</h2>
+          <h2>Where this comes from</h2>
           <p>
-            Genba is run by Jio, who has spent his career on the inside of
-            foreign companies selling into Japanese enterprise accounts —
-            first in sales at Cisco Systems, then close to five years at
-            Shopify Japan helping build and scale a foreign e-commerce
-            platform&apos;s presence in the market from the ground up. That
-            work spanned SMB, mid-market, and enterprise segments, which is
-            part of why the advisory isn&apos;t narrowly scoped to one deal
-            size.
+            The pattern that led to Genba was the same one over and over,
+            watched from the inside as an Account Executive at a foreign
+            company in Japan: overseas executives who didn&apos;t understand
+            Japanese business customs setting direction for the Japan market
+            anyway. KPIs and initiatives that looked reasonable from
+            headquarters but missed what actually mattered on the ground
+            here. The field team usually knew exactly what needed to
+            happen and couldn&apos;t get it prioritized, because the people
+            setting strategy didn&apos;t have the context to know what they
+            didn&apos;t know.
           </p>
           <p>
-            Jio is currently in enterprise sales in the payments space,
-            with exposure to the OTA and travel industry, alongside running
+            The cost of that gap wasn&apos;t abstract. It showed up as
+            revenue the market could have produced but didn&apos;t, and as
+            good salespeople who lost motivation — or left entirely —
+            because their read of the market wasn&apos;t being heard. Genba
+            exists because that gap, between what overseas HQ assumes and
+            what the Japan market actually requires, is fixable with the
+            right translation, and most Japan GTM content doesn&apos;t
+            address it directly.
+          </p>
+
+          <h2>Background</h2>
+          <p>
+            Genba&apos;s founder progressed through every stage of the
+            enterprise sales process at foreign companies selling into
+            Japan — SDR, BDR, and AE — moving up from SMB through
+            mid-market into enterprise accounts rather than starting there.
+            That included sales at Cisco Systems, then close to five years
+            at Shopify Japan helping build and scale a foreign e-commerce
+            platform&apos;s presence in the market from the ground up.
+            Particular depth in retail and D2C, where much of that career
+            has been spent.
+          </p>
+          <p>
+            Currently in enterprise sales in the payments space, with
+            exposure to the OTA and travel industry, alongside running
             Genba independently. Bilingual in Japanese and English, and
             raised in Japan.
           </p>
