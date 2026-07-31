@@ -68,3 +68,13 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 export function getAllSlugs(): string[] {
   return readSlugs();
 }
+
+export function getRelatedPosts(
+  currentSlug: string,
+  category: CategoryId,
+  limit = 3
+): PostMeta[] {
+  return getAllPostsMeta()
+    .filter((post) => post.slug !== currentSlug && post.category === category)
+    .slice(0, limit);
+}

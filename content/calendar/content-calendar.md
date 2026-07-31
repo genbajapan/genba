@@ -23,5 +23,9 @@
 | 2026-07-31 | 3 | Blog | Japan's Cashless Ratio Hit 58% in 2025 — Here's What Actually Changed | 公開済み |
 | 2026-07-31 | 1 | Blog | The 'Digital-First B2B Buyer' Trend Stops at the Japanese Border | 公開済み |
 | 2026-07-31 | 3 / 1 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
+| 2026-07-31 | - | Xスレッド | 自己紹介スレッド(1〜13、下書き: content/x/drafts/2026-07-31-intro-thread.md) | 執筆中 |
+| 2026-08-01 | 2 | Blog | Japan's New E-Commerce Layer Is Video — And It's Still Built on Rakuten | 公開済み |
+| 2026-08-01 | 4 | Blog | Global Channel Strategy Advice Skips the One Distinction Japan Needs Most | 公開済み |
+| 2026-08-01 | 2 / 4 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
 
 > 行を追加して運用する。ステータスは `未着手 / 執筆中 / レビュー中(ガードレール確認済み) / 公開済み` を使用。

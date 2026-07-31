@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Container from "@/components/Container";
-import { getAllSlugs, getPostBySlug } from "@/lib/posts";
+import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { getCategory } from "@/lib/categories";
 
 export async function generateStaticParams() {
@@ -45,8 +45,8 @@ export default async function BlogPostPage({
     description: post.excerpt,
     datePublished: post.publishedDate,
     author: {
-      "@type": "Person",
-      name: "Jio",
+      "@type": "Organization",
+      name: "Genba",
     },
     publisher: {
       "@type": "Organization",
@@ -54,6 +54,8 @@ export default async function BlogPostPage({
     },
     mainEntityOfPage: `https://genbajapan.com/blog/${post.slug}`,
   };
+
+  const relatedPosts = getRelatedPosts(post.slug, post.category);
 
   return (
     <Container className="py-16 md:py-20">
@@ -82,7 +84,28 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
 
-        <div className="mt-16 rounded-sm border border-line p-6">
+        {relatedPosts.length > 0 && (
+          <div className="mt-16">
+            <p className="text-xs font-medium uppercase tracking-wide text-slate">
+              More on {category?.label}
+            </p>
+            <div className="mt-4 space-y-4">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="block rounded-sm border border-line p-4 transition-colors hover:border-accent"
+                >
+                  <p className="font-serif text-base text-ink hover:text-navy">
+                    {related.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10 rounded-sm border border-line p-6">
           <p className="text-sm leading-relaxed text-slate">
             Seeing something similar in your own Japan pipeline?{" "}
             <Link href="/contact" className="text-accent hover:underline">
