@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPostsMeta } from "@/lib/posts";
 
-const siteUrl = "https://genbajapan.jp";
+const siteUrl = "https://genbajapan.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/about", "/services", "/blog", "/contact"].map(

@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const siteUrl = "https://genbajapan.jp";
+const siteUrl = "https://genbajapan.com";
 const description =
   "Advisory for foreign SaaS and IT companies whose Japan sales have stalled after entry — from someone who has run enterprise deals inside foreign companies in Japan, not just advised on them from outside.";
 

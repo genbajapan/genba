@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://genbajapan.jp/sitemap.xml",
+    sitemap: "https://genbajapan.com/sitemap.xml",
   };
 }

@@ -10,6 +10,6 @@
 
 ## 2. ドメイン名
 
-`genbajapan.jp` を採用決定(2026-07-31時点でJPRS whois上は未登録=取得可能を確認済み)。取得(レジストラでの購入)・DNS設定・ホスティング接続はまだ未実施。
+`genbajapan.com` を採用・取得済み(2026-07-31、Squarespace Domains経由でJioが取得)。DNS設定・ホスティング接続はまだ未実施。`genbajapan.jp`は同日時点で未登録・取得可能だったが、`.com`を既に取得済みのため`.com`を正式ドメインとする。
 
 - チェックリストは [ops/legal-checklist.md](../ops/legal-checklist.md) を参照

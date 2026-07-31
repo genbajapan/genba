@@ -11,8 +11,8 @@
 
 ## Phase 1: ブランド資産・アカウント確保
 
-- [ ] ドメイン確保: `genbajapan.jp` を決定済み([legal-checklist.md](legal-checklist.md)参照)。レジストラでの購入がまだ
-- [ ] 問い合わせ用メールアドレス作成(hello@genbajapan.jp としてコード側は設定済み。実際のメールボックス作成が必要)
+- [x] ドメイン確保: `genbajapan.com` を取得済み([legal-checklist.md](legal-checklist.md)参照)
+- [ ] 問い合わせ用メールアドレス作成(hello@genbajapan.com としてコード側は設定済み。実際のメールボックス作成が必要)
 - [ ] Xハンドル確保(空き確認、例: @genba_sales, @genbahq 等)
 - [ ] ロゴ・アイコン画像の用意(簡易でよい。Xアイコン/ヘッダー、ブログのファビコン・OGP画像に流用)
 - [ ] カラーパレット・フォントの簡易ガイド決定(ブログとXで統一感を出すため)
@@ -24,7 +24,7 @@
 ## Phase 2: メディア(ブログ)基盤構築
 
 - [x] プラットフォーム選定: Next.js製の自前static site(`content/blog/published/`のMarkdownを読み込む構成)。Vercelへのデプロイを想定
-- [ ] 独自ドメイン(genbajapan.jp)を購入し、ホスティング(Vercel想定)にDNS接続
+- [ ] 独自ドメイン(genbajapan.com、取得済み)のDNSをホスティング(Vercel想定)に接続
 - [x] 最低限のページを作成済み: トップ・About・Services・Blog(一覧+詳細)・Contact(コードはリポジトリ内 `app/`)
 - [ ] 問い合わせ導線を設置(現状はmailtoリンクのみ。Calendly等の日程調整ツール導入は要検討)
 - [ ] アクセス解析を設置(Google Analytics / Plausible等)
@@ -56,7 +56,7 @@
 | フェーズ | ステータス |
 |---|---|
 | Phase 0: ブロッカー解消 | 未着手 |
-| Phase 1: ブランド資産・アカウント確保 | 一部着手(ドメイン`genbajapan.jp`決定、ロゴは簡易アイコンのみ) |
+| Phase 1: ブランド資産・アカウント確保 | 一部着手(ドメイン`genbajapan.com`取得済み、ロゴは簡易アイコンのみ) |
 | Phase 2: メディア基盤構築 | 一部着手(サイト実装・ページ作成済み、ドメイン接続・解析・問い合わせ導線は未) |
 | Phase 3: コンテンツ在庫の確保 | 一部着手(公開記事4本執筆済み、カレンダー未記入、カテゴリ3は一次情報待ち) |
 | Phase 4: 運用フローの確立 | 未着手 |

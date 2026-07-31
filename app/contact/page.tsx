@@ -25,12 +25,12 @@ export default function ContactPage() {
 
         <div className="mt-10 rounded-sm border border-line p-6">
           <p className="text-sm uppercase tracking-wide text-slate">Email</p>
-          {/* Provision this inbox (e.g. Google Workspace) once genbajapan.jp DNS is live */}
+          {/* Provision this inbox (e.g. Google Workspace) once genbajapan.com DNS is live */}
           <a
-            href="mailto:hello@genbajapan.jp"
+            href="mailto:hello@genbajapan.com"
             className="mt-1 block font-serif text-xl text-navy hover:text-accent"
           >
-            hello@genbajapan.jp
+            hello@genbajapan.com
           </a>
         </div>
       </div>
