@@ -60,15 +60,27 @@ export default function HomePage() {
                 const category = categoryList.find(
                   (c) => c.id === post.category
                 );
+                const isLatest = post.publishedDate === posts[0]?.publishedDate;
                 return (
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group block rounded-sm border border-line p-6 transition-colors hover:border-accent"
+                    className={`group block rounded-sm border p-6 transition-colors ${
+                      isLatest
+                        ? "border-2 border-red-500 hover:border-red-600"
+                        : "border-line hover:border-accent"
+                    }`}
                   >
-                    <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-accent">
-                      {category?.label}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {isLatest && (
+                        <span className="inline-block rounded-full bg-red-500 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                          New Today
+                        </span>
+                      )}
+                      <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-accent">
+                        {category?.label}
+                      </span>
+                    </div>
                     <h3 className="mt-3 font-serif text-lg leading-snug text-ink group-hover:text-navy">
                       {post.title}
                     </h3>
