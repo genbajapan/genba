@@ -27,5 +27,8 @@
 | 2026-08-01 | 2 | Blog | Japan's New E-Commerce Layer Is Video — And It's Still Built on Rakuten | 公開済み |
 | 2026-08-01 | 4 | Blog | Global Channel Strategy Advice Skips the One Distinction Japan Needs Most | 公開済み |
 | 2026-08-01 | 2 / 4 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
+| 2026-08-02 | 3 | Blog | Japan's Record ¥9.46 Trillion Inbound Spending Is a Volume Story, Not a Spending Story | 公開済み |
+| 2026-08-02 | 5 | Blog | The Japan Renewal Cliff Nobody Forecasted | 公開済み |
+| 2026-08-02 | 3 / 5 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
 
 > 行を追加して運用する。ステータスは `未着手 / 執筆中 / レビュー中(ガードレール確認済み) / 公開済み` を使用。

@@ -9,10 +9,50 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
+const faqs = [
+  {
+    question: "Does Genba do fractional sales execution in Japan?",
+    answer:
+      "No. Genba is advisory-only — strategic input on why a Japan deal or pipeline has stalled and what to change. It does not include hands-on selling, campaign execution, or localization work.",
+  },
+  {
+    question: "How is Genba different from a Japan market-entry agency?",
+    answer:
+      "Most Japan GTM agencies advise on localization, market-entry mode, and partner discovery. Genba focuses specifically on why enterprise sales stall after entry, drawing on direct experience running those deal cycles rather than advising from outside them.",
+  },
+  {
+    question: "Is Genba taking paid clients right now?",
+    answer:
+      "Not yet. Genba is currently in a content-and-insights phase. Reach out regardless — a conversation about what you're seeing in your Japan pipeline is worth having even before a formal engagement is on the table.",
+  },
+  {
+    question: "What size of company does Genba work with?",
+    answer:
+      "SMB through enterprise. The background behind Genba spans all three segments, so the advisory isn't scoped to one deal size.",
+  },
+];
+
 export default function ServicesPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <Container className="py-16 md:py-20">
       <div className="max-w-prose">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
         <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
           Advisory
         </p>
@@ -77,6 +117,14 @@ export default function ServicesPage() {
             pipeline — that conversation is worth having regardless of
             whether a formal engagement follows.
           </p>
+
+          <h2>Frequently asked</h2>
+          {faqs.map((faq) => (
+            <div key={faq.question}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </div>
 
         <div className="mt-10">
