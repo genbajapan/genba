@@ -5,7 +5,10 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Genba is an independent Japan sales advisory practice, built on years of running enterprise sales inside foreign companies entering Japan.",
-  alternates: { canonical: "/about" },
+  alternates: {
+    canonical: "/about",
+    languages: { en: "/about", ja: "/ja/about" },
+  },
 };
 
 export default function AboutPage() {

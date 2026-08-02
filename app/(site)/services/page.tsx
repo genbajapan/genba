@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: "Advisory",
   description:
     "How Genba's advisory works: diagnosis of stalled Japan sales, not fractional execution.",
-  alternates: { canonical: "/services" },
+  alternates: {
+    canonical: "/services",
+    languages: { en: "/services", ja: "/ja/services" },
+  },
 };
 
 const faqs = [

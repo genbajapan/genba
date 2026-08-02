@@ -7,7 +7,10 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Notes on Japanese business customs, industry playbooks, market data, sales tactics, and why post-entry growth stalls.",
-  alternates: { canonical: "/blog" },
+  alternates: {
+    canonical: "/blog",
+    languages: { en: "/blog", ja: "/ja/blog" },
+  },
 };
 
 export default function BlogIndexPage() {

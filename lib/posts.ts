@@ -3,9 +3,12 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
-import type { CategoryId } from "./categories";
+import type { CategoryId, Locale } from "./categories";
 
-const postsDirectory = path.join(process.cwd(), "content/blog/published");
+const postsDirectories: Record<Locale, string> = {
+  en: path.join(process.cwd(), "content/blog/published"),
+  ja: path.join(process.cwd(), "content/blog/published-ja"),
+};
 
 export interface PostMeta {
   slug: string;
@@ -19,18 +22,20 @@ export interface Post extends PostMeta {
   contentHtml: string;
 }
 
-function readSlugs(): string[] {
-  if (!fs.existsSync(postsDirectory)) return [];
+function readSlugs(locale: Locale): string[] {
+  const dir = postsDirectories[locale];
+  if (!fs.existsSync(dir)) return [];
   return fs
-    .readdirSync(postsDirectory)
+    .readdirSync(dir)
     .filter((file) => file.endsWith(".md"))
     .map((file) => file.replace(/\.md$/, ""));
 }
 
-export function getAllPostsMeta(): PostMeta[] {
-  const slugs = readSlugs();
+export function getAllPostsMeta(locale: Locale = "en"): PostMeta[] {
+  const dir = postsDirectories[locale];
+  const slugs = readSlugs(locale);
   const posts = slugs.map((slug) => {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fullPath = path.join(dir, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
     return {
@@ -45,8 +50,12 @@ export function getAllPostsMeta(): PostMeta[] {
   return posts.sort((a, b) => (a.publishedDate < b.publishedDate ? 1 : -1));
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+export async function getPostBySlug(
+  slug: string,
+  locale: Locale = "en"
+): Promise<Post | null> {
+  const dir = postsDirectories[locale];
+  const fullPath = path.join(dir, `${slug}.md`);
   if (!fs.existsSync(fullPath)) return null;
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -65,16 +74,17 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   };
 }
 
-export function getAllSlugs(): string[] {
-  return readSlugs();
+export function getAllSlugs(locale: Locale = "en"): string[] {
+  return readSlugs(locale);
 }
 
 export function getRelatedPosts(
   currentSlug: string,
   category: CategoryId,
+  locale: Locale = "en",
   limit = 3
 ): PostMeta[] {
-  return getAllPostsMeta()
+  return getAllPostsMeta(locale)
     .filter((post) => post.slug !== currentSlug && post.category === category)
     .slice(0, limit);
 }
