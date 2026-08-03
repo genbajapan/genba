@@ -33,5 +33,8 @@
 | 2026-08-03 | 1 | Blog(EN+JA) | The 'Champion' Playbook Assumes an Access Problem. Japan's Is a Consensus Problem. | 公開済み |
 | 2026-08-03 | 4 | Blog(EN+JA) | How to Land Your First Reference Customer in Japan | 公開済み |
 | 2026-08-03 | 1 / 4 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
+| 2026-08-04 | 2 | Blog(EN+JA) | The OTA Version of the Mall Effect: Why Japanese Hospitality Doesn't Want Direct-Booking-First | 公開済み |
+| 2026-08-04 | 5 | Blog(EN+JA) | The Silent Stall Between Signature and Go-Live | 公開済み |
+| 2026-08-04 | 2 / 5 | Xスレッド | 上記2記事のダイジェストスレッド(下書き: content/x/drafts/) | 執筆中 |
 
 > 行を追加して運用する。ステータスは `未着手 / 執筆中 / レビュー中(ガードレール確認済み) / 公開済み` を使用。

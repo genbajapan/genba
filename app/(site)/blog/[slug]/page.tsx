@@ -61,6 +61,16 @@ export default async function BlogPostPage({
     mainEntityOfPage: `https://genbajapan.com/blog/${post.slug}`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Genba", item: "https://genbajapan.com/" },
+      { "@type": "ListItem", position: 2, name: "Insights", item: "https://genbajapan.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://genbajapan.com/blog/${post.slug}` },
+    ],
+  };
+
   const relatedPosts = getRelatedPosts(post.slug, post.category);
 
   return (
@@ -69,6 +79,10 @@ export default async function BlogPostPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
         <Link
           href="/blog"

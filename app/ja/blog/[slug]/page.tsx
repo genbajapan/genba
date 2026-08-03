@@ -62,6 +62,16 @@ export default async function BlogPostPageJa({
     mainEntityOfPage: `https://genbajapan.com/ja/blog/${post.slug}`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Genba", item: "https://genbajapan.com/ja" },
+      { "@type": "ListItem", position: 2, name: "インサイト", item: "https://genbajapan.com/ja/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://genbajapan.com/ja/blog/${post.slug}` },
+    ],
+  };
+
   const relatedPosts = getRelatedPosts(post.slug, post.category, "ja");
 
   return (
@@ -70,6 +80,10 @@ export default async function BlogPostPageJa({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
         <Link href="/ja/blog" className="text-sm text-accent hover:underline">
           &larr; インサイト一覧へ
