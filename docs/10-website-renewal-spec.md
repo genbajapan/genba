@@ -537,6 +537,8 @@ MVPでは自動決済を実装せず、掲載審査後に請求する。無審�
 
 ## 21. リニューアル完了後の初回公開内容
 
+求人データとスポンサー表示の実装・運用は、[`ops/job-publication-and-sponsor-policy.md`](../ops/job-publication-and-sponsor-policy.md) に従う。
+
 - 追跡企業20社
 - 公開中求人30件以上を目標
 - 過去7〜14日分の変更シグナル
