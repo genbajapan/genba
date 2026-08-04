@@ -1,168 +1,80 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
-import { getAllPostsMeta } from "@/lib/posts";
-import { categoryList } from "@/lib/categories";
+import SectionHeader from "@/components/SectionHeader";
+import CompanyCard from "@/components/CompanyCard";
+import JobCard from "@/components/JobCard";
+import SignalCard from "@/components/SignalCard";
+import NewsletterCTA from "@/components/NewsletterCTA";
+import { companies, jobs, signals } from "@/lib/market-data";
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-    languages: { en: "/", ja: "/ja" },
-  },
+  title: "外資SaaSの日本採用を、変化から読む",
+  description: "外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
-  const posts = getAllPostsMeta().slice(0, 6);
-
   return (
     <>
-      <section className="border-b border-line bg-white/40">
-        <Container className="py-20 md:py-28">
-          <p className="mb-5 text-sm font-medium uppercase tracking-widest text-accent">
-            Winning Japan Sales for SaaS &amp; IT
-          </p>
-          <h1 className="max-w-3xl font-serif text-4xl leading-tight text-navy md:text-5xl">
-            You got into Japan. Now your pipeline has gone quiet.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate">
-            Genba is sales advisory for foreign SaaS and IT companies whose
-            Japan deals stall after the pilot. Not localization. Not a GTM
-            agency. Straight talk on why enterprise buyers here go quiet —
-            from someone who has run the deals, not just studied them.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link
-              href="/services"
-              className="rounded-sm bg-navy px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent"
-            >
-              How the advisory works
-            </Link>
-            <Link
-              href="/blog"
-              className="rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
-            >
-              Read the Insights
-            </Link>
+      <section className="hero">
+        <Container className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow eyebrow-light">JAPAN SaaS HIRING INTELLIGENCE</p>
+            <h1>外資SaaSの日本採用を、変化から読む。</h1>
+            <p className="hero-lead">企業別の採用状況、営業求人、組織拡大の兆候を定点観測。転職を急いでいない人にも、採用したい企業にも役立つ一次情報を無料で届けます。</p>
+            <div className="hero-actions">
+              <Link href="/companies" className="button button-primary">企業データを見る</Link>
+              <Link href="/signals" className="button button-secondary">最新シグナルを見る</Link>
+            </div>
           </div>
+          <aside className="hero-panel" aria-label="Genbaデータの概要">
+            <div className="terminal-head"><span>GENBA / MARKET WATCH</span><span className="terminal-live">UPDATED</span></div>
+            <div className="terminal-stat"><span>観測企業</span><strong>{companies.length}</strong><small>初期公開版</small></div>
+            <div className="terminal-stat"><span>確認中の営業求人</span><strong>{jobs.length}</strong><small>公式採用ページへ直結</small></div>
+            <div className="terminal-stat"><span>最新シグナル</span><strong>{signals.length}</strong><small>事実と分析を区別</small></div>
+            <div className="terminal-foot">LAST VERIFIED — 2026.08.04 / TOKYO</div>
+          </aside>
         </Container>
       </section>
 
-      <section className="py-16">
+      <div className="trust-bar">
+        <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>確認日を明記</span><span>事実と分析を分離</span><span>広告は明示</span></div></Container>
+      </div>
+
+      <section className="content-section">
         <Container>
-          <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-serif text-2xl text-navy">Latest Insights</h2>
-            <Link
-              href="/blog"
-              className="text-sm font-medium text-accent hover:underline"
-            >
-              View all
-            </Link>
-          </div>
-          {posts.length === 0 ? (
-            <p className="text-sm text-slate">
-              First articles are in progress — check back soon.
-            </p>
-          ) : (
-            <div className="grid gap-8 md:grid-cols-3">
-              {posts.map((post) => {
-                const category = categoryList.find(
-                  (c) => c.id === post.category
-                );
-                const isLatest = post.publishedDate === posts[0]?.publishedDate;
-                return (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className={`group block rounded-sm border p-6 transition-colors ${
-                      isLatest
-                        ? "border-2 border-red-500 hover:border-red-600"
-                        : "border-line hover:border-accent"
-                    }`}
-                  >
-                    <div className="flex flex-wrap items-center gap-2">
-                      {isLatest && (
-                        <span className="inline-block rounded-full bg-red-500 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-                          New Today
-                        </span>
-                      )}
-                      <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-accent">
-                        {category?.label}
-                      </span>
-                    </div>
-                    <h3 className="mt-3 font-serif text-lg leading-snug text-ink group-hover:text-navy">
-                      {post.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-slate">
-                      {post.publishedDate}
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-slate">
-                      {post.excerpt}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
+          <SectionHeader eyebrow="COMPANY TRACKER" title="いま、どの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel="すべての企業" />
+          <div className="card-grid">{companies.slice(0, 4).map((company) => <CompanyCard key={company.slug} company={company} />)}</div>
         </Container>
       </section>
 
-      <section className="border-y border-line py-16">
+      <section className="content-section surface-section">
         <Container>
-          <div className="grid gap-10 md:grid-cols-3">
-            <div>
-              <p className="font-serif text-2xl text-navy">01</p>
-              <h3 className="mt-2 font-medium text-ink">
-                The problem isn&apos;t your product
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">
-                Most stalled Japan deals fail on process, not fit — ringi,
-                nemawashi, and who actually holds veto power inside the
-                account.
-              </p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-navy">02</p>
-              <h3 className="mt-2 font-medium text-ink">
-                Diagnosis before execution
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">
-                Genba is advisory-only: strategic input on why the pipeline
-                is stuck and what to change, not fractional sales execution.
-              </p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-navy">03</p>
-              <h3 className="mt-2 font-medium text-ink">
-                Built on deals, not decks
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">
-                Grounded in years of running enterprise sales inside foreign
-                companies entering Japan — Cisco and Shopify among them.
-              </p>
-            </div>
+          <SectionHeader eyebrow="HIRING SIGNALS" title="採用シグナル" description="求人の新設や対象セグメントの広がりを、公式情報とGenbaの分析に分けて記録します。" href="/signals" linkLabel="シグナル一覧" />
+          <div className="signal-feed">{signals.slice(0, 4).map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div>
+        </Container>
+      </section>
+
+      <section className="content-section">
+        <Container>
+          <SectionHeader eyebrow="OPEN SALES ROLES" title="公式サイトで確認した営業求人" description="応募や個人情報の入力はGenba上では行いません。各社の公式採用ページへ直接つなぎます。" href="/jobs" linkLabel="すべての求人" />
+          <div className="job-list">{jobs.slice(0, 5).map((job) => <JobCard key={job.id} job={job} />)}</div>
+        </Container>
+      </section>
+
+      <section className="content-section surface-section">
+        <Container>
+          <SectionHeader eyebrow="EDITORIAL" title="求人票の向こう側を読む" description="外資SaaSの現役AEの視点から、キャリア・営業組織・日本市場を解像度高く読み解きます。" href="/insights" linkLabel="インサイト一覧" />
+          <div className="editorial-grid">
+            <article className="editorial-card"><span>CAREER INTELLIGENCE</span><h3>求人票で見るべき「空白」とは</h3><p>OTEやタイトルだけでは分からない、組織フェーズと営業難易度を見抜く観点。</p><Link href="/insights">読む →</Link></article>
+            <article className="editorial-card"><span>FIELD NOTE</span><h3>Enterprise AEの仕事は会社ごとに違う</h3><p>担当社数、既存比率、SE体制。タイトルが同じでも役割が変わる理由。</p><Link href="/insights">読む →</Link></article>
+            <article className="editorial-card"><span>MARKET MAP</span><h3>外資SaaS日本法人の採用を定点観測する</h3><p>求人の増減から、日本市場への投資姿勢をどこまで読み取れるのか。</p><Link href="/methodology">調査方針を見る →</Link></article>
           </div>
         </Container>
       </section>
 
-      <section className="bg-navy py-16 text-white">
-        <Container className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="font-serif text-2xl">
-              Not sure if it&apos;s a Japan problem or a process problem?
-            </h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/70">
-              Genba is currently publishing insights only — get in touch to
-              talk through what you&apos;re seeing.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap rounded-sm bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-navy"
-          >
-            Get in touch
-          </Link>
-        </Container>
-      </section>
+      <section className="content-section"><Container><NewsletterCTA /></Container></section>
     </>
   );
 }

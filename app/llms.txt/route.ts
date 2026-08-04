@@ -1,45 +1,26 @@
-import { getAllPostsMeta } from "@/lib/posts";
-import { getCategoryLabel } from "@/lib/categories";
+import { companies, jobs, signals } from "@/lib/market-data";
 
 const siteUrl = "https://genbajapan.com";
-
 export const dynamic = "force-static";
 
 export async function GET() {
-  const enPosts = getAllPostsMeta("en");
-  const jaPosts = getAllPostsMeta("ja");
-
   const lines = [
     "# Genba",
     "",
-    "> Genba is a Japan sales advisory for foreign SaaS and IT companies whose deals stall after entry. Available in English and Japanese (`/ja/*`). Advisory-only — no fractional sales execution.",
+    "> 外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。事実・分析・広告を区別して表示します。",
     "",
-    "## Key pages",
-    `- [About](${siteUrl}/about) / [会社概要](${siteUrl}/ja/about)`,
-    `- [Advisory](${siteUrl}/services) / [アドバイザリー](${siteUrl}/ja/services)`,
-    `- [Contact](${siteUrl}/contact) / [お問い合わせ](${siteUrl}/ja/contact)`,
+    "## Main pages",
+    `- [企業データ](${siteUrl}/companies)`,
+    `- [営業求人](${siteUrl}/jobs)`,
+    `- [採用シグナル](${siteUrl}/signals)`,
+    `- [調査・編集方針](${siteUrl}/methodology)`,
+    `- [掲載・スポンサー](${siteUrl}/advertise)`,
     "",
-    "## Insights (English)",
-    ...enPosts.map(
-      (post) =>
-        `- [${post.title}](${siteUrl}/blog/${post.slug}) — ${getCategoryLabel(
-          post.category,
-          "en"
-        )}, ${post.publishedDate}`
-    ),
+    "## Companies",
+    ...companies.map((company) => `- [${company.name}](${siteUrl}/companies/${company.slug}) — ${company.category}, 最終確認 ${company.lastChecked}`),
     "",
-    "## インサイト (日本語)",
-    ...jaPosts.map(
-      (post) =>
-        `- [${post.title}](${siteUrl}/ja/blog/${post.slug}) — ${getCategoryLabel(
-          post.category,
-          "ja"
-        )}, ${post.publishedDate}`
-    ),
+    `Current dataset: ${companies.length} companies, ${jobs.length} official sales roles, ${signals.length} hiring signals.`,
     "",
   ];
-
-  return new Response(lines.join("\n"), {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
+  return new Response(lines.join("\n"), { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

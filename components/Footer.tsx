@@ -4,11 +4,14 @@ import type { Locale } from "@/lib/categories";
 
 const copy: Record<Locale, { tagline: string; nav: { href: string; label: string }[] }> = {
   en: {
-    tagline: "Winning Japan Sales for SaaS & IT.",
+    tagline: "外資SaaSの日本採用を、変化から読む。",
     nav: [
-      { href: "/blog", label: "Insights" },
-      { href: "/services", label: "Advisory" },
-      { href: "/contact", label: "Contact" },
+      { href: "/companies", label: "企業" },
+      { href: "/jobs", label: "求人" },
+      { href: "/signals", label: "シグナル" },
+      { href: "/methodology", label: "調査方針" },
+      { href: "/advertise", label: "掲載・広告" },
+      { href: "/about", label: "運営情報" },
     ],
   },
   ja: {
@@ -25,19 +28,19 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
   const { tagline, nav } = copy[locale];
 
   return (
-    <footer className="mt-24 border-t border-line py-10">
-      <Container className="flex flex-col gap-4 text-sm text-slate sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          &copy; {new Date().getFullYear()} Genba. {tagline}
-        </p>
-        <div className="flex gap-5">
+    <footer className="site-footer">
+      <Container className="footer-grid">
+        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">公式情報・確認日・分析を分けて伝える、独立系メディアです。</p></div>
+        <div className="footer-links">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-accent">
+            <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
+        <div className="footer-publisher"><span>運営・編集</span><a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a><p>外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。</p></div>
       </Container>
+      <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p>求人応募は各社の公式サイトで行われます。</p></Container>
     </footer>
   );
 }

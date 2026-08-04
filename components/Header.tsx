@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Container from "./Container";
-import LanguageSwitcher from "./LanguageSwitcher";
 import type { Locale } from "@/lib/categories";
 
 const nav: Record<Locale, { href: string; label: string }[]> = {
   en: [
-    { href: "/blog", label: "Insights" },
-    { href: "/services", label: "Advisory" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/companies", label: "企業を探す" },
+    { href: "/jobs", label: "求人を探す" },
+    { href: "/signals", label: "採用シグナル" },
+    { href: "/insights", label: "インサイト" },
+    { href: "/advertise", label: "掲載について" },
   ],
   ja: [
     { href: "/ja/blog", label: "インサイト" },
@@ -19,7 +19,7 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
 };
 
 const taglines: Record<Locale, string> = {
-  en: "Winning Japan Sales",
+  en: "外資SaaS採用インテリジェンス",
   ja: "日本のセールスを勝ちに導く",
 };
 
@@ -27,31 +27,32 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
   const homeHref = locale === "ja" ? "/ja" : "/";
 
   return (
-    <header className="border-b border-line">
-      <Container className="flex items-center justify-between py-6">
-        <Link href={homeHref} className="flex items-baseline gap-2">
-          <span className="font-serif text-2xl font-semibold tracking-tight text-navy">
+    <header className="site-header">
+      <Container className="header-inner">
+        <Link href={homeHref} className="brand">
+          <span className="brand-mark">G</span>
+          <span className="brand-copy"><strong>
             Genba
-          </span>
-          <span className="hidden text-xs uppercase tracking-widest text-slate sm:inline">
+          </strong><small>
             {taglines[locale]}
-          </span>
+          </small></span>
         </Link>
-        <div className="flex items-center gap-6">
-          <nav className="flex gap-6 text-sm">
+        <div className="header-actions">
+          <nav className="primary-nav" aria-label="メインナビゲーション">
             {nav[locale].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-slate transition-colors hover:text-accent"
+                className="nav-link"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <LanguageSwitcher />
+          {locale === "en" && <Link href="/newsletter" className="button button-primary header-cta">無料購読</Link>}
         </div>
       </Container>
+      {locale === "en" && <Container className="mobile-nav"><nav>{nav.en.slice(0, 4).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav></Container>}
     </header>
   );
 }

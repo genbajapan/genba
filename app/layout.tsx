@@ -3,12 +3,12 @@ import "./globals.css";
 
 const siteUrl = "https://genbajapan.com";
 const description =
-  "Advisory for foreign SaaS and IT companies whose Japan sales have stalled after entry — from someone who has run enterprise deals inside foreign companies in Japan, not just advised on them from outside.";
+  "外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Genba — Winning Japan Sales for SaaS & IT",
+    default: "Genba — 外資SaaS採用インテリジェンス",
     template: "%s — Genba",
   },
   description,
@@ -16,13 +16,15 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Genba",
-    title: "Genba — Winning Japan Sales for SaaS & IT",
+    title: "Genba — 外資SaaSの日本採用を、変化から読む",
     description,
+    images: [{ url: "/og-genba.png", width: 1200, height: 630, alt: "Genba — 外資SaaSの日本採用を、変化から読む。" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Genba — Winning Japan Sales for SaaS & IT",
+    title: "Genba — 外資SaaSの日本採用を、変化から読む",
     description,
+    images: ["/og-genba.png"],
   },
   alternates: {
     canonical: "/",
@@ -35,7 +37,7 @@ const organizationJsonLd = {
   name: "Genba",
   url: siteUrl,
   description,
-  slogan: "Winning Japan Sales for SaaS & IT",
+  slogan: "外資SaaSの日本採用を、変化から読む。",
 };
 
 export default function RootLayout({
@@ -44,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className="flex min-h-screen flex-col font-sans text-ink antialiased">
         <script
           type="application/ld+json"

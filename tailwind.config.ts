@@ -8,12 +8,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#FAF8F4",
-        ink: "#161A1D",
-        slate: "#4B5259",
-        navy: "#16324F",
-        accent: "#B5502F",
-        line: "#E4DFD5",
+        paper: "#F3F6F5",
+        ink: "#10212B",
+        slate: "#5C6B73",
+        navy: "#0B2638",
+        accent: "#0B7A70",
+        line: "#D9E1E2",
       },
       fontFamily: {
         serif: ["ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],

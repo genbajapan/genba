@@ -1,8 +1,10 @@
 # Genba
 
-**Winning Japan Sales for SaaS & IT**
+> **2026-08-04:** 外資SaaS営業インテリジェンスメディアへピボット。新事業の正本は [事業計画](docs/09-pivot-business-plan.md)、サイト実装の正本は [Webリニューアル指示書](docs/10-website-renewal-spec.md)。日本語メディアの初期版を実装済み。
 
-海外の中小SaaS企業・外資系IT企業向けに、日本エンタープライズ営業の現場経験に基づくアドバイザリーを提供する事業。
+**外資SaaSの日本採用を、変化から読む。**
+
+外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。
 
 このリポジトリは、事業構想・ブランド定義・コンテンツ制作・競合調査などGenba立ち上げに関する情報を一元管理する場所。
 
@@ -27,14 +29,16 @@ ops/             ガードレール、法務・利益相反チェックなど運
 | [06-content-strategy.md](docs/06-content-strategy.md) | コンテンツ・発信戦略 |
 | [07-competitive-landscape.md](docs/07-competitive-landscape.md) | 競合状況・差別化ポイント |
 | [08-open-items.md](docs/08-open-items.md) | 未確定・要検討事項 |
+| [09-pivot-business-plan.md](docs/09-pivot-business-plan.md) | 外資SaaS営業インテリジェンスメディアへのピボット後の事業計画 |
+| [10-website-renewal-spec.md](docs/10-website-renewal-spec.md) | ピボットに対応するWebサイト・データ・自動運用の実装指示書 |
 
 ## ローンチまでのアクションリスト
 
 Jio自身がメディア運用・X運用を開始できる状態に持っていくための実行タスクは [ops/launch-checklist.md](ops/launch-checklist.md) にまとめている。
 
-## 現在のステータス (2026-07-30時点)
+## 現在のステータス (2026-08-04時点)
 
-- 事業構想の言語化: 完了(本リポジトリに集約)
-- Adyen入社: 2026-09-01予定。在職中は有料クライアントを取らず発信のみ。[利益相反リスクの確認](docs/08-open-items.md)が未完了のため案件化は保留中
-- ドメイン取得: 未確認([08-open-items.md](docs/08-open-items.md)参照)
-- コンテンツ発信: 未開始
+- ピボット後の事業計画・サイト仕様: 完了
+- 日本語メディア初期版: 実装済み
+- 企業・求人・採用シグナルの初期データ: 公式情報をもとに公開
+- 法人マネタイズ: 就業規則・利益相反の確認後に開始
