@@ -6,6 +6,7 @@ import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
+import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
 
 type ProfileProps = {
@@ -172,36 +173,52 @@ export default function CompanyIntelligenceProfile({
               )}
 
               {companyJobs.length ? (
-                <div className="role-dossier-list">
-                  {companyJobs.map((job, index) => (
-                    <article className="role-dossier" key={job.id}>
-                      <header>
-                        <span className="role-number">{String(index + 1).padStart(2, "0")}</span>
-                        <div><p>{job.segment}</p><h3>{job.title}</h3></div>
-                        <a href={job.source.url} target="_blank" rel="noreferrer">公式求人 ↗</a>
-                      </header>
-                      <div className="role-facts">
-                        <div className="known"><span>勤務地</span><strong>{job.location}</strong></div>
-                        <div className="known"><span>言語</span><strong>{job.language}</strong></div>
-                        {publicIntel ? (
-                          <>
-                            <div className="analysis"><span>報酬の見立て</span><strong>国内上位の可能性</strong></div>
-                            <div className="analysis"><span>営業モーション</span><strong>拡張・co-sell寄り</strong></div>
-                            <div className="analysis"><span>最優先で検証</span><strong>Territory / credit</strong></div>
-                          </>
-                        ) : (
-                          <>
-                            <div><span>OTE</span><strong>未確認</strong></div>
-                            <div><span>Pay Mix</span><strong>未確認</strong></div>
-                            <div><span>新規 / 既存</span><strong>未確認</strong></div>
-                          </>
-                        )}
-                        <div><span>初回確認</span><strong>{shortDate(job.firstSeen)}</strong></div>
-                      </div>
-                      <footer><span>Source</span><p>{job.source.label}</p><time dateTime={job.lastChecked}>最終更新日 {shortDate(job.lastChecked)}</time></footer>
-                    </article>
-                  ))}
-                </div>
+                <>
+                  {publicIntel && (
+                    <p className="role-benchmark-note">
+                      「報酬の見立て」は担当セグメント別のOTE目安({compBenchmarkSource.label})にどれだけ近いかを示すGenba仮説で、{company.name}固有の確認値ではありません。「英語の実務利用」も個社の確認事実ではなく、外資営業組織で一般的に見られる傾向としてのGenba分析です。
+                    </p>
+                  )}
+                  <div className="role-dossier-list">
+                    {companyJobs.map((job, index) => {
+                      const tier = getCompTierForSegment(job.segment);
+                      return (
+                        <article className="role-dossier" key={job.id}>
+                          <header>
+                            <span className="role-number">{String(index + 1).padStart(2, "0")}</span>
+                            <div><p>{job.segment}</p><h3>{job.title}</h3></div>
+                            <a href={job.source.url} target="_blank" rel="noreferrer">公式求人 ↗</a>
+                          </header>
+                          <div className="role-facts">
+                            <div className="known"><span>勤務地</span><strong>{job.location}</strong></div>
+                            <div className="known"><span>言語(募集要項)</span><strong>{job.language}</strong></div>
+                            {publicIntel ? (
+                              <>
+                                <div className="analysis"><span>報酬の見立て</span><strong>{tier.label}帯 {tier.oteRange}が目安</strong></div>
+                                <div className="analysis"><span>英語の実務利用</span><strong>募集要項では必須。実務は日本語中心が一般的</strong></div>
+                                <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>
+                              </>
+                            ) : (
+                              <>
+                                <div><span>OTE</span><strong>未確認</strong></div>
+                                <div><span>Pay Mix</span><strong>未確認</strong></div>
+                                <div><span>新規 / 既存</span><strong>未確認</strong></div>
+                              </>
+                            )}
+                            <div><span>初回確認</span><strong>{shortDate(job.firstSeen)}</strong></div>
+                          </div>
+                          {job.descriptionSummary && (
+                            <details className="role-description">
+                              <summary>公式求人の概要を読む(Genba要約)<span className="role-description-chevron" aria-hidden="true">▾</span></summary>
+                              <p>{job.descriptionSummary}</p>
+                            </details>
+                          )}
+                          <footer><span>Source</span><p>{job.source.label}</p><time dateTime={job.lastChecked}>最終更新日 {shortDate(job.lastChecked)}</time></footer>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </>
               ) : (
                 <div className="empty-intel-state">
                   <span>RADAR ON</span>

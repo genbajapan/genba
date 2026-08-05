@@ -455,6 +455,13 @@ button, input, select { font: inherit; }
 .role-dossier footer span { color: var(--signal); font-weight: 800; }
 .role-dossier footer p { overflow: hidden; margin: 0; text-overflow: ellipsis; white-space: nowrap; }
 .role-dossier footer time { font-variant-numeric: tabular-nums; }
+.role-benchmark-note { max-width: 720px; margin: -4px 0 14px; color: #6a7d84; font-size: 11px; line-height: 1.7; }
+.role-description { border-top: 1px solid var(--line); background: #f7f9f8; }
+.role-description > summary { display: flex; align-items: center; justify-content: space-between; padding: 12px 23px; color: #45585f; font-size: 11px; font-weight: 750; cursor: pointer; list-style: none; }
+.role-description > summary::-webkit-details-marker { display: none; }
+.role-description-chevron { color: #8ba0a8; font-size: 12px; transition: transform .2s ease; }
+.role-description[open] .role-description-chevron { transform: rotate(180deg); }
+.role-description p { margin: 0; padding: 0 23px 16px; color: #435760; font-size: 12px; line-height: 1.8; }
 .empty-intel-state { padding: 54px 28px; border: 1px dashed #b6c5c6; background: rgba(255,255,255,.6); text-align: center; }
 .empty-intel-state > span { color: var(--signal); font-size: 11px; font-weight: 850; letter-spacing: .16em; }
 .empty-intel-state h3 { margin: 13px 0 0; color: var(--navy); font-size: 19px; }
