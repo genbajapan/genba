@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       description,
       url: `/companies/${company.slug}`,
       siteName: "Genba",
-      images: [{ url: "/og-genba-v2.png", width: 1200, height: 630, alt: "Genba — 外資戦士と予備軍の作戦会議室。" }],
+      images: [{ url: "/og-genba-v2.png", width: 1200, height: 630, alt: "Genba — 外資IT戦士と予備軍の作戦会議所" }],
     },
     twitter: { card: "summary_large_image", title: `${title} — Genba`, description, images: ["/og-genba-v2.png"] },
   };

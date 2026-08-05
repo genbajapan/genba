@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/categories";
 
 const copy: Record<Locale, { tagline: string; nav: { href: string; label: string }[] }> = {
   en: {
-    tagline: "外資戦士と予備軍の作戦会議室。",
+    tagline: "外資IT戦士と予備軍の作戦会議所",
     nav: [
       { href: "/companies", label: "企業" },
       { href: "/jobs", label: "求人" },
