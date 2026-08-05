@@ -209,8 +209,15 @@ export default function CompanyIntelligenceProfile({
                           </div>
                           {job.descriptionSummary && (
                             <details className="role-description">
-                              <summary>公式求人の概要を読む(Genba要約)<span className="role-description-chevron" aria-hidden="true">▾</span></summary>
-                              <p>{job.descriptionSummary}</p>
+                              <summary>
+                                <span className="role-description-icon" aria-hidden="true">+</span>
+                                <span className="role-description-label">求人の概要を見る<small>タップして開閉</small></span>
+                                <span className="role-description-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <div className="role-description-body">
+                                <p><span>公式ディスクリプションの要約</span>{job.descriptionSummary}</p>
+                                {job.genbaTake && <p className="role-description-take"><span>Genbaからの示唆</span>{job.genbaTake}</p>}
+                              </div>
                             </details>
                           )}
                           <footer><span>Source</span><p>{job.source.label}</p><time dateTime={job.lastChecked}>最終更新日 {shortDate(job.lastChecked)}</time></footer>

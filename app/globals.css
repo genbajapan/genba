@@ -456,12 +456,21 @@ button, input, select { font: inherit; }
 .role-dossier footer p { overflow: hidden; margin: 0; text-overflow: ellipsis; white-space: nowrap; }
 .role-dossier footer time { font-variant-numeric: tabular-nums; }
 .role-benchmark-note { max-width: 720px; margin: -4px 0 14px; color: #6a7d84; font-size: 11px; line-height: 1.7; }
-.role-description { border-top: 1px solid var(--line); background: #f7f9f8; }
-.role-description > summary { display: flex; align-items: center; justify-content: space-between; padding: 12px 23px; color: #45585f; font-size: 11px; font-weight: 750; cursor: pointer; list-style: none; }
+.role-description { border-top: 1px solid var(--line); background: #f0f7f5; }
+.role-description > summary { display: flex; align-items: center; gap: 10px; padding: 13px 23px; color: #0a6d63; font-size: 12px; font-weight: 800; cursor: pointer; list-style: none; transition: background .15s ease; }
 .role-description > summary::-webkit-details-marker { display: none; }
-.role-description-chevron { color: #8ba0a8; font-size: 12px; transition: transform .2s ease; }
+.role-description > summary:hover { background: #e3f1ee; }
+.role-description-icon { display: grid; place-items: center; flex-shrink: 0; width: 20px; height: 20px; border: 1px solid #0a6d63; border-radius: 50%; font-size: 13px; font-weight: 800; line-height: 1; transition: transform .2s ease; }
+.role-description[open] .role-description-icon { transform: rotate(45deg); }
+.role-description-label { flex: 1; display: flex; align-items: baseline; gap: 8px; }
+.role-description-label small { color: #4c8a80; font-size: 10px; font-weight: 700; }
+.role-description-chevron { color: #0a6d63; font-size: 12px; transition: transform .2s ease; }
 .role-description[open] .role-description-chevron { transform: rotate(180deg); }
-.role-description p { margin: 0; padding: 0 23px 16px; color: #435760; font-size: 12px; line-height: 1.8; }
+.role-description-body { padding: 0 23px 18px; }
+.role-description-body p { margin: 0; color: #2f4a44; font-size: 12px; line-height: 1.85; }
+.role-description-body p + p { margin-top: 14px; }
+.role-description-body p > span { display: block; margin-bottom: 5px; color: #0a6d63; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.role-description-take { padding-top: 14px; border-top: 1px dashed #b9d4d0; }
 .empty-intel-state { padding: 54px 28px; border: 1px dashed #b6c5c6; background: rgba(255,255,255,.6); text-align: center; }
 .empty-intel-state > span { color: var(--signal); font-size: 11px; font-weight: 850; letter-spacing: .16em; }
 .empty-intel-state h3 { margin: 13px 0 0; color: var(--navy); font-size: 19px; }

@@ -29,6 +29,7 @@ export type Job = {
   lastChecked: string;
   source: Source;
   descriptionSummary: string;
+  genbaTake: string;
 };
 
 export type Signal = {
@@ -161,7 +162,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-05-21",
     lastChecked: "2026-08-04",
     source: { label: "Salesforce Careers (JR343328)", url: "https://careers.salesforce.com/jp/%E3%82%B8%E3%83%A7%E3%83%96/jr343328/account-executive-data-cloud/" },
-    descriptionSummary: "Data Cloudは製品としての採用が広がり始めた段階にあり、確立された勝ちパターンがまだない分、自分で提案の型を作れるポジションと説明されている。プロダクトスペシャリストAEとして、担当セグメントの事業成長そのものを設計する視点が求められる。",
+    descriptionSummary: "Data Cloudは製品としての採用が広がり始めた段階(アダプション期)にあり、確立された勝ちパターンがまだない分、自分で提案の型を作れるポジションと説明されている。プロダクトスペシャリストAEという位置づけで、Core AEとは別に、データ統合・AI活用の文脈でSalesforce既存顧客への提案を広げていく役割。担当セグメント全体の事業成長をどう設計するかという視点が求められると明記されている。",
+    genbaTake: "「アダプション期」という表現は裏を返せば、大型の成功事例がまだ少なく、提案の型を自分で作る負荷が大きいということでもある。入社後しばらくはCore AEの既存商談に相乗りする形で経験を積む可能性が高く、単独での新規ロゴ獲得より、既存顧客への拡張提案が主戦場になりやすい構造だと見ている。",
   },
   {
     id: "sf-agentforce-smb",
@@ -174,7 +176,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-08-04",
     lastChecked: "2026-08-04",
     source: { label: "Salesforce Careers (JR320258)", url: "https://careers.salesforce.com/jp/%E3%82%B8%E3%83%A7%E3%83%96/jr320258/account-executive-agentforce-smb/" },
-    descriptionSummary: "AIとリアルタイムデータ分析でCustomer 360を再定義する新製品Agentforceを、SMB顧客に提案する役割。見込み顧客の課題を深く理解した上で提案する形の営業で、AI活用型ソリューションの技術理解とB2B/B2C双方の設計経験が要件として挙げられている。",
+    descriptionSummary: "AIとリアルタイムデータ分析でCustomer 360を再定義する新製品Agentforceを、SMB顧客層に提案する役割。見込み顧客の経営課題を深く理解した上で、Agentforceがそれをどう解決するかを提示する形の営業スタイルが想定されている。AI活用型ソリューションの技術理解と、B2B・B2C双方のソリューション設計経験が要件として明記されている。",
+    genbaTake: "SMBセグメントでAIプロダクトを売るのは、導入事例がまだ少ない新製品を、意思決定は速いが予算規模の小さい顧客に説明していく難しさがある。SMBは商談数をこなす営業スタイルが前提のため、説明コストの高いAI商材を多くさばく必要があり、同じSMBでもCore CRMを売る求人より提案の技術的難度は上がりやすいと見ている。",
   },
   {
     id: "sf-enterprise-b2c",
@@ -187,7 +190,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-08-04",
     lastChecked: "2026-08-04",
     source: { label: "Salesforce Careers (JR325247)", url: "https://careers.salesforce.com/en/jobs/jr325247/account-executive-enterprise-sales-btoc%E6%B6%88%E8%B2%A1-%E6%B5%81%E9%80%9A-%E7%89%A9%E6%B5%81-%E9%80%9A%E4%BF%A1-%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2-%E3%83%86%E3%83%AC%E3%82%B3%E3%83%A0/" },
-    descriptionSummary: "消費財・流通・通信・メディアなどBtoC大手企業向けのDX提案を担うコンサル型の営業ポジション。単純な製品販売ではなく、顧客の事業の理想像を一緒に描く「事業設計パートナー」としての立ち位置を重視しており、商談相手はC-level・経営層が中心となる。",
+    descriptionSummary: "消費財・流通・通信・メディアなどBtoC大手企業向けのDX提案を担うコンサル型の営業ポジション。単純な製品販売ではなく、顧客の事業の理想像を一緒に描く「事業設計パートナー」としての立ち位置を重視しており、商談相手はC-level・経営層が中心となる。経営戦略に直結する提案を通じて、業界横断で通用するスキルを積める点が強調されている。",
+    genbaTake: "「事業設計パートナー」という立ち位置は魅力的だが、経営層への提案が中心になるほど商談サイクルは長くなり、成果が出るまでのタイムラグも大きくなりやすい。前職までにC-level商談の経験がなければ立ち上がりに時間がかかる可能性が高く、面接では自分がこれまでどの規模・頻度で経営層と商談してきたかを具体的に語れる準備をしておきたい。",
   },
   {
     id: "dd-midmarket-ae",
@@ -200,7 +204,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-08-04",
     lastChecked: "2026-08-04",
     source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/6523631/" },
-    descriptionSummary: "従業員1,000〜5,000名規模の中堅企業への新規開拓(新規ロゴ獲得)に特化した役割。交渉から技術デモまで営業サイクル全体をリードし、CTOやエンジニアリング・ITリーダー層への戦略的営業、SDR・パートナー・マーケティングとの連携が求められる。",
+    descriptionSummary: "従業員1,000〜5,000名規模の中堅企業への新規開拓(新規ロゴ獲得)に特化した役割。交渉から技術デモまで営業サイクル全体をリードし、CTOやエンジニアリング・ITリーダー層への戦略的営業、SDR・パートナー・マーケティングとの連携が求められる。Sales NavigatorやDemandbaseなど営業支援ツールの活用も明記されており、出張は最大30%程度を想定。",
+    genbaTake: "「新規ロゴ獲得に特化」と明記されている点は、既存顧客の深耕やクロスセルより新規開拓の負荷が高いことを意味する。Mid-Marketは意思決定者が少数で決裁が比較的速い一方、パイプライン創出を自分自身で行う比重が大きいため、SDRのサポートがどこまで手厚いかは面接で確認しておきたいポイントだと見ている。",
   },
   {
     id: "dd-commercial-ae",
@@ -213,7 +218,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-08-04",
     lastChecked: "2026-08-04",
     source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/6009777/?gh_jid=6009777" },
-    descriptionSummary: "中小規模市場へのアウトバウンド営業による新規顧客獲得が中心の役割。IT製品のフィールドセールス経験(クロージング含む)2年以上が要件として明記されており、CTO・CIO・エンジニアリング層への提案とセールス・デベロップメント・チームとの連携が求められる。",
+    descriptionSummary: "中小規模市場へのアウトバウンド営業による新規顧客獲得が中心の役割。IT製品のフィールドセールス経験(クロージング含む)2年以上が要件として明記されており、CTO・CIO・エンジニアリング層への提案とセールス・デベロップメント・チームとの連携が求められる。技術製品を扱った経験と、営業KPI達成の実績が重視されている。",
+    genbaTake: "「中小規模市場」「アウトバウンド営業」という組み合わせは、商談数をこなしながら自分でパイプラインを作る負荷が高いポジションであることを示唆している。未経験からのAE挑戦の入り口になりやすい一方、達成難易度はテリトリーの質(既存顧客の有無、担当エリアの企業密度)に大きく左右されるため、前任者の達成状況を確認する価値がある。",
   },
   {
     id: "dd-public-sector",
@@ -226,7 +232,8 @@ export const jobs: Job[] = [
     firstSeen: "2026-08-04",
     lastChecked: "2026-08-04",
     source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/7439573/" },
-    descriptionSummary: "自治体・教育機関・病院・大学など大規模SLED(State/Local/Education)組織への新規開拓・既存深耕を担う役割。5年以上のクロージング経験、官公庁向け営業経験2〜3年以上、年間売上目標100万ドル以上の実績が要件として挙げられている。",
+    descriptionSummary: "自治体・教育機関・病院・大学など大規模SLED(State/Local/Education)組織への新規開拓・既存深耕を担う役割。5年以上のクロージング経験、官公庁向け営業経験2〜3年以上、年間売上目標100万ドル以上・平均ディールサイズ10万ドル以上の実績が要件として挙げられている。自らプロスペクティングしパイプラインを構築できることも求められている。",
+    genbaTake: "官公庁向け営業経験を明確に要件化している点から、同領域での実績がある即戦力採用である可能性が高い。SLED特有の長い調達プロセス・予算サイクルへの理解が前提とされており、民間エンタープライズ営業のみの経験からの転向は難易度が高いポジションだと見ている。",
   },
 ];
 
