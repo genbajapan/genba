@@ -24,7 +24,7 @@ export default function HomePage() {
         <Container className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">BY AN ACTIVE FOREIGN SaaS AE</p>
-            <h1>外資IT戦士よ、勝利が見える次の戦場はそこにある。</h1>
+            <h1>戦士よ、次のフィールドはそこにある。</h1>
             <p className="hero-lead">外資ITからSaaSへ、転職のたびにOTEを上げてきた現役AEが、外資SaaSの採用市場を毎日ウォッチ。情報収集と面接準備を効率化し、フィットする会社へ最短で内定を取るための知見を、外資で戦う人・目指す人に無料で届けます。</p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業データを見る</Link>
