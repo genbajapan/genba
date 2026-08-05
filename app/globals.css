@@ -537,20 +537,6 @@ button, input, select { font: inherit; }
 .company-action-rail { position: sticky; top: 148px; display: grid; gap: 12px; }
 .company-action-rail section { padding: 22px; border: 1px solid var(--line); background: white; }
 .company-action-rail h2 { margin: 0; color: var(--navy); font-size: 16px; line-height: 1.45; }
-.next-action-card ol { margin: 20px 0 21px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.next-action-card li { display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.next-action-card li span { color: var(--signal); font-size: 11px; font-weight: 850; }
-.next-action-card li p { margin: 0; color: #52646c; font-size: 12px; line-height: 1.55; }
-.next-action-card .button { width: 100%; }
-.method-card dl { margin: 18px 0; }
-.method-card dl div { padding: 11px 0; border-top: 1px solid var(--line); }
-.method-card dt { display: flex; align-items: center; gap: 7px; color: #40535d; font-size: 12px; font-weight: 750; }
-.method-card dt i { width: 7px; height: 7px; border-radius: 50%; }
-.legend-confirmed { background: var(--signal); }
-.legend-analysis { background: #5f80a0; }
-.legend-unknown { background: #c3cbcd; }
-.method-card dd { margin: 5px 0 0 14px; color: #879499; font-size: 11px; line-height: 1.5; }
-.method-card > a { color: var(--signal); font-size: 12px; font-weight: 750; text-decoration: none; }
 .sponsor-proof-card { position: relative; overflow: hidden; background: #0b2a3b !important; border-color: #294a59 !important; color: white; }
 .sponsor-proof-card::after { content: "+"; position: absolute; right: -9px; bottom: -39px; color: rgba(112,211,197,.08); font-size: 150px; font-weight: 300; line-height: 1; }
 .sponsor-proof-card > span { color: #70d3c5; font-size: 11px; font-weight: 850; letter-spacing: .14em; }
@@ -594,7 +580,7 @@ button, input, select { font: inherit; }
   .company-filter-panel .filter-chips { grid-column: 1 / -1; }
   .company-command-grid { grid-template-columns: minmax(0,1fr) 380px; gap: 40px; }
   .company-intelligence-layout { grid-template-columns: 1fr; }
-  .company-action-rail { position: static; grid-template-columns: repeat(3,1fr); }
+  .company-action-rail { position: static; grid-template-columns: 1fr; max-width: 480px; }
   .role-facts { grid-template-columns: repeat(3,1fr); }
   .role-facts div:nth-child(4) { border-left: 0; }
   .role-facts div:nth-child(n+4) { border-top: 1px solid var(--line); }

@@ -552,28 +552,6 @@ export default function CompanyIntelligenceProfile({
           </main>
 
           <aside className="company-action-rail">
-            <section className="next-action-card">
-              <p className="card-index">YOUR NEXT MOVE</p>
-              <h2>次に確認すること</h2>
-              <ol>
-                <li><span>01</span><p>自分に近い求人セグメントを確認</p></li>
-                <li><span>02</span><p>OTE・新規比率・Quotaを面接で質問</p></li>
-                <li><span>03</span><p>併願候補と営業モーションを比較</p></li>
-              </ol>
-              <a href={company.careersUrl} target="_blank" rel="noreferrer" className="button button-primary">公式採用ページ ↗</a>
-            </section>
-
-            <section className="method-card">
-              <p className="card-index">HOW TO READ</p>
-              <h2>情報ラベル</h2>
-              <dl>
-                <div><dt><i className="legend-confirmed" />確認済み</dt><dd>公開ソースで確認できた事実</dd></div>
-                <div><dt><i className="legend-analysis" />Genba仮説</dt><dd>複数の公開情報から立てた検証可能な読み解き</dd></div>
-                <div><dt><i className="legend-unknown" />反証・留保</dt><dd>仮説が外れる条件や情報の限界</dd></div>
-              </dl>
-              <Link href="/methodology">調査方針を見る →</Link>
-            </section>
-
             <section className="sponsor-proof-card">
               <span>FOR HIRING TEAMS</span>
               <h2>仮説を、公式の事実でアップデートする。</h2>
