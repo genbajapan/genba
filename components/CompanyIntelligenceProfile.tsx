@@ -550,15 +550,6 @@ export default function CompanyIntelligenceProfile({
               </div>
             </section>
           </main>
-
-          <aside className="company-action-rail">
-            <section className="sponsor-proof-card">
-              <span>FOR HIRING TEAMS</span>
-              <h2>仮説を、公式の事実でアップデートする。</h2>
-              <p>企業提供情報はスポンサー表記を付け、Genbaの編集仮説と分離。OTE、達成率、担当範囲など候補者の疑問へ一次情報で回答できます。</p>
-              <Link href="/advertise">掲載について相談する →</Link>
-            </section>
-          </aside>
         </Container>
       </section>
 
