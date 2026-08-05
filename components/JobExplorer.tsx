@@ -8,6 +8,7 @@ export default function JobExplorer() {
   const [query, setQuery] = useState("");
   const [segment, setSegment] = useState("すべて");
   const segments = ["すべて", ...Array.from(new Set(jobs.map((job) => job.segment)))];
+  const lastUpdated = [...jobs].sort((a, b) => b.lastChecked.localeCompare(a.lastChecked))[0]?.lastChecked ?? "—";
   const results = useMemo(() => jobs.filter((job) => {
     const company = getCompany(job.companySlug);
     const matchesQuery = `${job.title} ${company?.name ?? ""} ${job.location}`.toLowerCase().includes(query.toLowerCase());
@@ -28,7 +29,7 @@ export default function JobExplorer() {
           </select>
         </label>
       </div>
-      <div className="results-heading"><p>{results.length}件の公式求人</p><span>最終確認：2026-08-04</span></div>
+      <div className="results-heading"><p>{results.length}件の公式求人</p><span>最終更新日：{lastUpdated}</span></div>
       <div className="job-list">
         {results.map((job) => <JobCard key={job.id} job={job} />)}
       </div>

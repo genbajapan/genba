@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/categories";
 
 const copy: Record<Locale, { tagline: string; nav: { href: string; label: string }[] }> = {
   en: {
-    tagline: "外資SaaSの日本採用を、変化から読む。",
+    tagline: "外資戦士と予備軍の作戦会議室。",
     nav: [
       { href: "/companies", label: "企業" },
       { href: "/jobs", label: "求人" },
@@ -30,7 +30,7 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
   return (
     <footer className="site-footer">
       <Container className="footer-grid">
-        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">公式情報・確認日・分析を分けて伝える、独立系メディアです。</p></div>
+        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">公式情報・更新日・分析を分けて伝える、独立系メディアです。</p></div>
         <div className="footer-links">
           {nav.map((item) => (
             <Link key={item.href} href={item.href}>

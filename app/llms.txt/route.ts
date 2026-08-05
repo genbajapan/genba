@@ -7,7 +7,7 @@ export async function GET() {
   const lines = [
     "# Genba",
     "",
-    "> 外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。事実・分析・広告を区別して表示します。",
+    "> Genbaは「外資戦士と予備軍の作戦会議室。」を掲げ、外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料メディアです。事実・分析・広告を区別して表示します。",
     "",
     "## Main pages",
     `- [企業データ](${siteUrl}/companies)`,
@@ -17,7 +17,7 @@ export async function GET() {
     `- [掲載・スポンサー](${siteUrl}/advertise)`,
     "",
     "## Companies",
-    ...companies.map((company) => `- [${company.name}](${siteUrl}/companies/${company.slug}) — ${company.category}, 最終確認 ${company.lastChecked}`),
+    ...companies.map((company) => `- [${company.name}](${siteUrl}/companies/${company.slug}) — ${company.category}, 最終更新日 ${company.lastChecked}`),
     "",
     `Current dataset: ${companies.length} companies, ${jobs.length} official sales roles, ${signals.length} hiring signals.`,
     "",

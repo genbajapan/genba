@@ -13,7 +13,7 @@ export default function CompanyCard({ company }: { company: Company }) {
       <p>{company.description}</p>
       <div className="metric-row">
         <div><strong>{company.salesRoles}</strong><span>確認中の営業職</span></div>
-        <div><strong>{company.lastChecked.slice(5).replace("-", "/")}</strong><span>最終確認</span></div>
+        <div><strong>{company.lastChecked.slice(5).replace("-", "/")}</strong><span>最終更新日</span></div>
       </div>
       <Link href={`/companies/${company.slug}`} className="card-link">企業データを見る <span>→</span></Link>
     </article>

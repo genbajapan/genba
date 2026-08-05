@@ -6,15 +6,18 @@ import CompanyCard from "@/components/CompanyCard";
 import JobCard from "@/components/JobCard";
 import SignalCard from "@/components/SignalCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import HiringHeatmap from "@/components/HiringHeatmap";
 import { companies, jobs, signals } from "@/lib/market-data";
 
 export const metadata: Metadata = {
-  title: "外資SaaSの日本採用を、変化から読む",
+  title: { absolute: "Genba — 外資戦士と予備軍の作戦会議室。" },
   description: "外資SaaS企業の日本採用、営業求人、組織の変化を公式情報から追う無料インテリジェンスメディア。",
   alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
+  const lastUpdated = [...companies.map((company) => company.lastChecked), ...jobs.map((job) => job.lastChecked)].sort().at(-1) ?? "—";
+
   return (
     <>
       <section className="hero">
@@ -33,18 +36,22 @@ export default function HomePage() {
             <div className="terminal-stat"><span>観測企業</span><strong>{companies.length}</strong><small>初期公開版</small></div>
             <div className="terminal-stat"><span>確認中の営業求人</span><strong>{jobs.length}</strong><small>公式採用ページへ直結</small></div>
             <div className="terminal-stat"><span>最新シグナル</span><strong>{signals.length}</strong><small>事実と分析を区別</small></div>
-            <div className="terminal-foot">LAST VERIFIED — 2026.08.04 / TOKYO</div>
+            <div className="terminal-foot">LAST UPDATED — {lastUpdated.replaceAll("-", ".")} / TOKYO</div>
           </aside>
         </Container>
       </section>
 
       <div className="trust-bar">
-        <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>確認日を明記</span><span>事実と分析を分離</span><span>広告は明示</span></div></Container>
+        <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>更新日を明記</span><span>事実と分析を分離</span><span>広告は明示</span></div></Container>
       </div>
+
+      <section className="content-section market-section">
+        <Container><HiringHeatmap /></Container>
+      </section>
 
       <section className="content-section">
         <Container>
-          <SectionHeader eyebrow="COMPANY TRACKER" title="いま、どの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel="すべての企業" />
+          <SectionHeader eyebrow="COMPANY TRACKER" title="「現場」でどの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel={`（${companies.length}件の企業を全て見る）`} />
           <div className="card-grid">{companies.slice(0, 4).map((company) => <CompanyCard key={company.slug} company={company} />)}</div>
         </Container>
       </section>

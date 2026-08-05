@@ -19,7 +19,7 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
 };
 
 const taglines: Record<Locale, string> = {
-  en: "外資SaaS採用インテリジェンス",
+  en: "外資戦士と予備軍の作戦会議室。",
   ja: "日本のセールスを勝ちに導く",
 };
 
