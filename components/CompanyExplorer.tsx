@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { companies } from "@/lib/market-data";
 import CompanyCard from "./CompanyCard";
 
@@ -8,9 +9,13 @@ const statuses = ["すべて", "積極採用", "採用中", "継続観測"];
 const solutionAreas = ["すべて", ...Array.from(new Set(companies.map((company) => company.category)))];
 
 export default function CompanyExplorer() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const initialSolutionArea = categoryParam && solutionAreas.includes(categoryParam) ? categoryParam : "すべて";
+
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState("すべて");
-  const [solutionArea, setSolutionArea] = useState("すべて");
+  const [solutionArea, setSolutionArea] = useState(initialSolutionArea);
   const results = useMemo(() => companies.filter((company) => {
     const matchesQuery = `${company.name} ${company.category} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
