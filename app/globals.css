@@ -260,7 +260,6 @@ button, input, select { font: inherit; }
 .hypothesis-banner-wrap { padding: 32px 0 0; }
 .hypothesis-banner { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; padding: 22px 28px; border: 1px solid #b9d4d0; background: #f2f8f7; }
 .hypothesis-banner-copy { max-width: 680px; }
-.hypothesis-banner-copy span { display: block; margin-bottom: 7px; color: #0a6d63; font-size: 11px; font-weight: 850; letter-spacing: .12em; }
 .hypothesis-banner-copy h3 { margin: 0; color: var(--navy); font-size: 16px; line-height: 1.55; }
 .hypothesis-banner-copy p { margin: 10px 0 0; color: #3f555e; font-size: 13px; line-height: 1.8; }
 .hypothesis-banner > a { flex-shrink: 0; align-self: center; color: var(--signal); font-size: 13px; font-weight: 750; white-space: nowrap; text-decoration: none; }

@@ -146,8 +146,7 @@ export default function CompanyIntelligenceProfile({
         <Container className="hypothesis-banner-wrap">
           <div className="hypothesis-banner">
             <div className="hypothesis-banner-copy">
-              <span>このページの情報について</span>
-              <h3>公開情報をもとにしたGenba編集部の分析(仮説)です。{company.name}の公式見解ではありません。</h3>
+              <h3>100%公開情報に基づいたGenba編集長の整理と仮説が記載されています。</h3>
               <p>
                 「確認済み」表記のみ一次情報で裏取りした事実です。それ以外はGenbaが複数の公開情報から組み立てた仮説であり、反証や留保も併記しています。事実誤認があれば速やかに訂正します。仮説を一次情報つきの「確認済みの事実」へ更新するには、企業提供情報としてのスポンサー掲載が必要です。
               </p>
