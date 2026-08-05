@@ -8,6 +8,16 @@
 
 このリポジトリは、事業構想・ブランド定義・コンテンツ制作・競合調査などGenba立ち上げに関する情報を一元管理する場所。
 
+## AI運用
+
+このプロジェクトはCodexとClaude Codeを併用する。両者は同じ [`PROJECT_RULES.md`](PROJECT_RULES.md) を自動読込する構成とし、片側だけに事業ルールを追加してはならない。
+
+- Codex入口: `AGENTS.md` → `PROJECT_RULES.md`
+- Claude Code入口: `CLAUDE.md` → `PROJECT_RULES.md`
+- 共有日次フロー: [`ops/daily-workflow.md`](ops/daily-workflow.md)
+- 同期検査: `npm run validate:agents`
+- 公開前検査: `npm run check`
+
 ## ディレクトリ構成
 
 ```

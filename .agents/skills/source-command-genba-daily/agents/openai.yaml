@@ -1,0 +1,4 @@
+interface:
+  display_name: "Genba Daily"
+  short_description: "公式求人・採用シグナルの日次更新を共通ルールで実行"
+  default_prompt: "Use $source-command-genba-daily to run today’s Genba data and media update workflow."
