@@ -43,6 +43,24 @@ export type ExternalSignal = {
   sourceId: string;
 };
 
+export type CompanyStat = {
+  value: string;
+  detail: string;
+  sourceId?: string;
+};
+
+export type SalesAppealPoint = {
+  title: string;
+  detail: string;
+  sourceIds: string[];
+};
+
+export type InterviewPrepQuestion = {
+  question: string;
+  why: string;
+  sourceIds: string[];
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   verdict: string;
@@ -63,6 +81,20 @@ export type CompanyPublicIntelligence = {
     role: string;
     read: string;
     sourceId: string;
+  };
+  companyStats: {
+    globalHeadcount: CompanyStat;
+    japanHeadcount: CompanyStat;
+    japanOffice: CompanyStat;
+    japanSince: CompanyStat;
+  };
+  salesAppeal: {
+    intro: string;
+    points: SalesAppealPoint[];
+  };
+  interviewPrep: {
+    intro: string;
+    questions: InterviewPrepQuestion[];
   };
   comparisonMap: Array<{
     arena: string;
@@ -175,6 +207,38 @@ const salesforceSources: ResearchSource[] = [
     url: "https://www.repvue.com/companies/Salesforce",
     kind: "コミュニティ",
     scope: "グローバル営業職の自己申告評価",
+    checkedAt: "2026-08-05",
+  },
+  {
+    id: "sf-mynavi-outline",
+    label: "マイナビ セールスフォース・ジャパン会社概要",
+    url: "https://job.mynavi.jp/27/pc/search/corp109155/outline.html",
+    kind: "外部集計",
+    scope: "日本法人の会社概要(採用媒体掲載)",
+    checkedAt: "2026-08-05",
+  },
+  {
+    id: "sf-org-structure",
+    label: "Challengers Academy「Salesforceの営業組織を理解する」",
+    url: "https://challengers.academy/articles/6187/",
+    kind: "コミュニティ",
+    scope: "Core / Specialist AEの組織構造の解説記事",
+    checkedAt: "2026-08-05",
+  },
+  {
+    id: "sf-interview-prep",
+    label: "corp-research.jp「セールスフォースの中途採用面接では何を聞かれるのか」",
+    url: "https://corp-research.jp/articles/4894",
+    kind: "コミュニティ",
+    scope: "中途面接の実際の質問例・対策記事",
+    checkedAt: "2026-08-05",
+  },
+  {
+    id: "sf-careers-blog-bdr",
+    label: "Salesforce Blog「最前線に立つ営業社員の声」",
+    url: "https://www.salesforce.com/jp/blog/jp-careers3-bdr/",
+    kind: "企業公式",
+    scope: "インサイドセールス(BDR)出身社員のキャリア紹介",
     checkedAt: "2026-08-05",
   },
 ];
@@ -374,6 +438,73 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     role: "代表取締役会長 兼 社長",
     read: "2026年役員人事ではCommercial Growth、Data & Integration、Enterprise首都圏などの責任者を明示。日本営業組織は製品・顧客規模・地域で細分化された成熟組織とみられます。",
     sourceId: "sf-leadership",
+  },
+  companyStats: {
+    globalHeadcount: {
+      value: "83,334人",
+      detail: "FY26 Form 10-K、2026年1月31日時点のグローバル従業員数。",
+      sourceId: "sf-10k",
+    },
+    japanHeadcount: {
+      value: "非公開",
+      detail: "採用媒体では「当社規定により非公開」と明記。外部の推計値はあるが自己申告・非公式のため掲載しません。",
+      sourceId: "sf-mynavi-outline",
+    },
+    japanOffice: {
+      value: "東京都千代田区丸の内1-1-3",
+      detail: "日本生命丸の内ガーデンタワー(Salesforce Tower)。2022年2月に本社移転。",
+      sourceId: "sf-japan-company",
+    },
+    japanSince: {
+      value: "2000年4月",
+      detail: "日本法人設立。代表取締役会長兼社長は小出伸一氏。",
+      sourceId: "sf-japan-company",
+    },
+  },
+  salesAppeal: {
+    intro: "求人票だけでは伝わらない、営業として働く上での具体的な面白さを公開情報から整理しました。",
+    points: [
+      {
+        title: "提案領域がIT予算のほぼ全域に広がっている",
+        detail: "Core CRMに加えAgentforce、Data Cloud、Tableau、MuleSoft、Slackまで製品群が広く、顧客の課題起点で提案先を横断的に選べる。Enterprise担当ではC-levelを含む複数部門との折衝経験を積みやすい。",
+        sourceIds: ["sf-fy26", "sf-org-structure"],
+      },
+      {
+        title: "The Modelに沿った、型として説明しやすいキャリアルート",
+        detail: "SDR/BDR(インサイドセールス)→Commercial AE→Enterprise AEという分業型モデルに、Core(顧客規模別)とSolution(製品特化)の2軸が組み合わさる。次の転職でも自分の経験を役割名で説明しやすい。",
+        sourceIds: ["sf-org-structure", "sf-careers-blog-bdr"],
+      },
+      {
+        title: "成果と報酬が直結する評価構造",
+        detail: "基本給+インセンティブの成果報酬型。外部の給与集計(自己申告)では営業平均1,300万円超という水準感が示されているが、これはOTEや達成率を示すものではない。",
+        sourceIds: ["sf-openmoney"],
+      },
+    ],
+  },
+  interviewPrep: {
+    intro: "「なぜSalesforceか」という一般論ではなく、実際に聞かれている質問の型から準備しておきたいポイントです。",
+    questions: [
+      {
+        question: "競合(Microsoft、HubSpot、Oracle、SAPなど)との違いを、自分の担当予定領域で具体的に説明できるか",
+        why: "中途面接で高頻度に問われる定番質問。企業理解の深さを測る意図が強い。",
+        sourceIds: ["sf-interview-prep"],
+      },
+      {
+        question: "同社の意思決定フレームワーク「V2MOM」を理解した上で、自部門の数字目標をロジカルに語れるか",
+        why: "SWOT分析や事業戦略に絡めた質問が実際に出ており、フレームワークへの理解が評価軸になっている。",
+        sourceIds: ["sf-interview-prep"],
+      },
+      {
+        question: "最終面接で想定される商談ロールプレイングに向けて、担当予定セグメントの顧客課題を具体的に用意できているか",
+        why: "営業職の最終選考ではロールプレイングが実施されるケースが報告されている。",
+        sourceIds: ["sf-interview-prep"],
+      },
+      {
+        question: "前任者のquota達成率・在籍期間・担当変更理由を、逆質問として尋ねられるか",
+        why: "ブランドや平均年収ではなく、実際に割り当てられるテリトリーの質を見極めるための質問。",
+        sourceIds: ["sf-repvue", "sf-service-ae"],
+      },
+    ],
   },
   comparisonMap: [
     { arena: "Core CRM", companies: ["Microsoft", "HubSpot", "Oracle", "SAP"], why: "基幹CRM・営業標準化の比較" },

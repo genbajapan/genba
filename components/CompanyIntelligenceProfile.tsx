@@ -132,9 +132,9 @@ export default function CompanyIntelligenceProfile({
       <div className="dossier-nav-wrap">
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
+            <a href="#roles">ポジション</a>
             <a href="#decision">応募判断</a>
             <a href="#solution">ソリューション</a>
-            <a href="#roles">ポジション</a>
             <a href="#team">組織・キャリア</a>
             <a href="#compare">併願先</a>
             <a href="#sources">出典</a>
@@ -143,174 +143,23 @@ export default function CompanyIntelligenceProfile({
       </div>
 
       <section className="content-section company-intelligence-section">
+        <Container className="hypothesis-banner-wrap">
+          <div className="hypothesis-banner">
+            <div className="hypothesis-banner-copy">
+              <span>このページの情報について</span>
+              <h3>公開情報をもとにしたGenba編集部の分析(仮説)です。{company.name}の公式見解ではありません。</h3>
+              <p>
+                「確認済み」表記のみ一次情報で裏取りした事実です。それ以外はGenbaが複数の公開情報から組み立てた仮説であり、反証や留保も併記しています。事実誤認があれば速やかに訂正します。仮説を一次情報つきの「確認済みの事実」へ更新するには、企業提供情報としてのスポンサー掲載が必要です。
+              </p>
+            </div>
+            <Link href="/advertise">掲載について相談する →</Link>
+          </div>
+        </Container>
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
-            <section className="intel-section" id="decision">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">01 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
-                <p>現時点の公開情報から、まず確認すべき判断材料を整理します。</p>
-              </div>
-
-              {publicIntel ? (
-                <>
-                  <article className="research-verdict-card">
-                    <div className="research-verdict-meta">
-                      <span>DEEP RESEARCH</span>
-                      <span>{shortDate(publicIntel.researchedAt)} 更新</span>
-                      <span>{publicIntel.sources.length} SOURCES</span>
-                    </div>
-                    <h3>{publicIntel.verdict}</h3>
-                    <div className="research-verdict-grid">
-                      <div><span>向いていそうな人</span><p>{publicIntel.bestFor}</p></div>
-                      <div><span>先に疑うべきこと</span><p>{publicIntel.watchouts}</p></div>
-                    </div>
-                  </article>
-
-                  <div className="public-fact-grid">
-                    {publicIntel.facts.map((fact) => {
-                      const source = getResearchSource(publicIntel, fact.sourceIds[0]);
-                      return (
-                        <article key={fact.label}>
-                          <span>{fact.label}</span>
-                          <strong>{fact.value}</strong>
-                          <p>{fact.detail}</p>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                        </article>
-                      );
-                    })}
-                  </div>
-
-                  <div className="hypothesis-intro">
-                    <div><p className="card-index">GENBA HYPOTHESES</p><h3>公開情報から立てる、5つの仮説</h3></div>
-                    <p>事実ではない読み解きは「仮説」と明記。支持材料だけでなく、反証材料と面接での検証質問も併記します。</p>
-                  </div>
-                  <div className="hypothesis-stack">
-                    {publicIntel.hypotheses.map((hypothesis, index) => (
-                      <article className="hypothesis-card" key={hypothesis.topic}>
-                        <header>
-                          <span className="hypothesis-number">H{String(index + 1).padStart(2, "0")}</span>
-                          <div><p>{hypothesis.topic}</p><h3>{hypothesis.title}</h3></div>
-                          <span className={`confidence confidence-${hypothesis.confidence}`}>確度 {hypothesis.confidence}</span>
-                        </header>
-                        <p className="hypothesis-conclusion">{hypothesis.conclusion}</p>
-                        <div className="hypothesis-evidence-grid">
-                          <section><span>仮説を支持する材料</span><ul>{hypothesis.evidence.map((item) => <li key={item}>{item}</li>)}</ul></section>
-                          <section><span>反証・留保</span><ul>{hypothesis.counterSignals.map((item) => <li key={item}>{item}</li>)}</ul></section>
-                          <section><span>面接で検証する質問</span><ol>{hypothesis.interviewQuestions.map((item) => <li key={item}>{item}</li>)}</ol></section>
-                        </div>
-                        <footer>
-                          <span>根拠</span>
-                          {hypothesis.sourceIds.map((sourceId) => {
-                            const source = getResearchSource(publicIntel, sourceId);
-                            return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
-                          })}
-                        </footer>
-                      </article>
-                    ))}
-                  </div>
-
-                  <div className="external-signal-grid">
-                    {publicIntel.externalSignals.map((signal) => {
-                      const source = getResearchSource(publicIntel, signal.sourceId);
-                      return (
-                        <article key={signal.label}>
-                          <p className="card-index">EXTERNAL SIGNAL</p>
-                          <span>{signal.label}</span><strong>{signal.value}</strong>
-                          <p>{signal.detail}</p><small>{signal.caveat}</small>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">元データを見る ↗</a>}
-                        </article>
-                      );
-                    })}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="decision-board">
-                    <article className="fit-card">
-                      <p className="card-index">FIT SIGNALS</p>
-                      <h3>この経験を持つ人は、求人を詳しく見る価値あり</h3>
-                      <div className="fit-chip-cloud">
-                        {profile.fitSignals.map((signal) => <span key={signal}># {signal}</span>)}
-                      </div>
-                      <p className="fit-card-note">これは一般的な経験の近さです。個人の合格可能性を示すものではありません。</p>
-                    </article>
-                    <article className="evidence-card">
-                      <div className="evidence-meter" style={{ "--evidence": `${knownRatio * 3.6}deg` } as CSSProperties}>
-                        <div><strong>{profile.knownTopics}</strong><span>/ {profile.totalTopics}</span></div>
-                      </div>
-                      <div><p className="card-index">EVIDENCE COVERAGE</p><h3>応募判断材料の充足度</h3><p>確認できた項目だけを計上。会社の評価点ではありません。</p><span className="source-count">{profile.sourceCount}件の公開ソースを参照</span></div>
-                    </article>
-                  </div>
-                  <div className="evidence-grid">
-                    {evidenceTopics.map((topic) => (
-                      <article className={topic.confirmed ? "evidence-item confirmed" : "evidence-item unknown"} key={topic.label}>
-                        <span>{topic.confirmed ? "確認済み" : "確認中"}</span><h3>{topic.label}</h3><p>{topic.value}</p>
-                      </article>
-                    ))}
-                  </div>
-                  <div className="probability-note"><span aria-hidden="true">%</span><div><strong>合格確率は表示しません</strong><p>応募・合否実績がない状態で数字を作らず、求人要件との一致点と不足情報を示します。</p></div></div>
-                </>
-              )}
-            </section>
-
-            <section className="intel-section" id="solution">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">02 / SOLUTION INTELLIGENCE</p><h2>何を、誰に、なぜ売るのか。</h2></div>
-                <span className="analysis-label">Genbaカテゴリ分析</span>
-              </div>
-
-              <div className="solution-map">
-                <div className="solution-orbit" aria-hidden="true">
-                  <span className="orbit-core">{company.name.slice(0, 2)}</span>
-                  <span className="orbit-label orbit-label-a">PRODUCT</span>
-                  <span className="orbit-label orbit-label-b">BUYER</span>
-                  <span className="orbit-label orbit-label-c">VALUE</span>
-                </div>
-                <div className="solution-story">
-                  <p className="card-index">SOLUTION AREA</p>
-                  <h3>{company.category}</h3>
-                  <p>{profile.lens.problem}</p>
-                  <div className="buyer-list"><span>主な買い手</span>{profile.lens.buyers.map((buyer) => <strong key={buyer}>{buyer}</strong>)}</div>
-                </div>
-              </div>
-
-              <div className="solution-question-grid">
-                <article><span>営業としての面白さ</span><p>{profile.lens.appeal}</p></article>
-                <article><span>面接・選考で確認したいこと</span><p>{profile.lens.salesQuestion}</p></article>
-              </div>
-
-              {publicIntel ? (
-                <div className="customer-proof-wrap">
-                  <div className="customer-proof-heading"><div><p className="card-index">JAPAN CUSTOMER PROOF</p><h3>日本企業が、何を買い、何が変わったか。</h3></div><p>企業公式の導入事例に記載された成果を、AEが商談の再現性を考えやすい形に読み替えています。</p></div>
-                  <div className="customer-proof-grid">
-                    {publicIntel.customerProof.map((proof, index) => {
-                      const source = getResearchSource(publicIntel, proof.sourceId);
-                      return (
-                        <article key={proof.company}>
-                          <span>CASE 0{index + 1}</span><h3>{proof.company}</h3><p className="customer-products">{proof.products}</p>
-                          <strong>{proof.outcome}</strong><p>{proof.implication}</p>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">公式事例 ↗</a>}
-                        </article>
-                      );
-                    })}
-                  </div>
-                </div>
-              ) : (
-                <div className="proof-stack">
-                  <div><p className="card-index">SOLUTION PROOF</p><h3>「強いソリューションか」を判断する証拠</h3><p>社名や評判ではなく、日本市場で確認できる証拠を積み上げます。</p></div>
-                  <ul>
-                    <li className="proof-confirmed"><span>01</span><div><strong>ソリューション領域</strong><small>{company.category}</small></div><b>確認済み</b></li>
-                    <li><span>02</span><div><strong>日本の導入事例</strong><small>公式事例を調査中</small></div><b>未確認</b></li>
-                    <li><span>03</span><div><strong>競合との差別化</strong><small>一次情報と第三者情報を照合予定</small></div><b>未確認</b></li>
-                    <li><span>04</span><div><strong>顧客継続・拡張の証拠</strong><small>公開情報を調査中</small></div><b>未確認</b></li>
-                  </ul>
-                </div>
-              )}
-            </section>
-
             <section className="intel-section" id="roles">
               <div className="intel-heading">
-                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>ポジションの実態を比べる。</h2></div>
+                <div><p className="intel-kicker">01 / ROLE REALITY</p><h2>ポジションの実態を比べる。</h2></div>
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
@@ -363,6 +212,220 @@ export default function CompanyIntelligenceProfile({
               )}
             </section>
 
+            <section className="intel-section" id="decision">
+              <div className="intel-heading">
+                <div><p className="intel-kicker">02 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
+                <p>現時点の公開情報から、まず確認すべき判断材料を整理します。</p>
+              </div>
+
+              {publicIntel ? (
+                <>
+                  <article className="research-verdict-card">
+                    <div className="research-verdict-meta">
+                      <span>DEEP RESEARCH</span>
+                      <span>{shortDate(publicIntel.researchedAt)} 更新</span>
+                      <span>{publicIntel.sources.length} SOURCES</span>
+                    </div>
+                    <h3>{publicIntel.verdict}</h3>
+                    <div className="research-verdict-grid">
+                      <div><span>向いていそうな人</span><p>{publicIntel.bestFor}</p></div>
+                      <div><span>先に疑うべきこと</span><p>{publicIntel.watchouts}</p></div>
+                    </div>
+                  </article>
+
+                  <div className="company-snapshot-strip">
+                    <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
+                    <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
+                    <div><span>グローバル社員数</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong></div>
+                    <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
+                  </div>
+
+                  <div className="public-fact-grid">
+                    {publicIntel.facts.map((fact) => {
+                      const source = getResearchSource(publicIntel, fact.sourceIds[0]);
+                      return (
+                        <article key={fact.label}>
+                          <span>{fact.label}</span>
+                          <strong>{fact.value}</strong>
+                          <p>{fact.detail}</p>
+                          {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                        </article>
+                      );
+                    })}
+                  </div>
+
+                  <div className="hypothesis-intro">
+                    <div><p className="card-index">GENBA HYPOTHESES</p><h3>公開情報から立てる、5つの仮説</h3></div>
+                    <p>事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。</p>
+                  </div>
+                  <div className="hypothesis-stack">
+                    {publicIntel.hypotheses.map((hypothesis, index) => (
+                      <details className="hypothesis-card" key={hypothesis.topic}>
+                        <summary>
+                          <span className="hypothesis-number">H{String(index + 1).padStart(2, "0")}</span>
+                          <div><p>{hypothesis.topic}</p><h3>{hypothesis.title}</h3></div>
+                          <span className={`confidence confidence-${hypothesis.confidence}`}>確度 {hypothesis.confidence}</span>
+                          <span className="hypothesis-chevron" aria-hidden="true">▾</span>
+                        </summary>
+                        <p className="hypothesis-conclusion">{hypothesis.conclusion}</p>
+                        <div className="hypothesis-evidence-grid">
+                          <section><span>仮説を支持する材料</span><ul>{hypothesis.evidence.map((item) => <li key={item}>{item}</li>)}</ul></section>
+                          <section><span>反証・留保</span><ul>{hypothesis.counterSignals.map((item) => <li key={item}>{item}</li>)}</ul></section>
+                          <section><span>面接で検証する質問</span><ol>{hypothesis.interviewQuestions.map((item) => <li key={item}>{item}</li>)}</ol></section>
+                        </div>
+                        <footer>
+                          <span>根拠</span>
+                          {hypothesis.sourceIds.map((sourceId) => {
+                            const source = getResearchSource(publicIntel, sourceId);
+                            return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
+                          })}
+                        </footer>
+                      </details>
+                    ))}
+                  </div>
+
+                  <div className="external-signal-grid">
+                    {publicIntel.externalSignals.map((signal) => {
+                      const source = getResearchSource(publicIntel, signal.sourceId);
+                      return (
+                        <article key={signal.label}>
+                          <p className="card-index">EXTERNAL SIGNAL</p>
+                          <span>{signal.label}</span><strong>{signal.value}</strong>
+                          <p>{signal.detail}</p><small>{signal.caveat}</small>
+                          {source && <a href={source.url} target="_blank" rel="noreferrer">元データを見る ↗</a>}
+                        </article>
+                      );
+                    })}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="decision-board">
+                    <article className="fit-card">
+                      <p className="card-index">FIT SIGNALS</p>
+                      <h3>この経験を持つ人は、求人を詳しく見る価値あり</h3>
+                      <div className="fit-chip-cloud">
+                        {profile.fitSignals.map((signal) => <span key={signal}># {signal}</span>)}
+                      </div>
+                      <p className="fit-card-note">これは一般的な経験の近さです。個人の合格可能性を示すものではありません。</p>
+                    </article>
+                    <article className="evidence-card">
+                      <div className="evidence-meter" style={{ "--evidence": `${knownRatio * 3.6}deg` } as CSSProperties}>
+                        <div><strong>{profile.knownTopics}</strong><span>/ {profile.totalTopics}</span></div>
+                      </div>
+                      <div><p className="card-index">EVIDENCE COVERAGE</p><h3>応募判断材料の充足度</h3><p>確認できた項目だけを計上。会社の評価点ではありません。</p><span className="source-count">{profile.sourceCount}件の公開ソースを参照</span></div>
+                    </article>
+                  </div>
+                  <div className="evidence-grid">
+                    {evidenceTopics.map((topic) => (
+                      <article className={topic.confirmed ? "evidence-item confirmed" : "evidence-item unknown"} key={topic.label}>
+                        <span>{topic.confirmed ? "確認済み" : "確認中"}</span><h3>{topic.label}</h3><p>{topic.value}</p>
+                      </article>
+                    ))}
+                  </div>
+                  <div className="probability-note"><span aria-hidden="true">%</span><div><strong>合格確率は表示しません</strong><p>応募・合否実績がない状態で数字を作らず、求人要件との一致点と不足情報を示します。</p></div></div>
+                </>
+              )}
+            </section>
+
+            <section className="intel-section" id="solution">
+              <div className="intel-heading">
+                <div><p className="intel-kicker">03 / SOLUTION INTELLIGENCE</p><h2>何を、誰に、なぜ売るのか。</h2></div>
+                <span className="analysis-label">Genbaカテゴリ分析</span>
+              </div>
+
+              <div className="solution-map">
+                <div className="solution-orbit" aria-hidden="true">
+                  <span className="orbit-core">{company.name.slice(0, 2)}</span>
+                  <span className="orbit-label orbit-label-a">PRODUCT</span>
+                  <span className="orbit-label orbit-label-b">BUYER</span>
+                  <span className="orbit-label orbit-label-c">VALUE</span>
+                </div>
+                <div className="solution-story">
+                  <p className="card-index">SOLUTION AREA</p>
+                  <h3>{company.category}</h3>
+                  <p>{profile.lens.problem}</p>
+                  <div className="buyer-list"><span>主な買い手</span>{profile.lens.buyers.map((buyer) => <strong key={buyer}>{buyer}</strong>)}</div>
+                </div>
+              </div>
+
+              {publicIntel ? (
+                <div className="appeal-interview-grid">
+                  <article className="appeal-block">
+                    <p className="card-index">SALES APPEAL</p>
+                    <h3>営業としての面白さ</h3>
+                    <p className="block-intro">{publicIntel.salesAppeal.intro}</p>
+                    <ul>
+                      {publicIntel.salesAppeal.points.map((point) => (
+                        <li key={point.title}>
+                          <strong>{point.title}</strong>
+                          <p>{point.detail}</p>
+                          <div className="mini-source-row">
+                            {point.sourceIds.map((sourceId) => {
+                              const source = getResearchSource(publicIntel, sourceId);
+                              return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
+                            })}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                  <article className="interview-block">
+                    <p className="card-index">INTERVIEW PREP</p>
+                    <h3>面接・選考で確認したいこと</h3>
+                    <p className="block-intro">{publicIntel.interviewPrep.intro}</p>
+                    <ol>
+                      {publicIntel.interviewPrep.questions.map((item) => (
+                        <li key={item.question}>
+                          <strong>{item.question}</strong>
+                          <p>{item.why}</p>
+                          <div className="mini-source-row">
+                            {item.sourceIds.map((sourceId) => {
+                              const source = getResearchSource(publicIntel, sourceId);
+                              return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
+                            })}
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </article>
+                </div>
+              ) : (
+                <div className="solution-question-grid">
+                  <article><span>営業としての面白さ</span><p>{profile.lens.appeal}</p></article>
+                  <article><span>面接・選考で確認したいこと</span><p>{profile.lens.salesQuestion}</p></article>
+                </div>
+              )}
+
+              {publicIntel ? (
+                <div className="customer-proof-wrap">
+                  <div className="customer-proof-heading"><div><p className="card-index">JAPAN CUSTOMER PROOF</p><h3>日本企業が、何を買い、何が変わったか。</h3></div><p>企業公式の導入事例に記載された成果を、AEが商談の再現性を考えやすい形に読み替えています。</p></div>
+                  <div className="customer-proof-grid">
+                    {publicIntel.customerProof.map((proof, index) => {
+                      const source = getResearchSource(publicIntel, proof.sourceId);
+                      return (
+                        <article key={proof.company}>
+                          <span>CASE 0{index + 1}</span><h3>{proof.company}</h3><p className="customer-products">{proof.products}</p>
+                          <strong>{proof.outcome}</strong><p>{proof.implication}</p>
+                          {source && <a href={source.url} target="_blank" rel="noreferrer">公式事例 ↗</a>}
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <div className="proof-stack">
+                  <div><p className="card-index">SOLUTION PROOF</p><h3>「強いソリューションか」を判断する証拠</h3><p>社名や評判ではなく、日本市場で確認できる証拠を積み上げます。</p></div>
+                  <ul>
+                    <li className="proof-confirmed"><span>01</span><div><strong>ソリューション領域</strong><small>{company.category}</small></div><b>確認済み</b></li>
+                    <li><span>02</span><div><strong>日本の導入事例</strong><small>公式事例を調査中</small></div><b>未確認</b></li>
+                    <li><span>03</span><div><strong>競合との差別化</strong><small>一次情報と第三者情報を照合予定</small></div><b>未確認</b></li>
+                    <li><span>04</span><div><strong>顧客継続・拡張の証拠</strong><small>公開情報を調査中</small></div><b>未確認</b></li>
+                  </ul>
+                </div>
+              )}
+            </section>
+
             <section className="intel-section" id="team">
               <div className="intel-heading">
                 <div><p className="intel-kicker">04 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
@@ -372,10 +435,10 @@ export default function CompanyIntelligenceProfile({
               <div className="people-metric-grid">
                 {publicIntel ? (
                   <>
-                    <article><span>GLOBAL HEADCOUNT</span><strong>83,334</strong><p>FY26 Form 10-K / 2026年1月31日時点</p></article>
-                    <article><span>JAPAN SINCE</span><strong>2000</strong><p>日本法人設立。20年以上の市場・顧客基盤</p></article>
+                    <article><span>GLOBAL HEADCOUNT</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong><p>{publicIntel.companyStats.globalHeadcount.detail}</p></article>
+                    <article><span>JAPAN SINCE</span><strong>{publicIntel.companyStats.japanSince.value}</strong><p>{publicIntel.companyStats.japanSince.detail}</p></article>
                     <article><span>JAPAN LEADER</span><strong className="people-name">{publicIntel.leadership.name}</strong><p>{publicIntel.leadership.role}</p></article>
-                    <article><span>ORG READ</span><strong className="people-name">MATRIX</strong><p>製品 × 顧客規模 × 地域で細分化された組織</p></article>
+                    <article><span>JAPAN HEADCOUNT</span><strong className="people-name">{publicIntel.companyStats.japanHeadcount.value}</strong><p>{publicIntel.companyStats.japanHeadcount.detail}</p></article>
                   </>
                 ) : (
                   <>
