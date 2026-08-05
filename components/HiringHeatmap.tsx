@@ -55,11 +55,14 @@ export default function HiringHeatmap() {
                   key={row.area}
                 >
                   <div className="heat-tile-top">
-                    <span className="heat-tile-rank">{String(index + 1).padStart(2, "0")} ・ {row.companies}社</span>
+                    <span className="heat-tile-rank">{String(index + 1).padStart(2, "0")}</span>
                     {isHot && <span className="heat-tile-badge">HOT</span>}
                   </div>
                   <h3>{row.area}</h3>
-                  <div className="heat-tile-count"><strong>{row.count}</strong><small>件</small></div>
+                  <div className="heat-tile-stats">
+                    <div><strong>{row.companies}</strong><span>社</span></div>
+                    <div><strong>{row.count}</strong><span>件</span></div>
+                  </div>
                   <div className="heat-tile-track">
                     <div
                       className="heat-tile-fill"

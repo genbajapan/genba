@@ -102,9 +102,10 @@ button, input, select { font: inherit; }
 .heat-tile-badge { flex-shrink: 0; padding: 2px 5px; background: #134b44; color: #7edbce; font-size: 8px; font-weight: 850; letter-spacing: .08em; }
 .heat-tile h3 { margin: 7px 0 0; color: #cfdae0; font-size: 11px; font-weight: 750; line-height: 1.35; }
 .heat-tile-hot h3 { color: #80ded1; }
-.heat-tile-count { display: flex; align-items: baseline; gap: 3px; margin-top: 8px; }
-.heat-tile-count strong { color: white; font-size: 20px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.heat-tile-count small { color: #78929e; font-size: 9px; }
+.heat-tile-stats { display: flex; align-items: baseline; gap: 14px; margin-top: 9px; }
+.heat-tile-stats div { display: flex; align-items: baseline; gap: 2px; }
+.heat-tile-stats strong { color: white; font-size: 20px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.heat-tile-stats span { color: #78929e; font-size: 9px; }
 .heat-tile-track { position: relative; height: 3px; margin-top: 8px; background: rgba(255,255,255,.08); overflow: hidden; }
 .heat-tile-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: #3f7e80; transition: width .48s cubic-bezier(.2,.8,.2,1); }
 .heat-tile-hot .heat-tile-fill { background: #51b8aa; box-shadow: 0 0 12px rgba(81,184,170,.35); }
@@ -611,7 +612,8 @@ button, input, select { font: inherit; }
   .heat-tile-top { flex-direction: column; align-items: flex-start; gap: 3px; }
   .heat-tile-rank { font-size: 8px; }
   .heat-tile h3 { font-size: 10px; margin-top: 5px; }
-  .heat-tile-count strong { font-size: 17px; }
+  .heat-tile-stats { gap: 9px; }
+  .heat-tile-stats strong { font-size: 16px; }
   .market-insight { border-top: 1px solid #294857; border-left: 0; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 13px; }
   .card-grid,.editorial-grid { grid-template-columns: 1fr; }
