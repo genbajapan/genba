@@ -74,8 +74,11 @@ export default function HiringHeatmap() {
 
         <aside className="market-insight">
           <p className="market-insight-label">現在の採用温度</p>
-          <strong className="market-total">{total}<small>件</small></strong>
-          <p>{hiringCompanies}社・{activeAreas}領域で営業求人を確認</p>
+          <div className="market-total-row">
+            <div><strong>{hiringCompanies}<small>社</small></strong><span>求人掲載中の企業</span></div>
+            <div><strong>{total}<small>件</small></strong><span>掲載中の営業求人</span></div>
+          </div>
+          <p>{activeAreas}領域で営業求人を確認</p>
           <div className="market-hot-label">HOT AREA</div>
           <strong className="market-hot-value">{hotAreas.length ? hotAreas.join(" / ") : "観測開始前"}</strong>
           <p className="market-disclaimer">現在確認できている営業求人を集計しています。募集終了・新規掲載は確認次第更新します。</p>
