@@ -107,27 +107,28 @@ export default function HiringHeatmap() {
       <div className="market-dashboard">
         <div className="market-plot">
           <div className="market-axis"><span>ソリューション領域</span><span>掲載中の営業求人</span></div>
-          {rows.map((row, index) => {
-            const width = row.count === 0 ? 0 : Math.max(10, (row.count / maximum) * 100);
-            const isHot = row.count > 0 && row.count === selectedMaximum;
-            return (
-              <div className={`market-row ${isHot ? "market-row-hot" : ""}`} key={row.area}>
-                <div className="market-row-label">
-                  <strong>{row.area}</strong>
-                  <span>{row.companies}社を観測</span>
-                </div>
-                <div className="market-bar-track">
-                  <div
-                    className="market-bar"
-                    style={{ width: `${width}%`, transitionDelay: `${index * 30}ms` }}
-                  >
-                    {row.count > 0 && <span className="market-point" />}
+          <div className="heat-tile-grid">
+            {rows.map((row, index) => {
+              const width = row.count === 0 ? 0 : Math.max(6, (row.count / maximum) * 100);
+              const isHot = row.count > 0 && row.count === selectedMaximum;
+              return (
+                <article className={`heat-tile ${isHot ? "heat-tile-hot" : ""}`} key={row.area}>
+                  <div className="heat-tile-top">
+                    <span className="heat-tile-rank">{String(index + 1).padStart(2, "0")} ・ {row.companies}社</span>
+                    {isHot && <span className="heat-tile-badge">HOT</span>}
                   </div>
-                  <strong>{row.count}<small>件</small></strong>
-                </div>
-              </div>
-            );
-          })}
+                  <h3>{row.area}</h3>
+                  <div className="heat-tile-count"><strong>{row.count}</strong><small>件</small></div>
+                  <div className="heat-tile-track">
+                    <div
+                      className="heat-tile-fill"
+                      style={{ width: `${width}%`, transitionDelay: `${index * 30}ms` }}
+                    />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
 
         <aside className="market-insight">
