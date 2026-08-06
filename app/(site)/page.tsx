@@ -72,7 +72,7 @@ export default function HomePage() {
 
       <section className="content-section surface-section">
         <Container>
-          <SectionHeader eyebrow="EDITORIAL" title="求人票の向こう側を読む" description="外資SaaSの現役AEの視点から、キャリア・営業組織・日本市場を解像度高く読み解きます。" href="/insights" linkLabel="インサイト一覧" />
+          <SectionHeader eyebrow="EDITORIAL" title="求人票の向こう側を読む" description="外資SaaSの現役AEの視点から、キャリア・営業組織・日本市場を解像度高く読み解きます。" href="/insights" linkLabel="役立ち記事一覧" />
           <div className="editorial-grid">
             <article className="editorial-card"><span>CAREER INTELLIGENCE</span><h3>求人票で見るべき「空白」とは</h3><p>OTEやタイトルだけでは分からない、組織フェーズと営業難易度を見抜く観点。</p><Link href="/insights">読む →</Link></article>
             <article className="editorial-card"><span>FIELD NOTE</span><h3>Enterprise AEの仕事は会社ごとに違う</h3><p>担当社数、既存比率、SE体制。タイトルが同じでも役割が変わる理由。</p><Link href="/insights">読む →</Link></article>
