@@ -113,14 +113,19 @@ button, input, select { font: inherit; }
 .market-tier-list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 24px; border-bottom: 1px solid #294857; }
 .market-tier { padding: 12px 13px 13px; border: 1px solid #244555; background: #0d2634; }
 .market-tier-label { display: block; font-size: 9px; font-weight: 850; letter-spacing: .1em; color: #9db4bd; }
-.market-tier-areas { display: block; margin-top: 6px; color: #e5f3f0; font-size: 13.5px; line-height: 1.4; }
-.market-tier p { margin: 7px 0 0; color: #7f97a2; font-size: 9.5px; line-height: 1.55; }
+.market-tier-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.market-tier-tag { padding: 4px 9px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #e5f3f0; font-size: 11px; font-weight: 650; letter-spacing: -.01em; }
+.market-tier-tag-empty { color: #7f97a2; font-weight: 500; border-style: dashed; background: transparent; }
+.market-tier p { margin: 10px 0 0; color: #7f97a2; font-size: 9.5px; line-height: 1.55; }
 .market-tier-hot { border-color: #3f7e80; background: #0c2a34; }
 .market-tier-hot .market-tier-label { color: #70d3c5; }
+.market-tier-hot .market-tier-tag { border-color: rgba(112,211,197,.4); background: rgba(112,211,197,.1); }
 .market-tier-warm { border-color: #6b6234; background: #24200f; }
 .market-tier-warm .market-tier-label { color: #d9bd5f; }
+.market-tier-warm .market-tier-tag { border-color: rgba(217,189,95,.4); background: rgba(217,189,95,.1); }
 .market-tier-quiet { border-color: #35506a; background: #0b1f2c; }
 .market-tier-quiet .market-tier-label { color: #8fb2cf; }
+.market-tier-quiet .market-tier-tag { border-color: rgba(143,178,207,.35); background: rgba(143,178,207,.1); }
 .market-insight-label { margin: 22px 0 0; color: #7b96a3; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
 .market-total-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
 .market-total-row div + div { padding-left: 14px; border-left: 1px solid #294857; }

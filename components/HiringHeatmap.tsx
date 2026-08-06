@@ -83,17 +83,23 @@ export default function HiringHeatmap() {
           <div className="market-tier-list">
             <div className="market-tier market-tier-hot">
               <span className="market-tier-label">激戦区</span>
-              <strong className="market-tier-areas">{hotTierAreas.length ? hotTierAreas.join(" / ") : "該当なし"}</strong>
+              <div className="market-tier-tags">
+                {hotTierAreas.length ? hotTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              </div>
               <p>求人数が最も多い領域。応募者の競合も多いと想定されます。</p>
             </div>
             <div className="market-tier market-tier-warm">
               <span className="market-tier-label">動きあり</span>
-              <strong className="market-tier-areas">{warmTierAreas.length ? warmTierAreas.join(" / ") : "該当なし"}</strong>
+              <div className="market-tier-tags">
+                {warmTierAreas.length ? warmTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              </div>
               <p>採用は動いているが、激戦区ほど競合は多くない領域。</p>
             </div>
             <div className="market-tier market-tier-quiet">
               <span className="market-tier-label">静かな穴場</span>
-              <strong className="market-tier-areas">{quietTierAreas.length ? quietTierAreas.join(" / ") : "該当なし"}</strong>
+              <div className="market-tier-tags">
+                {quietTierAreas.length ? quietTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              </div>
               <p>現在確認できる求人は少数。穴場として狙える可能性があります。</p>
             </div>
           </div>
