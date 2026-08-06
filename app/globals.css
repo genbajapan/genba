@@ -220,7 +220,7 @@ button, input, select { font: inherit; }
 .company-breadcrumbs { display: flex; align-items: center; gap: 9px; margin-bottom: 38px; color: #6f8995; font-size: 13px; font-weight: 750; }
 .company-breadcrumbs a { color: #9bb0ba; text-decoration: none; }
 .company-breadcrumbs a:hover { color: #70d3c5; }
-.company-command-grid { display: grid; grid-template-columns: minmax(0,1fr) 430px; align-items: end; gap: 70px; }
+.company-command-grid { display: grid; grid-template-columns: minmax(0,1fr) 430px; align-items: start; gap: 70px; }
 .company-identity-topline { display: flex; align-items: center; gap: 16px; }
 .company-identity-topline .eyebrow { margin-bottom: 9px; }
 .company-monogram { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #4c6b78; background: rgba(255,255,255,.055); color: #dff8f3; font-size: 22px; font-weight: 850; box-shadow: inset 0 0 0 5px rgba(255,255,255,.025); }
