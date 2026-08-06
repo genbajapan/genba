@@ -137,13 +137,10 @@ export default function CompanyIntelligenceProfile({
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
             <a href="#overview">会社概要</a>
-            <a href="#culture">組織文化</a>
-            <a href="#roles">ポジション</a>
-            <a href="#decision">応募判断</a>
-            <a href="#solution">ソリューション</a>
-            <a href="#team">組織・キャリア</a>
-            <a href="#compare">併願先</a>
-            <a href="#sources">出典</a>
+            <a href="#roles">募集中ポジション</a>
+            <a href="#decision">5つの仮説</a>
+            <a href="#solution">ソリューション深掘り</a>
+            <a href="#compare">併願候補</a>
           </nav>
         </Container>
       </div>
@@ -188,13 +185,15 @@ export default function CompanyIntelligenceProfile({
                   <div><span>最終確認日</span><strong>{shortDate(company.lastChecked)}</strong></div>
                 </div>
               )}
-            </section>
 
-            <section className="intel-section" id="culture">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">02 / COMPANY CULTURE</p><h2>組織文化について</h2></div>
-                <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
-              </div>
+              {!publicIntel && (
+                <div className="people-metric-grid">
+                  <article><span>GLOBAL HEADCOUNT</span><strong>—</strong><p>公式または適法な集計データを確認中</p></article>
+                  <article><span>JAPAN HEADCOUNT</span><strong>—</strong><p>{company.japanPresence}を確認</p></article>
+                  <article><span>AE IN JAPAN</span><strong>—</strong><p>役職分類と重複を精査後に掲載</p></article>
+                  <article><span>MEDIAN TENURE</span><strong>—</strong><p>日本・営業職の集計値を優先</p></article>
+                </div>
+              )}
 
               {publicIntel ? (
                 <article className="organization-read-card">
@@ -223,11 +222,13 @@ export default function CompanyIntelligenceProfile({
                   </>
                 )}
               </div>
+
+              {companySignals.length > 0 && <div className="company-signal-block"><h3>組織・採用の変化</h3><div className="signal-feed">{companySignals.map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div></div>}
             </section>
 
             <section className="intel-section" id="roles">
               <div className="intel-heading">
-                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
+                <div><p className="intel-kicker">02 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
@@ -373,9 +374,9 @@ export default function CompanyIntelligenceProfile({
             <section className="intel-section" id="decision">
               <div className="intel-heading">
                 {publicIntel ? (
-                  <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
+                  <div><p className="intel-kicker">03 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
                 ) : (
-                  <div><p className="intel-kicker">04 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
+                  <div><p className="intel-kicker">03 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
                 )}
                 <p>{publicIntel ? "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。" : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
               </div>
@@ -454,7 +455,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">
-                <div><p className="intel-kicker">05 / SOLUTION INTELLIGENCE</p><h2>売るソリューションの深掘り。</h2></div>
+                <div><p className="intel-kicker">04 / SOLUTION INTELLIGENCE</p><h2>売るソリューションの深掘り。</h2></div>
                 <span className="analysis-label">Genbaカテゴリ分析</span>
               </div>
 
@@ -589,27 +590,9 @@ export default function CompanyIntelligenceProfile({
               )}
             </section>
 
-            <section className="intel-section" id="team">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">06 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
-                <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
-              </div>
-
-              {!publicIntel && (
-                <div className="people-metric-grid">
-                  <article><span>GLOBAL HEADCOUNT</span><strong>—</strong><p>公式または適法な集計データを確認中</p></article>
-                  <article><span>JAPAN HEADCOUNT</span><strong>—</strong><p>{company.japanPresence}を確認</p></article>
-                  <article><span>AE IN JAPAN</span><strong>—</strong><p>役職分類と重複を精査後に掲載</p></article>
-                  <article><span>MEDIAN TENURE</span><strong>—</strong><p>日本・営業職の集計値を優先</p></article>
-                </div>
-              )}
-
-              {companySignals.length > 0 && <div className="company-signal-block"><h3>組織・採用の変化</h3><div className="signal-feed">{companySignals.map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div></div>}
-            </section>
-
             <section className="intel-section" id="compare">
               <div className="intel-heading">
-                <div><p className="intel-kicker">07 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
+                <div><p className="intel-kicker">05 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
                 <p>同じ買い手・領域・営業経験を軸にした併願候補です。</p>
               </div>
               {publicIntel && (
@@ -639,7 +622,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="sources">
               <div className="intel-heading">
-                <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                <div><p className="intel-kicker">06 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
                 <p>数字・判断材料の出所と更新日を追える状態にします。</p>
               </div>
               <div className="source-ledger">
