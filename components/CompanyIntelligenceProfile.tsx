@@ -211,7 +211,7 @@ export default function CompanyIntelligenceProfile({
                             <details className="role-description">
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
-                                <span className="role-description-label">求人の概要を見る<small>タップして開閉</small></span>
+                                <span className="role-description-label">求人の概要を見る</span>
                                 <span className="role-description-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <div className="role-description-body">
@@ -231,7 +231,7 @@ export default function CompanyIntelligenceProfile({
                             <details className="role-description" key={item.label}>
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
-                                <span className="role-description-label">{item.label}<small>タップして開閉</small></span>
+                                <span className="role-description-label">{item.label}</span>
                                 <span className="role-description-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <div className="role-description-body">
