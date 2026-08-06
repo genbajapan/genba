@@ -140,6 +140,7 @@ export default function CompanyIntelligenceProfile({
             <a href="#roles">募集中ポジション</a>
             <a href="#decision">5つの仮説</a>
             <a href="#solution">ソリューション深掘り</a>
+            {publicIntel && <a href="#playbook">想定できる売り方</a>}
             <a href="#compare">併願候補</a>
           </nav>
         </Container>
@@ -175,6 +176,56 @@ export default function CompanyIntelligenceProfile({
                         </article>
                       );
                     })}
+                  </div>
+
+                  <div className="market-status-panel">
+                    <div className="market-status-head">
+                      <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
+                      <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
+                    </div>
+                    {publicIntel.marketStatus.isPublic ? (
+                      <>
+                        <div className="market-status-grid">
+                          <div><span>株価</span><strong>{publicIntel.marketStatus.price}</strong><small>{shortDate(publicIntel.marketStatus.priceAsOf)}時点</small></div>
+                          <div><span>時価総額</span><strong>{publicIntel.marketStatus.marketCap}</strong></div>
+                          <div><span>52週レンジ</span><strong>{publicIntel.marketStatus.week52Range}</strong></div>
+                          <div><span>アナリスト評価</span><strong>{publicIntel.marketStatus.analystConsensus}</strong><small>{publicIntel.marketStatus.analystCount}のカバレッジ</small></div>
+                          <div><span>平均目標株価</span><strong>{publicIntel.marketStatus.analystTargetAvg}</strong><small>レンジ {publicIntel.marketStatus.analystTargetRange}</small></div>
+                        </div>
+                        <p className="market-status-summary">{publicIntel.marketStatus.outlookSummary}</p>
+                        <div className="market-signal-row">
+                          {publicIntel.marketStatus.outlookSignals.map((signal) => {
+                            const source = getResearchSource(publicIntel, signal.sourceId);
+                            return (
+                              <article key={signal.label} className={`market-signal market-signal-${signal.direction === "追い風" ? "up" : signal.direction === "逆風" ? "down" : "flat"}`}>
+                                <span>{signal.direction}</span>
+                                <strong>{signal.label}</strong>
+                                <p>{signal.detail}</p>
+                                {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                              </article>
+                            );
+                          })}
+                        </div>
+                        <p className="market-status-disclaimer">株価は取得時点のスナップショットであり、リアルタイム更新ではありません。投資判断はご自身の責任で、最新の一次情報を確認してください。</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="market-status-summary">{publicIntel.marketStatus.ipoOutlookSummary}</p>
+                        <div className="market-signal-row">
+                          {publicIntel.marketStatus.outlookSignals.map((signal) => {
+                            const source = getResearchSource(publicIntel, signal.sourceId);
+                            return (
+                              <article key={signal.label} className={`market-signal market-signal-${signal.direction === "追い風" ? "up" : signal.direction === "逆風" ? "down" : "flat"}`}>
+                                <span>{signal.direction}</span>
+                                <strong>{signal.label}</strong>
+                                <p>{signal.detail}</p>
+                                {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                              </article>
+                            );
+                          })}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </>
               ) : (
@@ -590,9 +641,70 @@ export default function CompanyIntelligenceProfile({
               )}
             </section>
 
+            {publicIntel && (
+              <section className="intel-section" id="playbook">
+                <div className="intel-heading">
+                  <div><p className="intel-kicker">05 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
+                  <p>「何が課題で、なぜこの解決策で、なぜこの会社なのか」を、公開情報から組み立てたGenba仮説です。実際の商談設計は個社事情に合わせて調整してください。</p>
+                </div>
+
+                <p className="playbook-frame-intro">{publicIntel.sellingPlaybook.frameIntro}</p>
+
+                <div className="playbook-lens-grid">
+                  <p className="card-index">課題を見つける3つのレンズ</p>
+                  <div className="playbook-lens-row">
+                    {publicIntel.sellingPlaybook.issueLenses.map((lens, index) => (
+                      <article key={lens.title}>
+                        <span>0{index + 1}</span>
+                        <strong>{lens.title}</strong>
+                        <p>{lens.body}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="playbook-narrative">
+                  <p className="card-index">課題仮説から選定理由までのストーリー</p>
+                  <div className="playbook-narrative-track">
+                    {publicIntel.sellingPlaybook.narrative.flatMap((stage, index, stages) => {
+                      const nodes = [
+                        <div className="playbook-narrative-step" key={`step-${stage.label}`}>
+                          <span className="playbook-narrative-number">{index + 1}</span>
+                          <div className="playbook-narrative-body">
+                            <strong>{stage.label}</strong>
+                            <p>{stage.body}</p>
+                          </div>
+                        </div>,
+                      ];
+                      if (index < stages.length - 1) {
+                        nodes.push(<div className="playbook-narrative-connector" key={`connector-${stage.label}`} aria-hidden="true">→</div>);
+                      }
+                      return nodes;
+                    })}
+                  </div>
+                </div>
+
+                <div className="playbook-support-grid">
+                  <article className="playbook-hook-card">
+                    <p className="card-index">オープニングの問いかけ</p>
+                    <p className="playbook-hook-quote">「{publicIntel.sellingPlaybook.openingHook}」</p>
+                  </article>
+                  <article className="playbook-value-card">
+                    <p className="card-index">価値仮説</p>
+                    <p>{publicIntel.sellingPlaybook.valueHypothesis}</p>
+                  </article>
+                  <article className="playbook-objection-card">
+                    <p className="card-index">よくある反論への返し</p>
+                    <p><span>反論</span>{publicIntel.sellingPlaybook.commonObjection.objection}</p>
+                    <p><span>切り返し</span>{publicIntel.sellingPlaybook.commonObjection.reframe}</p>
+                  </article>
+                </div>
+              </section>
+            )}
+
             <section className="intel-section" id="compare">
               <div className="intel-heading">
-                <div><p className="intel-kicker">05 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
+                <div><p className="intel-kicker">06 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
                 <p>同じ買い手・領域・営業経験を軸にした併願候補です。</p>
               </div>
               {publicIntel && (
@@ -622,7 +734,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="sources">
               <div className="intel-heading">
-                <div><p className="intel-kicker">06 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                <div><p className="intel-kicker">07 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
                 <p>数字・判断材料の出所と更新日を追える状態にします。</p>
               </div>
               <div className="source-ledger">

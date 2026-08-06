@@ -67,8 +67,53 @@ export type CultureNotes = {
   careerValue: { title: string; body: string; confidence: "高" | "中" | "探索中" };
 };
 
+export type OutlookSignal = {
+  label: string;
+  detail: string;
+  direction: "追い風" | "逆風" | "中立";
+  sourceId: string;
+};
+
+export type MarketStatus =
+  | {
+      isPublic: true;
+      ticker: string;
+      exchange: string;
+      priceAsOf: string;
+      price: string;
+      marketCap: string;
+      week52Range: string;
+      analystConsensus: string;
+      analystTargetAvg: string;
+      analystTargetRange: string;
+      analystCount: string;
+      outlookSummary: string;
+      outlookSignals: OutlookSignal[];
+      sourceIds: string[];
+    }
+  | {
+      isPublic: false;
+      ipoOutlookSummary: string;
+      outlookSignals: OutlookSignal[];
+      sourceIds: string[];
+    };
+
+export type SellingPlaybookLens = { title: string; body: string };
+export type SellingPlaybookStage = { label: string; body: string };
+
+export type SellingPlaybook = {
+  frameIntro: string;
+  issueLenses: SellingPlaybookLens[];
+  narrative: SellingPlaybookStage[];
+  openingHook: string;
+  valueHypothesis: string;
+  commonObjection: { objection: string; reframe: string };
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
+  marketStatus: MarketStatus;
+  sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];
   hypotheses: GenbaHypothesis[];
   cultureNotes: CultureNotes;
@@ -255,10 +300,86 @@ const salesforceSources: ResearchSource[] = [
     scope: "インサイドセールス(BDR)出身社員のキャリア紹介",
     checkedAt: "2026-08-05",
   },
+  {
+    id: "sf-q1fy27-earnings",
+    label: "Salesforce Delivers Record First Quarter Fiscal 2027 Results",
+    url: "https://www.salesforce.com/news/press-releases/2026/05/27/fy27-q1-earnings/",
+    kind: "企業公式",
+    scope: "FY27 Q1決算・通期ガイダンス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sf-stock-price",
+    label: "stockanalysis.com Salesforce(CRM)株価データ",
+    url: "https://stockanalysis.com/stocks/crm/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sf-stock-forecast",
+    label: "stockanalysis.com Salesforce(CRM)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/crm/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-05",
+  marketStatus: {
+    isPublic: true,
+    ticker: "CRM",
+    exchange: "NYSE",
+    priceAsOf: "2026-08-06",
+    price: "$184.75",
+    marketCap: "$151.31B(約23兆7,600億円)",
+    week52Range: "$146.32〜$269.11",
+    analystConsensus: "Buy",
+    analystTargetAvg: "$241.72(現在値+30.81%)",
+    analystTargetRange: "$160〜$475",
+    analystCount: "53人",
+    outlookSummary: "FY27 Q1(2026年5月発表)ではAgentforce・Data 360のARRが前年比200%超の約34億ドルに拡大し、通期売上ガイダンスを459億〜462億ドルへ上方修正した。一方でMarketing/Commerce領域の弱さとTableauの契約更新の軟化が続いているとも会社側は説明しており、AI事業の急拡大と既存事業の減速という綱引きの真っ只中にある、というのがGenbaの読み。アナリスト大勢はBuyだが、目標株価レンジは160〜475ドルと幅が大きく、評価が割れている。",
+    outlookSignals: [
+      {
+        label: "Agentforce・Data 360 ARR",
+        detail: "前年比200%超で拡大し、FY27通期売上ガイダンスを上方修正",
+        direction: "追い風",
+        sourceId: "sf-q1fy27-earnings",
+      },
+      {
+        label: "Marketing/Commerce・Tableau",
+        detail: "同領域の契約更新の軟化を会社側が決算で言及",
+        direction: "逆風",
+        sourceId: "sf-q1fy27-earnings",
+      },
+      {
+        label: "アナリスト評価の分散",
+        detail: "コンセンサスはBuyだが目標株価は160〜475ドルとレンジが広く、見方が割れている",
+        direction: "中立",
+        sourceId: "sf-stock-forecast",
+      },
+    ],
+    sourceIds: ["sf-q1fy27-earnings", "sf-stock-price", "sf-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "SalesforceはCRMからAIエージェント基盤へと軸足を移しつつあり、売り方の起点は「顧客対応の記録」から「顧客対応の自動化」に変わっている。既存のSales/Service/Marketing Cloud資産をどう土台として使うかが提案の中心になる。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "FY26 Q4時点でAgentforce・Data 360のbookingsの60%超が既存顧客への拡張で、新規開拓よりクロスセル・アップセルが成長の中心。顧客データが複数システムに分散し、AIエージェントが動く一元化されたデータ基盤がないと自動化が始められない、という課題が拡張の起点になっている。" },
+      { title: "製品の成り立ちから見る課題", body: "Data CloudはSales/Service/Marketing CloudやAgentforceに、ETLの遅延なくリアルタイムでデータを連携する目的で作られた。製品が生まれた理由そのものが「AIエージェントを動かす土台としてのデータ統合」という課題を指し示している。" },
+      { title: "外部環境の要求から見る課題", body: "経営層・投資家からAI投資のROI説明責任を求める圧力が強まっており、Microsoft Copilot Studioとの2強構造の中で「模倣されにくい参入障壁」としてCRMデータの厚みを主張できる局面にある。" },
+    ],
+    narrative: [
+      { label: "背景", body: "顧客企業はSales・Service・Marketingが別々のツール・別々のデータで動いており、AIエージェントに「何が起きているか」を判断させる材料が揃っていない。" },
+      { label: "課題", body: "対応履歴・商談データ・ケース情報が部門ごとに孤立し、Agentforceのようなエージェントを入れても参照できる情報が薄く、期待した精度が出ない。" },
+      { label: "解決策", body: "Data Cloudでデータを一元化した上でAgentforceを重ね、エージェントが厚みのある顧客文脈を参照して動くようにする。既存のSales/Service/Marketing Cloud資産をそのまま活かせる拡張として提案する。" },
+      { label: "選定の理由", body: "Microsoft CopilotはM365中心の生産性ツールでCRMデータの厚みを持たず、ServiceNowはIT・HR・セキュリティ起点。Salesforceは「顧客対応履歴に基づいて動くエージェント」を売れる立場にある。" },
+    ],
+    openingHook: "Agentforceを検討する前に、貴社のSales・Service・Marketingのデータは、今どれくらい同じ場所に集まっていますか。",
+    valueHypothesis: "Data Cloud導入企業でマーケティングROIが32%向上、サポート対応が28%高速化したという自社調査を根拠に、AIエージェントの精度はデータ統合の度合いに比例する、という価値仮説を立てて提案する。",
+    commonObjection: { objection: "すでにCRMは入っているので今は要らない", reframe: "CRMは記録のためのツールだが、Agentforceは判断・実行のためのツール。既存のCRMデータをそのまま資産として使えるかどうかで、AI導入の速度が変わる、という視点で問い直す。" },
+  },
   cultureNotes: {
     organizationReadTitle: "大きな会社では「社風」より、自分が入る小さな組織を見抜く。",
     hypothesis: {
@@ -760,10 +881,86 @@ const datadogSources: ResearchSource[] = [
     scope: "Public Sector AEの役割・要件",
     checkedAt: "2026-08-04",
   },
+  {
+    id: "dd-q2-2026-earnings",
+    label: "Datadog Q2 2026: Revenue Up 36% and Guidance Raised, but the Stock Fell 17%(TradingKey)",
+    url: "https://www.tradingkey.com/analysis/stocks/us-stocks/262084073-datadog-ddog-q2-2026-earnings-stock-drop-tradingkey",
+    kind: "外部集計",
+    scope: "Q2 2026決算・株価反応",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-stock-price",
+    label: "stockanalysis.com Datadog(DDOG)株価データ",
+    url: "https://stockanalysis.com/stocks/ddog/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-stock-forecast",
+    label: "stockanalysis.com Datadog(DDOG)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/ddog/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const datadogIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "DDOG",
+    exchange: "NASDAQ",
+    priceAsOf: "2026-08-06",
+    price: "$236.60",
+    marketCap: "$84.22B(約1兆3,222億円)",
+    week52Range: "$98.01〜$292.72",
+    analystConsensus: "Strong Buy",
+    analystTargetAvg: "$276.10(現在値+16.89%)",
+    analystTargetRange: "$139〜$330",
+    analystCount: "46人",
+    outlookSummary: "2026年8月発表のQ2決算は売上11.2億ドル(前年比+35.6%)とガイダンス(29〜31%成長)を上回ったが、決算発表後に株価は急落した。AI連携を使う顧客の比率は全体の約20%にとどまるが、その顧客群だけでARRの約80%を占めており、AI活用の有無が既存顧客内での成長格差を広げている。新規契約の年換算予約額は過去最高で前年比2倍超となり、新規開拓の勢いは強い。",
+    outlookSignals: [
+      {
+        label: "新規ロゴの年換算予約額",
+        detail: "過去最高を記録し前年比2倍超",
+        direction: "追い風",
+        sourceId: "dd-q2-2026-earnings",
+      },
+      {
+        label: "決算好調でも株価急落",
+        detail: "売上・EPSともに市場予想を上回ったにも関わらず株価は下落し、成長鈍化への警戒が根強い",
+        direction: "逆風",
+        sourceId: "dd-q2-2026-earnings",
+      },
+      {
+        label: "AI活用の集中度",
+        detail: "AI連携利用顧客は全体の約20%だが、そこがARRの約80%を占め、非AI顧客との成長格差が拡大",
+        direction: "中立",
+        sourceId: "dd-q2-2026-earnings",
+      },
+    ],
+    sourceIds: ["dd-q2-2026-earnings", "dd-stock-price", "dd-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Datadogの売り方の核心は「障害対応の分断コスト」を可視化すること。単一プラットフォームへの統合提案は、ツール比較ではなくMTTR(平均復旧時間)という経営指標への翻訳が効く。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "新規顧客の多くはログやAPMなど1モジュールから入り、その後Infrastructure・Security・RUMへ広げる。AI連携を使う顧客がARRの約80%を占めるなど、既存顧客内でも「統合活用できているか」で成長格差が生まれている。" },
+      { title: "製品の成り立ちから見る課題", body: "Datadogはもともと、開発者が複数の監視ツールを行き来する非効率を解消するために統合プラットフォームとして生まれた。存在理由そのものが「単一ペインでの可観測性」という課題を指している。" },
+      { title: "外部環境の要求から見る課題", body: "マイクロサービス化・AIワークロードの急増でシステムの複雑性が増し、障害の原因特定にかかる時間(MTTR)を経営が問題視する場面が増えている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "クラウドネイティブ化が進むほどサービス数・ログ量が指数関数的に増え、複数の監視ツール(自社ホストの監視スタックなど)では障害の因果関係を追いにくくなる。" },
+      { label: "課題", body: "障害が起きた際にインフラ・アプリ・ログ・セキュリティが別ツールに散らばっているため原因特定に時間がかかり、MTTRが伸びる。" },
+      { label: "解決策", body: "ログ・APM・インフラ監視・セキュリティを単一プラットフォームに統合し、AIで異常検知から根本原因の提示までを一気通貫にする。" },
+      { label: "選定の理由", body: "自社構築の監視スタックは初期コストが低く見えるが運用人員が必要になる。Datadogは新規契約の年換算予約額が過去最高・前年比2倍超という実績が示す通り、導入の速さと拡張性で選ばれている。" },
+    ],
+    openingHook: "直近の大きな障害で、原因の切り分けに何分かかりましたか。その間、何個の画面を行き来しましたか。",
+    valueHypothesis: "AI連携を使う顧客がARRの約80%を占めるという自社実績を根拠に、可観測性の統合度合いがAI活用の前提条件になる、という価値仮説を立てる。",
+    commonObjection: { objection: "今の監視ツールで足りている", reframe: "足りているのは平常時。障害時に複数ツールを往復するコスト(人件費・機会損失)を可視化すると、統合のROIが見えやすくなる。" },
+  },
   cultureNotes: {
     organizationReadTitle: "急拡大期の組織では、「看板」より配属チームの実態を見抜く。",
     hypothesis: {
@@ -1258,10 +1455,86 @@ const servicenowSources: ResearchSource[] = [
     scope: "Services AEの役割・要件",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "sn-q2-2026-earnings",
+    label: "ServiceNow's AI ACV Surges Past $1 Billion(BigGo Finance)",
+    url: "https://finance.biggo.com/news/US_NOW_2026-07-22",
+    kind: "外部集計",
+    scope: "Q2 2026決算・AI ACV",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sn-stock-price",
+    label: "stockanalysis.com ServiceNow(NOW)株価データ",
+    url: "https://stockanalysis.com/stocks/now/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sn-stock-forecast",
+    label: "stockanalysis.com ServiceNow(NOW)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/now/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const servicenowIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "NOW",
+    exchange: "NYSE",
+    priceAsOf: "2026-08-06",
+    price: "$115.59",
+    marketCap: "$119.50B(約1兆8,761億円)",
+    week52Range: "$81.24〜$194.73",
+    analystConsensus: "Strong Buy",
+    analystTargetAvg: "$140.25(現在値+21.24%)",
+    analystTargetRange: "$72〜$248",
+    analystCount: "49人",
+    outlookSummary: "2026年7月発表のQ2決算はサブスクリプション収益が前年比23%増、cRPO成長率21.5%とガイダンスを上回り、通期ガイダンスを再度上方修正した。AI ACV(年間契約額)が四半期で10億ドルを突破し、エージェンティックAIの本番運用は過去9か月で9倍に拡大するなど、AI関連指標の伸びが際立つ。2030年までにサブスクリプション収益300億ドル以上という長期目標を掲げており、経営陣の強気なメッセージが続いている。",
+    outlookSignals: [
+      {
+        label: "AI ACVが四半期で10億ドル突破",
+        detail: "AI関連の商談が本格的に収益化し始めている",
+        direction: "追い風",
+        sourceId: "sn-q2-2026-earnings",
+      },
+      {
+        label: "通期ガイダンス上方修正",
+        detail: "サブスクリプション収益・営業利益率とも上方修正",
+        direction: "追い風",
+        sourceId: "sn-q2-2026-earnings",
+      },
+      {
+        label: "アナリスト目標株価のレンジ",
+        detail: "平均目標株価は現在値を+21%上回るが、レンジは72〜248ドルと幅が広く景気減速時の脆弱性を指摘する見方もある",
+        direction: "中立",
+        sourceId: "sn-stock-forecast",
+      },
+    ],
+    sourceIds: ["sn-q2-2026-earnings", "sn-stock-price", "sn-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "ServiceNowの売り方は「バラバラな申請・承認プロセスの単一化」が起点。ITSMで確立した型をHR・調達・カスタマーサービスへ横展開し、その定義済みワークフローにAI Agentを重ねる、という順番で語ると刺さりやすい。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "多くはITSM(ヘルプデスク)から入り、その後HR・セキュリティ・カスタマーサービスへワークフローを横展開する。既存のワークフロー基盤の上に300以上のAIスキルを展開しているのも、この横展開の延長線上にある。" },
+      { title: "製品の成り立ちから見る課題", body: "ServiceNowはIT部門のチケット管理の煩雑さを解消するために生まれ、後にワークフロー自動化基盤へ拡張した。存在理由は「部門ごとに分断された申請・承認プロセスの単一化」にある。" },
+      { title: "外部環境の要求から見る課題", body: "生成AIエージェントの実務投入が経営アジェンダ化し、既存の業務プロセス基盤にAIを載せられるかどうかが投資判断の分かれ目になっている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "大企業ほどIT・HR・法務・調達など部門ごとに個別の申請システムを持ち、承認フローがブラックボックス化している。" },
+      { label: "課題", body: "申請から承認までの所要時間が可視化されず、AIエージェントを載せようにも土台となるワークフロー定義が存在しない部門が多い。" },
+      { label: "解決策", body: "Now Platform上で申請・承認プロセスを一度デジタル化し、その定義済みワークフローにAI Agentを重ねることで、既存プロセスをAIが代行する形に持ち込む。" },
+      { label: "選定の理由", body: "Microsoft Copilotは既存アプリの生産性向上が中心でワークフロー基盤を持たない。ServiceNowはAI ACVが四半期で10億ドル突破という実績を武器に、ワークフロー起点のAI導入を主張できる。" },
+    ],
+    openingHook: "新入社員のPC申請から支給まで、平均で何営業日かかっていますか。",
+    valueHypothesis: "エージェンティックAIの実運用が9か月で9倍という自社実績を根拠に、ワークフローが定義されている領域ほどAI Agentの投資回収が早い、という価値仮説を立てる。",
+    commonObjection: { objection: "ITSMだけで十分で、HRや他部門まで広げる予定はない", reframe: "ITSMで確立した承認フローの型は、HR・調達でもほぼ同じ構造。1部門で得たROIの実績値を横展開の説得材料にする、という広げ方を提案する。" },
+  },
   cultureNotes: {
     organizationReadTitle: "「市場シェアNo.1」の看板より、独立事業体化した日本組織の伸びしろを見る。",
     hypothesis: {
@@ -1731,10 +2004,86 @@ const snowflakeSources: ResearchSource[] = [
     scope: "組織文化・裁量・ワークライフバランスの口コミ",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "sno-q1fy27-outlook",
+    label: "Snowflake Reports Financial Results for the First Quarter of Fiscal 2027",
+    url: "https://www.businesswire.com/news/home/20260527027931/en/Snowflake-Reports-Financial-Results-for-the-First-Quarter-of-Fiscal-2027",
+    kind: "企業公式",
+    scope: "Q1 FY27決算・通期ガイダンス上方修正",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sno-stock-price",
+    label: "stockanalysis.com Snowflake(SNOW)株価データ",
+    url: "https://stockanalysis.com/stocks/snow/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "sno-stock-forecast",
+    label: "stockanalysis.com Snowflake(SNOW)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/snow/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const snowflakeIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "SNOW",
+    exchange: "NYSE",
+    priceAsOf: "2026-08-06",
+    price: "$319.13",
+    marketCap: "$110.61B(約1兆7,365億円)",
+    week52Range: "$118.30〜$323.10",
+    analystConsensus: "Strong Buy",
+    analystTargetAvg: "$302.29(現在値-5.38%)",
+    analystTargetRange: "$110〜$500",
+    analystCount: "51人",
+    outlookSummary: "2026年5月発表のQ1 FY27決算で売上成長34%を記録し、FY27通期ガイダンスを27%→31%成長へ上方修正した。AI検索・エージェント開発機能「Cortex Code(CoCo)」の利用アカウントが前四半期比で倍増し、会社側はこれを上方修正の最大要因と説明している。ただし直近で株価が52週高値圏まで急伸しており、アナリストの平均目標株価(302.29ドル)は現在の株価をやや下回る水準にとどまる。事業モメンタムは強いが、株価はすでにその期待の多くを織り込んでいる可能性がある、というのがGenbaの読み。",
+    outlookSignals: [
+      {
+        label: "CoCo(Cortex Code)利用拡大",
+        detail: "利用アカウントが前四半期比で倍増し、FY27上方修正の主因と会社が説明",
+        direction: "追い風",
+        sourceId: "sno-q1fy27-outlook",
+      },
+      {
+        label: "52週高値圏での取引",
+        detail: "株価が52週レンジの上限付近で推移し、平均目標株価を上回っている",
+        direction: "逆風",
+        sourceId: "sno-stock-forecast",
+      },
+      {
+        label: "アナリスト評価のレンジ",
+        detail: "コンセンサスはStrong Buyだが、目標株価レンジ(110〜500ドル)が示す通り見方の幅は大きい",
+        direction: "中立",
+        sourceId: "sno-stock-forecast",
+      },
+    ],
+    sourceIds: ["sno-q1fy27-outlook", "sno-stock-price", "sno-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Snowflakeの売り方は「正しい数字がどれか分からない」という素朴な痛みから始めるのが効く。一次データの統合が、その先のAI活用(Cortex/Snowflake Intelligence)の前提条件になる、という順で語る。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "まずデータウェアハウスとして複数ソースのデータを統合し、その後Cortex・Snowflake IntelligenceでAI活用へ拡張するのが典型。CoCo利用アカウントが四半期比で倍増しているのは、この拡張フェーズの証拠。" },
+      { title: "製品の成り立ちから見る課題", body: "Snowflakeはクラウド間・部門間でデータがサイロ化し、分析基盤の運用が重いという課題を解消するために、コンピュートとストレージを分離した設計で生まれた。存在理由は「データ基盤の運用負荷を下げながら誰でも使えるようにする」こと。" },
+      { title: "外部環境の要求から見る課題", body: "生成AIの実務活用が進むほど信頼できる一次データへのアクセスが前提条件になり、AIモデルの精度はデータ基盤の統合度に依存するという認識が広がっている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "企業はSalesforceや基幹システム、ログなど複数箇所にデータを持ち、部門ごとに別のBIツール・別の集計ロジックで数字が食い違う。" },
+      { label: "課題", body: "正しい数字がどれかを確認する作業に時間がかかり、AIに聞かせても参照するデータが古い・断片的で回答の精度が落ちる。" },
+      { label: "解決策", body: "Snowflakeに一次データを集約し、Cortex・Snowflake Intelligenceで自然言語による分析・エージェント開発(CoCo)まで一貫させる。" },
+      { label: "選定の理由", body: "Databricksはエンジニア主導のML基盤として強いが、非エンジニアが自然言語で使う体験は発展途上。SnowflakeはCoCo利用アカウントの増加がFY27上方修正の主要因という決算開示が示す通り、ビジネスユーザー起点のAI活用で差別化している。" },
+    ],
+    openingHook: "先月の役員会で出た数字、部門ごとに集計ロジックが違って揉めたことはありませんか。",
+    valueHypothesis: "FY27ガイダンスが27%→31%成長に上方修正された主因がCoCo・Snowflake Intelligenceの伸びだという開示を根拠に、信頼できる一次データがAI活用の投資対効果を左右する、という価値仮説を立てる。",
+    commonObjection: { objection: "すでにBIツールがあるので新しい基盤は不要", reframe: "BIツールは見るためのもの。Snowflakeは聞く・作る(自然言語分析・エージェント開発)ための基盤という違いを、既存BIとの併存前提で説明する。" },
+  },
   cultureNotes: {
     organizationReadTitle: "「ニアゼロマネジメント」の裏側にある、成果への高いプレッシャーを見抜く。",
     hypothesis: {
@@ -2173,10 +2522,86 @@ const mongodbSources: ResearchSource[] = [
     scope: "採用情報・カルチャー",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "mdb-q2fy27-outlook",
+    label: "MongoDB Outlines 21%-23% Atlas Revenue Growth for Fiscal 2027(Seeking Alpha)",
+    url: "https://seekingalpha.com/news/4559959-mongodb-outlines-21-percentminus-23-percent-atlas-revenue-growth-for-fiscal-2027-while",
+    kind: "外部集計",
+    scope: "Atlas成長ガイダンス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-stock-price",
+    label: "stockanalysis.com MongoDB(MDB)株価データ",
+    url: "https://stockanalysis.com/stocks/mdb/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-stock-forecast",
+    label: "stockanalysis.com MongoDB(MDB)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/mdb/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "MDB",
+    exchange: "NASDAQ",
+    priceAsOf: "2026-08-06",
+    price: "$370.32",
+    marketCap: "$29.79B(約4,677億円)",
+    week52Range: "$198.47〜$444.72",
+    analystConsensus: "Buy",
+    analystTargetAvg: "$396.21(現在値+6.99%)",
+    analystTargetRange: "$272.64〜$545",
+    analystCount: "40人",
+    outlookSummary: "Q2 FY27ガイダンスでAtlas収益成長率を約26%と見込み、FY27通期売上ガイダンス29.2億〜29.6億ドル(成長率19〜20%)を提示。Atlasは4四半期連続で29%超の成長を維持しており、CFOは「Atlasの拡大により個別顧客の変動に業績が左右されにくくなった」と説明している。開発者主導のボトムアップ採用からエンタープライズ契約への移行が進んでいる局面。",
+    outlookSignals: [
+      {
+        label: "Atlas成長の安定化",
+        detail: "4四半期連続で29%超の成長を維持し、個別顧客への依存度が下がっていると会社側が説明",
+        direction: "追い風",
+        sourceId: "mdb-q2fy27-outlook",
+      },
+      {
+        label: "全社成長率はAtlasより緩やか",
+        detail: "FY27通期の会社全体の成長率ガイダンスは19〜20%とAtlas単体より低く、非Atlas事業の伸び悩みがうかがえる",
+        direction: "逆風",
+        sourceId: "mdb-q2fy27-outlook",
+      },
+      {
+        label: "アナリスト評価",
+        detail: "コンセンサスはBuyで平均目標株価は現在値をやや上回る水準",
+        direction: "中立",
+        sourceId: "mdb-stock-forecast",
+      },
+    ],
+    sourceIds: ["mdb-q2fy27-outlook", "mdb-stock-price", "mdb-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "MongoDBの売り方は「リリース速度を落とさずにデータモデルを進化させたい」という開発チームの痛みが起点。ボトムアップで入った後、AIユースケース(ベクター検索・RAG)を追加提案の切り口にする。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "開発チームが自己主導でAtlasを使い始め(ボトムアップ)、その後全社基幹システムへ拡大するのが典型。Atlas成長が4四半期連続29%超という実績はこの拡張フェーズの強さを示している。" },
+      { title: "製品の成り立ちから見る課題", body: "MongoDBはリレーショナルDBのスキーマ変更が重く開発速度を落とすという課題を解消するために、柔軟なドキュメント型DBとして生まれた。存在理由は「開発速度を落とさずにデータモデルを進化させられること」。" },
+      { title: "外部環境の要求から見る課題", body: "生成AIアプリ開発が増え、ベクター検索・非構造データの扱いがアプリケーション設計の標準要件になりつつある。" },
+    ],
+    narrative: [
+      { label: "背景", body: "開発チームは新機能を素早く出したいが、リレーショナルDBはスキーマ変更のたびにマイグレーション作業が発生し、リリース速度が落ちる。" },
+      { label: "課題", body: "AI機能(レコメンド・検索・RAG)を既存DBに追加しようとすると、ベクターデータと通常データを別々のシステムで管理する必要が出て開発・運用が複雑化する。" },
+      { label: "解決策", body: "Atlas上でドキュメントデータとベクター検索を同じ基盤に統合し、スキーマ変更を伴わずにAI機能を追加できるようにする。" },
+      { label: "選定の理由", body: "従来型RDBMSはスキーマ変更のコストが高く、専用ベクターDBは通常データと別管理になる。MongoDBは開発者コミュニティでの支持(ボトムアップ採用)と、Atlas成長が4四半期連続29%超という実績を根拠に選ばれている。" },
+    ],
+    openingHook: "直近でスキーマ変更を伴うリリースがあった時、テストと移行にどれくらい時間がかかりましたか。",
+    valueHypothesis: "Atlasの成長が個別顧客の変動に左右されにくくなったとCFOが説明している開示を根拠に、開発者が自発的に選ぶDBほど全社導入後の定着率が高い、という価値仮説を立てる。",
+    commonObjection: { objection: "今のRDBMSを置き換えるのはリスクが大きい", reframe: "全置き換えではなく、新規機能・AIユースケースから部分導入するのが典型的な入り方だと事例で示す。" },
+  },
   cultureNotes: {
     organizationReadTitle: "「情報が少ない」こと自体が、組織の実態を映す鏡かもしれない。",
     hypothesis: {
@@ -2624,10 +3049,86 @@ const brazeSources: ResearchSource[] = [
     scope: "Enterprise AEの役割・要件",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "brz-q1fy27-earnings",
+    label: "Braze, Inc. - Form 8-K(Q1 FY27決算)",
+    url: "https://www.sec.gov/Archives/edgar/data/0001676238/000167623826000024/a20260430-brazeincxq127ear.htm",
+    kind: "法定開示",
+    scope: "Q1 FY27決算・ガイダンス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "brz-stock-price",
+    label: "stockanalysis.com Braze(BRZE)株価データ",
+    url: "https://stockanalysis.com/stocks/brze/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "brz-stock-forecast",
+    label: "stockanalysis.com Braze(BRZE)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/brze/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const brazeIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "BRZE",
+    exchange: "NASDAQ",
+    priceAsOf: "2026-08-06",
+    price: "$25.71",
+    marketCap: "$2.90B(約455億円)",
+    week52Range: "$15.26〜$37.33",
+    analystConsensus: "Strong Buy",
+    analystTargetAvg: "$34.45(現在値+34.12%)",
+    analystTargetRange: "$27〜$50",
+    analystCount: "21人",
+    outlookSummary: "Q1 FY27決算で売上が前年比30%増となり、4四半期連続で成長率が加速した。Q2ガイダンスは前年比約22%成長、FY27通期ガイダンスも約22%成長を見込む。アナリストの評価はStrong Buyで、平均目標株価は現在の株価を34%上回るなど強気な見方が優勢。ただし時価総額29億ドル・アナリストカバレッジ21人と他社より規模が小さく、株価の値動きが相対的に大きくなりやすい点は留意が必要。",
+    outlookSignals: [
+      {
+        label: "成長率の4四半期連続加速",
+        detail: "直近実績は前年比30%成長で加速トレンドが続いている",
+        direction: "追い風",
+        sourceId: "brz-q1fy27-earnings",
+      },
+      {
+        label: "ガイダンスは実績よりやや保守的",
+        detail: "Q2・通期ともに約22%成長の見込みで、直近実績(30%)からは減速を織り込んでいる",
+        direction: "中立",
+        sourceId: "brz-q1fy27-earnings",
+      },
+      {
+        label: "小型株特有の値動きリスク",
+        detail: "時価総額約29億ドル・カバレッジアナリスト21人と他社より規模が小さく、株価変動が大きくなりやすい",
+        direction: "逆風",
+        sourceId: "brz-stock-forecast",
+      },
+    ],
+    sourceIds: ["brz-q1fy27-earnings", "brz-stock-price", "brz-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Brazeの売り方は「今この瞬間のユーザー行動に反応できているか」という切り口が刺さる。バッチ配信中心の既存運用と、リアルタイムのトリガー配信を対比させて語る。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "D2C・アプリ企業がプッシュ通知・メール・SMSをリアルタイムでパーソナライズするために導入し、エンタープライズ化が進行中。" },
+      { title: "製品の成り立ちから見る課題", body: "Brazeはモバイルアプリ全盛期に、リアルタイムでユーザー行動に反応するクロスチャネル配信基盤として生まれた。存在理由は「バッチ配信ではなく、行動した瞬間に反応するマーケティング」。" },
+      { title: "外部環境の要求から見る課題", body: "サードパーティCookie規制強化でファーストパーティデータ活用が必須になり、D2C・サブスクビジネスの成長で顧客との直接的な関係構築への投資が増えている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "企業はメール配信ツールとプッシュ通知ツールが別々で、ユーザーが今何をしたかに応じたリアルタイム対応ができていない。" },
+      { label: "課題", body: "バッチ配信中心のため、カート離脱や退会予兆などの今この瞬間のシグナルに反応できず、機会損失(離脱・LTV低下)が起きている。" },
+      { label: "解決策", body: "Brazeでチャネル横断のリアルタイムトリガー配信に切り替え、行動データに基づくパーソナライズを1つの基盤に統合する。" },
+      { label: "選定の理由", body: "Salesforce Marketing Cloudは大規模導入に強いが導入期間が長い(半年〜1年)。Brazeは4四半期連続で成長が加速という実績と、モバイル起点のリアルタイム設計で、D2C・アプリ企業に選ばれやすい。" },
+    ],
+    openingHook: "アプリでカートに商品を入れたまま離脱したユーザーに、今何分後にリアクションが飛んでいますか。",
+    valueHypothesis: "Q1 FY27売上成長率が30%(4四半期連続加速)という実績を根拠に、リアルタイム性がLTV改善に直結する、という価値仮説を立てる。",
+    commonObjection: { objection: "今のメール配信ツールで十分", reframe: "メールだけでは今この瞬間のユーザー行動に追いつけない。チャネル追加ではなく、リアルタイム性という軸で比較し直すよう促す。" },
+  },
   cultureNotes: {
     organizationReadTitle: "「Japan Cloud経由」の運営体制は、独立子会社とは違う協業のダイナミクスを生む。",
     hypothesis: {
@@ -3048,10 +3549,86 @@ const crowdstrikeSources: ResearchSource[] = [
     scope: "EDR/XDR製品の競合比較",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "cs-q1fy27-outlook",
+    label: "CrowdStrike Reports First Quarter Fiscal Year 2027 Financial Results",
+    url: "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-first-quarter-fiscal-year-2027-financial",
+    kind: "企業公式",
+    scope: "Q1 FY27決算・通期ARRガイダンス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-stock-price",
+    label: "stockanalysis.com CrowdStrike(CRWD)株価データ",
+    url: "https://stockanalysis.com/stocks/crwd/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-stock-forecast",
+    label: "stockanalysis.com CrowdStrike(CRWD)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/crwd/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const crowdstrikeIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "CRWD",
+    exchange: "NASDAQ",
+    priceAsOf: "2026-08-06",
+    price: "$205.46",
+    marketCap: "$209.21B(約3兆2,846億円)",
+    week52Range: "$85.68〜$219.35",
+    analystConsensus: "Buy",
+    analystTargetAvg: "$193.13(現在値-6.04%)",
+    analystTargetRange: "$103.25〜$250",
+    analystCount: "53人",
+    outlookSummary: "Q1 FY27決算でサブスクリプション収益が前年比26%増、ARRは55.1億ドル(前年比24%増)に到達し、純新規ARR成長率は前年比32%増と加速した。会社は通期の純新規ARR成長率ガイダンスを27.7%へ上方修正した。一方で株価は52週高値圏で推移しており、アナリスト平均目標株価(193.13ドル)は現在の株価をやや下回る水準にとどまる。事業モメンタムは強いが、株価の割高感を指摘する声もある。",
+    outlookSignals: [
+      {
+        label: "純新規ARR成長の加速",
+        detail: "前年比32%増となり、通期ガイダンスも27.7%へ上方修正",
+        direction: "追い風",
+        sourceId: "cs-q1fy27-outlook",
+      },
+      {
+        label: "52週高値圏での取引",
+        detail: "現在株価が52週レンジの上限付近にあり、平均目標株価を上回っている",
+        direction: "逆風",
+        sourceId: "cs-stock-forecast",
+      },
+      {
+        label: "アナリスト評価のレンジ",
+        detail: "コンセンサスはBuyだが、目標株価レンジ(103.25〜250ドル)の幅広さが評価の割れを示す",
+        direction: "中立",
+        sourceId: "cs-stock-forecast",
+      },
+    ],
+    sourceIds: ["cs-q1fy27-outlook", "cs-stock-price", "cs-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "CrowdStrikeの売り方は「侵入から検知までの時間」を可視化することが起点。EDR単体からモジュール拡張していく既存の拡張パターンをそのまま提案の型にする。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "EDR(エンドポイント検知)単体から入り、その後Cloud Security・Identity Protection等へモジュール拡張するのが典型。純新規ARR成長率が前年比32%増と加速しているのはこの拡張の強さを示す。" },
+      { title: "製品の成り立ちから見る課題", body: "CrowdStrikeは従来型アンチウイルスがシグネチャベースで新種の攻撃を検知できないという課題を解消するために、クラウドネイティブ・AI検知のEDRとして生まれた。存在理由は「侵入後の検知・対応速度を上げること」。" },
+      { title: "外部環境の要求から見る課題", body: "ランサムウェア・国家関与型攻撃の高度化と、規制強化(インシデント報告義務など)により、経営層がセキュリティ投資の説明責任を負う場面が増えている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "従来型アンチウイルスは既知の攻撃パターンしか検知できず、新種のマルウェアや侵入後の横展開(ラテラルムーブメント)を見逃す。" },
+      { label: "課題", body: "侵入に気づくまでの時間(Dwell Time)が長引くほど被害が拡大するが、複数ベンダーのツールを組み合わせても検知・対応が分断されている。" },
+      { label: "解決策", body: "Falconプラットフォーム1つでエンドポイント・クラウド・ID保護を統合し、AIによる検知から自動対応までを一気通貫にする。" },
+      { label: "選定の理由", body: "従来型ベンダーはシグネチャ検知が中心で後手に回りやすい。CrowdStrikeはARR成長率が前年から加速という実績と、単一エージェント・単一コンソールでのモジュール拡張のしやすさで選ばれている。" },
+    ],
+    openingHook: "直近のセキュリティインシデントで、侵入から検知までにかかった時間を把握していますか。",
+    valueHypothesis: "通期ARR成長ガイダンスが27.7%へ上方修正(前年から加速)という開示を根拠に、検知の速さがそのままインシデント被害額の削減に直結する、という価値仮説を立てる。",
+    commonObjection: { objection: "すでにEDR製品を導入済みで切り替えコストが高い", reframe: "全置き換えでなく、まず可視化されていない領域(クラウドワークロードやID)からモジュール追加する入り方を提案し、切り替えコストの議論を避ける。" },
+  },
   cultureNotes: {
     organizationReadTitle: "新任APAC統括の『成長最優先』方針が、現場の採用ペースにも波及しうる。",
     hypothesis: {
@@ -3491,10 +4068,86 @@ const hubspotSources: ResearchSource[] = [
     scope: "Corporate AEの役割・要件",
     checkedAt: "2026-08-06",
   },
+  {
+    id: "hs-q2-2026-earnings",
+    label: "HubSpot Cuts Customer Growth Outlook as AI Pivot Creates Near-Term Headwinds(BigGo Finance)",
+    url: "https://finance.biggo.com/news/US_HUBS_2026-08-05",
+    kind: "外部集計",
+    scope: "Q2 2026決算・顧客成長鈍化とAIピボット",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "hs-stock-price",
+    label: "stockanalysis.com HubSpot(HUBS)株価データ",
+    url: "https://stockanalysis.com/stocks/hubs/",
+    kind: "外部集計",
+    scope: "株価・時価総額・52週レンジ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "hs-stock-forecast",
+    label: "stockanalysis.com HubSpot(HUBS)アナリスト予想",
+    url: "https://stockanalysis.com/stocks/hubs/forecast/",
+    kind: "外部集計",
+    scope: "アナリスト目標株価コンセンサス",
+    checkedAt: "2026-08-06",
+  },
 ];
 
 const hubspotIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-06",
+  marketStatus: {
+    isPublic: true,
+    ticker: "HUBS",
+    exchange: "NYSE",
+    priceAsOf: "2026-08-06",
+    price: "$197.19",
+    marketCap: "$9.83B(約1,543億円)",
+    week52Range: "$169.63〜$525.51",
+    analystConsensus: "Buy",
+    analystTargetAvg: "$246.06(現在値+24.78%)",
+    analystTargetRange: "$190〜$320",
+    analystCount: "35人",
+    outlookSummary: "2026年8月発表のQ2決算は売上が前年比20%増の9.117億ドルとなり黒字転換したが、新規顧客純増数はガイダンス(9,000〜10,000件)を下回る7,000件にとどまり、通期の四半期あたり新規顧客数見込みを5,000〜6,000件へ引き下げた。背景にはAIエージェントをトライアル・成果報酬型の価格へ転換したことによる検討期間の長期化と、ソフトウェア需要環境全体の冷え込みがある。一方でAIエージェントの利用は急拡大しており(Data Agent利用企業が四半期比80%増の16,000社等)、「数から質へ」の移行期という評価もできる。52週高値(525.51ドル)から株価は大きく調整しており、アナリスト平均目標株価は現在値を+25%上回る。",
+    outlookSignals: [
+      {
+        label: "新規顧客数がガイダンス未達",
+        detail: "7,000件の新規顧客獲得はガイダンス9,000〜10,000件を下回り、通期見込みを引き下げ",
+        direction: "逆風",
+        sourceId: "hs-q2-2026-earnings",
+      },
+      {
+        label: "AIエージェント利用の急拡大",
+        detail: "Data Agent利用企業が四半期比80%増、$120,000超の大型契約が前年比38%増",
+        direction: "追い風",
+        sourceId: "hs-q2-2026-earnings",
+      },
+      {
+        label: "52週高値から大幅調整",
+        detail: "52週高値525.51ドルから現在197.19ドルまで下落しており、アナリスト目標株価は現在値を上回る水準にある",
+        direction: "中立",
+        sourceId: "hs-stock-forecast",
+      },
+    ],
+    sourceIds: ["hs-q2-2026-earnings", "hs-stock-price", "hs-stock-forecast"],
+  },
+  sellingPlaybook: {
+    frameIntro: "HubSpotの売り方は「限られた予算で継続的にリードを獲得する仕組み」という中堅・SMB企業の切実な課題が起点。AI検索時代における新しいインバウンド手法という文脈で語ると響きやすい。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "SMBがマーケティングブログ・SEOのインバウンド施策から入り、その後Sales HubやService Hubへクロスセルするのが典型的な拡張パターン。$120,000超の大型契約が前年比38%増というのはこの拡張が進んでいる証拠。" },
+      { title: "製品の成り立ちから見る課題", body: "HubSpotは押し売り型(アウトバウンド)マーケティングへの顧客の拒否反応を背景に、コンテンツで見込み客を惹きつけるインバウンド手法を体系化するために生まれた。存在理由は「押し売りではなく、顧客に見つけてもらう仕組み」。" },
+      { title: "外部環境の要求から見る課題", body: "AIエージェントによる検索結果の変化(AIが直接回答する時代)で、これまでのSEO前提のインバウンド手法自体が変化を迫られており、企業はAIに見つけてもらう新しい手法への投資判断を迫られている。" },
+    ],
+    narrative: [
+      { label: "背景", body: "中堅・SMB企業は限られたマーケティング予算の中で、広告費をかけずに継続的にリードを獲得する仕組みが必要になっている。" },
+      { label: "課題", body: "複数の点在するツール(CMS・メール・CRM)を使い回すと、リードの行動履歴が分断され、誰が今購買に近いかを判断できない。" },
+      { label: "解決策", body: "HubSpotのHub群(Marketing・Sales・Service・CMS)を1つのCRM基盤の上に統合し、AIエージェント(Data Agent、Prospecting Agent等)でリードの優先順位付けから対応まで自動化する。" },
+      { label: "選定の理由", body: "SalesforceはEnterprise向けの深さで強いが導入期間が長い。HubSpotは$120,000超の大型契約が前年比38%増・複数Hub導入率上昇という実績が示す通り、拡張しやすさとAI Agentの実装スピードで中堅市場に選ばれている。" },
+    ],
+    openingHook: "今月獲得したリードのうち、営業がフォローすべき優先順位は何を根拠に決めていますか。",
+    valueHypothesis: "AI Agentをトライアル・成果報酬型の価格へ転換し試してから契約できる設計にしたことを根拠に、導入障壁を下げることで検討期間中の失注を防ぐ、という価値仮説を立てる。",
+    commonObjection: { objection: "新規顧客数の伸びが鈍化していると聞いた。成長が止まっているのでは", reframe: "四半期の新規顧客数ガイダンス未達は事実だが、$120,000超の大型契約が38%増・複数Hub導入率上昇など、数から質へ の移行期にあるという文脈で説明する。" },
+  },
   cultureNotes: {
     organizationReadTitle: "『カルチャーに100%マッチしない人材は採用しない』という評判の、良い面と難しい面。",
     hypothesis: {
