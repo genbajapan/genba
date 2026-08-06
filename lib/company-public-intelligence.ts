@@ -2092,11 +2092,439 @@ const snowflakeIntelligence: CompanyPublicIntelligence = {
   sources: snowflakeSources,
 };
 
+const mongodbSources: ResearchSource[] = [
+  {
+    id: "mdb-q1fy27",
+    label: "MongoDB 2027年度第1四半期決算",
+    url: "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-first-quarter-fiscal-2027-financial",
+    kind: "企業公式",
+    scope: "グローバル業績・Atlas売上・顧客数(2026年4月期)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-q4fy26",
+    label: "MongoDB 2026年度第4四半期・通期決算",
+    url: "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-fourth-quarter-fiscal-2026-financial",
+    kind: "企業公式",
+    scope: "通期業績・顧客数",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-10k",
+    label: "MongoDB FY2026 Form 10-K",
+    url: "https://www.sec.gov/Archives/edgar/data/1441816/000162828026016799/mdb-20260131.htm",
+    kind: "法定開示",
+    scope: "グローバル従業員数",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-japan-company",
+    label: "MongoDB Japan合同会社 企業情報",
+    url: "https://www.houjin.info/detail/2010003019010",
+    kind: "外部集計",
+    scope: "日本法人従業員数の推定値・設立日・所在地",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-squareexnix",
+    label: "スクウェア・エニックス MongoDB導入ブログ(公式)",
+    url: "https://www.mongodb.com/blog/post/leaf-in-the-wild-square-enix-scales-tomb-raider-hitman-absolution-deus-ex-and-more-on-mongodb",
+    kind: "企業公式",
+    scope: "国内導入事例(ゲーム・エンターテインメント)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-repvue",
+    label: "RepVue MongoDB company reviews",
+    url: "https://www.repvue.com/companies/MongoDB",
+    kind: "コミュニティ",
+    scope: "グローバル営業職の自己申告評価・クオータ達成率",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-repvue-recognition",
+    label: "MongoDB Blog「Sales Recognized as a Top 20 Org for Professional Development by RepVue」",
+    url: "https://www.mongodb.com/blog/post/mongodb-sales-recognized-as-top-20-org-professional-development-repvue",
+    kind: "企業公式",
+    scope: "営業組織の人材育成評価",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-levels",
+    label: "Levels.fyi MongoDB Account Executive給与データ",
+    url: "https://www.levels.fyi/companies/mongodb/salaries/sales/title/account-executive",
+    kind: "外部集計",
+    scope: "米国の自己申告給与データ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-cosmosdb-compare",
+    label: "MongoDB公式「Comparing Azure Cosmos DB and MongoDB」",
+    url: "https://www.mongodb.com/resources/compare/mongodb-vs-cosmos-db",
+    kind: "企業公式",
+    scope: "競合比較(自社発行のため一定のバイアスに留意)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "mdb-careers",
+    label: "MongoDB Careers",
+    url: "https://www.mongodb.com/careers/",
+    kind: "企業公式",
+    scope: "採用情報・カルチャー",
+    checkedAt: "2026-08-06",
+  },
+];
+
+const mongodbIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-06",
+  cultureNotes: {
+    organizationReadTitle: "「情報が少ない」こと自体が、組織の実態を映す鏡かもしれない。",
+    hypothesis: {
+      title: "開発者文化が強く、営業もボトムアップ採用の理解が前提になりやすい。",
+      body: "MongoDBは長年、開発者コミュニティからのボトムアップ採用で成長してきた企業。営業組織もトップダウンの大型商談だけでなく、既に社内で使われている製品を「どう全社契約に引き上げるか」という動き方が求められる場面が多いと考えられる。",
+    },
+    careerValue: {
+      title: "「技術理解を武器にした営業」という経験は、データ×AI領域全般で通用する。",
+      body: "Cosmos DB・DynamoDBとの技術比較を踏まえた提案経験は、他のデータベース・データ基盤企業への転職でも評価されやすい。一方、日本法人の情報開示が薄いため、在籍中に語れる実績を自分で言語化しておく意識がより重要になる。",
+      confidence: "探索中",
+    },
+  },
+  facts: [
+    {
+      label: "売上(2027年度Q1)",
+      value: "$687.6M",
+      detail: "前年比+25%。",
+      sourceIds: ["mdb-q1fy27"],
+    },
+    {
+      label: "Atlas売上比率",
+      value: "約75%",
+      detail: "前年は72%。Atlas売上は前年比+29%成長(2026年4月期時点)。",
+      sourceIds: ["mdb-q1fy27"],
+    },
+    {
+      label: "総顧客数",
+      value: "67,700社超",
+      detail: "前年の57,100社から増加(2026年4月期時点)。",
+      sourceIds: ["mdb-q1fy27"],
+    },
+    {
+      label: "ARR10万ドル以上の顧客数",
+      value: "2,895社",
+      detail: "前年の2,506社から増加(2026年4月期時点)。",
+      sourceIds: ["mdb-q1fy27"],
+    },
+    {
+      label: "Net ARR Expansion",
+      value: "121%",
+      detail: "既存顧客の消費量拡大が成長に寄与(2026年4月期時点)。",
+      sourceIds: ["mdb-q1fy27"],
+    },
+    {
+      label: "グローバル従業員数",
+      value: "5,636人",
+      detail: "2026年1月31日時点、Form 10-K開示値。",
+      sourceIds: ["mdb-10k"],
+    },
+  ],
+  hypotheses: [
+    {
+      topic: "JAPAN DISCLOSURE GAP",
+      title: "日本法人の情報開示が薄い。これ自体が「組織のフェーズ」を示すシグナルかもしれない",
+      conclusion: "Salesforce・Datadog・ServiceNow・Snowflakeと比べ、MongoDB Japanは代表者名・具体的な導入事例・給与データの公開情報が著しく少ないことが分かりました。日本法人は2015年設立で一定の年数が経っていますが、開示の薄さは、マーケティング・PR体制が他社ほど手厚くない段階にある可能性を示唆します。",
+      confidence: "中",
+      evidence: [
+        "MongoDB Japan合同会社の代表者名は主要な企業データベースでも非公開",
+        "公式サイトに日本企業向けの個別導入事例(customer story)がほぼ確認できない(スクウェア・エニックス以外)",
+        "OpenMoney等の給与集計サイトにMongoDB Japan単独のデータが確認できない",
+      ],
+      counterSignals: [
+        "情報開示が薄いことは、必ずしも組織が小さい・不活発であることを意味しない。開発者向け製品は元々マーケティング露出が少ない傾向がある",
+        "コミュニティ(MongoDB User Group)には700人以上のメンバーがおり、技術コミュニティでの存在感は一定ある",
+      ],
+      interviewQuestions: [
+        "日本チームの人数・体制はどのくらいか。直近1年での増減は",
+        "日本の顧客事例を外部に出さない方針なのか、単に整備が追いついていないだけなのか",
+      ],
+      sourceIds: ["mdb-japan-company"],
+    },
+    {
+      topic: "CLOUD SHIFT",
+      title: "Atlas(クラウド版)が売上の75%に到達。オンプレミスからクラウド消費型への移行が進む",
+      conclusion: "Atlas売上が全体の約75%を占めるまでになり、前年の72%から拡大しています。今後の新規商談はクラウド版Atlasが前提となり、オンプレミス版(Enterprise Advanced)の営業比重は下がっていくと考えられます。",
+      confidence: "高",
+      evidence: [
+        "Atlas売上が前年比+29%、全売上の約75%(前年72%から上昇)",
+        "Net ARR Expansionが121%と、既存顧客の消費量拡大が成長に寄与",
+        "全社売上は前年比+25%で成長が加速している(前年同期+22%から)",
+      ],
+      counterSignals: [
+        "EA(Enterprise Advanced、オンプレミス版)などその他売上も前年比+13%とプラス成長は続けており、完全に消滅したわけではない",
+        "日本市場でのAtlas比率・オンプレミス比率の内訳は非公開",
+      ],
+      interviewQuestions: [
+        "自分が担当する商談は、Atlas(クラウド)とEnterprise Advanced(オンプレミス)のどちらが中心か",
+        "オンプレミスからAtlasへの移行(マイグレーション)提案は自分のノルマにどう反映されるか",
+      ],
+      sourceIds: ["mdb-q1fy27", "mdb-q4fy26"],
+    },
+    {
+      topic: "QUOTA ATTAINABILITY",
+      title: "クオータ達成率は約46〜57%。SnowflakeやServiceNowと比べると中程度で、人材育成評価も高い",
+      conclusion: "RepVueの集計ではEnterprise Account Executiveの達成率が約46%、Strategic Account Executiveが約57%です。ServiceNow(約47%)と近い水準で、Snowflake(約1%)ほど極端ではありません。また「育成・研修」の分野でRepVue Top20組織に選出されており、教育体制への評価は比較的高いと見られます。",
+      confidence: "中",
+      evidence: [
+        "RepVue集計でEnterprise AE達成率約46%、Strategic AE約57%、Sales Development Manager約74%",
+        "MongoDB自身がブログで、営業組織がRepVueの「Professional Development(人材育成)」分野でTop20組織に選出されたと発表",
+        "標準クオータは約135万ドル(Enterprise AE)",
+      ],
+      counterSignals: [
+        "RepVueの母数・算出期間は非公開であり、絶対値としての精度には留保が必要",
+        "「人材育成」の評価が高くても、実際のクオータ達成のしやすさとは別軸の指標である",
+      ],
+      interviewQuestions: [
+        "自分が配属されるチームの直近のクオータ達成率(実数)を教えてほしい",
+        "Top20評価を受けた人材育成プログラムの具体的な内容(オンボーディング期間・研修体制)を聞きたい",
+      ],
+      sourceIds: ["mdb-repvue", "mdb-repvue-recognition"],
+    },
+    {
+      topic: "COMPENSATION",
+      title: "OTEは外資SaaSの標準的な水準。ベース・変動が50/50で、達成後のアクセラレータが効く設計",
+      conclusion: "米国データではEnterprise AEの総報酬(OTE)は225,000〜300,000ドル、ベースと変動が50/50という設計です。日本独自のデータは確認できていませんが、クオータ100%達成後にアクセラレータが効く一般的な外資SaaS型の報酬設計だと考えられます。",
+      confidence: "探索中",
+      evidence: [
+        "levels.fyi集計でEnterprise AEの総報酬(OTE)は225,000〜300,000ドル、ベース120,000〜150,000ドル",
+        "ベース・変動の比率は50/50、クオータ100%達成後にアクセラレータが適用される設計",
+        "標準クオータは約135万ドル",
+      ],
+      counterSignals: [
+        "これらの数値はすべて米国のデータであり、日本オフィスの給与水準を示すものではない",
+        "日本法人独自の給与データは、主要な集計サイトでは確認できていない",
+      ],
+      interviewQuestions: [
+        "日本オフィスのOTE水準・ベースと変動の比率は米国と同じ設計か",
+        "アクセラレータが発生する具体的な達成率のラインはどこか",
+      ],
+      sourceIds: ["mdb-levels"],
+    },
+    {
+      topic: "PRODUCT / MARKET",
+      title: "「開発者に選ばれるデータベース」から「AIネイティブなデータ基盤」への転換期",
+      conclusion: "MongoDBは長年、開発者コミュニティからのボトムアップ採用で成長してきましたが、Atlas Vector Search等AI関連機能への投資を進めており、AIアプリケーション開発の基盤としての立ち位置を強めています。Cosmos DB・DynamoDBとの比較では、スキーマの柔軟性とマルチクラウド対応が引き続き強みです。",
+      confidence: "中",
+      evidence: [
+        "Atlas売上が全体の75%に到達し、クラウドネイティブな消費モデルへの移行が進んでいる",
+        "MongoDB.local Londonで、AI実験から本番運用への橋渡しとなる新機能を複数発表",
+        "Cosmos DBとの比較では、Atlasはインスタンス課金でワークロードが安定している場合にコストが読みやすいとされる",
+      ],
+      counterSignals: [
+        "Cosmos DBは5段階の一貫性レベルを提供するなど、特定用途ではAtlasより柔軟な制御が可能とされる",
+        "DynamoDBはAWS環境での低レイテンシ・サーバーレススケーラビリティで優位という評価がある",
+      ],
+      interviewQuestions: [
+        "AI関連(Vector Search等)の商談は、自分の担当エリアでどれくらいの比率になっているか",
+        "Cosmos DBやDynamoDBとの競合案件で、直近の勝率・失注理由の傾向はどうか",
+      ],
+      sourceIds: ["mdb-q1fy27", "mdb-cosmosdb-compare"],
+    },
+  ],
+  customerProof: [
+    {
+      company: "スクウェア・エニックス",
+      products: "MongoDB Atlas",
+      outcome: "『トゥームレイダー』『ヒットマン アブソリューション』『デウスエクス』など複数タイトルの非同期マルチプレイヤー機能を運用。100以上のクラスター・570以上のノードを稼働し、最大クラスターは100TB超のデータを管理",
+      implication: "日本を代表するゲーム企業が、グローバル規模のバックエンド基盤としてAtlasを採用した公式事例。ゲーム・エンターテインメント業界への提案材料になる。",
+      sourceId: "mdb-squareexnix",
+    },
+  ],
+  externalSignals: [
+    {
+      label: "営業職の報酬データ(米国)",
+      value: "Enterprise AE OTE $225,000〜$300,000",
+      detail: "levels.fyi集計。ベース$120,000〜$150,000、ベース・変動50/50。",
+      caveat: "米国データであり、日本の給与水準を示すものではない。",
+      sourceId: "mdb-levels",
+    },
+    {
+      label: "営業組織の外部評価",
+      value: "RepVue Professional Development Top20",
+      detail: "Enterprise AE達成率約46%、Strategic AE約57%。人材育成分野でRepVue Top20組織に選出。",
+      caveat: "グローバル集計であり日本法人限定ではない。",
+      sourceId: "mdb-repvue-recognition",
+    },
+  ],
+  roleLens: {
+    salesMotion: "開発者のボトムアップ採用を起点に、Enterprise Advanced(オンプレミス)からAtlas(クラウド)への移行提案が中心的な動き。Atlas比率は全体の75%に達している。",
+    compensation: "米国データではEnterprise AE OTEは22.5万〜30万ドル、ベース・変動50/50。日本独自の水準は非公開。",
+    quota: "RepVueの集計ではEnterprise AE達成率約46%、Strategic AEは約57%。標準クオータは約135万ドル。",
+    collaboration: "開発者コミュニティ・Solutions Architect・パートナー(AWS/Azure/GCP)との連携が前提。技術検証(PoC)を伴う商談が多いと考えられる。",
+  },
+  leadership: {
+    name: "非公開",
+    role: "日本法人代表(氏名非公開)",
+    read: "MongoDB Japanは2015年設立で一定の運用年数がありますが、代表者名を含む組織体制の詳細は主要な公開データベースでは確認できませんでした。Salesforce・Datadog・ServiceNow・Snowflakeと比べて、日本市場での情報発信・PR活動が手薄な段階にあると考えられます。",
+    sourceId: "mdb-japan-company",
+  },
+  companyStats: {
+    globalHeadcount: {
+      value: "5,636人",
+      detail: "2026年1月31日時点、Form 10-K開示値。",
+      sourceId: "mdb-10k",
+    },
+    japanHeadcount: {
+      value: "約100人(推定)",
+      detail: "採用データベースによる推定値。公式には開示されていない。",
+      sourceId: "mdb-japan-company",
+    },
+    japanOffice: {
+      value: "東京都港区白金台",
+      detail: "MongoDB Japan合同会社本社。",
+      sourceId: "mdb-japan-company",
+    },
+    japanSince: {
+      value: "2015年",
+      detail: "MongoDB Japan合同会社設立。",
+      sourceId: "mdb-japan-company",
+    },
+  },
+  salesAppeal: {
+    intro: "求人票だけでは伝わらない、営業として働く上での具体的な面白さを公開情報から整理しました。",
+    points: [
+      {
+        title: "開発者コミュニティ発の「下から積み上がる」採用モデルを経験できる",
+        detail: "MongoDBはトップダウンの大型商談だけでなく、開発者が使い始めて組織に広がるボトムアップ採用が伝統的に強い。技術理解を伴う提案力を、他社とは違う切り口で鍛えられる。",
+        sourceIds: ["mdb-cosmosdb-compare"],
+      },
+      {
+        title: "Atlas比率75%への転換期にあり、オンプレミスからクラウドへの移行提案を主導できる",
+        detail: "Net ARR Expansionが121%と、既存顧客の消費拡大が成長の柱になっている。移行提案・アップセルの経験を積みやすい局面にある。",
+        sourceIds: ["mdb-q1fy27"],
+      },
+      {
+        title: "スクウェア・エニックスなど、日本発のグローバル企業のバックエンド基盤に関われる可能性がある",
+        detail: "ゲーム・エンターテインメント業界など、データベース選定がプロダクト体験に直結する業界で、技術理解を武器にした提案ができる。",
+        sourceIds: ["mdb-squareexnix"],
+      },
+    ],
+  },
+  interviewPrep: {
+    intro: "「なぜMongoDBか」という一般論ではなく、実際に聞かれている質問の型から準備しておきたいポイントです。",
+    questions: [
+      {
+        question: "MongoDBとCosmos DB、DynamoDBとの違いを、自分の担当予定顧客像に当てはめて具体的に説明できるか",
+        why: "データベース選定の技術比較は面接での定番。",
+        sourceIds: ["mdb-cosmosdb-compare"],
+      },
+      {
+        question: "自分が配属されるチームの直近のクオータ達成率(実数)を逆質問できるか",
+        why: "RepVueでEnterprise AEの達成率が約46%と公開されており、入社後のギャップを避けるために確認したい。",
+        sourceIds: ["mdb-repvue"],
+      },
+      {
+        question: "Enterprise Advanced(オンプレミス)からAtlas(クラウド)への移行提案が、自分のノルマにどう反映されるか説明を求められるか",
+        why: "Atlas比率が75%に達しており、今後の商談構造を理解しておくことが重要。",
+        sourceIds: ["mdb-q1fy27"],
+      },
+      {
+        question: "開発者コミュニティ発のボトムアップ採用の中で、営業がどう関与するのかを具体的に聞けるか",
+        why: "MongoDBは技術者主導の採用文化が強く、一般的なトップダウン営業とは異なる動き方が求められる可能性がある。",
+        sourceIds: ["mdb-japan-company"],
+      },
+    ],
+  },
+  solutions: [
+    {
+      name: "MongoDB Atlas",
+      valueProp: "フルマネージドのクラウドデータベースサービス。AWS/Azure/GCPで動作し、Net ARR Expansion121%で成長を牽引する中核製品。",
+      url: "https://www.mongodb.com/atlas",
+      competitors: "Azure Cosmos DB、Amazon DynamoDB、Google Cloud Firestoreが主要な競合。",
+      differentiation: "Cosmos DBは5段階の一貫性レベルで柔軟な制御ができる一方、Atlasはインスタンス課金でワークロードが安定していればコストが読みやすい。ドキュメント指向のスキーマ柔軟性と、AWS/Azure/GCPいずれでも同等に使えるマルチクラウド対応が強み。",
+      retention: "Atlas売上は全体の75%(前年72%から上昇)、前年比+29%成長。Net ARR Expansionは121%。",
+    },
+    {
+      name: "Atlas Vector Search",
+      valueProp: "ベクトル検索機能を組み込んだAI・生成AIアプリケーション向けの拡張機能。",
+      url: "https://www.mongodb.com/products/platform/atlas-vector-search",
+      competitors: "Pinecone、Weaviate、Elasticsearchが主要な競合。",
+      differentiation: "専業のベクトルDB(Pinecone等)と比べ、既存のオペレーショナルデータと同じ基盤でベクトル検索を扱える点が強み。データを別基盤に移さずAI機能を追加できる。",
+      retention: "MongoDB.local Londonで関連の新機能が複数発表されるなど投資が続いている領域だが、普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "Enterprise Advanced(オンプレミス版)",
+      valueProp: "自社データセンター・プライベートクラウドで運用するオンプレミス版MongoDB。",
+      url: "https://www.mongodb.com/products/self-managed/enterprise-advanced",
+      competitors: "Oracle Database、PostgreSQL、Couchbaseが主要な競合。",
+      differentiation: "厳格なデータ主権・規制要件がある業界(金融・官公庁等)で選ばれやすい。ただしAtlas比率が75%に達している通り、新規商談ではクラウド版が主流になりつつある。",
+      retention: "EA & other revenueは前年比+13%とプラス成長を維持しているが、Atlasほどの成長率ではない。",
+    },
+    {
+      name: "MongoDB Relational Migrator",
+      valueProp: "リレーショナルデータベース(Oracle、SQL Server等)からMongoDBへの移行を支援するツール。",
+      url: "https://www.mongodb.com/products/tools/relational-migrator",
+      competitors: "AWS Database Migration Service、Google Cloud Database Migration Serviceが隣接する競合。",
+      differentiation: "MongoDB独自のスキーマ設計支援機能を持ち、単純なデータ移行だけでなくドキュメント指向への再設計を支援する点が特徴。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "MongoDB for Government / Federal",
+      valueProp: "官公庁・連邦政府向けのコンプライアンス対応版MongoDB。",
+      url: "https://www.mongodb.com/industries/government",
+      competitors: "Oracle、AWS GovCloud関連サービスが主要な競合。",
+      differentiation: "2026年にClarity Business Solutionsを買収し、米国連邦政府向け領域を強化したと発表されている。日本の官公庁向け展開の有無は確認できていない。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "MongoDB for AI Applications",
+      valueProp: "生成AIアプリケーション開発のための統合的なデータ基盤(Vector Search、Atlas、Relational Migrator等を組み合わせたソリューション)。",
+      url: "https://www.mongodb.com/solutions/use-cases/ai",
+      competitors: "Databricks、Snowflake Cortex AIが主要な競合(データ基盤上でAIを実行するという方向性で共通)。",
+      differentiation: "オペレーショナルデータとAI用途のデータを同一基盤で扱える点を強みとする。SnowflakeやDatabricksは分析基盤としての歴史が長く、AIワークロードとの統合はMongoDBと同様に進行中。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "MongoDB Compass / Developer Tools",
+      valueProp: "GUIベースのデータベース管理ツールなど、開発者体験を支える周辺ツール群。",
+      url: "https://www.mongodb.com/products/tools/compass",
+      competitors: "専業のDB管理ツール(DataGrip等)が隣接する競合。",
+      differentiation: "開発者コミュニティでの評判・利用実績が長く、ボトムアップ採用の起点になっている。700人超のMongoDB User Groupなど、日本でも一定のコミュニティが存在する。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "MongoDB for Gaming(ゲーム業界向け活用)",
+      valueProp: "非同期マルチプレイヤー機能やプレイヤーデータ管理など、ゲーム業界特有のワークロードに対応する活用パターン。",
+      url: "https://www.mongodb.com/industries/games",
+      competitors: "Amazon DynamoDB、Google Cloud Firestoreが主要な競合(ゲームバックエンド用途で比較されやすい)。",
+      differentiation: "スクウェア・エニックスの事例では100以上のクラスター・570以上のノードを運用し、複数タイトルの非同期マルチプレイヤー機能を支えている。スキーマ柔軟性がゲームデータ特有の非定型構造に適しているとされる。",
+      retention: "スクウェア・エニックスは「今後の全ゲーム制作でMongoDB Atlasを採用」と公式に紹介されており、継続利用が確認されている数少ない事例。",
+    },
+  ],
+  customerStoriesUrl: "https://www.mongodb.com/solutions/customer-case-studies",
+  fitTags: [
+    "開発者起点のボトムアップ営業を経験したい",
+    "データ×AI領域を極めたい",
+    "オンプレミスからクラウドへの移行提案を主導したい",
+    "技術理解を伴う提案力を鍛えたい",
+    "消費量ベースの成長モデルを経験したい",
+    "外資特有の実力主義に挑戦したい",
+    "急成長企業でスピード感を求めたい",
+    "情報の少ない市場で自ら動き方を作りたい",
+  ],
+  comparisonMap: [
+    { arena: "クラウドデータベース", companies: ["Microsoft(Cosmos DB)", "Amazon(DynamoDB)", "Google Cloud(Firestore)"], why: "クラウドDB予算の比較" },
+    { arena: "データ基盤 / AI", companies: ["Snowflake", "Databricks"], why: "データ・AI予算の比較" },
+    { arena: "検索・ベクトルDB", companies: ["Elastic", "AWS"], why: "ベクトル検索・AI検索予算の比較" },
+    { arena: "オンプレミスDB", companies: ["Oracle", "Microsoft"], why: "レガシー基盤リプレイス予算の比較" },
+  ],
+  sources: mongodbSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
   datadog: datadogIntelligence,
   servicenow: servicenowIntelligence,
   snowflake: snowflakeIntelligence,
+  mongodb: mongodbIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
