@@ -18,11 +18,6 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
   ],
 };
 
-const taglines: Record<Locale, string> = {
-  en: "外資IT戦士と予備軍の作戦会議所",
-  ja: "日本のセールスを勝ちに導く",
-};
-
 export default function Header({ locale = "en" }: { locale?: Locale }) {
   const homeHref = locale === "ja" ? "/ja" : "/";
 
@@ -30,12 +25,9 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
     <header className="site-header">
       <Container className="header-inner">
         <Link href={homeHref} className="brand">
-          <span className="brand-mark">G</span>
           <span className="brand-copy"><strong>
             Genba
-          </strong><small>
-            {taglines[locale]}
-          </small></span>
+          </strong></span>
         </Link>
         <div className="header-actions">
           <nav className="primary-nav" aria-label="メインナビゲーション">

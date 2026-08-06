@@ -31,10 +31,8 @@ button, input, select { font: inherit; }
 .site-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
 .header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: flex; align-items: center; gap: 11px; color: var(--navy); text-decoration: none; flex-shrink: 0; }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--navy); color: white; font-size: 17px; font-weight: 800; }
 .brand-copy { display: flex; flex-direction: column; line-height: 1; }
 .brand-copy strong { font-size: 20px; letter-spacing: -.03em; }
-.brand-copy small { margin-top: 6px; font-size: 9px; font-weight: 700; letter-spacing: .09em; color: var(--muted); }
 .header-actions, .primary-nav { display: flex; align-items: center; }
 .header-actions { gap: 24px; }
 .primary-nav { gap: 25px; }
@@ -590,7 +588,6 @@ button, input, select { font: inherit; }
 @media (max-width: 760px) {
   .header-inner { min-height: 62px; }
   .primary-nav { display: none; }
-  .brand-copy small { display: none; }
   .mobile-nav { display: block; border-top: 1px solid var(--line); }
   .mobile-nav nav { display: flex; gap: 21px; min-width: max-content; padding: 11px 0; }
   .mobile-nav a { color: var(--muted); font-size: 11px; font-weight: 700; text-decoration: none; }
