@@ -2967,6 +2967,417 @@ const brazeIntelligence: CompanyPublicIntelligence = {
   sources: brazeSources,
 };
 
+const crowdstrikeSources: ResearchSource[] = [
+  {
+    id: "cs-q1fy27",
+    label: "CrowdStrike 2027年度第1四半期決算",
+    url: "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-first-quarter-fiscal-year-2027-financial",
+    kind: "企業公式",
+    scope: "グローバル業績・ARR・Flex顧客動向(2026年4月期)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-10k",
+    label: "CrowdStrike FY2026 Form 10-K",
+    url: "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000010/crwd-20260131.htm",
+    kind: "法定開示",
+    scope: "グローバル従業員数",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-dixon-appointment",
+    label: "CrowdStrike Japonathon Dixon JAPAC VP任命リリース",
+    url: "https://prtimes.jp/main/html/rd/p/000000146.000031049.html",
+    kind: "企業公式",
+    scope: "日本・APAC統括責任者の経歴・戦略",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-japan-company",
+    label: "クラウドストライク合同会社 企業情報",
+    url: "https://salesnow.jp/db/companies/jcbvap4j6k5wbumt",
+    kind: "外部集計",
+    scope: "日本法人設立日・所在地・登記代表者",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-his",
+    label: "H.I.S. CrowdStrike導入事例(Macnica提供)",
+    url: "https://www.macnica.co.jp/en/business/security/manufacturers/crowdstrike/case_17.html",
+    kind: "外部集計",
+    scope: "国内導入事例(旅行業・EDR/NGAV)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-openmoney",
+    label: "OpenMoney クラウドストライク給与データ",
+    url: "https://openmoney.jp/corporations/3966/salaries",
+    kind: "外部集計",
+    scope: "日本・自己申告給与データ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-repvue",
+    label: "RepVue CrowdStrike company reviews",
+    url: "https://www.repvue.com/companies/Crowdstrike",
+    kind: "コミュニティ",
+    scope: "グローバル営業職の自己申告評価・クオータ達成率",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-gaishitenshoku",
+    label: "外資転職.com「CrowdStrikeの年収・採用・口コミをデータで分析」",
+    url: "https://gaishitenshoku.com/crowdstrike/",
+    kind: "コミュニティ",
+    scope: "給与レンジ・採用要件・カルチャーの集計記事",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-openwork",
+    label: "OpenWork クラウドストライク合同会社 採用情報・面接質問",
+    url: "https://www.openwork.jp/a0C1000001V6bhv/job/",
+    kind: "コミュニティ",
+    scope: "面接での想定質問・採用プロセス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "cs-competitors-compare",
+    label: "Tech Insider「CrowdStrike vs Defender vs SentinelOne」比較記事",
+    url: "https://tech-insider.org/crowdstrike-vs-defender-vs-sentinelone-2026/",
+    kind: "コミュニティ",
+    scope: "EDR/XDR製品の競合比較",
+    checkedAt: "2026-08-06",
+  },
+];
+
+const crowdstrikeIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-06",
+  cultureNotes: {
+    organizationReadTitle: "新任APAC統括の『成長最優先』方針が、現場の採用ペースにも波及しうる。",
+    hypothesis: {
+      title: "JAPAC統括の交代は、日本オフィスの拡大シグナルとして読める。",
+      body: "2026年2月に就任したJonathon Dixon氏はCloudflareやVerkadaでAPAC事業を急成長させた実績を持つ人物。『JAPACは重要な成長市場』という本社メッセージと合わせて読むと、日本オフィスの投資が今後強まる可能性がある。ただし、これは経営メッセージからの読み解きであり、具体的な採用計画が公開されているわけではない。",
+    },
+    careerValue: {
+      title: "『EDR/XDR市場のリーダー企業を売った経験』は、セキュリティ業界で強い武器になる。",
+      body: "Microsoft・Palo Alto Networks・SentinelOneという強力な競合との比較商談を経験することは、他のセキュリティベンダーへの転職でも即座に評価されやすい。一方、クオータ達成の難易度(後述)を踏まえると、在籍中にどれだけ実際の成果を積めるかが次のキャリアの説得力を左右する。",
+      confidence: "中",
+    },
+  },
+  facts: [
+    {
+      label: "売上(2027年度Q1)",
+      value: "$1.39B",
+      detail: "前年比+26%。サブスクリプション売上は$1.32B、同+26%。",
+      sourceIds: ["cs-q1fy27"],
+    },
+    {
+      label: "ARR(年間経常収益)",
+      value: "$55.1億",
+      detail: "前年比+24%。純新規ARRは$2.56億(前年比+32%)。",
+      sourceIds: ["cs-q1fy27"],
+    },
+    {
+      label: "Non-GAAP EPS",
+      value: "$1.10",
+      detail: "前年同期$0.73から増加(2026年4月期)。",
+      sourceIds: ["cs-q1fy27"],
+    },
+    {
+      label: "ReFlex顧客の動向",
+      value: "480社",
+      detail: "Flexアカウントの約25%。平均ARR増額率26%、複数回reflexした130社超は平均51%増額。",
+      sourceIds: ["cs-q1fy27"],
+    },
+    {
+      label: "グローバル従業員数",
+      value: "10,698人",
+      detail: "2026年1月31日時点、Form 10-K開示値。",
+      sourceIds: ["cs-10k"],
+    },
+    {
+      label: "日本法人設立",
+      value: "2016年",
+      detail: "東京都港区赤坂Bizタワー。2026年2月にJonathon Dixon氏がJAPAC担当VP&Managing Directorに就任。",
+      sourceIds: ["cs-japan-company", "cs-dixon-appointment"],
+    },
+  ],
+  hypotheses: [
+    {
+      topic: "JAPAC LEADERSHIP",
+      title: "新任JAPAC統括は『成長請負人』。日本オフィスの拡大投資が今後強まる可能性",
+      conclusion: "2026年2月に就任したJonathon Dixon氏は、CloudflareでAPACを最速成長市場に押し上げ、Verkadaでも同地域のGTM戦略を主導した実績を持ちます。本社が『JAPACは重要な成長市場』と位置づけている点と合わせると、日本オフィスへの投資が今後強まる可能性が高いとみます。",
+      confidence: "中",
+      evidence: [
+        "Dixon氏はCloudflareでAPAC・日本・中国担当VPとして同地域を最速成長市場に押し上げた実績を持つ",
+        "President Michael Sentonas氏が『JAPACは重要な成長市場』と公式にコメント",
+        "Dixon氏はAWS・Cisco・IBMで数十億ドル規模の地域事業を統括した経歴を持つ",
+      ],
+      counterSignals: [
+        "具体的な日本オフィスの採用計画・予算規模は公開されていない",
+        "現時点(2026年8月)でJapan向けの営業求人は確認できておらず、投資が実際に採用増へ反映されるかは未確認",
+      ],
+      interviewQuestions: [
+        "Dixon体制になってから、日本オフィスの方針・目標設定で変わった点は具体的に何か",
+        "直近半年〜1年で日本チームの採用計画はどうなっているか",
+      ],
+      sourceIds: ["cs-dixon-appointment"],
+    },
+    {
+      topic: "QUOTA ATTAINABILITY",
+      title: "Account Executiveの達成率は約36%。SDRは約1%と職種による差が非常に大きい",
+      conclusion: "RepVueの集計ではAccount Executiveの達成率が約36%、Sales Managerが約42%です。一方でSales Development Representativeは約1%と極端に低く、エンタープライズ中心の企業文化の中でSMB領域が特に苦戦しているという指摘もあります。",
+      confidence: "中",
+      evidence: [
+        "RepVue集計でAccount Executive達成率約36%、Sales Manager約42%、SDR約1%",
+        "RepVueのレビューで『エンタープライズ中心の企業のため、SMB部門はクオータ達成とカルチャーの両面で苦戦している』との指摘がある",
+        "OpenMoney自己申告データで営業平均年収2,035万円(全社平均1,827万円)と高水準",
+      ],
+      counterSignals: [
+        "RepVueの母数・算出期間は非公開であり、SDRの1%という数値は極端なため単独の判断材料にはしない",
+        "高い平均年収は達成後の実支給額を反映している可能性があり、未達成時の実態とは別軸で見る必要がある",
+      ],
+      interviewQuestions: [
+        "自分が応募するポジション(Enterprise/Corporate/SMB)の直近のクオータ達成率(実数)を教えてほしい",
+        "SMB領域とEnterprise領域で、カルチャー・支援体制にどのような違いがあるか",
+      ],
+      sourceIds: ["cs-repvue", "cs-openmoney"],
+    },
+    {
+      topic: "COMPENSATION",
+      title: "日本の営業平均年収は外資IT各社の中でも最高水準グループ",
+      conclusion: "OpenMoneyの集計では、CrowdStrike Japanの営業平均年収は2,035万円(全社平均1,827万円)で、比較対象となった外資ITベンダーの中でもGoogle Cloud(2,342万円)に次ぐ高水準です。ただしインセンティブ・RSU中心の設計とみられ、達成率次第で実支給額は変動します。",
+      confidence: "中",
+      evidence: [
+        "OpenMoney集計で営業平均年収2,035万円、全社平均1,827万円(36件の投稿)",
+        "外資ITベンダー平均年収比較でCrowdStrikeは1,827万円とGoogle Cloud(2,342万円)に次ぐ高さ",
+        "OpenMoney口コミで『インセンティブおよびRSU、昇給もあり。ただし日本法人にはルールがある』との言及",
+      ],
+      counterSignals: [
+        "自己申告データであり、グレード・在籍年数・達成率による差が反映されている可能性がある",
+        "RepVueのクオータ達成率(AE約36%)を踏まえると、高い平均値は達成できた一部社員に偏っている可能性がある",
+      ],
+      interviewQuestions: [
+        "ベース・インセンティブ・RSUの比率と、未達成時の実支給額の目安を教えてほしい",
+        "口コミにある『日本法人特有のルール』とは具体的に何を指すか",
+      ],
+      sourceIds: ["cs-openmoney", "cs-gaishitenshoku"],
+    },
+    {
+      topic: "PRODUCT MOMENTUM",
+      title: "Flex/ReFlex契約モデルが、既存顧客への拡張提案の武器になっている",
+      conclusion: "ReFlex(既存Flex契約の再編成による追加購入)を行った顧客は平均26%のARR増額を記録し、複数回reflexした顧客では平均51%の増額に達しています。営業にとっては、新規モジュール販売よりも既存契約の再編成による拡張提案が有力な打ち手になっていると考えられます。",
+      confidence: "高",
+      evidence: [
+        "480社がReFlex(Flexアカウントの約25%)、平均26%のARR増額",
+        "130社超が複数回reflexし、平均51%の増額を記録",
+        "純新規ARRが前年比+32%で、既存顧客の拡張が成長ドライバーの一つになっている",
+      ],
+      counterSignals: [
+        "Flex/ReFlexモデルの日本市場での普及度・活用状況は公開されていない",
+        "ReFlexの評価が営業個人のノルマにどう反映されるかは非公開",
+      ],
+      interviewQuestions: [
+        "Flex/ReFlexは日本の顧客でもどの程度活用されているか",
+        "ReFlexによる拡張提案は、自分のクオータにどう計上されるか",
+      ],
+      sourceIds: ["cs-q1fy27"],
+    },
+    {
+      topic: "MARKET POSITION",
+      title: "EDR/XDR市場でMicrosoft・Palo Alto・SentinelOneと拮抗。『軽量エージェント』が差別化の核",
+      conclusion: "MITRE ATT&CK評価やGartnerの評価では、CrowdStrike・SentinelOne・Palo Altoが僅差で並ぶとされています。CrowdStrikeの差別化ポイントは単一の軽量エージェントによる迅速な導入で、Microsoft Defenderは既にE5ライセンスを持つ企業にとってコスト面で優位とされます。",
+      confidence: "中",
+      evidence: [
+        "EDR上位5社で2025年の市場売上の約58%を占め、CrowdStrike・Microsoft・SentinelOneがそこに含まれる",
+        "CrowdStrikeの単一軽量エージェントは『真の差別化要因』とされ、導入スコープ確定後の展開が比較的速いと評価される",
+        "Palo Altoはファイアウォール顧客がネットワークとエンドポイント検知を統合したい場合に選ばれやすいとされる",
+      ],
+      counterSignals: [
+        "Microsoft DefenderはE5ライセンス既契約企業にとってコスト面で優位という評価がある",
+        "各社ともCharlotte AI(CrowdStrike)、Purple AI(SentinelOne)などAI機能を急速に強化しており、差別化は流動的",
+      ],
+      interviewQuestions: [
+        "Microsoft Defender・Palo Alto・SentinelOneとの競合案件で、直近の勝率・失注理由の傾向はどうか",
+        "日本市場でE5ライセンスを理由に失注するケースはどれくらいあるか",
+      ],
+      sourceIds: ["cs-competitors-compare"],
+    },
+  ],
+  customerProof: [
+    {
+      company: "H.I.S.",
+      products: "Falcon Platform(EDR / NGAV)",
+      outcome: "国内8,000台・海外29拠点の端末にFalconを導入し、セキュリティ対策を大幅強化。検知から過去にさかのぼった調査が容易になった",
+      implication: "旅行業界での大規模グローバル展開事例。多拠点企業への提案材料になる。",
+      sourceId: "cs-his",
+    },
+  ],
+  externalSignals: [
+    {
+      label: "日本の給与公開データ",
+      value: "営業平均 2,035万円",
+      detail: "OpenMoney自己申告データ(21件)。全社平均は1,827万円で、比較対象の外資ITベンダーの中でも上位水準。",
+      caveat: "自己申告・達成率による差が反映されている可能性がある。",
+      sourceId: "cs-openmoney",
+    },
+    {
+      label: "営業組織の外部評価",
+      value: "RepVue AE達成率 約36%",
+      detail: "Sales Managerは約42%、SDRは約1%と職種による差が大きい。",
+      caveat: "グローバル集計であり日本法人限定ではない。",
+      sourceId: "cs-repvue",
+    },
+  ],
+  roleLens: {
+    salesMotion: "新規ロゴ獲得に加え、Flex/ReFlex契約の再編成による既存顧客拡張が有力な成長ドライバー。エンタープライズ中心の商談設計。",
+    compensation: "日本の営業平均年収2,035万円(OpenMoney)と外資ITの中でも高水準。インセンティブ・RSU中心の設計とみられる。",
+    quota: "RepVueの集計ではAE達成率約36%。SMB領域は特に苦戦しているという口コミがある。",
+    collaboration: "Sales Engineer・Channel Partnerとの連携が前提。エンタープライズ中心のため、C-level折衝力も求められる。",
+  },
+  leadership: {
+    name: "Jonathon Dixon",
+    role: "Vice President & Managing Director, Japan/APAC",
+    read: "2026年2月就任。Cloudflare・Verkadaでの豊富なAPAC統括経験を持ち、本社は『JAPACは重要な成長市場』と位置づけています。ただし着任直後のため、具体的な組織拡大・採用計画はまだ公開されておらず、今後の動きを注視する必要があります。",
+    sourceId: "cs-dixon-appointment",
+  },
+  companyStats: {
+    globalHeadcount: {
+      value: "10,698人",
+      detail: "2026年1月31日時点、Form 10-K開示値。",
+      sourceId: "cs-10k",
+    },
+    japanHeadcount: {
+      value: "非公開",
+      detail: "日本法人の正式な従業員数は公開されていない。",
+      sourceId: "cs-japan-company",
+    },
+    japanOffice: {
+      value: "東京都港区赤坂(赤坂Bizタワー)",
+      detail: "クラウドストライク合同会社本社。",
+      sourceId: "cs-japan-company",
+    },
+    japanSince: {
+      value: "2016年",
+      detail: "クラウドストライク合同会社設立。",
+      sourceId: "cs-japan-company",
+    },
+  },
+  salesAppeal: {
+    intro: "求人票だけでは伝わらない、営業として働く上での具体的な面白さを公開情報から整理しました。",
+    points: [
+      {
+        title: "EDR/XDR市場のトップ3企業として、業界最先端の競合比較商談を経験できる",
+        detail: "Microsoft・Palo Alto Networks・SentinelOneという強力な競合との比較商談は、セキュリティ営業としての提案力を鍛える上で最良の環境の一つとされる。",
+        sourceIds: ["cs-competitors-compare"],
+      },
+      {
+        title: "Flex/ReFlexモデルによる拡張提案で、既存顧客からの成果を積み上げやすい",
+        detail: "複数回reflexした顧客で平均51%のARR増額を記録するなど、既存契約の再編成提案が有力な成果創出の打ち手になっている。",
+        sourceIds: ["cs-q1fy27"],
+      },
+      {
+        title: "日本オフィスは新任JAPAC統括のもとで投資拡大が見込まれる局面にある",
+        detail: "APAC事業を急成長させた実績を持つリーダーが着任したばかりで、早期に参画すれば拡大期の裁量を得やすい可能性がある。",
+        sourceIds: ["cs-dixon-appointment"],
+      },
+    ],
+  },
+  interviewPrep: {
+    intro: "「なぜCrowdStrikeか」という一般論ではなく、実際に聞かれている質問の型から準備しておきたいポイントです。",
+    questions: [
+      {
+        question: "CrowdStrikeの公式プレゼンテーションスライドを使って、CrowdStrikeを自分の言葉でピッチできるか",
+        why: "OpenWorkの採用情報で、実際にこの形式の質問が行われたと報告されている。",
+        sourceIds: ["cs-openwork"],
+      },
+      {
+        question: "Microsoft Defender・Palo Alto・SentinelOneとの違いを、自分の担当予定顧客像に当てはめて具体的に説明できるか",
+        why: "EDR/XDR市場は上位企業が拮抗しており、競合比較の理解度が定番で問われる。",
+        sourceIds: ["cs-competitors-compare"],
+      },
+      {
+        question: "自分が応募するポジション(Enterprise/Corporate/SMB)の直近のクオータ達成率(実数)を逆質問できるか",
+        why: "RepVueで職種・セグメントによる達成率の差が大きいと公開されており、入社後のギャップを避けるために確認したい。",
+        sourceIds: ["cs-repvue"],
+      },
+      {
+        question: "Flex/ReFlex契約モデルの日本市場での活用状況を理解した上で、拡張提案の考え方を説明できるか",
+        why: "既存顧客拡張が成長ドライバーの一つになっており、その理解度が評価されると考えられる。",
+        sourceIds: ["cs-q1fy27"],
+      },
+    ],
+  },
+  solutions: [
+    {
+      name: "Falcon Endpoint Protection(EDR/NGAV)",
+      valueProp: "単一の軽量エージェントでエンドポイントの検知・防御を行う中核製品。",
+      url: "https://www.crowdstrike.com/en-us/platform/endpoint-security/",
+      competitors: "Microsoft Defender、SentinelOne、Palo Alto Cortex XDRが主要な競合。",
+      differentiation: "単一の軽量エージェントによる迅速な導入が『真の差別化要因』とされる。Microsoft DefenderはE5ライセンス既契約企業にとってコスト面で優位、Palo Altoはファイアウォール顧客への統合提案で強い。",
+      retention: "H.I.S.の事例では8,000台規模への導入が公式に紹介されている。ReFlexによる契約拡張が全社的な成長ドライバーの一つ。",
+    },
+    {
+      name: "Falcon Cloud Security",
+      valueProp: "クラウドワークロード・コンテナ環境のセキュリティ(CSPM/CWPP)を提供する製品群。",
+      url: "https://www.crowdstrike.com/en-us/platform/cloud-security/",
+      competitors: "Wiz、Palo Alto Prisma Cloudが主要な競合。",
+      differentiation: "281以上の脅威アクター情報と紐づけた検知に強みがあるとされ、既知の攻撃者が悪用する設定不備を優先的に警告できる。Wizは агентless(エージェントレス)なマルチクラウド可視化で先行しているという評価もある。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "Falcon Identity Protection",
+      valueProp: "Active Directory・クラウドID基盤への不正アクセスを検知・防御する製品。",
+      url: "https://www.crowdstrike.com/en-us/platform/identity-protection/",
+      competitors: "Microsoft Entra ID Protection、Okta連携ソリューションが主要な競合。",
+      differentiation: "エンドポイントのFalconエージェントと同一基盤でID保護を扱える点が強み。Microsoftは自社ID基盤(Entra ID)との統合で優位という評価がある。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "Falcon Next-Gen SIEM",
+      valueProp: "ログ管理・脅威検知を統合する次世代SIEM製品。",
+      url: "https://www.crowdstrike.com/en-us/platform/next-gen-siem/",
+      competitors: "Splunk、Microsoft Sentinelが主要な競合。",
+      differentiation: "既存のFalconエンドポイントテレメトリと同一基盤でSIEM機能を提供できる点が強み。Splunkは長年のログ管理・コンプライアンス実績で依然として強い。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "Charlotte AI",
+      valueProp: "生成AIによるセキュリティ運用の自動化・支援を行うAIアシスタント機能。",
+      url: "https://www.crowdstrike.com/en-us/platform/charlotte-ai/",
+      competitors: "Microsoft Copilot for Security、SentinelOne Purple AI、Palo Alto XSIAM AIが主要な競合。",
+      differentiation: "2024年のマーケティングデモ段階から、2025年半ばには実運用レベルのツールへと各社が急速に進化させている領域。CrowdStrikeは自社の脅威インテリジェンスデータを学習基盤とする点を強みとする。",
+      retention: "普及率・継続率のデータは非公開。",
+    },
+    {
+      name: "Falcon Flex(柔軟な契約モデル)",
+      valueProp: "複数のFalconモジュールを事前予算枠内で柔軟に組み替えられる契約形態。",
+      url: "https://www.crowdstrike.com/en-us/falcon-flex/",
+      competitors: "他ベンダーの伝統的なライセンス体系(モジュールごとの個別契約)が対比される。",
+      differentiation: "ReFlex(契約の再編成)により、追加購入の心理的ハードルを下げる設計になっている。2026年Q1時点で480社がReFlexを実施し、平均26%のARR増額を記録している。",
+      retention: "複数回reflexした130社超は平均51%のARR増額を記録しており、契約拡張の主要な仕組みとして機能している。",
+    },
+  ],
+  customerStoriesUrl: "https://www.crowdstrike.com/en-us/resources/customer-stories/",
+  fitTags: [
+    "セキュリティ領域を極めたい",
+    "業界トップ3企業での競合比較提案力を鍛えたい",
+    "高OTEで稼ぎたい",
+    "既存顧客拡張(アップセル)の実績を作りたい",
+    "外資特有の実力主義に挑戦したい",
+    "拡大期のJAPAC組織で裁量を持ちたい",
+    "AI・脅威インテリジェンス領域に関わりたい",
+    "エンタープライズの大型商談経験を積みたい",
+  ],
+  comparisonMap: [
+    { arena: "EDR / XDR", companies: ["Microsoft", "SentinelOne", "Palo Alto Networks"], why: "エンドポイントセキュリティ予算の比較" },
+    { arena: "クラウドセキュリティ", companies: ["Wiz", "Palo Alto Networks"], why: "CSPM・CWPP予算の比較" },
+    { arena: "SIEM / ログ管理", companies: ["Splunk", "Microsoft"], why: "SIEM・ログ管理予算の比較" },
+    { arena: "ID保護", companies: ["Microsoft", "Okta"], why: "ID・アクセス管理予算の比較" },
+  ],
+  sources: crowdstrikeSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
   datadog: datadogIntelligence,
@@ -2974,6 +3385,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   snowflake: snowflakeIntelligence,
   mongodb: mongodbIntelligence,
   braze: brazeIntelligence,
+  crowdstrike: crowdstrikeIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
