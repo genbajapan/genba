@@ -155,11 +155,12 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  <div className="company-snapshot-strip">
+                  <div className="company-snapshot-strip company-snapshot-strip-wide">
                     <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
                     <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
                     <div><span>グローバル社員数</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong></div>
                     <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
+                    <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
                   </div>
 
                   <div className="public-fact-grid">
@@ -505,23 +506,14 @@ export default function CompanyIntelligenceProfile({
                 <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
               </div>
 
-              <div className="people-metric-grid">
-                {publicIntel ? (
-                  <>
-                    <article><span>GLOBAL HEADCOUNT</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong><p>{publicIntel.companyStats.globalHeadcount.detail}</p></article>
-                    <article><span>JAPAN SINCE</span><strong>{publicIntel.companyStats.japanSince.value}</strong><p>{publicIntel.companyStats.japanSince.detail}</p></article>
-                    <article><span>JAPAN LEADER</span><strong className="people-name">{publicIntel.leadership.name}</strong><p>{publicIntel.leadership.role}</p></article>
-                    <article><span>JAPAN HEADCOUNT</span><strong className="people-name">{publicIntel.companyStats.japanHeadcount.value}</strong><p>{publicIntel.companyStats.japanHeadcount.detail}</p></article>
-                  </>
-                ) : (
-                  <>
-                    <article><span>GLOBAL HEADCOUNT</span><strong>—</strong><p>公式または適法な集計データを確認中</p></article>
-                    <article><span>JAPAN HEADCOUNT</span><strong>—</strong><p>{company.japanPresence}を確認</p></article>
-                    <article><span>AE IN JAPAN</span><strong>—</strong><p>役職分類と重複を精査後に掲載</p></article>
-                    <article><span>MEDIAN TENURE</span><strong>—</strong><p>日本・営業職の集計値を優先</p></article>
-                  </>
-                )}
-              </div>
+              {!publicIntel && (
+                <div className="people-metric-grid">
+                  <article><span>GLOBAL HEADCOUNT</span><strong>—</strong><p>公式または適法な集計データを確認中</p></article>
+                  <article><span>JAPAN HEADCOUNT</span><strong>—</strong><p>{company.japanPresence}を確認</p></article>
+                  <article><span>AE IN JAPAN</span><strong>—</strong><p>役職分類と重複を精査後に掲載</p></article>
+                  <article><span>MEDIAN TENURE</span><strong>—</strong><p>日本・営業職の集計値を優先</p></article>
+                </div>
+              )}
 
               {publicIntel ? (
                 <article className="organization-read-card">
