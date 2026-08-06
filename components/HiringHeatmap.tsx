@@ -23,7 +23,9 @@ const total = rows.reduce((sum, row) => sum + row.count, 0);
 const activeAreas = rows.filter((row) => row.count > 0).length;
 const hiringCompanies = new Set(jobs.map((job) => job.companySlug)).size;
 const maximum = Math.max(1, ...rows.map((row) => row.count));
-const hotAreas = rows.filter((row) => row.count === maximum && row.count > 0).map((row) => row.area);
+const hotTierAreas = rows.filter((row) => row.count > 0 && row.count === maximum).map((row) => row.area);
+const warmTierAreas = rows.filter((row) => row.count > 0 && row.count < maximum).map((row) => row.area);
+const quietTierAreas = rows.filter((row) => row.count === 0).map((row) => row.area);
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
 
 export default function HiringHeatmap() {
@@ -76,14 +78,32 @@ export default function HiringHeatmap() {
         </div>
 
         <aside className="market-insight">
+          <p className="market-tier-heading">採用温度で見る3つの層</p>
+          <p className="market-tier-note">最も熱い領域が、必ずしも狙い目とは限りません。</p>
+          <div className="market-tier-list">
+            <div className="market-tier market-tier-hot">
+              <span className="market-tier-label">激戦区</span>
+              <strong className="market-tier-areas">{hotTierAreas.length ? hotTierAreas.join(" / ") : "該当なし"}</strong>
+              <p>求人数が最も多い領域。応募者の競合も多いと想定されます。</p>
+            </div>
+            <div className="market-tier market-tier-warm">
+              <span className="market-tier-label">動きあり</span>
+              <strong className="market-tier-areas">{warmTierAreas.length ? warmTierAreas.join(" / ") : "該当なし"}</strong>
+              <p>採用は動いているが、激戦区ほど競合は多くない領域。</p>
+            </div>
+            <div className="market-tier market-tier-quiet">
+              <span className="market-tier-label">静かな穴場</span>
+              <strong className="market-tier-areas">{quietTierAreas.length ? quietTierAreas.join(" / ") : "該当なし"}</strong>
+              <p>現在確認できる求人は少数。穴場として狙える可能性があります。</p>
+            </div>
+          </div>
+
           <p className="market-insight-label">現在の採用温度</p>
           <div className="market-total-row">
             <div><strong>{hiringCompanies}<small>社</small></strong><span>求人掲載中の企業</span></div>
             <div><strong>{total}<small>件</small></strong><span>掲載中の営業求人</span></div>
           </div>
           <p>{activeAreas}領域で営業求人を確認</p>
-          <div className="market-hot-label">HOT AREA</div>
-          <strong className="market-hot-value">{hotAreas.length ? hotAreas.join(" / ") : "観測開始前"}</strong>
           <p className="market-disclaimer">現在確認できている営業求人を集計しています。募集終了・新規掲載は確認次第更新します。</p>
         </aside>
       </div>
