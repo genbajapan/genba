@@ -197,7 +197,7 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <article className="organization-read-card">
-                  <div><p className="card-index">ORGANIZATION READ</p><h3>大きな会社では「社風」より、自分が入る小さな組織を見抜く。</h3></div>
+                  <div><p className="card-index">ORGANIZATION READ</p><h3>{publicIntel.cultureNotes.organizationReadTitle}</h3></div>
                   <p>{publicIntel.leadership.read}</p>
                   {(() => { const source = getResearchSource(publicIntel, publicIntel.leadership.sourceId); return source ? <a href={source.url} target="_blank" rel="noreferrer">役員人事を見る ↗</a> : null; })()}
                 </article>
@@ -212,8 +212,8 @@ export default function CompanyIntelligenceProfile({
               <div className="culture-grid">
                 {publicIntel ? (
                   <>
-                    <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>学習資源は厚い。ただし体験はOUと上司次第。</h3><p>公式の研修・mentorship・昇進パスと、外部レビューのtraining評価は整合します。一方、高業績文化やmanager差も示唆されるため、配属チーム単位で検証が必要です。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                    <article><p className="card-index">CAREER VALUE</p><h3>“Enterprise Salesの学校”として見る。</h3><p>大手顧客、複数製品、C-level、Partner、専門組織を束ねた経験は次の転職でも説明しやすい。一方、昇進実績や在籍年数は同一OUの実数を面接で確かめたいです。</p><span className="hypothesis-pill">GENBA仮説 / 確度 中</span></article>
+                    <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>{publicIntel.cultureNotes.hypothesis.title}</h3><p>{publicIntel.cultureNotes.hypothesis.body}</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
+                    <article><p className="card-index">CAREER VALUE</p><h3>{publicIntel.cultureNotes.careerValue.title}</h3><p>{publicIntel.cultureNotes.careerValue.body}</p><span className="hypothesis-pill">GENBA仮説 / 確度 {publicIntel.cultureNotes.careerValue.confidence}</span></article>
                   </>
                 ) : (
                   <>

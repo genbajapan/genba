@@ -61,10 +61,17 @@ export type InterviewPrepQuestion = {
   sourceIds: string[];
 };
 
+export type CultureNotes = {
+  organizationReadTitle: string;
+  hypothesis: { title: string; body: string };
+  careerValue: { title: string; body: string; confidence: "高" | "中" | "探索中" };
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   facts: PublicFact[];
   hypotheses: GenbaHypothesis[];
+  cultureNotes: CultureNotes;
   customerProof: CustomerProof[];
   externalSignals: ExternalSignal[];
   roleLens: {
@@ -252,6 +259,18 @@ const salesforceSources: ResearchSource[] = [
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-05",
+  cultureNotes: {
+    organizationReadTitle: "大きな会社では「社風」より、自分が入る小さな組織を見抜く。",
+    hypothesis: {
+      title: "学習資源は厚い。ただし体験はOUと上司次第。",
+      body: "公式の研修・mentorship・昇進パスと、外部レビューのtraining評価は整合します。一方、高業績文化やmanager差も示唆されるため、配属チーム単位で検証が必要です。",
+    },
+    careerValue: {
+      title: "“Enterprise Salesの学校”として見る。",
+      body: "大手顧客、複数製品、C-level、Partner、専門組織を束ねた経験は次の転職でも説明しやすい。一方、昇進実績や在籍年数は同一OUの実数を面接で確かめたいです。",
+      confidence: "中",
+    },
+  },
   facts: [
     {
       label: "FY26売上",
@@ -596,8 +615,515 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
   sources: salesforceSources,
 };
 
+const datadogSources: ResearchSource[] = [
+  {
+    id: "dd-q1fy26",
+    label: "Datadog 2026年第1四半期決算",
+    url: "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-first-quarter-2026-financial-results",
+    kind: "企業公式",
+    scope: "グローバル業績・顧客数・ARR超過顧客数・通期ガイダンス",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-10k",
+    label: "Datadog FY2025 Form 10-K",
+    url: "https://www.sec.gov/Archives/edgar/data/1561550/000162828026008819/ddog-20251231.htm",
+    kind: "法定開示",
+    scope: "グローバル従業員数・通期売上",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-japan-company",
+    label: "Datadog Japan合同会社 会社概要",
+    url: "https://salesnow.jp/db/companies/7010003029533",
+    kind: "外部集計",
+    scope: "日本法人従業員数の推定値・設立日",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-japan-careers",
+    label: "Datadog Japan キャリアページ",
+    url: "https://careers.datadoghq.com/ja/",
+    kind: "企業公式",
+    scope: "日本の採用・カルチャー",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-newyear",
+    label: "Datadog Japan 2026年 年頭所感",
+    url: "https://prtimes.jp/main/html/rd/p/000000100.000077474.html",
+    kind: "企業公式",
+    scope: "日本市場戦略・大阪拠点新設・組織方針",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-president-bcn",
+    label: "週刊BCN+ Datadog Japanプレジデント紹介記事",
+    url: "https://www.weeklybcn.com/journal/keyperson/detail/20240617_204637.html",
+    kind: "コミュニティ",
+    scope: "日本法人社長プロフィール",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-cyberagent",
+    label: "サイバーエージェント Datadog導入事例",
+    url: "https://www.datadoghq.com/ja/case-studies/cyberagent/",
+    kind: "企業公式",
+    scope: "国内導入事例(メディア・IT)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-softbank",
+    label: "ソフトバンク Datadog導入事例",
+    url: "https://www.datadoghq.com/ja/case-studies/softbank/",
+    kind: "企業公式",
+    scope: "国内導入事例(通信キャリア)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-jcb",
+    label: "ジェーシービー Datadog導入事例",
+    url: "https://www.datadoghq.com/ja/case-studies/jcb/",
+    kind: "企業公式",
+    scope: "国内導入事例(金融・クレジットカード)",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-openmoney",
+    label: "OpenMoney Datadog Japan給与データ",
+    url: "https://openmoney.jp/corporations/2687/salaries",
+    kind: "外部集計",
+    scope: "日本・自己申告給与データ",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-repvue",
+    label: "RepVue Datadog company reviews",
+    url: "https://www.repvue.com/companies/Datadog",
+    kind: "コミュニティ",
+    scope: "グローバル営業職の自己申告評価",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-interview-prep",
+    label: "Career Compass「Datadog Japan面接対策 想定質問100選」",
+    url: "https://note.com/careercompass_c/n/nfb03e766f7e3",
+    kind: "コミュニティ",
+    scope: "中途面接の想定質問・対策記事",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-gaishitenshoku",
+    label: "外資転職.com「Datadogの年収・採用・口コミをデータで分析」",
+    url: "https://gaishitenshoku.com/datadog/",
+    kind: "コミュニティ",
+    scope: "給与レンジ・採用要件・カルチャーの集計記事",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-cloud-security-compare",
+    label: "vCSO.ai「Best CSPM Tools 2026」比較記事",
+    url: "https://vcso.ai/learn/best-cspm-tools-2026/",
+    kind: "コミュニティ",
+    scope: "クラウドセキュリティ製品の比較・差別化",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-splunk-compare",
+    label: "MonitoringCost.com ログ管理料金比較",
+    url: "https://monitoringcost.com/log-management-pricing",
+    kind: "コミュニティ",
+    scope: "ログ管理製品の料金・コスト比較",
+    checkedAt: "2026-08-06",
+  },
+  {
+    id: "dd-midmarket-job",
+    label: "Mid-Market Account Executive求人",
+    url: "https://careers.datadoghq.com/ja/detail/6523631/",
+    kind: "企業公式",
+    scope: "Mid-Market AEの役割・要件",
+    checkedAt: "2026-08-04",
+  },
+  {
+    id: "dd-commercial-job",
+    label: "Commercial Account Executive求人",
+    url: "https://careers.datadoghq.com/ja/detail/6009777/?gh_jid=6009777",
+    kind: "企業公式",
+    scope: "Commercial AEの役割・要件",
+    checkedAt: "2026-08-04",
+  },
+  {
+    id: "dd-public-sector-job",
+    label: "Strategic Account Executive, Public Sector求人",
+    url: "https://careers.datadoghq.com/ja/detail/7439573/",
+    kind: "企業公式",
+    scope: "Public Sector AEの役割・要件",
+    checkedAt: "2026-08-04",
+  },
+];
+
+const datadogIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-06",
+  cultureNotes: {
+    organizationReadTitle: "急拡大期の組織では、「看板」より配属チームの実態を見抜く。",
+    hypothesis: {
+      title: "MEDDICなど型はある。ただし日本組織での再現性はまだ蓄積中。",
+      body: "公式には研修でMEDDICとCommand of the Messageの活用を掲げていますが、日本法人は2019年設立とまだ新しく、教育体系がどこまで整備・定着しているかは公開情報だけでは判断できません。配属チーム・マネージャーによる差を面接で確認する必要があります。",
+    },
+    careerValue: {
+      title: "“急成長オブザーバビリティ企業のAE”という経験値。",
+      body: "32%成長を続ける市場で新規開拓を経験したという実績は、次の転職でも説明しやすい。一方、組織が若く昇進・異動の実例データがまだ蓄積されていないため、キャリアパスの再現性は自分で切り拓く前提で臨みたいです。",
+      confidence: "探索中",
+    },
+  },
+  facts: [
+    {
+      label: "売上(2026年Q1)",
+      value: "$1,006M",
+      detail: "前年比+32%。",
+      sourceIds: ["dd-q1fy26"],
+    },
+    {
+      label: "通期2026年ガイダンス",
+      value: "$43.0億〜$43.4億",
+      detail: "前年比+25〜27%の成長を見込む(2026年Q1決算時点)。",
+      sourceIds: ["dd-q1fy26"],
+    },
+    {
+      label: "ARR10万ドル以上の顧客数",
+      value: "約4,550社",
+      detail: "前年比+21%(2026年3月31日時点)。",
+      sourceIds: ["dd-q1fy26"],
+    },
+    {
+      label: "Dollar-based Net Retention",
+      value: "120%台前半",
+      detail: "既存顧客への製品拡張が成長の主要因であることを示す(2026年Q1時点)。",
+      sourceIds: ["dd-q1fy26"],
+    },
+    {
+      label: "グローバル従業員数",
+      value: "8,100人",
+      detail: "2025年12月末時点、Form 10-K開示値。",
+      sourceIds: ["dd-10k"],
+    },
+    {
+      label: "日本市場でのポジション",
+      value: "国内シェア1位(自社発表)",
+      detail: "2025年Fuji Chimera Research Institute調査に基づく自社発表。第三者による独立検証ではない。",
+      sourceIds: ["dd-newyear"],
+    },
+  ],
+  hypotheses: [
+    {
+      topic: "MARKET EXPANSION",
+      title: "日本市場は「作っている最中」。大阪拠点新設と自社シェア1位表明は本気の拡大シグナル",
+      conclusion: "2019年設立とまだ若い日本法人が、2025年に観測市場でシェア1位を掲げ、2026年に大阪拠点を新設した点から、日本市場への投資を積極化している時期だと考えられます。組織がまだ小さいため、入社時期によって裁量の大きさが変わりやすいとみます。",
+      confidence: "中",
+      evidence: [
+        "2025年Fuji Chimera Research Institute調査で観測市場国内シェア1位と自社発表",
+        "2026年に大阪拠点を新設し、西日本エリアのカバレッジ拡大を明言",
+        "NTTデータ・東京エレクトロンデバイスとの協業強化、AWS「Technology Partner of the Year Japan」受賞",
+      ],
+      counterSignals: [
+        "市場シェア1位は自社調査(Fuji Chimera)の引用であり、独立した第三者検証ではない",
+        "日本法人の正式な社員数・営業体制の詳細は非公開(推定約117人)",
+      ],
+      interviewQuestions: [
+        "大阪拠点は現時点で何人体制か、今後の採用計画は具体的にあるか",
+        "西日本エリアの新規開拓は既存メンバーの兼務か、専任採用か",
+      ],
+      sourceIds: ["dd-newyear", "dd-japan-company"],
+    },
+    {
+      topic: "COMP STRUCTURE",
+      title: "セグメントで採用要件が明確に違う。給与は「ポジション一律」で交渉余地が薄い可能性",
+      conclusion: "Commercial(経験2年以上)、Mid-Market(新規開拓実績)、Public Sector(5年以上+官公庁営業経験必須)と要件が明確に分かれている一方、口コミでは「給与はポジションごとにほぼ一律」という声が複数あり、オファー額より入社後の達成率でインセンティブが左右されやすいと考えられます。",
+      confidence: "中",
+      evidence: [
+        "外資転職.comの集計・口コミで「給与はポジション一律で交渉の余地が少ない」との指摘",
+        "OpenMoney自己申告データで営業平均年収1,238万円、レンジ760万〜3,000万円",
+        "求人要件がセグメントごとに経験年数・専門性で明確に差別化されている",
+      ],
+      counterSignals: [
+        "「ジュニアレベルでも入社時にRSUが付与される」という口コミもあり、一律という評判と矛盾する情報もある",
+        "自己申告データのため、セグメント別の正確な内訳は不明",
+      ],
+      interviewQuestions: [
+        "オファー時の給与テーブルはセグメント別にどう分かれているか",
+        "RSUの付与条件・ベスティングスケジュールはグレードによってどう変わるか",
+      ],
+      sourceIds: ["dd-gaishitenshoku", "dd-openmoney"],
+    },
+    {
+      topic: "QUOTA ATTAINABILITY",
+      title: "「市場飽和」を指摘する声がある。ブランドの成長率と現場の達成率は別軸で見るべき",
+      conclusion: "全社としては32%成長を続けていますが、RepVueの一部レビューでは「市場が飽和しコミッション向け案件が枯渇」「クオータ達成が難しい」という批判も見られます。担当エリアの残存見込み顧客の密度を面接で確認すべきです。",
+      confidence: "中",
+      evidence: [
+        "RepVueで一部レビューが「市場が非常に飽和しており、Commercial規模の案件のほとんどで価格的に不利」「達成不可能なターゲット」と指摘",
+        "OpenMoney口コミに「AEはじめ、人がどんどんPIP等で辞めていく環境」との記述",
+        "RepVueスコアは3.6/5、業界内では上位20%と相対的には悪くない評価",
+      ],
+      counterSignals: [
+        "会社全体は32%成長を継続しており、批判的レビューは特定チーム・時期に偏っている可能性がある",
+        "OpenWorkでは「学ぶことが絶えない」という肯定的な口コミも見られる",
+        "レビューの母数はSalesforceなど大手ほど多くなく、平均への収束が弱い",
+      ],
+      interviewQuestions: [
+        "自分の担当エリアで直近1年のチーム全体のクオータ達成率は何%か",
+        "PIP(業績改善プログラム)に入る基準と、直近1年の運用実態はどうか",
+      ],
+      sourceIds: ["dd-repvue", "dd-openmoney"],
+    },
+    {
+      topic: "SALES MOTION",
+      title: "新規ロゴ獲得の負荷が高い。既存拡張は会社全体では強いが、担当者個人の配分は要確認",
+      conclusion: "全社のNet Revenue Retentionは120%台前半と既存顧客への拡張が成長の柱である一方、Mid-Market/Commercial双方の求人が「新規ロゴ獲得」を明記しており、現場のAE個人には新規開拓の負荷がかかりやすい設計だと考えられます。",
+      confidence: "中",
+      evidence: [
+        "Dollar-based Net Retentionが120%台前半(2026年Q1)",
+        "Mid-Market/Commercial双方の求人で新規ロゴ獲得・アウトバウンド営業が明記されている",
+        "製品ラインが8以上に広がっており、Cloud Security等は既存顧客への追加販売が中心と見られる",
+      ],
+      counterSignals: [
+        "求人票だけでは、個人のクオータに占める新規:既存の配分比率は分からない",
+        "クロスセル専任のチームが別に存在する可能性があり、その場合AE個人の負荷は求人票の印象と異なる",
+      ],
+      interviewQuestions: [
+        "自分のクオータのうち、新規ロゴと既存拡張の配分はどれくらいか",
+        "クロスセル(他製品への追加提案)は自分のノルマに含まれるか、別チームの担当か",
+      ],
+      sourceIds: ["dd-q1fy26", "dd-midmarket-job", "dd-commercial-job"],
+    },
+    {
+      topic: "PRODUCT BREADTH",
+      title: "オブザーバビリティ起点から、セキュリティ・AIへ広がる「土台」ができつつある",
+      conclusion: "Infrastructure MonitoringやAPMといった基盤製品に加え、Cloud SecurityやLLM Observabilityなど新領域への投資が進んでおり、1社に複数製品を売るプラットフォームセールスの色が強まっています。ただし新領域は専業ベンダー(Wiz、Langfuseなど)との比較でまだ発展途上という評価もあります。",
+      confidence: "中",
+      evidence: [
+        "8以上の製品ライン(Infrastructure Monitoring、APM、Log Management、RUM/Synthetics、Cloud Security、Database Monitoring、CI Visibility、LLM Observability)",
+        "2026年頭所感でAI・セキュリティ領域への投資強化を明言",
+        "LLM ObservabilityはAI Agent Monitoring・LLM Experiments・AI Agents Consoleを2025年に追加し急速に拡張中",
+      ],
+      counterSignals: [
+        "Cloud SecurityはWiz・Prisma Cloudのような専業CNAPPほど作り込まれていないという指摘がある",
+        "LLM ObservabilityもLangfuseなどAIネイティブ専業ツールほどトレース機能を深掘りしていないという評価がある",
+      ],
+      interviewQuestions: [
+        "自分が担当する顧客で、複数製品を横断提案する機会は実際にどれくらいあるか",
+        "新領域(セキュリティ・AI)の専門トレーニングは入社後どの段階で受けられるか",
+      ],
+      sourceIds: ["dd-newyear", "dd-cloud-security-compare"],
+    },
+  ],
+  customerProof: [
+    {
+      company: "サイバーエージェント",
+      products: "Infrastructure Monitoring / APM / Watchdog(機械学習)",
+      outcome: "数万台規模のサーバーを一元監視する基盤として全社導入。属人化していた監視ツールを統合し、利用開始までの時間を数日から数時間に短縮",
+      implication: "1チームではなく全社導入を狙う提案ができる根拠になる、ボトムアップで広がった事例。",
+      sourceId: "dd-cyberagent",
+    },
+    {
+      company: "ジェーシービー(JCB)",
+      products: "APM / Infrastructure Monitoring / SLO",
+      outcome: "MTTD(平均検知時間)を短縮し、夜間オンコール対応の初動を迅速化。SRE・アプリ・事業部門で共通のSLIダッシュボードを構築",
+      implication: "金融・クレジットカードという厳格な業界でも、SRE主導での導入実績があることを示す。",
+      sourceId: "dd-jcb",
+    },
+    {
+      company: "ソフトバンク",
+      products: "Infrastructure Monitoring(マルチクラウド)",
+      outcome: "AWS・Azureにまたがるマルチクラウド環境とKubernetesコンテナ基盤を一元的に監視",
+      implication: "通信キャリアクラスの大規模インフラでも採用されており、大企業のマルチクラウド戦略への提案材料になる。",
+      sourceId: "dd-softbank",
+    },
+  ],
+  externalSignals: [
+    {
+      label: "日本の給与公開データ",
+      value: "営業平均 1,238万円",
+      detail: "OpenMoney自己申告データ(21件)。レンジは760万〜3,000万円。",
+      caveat: "自己申告・母数が少なく、セグメント別の内訳は不明。",
+      sourceId: "dd-openmoney",
+    },
+    {
+      label: "営業組織の外部評価",
+      value: "RepVue 3.6 / 5.0",
+      detail: "約2,582件のレーティング、87% verified。業界内では上位20%。",
+      caveat: "グローバル集計であり日本法人限定ではない。市場飽和やクオータ達成の難しさを指摘する批判的レビューも含まれる。",
+      sourceId: "dd-repvue",
+    },
+  ],
+  roleLens: {
+    salesMotion: "新規ロゴ獲得中心。会社全体ではLand-and-expandで既存顧客への製品拡張(NRR120%台)が成長の柱だが、個人のクオータ配分は要確認。",
+    compensation: "口コミでは「ポジションごとにほぼ一律で交渉余地が少ない」という声がある一方、ジュニアでもRSU付与という声も。",
+    quota: "セグメントによって前提が異なる。Public Sectorは年間売上目標100万ドル以上・平均ディールサイズ10万ドル以上が明記。市場飽和を指摘する批判的レビューもある。",
+    collaboration: "SDR、パートナー、マーケティングとの連携が前提。CTO・エンジニアリング層への技術的な説明力も問われる。",
+  },
+  leadership: {
+    name: "正井 拓己",
+    role: "President & Country General Manager",
+    read: "2019年設立とまだ若い組織で、2026年はAI・セキュリティ領域への投資、大阪拠点の新設など、拡大フェーズの最中にあることが読み取れる。日本語のオブザーバビリティ市場で1位(自社調査)を掲げるが、組織の急拡大に伴う体制整備の速度は候補者自身が見極める必要がある。",
+    sourceId: "dd-newyear",
+  },
+  companyStats: {
+    globalHeadcount: {
+      value: "8,100人",
+      detail: "2025年12月末時点、Form 10-K開示値。",
+      sourceId: "dd-10k",
+    },
+    japanHeadcount: {
+      value: "約117人(推定)",
+      detail: "採用データベースによる推定値。公式には開示されていない。",
+      sourceId: "dd-japan-company",
+    },
+    japanOffice: {
+      value: "東京(本社)、大阪(2026年新設)",
+      detail: "西日本エリアのカバレッジ強化を目的に大阪拠点を新設(2026年頭所感)。",
+      sourceId: "dd-newyear",
+    },
+    japanSince: {
+      value: "2019年3月",
+      detail: "Datadog Japan合同会社設立。",
+      sourceId: "dd-japan-company",
+    },
+  },
+  salesAppeal: {
+    intro: "求人票だけでは伝わらない、営業として働く上での具体的な面白さを公開情報から整理しました。",
+    points: [
+      {
+        title: "急拡大市場で、エンジニア層に刺さる技術営業力が鍛えられる",
+        detail: "CTO・エンジニアリング・ITリーダー層への技術的な説明が前提のポジションが多く、単なる御用聞き営業ではなく技術理解を伴う提案力が磨かれる。全社は32%成長を継続しており、追い風の中で新規開拓を経験できる。",
+        sourceIds: ["dd-q1fy26", "dd-midmarket-job"],
+      },
+      {
+        title: "セグメントを選べる。育成前提のCommercialから即戦力性の高いPublic Sectorまで幅がある",
+        detail: "ポテンシャル層も対象になるCommercial、新規開拓力を求めるMid-Market、5年以上の経験と官公庁営業経験を要件化するPublic Sectorまで、自分の経験値に応じたエントリーポイントを選べる。",
+        sourceIds: ["dd-commercial-job", "dd-public-sector-job"],
+      },
+      {
+        title: "オブザーバビリティ起点でセキュリティ・AIまで扱える製品の広がり",
+        detail: "2026年はAI・セキュリティ領域への投資を強化する方針が示されており、Infrastructure MonitoringやAPMだけでなく、Cloud SecurityやLLM Observabilityといった伸び盛りの新領域も扱える可能性がある。",
+        sourceIds: ["dd-newyear"],
+      },
+    ],
+  },
+  interviewPrep: {
+    intro: "「なぜDatadogか」という一般論ではなく、実際に聞かれている質問の型から準備しておきたいポイントです。",
+    questions: [
+      {
+        question: "New Relic・Dynatrace・Splunkとの違いを、自分の担当予定セグメントの顧客像に当てはめて具体的に説明できるか",
+        why: "面接では製品比較の理解度が定番で問われる。競合との違いを自分の言葉で語れるかが評価軸になっている。",
+        sourceIds: ["dd-interview-prep"],
+      },
+      {
+        question: "戦略的にアカウントプランを作成し、複数ステークホルダーにアプローチした経験を具体的に話せるか",
+        why: "求人票・面接双方で「戦略的にプランを作成して各アカウントにアプローチできる方」が明記されている。",
+        sourceIds: ["dd-gaishitenshoku"],
+      },
+      {
+        question: "自分の担当予定エリア・業種で、直近のクオータ達成率とPIPの運用実態を逆質問できるか",
+        why: "口コミで市場飽和やクオータ達成の難しさが指摘されており、入社後のギャップを避けるために確認しておきたい。",
+        sourceIds: ["dd-repvue", "dd-openmoney"],
+      },
+      {
+        question: "MEDDICやCommand of the Messageなど、同社の営業方法論についてどこまで理解しているか",
+        why: "外資転職.comの記事で、同社の営業研修がMEDDICとCommand of the Messageを活用していると紹介されている。",
+        sourceIds: ["dd-gaishitenshoku"],
+      },
+    ],
+  },
+  solutions: [
+    {
+      name: "Infrastructure Monitoring",
+      valueProp: "サーバー・コンテナ・クラウドサービスをリアルタイムで可視化する基盤製品。750以上の統合先を持ち、Datadog導入の入口(Land)になることが多い。",
+      url: "https://www.datadoghq.com/ja/product/infrastructure-monitoring/",
+      competitors: "New Relic、Dynatrace、AWS CloudWatch、Google Cloud Opsが主要な競合。",
+      differentiation: "ホスト単位の課金体系でわかりやすい一方、大規模になるとコストが読みにくくなるという指摘がある。750以上の統合先の広さと、他製品(APM・Log等)とのシームレスな連携がDatadogの強み。",
+      retention: "この製品が他製品へのクロスセルの起点になることが多く、会社全体のDollar-based Net Revenue Retentionは2026年Q1時点で120%台前半。",
+    },
+    {
+      name: "APM(Application Performance Monitoring)",
+      valueProp: "マイクロサービス間のリクエストをEnd-to-Endでトレースし、ボトルネックを特定する製品。",
+      url: "https://www.datadoghq.com/ja/product/apm/",
+      competitors: "New Relic、Dynatrace、AppDynamics、Splunkが主要な競合。",
+      differentiation: "Infrastructure MonitoringとのUI統合が強みで、$31/ホスト/月から。単体の性能・コスパ比較ではNew Relicが優位という比較記事も複数ある。DynatraceはAIによる自動根本原因分析で高く評価される。",
+      retention: "Infrastructure Monitoringとセットで契約されるケースが多く、単体の継続率は非公開。JCBの事例ではAPM導入によりMTTD(平均検知時間)短縮を実現したと公式に紹介されている。",
+    },
+    {
+      name: "Log Management",
+      valueProp: "大量のログを収集・分析し、コスト最適化しながら運用できるログ管理製品。",
+      url: "https://www.datadoghq.com/ja/product/log-management/",
+      competitors: "Splunk、Elasticが主要な競合。",
+      differentiation: "$0.10/GB/月からとSplunkの公表価格(1GB/日あたり$150程度)より安いという比較記事がある一方、使用量が増えるとコストが読みにくくなるという批判もある。ElasticはCPU・メモリ課金で大量ログ時のコスト優位性があるとされる。SplunkはSIEM・コンプライアンス実績で依然として強い。",
+      retention: "製品単体の継続率は非公開。",
+    },
+    {
+      name: "Digital Experience Monitoring(RUM & Synthetics)",
+      valueProp: "実ユーザーの体験(Real User Monitoring)と合成監視(Synthetics)でフロントエンド性能を追跡する製品群。",
+      url: "https://www.datadoghq.com/ja/product/real-user-monitoring/",
+      competitors: "New Relic Browser、Dynatrace RUM、Sentryが主要な競合。",
+      differentiation: "バックエンドのAPM・Infrastructure Monitoringと同一基盤でフロントエンドの体験まで一気通貫に追えることが強み。Sentryはエラートラッキングに特化し開発者体験で評価が高い。",
+      retention: "製品単体の継続率は非公開。",
+    },
+    {
+      name: "Cloud Security Platform(CSM)",
+      valueProp: "CSPM・CWPP・Cloud SIEMを含むクラウドセキュリティ製品群。",
+      url: "https://www.datadoghq.com/ja/product/cloud-security-management/",
+      competitors: "Wiz、Prisma Cloud(Palo Alto Networks)、CrowdStrike Falcon Cloud Securityが主要な競合。",
+      differentiation: "既存のDatadog顧客にとっては追加導入のハードルが低い一方、Wiz・Prisma Cloudのような専業CNAPPほど作り込まれていないという評価がある(比較記事)。CrowdStrikeは281以上の脅威アクター情報と紐づけた検知に強みがあるとされる。",
+      retention: "既存Infrastructure Monitoring顧客への追加販売(アップセル)が中心と見られ、会社全体のNRR向上に寄与していると考えられるが、製品単体の継続率は非公開。",
+    },
+    {
+      name: "Database Monitoring",
+      valueProp: "データベースのクエリ・パフォーマンスを可視化する専門監視製品。",
+      url: "https://www.datadoghq.com/ja/product/database-monitoring/",
+      competitors: "IBM Instana、SolarWinds、クラウドベンダー純正のDB監視ツール(AWS RDS Performance Insights等)が隣接する競合。",
+      differentiation: "他のDatadog製品と同一ダッシュボードでDB性能を横断的に見られる点が強み。専業DB監視ツールとの詳細な機能比較は公開情報が少なく、確認できていない。",
+      retention: "製品単体の継続率・普及率は非公開。",
+    },
+    {
+      name: "CI Visibility",
+      valueProp: "CI/CDパイプラインの実行時間・失敗率を可視化する開発生産性向け製品。",
+      url: "https://www.datadoghq.com/ja/product/ci-cd-monitoring/",
+      competitors: "New Relicなど一般的なAPMベンダーの多くはCI Visibility相当の機能を持たないとされる。",
+      differentiation: "比較記事では「DatadogにはCI visibility、feature flags、code coverageなど、New Relicにはないソフトウェア配信機能がある」と評されており、開発生産性まで含めた提案ができる点が差別化材料になり得る。",
+      retention: "製品単体の継続率・普及率は非公開。",
+    },
+    {
+      name: "LLM Observability",
+      valueProp: "LLM・AIエージェントのトレース・品質・コストを監視する新領域製品。",
+      url: "https://www.datadoghq.com/ja/product/llm-observability/",
+      competitors: "Langfuse、Arize Phoenix、Braintrust、New Relicが主要な競合。",
+      differentiation: "2024年にローンチし、2025年にAI Agent Monitoring・LLM Experiments・AI Agents Consoleを追加して急速に拡張中。既存のAPM基盤に統合されている点が強みだが、Langfuseなどトレース機能に特化したAIネイティブ専業ツールほど深掘りはしていないという評価もある。",
+      retention: "2025年12月にはAWSとの戦略的協業も発表されており、生成AI関連の新規商談を作る入口として位置づけられていると見られるが、既存顧客への普及率など具体的な継続データは非公開。",
+    },
+  ],
+  customerStoriesUrl: "https://www.datadoghq.com/ja/case-studies/",
+  fitTags: [
+    "急成長企業でスピード感を求めたい",
+    "新規開拓力を鍛えたい",
+    "AI・オブザーバビリティ領域を極めたい",
+    "エンジニア層と対等に話せる技術営業がしたい",
+    "官公庁向け営業に挑戦したい",
+    "高OTEで稼ぎたい",
+    "外資特有の実力主義に挑戦したい",
+    "裁量の大きい拡大期の組織で働きたい",
+  ],
+  comparisonMap: [
+    { arena: "Observability基盤", companies: ["New Relic", "Dynatrace", "Splunk"], why: "APM・インフラ監視予算の比較" },
+    { arena: "ログ管理", companies: ["Splunk", "Elastic"], why: "ログ管理・SIEM予算の比較" },
+    { arena: "クラウドセキュリティ", companies: ["Wiz", "CrowdStrike", "Palo Alto Networks"], why: "CSPM・CWPP予算の比較" },
+    { arena: "AI / LLM Observability", companies: ["New Relic", "Langfuse", "Arize"], why: "生成AI監視予算の比較" },
+  ],
+  sources: datadogSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
+  datadog: datadogIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {

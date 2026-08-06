@@ -128,7 +128,7 @@ export const companies: Company[] = [
     hiringStatus: "積極採用",
     salesRoles: 3,
     description: "Commercial、Mid-Market、Public Sectorまで複数セグメントで営業人材を募集。",
-    lastChecked: "2026-08-04",
+    lastChecked: "2026-08-06",
     careersUrl: "https://careers.datadoghq.com/ja/",
     tags: ["Commercial", "Mid-Market", "Public Sector"],
     interviewFlow: {
