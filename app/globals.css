@@ -257,7 +257,6 @@ button, input, select { font: inherit; }
 
 
 .company-snapshot-strip { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 14px; border: 1px solid var(--line); background: #f7f9f8; }
-.company-snapshot-strip-wide { grid-template-columns: repeat(5,1fr); }
 .company-snapshot-strip div { padding: 12px 14px; }
 .company-snapshot-strip div + div { border-left: 1px solid var(--line); }
 .company-snapshot-strip span { display: block; color: #6b7d84; font-size: 10px; font-weight: 750; }
@@ -307,9 +306,11 @@ button, input, select { font: inherit; }
 .probability-note p { margin: 4px 0 0; color: #89744b; font-size: 12px; line-height: 1.55; }
 
 .public-fact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 9px; }
-.public-fact-grid article { min-height: 173px; padding: 19px; border: 1px solid var(--line); background: white; }
+.public-fact-grid article { position: relative; overflow: hidden; min-height: 173px; padding: 21px 19px 19px; border: 1px solid var(--line); background: white; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.public-fact-grid article::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--signal), #9fe3d8); }
+.public-fact-grid article:hover { transform: translateY(-3px); border-color: #8fc9bd; box-shadow: 0 14px 32px rgba(11,38,56,.08); }
 .public-fact-grid article > span { color: #64777f; font-size: 11px; font-weight: 800; }
-.public-fact-grid strong { display: block; margin-top: 15px; color: var(--navy); font-size: 25px; letter-spacing: -.035em; }
+.public-fact-grid strong { display: block; margin-top: 15px; background: linear-gradient(135deg, var(--navy), #0a6d63); background-clip: text; -webkit-background-clip: text; color: transparent; font-size: 25px; letter-spacing: -.035em; }
 .public-fact-grid p { min-height: 36px; margin: 9px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .public-fact-grid a { display: inline-block; margin-top: 12px; color: var(--signal); font-size: 11px; font-weight: 750; text-decoration: none; }
 .hypothesis-intro { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin: 45px 0 18px; }
@@ -651,7 +652,6 @@ button, input, select { font: inherit; }
   .company-snapshot-strip { grid-template-columns: 1fr 1fr; }
   .company-snapshot-strip div:nth-child(3) { border-top: 1px solid var(--line); }
   .company-snapshot-strip div:nth-child(4) { border-top: 1px solid var(--line); }
-  .company-snapshot-strip div:nth-child(5) { border-top: 1px solid var(--line); border-left: 0; }
   .role-dossier header { grid-template-columns: 45px 1fr; }
   .role-dossier header > a { grid-column: 2; }
   .role-dossier footer { grid-template-columns: auto 1fr; }

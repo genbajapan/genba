@@ -251,8 +251,8 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "FY26売上",
-      value: "$41.5B",
-      detail: "前年比10%増。サブスクリプション＆サポート売上は$39.4B。",
+      value: "$41.5B(約6兆5,000億円)",
+      detail: "前年比10%増(1ドル=157円換算、2026年8月時点の目安レート)。サブスクリプション＆サポート売上は$39.4B(約6兆1,900億円)。",
       sourceIds: ["sf-fy26"],
     },
     {
@@ -263,14 +263,14 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     },
     {
       label: "Agentforce + Data 360 ARR",
-      value: "$2.9B+",
+      value: "$2.9B+(約4,550億円超)",
       detail: "前年比200%超。Informatica Cloud ARRを含む。",
       sourceIds: ["sf-fy26"],
     },
     {
       label: "Agentforce累計契約",
       value: "29,000件+",
-      detail: "FY26 Q4時点。Agentforce単体ARRは$800M、前年比169%増。",
+      detail: "FY26 Q4時点。Agentforce単体ARRは$800M(約1,256億円)、前年比169%増。",
       sourceIds: ["sf-fy26"],
     },
     {
@@ -293,7 +293,7 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
       conclusion: "CRMの既存基盤、FY26の成長、国内の具体的成果事例を合わせると、初回商談の信用獲得とクロスセル余地は外資SaaSの中でも強いとみます。",
       confidence: "高",
       evidence: [
-        "FY26売上$41.5B、RPO$72.4Bで事業基盤が大きい",
+        "FY26売上$41.5B(約6兆5,000億円)、RPO$72.4B(約11兆4,000億円)で事業基盤が大きい",
         "Agentforce ARRが前年比169%増、累計29,000件超",
         "KDDI・資生堂・サイバーエージェントなど日本企業の公開事例がある",
       ],
