@@ -779,14 +779,14 @@ const datadogIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2026年Q1)",
-      value: "$1,006M",
-      detail: "前年比+32%。",
+      value: "$1,006M(約1,579億円)",
+      detail: "前年比+32%。1ドル=157円換算。",
       sourceIds: ["dd-q1fy26"],
     },
     {
       label: "通期2026年ガイダンス",
-      value: "$43.0億〜$43.4億",
-      detail: "前年比+25〜27%の成長を見込む(2026年Q1決算時点)。",
+      value: "$43.0億〜$43.4億(約6,751億〜6,814億円)",
+      detail: "前年比+25〜27%の成長を見込む(2026年Q1決算時点)。1ドル=157円換算。",
       sourceIds: ["dd-q1fy26"],
     },
     {
@@ -1277,14 +1277,14 @@ const servicenowIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2026年Q2、サブスクリプション)",
-      value: "$3,877M",
-      detail: "前年比+24.5%(定額為替ベース+23%)。",
+      value: "$3,877M(約6,087億円)",
+      detail: "前年比+24.5%(定額為替ベース+23%)。1ドル=157円換算。",
       sourceIds: ["sn-q2fy26"],
     },
     {
       label: "cRPO(残存履行義務)",
-      value: "$132.0億",
-      detail: "前年比+21%(定額為替ベース+21.5%)、2026年Q2時点。",
+      value: "$132.0億(約2兆724億円)",
+      detail: "前年比+21%(定額為替ベース+21.5%)、2026年Q2時点。1ドル=157円換算。",
       sourceIds: ["sn-q2fy26"],
     },
     {
@@ -1750,8 +1750,8 @@ const snowflakeIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2027年度Q1)",
-      value: "$1.39B",
-      detail: "前年比+33%。製品売上は$1.33B、前年比+34%。",
+      value: "$1.39B(約2,182億円)",
+      detail: "前年比+33%。製品売上は$1.33B、前年比+34%。1ドル=157円換算。",
       sourceIds: ["sno-q1fy27"],
     },
     {
@@ -1768,8 +1768,8 @@ const snowflakeIntelligence: CompanyPublicIntelligence = {
     },
     {
       label: "RPO(残存履行義務)",
-      value: "$97.7億",
-      detail: "前年比+42%(2026年度第4四半期時点)。",
+      value: "$97.7億(約1兆5,349億円)",
+      detail: "前年比+42%(2026年度第4四半期時点)。1ドル=157円換算。",
       sourceIds: ["sno-q4fy26"],
     },
     {
@@ -2192,8 +2192,8 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2027年度Q1)",
-      value: "$687.6M",
-      detail: "前年比+25%。",
+      value: "$687.6M(約1,080億円)",
+      detail: "前年比+25%。1ドル=157円換算。",
       sourceIds: ["mdb-q1fy27"],
     },
     {
@@ -2643,14 +2643,14 @@ const brazeIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2027年度Q1)",
-      value: "$211M",
-      detail: "前年比+30%(オーガニック成長率+27%)。4四半期連続の成長加速。",
+      value: "$211M(約331億円)",
+      detail: "前年比+30%(オーガニック成長率+27%)。4四半期連続の成長加速。1ドル=157円換算。",
       sourceIds: ["brz-q1fy27"],
     },
     {
       label: "RPO(残存履行義務)",
-      value: "$10億超",
-      detail: "前年比+30%(2026年度第4四半期時点)。",
+      value: "$10億超(約1,570億円超)",
+      detail: "前年比+30%(2026年度第4四半期時点)。1ドル=157円換算。",
       sourceIds: ["brz-q4fy26"],
     },
     {
@@ -3067,20 +3067,20 @@ const crowdstrikeIntelligence: CompanyPublicIntelligence = {
   facts: [
     {
       label: "売上(2027年度Q1)",
-      value: "$1.39B",
-      detail: "前年比+26%。サブスクリプション売上は$1.32B、同+26%。",
+      value: "$1.39B(約2,182億円)",
+      detail: "前年比+26%。サブスクリプション売上は$1.32B、同+26%。1ドル=157円換算。",
       sourceIds: ["cs-q1fy27"],
     },
     {
       label: "ARR(年間経常収益)",
-      value: "$55.1億",
-      detail: "前年比+24%。純新規ARRは$2.56億(前年比+32%)。",
+      value: "$55.1億(約8,651億円)",
+      detail: "前年比+24%。純新規ARRは$2.56億(前年比+32%)。1ドル=157円換算。",
       sourceIds: ["cs-q1fy27"],
     },
     {
       label: "Non-GAAP EPS",
-      value: "$1.10",
-      detail: "前年同期$0.73から増加(2026年4月期)。",
+      value: "$1.10(約173円)",
+      detail: "前年同期$0.73から増加(2026年4月期)。1ドル=157円換算。",
       sourceIds: ["cs-q1fy27"],
     },
     {
@@ -3522,14 +3522,14 @@ const hubspotIntelligence: CompanyPublicIntelligence = {
     },
     {
       label: "顧客あたり平均サブスク収益(ARPC)",
-      value: "$11,700",
-      detail: "定額為替ベースで前年比+2%(2026年Q1時点)。",
+      value: "$11,700(約184万円)",
+      detail: "定額為替ベースで前年比+2%(2026年Q1時点)。1ドル=157円換算。",
       sourceIds: ["hs-q1fy26"],
     },
     {
       label: "通期2026年ガイダンス",
-      value: "$37.0億〜$37.08億",
-      detail: "前年比+18%(定額為替ベース+17%)。",
+      value: "$37.0億〜$37.08億(約5,810億〜5,822億円)",
+      detail: "前年比+18%(定額為替ベース+17%)。1ドル=157円換算。",
       sourceIds: ["hs-q1fy26"],
     },
     {
