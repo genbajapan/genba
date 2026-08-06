@@ -24,7 +24,7 @@ export default function HomePage() {
         <Container className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">現役外資ITセールスマンによる運営</p>
-            <h1>外資IT戦士のための企業研究所</h1>
+            <h1>外資IT戦士のための<br />企業研究所</h1>
             <p className="hero-lead">外資IT3社目、現役エンタープライズAEの編集長が転職活動の際に収集する情報や観点を盛り込みました。情報収集と面接準備を効率化し、フィットする会社へ最短オファーを勝ち取るための知見を、外資IT戦士と予備軍に無料で届けます。</p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業データを見る</Link>

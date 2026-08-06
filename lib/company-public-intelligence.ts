@@ -97,6 +97,9 @@ export type CompanyPublicIntelligence = {
     name: string;
     valueProp: string;
     url: string;
+    competitors: string;
+    differentiation: string;
+    retention: string;
   }>;
   customerStoriesUrl: string;
   comparisonMap: Array<{
@@ -507,14 +510,70 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     ],
   },
   solutions: [
-    { name: "Sales Cloud", valueProp: "営業プロセス・パイプライン管理の中核製品。Core AEが主に売る基幹CRM。", url: "https://www.salesforce.com/jp/sales/" },
-    { name: "Service Cloud", valueProp: "カスタマーサービス・コールセンター向け。問い合わせ対応の効率化を支援する。", url: "https://www.salesforce.com/jp/service/" },
-    { name: "Marketing Cloud", valueProp: "メール・SMS・広告連携などのマーケティングオートメーション。", url: "https://www.salesforce.com/jp/marketing/" },
-    { name: "Data Cloud", valueProp: "複数チャネルの顧客データを統合するデータプラットフォーム。AI活用の基盤。", url: "https://www.salesforce.com/jp/data/" },
-    { name: "Agentforce", valueProp: "AIエージェントが顧客対応・営業支援タスクを自動化する最新製品。", url: "https://www.salesforce.com/jp/agentforce/" },
-    { name: "Tableau", valueProp: "データ可視化・BI分析ツール。買収により製品群に統合されている。", url: "https://www.salesforce.com/jp/analytics/tableau/" },
-    { name: "MuleSoft", valueProp: "社内システム間のデータ連携基盤(iPaaS)。買収による統合製品。", url: "https://www.mulesoft.com/jp" },
-    { name: "Slack", valueProp: "社内コミュニケーションツール。買収によりCustomer 360と連携する。", url: "https://slack.com/intl/ja-jp" },
+    {
+      name: "Sales Cloud",
+      valueProp: "営業プロセス・パイプライン管理の中核製品。Core AEが主に売る基幹CRM。",
+      url: "https://www.salesforce.com/jp/sales/",
+      competitors: "Microsoft Dynamics 365、HubSpot、Oracle CX、SAPが主要な競合。CRM市場全体ではSalesforceが約20.7%のシェアを持ち、これは競合上位4社の合計シェアより大きいとされる(市場調査記事の集計)。",
+      differentiation: "Microsoft Dynamicsは自社のMicrosoft 365・Power Platformとの統合を強みにする一方、HubSpotはSMB・Mid-Market向けに導入の速さとノーコードでの展開しやすさで急成長している。Salesforceの差別化は、Sales/Service/Marketing Cloudやデータ基盤(Data Cloud)を横断した「顧客情報の一元化」と、Enterprise向けのカスタマイズ性の高さにある。",
+      retention: "Salesforceは製品別の解約率・継続率を公表していないが、FY26のCRPO(現時点の残存履行義務)は前年比14%増の724億ドルで、既存顧客からの契約拡張が事業成長の中心にあることを示している。個別の継続率は面接で確認したい情報として残る。",
+    },
+    {
+      name: "Service Cloud",
+      valueProp: "カスタマーサービス・コールセンター向け。問い合わせ対応の効率化を支援する。",
+      url: "https://www.salesforce.com/jp/service/",
+      competitors: "Zendesk、Freshdesk、Microsoft Dynamics 365 Customer Serviceが主要な競合。",
+      differentiation: "Zendeskは数日で導入できるスピードと低コスト、標準搭載のAIによる自動応答が強み。Service Cloudの差別化は、サポート対応がSales/Marketingと同じ顧客レコード上で完結し、営業・マーケティングの履歴を踏まえた対応ができる点と、大企業向けの高いカスタマイズ性にある。「早さのZendesk、深さのService Cloud」という比較のされ方をしている。",
+      retention: "製品別の継続率は非公開。サイバーエージェントの事例では、Agentforce Sales/Agentforceの導入で営業事務工数を約50%削減、月間商談数を3倍にしたと公式に発表されており、Service Cloud単体ではなく複数製品を組み合わせた活用実績が事例として語られる傾向がある。",
+    },
+    {
+      name: "Marketing Cloud",
+      valueProp: "メール・SMS・広告連携などのマーケティングオートメーション。",
+      url: "https://www.salesforce.com/jp/marketing/",
+      competitors: "Adobe(Journey Optimizer)、HubSpot、Braze、Oracle Marketing Cloudが主要な競合。",
+      differentiation: "Adobeはエンタープライズ領域で最も直接競合するとされる。HubSpotは導入から効果が出るまでの期間の短さ(数週間)を強みにする一方、Marketing Cloudは半年〜1年規模の導入期間になりやすいという指摘がある。Brazeはリアルタイム・クロスチャネル配信に強く、モバイル起点の設計が特徴。Marketing CloudはData Cloudと連携した顧客データ活用の広さが差別化点とされる。",
+      retention: "KDDIの事例では、Data Cloud・Marketing Cloud・Tableauの組み合わせで同時実行施策を200から600へ拡大し、横断施策コストを50%削減したと公式に発表されている。単体の継続率データはないが、複数製品への拡張が進んでいる実例として語れる。",
+    },
+    {
+      name: "Data Cloud",
+      valueProp: "複数チャネルの顧客データを統合するデータプラットフォーム。AI活用の基盤。",
+      url: "https://www.salesforce.com/jp/data/",
+      competitors: "Snowflake、Databricks、Adobe Real-Time CDPが主要な競合。ただし2025年以降はSnowflake・DatabricksともSalesforceと戦略的パートナーシップ(データ連携)を結んでおり、純粋な競合というより併存関係になりつつある。",
+      differentiation: "SnowflakeとDatabricksは機械学習モデルの構築には強いが、自律型のCRMエージェントを直接動かすことはできない。Adobeはコンテンツのパーソナライズはできるが、サービスケースの自動対応はできない。Data Cloudの強みは、Sales/Service/Marketing CloudやAgentforceに、ETLの遅延なくリアルタイムでデータを連携できる点。",
+      retention: "Salesforceの「2025 State of Data Report」では、Data Cloud導入企業でマーケティングROIが32%向上、サポート対応が28%高速化したと報告されている。社内実績としては、Agentforce・Data 360のFY26 Q4 bookingsの60%超が既存顧客からの拡張によるものであることが決算で開示されており、この製品群は新規開拓よりクロスセル・アップセルが伸びの中心になっている。",
+    },
+    {
+      name: "Agentforce",
+      valueProp: "AIエージェントが顧客対応・営業支援タスクを自動化する最新製品。",
+      url: "https://www.salesforce.com/jp/agentforce/",
+      competitors: "Microsoft Copilot Studio、ServiceNowのAIエージェントが主要な競合。2026年時点でエンタープライズAIエージェント市場はSalesforce AgentforceとMicrosoft Copilot Studioの2強とされる。",
+      differentiation: "Microsoft Copilotは M365を中心とした日常業務の生産性向上に強みがあり、ServiceNowはIT・人事・セキュリティ領域の既存のワークフロー基盤を土台に30以上の製品にまたがる300以上のAIスキルを展開している。Agentforceの強みは「CRMデータの厚み」で、長年蓄積した顧客対応履歴・商談データ・ケース情報をもとに推論できる点が他社に模倣されにくい参入障壁とされる。",
+      retention: "FY26 Q4時点でAgentforceの累計契約は29,000件超、単体ARRは$800M(約1,256億円)で前年比169%増。Agentforce・Data 360 bookingsの60%超が既存顧客への拡張によるもので、新規導入より既存顧客への追加販売が成長の中心になっている。",
+    },
+    {
+      name: "Tableau",
+      valueProp: "データ可視化・BI分析ツール。買収により製品群に統合されている。",
+      url: "https://www.salesforce.com/jp/analytics/tableau/",
+      competitors: "Microsoft Power BI、Qlik、Google Looker(Looker Studio)が主要な競合。",
+      differentiation: "Power BIはMicrosoft Fabricという大きなデータ基盤の一部として位置づけられ、Copilotによるレポート作成の速さが強み。TableauはSalesforce傘下になったことで、Slackでの自動サマリー通知(Tableau Pulse)や、Data Cloudとのリアルタイム連携による顧客ジャーナルの可視化など、営業・CRM文脈での活用に強みがある。",
+      retention: "製品単体の継続率は非公開。資生堂の事例では、Data Cloud・MuleSoft・Marketing Cloud・Service Cloudと合わせてグローバル顧客データ・API統合を複数製品で推進していると公式発表されており、Tableauも含めた複数製品の併用が大手顧客での典型的な使われ方だと考えられる。",
+    },
+    {
+      name: "MuleSoft",
+      valueProp: "社内システム間のデータ連携基盤(iPaaS)。買収による統合製品。",
+      url: "https://www.mulesoft.com/jp",
+      competitors: "Boomi、Workato、Informatica(SalesforceがInformatica Cloudを買収済み)が主要な競合。",
+      differentiation: "Boomiはノーコードで低学習コスト、素早い導入に強みがある一方、MuleSoftは開発者中心の複雑なAPI連携・ガバナンス要件がある大企業向けに強いとされる。「開発者が多く複雑な統合ならMuleSoft、素早い低コード連携ならBoomi」という比較のされ方をしている。",
+      retention: "製品単体の継続率は非公開。資生堂の事例のように、MuleSoftはData Cloudやその他製品と組み合わせてシステム間連携基盤として使われるケースが多く、単体販売よりインフラ的な位置づけで長期契約になりやすいと考えられる(Genba分析)。",
+    },
+    {
+      name: "Slack",
+      valueProp: "社内コミュニケーションツール。買収によりCustomer 360と連携する。",
+      url: "https://slack.com/intl/ja-jp",
+      competitors: "Microsoft Teamsが最大の競合。",
+      differentiation: "Teamsは特にMicrosoft 365を導入済みの企業で強く、エコシステム内の統合の「深さ」に強みがある一方、サードパーティ連携の「広さ」では見劣りするとされる。SlackはTableauでの自動サマリー通知やMuleSoftとのAPI連携など、Salesforce製品群との横断的な連携が強みで、営業・CRMのワークフローに組み込みやすい設計になっている。",
+      retention: "製品単体の継続率は非公開。Tableau Pulseの通知先としてSlackが使われるなど、他製品との併用を前提にした活用が公式に紹介されている。",
+    },
   ],
   customerStoriesUrl: "https://www.salesforce.com/jp/customer-stories/",
   comparisonMap: [

@@ -134,6 +134,7 @@ export default function CompanyIntelligenceProfile({
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
             <a href="#overview">会社概要</a>
+            <a href="#culture">組織文化</a>
             <a href="#roles">ポジション</a>
             <a href="#decision">応募判断</a>
             <a href="#solution">ソリューション</a>
@@ -186,44 +187,46 @@ export default function CompanyIntelligenceProfile({
               )}
             </section>
 
-            <section className="intel-section" id="roles">
+            <section className="intel-section" id="culture">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
-                <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
+                <div><p className="intel-kicker">02 / COMPANY CULTURE</p><h2>組織文化について。</h2></div>
+                <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
               </div>
 
-              {company.interviewFlow && (
-                <div className="interview-flow">
-                  <p className="card-index">想定面接フロー(実態は要確認)</p>
-                  <div className="interview-flow-track">
-                    {company.interviewFlow.steps.flatMap((step, index, steps) => {
-                      const nodes = [
-                        <div className="interview-flow-step" key={`step-${step.label}`}>
-                          <span className="interview-flow-number">{index + 1}</span>
-                          <div className="interview-flow-body">
-                            <strong>{step.label}</strong>
-                            <p>{step.detail}</p>
-                          </div>
-                        </div>,
-                      ];
-                      if (index < steps.length - 1) {
-                        nodes.push(<div className="interview-flow-connector" key={`connector-${step.label}`} aria-hidden="true" />);
-                      }
-                      return nodes;
-                    })}
-                  </div>
-                  <p className="interview-flow-note">{company.interviewFlow.note}</p>
+              {publicIntel ? (
+                <article className="organization-read-card">
+                  <div><p className="card-index">ORGANIZATION READ</p><h3>大きな会社では「社風」より、自分が入る小さな組織を見抜く。</h3></div>
+                  <p>{publicIntel.leadership.read}</p>
+                  {(() => { const source = getResearchSource(publicIntel, publicIntel.leadership.sourceId); return source ? <a href={source.url} target="_blank" rel="noreferrer">役員人事を見る ↗</a> : null; })()}
+                </article>
+              ) : (
+                <div className="career-flow-board">
+                  <div className="career-node"><span>BEFORE</span><strong>主な入社元</strong><p>集計データ準備中</p></div>
+                  <div className="career-track" aria-hidden="true"><i /><b>{company.name.slice(0, 1)}</b><i /></div>
+                  <div className="career-node"><span>AFTER</span><strong>主な転職先</strong><p>集計データ準備中</p></div>
                 </div>
               )}
 
-              {publicIntel && (
-                <div className="role-hypothesis-grid">
-                  <article><span>SALES MOTION</span><p>{publicIntel.roleLens.salesMotion}</p></article>
-                  <article><span>COMPENSATION</span><p>{publicIntel.roleLens.compensation}</p></article>
-                  <article><span>QUOTA</span><p>{publicIntel.roleLens.quota}</p></article>
-                  <article><span>COLLABORATION</span><p>{publicIntel.roleLens.collaboration}</p></article>
-                </div>
-              )}
+              <div className="culture-grid">
+                {publicIntel ? (
+                  <>
+                    <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>学習資源は厚い。ただし体験はOUと上司次第。</h3><p>公式の研修・mentorship・昇進パスと、外部レビューのtraining評価は整合します。一方、高業績文化やmanager差も示唆されるため、配属チーム単位で検証が必要です。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
+                    <article><p className="card-index">CAREER VALUE</p><h3>“Enterprise Salesの学校”として見る。</h3><p>大手顧客、複数製品、C-level、Partner、専門組織を束ねた経験は次の転職でも説明しやすい。一方、昇進実績や在籍年数は同一OUの実数を面接で確かめたいです。</p><span className="hypothesis-pill">GENBA仮説 / 確度 中</span></article>
+                  </>
+                ) : (
+                  <>
+                    <article><p className="card-index">CULTURE LENS</p><h3>社風・マネジメント</h3><p>働き方、意思決定、Forecastの厳しさ、英語利用、社内昇進を、複数の公開情報から確認します。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
+                    <article><p className="card-index">LEADERSHIP</p><h3>日本責任者・営業リーダー</h3><p>公式プロフィール、就任リリース、公開インタビューがある場合のみ掲載します。人物評や未確認情報は扱いません。</p><span className="pending-pill">参照記事を確認中</span></article>
+                  </>
+                )}
+              </div>
+            </section>
+
+            <section className="intel-section" id="roles">
+              <div className="intel-heading">
+                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
+                <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
+              </div>
 
               {companyJobs.length ? (
                 <>
@@ -285,6 +288,18 @@ export default function CompanyIntelligenceProfile({
                               </div>
                             </details>
                           )}
+                          {job.desiredProfile && (
+                            <details className="role-description">
+                              <summary>
+                                <span className="role-description-icon" aria-hidden="true">+</span>
+                                <span className="role-description-label">求める人物や経験</span>
+                                <span className="role-description-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <div className="role-description-body">
+                                <p>{job.desiredProfile}</p>
+                              </div>
+                            </details>
+                          )}
                           {job.careerInsights && [
                             { label: "向き不向き", content: job.careerInsights.fit },
                             { label: "先に知っておくべきこと", content: job.careerInsights.thingsToKnow },
@@ -317,14 +332,47 @@ export default function CompanyIntelligenceProfile({
                   <p>{profile.observedRoleCount > 0 ? "個別求人の出典と要件を整理中です。応募前に公式採用ページでも最新情報を確認してください。" : "公式採用ページを継続観測し、募集を確認次第追加します。"}</p>
                 </div>
               )}
+
+              {publicIntel && (
+                <div className="role-hypothesis-grid">
+                  <article><span>SALES MOTION</span><p>{publicIntel.roleLens.salesMotion}</p></article>
+                  <article><span>COMPENSATION</span><p>{publicIntel.roleLens.compensation}</p></article>
+                  <article><span>QUOTA</span><p>{publicIntel.roleLens.quota}</p></article>
+                  <article><span>COLLABORATION</span><p>{publicIntel.roleLens.collaboration}</p></article>
+                </div>
+              )}
+
+              {company.interviewFlow && (
+                <div className="interview-flow">
+                  <p className="card-index">想定面接フロー(実態は要確認)</p>
+                  <div className="interview-flow-track">
+                    {company.interviewFlow.steps.flatMap((step, index, steps) => {
+                      const nodes = [
+                        <div className="interview-flow-step" key={`step-${step.label}`}>
+                          <span className="interview-flow-number">{index + 1}</span>
+                          <div className="interview-flow-body">
+                            <strong>{step.label}</strong>
+                            <p>{step.detail}</p>
+                          </div>
+                        </div>,
+                      ];
+                      if (index < steps.length - 1) {
+                        nodes.push(<div className="interview-flow-connector" key={`connector-${step.label}`} aria-hidden="true" />);
+                      }
+                      return nodes;
+                    })}
+                  </div>
+                  <p className="interview-flow-note">{company.interviewFlow.note}</p>
+                </div>
+              )}
             </section>
 
             <section className="intel-section" id="decision">
               <div className="intel-heading">
                 {publicIntel ? (
-                  <div><p className="intel-kicker">03 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
+                  <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
                 ) : (
-                  <div><p className="intel-kicker">03 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
+                  <div><p className="intel-kicker">04 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
                 )}
                 <p>{publicIntel ? "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。" : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
               </div>
@@ -403,7 +451,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">
-                <div><p className="intel-kicker">04 / SOLUTION INTELLIGENCE</p><h2>取扱ソリューションの深掘り。</h2></div>
+                <div><p className="intel-kicker">05 / SOLUTION INTELLIGENCE</p><h2>取扱ソリューションの深掘り。</h2></div>
                 <span className="analysis-label">Genbaカテゴリ分析</span>
               </div>
 
@@ -441,6 +489,9 @@ export default function CompanyIntelligenceProfile({
                         </summary>
                         <div className="solution-item-body">
                           <p>{solution.valueProp}</p>
+                          {solution.competitors && <p><span>主な競合</span>{solution.competitors}</p>}
+                          {solution.differentiation && <p><span>差別化ポイント</span>{solution.differentiation}</p>}
+                          {solution.retention && <p><span>継続・拡張の実態</span>{solution.retention}</p>}
                           <a href={solution.url} target="_blank" rel="noreferrer">公式ソリューションページ ↗</a>
                         </div>
                       </details>
@@ -537,7 +588,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="team">
               <div className="intel-heading">
-                <div><p className="intel-kicker">05 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
+                <div><p className="intel-kicker">06 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
                 <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
               </div>
 
@@ -550,40 +601,12 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
 
-              {publicIntel ? (
-                <article className="organization-read-card">
-                  <div><p className="card-index">ORGANIZATION READ</p><h3>大きな会社では「社風」より、自分が入る小さな組織を見抜く。</h3></div>
-                  <p>{publicIntel.leadership.read}</p>
-                  {(() => { const source = getResearchSource(publicIntel, publicIntel.leadership.sourceId); return source ? <a href={source.url} target="_blank" rel="noreferrer">役員人事を見る ↗</a> : null; })()}
-                </article>
-              ) : (
-                <div className="career-flow-board">
-                  <div className="career-node"><span>BEFORE</span><strong>主な入社元</strong><p>集計データ準備中</p></div>
-                  <div className="career-track" aria-hidden="true"><i /><b>{company.name.slice(0, 1)}</b><i /></div>
-                  <div className="career-node"><span>AFTER</span><strong>主な転職先</strong><p>集計データ準備中</p></div>
-                </div>
-              )}
-
-              <div className="culture-grid">
-                {publicIntel ? (
-                  <>
-                    <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>学習資源は厚い。ただし体験はOUと上司次第。</h3><p>公式の研修・mentorship・昇進パスと、外部レビューのtraining評価は整合します。一方、高業績文化やmanager差も示唆されるため、配属チーム単位で検証が必要です。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                    <article><p className="card-index">CAREER VALUE</p><h3>“Enterprise Salesの学校”として見る。</h3><p>大手顧客、複数製品、C-level、Partner、専門組織を束ねた経験は次の転職でも説明しやすい。一方、昇進実績や在籍年数は同一OUの実数を面接で確かめたいです。</p><span className="hypothesis-pill">GENBA仮説 / 確度 中</span></article>
-                  </>
-                ) : (
-                  <>
-                    <article><p className="card-index">CULTURE LENS</p><h3>社風・マネジメント</h3><p>働き方、意思決定、Forecastの厳しさ、英語利用、社内昇進を、複数の公開情報から確認します。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                    <article><p className="card-index">LEADERSHIP</p><h3>日本責任者・営業リーダー</h3><p>公式プロフィール、就任リリース、公開インタビューがある場合のみ掲載します。人物評や未確認情報は扱いません。</p><span className="pending-pill">参照記事を確認中</span></article>
-                  </>
-                )}
-              </div>
-
               {companySignals.length > 0 && <div className="company-signal-block"><h3>組織・採用の変化</h3><div className="signal-feed">{companySignals.map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div></div>}
             </section>
 
             <section className="intel-section" id="compare">
               <div className="intel-heading">
-                <div><p className="intel-kicker">06 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
+                <div><p className="intel-kicker">07 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
                 <p>同じ買い手・領域・営業経験を軸にした併願候補です。</p>
               </div>
               {publicIntel && (
@@ -613,7 +636,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="sources">
               <div className="intel-heading">
-                <div><p className="intel-kicker">07 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
                 <p>数字・判断材料の出所と更新日を追える状態にします。</p>
               </div>
               <div className="source-ledger">
