@@ -115,7 +115,7 @@ export default function CompanyIntelligenceProfile({
               <div className="decision-console-body">
                 <p>成長意欲があり、市場価値を上げたい人にとって</p>
                 <h2>{publicIntel ? "重点検討に値する" : profile.verdict}</h2>
-                <p className="decision-reason">{publicIntel?.verdict ?? profile.verdictReason}</p>
+                <p className="decision-reason">{profile.verdictReason}</p>
                 <div className="decision-stats">
                   <div><strong>{profile.observedRoleCount}</strong><span>観測した営業求人</span></div>
                   <div><strong>{publicIntel?.sources.length ?? companySignals.length}</strong><span>{publicIntel ? "調査ソース" : "採用シグナル"}</span></div>
@@ -262,21 +262,6 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  <article className="research-verdict-card">
-                    <div className="research-verdict-meta">
-                      <span>DEEP RESEARCH</span>
-                      <span>{shortDate(publicIntel.researchedAt)} 更新</span>
-                      <span>{publicIntel.sources.length} SOURCES</span>
-                    </div>
-                    <div className="research-verdict-grid">
-                      <div><span>向いている人</span><p>{publicIntel.bestFor}</p></div>
-                      <div><span>向いていない人</span><p>{publicIntel.notFor}</p></div>
-                      <div><span>先に疑うべきこと</span><p>{publicIntel.watchouts}</p></div>
-                      <div><span>入って活躍できた場合の市場価値</span><p>{publicIntel.marketValueIfSucceed}</p></div>
-                    </div>
-                    <p className="research-verdict-summary">{publicIntel.verdict}</p>
-                  </article>
-
                   <div className="company-snapshot-strip">
                     <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
                     <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>

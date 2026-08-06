@@ -63,11 +63,6 @@ export type InterviewPrepQuestion = {
 
 export type CompanyPublicIntelligence = {
   researchedAt: string;
-  verdict: string;
-  bestFor: string;
-  notFor: string;
-  watchouts: string;
-  marketValueIfSucceed: string;
   facts: PublicFact[];
   hypotheses: GenbaHypothesis[];
   customerProof: CustomerProof[];
@@ -247,11 +242,6 @@ const salesforceSources: ResearchSource[] = [
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-05",
-  verdict: "「Salesforceに入る」かどうかではなく、OU × 製品 × テリトリー × 上司をどう選ぶかで結果が大きく変わる転職だと考えたい。",
-  bestFor: "大手顧客・複数部門を横断する商談を経験したい人。Core AE、Specialist、SE、Partnerなど複数チームを自分で束ねて動かす社内営業力に自信がある人。稟議・合意形成を経てから動く進め方に抵抗がなく、Enterprise Salesの型を学びながら市場価値の高い経験を積みたい人に向いている。",
-  notFor: "単独で完結する新規開拓(ハンター型)だけをやりたい人には不向き。Core AEとの連携やSpecialistとの協業が前提のため、自分の裁量だけで数字を作りたいタイプには窮屈に感じられやすい。大企業特有の合意形成プロセスの遅さより、意思決定の速さを重視する人にも向かない。",
-  watchouts: "会社全体のブランドや平均報酬だけで判断するのは危険。Core / Specialist、SMB / Enterprise、既存深耕 / 新規開拓で難易度・裁量・報酬構造が大きく変わる可能性が高い。同じSalesforceでも、配属されるOU(Organizational Unit)と上司次第で体験は別会社レベルに変わり得る点は、面接で必ず確認したい。",
-  marketValueIfSucceed: "Enterprise SalesかつAI・データ領域の実績を積めれば、外資SaaS市場全体で通用する「大手×複数製品×AI活用」という説明しやすい経歴になる。次の転職でもEnterprise AE・Specialist AEとして高いOTEレンジを狙える経歴として評価されやすい。ただしこれは活躍できた場合の話で、配属や上司次第で立ち上がりに時間がかかれば、その分市場価値が伸びるスピードも遅れる。",
   facts: [
     {
       label: "FY26売上",
