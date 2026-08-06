@@ -1,8 +1,13 @@
 {
   "name": "genba",
   "compatibility_date": "2026-07-31",
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./out",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
+  },
+  "ai": {
+    "binding": "AI"
   }
 }

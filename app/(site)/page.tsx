@@ -7,7 +7,6 @@ import JobCard from "@/components/JobCard";
 import SignalCard from "@/components/SignalCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import HiringHeatmap from "@/components/HiringHeatmap";
-import CompanyMatchQuiz from "@/components/CompanyMatchQuiz";
 import { companies, jobs, signals } from "@/lib/market-data";
 
 export const metadata: Metadata = {
@@ -48,13 +47,6 @@ export default function HomePage() {
 
       <section className="content-section market-section">
         <Container><HiringHeatmap /></Container>
-      </section>
-
-      <section className="content-section surface-section">
-        <Container>
-          <SectionHeader eyebrow="AI MATCH" title="自分にマッチする会社を探す" description="経験セグメント・OTE・英語力・転職で重視したいことを選ぶだけの簡易診断です。ニックネームやメールアドレスの入力は不要で、回答は保存されません。" />
-          <CompanyMatchQuiz />
-        </Container>
       </section>
 
       <section className="content-section">
