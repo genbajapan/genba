@@ -220,6 +220,25 @@ export default function CompanyIntelligenceProfile({
                               </div>
                             </details>
                           )}
+                          {job.careerInsights && [
+                            { label: "向き不向き", content: job.careerInsights.fit },
+                            { label: "先に知っておくべきこと", content: job.careerInsights.thingsToKnow },
+                            { label: "入って活躍できた場合の市場価値", content: job.careerInsights.marketValue },
+                            { label: "在籍年数・社内プロモか転職が多いか", content: job.careerInsights.tenureAndPromotion },
+                            { label: "どんな会社からの転職が多いか", content: job.careerInsights.priorCompanies },
+                            { label: "どんな会社への転職が多いか", content: job.careerInsights.nextCompanies },
+                          ].map((item) => (
+                            <details className="role-description" key={item.label}>
+                              <summary>
+                                <span className="role-description-icon" aria-hidden="true">+</span>
+                                <span className="role-description-label">{item.label}<small>タップして開閉</small></span>
+                                <span className="role-description-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <div className="role-description-body">
+                                <p>{item.content}</p>
+                              </div>
+                            </details>
+                          ))}
                           <footer><span>Source</span><p>{job.source.label}</p><time dateTime={job.lastChecked}>最終更新日 {shortDate(job.lastChecked)}</time></footer>
                         </article>
                       );
