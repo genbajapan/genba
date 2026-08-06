@@ -386,7 +386,7 @@ export default function CompanyIntelligenceProfile({
               </div>
 
               <div className="buyer-panel">
-                <p className="card-index">主な買い手</p>
+                <p className="card-index">主な買い手(アプローチ先)</p>
                 <div className="buyer-chip-row">
                   {profile.lens.buyers.map((buyer) => <span key={buyer}>{buyer}</span>)}
                 </div>
