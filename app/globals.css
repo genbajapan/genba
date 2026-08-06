@@ -362,10 +362,10 @@ button, input, select { font: inherit; }
 .orbit-label-a { top: 43px; left: 50%; transform: translateX(-50%); }
 .orbit-label-b { right: 16px; bottom: 75px; }
 .orbit-label-c { left: 18px; bottom: 75px; }
-.solution-story { padding: 48px 45px; }
+.solution-story { display: flex; flex-direction: column; justify-content: center; padding: 48px 45px; }
 .solution-story .card-index { color: #70d3c5; }
-.solution-story h3 { margin: 0; font-size: 31px; letter-spacing: -.04em; }
-.solution-story > p:not(.card-index) { max-width: 550px; margin: 16px 0 0; color: #b5c8d0; font-size: 13px; line-height: 1.85; }
+.solution-story h3 { margin: 12px 0 0; font-size: 52px; font-weight: 850; letter-spacing: -.045em; line-height: 1.02; }
+.solution-story > p:not(.card-index) { max-width: 550px; margin: 22px 0 0; color: #c7d8de; font-size: 16px; line-height: 1.85; }
 .buyer-panel { margin-top: 9px; padding: 24px 26px; border: 1px solid var(--line); background: #f7f9f8; }
 .buyer-panel .card-index { margin: 0 0 14px; }
 .buyer-chip-row { display: flex; flex-wrap: wrap; gap: 9px; }

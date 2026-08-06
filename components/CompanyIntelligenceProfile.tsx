@@ -189,7 +189,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="culture">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / COMPANY CULTURE</p><h2>組織文化について。</h2></div>
+                <div><p className="intel-kicker">02 / COMPANY CULTURE</p><h2>組織文化について</h2></div>
                 <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
               </div>
 
@@ -478,7 +478,7 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel && publicIntel.solutions.length > 0 && (
                 <div className="solution-catalog">
-                  <p className="card-index">具体的なソリューション</p>
+                  <p className="card-index">具体的なソリューション(競合/差別化/継続実態)</p>
                   <div className="solution-catalog-grid">
                     {publicIntel.solutions.map((solution) => (
                       <details className="solution-item" key={solution.name}>
