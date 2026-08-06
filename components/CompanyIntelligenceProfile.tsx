@@ -192,6 +192,30 @@ export default function CompanyIntelligenceProfile({
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
+              {company.interviewFlow && (
+                <div className="interview-flow">
+                  <p className="card-index">想定面接フロー(実態は要確認)</p>
+                  <div className="interview-flow-track">
+                    {company.interviewFlow.steps.flatMap((step, index, steps) => {
+                      const nodes = [
+                        <div className="interview-flow-step" key={`step-${step.label}`}>
+                          <span className="interview-flow-number">{index + 1}</span>
+                          <div className="interview-flow-body">
+                            <strong>{step.label}</strong>
+                            <p>{step.detail}</p>
+                          </div>
+                        </div>,
+                      ];
+                      if (index < steps.length - 1) {
+                        nodes.push(<div className="interview-flow-connector" key={`connector-${step.label}`} aria-hidden="true" />);
+                      }
+                      return nodes;
+                    })}
+                  </div>
+                  <p className="interview-flow-note">{company.interviewFlow.note}</p>
+                </div>
+              )}
+
               {publicIntel && (
                 <div className="role-hypothesis-grid">
                   <article><span>SALES MOTION</span><p>{publicIntel.roleLens.salesMotion}</p></article>
@@ -246,6 +270,18 @@ export default function CompanyIntelligenceProfile({
                               <div className="role-description-body">
                                 <p><span>公式ディスクリプションの要約</span>{job.descriptionSummary}</p>
                                 {job.genbaTake && <p className="role-description-take"><span>Genbaからの示唆</span>{job.genbaTake}</p>}
+                              </div>
+                            </details>
+                          )}
+                          {job.compensationReality && (
+                            <details className="role-description">
+                              <summary>
+                                <span className="role-description-icon" aria-hidden="true">+</span>
+                                <span className="role-description-label">給与事情</span>
+                                <span className="role-description-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <div className="role-description-body">
+                                <p>{job.compensationReality}</p>
                               </div>
                             </details>
                           )}

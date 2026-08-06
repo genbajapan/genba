@@ -438,6 +438,16 @@ button, input, select { font: inherit; }
 .customer-proof-grid article > p:not(.customer-products) { margin: 11px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .customer-proof-grid a { margin-top: auto; padding-top: 18px; color: var(--signal); font-size: 11px; font-weight: 750; }
 
+.interview-flow { margin: 9px 0 28px; padding: 26px 28px; border: 1px solid var(--line); background: #f7f9f8; }
+.interview-flow .card-index { margin: 0 0 20px; }
+.interview-flow-track { display: flex; align-items: flex-start; }
+.interview-flow-step { display: flex; flex-direction: column; align-items: center; width: 150px; flex-shrink: 0; text-align: center; }
+.interview-flow-connector { flex: 1; min-width: 20px; height: 2px; margin-top: 21px; background: linear-gradient(90deg, #8fc9bd, #b9d4d0); }
+.interview-flow-number { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--signal), #0a6d63); color: white; font-size: 16px; font-weight: 850; box-shadow: 0 4px 10px rgba(10,109,99,.25); }
+.interview-flow-body { margin-top: 12px; padding: 0 6px; }
+.interview-flow-body strong { display: block; color: var(--navy); font-size: 12px; line-height: 1.4; }
+.interview-flow-body p { margin: 6px 0 0; color: #52646c; font-size: 10px; line-height: 1.6; }
+.interview-flow-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px dashed #c7d3d5; color: #7b898e; font-size: 10px; line-height: 1.6; }
 .role-hypothesis-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 12px; }
 .role-hypothesis-grid article { padding: 18px; border: 1px solid #294957; background: #0b2a3b; }
 .role-hypothesis-grid span { color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .1em; }
@@ -593,6 +603,10 @@ button, input, select { font: inherit; }
   .mobile-nav nav { display: flex; gap: 21px; min-width: max-content; padding: 11px 0; }
   .mobile-nav a { color: var(--muted); font-size: 11px; font-weight: 700; text-decoration: none; }
   .header-cta { min-height: 35px; padding: 0 13px; }
+  .interview-flow-track { flex-direction: column; align-items: stretch; }
+  .interview-flow-step { flex-direction: row; align-items: center; width: auto; text-align: left; gap: 14px; }
+  .interview-flow-body { margin-top: 0; }
+  .interview-flow-connector { width: 2px; min-width: 2px; height: 20px; margin: 2px 0 2px 20px; background: linear-gradient(180deg, #8fc9bd, #b9d4d0); }
   .hero-grid,.page-hero-grid,.detail-grid { grid-template-columns: 1fr; }
   .hero-copy { padding: 67px 0 45px; }
   .hero h1 { font-size: 43px; }
