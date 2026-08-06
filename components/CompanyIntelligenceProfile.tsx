@@ -116,6 +116,9 @@ export default function CompanyIntelligenceProfile({
                 <p>成長意欲があり、市場価値を上げたい人にとって</p>
                 <h2>{publicIntel ? "重点検討に値する" : profile.verdict}</h2>
                 <p className="decision-reason">{profile.verdictReason}</p>
+                <div className="decision-fit-tags">
+                  {(publicIntel?.fitTags ?? profile.fitSignals).map((tag) => <span key={tag}>#{tag}</span>)}
+                </div>
                 <div className="decision-stats">
                   <div><strong>{profile.observedRoleCount}</strong><span>観測した営業求人</span></div>
                   <div><strong>{publicIntel?.sources.length ?? companySignals.length}</strong><span>{publicIntel ? "調査ソース" : "採用シグナル"}</span></div>
@@ -451,7 +454,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">
-                <div><p className="intel-kicker">05 / SOLUTION INTELLIGENCE</p><h2>取扱ソリューションの深掘り。</h2></div>
+                <div><p className="intel-kicker">05 / SOLUTION INTELLIGENCE</p><h2>売るソリューションの深掘り。</h2></div>
                 <span className="analysis-label">Genbaカテゴリ分析</span>
               </div>
 

@@ -241,6 +241,8 @@ button, input, select { font: inherit; }
 .decision-console-body > p:first-child { margin: 0; color: #75909c; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
 .decision-console-body h2 { margin: 10px 0 0; color: #f4fbf9; font-size: 27px; letter-spacing: -.04em; }
 .decision-reason { min-height: 48px; margin: 13px 0 23px; color: #a6bac3; font-size: 14px; line-height: 1.75; }
+.decision-fit-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 23px; }
+.decision-fit-tags span { padding: 6px 10px; border: 1px solid #355867; background: rgba(112,211,197,.06); color: #9eddd3; font-size: 11px; font-weight: 700; }
 .decision-stats { display: grid; grid-template-columns: repeat(3,1fr); border-block: 1px solid #294957; }
 .decision-stats div { padding: 14px 0; }
 .decision-stats div + div { padding-left: 13px; border-left: 1px solid #294957; }

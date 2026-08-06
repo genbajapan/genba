@@ -102,6 +102,7 @@ export type CompanyPublicIntelligence = {
     retention: string;
   }>;
   customerStoriesUrl: string;
+  fitTags: string[];
   comparisonMap: Array<{
     arena: string;
     companies: string[];
@@ -576,6 +577,16 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     },
   ],
   customerStoriesUrl: "https://www.salesforce.com/jp/customer-stories/",
+  fitTags: [
+    "成長したい",
+    "市場価値を上げたい",
+    "高OTEで稼ぎたい",
+    "英語を使う環境に身を置きたい",
+    "AI・データ領域を極めたい",
+    "Enterpriseの大型商談経験を積みたい",
+    "複数製品を横断して学びたい",
+    "外資特有の実力主義に挑戦したい",
+  ],
   comparisonMap: [
     { arena: "Core CRM", companies: ["Microsoft", "HubSpot", "Oracle", "SAP"], why: "基幹CRM・営業標準化の比較" },
     { arena: "AI Agent / Workflow", companies: ["Microsoft", "ServiceNow", "Google Cloud"], why: "業務AIエージェント予算の比較" },
