@@ -84,6 +84,27 @@ const datadogPublicSectorCareerFlow = {
   nextCompanies: "確認できる公開データはない。SLED専門の営業経験は希少性が高いため、同領域を強化したい他のセキュリティ・クラウド基盤企業からの引き合いにつながりやすいと考えられるが、これは未確認の一般論である。",
 };
 
+// 会社全体の離職率・在籍年数の公開データは無いため、共通の非公開注記として保持
+const servicenowTenureNote = "ServiceNow全体の離職率・在籍年数を示す公開データは確認できていない。日本法人は2023年に米本社直轄の独立事業体へ昇格したばかりで、組織体制が変化している時期にあたる。";
+
+const servicenowEnterpriseCareerFlow = {
+  tenureAndPromotion: servicenowTenureNote,
+  priorCompanies: "求人要件からは、大型エンタープライズ商談の実績を持つ他SaaS企業のAE、もしくは業界特化のITコンサル出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。一般的な傾向として、Salesforce、SAP、Microsoftなど同規模のエンタープライズSaaS企業のEnterprise/Strategic AEへの転職が中心になりやすいと考えられるが、これは未確認の一般論。",
+};
+
+const servicenowSrEnterpriseCareerFlow = {
+  tenureAndPromotion: servicenowTenureNote,
+  priorCompanies: "求人要件からは、大型エンタープライズ商談の実績を持つ他SaaS企業のAE、もしくはITコンサル出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const servicenowServicesCareerFlow = {
+  tenureAndPromotion: servicenowTenureNote,
+  priorCompanies: "カスタマーサクセス・ポストセールス職の経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -151,9 +172,19 @@ export const companies: Company[] = [
     hiringStatus: "積極採用",
     salesRoles: 3,
     description: "Enterprise AE、Solution Sales、Partner Accountなど日本向け採用を幅広く掲載。",
-    lastChecked: "2026-08-04",
+    lastChecked: "2026-08-06",
     careersUrl: "https://careers.servicenow.com/locations/apj/japan/",
     tags: ["Enterprise", "Manufacturing", "Partner"],
+    interviewFlow: {
+      steps: [
+        { label: "書類選考", detail: "職務経歴書による書類選考。" },
+        { label: "リクルーター面談", detail: "社内リクルーターとの電話面談。経歴確認と会社説明が中心。" },
+        { label: "一次面接", detail: "採用予定ポジションのハイアリングマネージャーが担当。" },
+        { label: "二次面接", detail: "クロスファンクショナルな関係者との面接。業界理解や提案力が問われる傾向がある。" },
+        { label: "最終面接", detail: "シニアリーダーとの面接。ケーススタディやロールプレイが含まれる場合がある。" },
+      ],
+      note: "note.com「ServiceNow Japan面接対策」、ワンキャリアの面接体験談など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
+    },
   },
   {
     slug: "snowflake",
@@ -353,6 +384,72 @@ export const jobs: Job[] = [
       thingsToKnow: "SLED特有の予算サイクル(年度予算・入札)への理解が前提となる。案件のリードタイムが長いため、短期の成果を求められるプレッシャーとのバランスを面接で確認しておきたい。",
       marketValue: "官公庁向けSaaS営業の実績は、他のセグメントと違う軸で市場価値が評価される。①報酬面ではEnterprise・Strategic AE帯に準じる水準が期待できるが、公開データでの確認はできていない。②最大の価値は希少性で、SLED特有の調達プロセス・予算サイクルへの理解は代替が効きにくく、同領域を強化したいセキュリティ・クラウド基盤企業からの引き合いにつながりやすい。③一方で、官公庁向け営業の経験は民間エンタープライズ営業への転換では評価が割り引かれる場合があり、「意思決定の速い民間営業」を次に目指すなら、そのギャップをどう埋めるかを面接で説明できる準備が要る。④商談サイクルが長いため、在籍が浅いと成果として語れる実績がまだ蓄積されていない可能性があり、入社時期と現時点の実績を正直に伝えることが重要になる。",
       ...datadogPublicSectorCareerFlow,
+    },
+  },
+  {
+    id: "sn-enterprise-ae-manufacturing",
+    companySlug: "servicenow",
+    title: "Enterprise Account Executive, Manufacturing",
+    segment: "Enterprise / Manufacturing",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "ServiceNow Careers", url: "https://careers.servicenow.com/jobs/744000058131540/enterprise-account-executive-manufacturing-1/" },
+    descriptionSummary: "製造業(Manufacturing)向けの新規事業開発を担うEnterprise AE。SaaSライセンスモデルでの新規事業売上創出を、アカウントプランニング・テリトリープランニング・見込み顧客リサーチを通じて行う。CFO・CIO・COO・CDOなど複数のC-suiteとの関係構築と、Solutions Consultant・Solutions Specialist・Success・Partner・Marketingを含む仮想チームを率いてアカウント戦略を統括することが求められる。",
+    genbaTake: "「複数のC-suiteとの関係構築」「仮想チームの統括」が明記されている点は、単独で売る営業ではなく、社内の専門リソースを動員する『オーケストレーター』としての力量が問われることを意味する。製造業という業界特化のポジションのため、業界知識の深さが選考で重視されやすい。",
+    compensationReality: "RepVueの集計ではEnterprise Account Executiveの標準クオータは約155万ドル(約2.4億円、$1=157円換算)。OpenMoney自己申告データでは営業部門の平均年収が1,766万円と、全社平均(1,639万円)より高い水準。ただしOTEやPay Mixの内訳は非公開。",
+    desiredProfile: "求人ではSaaSライセンスモデルでの新規事業売上創出の実績、複数のC-suiteとの関係構築力、Solutions Consultant等の仮想チームを率いた経験が重視される。製造業の業務知識(サプライチェーン、IT/OT統合等)があると評価されやすいと考えられる。",
+    careerInsights: {
+      fit: "業界知識を武器に、複数の社内専門チームを動かしながら大型商談を進めたい人に向く。逆に、単独で完結する営業スタイルを好む人には仮想チーム運営の負荷が大きく感じられる可能性がある。",
+      thingsToKnow: "RepVueの集計では、Enterprise Account Executiveのクオータ達成率は約47%と、必ずしも高くない。ブランド力への期待と実際の達成難易度にはギャップがある可能性がある。",
+      marketValue: "製造業界特化のEnterprise AE経験の市場価値は、①報酬面ではEnterprise AE帯(クオータ155万ドル水準)の実績が次のOTE交渉の材料になる。②評価される実績は、複数C-suiteとの関係構築・仮想チームのオーケストレーション経験で、これは他社のEnterprise/Strategic AEへの転職でも再現性を説明しやすい。③業界特化(Manufacturing)の経験は、同業界を強化したい他のエンタープライズSaaS企業(Salesforce、SAP等)からの引き合いにつながりやすい。④一方、ITSMという特定商材への依存が強いと、業界非特化のSaaS全般への転換では「何を売ったか」の説明にやや工夫が要る。",
+      ...servicenowEnterpriseCareerFlow,
+    },
+  },
+  {
+    id: "sn-sr-enterprise-ae",
+    companySlug: "servicenow",
+    title: "Sr Enterprise Account Executive",
+    segment: "Strategic Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "ServiceNow Careers", url: "https://careers.servicenow.com/jobs/744000126215269/sr-enterprise-account-executive/" },
+    descriptionSummary: "より大規模・戦略的なアカウントを担当するシニアポジション。SaaSライセンスモデルでの新規事業売上創出を、アカウントプランニング・テリトリープランニング・見込み顧客リサーチを通じて行う。信頼されるアドバイザーとして顧客のITロードマップに助言し、適切なタイミングで専門リソースを商談に投入する判断力が求められる。",
+    genbaTake: "「Sr」がつくことで、単独のクオータ達成力に加えて、ジュニアAEやチームへの示唆(メンタリング的な役割)も期待される可能性がある。求人票だけでは明記されていないため、マネジメントラインへの道筋かIC(個人貢献者)としての上位ポジションかは面接で確認したい。",
+    compensationReality: "RepVueの集計ではEnterprise Account Executiveの標準クオータは約155万ドル。シニアポジションはこれより高いクオータ・OTE水準が期待されるが、具体的な数値は非公開。OpenMoney営業平均年収1,766万円は職種・グレード混在のため、Sr職特有の水準ではない。",
+    desiredProfile: "求人ではSaaSライセンスモデルでの新規事業創出実績に加え、より大規模で戦略的なアカウントを任せられる経験・実績が求められると考えられる。信頼されるアドバイザーとしての立ち回りや、ITロードマップへの助言力が重視される。",
+    careerInsights: {
+      fit: "既に大型商談を動かした実績があり、裁量の大きいアカウントを任されたい人に向く。逆に、初めてのエンタープライズ営業挑戦には難易度が高いポジションと考えられる。",
+      thingsToKnow: "「Sr」の定義(クオータ規模、担当アカウント数、マネジメントラインへの近さ)は求人票だけでは分からない。前任者の在籍期間・異動理由を面接で確認したい。",
+      marketValue: "Sr Enterprise AEとしての実績の市場価値は、①報酬面では標準Enterprise AE帯(クオータ155万ドル水準)を上回るOTEへの足がかりになる。②評価される実績は、より大規模・複雑なアカウントでの契約獲得・拡張実績。③キャリアの選択肢は、社内でのプリンシパル・ストラテジックAEへの昇格、または他社(Salesforce、SAP、Microsoft等)のStrategic/Named AEへの転職。④マネジメント職を目指す場合は、このICロールでの成果に加え、チームを率いた実績の提示が別途必要になると考えられる(未確認の一般論)。",
+      ...servicenowSrEnterpriseCareerFlow,
+    },
+  },
+  {
+    id: "sn-services-ae",
+    companySlug: "servicenow",
+    title: "Services Account Executive",
+    segment: "Services / Post-Sales",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "ServiceNow Careers", url: "https://careers.servicenow.com/jobs/744000088755823/services-account-executive/" },
+    descriptionSummary: "製品導入後の顧客成功を支援するサービス群(Impact成功パッケージ、導入支援サービス、トレーニング)を販売する役割。新規・既存顧客双方でサービス商談を創出し、パイプライン構築からフォーキャスト管理まで一貫して担当。エグゼクティブ・CxOとのサービス関連ディスカッションを主導し、ソリューショニング・スコーピングの提案開発でチームを率いる。",
+    genbaTake: "「製品を売る」のではなく「製品の価値実現を売る」ポジションであるため、既存顧客基盤(インストールベース)への提案力が問われる。新規開拓中心のEnterprise AEとは異なり、既に契約した顧客の成功を支援しながら追加のサービス収益を作るという、比較的リレーション構築寄りの営業スタイルだと考えられる。",
+    compensationReality: "Services Account Executive特有の給与データは公開されていない。OpenMoneyの営業平均年収1,766万円のレンジ内に収まると推測されるが、Enterprise AEとクオータ構造が異なるため単純比較はできない。",
+    desiredProfile: "求人ではAIを業務プロセス・意思決定・問題解決に活用する思考力が「望ましい」要件として明記されている。既存顧客のデジタル変革ロードマップを理解し、エグゼクティブと信頼関係を築ける経験が重視される。",
+    careerInsights: {
+      fit: "新規開拓より、既存顧客との関係を深め、追加提案を組み立てる仕事にやりがいを感じる人に向く。逆に、ゼロから顧客を開拓する仕事を求める人には物足りない可能性がある。",
+      thingsToKnow: "インストールベース(既存顧客)への提案が中心のため、担当する顧客ポートフォリオの質・規模によって成果の出やすさが変わる。前任者の担当顧客数と達成率を面接で確認したい。",
+      marketValue: "Services AEとしての経験の市場価値は、①報酬面ではEnterprise AEとクオータ構造が異なるため単純比較はできないが、エグゼクティブ折衝経験は同水準で評価されやすい。②評価される実績は、既存顧客からの追加受注率・顧客満足度(NPS等)で、これはカスタマーサクセス/サービス営業職種全般への転職で説明しやすい。③キャリアの選択肢は、他社のカスタマーサクセス責任者、あるいはServiceNow社内でのEnterprise AEへの転向。④新規開拓の実績を問われるポジションへの転職では、経験の違いをどう埋めるかの説明が必要になる。",
+      ...servicenowServicesCareerFlow,
     },
   },
 ];
