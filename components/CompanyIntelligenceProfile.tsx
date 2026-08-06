@@ -113,8 +113,8 @@ export default function CompanyIntelligenceProfile({
                 <span className="decision-live">PUBLIC DATA</span>
               </div>
               <div className="decision-console-body">
-                <p>応募検討の優先度</p>
-                <h2>{publicIntel ? "重点検討" : profile.verdict}</h2>
+                <p>成長意欲があり、市場価値を上げたい人にとって</p>
+                <h2>{publicIntel ? "重点検討に値する" : profile.verdict}</h2>
                 <p className="decision-reason">{publicIntel?.verdict ?? profile.verdictReason}</p>
                 <div className="decision-stats">
                   <div><strong>{profile.observedRoleCount}</strong><span>観測した営業求人</span></div>
