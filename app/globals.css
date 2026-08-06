@@ -317,12 +317,13 @@ button, input, select { font: inherit; }
 .research-verdict-card { overflow: hidden; border: 1px solid #294957; background: #082333; color: white; }
 .research-verdict-meta { display: flex; gap: 18px; padding: 12px 22px; border-bottom: 1px solid #294957; color: #77939f; font-size: 10px; font-weight: 850; letter-spacing: .13em; }
 .research-verdict-meta span:first-child { color: #70d3c5; }
-.research-verdict-card > h3 { max-width: 850px; margin: 0; padding: 28px 29px 26px; color: #f5fbfa; font-size: clamp(21px,2.5vw,29px); letter-spacing: -.035em; line-height: 1.5; }
-.research-verdict-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #294957; }
-.research-verdict-grid > div { padding: 21px 28px 24px; }
-.research-verdict-grid > div + div { border-left: 1px solid #294957; }
+.research-verdict-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.research-verdict-grid > div { padding: 22px 28px 24px; }
+.research-verdict-grid > div:nth-child(2n) { border-left: 1px solid #294957; }
+.research-verdict-grid > div:nth-child(n+3) { border-top: 1px solid #294957; }
 .research-verdict-grid span { color: #70d3c5; font-size: 11px; font-weight: 850; letter-spacing: .08em; }
 .research-verdict-grid p { margin: 9px 0 0; color: #adbec6; font-size: 13px; line-height: 1.8; }
+.research-verdict-summary { max-width: 850px; margin: 0; padding: 24px 28px 26px; border-top: 1px solid #294957; color: #f5fbfa; font-size: clamp(17px,1.8vw,20px); font-weight: 700; letter-spacing: -.02em; line-height: 1.7; }
 .public-fact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 9px; }
 .public-fact-grid article { min-height: 173px; padding: 19px; border: 1px solid var(--line); background: white; }
 .public-fact-grid article > span { color: #64777f; font-size: 11px; font-weight: 800; }
@@ -682,7 +683,7 @@ button, input, select { font: inherit; }
   .dossier-nav-wrap { top: 98px; }
   .fit-card,.evidence-card { padding: 22px; }
   .research-verdict-meta { flex-wrap: wrap; gap: 7px 14px; }
-  .research-verdict-card > h3 { padding-inline: 20px; }
+  .research-verdict-summary { padding-inline: 20px; }
   .research-verdict-grid > div { padding-inline: 20px; }
   .public-fact-grid { grid-template-columns: 1fr; }
   .public-fact-grid article { min-height: 145px; }

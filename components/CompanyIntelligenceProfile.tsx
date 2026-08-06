@@ -249,11 +249,13 @@ export default function CompanyIntelligenceProfile({
                       <span>{shortDate(publicIntel.researchedAt)} 更新</span>
                       <span>{publicIntel.sources.length} SOURCES</span>
                     </div>
-                    <h3>{publicIntel.verdict}</h3>
                     <div className="research-verdict-grid">
-                      <div><span>向いていそうな人</span><p>{publicIntel.bestFor}</p></div>
+                      <div><span>向いている人</span><p>{publicIntel.bestFor}</p></div>
+                      <div><span>向いていない人</span><p>{publicIntel.notFor}</p></div>
                       <div><span>先に疑うべきこと</span><p>{publicIntel.watchouts}</p></div>
+                      <div><span>入って活躍できた場合の市場価値</span><p>{publicIntel.marketValueIfSucceed}</p></div>
                     </div>
+                    <p className="research-verdict-summary">{publicIntel.verdict}</p>
                   </article>
 
                   <div className="company-snapshot-strip">
