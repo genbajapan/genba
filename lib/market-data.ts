@@ -126,6 +126,27 @@ const brazeAEEnterpriseCareerFlow = {
   nextCompanies: "確認できる公開データはない。Enterprise AEとしての実績は、他社のStrategic/Named AE、あるいはSales Director職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
 };
 
+// HubSpot Japanは2016年2月設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
+const hubspotTenureNote = "HubSpot Japanは2016年2月設立、2026年6月時点で約300人規模とされる。全社的な離職率・在籍年数の公開データは確認できていない。「カルチャーに100%マッチする人材以外は採用しない」という評判があり、カルチャーフィットが在籍・昇進に強く影響する可能性がある。";
+
+const hubspotSMBCareerFlow = {
+  tenureAndPromotion: hubspotTenureNote,
+  priorCompanies: "求人要件で「2年以上のSaaS/Web・IT製品営業経験」が明記されており、他のSaaS企業でのインサイドセールス・フィールドセールス経験者、または未経験に近いポテンシャル層が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。SMB区分での実績を積んだ後は、社内でMid Market AEへステップアップするケースが典型的と考えられるが、これは未確認の一般論。",
+};
+
+const hubspotMidMarketCareerFlow = {
+  tenureAndPromotion: hubspotTenureNote,
+  priorCompanies: "求人要件で「5年以上のSaaS/Web・IT製品営業経験」が明記されており、複数ステークホルダーとの複雑な商談経験を持つ営業が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。Mid Market区分での実績は、社内でCorporate AEへのステップアップ、または他社のMid-Market/Enterprise AEへの転職材料になりやすいと考えられるが、これは未確認の一般論。",
+};
+
+const hubspotCorporateCareerFlow = {
+  tenureAndPromotion: hubspotTenureNote,
+  priorCompanies: "求人要件で「7年以上のSaaS/Web・IT製品営業経験」が明記されており、大型・複雑商談の経験を持つシニア層が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。Corporate AEとしての実績は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -275,12 +296,22 @@ export const companies: Company[] = [
     category: "CRM / Marketing",
     hq: "Cambridge, US",
     japanPresence: "日本法人・東京",
-    hiringStatus: "継続観測",
-    salesRoles: 0,
-    description: "日本市場の営業・カスタマーサクセス・パートナー職を定点観測。",
-    lastChecked: "2026-08-04",
-    careersUrl: "https://www.hubspot.com/careers/jobs",
-    tags: ["SMB", "Mid-Market", "Partner"],
+    hiringStatus: "積極採用",
+    salesRoles: 3,
+    description: "SMB・Mid Market・Corporateの3セグメントでDirect Sales AEを同時掲載。",
+    lastChecked: "2026-08-06",
+    careersUrl: "https://www.hubspot.jp/work-in-tokyo",
+    tags: ["SMB", "Mid-Market", "Corporate"],
+    interviewFlow: {
+      steps: [
+        { label: "書類選考", detail: "職務経歴書による書類選考。" },
+        { label: "リクルーター面談", detail: "採用担当とのカジュアル面談。経歴確認と会社説明が中心。" },
+        { label: "一次面接", detail: "採用予定ポジションのハイアリングマネージャーが担当。" },
+        { label: "二次面接", detail: "HEART(Humble・Empathetic・Adaptable・Remarkable・Transparent)というカルチャー適合を重視した面接が行われる傾向がある。" },
+        { label: "最終面接", detail: "シニアリーダーとの面接。Can(スキル・経験)・Will(志向)・Must(職務要件)の3軸で評価されるとされる。" },
+      ],
+      note: "corp-research.jp「HubSpot Japanへの転職チャンスをモノにする」など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
+    },
   },
 ];
 
@@ -547,6 +578,72 @@ export const jobs: Job[] = [
       thingsToKnow: "求人票にメルカリ・コスモ石油・マネーフォワード・freeeが導入企業として明記されており、担当予定のアカウントリストにこれらと同様のテック/成長企業がどれだけ含まれるかを面接で確認したい。",
       marketValue: "Enterprise AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise AE帯に位置づけられると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、日本発グローバル企業・成長企業への大型商談獲得実績で、これはマーケティングテクノロジー領域全般で説明しやすい。③キャリアの選択肢は、他社(Salesforce、Adobe等)のEnterprise/Strategic AE、または社内でのSales Directorへの昇格。④Braze全体で大口顧客(ARR50万ドル以上)へのシフトが進んでいるため、Enterprise AEとしての実績はますます重要になる位置づけにある。",
       ...brazeAEEnterpriseCareerFlow,
+    },
+  },
+  {
+    id: "hs-ae-smb",
+    companySlug: "hubspot",
+    title: "Account Executive, Small Business(直販営業 〜100名規模企業担当)",
+    segment: "SMB",
+    location: "東京(日本国内フルリモート可)",
+    workStyle: "公式求人で確認(リモート可)",
+    language: "日本語(ビジネスレベル)",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "HubSpot Japan Careers", url: "https://www.hubspot.com/careers/jobs/5990435" },
+    descriptionSummary: "従業員100名以下規模の企業を対象に、新規商談の創出からクロージングまでを一貫して担当する直販営業。インバウンドリードのフォローアップ、既存顧客へのアップセル・クロスセル、HubSpotのインバウンド方法論のエバンジェリストとしての役割、マーケティング・セールスエンジニアリング部門との連携が求められる。月次のMRR(月次経常収益)目標達成が期待される。",
+    genbaTake: "「~100名規模」という比較的小さい企業を相手にしながらも、新規開拓とアップセルの両方を担う設計になっている点は、幅広い商談経験を積める反面、商談数をこなす負荷が高いことを示唆する。2年以上の経験で応募可能なため、外資AEへの初めての挑戦としても選択肢に入りやすい。",
+    compensationReality: "日本オフィス固有の給与データは非公開。米国のAccount Executive職ではベース75,000〜100,000ドル、OTE150,000〜210,000ドルという水準が報告されている(RepVue集計、米国データのため参考値)。OpenMoney自己申告データでは全社平均年収1,217万円、レンジ600万〜2,600万円。",
+    desiredProfile: "求人では継続的に営業目標を上回ってきた実績、SaaS・Web/IT製品営業の2年以上の経験、複数のステークホルダー(経営者・マーケティング責任者等)を含む複雑な商談のマネジメント経験、高いクロージング力、ビジネスレベルの日本語が明記されている。",
+    careerInsights: {
+      fit: "幅広い規模・業種の中小企業を相手に、スピーディーに商談をこなしたい人に向く。逆に、じっくり時間をかけた大型商談を志向する人には物足りない可能性がある。",
+      thingsToKnow: "HubSpotは『カルチャーに100%マッチする人材以外は採用しない』という評判があり、スキル面だけでなくHEART(Humble・Empathetic・Adaptable・Remarkable・Transparent)というカルチャー適合が選考で重視される傾向がある。",
+      marketValue: "SMB AEとしての経験の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯からのスタートになりやすいが、日本固有の水準は非公開。②評価される実績は、幅広い業種・規模への新規開拓数とインバウンド対応力で、次の転職でも『商談量をこなす力』の証明になりやすい。③キャリアの選択肢は、社内でのMid Market AEへのステップアップ、または他のSaaS企業のSMB/Commercial AEへの横移動。④HubSpotというブランド・インバウンド方法論の経験は、マーケティングテクノロジー領域全般で評価されやすい。",
+      ...hubspotSMBCareerFlow,
+    },
+  },
+  {
+    id: "hs-ae-midmarket",
+    companySlug: "hubspot",
+    title: "Senior Account Executive, Mid Market(直販営業 101名〜500名規模企業担当)",
+    segment: "Mid-Market",
+    location: "東京(日本国内フルリモート可)",
+    workStyle: "公式求人で確認(リモート可)",
+    language: "日本語(ビジネスレベル)",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "HubSpot Japan Careers", url: "https://www.hubspot.com/careers/jobs/5990448" },
+    descriptionSummary: "従業員101〜500名規模の企業を対象に、新規商談の創出からクロージングまでを一貫して担当する直販営業。SMB職と同様にインバウンドフォロー・アップセル・クロスセル・部門間連携が求められるが、要件は5年以上の経験と、より高い水準に設定されている。「常に月次目標売上額(MRR)以上の達成」が明記されている。",
+    genbaTake: "SMBと要件年数(2年→5年)が明確に違う点から、HubSpotは規模別に難易度を段階設計していることがうかがえる。「常に目標以上」という表現は、単なる達成ではなく超過達成が期待値になっていることを示唆しており、選考でも過去の達成率の具体的な数字を求められる可能性が高い。",
+    compensationReality: "日本オフィス固有の給与データは非公開。米国のAccount Executive職ではOTE150,000〜210,000ドルという水準が報告されている(米国データのため参考値)。Senior職のため、SMB職より高いOTE水準が期待されるが、具体的な数値は非公開。",
+    desiredProfile: "求人では継続的に営業目標を上回ってきた実績、SaaS・Web/IT製品営業の5年以上の経験、複数のステークホルダーを含む複雑な商談のマネジメント経験、強いクロージング力、ビジネスレベルの日本語が明記されている。",
+    careerInsights: {
+      fit: "中堅企業向けの、より複雑なステークホルダー構造の商談を経験したい人に向く。逆に、SMB同様の商談スピード感を期待すると、意思決定プロセスの長さにギャップを感じる可能性がある。",
+      thingsToKnow: "「常に目標以上の達成」という表現の具体的な評価基準(何%からが『上回った』とみなされるか)は求人票だけでは分からない。前任者の達成率を面接で確認したい。",
+      marketValue: "Mid Market AEとしての経験の市場価値は、①報酬面では外資SaaSのMid-Market AE帯(目安900万〜1,300万円、転職エージェント記事の集計値)への位置づけとなりやすい。②評価される実績は、中堅企業への複雑な商談のクロージング実績で、次の転職でも再現性を説明しやすい。③キャリアの選択肢は、社内でのCorporate AEへのステップアップ、または他のSaaS企業のMid-Market/Enterprise AEへの転職。④RepVueには『HubSpotは50%のクオータ達成率』という数字に対し、現職社員から『実態と異なる』という異議も投稿されており、公開数値と現場の体感には差がある可能性がある。",
+      ...hubspotMidMarketCareerFlow,
+    },
+  },
+  {
+    id: "hs-ae-corporate",
+    companySlug: "hubspot",
+    title: "Lead Account Executive, Corporate(直販営業 500名〜規模企業担当)",
+    segment: "Corporate",
+    location: "東京(日本国内フルリモート可)",
+    workStyle: "公式求人で確認(リモート可)",
+    language: "日本語(ビジネスレベル)",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "HubSpot Japan Careers", url: "https://www.hubspot.com/careers/jobs/6225701" },
+    descriptionSummary: "従業員500名以上規模の企業を対象に、新規商談の創出からクロージングまでを一貫して担当する直販営業。SMB・Mid Market職と同じ職務範囲だが、要件は7年以上の経験に引き上げられている。フィールドセールスではなく、電話・Webを中心とした「インサイドセールス型」の商談スタイルが特徴。",
+    genbaTake: "500名以上という規模を、訪問型ではなく電話・Web中心の体制でカバーしている点は、HubSpotの営業モデル全体がインバウンド起点・非対面中心で設計されていることを示している。Salesforceのようなフィールドセールス中心のEnterprise AEとは、商談の進め方自体が異なる可能性が高い。",
+    compensationReality: "日本オフィス固有の給与データは非公開。Lead(シニア)職のため、SMB・Mid Market職よりさらに高いOTE水準が期待されるが、具体的な数値は非公開。OpenMoney全社平均年収は1,217万円だが、これは職種・グレード混在の数値。",
+    desiredProfile: "求人では継続的に営業目標を上回ってきた実績、SaaS・Web/IT製品営業の7年以上の経験、複数のステークホルダーを含む複雑な商談のマネジメント経験、強いクロージング力、日本語でのビジネス経験が明記されている。",
+    careerInsights: {
+      fit: "大企業向けの複雑な商談を、電話・Web中心の非対面スタイルで進めることに抵抗がない人に向く。逆に、対面での関係構築を重視する伝統的なエンタープライズ営業スタイルを好む人にはギャップがある可能性がある。",
+      thingsToKnow: "『Corporate』という呼称は他社の『Enterprise』に相当する最上位セグメントだが、フィールドセールスではなくインサイドセールス型の体制である点は、他社のEnterprise AEとは働き方が大きく異なる可能性がある。面接で商談の進め方(訪問頻度等)を確認したい。",
+      marketValue: "Corporate AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise・Strategic AE帯(目安1,500万〜3,000万円)に近い位置づけになると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、大企業への複雑な商談を非対面中心で完結させた実績で、効率的な営業手法の証明として評価されやすい。③キャリアの選択肢は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職。④フィールドセールス経験を重視する企業への転職では、インサイドセールス型の経験をどう位置づけるかの説明が必要になる場合がある。",
+      ...hubspotCorporateCareerFlow,
     },
   },
 ];
