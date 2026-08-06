@@ -93,6 +93,12 @@ export type CompanyPublicIntelligence = {
     intro: string;
     questions: InterviewPrepQuestion[];
   };
+  solutions: Array<{
+    name: string;
+    valueProp: string;
+    url: string;
+  }>;
+  customerStoriesUrl: string;
   comparisonMap: Array<{
     arena: string;
     companies: string[];
@@ -500,6 +506,17 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
       },
     ],
   },
+  solutions: [
+    { name: "Sales Cloud", valueProp: "営業プロセス・パイプライン管理の中核製品。Core AEが主に売る基幹CRM。", url: "https://www.salesforce.com/jp/sales/" },
+    { name: "Service Cloud", valueProp: "カスタマーサービス・コールセンター向け。問い合わせ対応の効率化を支援する。", url: "https://www.salesforce.com/jp/service/" },
+    { name: "Marketing Cloud", valueProp: "メール・SMS・広告連携などのマーケティングオートメーション。", url: "https://www.salesforce.com/jp/marketing/" },
+    { name: "Data Cloud", valueProp: "複数チャネルの顧客データを統合するデータプラットフォーム。AI活用の基盤。", url: "https://www.salesforce.com/jp/data/" },
+    { name: "Agentforce", valueProp: "AIエージェントが顧客対応・営業支援タスクを自動化する最新製品。", url: "https://www.salesforce.com/jp/agentforce/" },
+    { name: "Tableau", valueProp: "データ可視化・BI分析ツール。買収により製品群に統合されている。", url: "https://www.salesforce.com/jp/analytics/tableau/" },
+    { name: "MuleSoft", valueProp: "社内システム間のデータ連携基盤(iPaaS)。買収による統合製品。", url: "https://www.mulesoft.com/jp" },
+    { name: "Slack", valueProp: "社内コミュニケーションツール。買収によりCustomer 360と連携する。", url: "https://slack.com/intl/ja-jp" },
+  ],
+  customerStoriesUrl: "https://www.salesforce.com/jp/customer-stories/",
   comparisonMap: [
     { arena: "Core CRM", companies: ["Microsoft", "HubSpot", "Oracle", "SAP"], why: "基幹CRM・営業標準化の比較" },
     { arena: "AI Agent / Workflow", companies: ["Microsoft", "ServiceNow", "Google Cloud"], why: "業務AIエージェント予算の比較" },

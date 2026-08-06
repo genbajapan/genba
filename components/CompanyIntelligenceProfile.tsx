@@ -133,6 +133,7 @@ export default function CompanyIntelligenceProfile({
       <div className="dossier-nav-wrap">
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
+            <a href="#overview">会社概要</a>
             <a href="#roles">ポジション</a>
             <a href="#decision">応募判断</a>
             <a href="#solution">ソリューション</a>
@@ -144,22 +145,50 @@ export default function CompanyIntelligenceProfile({
       </div>
 
       <section className="content-section company-intelligence-section">
-        <Container className="hypothesis-banner-wrap">
-          <div className="hypothesis-banner">
-            <div className="hypothesis-banner-copy">
-              <h3>100%公開情報に基づいたGenba編集長の整理と仮説が記載されています。</h3>
-              <p>
-                「確認済み」表記のみ一次情報で裏取りした事実です。それ以外はGenbaが複数の公開情報から組み立てた仮説であり、反証や留保も併記しています。事実誤認があれば速やかに訂正します。仮説を一次情報つきの「確認済みの事実」へ更新するには、企業提供情報としてのスポンサー掲載が必要です。
-              </p>
-            </div>
-            <Link href="/advertise">掲載について相談する →</Link>
-          </div>
-        </Container>
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
+            <section className="intel-section" id="overview">
+              <div className="intel-heading">
+                <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}社概要</h2></div>
+                <p>公開されている企業情報・実績を、応募判断の前提としてまとめます。</p>
+              </div>
+
+              {publicIntel ? (
+                <>
+                  <div className="company-snapshot-strip">
+                    <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
+                    <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
+                    <div><span>グローバル社員数</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong></div>
+                    <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
+                  </div>
+
+                  <div className="public-fact-grid">
+                    {publicIntel.facts.map((fact) => {
+                      const source = getResearchSource(publicIntel, fact.sourceIds[0]);
+                      return (
+                        <article key={fact.label}>
+                          <span>{fact.label}</span>
+                          <strong>{fact.value}</strong>
+                          <p>{fact.detail}</p>
+                          {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                        </article>
+                      );
+                    })}
+                  </div>
+                </>
+              ) : (
+                <div className="company-snapshot-strip">
+                  <div><span>本社</span><strong>{company.hq}</strong></div>
+                  <div><span>日本拠点</span><strong>{company.japanPresence}</strong></div>
+                  <div><span>ソリューション領域</span><strong>{company.category}</strong></div>
+                  <div><span>最終確認日</span><strong>{shortDate(company.lastChecked)}</strong></div>
+                </div>
+              )}
+            </section>
+
             <section className="intel-section" id="roles">
               <div className="intel-heading">
-                <div><p className="intel-kicker">01 / ROLE REALITY</p><h2>ポジションの実態を比べる。</h2></div>
+                <div><p className="intel-kicker">02 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
@@ -256,37 +285,16 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="decision">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
-                <p>現時点の公開情報から、まず確認すべき判断材料を整理します。</p>
+                {publicIntel ? (
+                  <div><p className="intel-kicker">03 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
+                ) : (
+                  <div><p className="intel-kicker">03 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
+                )}
+                <p>{publicIntel ? "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。" : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
               </div>
 
               {publicIntel ? (
                 <>
-                  <div className="company-snapshot-strip">
-                    <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
-                    <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
-                    <div><span>グローバル社員数</span><strong>{publicIntel.companyStats.globalHeadcount.value}</strong></div>
-                    <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
-                  </div>
-
-                  <div className="public-fact-grid">
-                    {publicIntel.facts.map((fact) => {
-                      const source = getResearchSource(publicIntel, fact.sourceIds[0]);
-                      return (
-                        <article key={fact.label}>
-                          <span>{fact.label}</span>
-                          <strong>{fact.value}</strong>
-                          <p>{fact.detail}</p>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                        </article>
-                      );
-                    })}
-                  </div>
-
-                  <div className="hypothesis-intro">
-                    <div><p className="card-index">GENBA HYPOTHESES</p><h3>公開情報から立てる、5つの仮説</h3></div>
-                    <p>事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。</p>
-                  </div>
                   <div className="hypothesis-stack">
                     {publicIntel.hypotheses.map((hypothesis, index) => (
                       <details className="hypothesis-card" key={hypothesis.topic}>
@@ -359,7 +367,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">
-                <div><p className="intel-kicker">03 / SOLUTION INTELLIGENCE</p><h2>何を、誰に、なぜ売るのか。</h2></div>
+                <div><p className="intel-kicker">04 / SOLUTION INTELLIGENCE</p><h2>取扱ソリューションの深掘り。</h2></div>
                 <span className="analysis-label">Genbaカテゴリ分析</span>
               </div>
 
@@ -374,45 +382,78 @@ export default function CompanyIntelligenceProfile({
                   <p className="card-index">SOLUTION AREA</p>
                   <h3>{company.category}</h3>
                   <p>{profile.lens.problem}</p>
-                  <div className="buyer-list"><span>主な買い手</span>{profile.lens.buyers.map((buyer) => <strong key={buyer}>{buyer}</strong>)}</div>
                 </div>
               </div>
 
+              <div className="buyer-panel">
+                <p className="card-index">主な買い手</p>
+                <div className="buyer-chip-row">
+                  {profile.lens.buyers.map((buyer) => <span key={buyer}>{buyer}</span>)}
+                </div>
+              </div>
+
+              {publicIntel && publicIntel.solutions.length > 0 && (
+                <div className="solution-catalog">
+                  <p className="card-index">具体的なソリューション</p>
+                  <div className="solution-catalog-grid">
+                    {publicIntel.solutions.map((solution) => (
+                      <details className="solution-item" key={solution.name}>
+                        <summary>
+                          <span className="solution-item-icon" aria-hidden="true">+</span>
+                          <span className="solution-item-label">{solution.name}</span>
+                          <span className="solution-item-chevron" aria-hidden="true">▾</span>
+                        </summary>
+                        <div className="solution-item-body">
+                          <p>{solution.valueProp}</p>
+                          <a href={solution.url} target="_blank" rel="noreferrer">公式ソリューションページ ↗</a>
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {publicIntel ? (
                 <div className="appeal-interview-grid">
-                  <article className="appeal-block">
+                  <article className="appeal-block spark-block">
                     <p className="card-index">SALES APPEAL</p>
                     <h3>営業としての面白さ</h3>
                     <p className="block-intro">{publicIntel.salesAppeal.intro}</p>
-                    <ul>
-                      {publicIntel.salesAppeal.points.map((point) => (
+                    <ul className="spark-list">
+                      {publicIntel.salesAppeal.points.map((point, index) => (
                         <li key={point.title}>
-                          <strong>{point.title}</strong>
-                          <p>{point.detail}</p>
-                          <div className="mini-source-row">
-                            {point.sourceIds.map((sourceId) => {
-                              const source = getResearchSource(publicIntel, sourceId);
-                              return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
-                            })}
+                          <span className="spark-number">{String(index + 1).padStart(2, "0")}</span>
+                          <div className="spark-body">
+                            <strong>{point.title}</strong>
+                            <p>{point.detail}</p>
+                            <div className="mini-source-row">
+                              {point.sourceIds.map((sourceId) => {
+                                const source = getResearchSource(publicIntel, sourceId);
+                                return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
+                              })}
+                            </div>
                           </div>
                         </li>
                       ))}
                     </ul>
                   </article>
-                  <article className="interview-block">
+                  <article className="interview-block spark-block spark-block-interview">
                     <p className="card-index">INTERVIEW PREP</p>
                     <h3>面接・選考で確認したいこと</h3>
                     <p className="block-intro">{publicIntel.interviewPrep.intro}</p>
-                    <ol>
-                      {publicIntel.interviewPrep.questions.map((item) => (
+                    <ol className="spark-list">
+                      {publicIntel.interviewPrep.questions.map((item, index) => (
                         <li key={item.question}>
-                          <strong>{item.question}</strong>
-                          <p>{item.why}</p>
-                          <div className="mini-source-row">
-                            {item.sourceIds.map((sourceId) => {
-                              const source = getResearchSource(publicIntel, sourceId);
-                              return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
-                            })}
+                          <span className="spark-number spark-number-interview">Q{index + 1}</span>
+                          <div className="spark-body">
+                            <strong>{item.question}</strong>
+                            <p>{item.why}</p>
+                            <div className="mini-source-row">
+                              {item.sourceIds.map((sourceId) => {
+                                const source = getResearchSource(publicIntel, sourceId);
+                                return source ? <a href={source.url} target="_blank" rel="noreferrer" key={sourceId}>{source.label} ↗</a> : null;
+                              })}
+                            </div>
                           </div>
                         </li>
                       ))}
@@ -429,6 +470,9 @@ export default function CompanyIntelligenceProfile({
               {publicIntel ? (
                 <div className="customer-proof-wrap">
                   <div className="customer-proof-heading"><div><p className="card-index">JAPAN CUSTOMER PROOF</p><h3>日本企業が、何を買い、何が変わったか。</h3></div><p>企業公式の導入事例に記載された成果を、AEが商談の再現性を考えやすい形に読み替えています。</p></div>
+                  {publicIntel.customerStoriesUrl && (
+                    <a className="customer-stories-index-link" href={publicIntel.customerStoriesUrl} target="_blank" rel="noreferrer">公式の導入事例一覧を見る ↗</a>
+                  )}
                   <div className="customer-proof-grid">
                     {publicIntel.customerProof.map((proof, index) => {
                       const source = getResearchSource(publicIntel, proof.sourceId);
@@ -457,7 +501,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="team">
               <div className="intel-heading">
-                <div><p className="intel-kicker">04 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
+                <div><p className="intel-kicker">05 / PEOPLE &amp; CAREER</p><h2>組織との相性と、その先のキャリア。</h2></div>
                 <p>個人名の羅列ではなく、公開情報を集計して組織の傾向を示す方針です。</p>
               </div>
 
@@ -512,7 +556,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="compare">
               <div className="intel-heading">
-                <div><p className="intel-kicker">05 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
+                <div><p className="intel-kicker">06 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
                 <p>同じ買い手・領域・営業経験を軸にした併願候補です。</p>
               </div>
               {publicIntel && (
@@ -542,7 +586,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="sources">
               <div className="intel-heading">
-                <div><p className="intel-kicker">06 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                <div><p className="intel-kicker">07 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
                 <p>数字・判断材料の出所と更新日を追える状態にします。</p>
               </div>
               <div className="source-ledger">
