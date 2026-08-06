@@ -45,6 +45,7 @@ const segmentTierMap: Record<string, string> = {
   "Enterprise / Manufacturing": "enterprise",
   "Strategic Enterprise": "enterprise",
   "Services / Post-Sales": "enterprise",
+  "Enterprise / Sales Leadership": "enterprise",
 };
 
 export function getCompTierForSegment(segment: string): CompTier {

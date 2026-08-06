@@ -105,6 +105,27 @@ const servicenowServicesCareerFlow = {
   nextCompanies: "確認できる公開データはない。",
 };
 
+// Braze Japanは2020年7月設立で、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
+const brazeTenureNote = "Braze Japanは2020年7月設立と組織が若く、平均在籍年数・離職率の公開データは確認できていない。Japan Cloud Consultingとの協業体制のため、評価・昇進の仕組みが本社と完全に同一かは非公開。";
+
+const brazeSalesDirectorCareerFlow = {
+  tenureAndPromotion: brazeTenureNote,
+  priorCompanies: "求人要件で「5年以上、5人以上のクオータ保有Enterprise AEを率いた経験」が明記されているため、他の外資SaaS企業で営業マネージャー・ディレクター職を務めた経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。マネジメント経験を積んだ後は、他社のVP Sales・Sales Director職、あるいはBraze社内でのAPACリージョン統括などへの展開が考えられるが、これは未確認の一般論。",
+};
+
+const brazeAECommercialCareerFlow = {
+  tenureAndPromotion: brazeTenureNote,
+  priorCompanies: "求人要件で「3年以上のSaaS営業でのValue Selling経験」が明記されており、他の外資/国内SaaS企業でのフィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。Commercial区分での実績を積んだ後は、社内でEnterprise AEへステップアップするケースが典型的と考えられるが、これは未確認の一般論。",
+};
+
+const brazeAEEnterpriseCareerFlow = {
+  tenureAndPromotion: brazeTenureNote,
+  priorCompanies: "求人要件で「Enterprise区分でのSaaS営業実績、複雑な商談のマネジメント経験」に加え、「スタートアップ企業での経験」が歓迎要件として明記されている。",
+  nextCompanies: "確認できる公開データはない。Enterprise AEとしての実績は、他社のStrategic/Named AE、あるいはSales Director職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -217,13 +238,23 @@ export const companies: Company[] = [
     name: "Braze",
     category: "Customer Engagement",
     hq: "New York, US",
-    japanPresence: "東京オフィス",
-    hiringStatus: "継続観測",
-    salesRoles: 0,
-    description: "東京拠点を持つカスタマーエンゲージメント企業。採用ページを定点観測。",
-    lastChecked: "2026-08-04",
-    careersUrl: "https://www.braze.com/company/careers",
-    tags: ["Marketing", "Customer Engagement"],
+    japanPresence: "東京オフィス(Japan Cloud経由で運営)",
+    hiringStatus: "積極採用",
+    salesRoles: 3,
+    description: "Sales Director、Account Executive(Commercial/Enterprise)など日本向け営業職を複数掲載。",
+    lastChecked: "2026-08-06",
+    careersUrl: "https://japancloud.jp/career/companies/braze/",
+    tags: ["Enterprise", "Commercial", "Marketing"],
+    interviewFlow: {
+      steps: [
+        { label: "書類選考", detail: "職務経歴書による書類選考。" },
+        { label: "リクルーター面談", detail: "Japan Cloud/Braze採用担当とのカジュアル面談。経歴確認と会社説明が中心。" },
+        { label: "一次面接", detail: "採用予定ポジションのハイアリングマネージャーが担当。" },
+        { label: "二次面接", detail: "マーケティング・プリセールス等、関連部門メンバーとの面接。One Team連携への理解が見られる傾向がある。" },
+        { label: "最終面接", detail: "シニアリーダーとの面接。Value Sellingの実践力を問うケーススタディが含まれる場合がある。" },
+      ],
+      note: "求人票・Braze面接官トレーニング事例など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
+    },
   },
   {
     slug: "crowdstrike",
@@ -450,6 +481,72 @@ export const jobs: Job[] = [
       thingsToKnow: "インストールベース(既存顧客)への提案が中心のため、担当する顧客ポートフォリオの質・規模によって成果の出やすさが変わる。前任者の担当顧客数と達成率を面接で確認したい。",
       marketValue: "Services AEとしての経験の市場価値は、①報酬面ではEnterprise AEとクオータ構造が異なるため単純比較はできないが、エグゼクティブ折衝経験は同水準で評価されやすい。②評価される実績は、既存顧客からの追加受注率・顧客満足度(NPS等)で、これはカスタマーサクセス/サービス営業職種全般への転職で説明しやすい。③キャリアの選択肢は、他社のカスタマーサクセス責任者、あるいはServiceNow社内でのEnterprise AEへの転向。④新規開拓の実績を問われるポジションへの転職では、経験の違いをどう埋めるかの説明が必要になる。",
       ...servicenowServicesCareerFlow,
+    },
+  },
+  {
+    id: "brz-sales-director-enterprise",
+    companySlug: "braze",
+    title: "Sales Director, Enterprise",
+    segment: "Enterprise / Sales Leadership",
+    location: "東京",
+    workStyle: "公式求人で確認(ハイブリッド)",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "Braze(Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8270/" },
+    descriptionSummary: "Enterprise Account Executiveチームを率いる営業マネジメント職。トップ人材の採用・育成、顧客獲得・拡張戦略の実行、BDR・マーケティング・Value Engineeringを含むgo-to-marketチームの統括、正確なフォーキャストと戦略・実行計画の策定が求められる。案件にも直接参加し、チームを商談プロセス全体でコーチする役割。",
+    genbaTake: "「案件にも参加してチームをコーチする」という記載は、プレイングマネージャー色が強いポジションであることを示唆する。裏を返せば、マネジメント未経験からでも自分のディール経験を土台にチームを率いる練習ができるポジションとも言える。",
+    compensationReality: "日本オフィス固有の給与データは非公開。求人では株式(equity)を含む競争力のある報酬、401K/企業年金、ESPP等の福利厚生が明記されている。マネジメント職のため、配下のAEのクオータ達成に連動したインセンティブ設計になっている可能性が高いが、具体的な数値は非公開。",
+    desiredProfile: "求人では5年以上、5人以上のクオータ保有Enterprise AEを率いた経験、プロスペクティングから契約更新・拡張までのフルサイクルSaaS経験、優れたコミュニケーション・交渉力、モバイル/マーケティングテクノロジー領域の営業経験(歓迎)が明記されている。",
+    careerInsights: {
+      fit: "自分自身の商談経験を土台に、チームの育成と数字づくりを両立させたい人に向く。逆に、プレイヤーとしての商談だけに集中したい人にはマネジメント業務の負荷が大きく感じられる可能性がある。",
+      thingsToKnow: "「6職種同時募集」という現在の採用状況から、組織がまだ立ち上がり途中である可能性がある。配下のAEチームが何人体制からのスタートになるかを面接で確認したい。",
+      marketValue: "Enterprise営業マネジメント経験の市場価値は、①報酬面では個人IC(Individual Contributor)のAEを上回るOTE水準が期待できるが、日本の具体的な数値は非公開。②評価される実績は、チームのクオータ達成率・採用/育成実績・離職率で、これは他社のセールスマネージャー職への転職で説明しやすい定量指標になる。③キャリアの選択肢は、他の外資SaaS企業のSales Director/VP Sales、あるいはBraze社内でのAPAC統括ポジションへの展開。④組織が若いため、日本市場特有のマネジメント実績はまだ蓄積が薄く、グローバル基準の実績提示が求められる可能性がある。",
+      ...brazeSalesDirectorCareerFlow,
+    },
+  },
+  {
+    id: "brz-ae-commercial",
+    companySlug: "braze",
+    title: "Account Executive, Commercial",
+    segment: "Commercial",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "Braze(Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8264/" },
+    descriptionSummary: "日本市場でのコマーシャル規模の新規ビジネス開拓を担う役割。クライアントへのアプローチとValue Sellingの実践による契約締結、ターゲット企業リストの作成、市場動向分析、マーケティング・プリセールス・カスタマーサクセスとの「One Team」連携、営業進捗のトラッキングと戦略修正の提案が求められる。",
+    genbaTake: "「One Team」という表現が繰り返し使われている点は、単独で完結する新規開拓ではなく、社内の複数機能を巻き込みながら進める協業型の営業スタイルであることを示している。Salesforce等のCRMツールでのパイプライン管理経験が必須要件になっている点も、プロセス重視の組織文化を示唆する。",
+    compensationReality: "日本オフィス固有の給与データは非公開。米国のSDR職ではベース・変動が59/41という設計が確認されているが、日本のCommercial AEに同じ設計が適用されるかは不明。株式(equity)、401K/企業年金相当、ESPP等の福利厚生は米国求人と共通して明記されている。",
+    desiredProfile: "求人では3年以上のSaaS営業でのValue Selling経験、目標からの逆算による計画立案・実行力、Salesforce等CRMでのパイプライン管理必須経験、新しいツール・クラウドアプリケーションへの素早い適応力が明記されている。",
+    careerInsights: {
+      fit: "Value Sellingの型を持ち、社内の複数チームと連携しながら商談を進めることに抵抗がない人に向く。逆に、単独で完結する営業プロセスを好む人には、One Team連携の調整コストが負担に感じられる可能性がある。",
+      thingsToKnow: "求人票だけでは、Commercial区分の具体的な顧客規模(従業員数・売上高の基準)が明記されていない。担当予定のテリトリー・顧客リストの質を面接で確認したい。",
+      marketValue: "Commercial AEとしての経験の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯からのスタートになりやすいが、日本固有の水準は非公開。②評価される実績は、Value Sellingを実践した新規契約獲得数・受注率で、次の転職でも「型として語れる」営業手法の証明になる。③キャリアの選択肢は、社内でのEnterprise AEへのステップアップ、または他社のCommercial/Mid-Market AEへの横移動。④Braze自体がARR50万ドル以上の大口顧客シフトを進めているため、Commercial区分の位置づけが今後変化する可能性があり、中長期のキャリアパスを面接で確認しておきたい。",
+      ...brazeAECommercialCareerFlow,
+    },
+  },
+  {
+    id: "brz-ae-enterprise",
+    companySlug: "braze",
+    title: "Account Executive, Enterprise",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-06",
+    lastChecked: "2026-08-06",
+    source: { label: "Braze(Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8105/" },
+    descriptionSummary: "日本市場のエンタープライズ企業向け新規ビジネス開拓を担う役割。クライアントへのアプローチとValue Sellingの実践、ターゲット企業リストの作成と市場動向分析、長期的な信頼関係構築、マーケティング・プリセールス・カスタマーサクセスとの「One Team」連携が求められる。メルカリ、コスモ石油、マネーフォワード、freeeなど日本の大手・成長企業への導入実績がある。",
+    genbaTake: "既存の導入事例(メルカリ、フリー、マネーフォワード等)がいずれも日本発のSaaS/アプリ企業である点は、Braze Japanのターゲット層が伝統的日系大企業というより、テック企業・成長企業に寄っていることを示唆している。「スタートアップ企業での経験」が歓迎要件に入っている点も、この仮説を裏付ける。",
+    compensationReality: "日本オフィス固有の給与データは非公開。米国のEnterprise AE(参考:類似職種)ではベース・変動を含むOTEが年間20万ドル台〜30万ドル台と報告されているが、これは米国データであり日本水準の裏付けにはならない。株式(equity)、401K/企業年金相当、ESPP、学習支援等の福利厚生が明記されている。",
+    desiredProfile: "求人ではEnterprise区分でのSaaS営業実績、複雑な商談のマネジメント経験、クオータ達成実績、テリトリー・アカウントプランニングの実務経験、CRMでのパイプライン管理経験が明記されている。「スタートアップ企業での試行錯誤の経験」が歓迎要件として挙げられている点も特徴的。",
+    careerInsights: {
+      fit: "複雑な商談を複数のステークホルダーと進めながら、テック企業特有のスピード感にも対応できる人に向く。逆に、伝統的な日系大企業向けの、ゆっくりとした合意形成型営業を得意とする人にはギャップがある可能性がある。",
+      thingsToKnow: "求人票にメルカリ・コスモ石油・マネーフォワード・freeeが導入企業として明記されており、担当予定のアカウントリストにこれらと同様のテック/成長企業がどれだけ含まれるかを面接で確認したい。",
+      marketValue: "Enterprise AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise AE帯に位置づけられると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、日本発グローバル企業・成長企業への大型商談獲得実績で、これはマーケティングテクノロジー領域全般で説明しやすい。③キャリアの選択肢は、他社(Salesforce、Adobe等)のEnterprise/Strategic AE、または社内でのSales Directorへの昇格。④Braze全体で大口顧客(ARR50万ドル以上)へのシフトが進んでいるため、Enterprise AEとしての実績はますます重要になる位置づけにある。",
+      ...brazeAEEnterpriseCareerFlow,
     },
   },
 ];
