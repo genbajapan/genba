@@ -387,10 +387,15 @@ button, input, select { font: inherit; }
 .growth-driver-section,.risk-hypothesis-section { margin-top: 26px; }
 .growth-driver-section .card-index,.risk-hypothesis-section .card-index { margin: 0 0 10px; }
 .growth-driver-grid { display: grid; gap: 10px; }
-.growth-driver-card { padding: 20px 24px; border: 1px solid var(--line); border-left: 4px solid #0a6d63; background: white; }
-.growth-driver-card h5 { margin: 0; color: var(--navy); font-size: 14.5px; font-weight: 800; line-height: 1.5; }
-.growth-driver-card p { margin: 10px 0 0; color: #435760; font-size: 12.5px; line-height: 1.85; }
-.growth-driver-card a { display: inline-block; margin-top: 10px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
+.growth-driver-card { overflow: hidden; border: 1px solid var(--line); border-left: 4px solid #0a6d63; background: white; }
+.growth-driver-card > summary { display: flex; align-items: center; gap: 14px; padding: 20px 24px; cursor: pointer; list-style: none; }
+.growth-driver-card > summary::-webkit-details-marker { display: none; }
+.growth-driver-card h5 { flex: 1; margin: 0; color: var(--navy); font-size: 14.5px; font-weight: 800; line-height: 1.5; }
+.growth-driver-chevron { flex-shrink: 0; color: #8ba0a8; font-size: 14px; transition: transform .2s ease; }
+.growth-driver-card[open] .growth-driver-chevron { transform: rotate(180deg); }
+.growth-driver-card[open] > summary { padding-bottom: 12px; }
+.growth-driver-card > p { margin: 0; padding: 0 24px 20px; color: #435760; font-size: 12.5px; line-height: 1.85; }
+.growth-driver-card > a { display: inline-block; margin: 0 24px 20px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
 
 .japan-growth-panel { margin-top: 26px; padding: 28px 30px; border: 1px solid #b8d4cd; background: #f4faf8; }
 .japan-growth-panel .card-index { margin: 0 0 8px; }
@@ -410,18 +415,22 @@ button, input, select { font: inherit; }
 .japan-fiscal-sources a:hover { color: var(--signal); text-decoration: underline; }
 
 .risk-hypothesis-grid { display: grid; gap: 12px; }
-.risk-hypothesis-card { padding: 22px 24px; border: 1px solid #e6cdb8; border-left: 4px solid #b8492f; background: #fdf7f3; }
-.risk-hypothesis-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.risk-hypothesis-card { overflow: hidden; border: 1px solid #e6cdb8; border-left: 4px solid #b8492f; background: #fdf7f3; }
+.risk-hypothesis-card > summary { display: flex; align-items: center; gap: 14px; padding: 22px 24px; cursor: pointer; list-style: none; }
+.risk-hypothesis-card > summary::-webkit-details-marker { display: none; }
 .risk-hypothesis-card h5 { flex: 1; margin: 0; color: var(--navy); font-size: 15px; font-weight: 800; line-height: 1.55; }
-.risk-hypothesis-card .risk-body { margin: 12px 0 0; color: #435760; font-size: 12.5px; line-height: 1.85; }
-.risk-hypothesis-evidence { margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e6cdb8; }
+.risk-hypothesis-chevron { flex-shrink: 0; color: #a8846f; font-size: 14px; transition: transform .2s ease; }
+.risk-hypothesis-card[open] .risk-hypothesis-chevron { transform: rotate(180deg); }
+.risk-hypothesis-card[open] > summary { padding-bottom: 10px; }
+.risk-hypothesis-card .risk-body { margin: 0; padding: 0 24px 12px; color: #435760; font-size: 12.5px; line-height: 1.85; }
+.risk-hypothesis-evidence { margin: 0 24px; padding-top: 14px; border-top: 1px dashed #e6cdb8; }
 .risk-hypothesis-evidence span { color: #946d26; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
 .risk-hypothesis-evidence ul { margin: 8px 0 0; padding-left: 17px; }
 .risk-hypothesis-evidence li { margin-top: 6px; color: #5e6f76; font-size: 11.5px; line-height: 1.7; }
-.risk-hypothesis-counter { margin: 14px 0 0; padding: 14px 16px; background: white; border: 1px solid var(--line); }
+.risk-hypothesis-counter { margin: 14px 24px 0; padding: 14px 16px; background: white; border: 1px solid var(--line); }
 .risk-hypothesis-counter span { display: block; margin-bottom: 6px; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .06em; }
 .risk-hypothesis-counter p { margin: 0; color: #435760; font-size: 12px; line-height: 1.8; }
-.risk-hypothesis-card footer { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.risk-hypothesis-card footer { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 24px 20px; }
 .risk-hypothesis-card footer a { color: #486c77; font-size: 10px; font-weight: 700; text-decoration: none; }
 .risk-hypothesis-card footer a:hover { color: var(--signal); text-decoration: underline; }
 
@@ -740,7 +749,7 @@ button, input, select { font: inherit; }
   .market-status-milestone { grid-template-columns: 1fr; gap: 4px; }
   .japan-fiscal-row { grid-template-columns: 1fr; gap: 6px; }
   .japan-fiscal-meta { text-align: left; }
-  .risk-hypothesis-card-head { flex-direction: column; }
+  .risk-hypothesis-card > summary { flex-wrap: wrap; }
   .genba-verdict { padding: 26px 22px; }
   .genba-verdict h4 { font-size: 21px; }
   .playbook-lens-row,.playbook-support-grid { grid-template-columns: 1fr; }

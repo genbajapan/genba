@@ -231,13 +231,48 @@ export default function CompanyIntelligenceProfile({
                           {publicIntel.marketStatus.growthDrivers.map((driver) => {
                             const source = getResearchSource(publicIntel, driver.sourceId);
                             return (
-                              <article key={driver.title} className="growth-driver-card">
-                                <h5>{driver.title}</h5>
+                              <details key={driver.title} className="growth-driver-card">
+                                <summary>
+                                  <h5>{driver.title}</h5>
+                                  <span className="growth-driver-chevron" aria-hidden="true">▾</span>
+                                </summary>
                                 <p>{driver.body}</p>
                                 {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                              </article>
+                              </details>
                             );
                           })}
+                        </div>
+                      </div>
+                    )}
+
+                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.riskHypotheses && (
+                      <div className="risk-hypothesis-section">
+                        <p className="card-index">Genbaのリスク仮説</p>
+                        <div className="risk-hypothesis-grid">
+                          {publicIntel.marketStatus.riskHypotheses.map((risk) => (
+                            <details key={risk.title} className="risk-hypothesis-card">
+                              <summary>
+                                <h5>{risk.title}</h5>
+                                <span className={`confidence confidence-${risk.confidence}`}>確度: {risk.confidence}</span>
+                                <span className="risk-hypothesis-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <p className="risk-body">{risk.body}</p>
+                              <div className="risk-hypothesis-evidence">
+                                <span>根拠</span>
+                                <ul>{risk.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
+                              </div>
+                              <div className="risk-hypothesis-counter">
+                                <span>反証・留保</span>
+                                <p>{risk.counterSignal}</p>
+                              </div>
+                              <footer>
+                                {risk.sourceIds.map((sourceId) => {
+                                  const source = getResearchSource(publicIntel, sourceId);
+                                  return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                                })}
+                              </footer>
+                            </details>
+                          ))}
                         </div>
                       </div>
                     )}
@@ -275,37 +310,6 @@ export default function CompanyIntelligenceProfile({
                         </div>
                       );
                     })()}
-
-                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.riskHypotheses && (
-                      <div className="risk-hypothesis-section">
-                        <p className="card-index">Genbaのリスク仮説</p>
-                        <div className="risk-hypothesis-grid">
-                          {publicIntel.marketStatus.riskHypotheses.map((risk) => (
-                            <article key={risk.title} className="risk-hypothesis-card">
-                              <div className="risk-hypothesis-card-head">
-                                <h5>{risk.title}</h5>
-                                <span className={`confidence confidence-${risk.confidence}`}>確度: {risk.confidence}</span>
-                              </div>
-                              <p className="risk-body">{risk.body}</p>
-                              <div className="risk-hypothesis-evidence">
-                                <span>根拠</span>
-                                <ul>{risk.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
-                              </div>
-                              <div className="risk-hypothesis-counter">
-                                <span>反証・留保</span>
-                                <p>{risk.counterSignal}</p>
-                              </div>
-                              <footer>
-                                {risk.sourceIds.map((sourceId) => {
-                                  const source = getResearchSource(publicIntel, sourceId);
-                                  return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
-                                })}
-                              </footer>
-                            </article>
-                          ))}
-                        </div>
-                      </div>
-                    )}
 
                     {publicIntel.marketStatus.isPublic && (
                       <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。</p>
