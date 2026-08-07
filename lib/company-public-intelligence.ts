@@ -74,6 +74,35 @@ export type GrowthMilestone = {
   sourceId: string;
 };
 
+export type GenbaVerdict = { headline: string; body: string };
+
+export type GrowthDriver = { title: string; body: string; sourceId: string };
+
+export type JapanFiscalDataPoint = {
+  period: string;
+  fiscalYear: string;
+  revenue: string;
+  revenueGrowth: string;
+  netIncome: string;
+  netIncomeGrowth: string;
+};
+
+export type JapanGrowthAnalysis = {
+  headline: string;
+  narrative: string;
+  fiscalData: JapanFiscalDataPoint[];
+  sourceIds: string[];
+};
+
+export type RiskHypothesis = {
+  title: string;
+  body: string;
+  confidence: "高" | "中" | "探索中";
+  evidence: string[];
+  counterSignal: string;
+  sourceIds: string[];
+};
+
 export type MarketStatus =
   | {
       isPublic: true;
@@ -84,6 +113,11 @@ export type MarketStatus =
       growthSummary: string;
       milestones: GrowthMilestone[];
       sourceIds: string[];
+      // 深掘り分析(調査が完了した企業のみ populate。未設定の企業は従来通りの表示になる)
+      genbaVerdict?: GenbaVerdict;
+      growthDrivers?: GrowthDriver[];
+      japanGrowth?: JapanGrowthAnalysis;
+      riskHypotheses?: RiskHypothesis[];
     }
   | {
       isPublic: false;
@@ -335,6 +369,62 @@ const salesforceSources: ResearchSource[] = [
     scope: "Agentforce・Data 360 ARRの成長率",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "sf-fy26-global-results",
+    label: "Salesforce「Delivers Record Fourth Quarter Fiscal 2026 Results」",
+    url: "https://www.salesforce.com/news/press-releases/2026/02/25/fy26-q4-earnings/",
+    kind: "企業公式",
+    scope: "FY26通期のグローバル売上($415億、+10%)・営業利益率",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-agentic-cannibalization-risk",
+    label: "The Index Times「CRM: Salesforce's $41.5B Agentic Gamble」",
+    url: "https://www.theindextimes.com/post/crm-salesforce-s-41-5b-agentic-gamble-record-revenue-30",
+    kind: "外部集計",
+    scope: "座席課金モデルの侵食リスクとAgentforce ARR・Agentic Work Unitの反証データ",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-japan-fy23-settlement",
+    label: "官報決算データベース「株式会社セールスフォース・ジャパン 第23期決算公告」",
+    url: "https://catr.jp/settlements/5446b/298905",
+    kind: "法定開示",
+    scope: "日本法人 第23期(2022年2月〜2023年1月期)決算公告",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-japan-fy24-settlement",
+    label: "官報決算データベース「株式会社セールスフォース・ジャパン 第24期決算公告」",
+    url: "https://catr.jp/companies/1b573/6657/settlements/fe68e/349750",
+    kind: "法定開示",
+    scope: "日本法人 第24期(2023年2月〜2024年1月期)決算公告",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-japan-fy25-settlement",
+    label: "決算公告データ倉庫「セールスフォース・ジャパン 第25期決算公告」",
+    url: "https://ryo-nakamura1.hatenablog.jp/entry/2025/05/26/120000_6",
+    kind: "外部集計",
+    scope: "日本法人 第25期(2024年2月〜2025年1月期)決算公告の集計記事",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-japan-fy26-settlement",
+    label: "官報ブログ「セールスフォース・ジャパン 決算公告(第26期)」",
+    url: "https://kanpo-kanpo.blog.jp/archives/46150195.html",
+    kind: "外部集計",
+    scope: "日本法人 第26期(2025年2月〜2026年1月期)決算公告の集計記事",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "sf-japan-president-tenure",
+    label: "週刊BCN+「セールスフォース・ジャパン 代表取締役会長兼社長 小出伸一」",
+    url: "https://www.weeklybcn.com/journal/keyperson/detail/20220225_189269.html",
+    kind: "外部集計",
+    scope: "日本法人代表者の略歴・就任時期(2014年4月〜)",
+    checkedAt: "2026-08-07",
+  },
 ];
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
@@ -353,6 +443,62 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
       { year: "2025-26", label: "Agentforce・Data 360のARRが前年比200%超で拡大", detail: "AIエージェント事業のARRが急拡大し、既存事業の減速とのせめぎ合いが続く。", sourceId: "sf-agentforce-arr-growth" },
     ],
     sourceIds: ["sf-ipo", "sf-acquisitions-history", "sf-2023-layoffs", "sf-agentforce-arr-growth", "sf-q1fy27-earnings"],
+    genbaVerdict: {
+      headline: "「座席の奪い合い」を恐れる市場と、「座席の外側」を狙うSalesforce。",
+      body: "株価は2024年12月の史上最高値$364から現在は$187前後まで、年初来で30%超下落したまま戻っていない。AIエージェントが人間の座席を代替し、売上の95%を占める座席課金モデルを侵食するという懸念が晴れないためだ。ただしAgentforce・Data 360という「座席の外側」の従量課金収益はすでに合計で年間数十億ドル規模まで拡大しており、日本を含む既存15万社の顧客基盤にどこまで浸透させられるかが、今後1〜2年の成長シナリオを左右する、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "「侵食」ではなく「拡張」を狙う消費型収益への転換",
+        body: "Agentforceは1アクション約$0.10(20 Flex Credits)の従量課金制で、座席契約とは別建ての収益。ARRは$8億(前年比+169%)、29,000件の商談が成立し、AIエージェントが実行した処理件数(Agentic Work Unit)は四半期で24億件、前四半期比+57%というペースで伸びている。座席収益が鈍化しても、その外側に新しい収益プールを作れるかどうかの実証が進んでいる段階。",
+        sourceId: "sf-agentic-cannibalization-risk",
+      },
+      {
+        title: "15万社の顧客基盤という、汎用AIには真似しにくい参入障壁",
+        body: "顧客ごとに蓄積されたメタデータグラフや業務プロセスの文脈は、ChatGPT等の汎用AIエージェントが持たない資産。Data 360のARRは$29億(前年比+200%超)まで拡大しており、既存顧客への横展開(クロスセル)がAgentforce普及の主エンジンになっている。",
+        sourceId: "sf-agentic-cannibalization-risk",
+      },
+      {
+        title: "増収鈍化の中でも守られている利益率",
+        body: "FY26通期の非GAAP営業利益率は34.1%で、2023年の人員削減以降、一貫して改善傾向にある。「AI投資を積み増しながら利益率は落とさない」という経営規律を維持できていることは、成長率だけを見る市場の懸念とは別の角度で評価できる材料。",
+        sourceId: "sf-fy26-global-results",
+      },
+    ],
+    japanGrowth: {
+      headline: "日本の成長率は、9年ぶりに世界と歩調を合わせた。",
+      narrative: "セールスフォース・ジャパンの決算公告を追うと、直近4期の売上高は197億円→235億円→279億円→307億円(第23〜26期)と着実に拡大している。ただし成長率で見ると、+24.29%→+18.89%→+19.0%→+9.79%と4期連続で鈍化しており、特に直近1年での減速幅(約19%→9.8%)は際立つ。この9.79%という成長率は、同じ会計年度(2025年2月〜2026年1月期に相当するFY26)のグローバル全体の成長率+10%とほぼ一致する水準で、これまで日本が世界平均を大きく上回るペースで伸びてきたことを踏まえると、9年ぶりに「世界並み」まで収斂したことになる。一方で純利益は69.5億円(前年比+39.85%)と、売上の伸び以上に加速しており、日本法人でもグローバルと同じ「増収率よりも利益率を優先する」経営への転換が起きている可能性が高い、というのがGenbaの読み。代表取締役の小出伸一氏は2014年4月の就任から12年目という、外資系企業の日本法人トップとしては異例の長期政権であり、方針の一貫性という点では強みになり得る。",
+      fiscalData: [
+        { period: "第23期", fiscalYear: "2022年2月期〜2023年1月期", revenue: "197.3億円", revenueGrowth: "+24.29%", netIncome: "36.8億円", netIncomeGrowth: "-7.72%" },
+        { period: "第24期", fiscalYear: "2023年2月期〜2024年1月期", revenue: "234.6億円", revenueGrowth: "+18.89%", netIncome: "35.8億円", netIncomeGrowth: "-2.8%" },
+        { period: "第25期", fiscalYear: "2024年2月期〜2025年1月期", revenue: "279.2億円", revenueGrowth: "+19.02%", netIncome: "49.7億円", netIncomeGrowth: "+38.9%" },
+        { period: "第26期", fiscalYear: "2025年2月期〜2026年1月期", revenue: "306.6億円", revenueGrowth: "+9.79%", netIncome: "69.5億円", netIncomeGrowth: "+39.85%" },
+      ],
+      sourceIds: ["sf-japan-fy23-settlement", "sf-japan-fy24-settlement", "sf-japan-fy25-settlement", "sf-japan-fy26-settlement", "sf-japan-president-tenure", "sf-fy26-global-results"],
+    },
+    riskHypotheses: [
+      {
+        title: "「座席の共食い」という最大の懸念は、まだ解けていない",
+        body: "サブスクリプション売上(全体の95%、約394億ドル)の大部分は座席課金に依存している。AIエージェントが人間の作業を代替するほど「座席を買う理由」が薄まるという懸念が市場に根強く残っており、株価は史上最高値から半値近くまで調整したまま戻っていない。",
+        confidence: "中",
+        evidence: [
+          "サブスクリプション売上が全体の95%を占め、大部分が座席課金に依存",
+          "2026年に入り株価は年初来で30%超下落し、2024年12月の史上最高値$364から現在$187前後まで調整",
+        ],
+        counterSignal: "Flex Creditsによる従量課金収益とAgentic Work Unitの急拡大は、座席の代替ではなく座席の外側に新しい収益プールを作っている可能性を示す。ただしこの従量課金収益が、座席収益の純減を上回るペースで拡大し続けられるかは、まだ実証段階にある。",
+        sourceIds: ["sf-agentic-cannibalization-risk"],
+      },
+      {
+        title: "日本の成長率鈍化は、大企業への浸透が一巡したサインかもしれない",
+        body: "日本法人の売上成長率は4期連続で鈍化しており(+24.29%→+18.89%→+19.0%→+9.79%)、特に直近1年での減速幅が大きい。これまで大企業中心に深く刺さってきたエンタープライズ顧客基盤で、これ以上の新規開拓余地が薄くなっている可能性がある。",
+        confidence: "中",
+        evidence: [
+          "4期連続で増収率が鈍化(24.29%→18.89%→19.0%→9.79%)",
+          "同時期の純利益成長率はむしろ加速(+38.9%→+39.85%)しており、増収より効率を優先する経営への転換が疑われる",
+        ],
+        counterSignal: "売上規模が既に300億円を超える中での+9.79%成長は、絶対額では約27億円の純増に相当し、鈍化したとはいえ多くの外資SaaS日本法人と比べて依然高い水準。中堅・中小企業(ミッドマーケット)開拓が公式に成長戦略として位置付けられており、そこでの成果次第では再加速の余地も残る。",
+        sourceIds: ["sf-japan-fy23-settlement", "sf-japan-fy24-settlement", "sf-japan-fy25-settlement", "sf-japan-fy26-settlement"],
+      },
+    ],
   },
   sellingPlaybook: {
     frameIntro: "SalesforceはCRMからAIエージェント基盤へと軸足を移しつつあり、売り方の起点は「顧客対応の記録」から「顧客対応の自動化」に変わっている。既存のSales/Service/Marketing Cloud資産をどう土台として使うかが提案の中心になる。",

@@ -383,6 +383,52 @@ button, input, select { font: inherit; }
 .market-status-milestone a { display: inline-block; margin-top: 6px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
 .market-status-disclaimer { margin: 14px 0 0; color: #8a9aa0; font-size: 10px; line-height: 1.6; }
 
+.genba-verdict { margin-top: 18px; padding: 34px 36px; background: #082333; background-image: radial-gradient(circle at 90% 0%, rgba(112,211,197,.14), transparent 55%); color: white; }
+.genba-verdict span { color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .16em; }
+.genba-verdict h4 { margin: 16px 0 0; max-width: 680px; color: white; font-size: 26px; font-weight: 850; letter-spacing: -.025em; line-height: 1.4; }
+.genba-verdict p { margin: 16px 0 0; max-width: 720px; color: #c7d8de; font-size: 13.5px; line-height: 1.95; }
+
+.growth-driver-section,.risk-hypothesis-section { margin-top: 26px; }
+.growth-driver-section .card-index,.risk-hypothesis-section .card-index { margin: 0 0 10px; }
+.growth-driver-grid { display: grid; gap: 10px; }
+.growth-driver-card { padding: 20px 24px; border: 1px solid var(--line); border-left: 4px solid #0a6d63; background: white; }
+.growth-driver-card h5 { margin: 0; color: var(--navy); font-size: 14.5px; font-weight: 800; line-height: 1.5; }
+.growth-driver-card p { margin: 10px 0 0; color: #435760; font-size: 12.5px; line-height: 1.85; }
+.growth-driver-card a { display: inline-block; margin-top: 10px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
+
+.japan-growth-panel { margin-top: 26px; padding: 28px 30px; border: 1px solid #b8d4cd; background: #f4faf8; }
+.japan-growth-panel .card-index { margin: 0 0 8px; }
+.japan-growth-headline { margin: 0; color: var(--navy); font-size: 21px; font-weight: 850; letter-spacing: -.02em; line-height: 1.45; }
+.japan-growth-narrative { margin: 14px 0 0; color: #435760; font-size: 13px; line-height: 1.95; }
+.japan-fiscal-chart { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+.japan-fiscal-row { display: grid; grid-template-columns: 56px 1fr 96px; align-items: center; gap: 12px; }
+.japan-fiscal-row > span:first-child { color: #52646c; font-size: 11px; font-weight: 800; }
+.japan-fiscal-bar-track { position: relative; height: 28px; background: #dcece6; }
+.japan-fiscal-bar-fill { display: flex; align-items: center; height: 100%; min-width: 44px; padding-left: 10px; background: linear-gradient(90deg, #0a6d63, #4fb3a5); transition: width .3s ease; }
+.japan-fiscal-bar-fill strong { color: white; font-size: 11.5px; font-weight: 800; white-space: nowrap; }
+.japan-fiscal-meta { text-align: right; }
+.japan-fiscal-meta strong { display: block; color: var(--navy); font-size: 13px; font-weight: 850; }
+.japan-fiscal-meta span { display: block; margin-top: 2px; color: #8a9aa0; font-size: 10px; }
+.japan-fiscal-sources { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 20px; padding-top: 16px; border-top: 1px dashed #b8d4cd; }
+.japan-fiscal-sources a { color: #2f6b60; font-size: 10px; font-weight: 700; text-decoration: none; }
+.japan-fiscal-sources a:hover { color: var(--signal); text-decoration: underline; }
+
+.risk-hypothesis-grid { display: grid; gap: 12px; }
+.risk-hypothesis-card { padding: 22px 24px; border: 1px solid #e6cdb8; border-left: 4px solid #b8492f; background: #fdf7f3; }
+.risk-hypothesis-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.risk-hypothesis-card h5 { flex: 1; margin: 0; color: var(--navy); font-size: 15px; font-weight: 800; line-height: 1.55; }
+.risk-hypothesis-card .risk-body { margin: 12px 0 0; color: #435760; font-size: 12.5px; line-height: 1.85; }
+.risk-hypothesis-evidence { margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e6cdb8; }
+.risk-hypothesis-evidence span { color: #946d26; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.risk-hypothesis-evidence ul { margin: 8px 0 0; padding-left: 17px; }
+.risk-hypothesis-evidence li { margin-top: 6px; color: #5e6f76; font-size: 11.5px; line-height: 1.7; }
+.risk-hypothesis-counter { margin: 14px 0 0; padding: 14px 16px; background: white; border: 1px solid var(--line); }
+.risk-hypothesis-counter span { display: block; margin-bottom: 6px; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .06em; }
+.risk-hypothesis-counter p { margin: 0; color: #435760; font-size: 12px; line-height: 1.8; }
+.risk-hypothesis-card footer { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.risk-hypothesis-card footer a { color: #486c77; font-size: 10px; font-weight: 700; text-decoration: none; }
+.risk-hypothesis-card footer a:hover { color: var(--signal); text-decoration: underline; }
+
 .playbook-frame-intro { margin: 4px 0 0; max-width: 760px; color: #435760; font-size: 14px; line-height: 1.85; }
 .playbook-lens-grid { margin-top: 26px; }
 .playbook-lens-grid .card-index { margin: 0 0 10px; }
@@ -696,6 +742,11 @@ button, input, select { font: inherit; }
   .organization-read-card { grid-template-columns: 1fr 1fr; }
   .organization-read-card > a { grid-column: 2; }
   .market-status-milestone { grid-template-columns: 1fr; gap: 4px; }
+  .japan-fiscal-row { grid-template-columns: 1fr; gap: 6px; }
+  .japan-fiscal-meta { text-align: left; }
+  .risk-hypothesis-card-head { flex-direction: column; }
+  .genba-verdict { padding: 26px 22px; }
+  .genba-verdict h4 { font-size: 21px; }
   .playbook-lens-row,.playbook-support-grid { grid-template-columns: 1fr; }
   .playbook-narrative-track { flex-direction: column; }
   .playbook-narrative-step { width: auto; }
