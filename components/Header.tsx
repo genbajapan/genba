@@ -7,7 +7,7 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
     { href: "/companies", label: "企業を探す" },
     { href: "/jobs", label: "求人を探す" },
     { href: "/signals", label: "採用シグナル" },
-    { href: "/insights", label: "役立ち記事" },
+    { href: "/insights", label: "外資ITのリアル記事" },
     { href: "/advertise", label: "掲載について" },
   ],
   ja: [
