@@ -106,6 +106,7 @@ export default function GenbaChatWidget() {
                 </div>
                 {companySources.length > 0 && (
                   <div className="genba-chat-company-links">
+                    <p className="genba-chat-company-links-label">現時点の情報で方向性が合いそうな会社</p>
                     {companySources.map((source) => (
                       <Link key={source.id} href={`/companies/${source.id}`} className="genba-chat-company-chip">
                         {source.title}のページを見る <span aria-hidden="true">→</span>

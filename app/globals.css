@@ -830,8 +830,9 @@ button, input, select { font: inherit; }
 .genba-chat-typing span:nth-child(2) { animation-delay: .15s; }
 .genba-chat-typing span:nth-child(3) { animation-delay: .3s; }
 @keyframes genba-chat-bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
-.genba-chat-company-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.genba-chat-company-chip { display: inline-flex; align-items: center; gap: 5px; padding: 7px 12px; border-radius: 999px; border: 1px solid #bfe0d9; background: #e9f6f2; color: #0a6d63; font-size: 11px; font-weight: 750; text-decoration: none; transition: background .15s ease, transform .15s ease; }
+.genba-chat-company-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.genba-chat-company-links-label { flex-basis: 100%; margin: 0 0 2px; color: #6b7d84; font-size: 10px; font-weight: 750; }
+.genba-chat-company-chip { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 5px; padding: 7px 12px; border-radius: 999px; border: 1px solid #bfe0d9; background: #e9f6f2; color: #0a6d63; font-size: 11px; font-weight: 750; text-decoration: none; cursor: pointer; transition: background .15s ease, transform .15s ease; }
 .genba-chat-company-chip:hover { background: #0a6d63; color: white; transform: translateY(-1px); }
 .genba-chat-error { margin: 0; padding: 8px 20px; color: #b8492f; font-size: 11px; background: #fdf1ee; }
 .genba-chat-input-row { display: flex; align-items: flex-end; gap: 8px; padding: 14px 16px; border-top: 1px solid var(--line); background: white; }
