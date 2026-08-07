@@ -81,6 +81,12 @@ export default function GenbaChatWidget() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, open, loading]);
 
+  // デスクトップではチャットを開くと本文がパネルの裏に隠れないよう、bodyに余白を作って本文側を詰める(Shopify Sidekick的な挙動)
+  useEffect(() => {
+    document.body.classList.toggle("genba-chat-open", open);
+    return () => document.body.classList.remove("genba-chat-open");
+  }, [open]);
+
   async function sendMessage() {
     const trimmed = input.trim();
     if (!trimmed || loading) return;
@@ -203,7 +209,7 @@ export default function GenbaChatWidget() {
             onKeyDown={handleKeyDown}
             onCompositionStart={() => (isComposingRef.current = true)}
             onCompositionEnd={() => (isComposingRef.current = false)}
-            placeholder="質問を入力してください(例: Datadogのカルチャーは?)"
+            placeholder="質問を入力してください"
             rows={2}
           />
           <button type="button" onClick={sendMessage} disabled={loading || input.trim().length === 0}>
