@@ -36,8 +36,11 @@ Genbaは「外資戦士と予備軍の作戦会議室。」を掲げる、無料
 - 発信・利益相反: `ops/guardrails.md`
 - 法務確認状況: `ops/legal-checklist.md`
 - 日次更新: `ops/daily-workflow.md`
+- 拡張運用(企業追加・全社更新・X下書き・SEO/AEO点検): `ops/daily-task-workflow.md`
 
 旧資料と新資料が矛盾する場合は、日付が新しいという理由だけで決めず、上記の正本を優先する。それでも矛盾する場合は、公開や収益化を止めてJioへ確認する。
+
+Jioから「デイリータスク」という指示を受けた場合(Claude Code・Codexいずれでも)、`ops/daily-task-workflow.md`を最初から最後まで実行する。この指示へ事業ルールを複製せず、参照だけを置く。
 
 ## 4. 求人・企業データの非交渉ルール
 
