@@ -168,6 +168,21 @@ const oktaEnterpriseAuth0CareerFlow = {
   nextCompanies: "確認できる公開データはない。",
 };
 
+// 合同会社Zendeskは2013年2月設立、2022年の非公開化以降は組織データの開示が限定的なため共通の非公開注記として保持
+const zendeskTenureNote = "合同会社Zendesk(旧・株式会社Zendesk)は2013年2月設立。2022年にHellman & FriedmanとPermira主導の投資家グループにより非公開化されて以降、詳細な組織データの開示は限定的。OpenWorkの口コミには「外資ITなので、実績(予算達成率)が全て」という声がある。";
+
+const zendeskSMBCareerFlow = {
+  tenureAndPromotion: zendeskTenureNote,
+  priorCompanies: "求人要件からは、他のSaaS企業でのインサイドセールス・フィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const zendeskCommercialCareerFlow = {
+  tenureAndPromotion: zendeskTenureNote,
+  priorCompanies: "求人要件からは、新規開拓と既存アカウント管理の両方を経験したSaaS営業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -346,6 +361,19 @@ export const companies: Company[] = [
     lastChecked: "2026-08-07",
     careersUrl: "https://www.okta.com/company/careers/",
     tags: ["SME", "Developer", "Enterprise"],
+  },
+  {
+    slug: "zendesk",
+    name: "Zendesk",
+    category: "カスタマーサポート / CX",
+    hq: "San Francisco, US",
+    japanPresence: "合同会社Zendesk・東京(2013年2月設立、日本売上は前年比約50%成長)",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "SMB・Commercialセグメントで営業ポジションを継続掲載。2022年に非公開化。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://www.zendesk.co.jp/careers",
+    tags: ["SMB", "Commercial"],
   },
 ];
 
@@ -744,6 +772,50 @@ export const jobs: Job[] = [
       thingsToKnow: "「予測と機会衛生管理」への言及は、フォーキャストの正確性が評価軸として重視されていることを示唆する。パイプラインの精度管理をどう評価されるか、前任者の状況とあわせて面接で確認したい。",
       marketValue: "Enterprise Auth0 AEとしての経験の市場価値は、①報酬面では技術理解を要するEnterprise AE帯として高水準が期待されるが、日本固有の裏付けはない。②評価される実績は大規模エンタープライズでの技術商材の契約獲得実績。③キャリアの選択肢は、他の開発者向け・技術系SaaS企業(Datadog、MongoDB、Snowflake等)のEnterprise/Strategic AE、またはOkta社内でのマネジメント職。",
       ...oktaEnterpriseAuth0CareerFlow,
+    },
+  },
+  {
+    id: "zendesk-smb-ae",
+    companySlug: "zendesk",
+    title: "SMB Account Executive",
+    segment: "SMB",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Zendesk Careers(Workday)", url: "https://zendesk.wd1.myworkdayjobs.com/en-US/zendesk/job/SMB-Account-Executive_R32909" },
+    descriptionSummary: "中小企業向けの新規顧客獲得を担当する役割。アウトバウンド・インバウンド双方のパイプラインを管理し、既存の大規模顧客基盤の中でのアカウント拡張も担う。",
+    genbaTake: "SMBという商談規模でも、新規開拓だけでなく既存顧客基盤の中からの拡張(アップセル)も同時に求められる設計になっている。単純な新規開拓量産型ではなく、既存アカウントの中から機会を見つける観察力も評価対象になると考えられる。",
+    compensationReality: "OpenMoneyの自己申告データでは全社平均年収1,332万円、営業職平均1,420万円(レンジ810万〜2,500万円)。基本給+インセンティブ+RSU+携帯手当という設計。SMB職特有の水準は非公開。",
+    desiredProfile: "求人ではB2B営業またはソリューションエンジニアリング経験2年以上、SaaS業界での営業目標達成実績が明記されている。BA/BS学位または同等の経験が要件。",
+    careerInsights: {
+      fit: "商談数をこなしながら、新規開拓と既存アカウント拡張の両方をバランスよく担いたい人に向く。",
+      thingsToKnow: "OpenWorkの口コミには「外資ITなので実績(予算達成率)が全て」という声があり、評価制度がシンプルに数字ベースである可能性が高い。",
+      marketValue: "SMB AEとしての実績の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯(目安700万〜1,300万円、転職エージェント記事の集計)からのスタートになりやすい。②評価される実績は新規開拓とアップセルの両立実績。③キャリアの選択肢は社内でのCommercial/Enterprise AEへのステップアップ、他社のSMB/Commercial AEへの横移動。④カスタマーサポート/CX領域の経験はSalesforce・HubSpotなど隣接領域でも評価されやすい。",
+      ...zendeskSMBCareerFlow,
+    },
+  },
+  {
+    id: "zendesk-sr-commercial-ae",
+    companySlug: "zendesk",
+    title: "Senior Commercial Account Executive",
+    segment: "Commercial",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Zendesk Careers(Workday)", url: "https://zendesk.wd1.myworkdayjobs.com/en-US/zendesk/job/Senior-Commercial-Account-Executive_R33688-4" },
+    descriptionSummary: "新規案件の開拓(ハンティング)と既存アカウントの維持・拡大を両方担当するシニアポジション。幅広い関係構築、拡張機会の管理、リソースチームを率いた提案、Zendeskのプラットフォームビジョンの訴求が求められる。",
+    genbaTake: "「ハンティング(新規開拓)」と「既存アカウントの維持」を同一ポジションで両立させる設計は、Commercial区分がSMBより裁量の大きい反面、求められる役割の幅も広いことを示している。「リソースチームを率いる」という表現からは、単独商談だけでなく社内連携力も問われると考えられる。",
+    compensationReality: "OpenMoneyの自己申告データでは営業職平均年収1,420万円。Senior職のため、SMB職より高いOTE水準が期待されるが、日本固有の具体的水準は非公開。",
+    desiredProfile: "求人ではB2B SaaS営業でのハンティング実績、既存アカウントの拡張実績、プラットフォームビジョンを訴求するプレゼンテーション力が重視されると考えられる。",
+    careerInsights: {
+      fit: "新規開拓と既存深耕の両方に強みがあり、社内の関連リソースを巻き込みながら大きめの商談を進めたい人に向く。",
+      thingsToKnow: "Senior職のため、前任者の在籍期間や、新規:既存の商談比率がどの程度かを面接で確認したい。",
+      marketValue: "Senior Commercial AEとしての実績の市場価値は、①報酬面では外資SaaSのCommercial/Mid-Market AE帯(目安900万〜1,300万円)への位置づけとなりやすい。②評価される実績は新規開拓と既存拡張の両立実績で、次の転職でも汎用性の高い実績として説明しやすい。③キャリアの選択肢は社内でのEnterprise AEへのステップアップ、他社のMid-Market/Enterprise AEへの転職。",
+      ...zendeskCommercialCareerFlow,
     },
   },
 ];
