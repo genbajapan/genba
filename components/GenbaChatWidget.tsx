@@ -5,6 +5,9 @@ import Link from "next/link";
 
 type ChatMessage = { role: "user" | "assistant"; content: string; sources?: Array<{ id: string; title: string }> };
 
+const STORAGE_KEY = "genba-chat-history-v1";
+const MAX_STORED_MESSAGES = 40;
+
 // **太字** をReact要素の<strong>に変換する(dangerouslySetInnerHTMLは使わず、AI生成テキストへのHTML混入を避ける)
 function renderRichText(text: string) {
   const lines = text.split("\n");
@@ -31,6 +34,19 @@ const WELCOME_MESSAGE: ChatMessage = {
     "こんにちは。Genba掲載企業のデータや、外資SaaS営業のキャリアについて壁打ち相手になります。会員登録は不要です。何を知りたいですか?",
 };
 
+function loadStoredMessages(): ChatMessage[] | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.length === 0) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
 export default function GenbaChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
@@ -39,6 +55,23 @@ export default function GenbaChatWidget() {
   const [error, setError] = useState<string | null>(null);
   const isComposingRef = useRef(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const hydratedRef = useRef(false);
+
+  // ページ遷移(特にフルリロードを伴う遷移)をまたいで会話を復元する。サーバーには送信・保存しない。
+  useEffect(() => {
+    const stored = loadStoredMessages();
+    if (stored) setMessages(stored);
+    hydratedRef.current = true;
+  }, []);
+
+  useEffect(() => {
+    if (!hydratedRef.current || typeof window === "undefined") return;
+    try {
+      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-MAX_STORED_MESSAGES)));
+    } catch {
+      // sessionStorageが使えない環境(プライベートモード等)では単に保存をスキップする
+    }
+  }, [messages]);
 
   useEffect(() => {
     if (!open) return;
@@ -83,17 +116,40 @@ export default function GenbaChatWidget() {
     }
   }
 
+  function resetConversation() {
+    setMessages([WELCOME_MESSAGE]);
+    setError(null);
+    if (typeof window !== "undefined") {
+      try {
+        window.sessionStorage.removeItem(STORAGE_KEY);
+      } catch {
+        // no-op
+      }
+    }
+  }
+
   return (
-    <div className="genba-chat-widget">
-      <div className={`genba-chat-panel ${open ? "genba-chat-panel-open" : "genba-chat-panel-closed"}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
+    <>
+      {!open && (
+        <button type="button" className="genba-chat-toggle" onClick={() => setOpen(true)}>
+          AIチャット
+        </button>
+      )}
+
+      <div className={`genba-chat-dock ${open ? "genba-chat-dock-open" : "genba-chat-dock-closed"}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
         <div className="genba-chat-panel-head">
           <div>
             <strong>Genba AIチャット</strong>
-            <span>掲載企業データを根拠に回答します</span>
+            <span>掲載企業データを根拠に回答します。ページを移動しても会話は続きます。</span>
           </div>
-          <button type="button" aria-label="閉じる" onClick={() => setOpen(false)}>
-            ✕
-          </button>
+          <div className="genba-chat-panel-head-actions">
+            <button type="button" onClick={resetConversation} className="genba-chat-reset">
+              新しい会話
+            </button>
+            <button type="button" aria-label="閉じる" onClick={() => setOpen(false)} className="genba-chat-close">
+              ✕
+            </button>
+          </div>
         </div>
 
         <div className="genba-chat-messages" ref={scrollRef}>
@@ -145,13 +201,9 @@ export default function GenbaChatWidget() {
           </button>
         </div>
         <p className="genba-chat-disclaimer">
-          AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要で、この会話はGenbaのデータベースに保存されません。
+          AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要です。この会話はブラウザのタブを閉じるまでの間だけ保持され、Genbaのサーバーには保存されません。
         </p>
       </div>
-
-      <button type="button" className="genba-chat-toggle" onClick={() => setOpen((prev) => !prev)}>
-        {open ? "閉じる" : "AIチャット"}
-      </button>
-    </div>
+    </>
   );
 }
