@@ -298,6 +298,8 @@ button, input, select { font: inherit; }
 .work-there-card-kicker { margin: 0 0 10px; color: #70d3c5; font-size: 11px; font-weight: 850; letter-spacing: .16em; }
 .work-there-card h3 { margin: 0; color: white; font-size: 26px; font-weight: 800; letter-spacing: -.02em; line-height: 1.4; }
 .work-there-card-sub { margin: 12px 0 0; max-width: 480px; color: #c7d4db; font-size: 13px; line-height: 1.8; }
+.work-there-card-tip { margin: 16px 0 0; max-width: 540px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.2); color: #a8bbc3; font-size: 12px; line-height: 1.85; }
+.work-there-card-tip strong { display: block; margin-bottom: 6px; color: #70d3c5; font-size: 10.5px; font-weight: 850; letter-spacing: .08em; }
 .work-there-card-cta { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 15px 26px; border-radius: 999px; background: #70d3c5; color: var(--navy); font-size: 13px; font-weight: 850; white-space: nowrap; transition: transform .2s ease, background .2s ease; }
 .work-there-card:hover .work-there-card-cta { background: white; transform: scale(1.04); }
 
@@ -540,7 +542,9 @@ button, input, select { font: inherit; }
 .interview-flow-body strong { display: block; color: var(--navy); font-size: 12px; line-height: 1.4; }
 .interview-flow-body p { margin: 6px 0 0; color: #52646c; font-size: 10px; line-height: 1.6; }
 .interview-flow-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px dashed #c7d3d5; color: #7b898e; font-size: 10px; line-height: 1.6; }
-.role-hypothesis-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 12px; }
+.role-hypothesis-wrap { margin-bottom: 12px; }
+.role-hypothesis-wrap .card-index { margin: 0 0 9px; }
+.role-hypothesis-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
 .role-hypothesis-grid article { padding: 18px; border: 1px solid #294957; background: #0b2a3b; }
 .role-hypothesis-grid span { color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .1em; }
 .role-hypothesis-grid p { margin: 10px 0 0; color: #a8bbc3; font-size: 11px; line-height: 1.65; }

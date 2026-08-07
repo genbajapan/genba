@@ -572,10 +572,10 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     },
   ],
   roleLens: {
-    salesMotion: "既存顧客への拡張・cross-sell比重が高い可能性。Core / Specialistで要確認。",
-    compensation: "国内上位水準のシグナルはあるが、同一OUの実支給中央値で判断。",
-    quota: "ブランドよりterritory qualityが達成を左右する可能性。前任者実績を確認。",
-    collaboration: "Core AE、Specialist、SE、SDR、Channel、Partnerを動かす社内営業力が重要。",
+    salesMotion: "求人を横断すると、Data Cloud AEは「アダプション期でまだ勝ちパターンがない」新規提案型、Agentforce SMB AEはAI新製品を高速に商談化するボリューム型、Enterprise B2C AEはC-level向けの事業設計パートナー型と、同じSalesforceでもセグメントごとに営業スタイルが大きく異なる。",
+    compensation: "OTEは基本給+インセンティブ+株式報酬(RSU)の3本立てが共通設計。転職エージェント集計ではSMB帯900万〜1,600万円、Enterprise帯1,200万〜1,800万円、Strategic帯は1,500万〜2,500万円超まで伸びる。ただしRSU支給はグレード7以上が目安という口コミがあり、配属セグメントの等級がその基準に届くかは面接で要確認。",
+    quota: "Base:Incentive比率は6:4が共通で、達成率100%超でアクセラレーターが効く設計。Agentforce SMBのような新製品ポジションは商談数で数字を作る設計だが、Data Cloudのようなアダプション期の製品は導入事例の少なさが数字化の難所になりやすい。",
+    collaboration: "Core AEとSpecialist AE(Data Cloud等)の案件連携、SDRとのパイプライン連携が前提。Enterprise B2C AEのようなC-level商談では、単独ではなくSEやプリセールスを動員する社内営業力も問われる。",
   },
   leadership: {
     name: "小出 伸一",
@@ -1154,10 +1154,10 @@ const datadogIntelligence: CompanyPublicIntelligence = {
     },
   ],
   roleLens: {
-    salesMotion: "新規ロゴ獲得中心。会社全体ではLand-and-expandで既存顧客への製品拡張(NRR120%台)が成長の柱だが、個人のクオータ配分は要確認。",
-    compensation: "口コミでは「ポジションごとにほぼ一律で交渉余地が少ない」という声がある一方、ジュニアでもRSU付与という声も。",
-    quota: "セグメントによって前提が異なる。Public Sectorは年間売上目標100万ドル以上・平均ディールサイズ10万ドル以上が明記。市場飽和を指摘する批判的レビューもある。",
-    collaboration: "SDR、パートナー、マーケティングとの連携が前提。CTO・エンジニアリング層への技術的な説明力も問われる。",
+    salesMotion: "Mid-Market・Commercialとも「新規ロゴ獲得に特化」と求人に明記されており、既存顧客拡張の機会は限定的。Public Sector(SLED)だけは自治体・教育・医療機関等への新規開拓と既存深耕の両方を担う設計で、セグメントによって新規特化か新規+深耕かが分かれる。",
+    compensation: "OpenMoney集計で営業平均年収1,238万円(レンジ760万〜3,000万円)。ジュニアでもRSU付与という口コミがある一方「ポジションごとにほぼ一律で交渉余地が少ない」という声も。Public SectorはSLED専門性(官公庁向け営業経験2〜3年以上)が要件化されておりレンジ上位が想定されるが、公開データでの裏付けはない。",
+    quota: "Public Sectorは年間売上目標100万ドル(約1.57億円)以上・平均ディールサイズ10万ドル(約1,570万円)以上と具体的に明記。Mid-Market・Commercialは新規開拓比率が高く、担当エリアの企業密度がクオータ達成を左右しやすい。",
+    collaboration: "Mid-MarketはSDR・パートナー・マーケティングとの連携、Sales Navigator/Demandbase等のツール活用が求人に明記。CTOやエンジニアリング層への技術的な説明力がどのセグメントでも共通して問われる。",
   },
   leadership: {
     name: "正井 拓己",
@@ -1727,10 +1727,10 @@ const servicenowIntelligence: CompanyPublicIntelligence = {
     },
   ],
   roleLens: {
-    salesMotion: "仮想チーム(Solutions Consultant・Success・Partner)を率いるオーケストレーター型営業。新規開拓のEnterprise AEと、既存顧客深耕のServices AEで動きが異なる。",
-    compensation: "Enterprise AEの標準クオータは約155万ドル(RepVue)。OTE・Pay Mixの具体的な内訳は非公開。",
-    quota: "RepVueの集計ではEnterprise AEの達成率は約47%。ブランド力と現場の達成難易度は別軸で見る必要がある。",
-    collaboration: "CFO・CIO・COO・CDOなど複数のC-suiteとの折衝、Solutions Consultant等の専門チームとの連携が前提。",
+    salesMotion: "Enterprise AE(Manufacturing)は複数のC-suite(CFO・CIO・COO・CDO)と関係構築しながらSolutions Consultant等の仮想チームを統括するオーケストレーター型。Services AEは新規開拓ではなく、導入済み顧客への追加サービス(Impact成功パッケージ等)提案が中心で、動き方が明確に異なる。",
+    compensation: "OpenMoney集計で営業部門平均年収1,766万円(全社平均1,639万円より高水準)。RepVue集計ではEnterprise AEの標準クオータは約155万ドル。Services AEは既存顧客提案中心でクオータ構造がEnterprise AEと異なるため、単純比較はできない。",
+    quota: "RepVueの集計ではEnterprise AEの達成率は約47%。Manufacturing特化のEnterprise AEは業界知識(サプライチェーン・IT/OT統合等)の深さが選考・達成双方で重視されると考えられる。",
+    collaboration: "CFO・CIO・COO・CDOなど複数のC-suiteとの折衝、Solutions Consultant・Solutions Specialist・Success・Partner・Marketingを含む仮想チームを率いる調整力が前提。",
   },
   leadership: {
     name: "鈴木 正敏",
@@ -3320,10 +3320,10 @@ const brazeIntelligence: CompanyPublicIntelligence = {
     },
   ],
   roleLens: {
-    salesMotion: "マーケティング・プリセールス・カスタマーサクセスとの「One Team」連携が前提。Value Sellingの実践とCRMでのパイプライン管理が必須要件。",
-    compensation: "米国データではSDRのOTEは85,500〜94,500ドル(ベース変動59/41)。日本オフィス独自の水準は非公開。",
-    quota: "RepVueの集計では全体の達成率は約45%。SDRは約1%と職種差が大きい。",
-    collaboration: "BDR・マーケティング・Value Engineeringとの連携がSales Director求人で明記。AE求人でもOne Team体制が前提。",
+    salesMotion: "Commercial・Enterpriseどちらも新規ビジネス開拓が中心で、マーケティング・プリセールス・カスタマーサクセスとの「One Team」連携が繰り返し明記されている。Sales Director職は自らも商談に参加しながらチームをコーチするプレイングマネージャー型。",
+    compensation: "日本オフィス固有の給与データは非公開。株式(equity)・401K相当・ESPP等の福利厚生は求人票で共通して明記。Sales Director等マネジメント職は配下AEのクオータ達成に連動したインセンティブ設計と推測されるが、具体的な数値は非公開。",
+    quota: "RepVueの集計では全体の達成率は約45%。Sales Director求人では「5人以上のクオータ保有Enterprise AEを率いた経験」が要件化されており、個人だけでなくチーム単位のクオータ管理経験が問われる。",
+    collaboration: "BDR・マーケティング・Value Engineeringとの連携がSales Director求人で明記。AE求人でもマーケティング・プリセールス・カスタマーサクセスとの「One Team」体制が前提。",
   },
   leadership: {
     name: "水谷 篤尚",
@@ -4333,10 +4333,10 @@ const hubspotIntelligence: CompanyPublicIntelligence = {
     },
   ],
   roleLens: {
-    salesMotion: "インバウンドリードのフォローアップとアップセル・クロスセルが中心。SMBからCorporateまで一貫して電話・Web中心の非対面商談スタイル。",
-    compensation: "米国データではAccount ExecutiveのOTEは150,000〜210,000ドル。日本オフィス独自の水準は非公開。",
-    quota: "『月次目標を常に上回る』ことが期待値として明記。RepVueの達成率データには現職社員から異議もあり、解釈に注意が必要。",
-    collaboration: "マーケティング・セールスエンジニアリングとの連携が前提。HEART文化への適合が選考・評価の重要な軸とされる。",
+    salesMotion: "SMB(〜100名規模)は2年以上、Mid Market(101〜500名規模)は5年以上、Corporate(500名〜規模)は7年以上と、担当企業規模に応じて要求経験年数が明確に段階設計されている。Corporateも訪問型ではなく電話・Web中心のインサイドセールス型である点が、他社のEnterprise AEと異なる。",
+    compensation: "米国データでは基本給75,000〜100,000ドル、OTE150,000〜210,000ドル(RepVue)。OpenMoney集計では全社平均年収1,217万円(レンジ600万〜2,600万円)。Sr・Lead等シニア職ほど高いOTEが期待されるが、日本固有の内訳は非公開。",
+    quota: "全セグメント共通で「継続的に営業目標を上回ってきた実績」が求人要件。Mid Market職では「常に月次目標(MRR)以上の達成」と明記され、単なる達成ではなく超過達成が前提とされている。",
+    collaboration: "インバウンドリード対応が起点のため、マーケティング・セールスエンジニアリングとの連携が前提。HEART(Humble・Empathetic・Adaptable・Remarkable・Transparent)というカルチャー適合が、スキル面と並ぶ評価軸として全セグメント共通で重視される。",
   },
   leadership: {
     name: "伊佐 裕也",

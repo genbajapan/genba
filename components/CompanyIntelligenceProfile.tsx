@@ -137,7 +137,7 @@ export default function CompanyIntelligenceProfile({
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
             <a href="#overview">会社概要</a>
-            <a href="#work-there">そこで働いている人を見る</a>
+            <a href="#work-there">働く人を見る</a>
             <a href="#roles">募集中ポジション</a>
             <a href="#decision">5つの仮説</a>
             <a href="#solution">ソリューション深掘り</a>
@@ -281,8 +281,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="work-there">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>そこで働いている人を見る。</h2></div>
-                <p>会社概要や求人票だけでは分からない、実際の雰囲気やキャリアの歩み方は、そこで働く人を見るのが一番早いです。</p>
+                <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{company.name}で働いている人を見る。</h2></div>
               </div>
               <a
                 href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&origin=SWITCH_SEARCH_VERTICAL`}
@@ -295,6 +294,10 @@ export default function CompanyIntelligenceProfile({
                   <p className="work-there-card-kicker">LINKEDIN PEOPLE SEARCH</p>
                   <h3>{company.name}で働く人を、LinkedInで探してみる。</h3>
                   <p className="work-there-card-sub">経歴、前職、今の役割。実際に働いている人のプロフィールを見れば、求人票よりも解像度高くイメージできます。</p>
+                  <p className="work-there-card-tip">
+                    <strong>採用角度アップTips</strong>
+                    アプライをする前に、勇気を振り絞って、応募しようと思っているポジションの方などに1on1を申し込んでみましょう!Genbaにも載っていないリアルな情報や雰囲気をつかめたり、その場でぜひ一緒に働きたいなとなれば通過しやすくなることもあります。これも立派な自分という商品を売るための営業スキルです。
+                  </p>
                 </div>
                 <span className="work-there-card-cta">
                   LinkedInで見る
@@ -415,11 +418,14 @@ export default function CompanyIntelligenceProfile({
               )}
 
               {publicIntel && (
-                <div className="role-hypothesis-grid">
-                  <article><span>SALES MOTION</span><p>{publicIntel.roleLens.salesMotion}</p></article>
-                  <article><span>COMPENSATION</span><p>{publicIntel.roleLens.compensation}</p></article>
-                  <article><span>QUOTA</span><p>{publicIntel.roleLens.quota}</p></article>
-                  <article><span>COLLABORATION</span><p>{publicIntel.roleLens.collaboration}</p></article>
+                <div className="role-hypothesis-wrap">
+                  <p className="card-index">ざっくりまとめ</p>
+                  <div className="role-hypothesis-grid">
+                    <article><span>セールスモーション</span><p>{publicIntel.roleLens.salesMotion}</p></article>
+                    <article><span>給与関連</span><p>{publicIntel.roleLens.compensation}</p></article>
+                    <article><span>Quota</span><p>{publicIntel.roleLens.quota}</p></article>
+                    <article><span>チーム連携</span><p>{publicIntel.roleLens.collaboration}</p></article>
+                  </div>
                 </div>
               )}
 
