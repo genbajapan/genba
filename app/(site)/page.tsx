@@ -24,8 +24,8 @@ export default function HomePage() {
         <Container className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">現役外資ITセールスマンによる運営</p>
-            <h1>外資IT戦士のための<br />企業研究所</h1>
-            <p className="hero-lead">現役の外資IT戦士による、さらに高みを目指す戦士たちが、より手早く情報収集をして勝てそうな次のフィールドを決めるための(半分自分のために作った)外資IT企業研究サイトです。</p>
+            <h1>小中規模外資IT<br />企業研究所</h1>
+            <p className="hero-lead">小中規模の外資系IT企業に注力をして最新情報を随時更新。Genbaを知る現役外資AEの観点で事実と仮説を交えて企業研究。</p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業データを見る</Link>
               <Link href="/signals" className="button button-secondary">最新シグナルを見る</Link>
@@ -44,6 +44,17 @@ export default function HomePage() {
       <div className="trust-bar">
         <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>更新日を明記</span><span>事実と分析を分離</span><span>広告は明示</span></div></Container>
       </div>
+
+      <section className="content-section founder-note-section">
+        <Container>
+          <div className="founder-note">
+            <p className="eyebrow">なぜGenbaを作ったか</p>
+            <p>大手外資から、知名度の低い小中規模の外資に移って、初めてわかったことがありました。テリトリーはまだ誰も耕していない。数字は肩書きより実力で見られる。移ってみて、その良さに気づいたんです。</p>
+            <p>でも、いざ探そうとすると情報がない。日本語で読める一次情報はほとんどなく、海外の情報を漁っては断片をつなぎ合わせるしかありませんでした。だったら、自分が欲しかった解像度でまとめよう。それがGenbaです。</p>
+            <p className="founder-note-emphasis">「ここなら働きたい」と思える小中規模の外資を、あなた自身の目で見つけられるように。</p>
+          </div>
+        </Container>
+      </section>
 
       <section className="content-section market-section">
         <Container><HiringHeatmap /></Container>

@@ -77,6 +77,11 @@ button, input, select { font: inherit; }
 .trust-points span { display: flex; align-items: center; gap: 8px; color: #42545e; font-size: 12px; }
 .trust-points span::before { content: "✓"; color: var(--signal); font-weight: 900; }
 
+.founder-note-section { padding-block: 56px; background: white; border-bottom: 1px solid var(--line); }
+.founder-note { max-width: 700px; }
+.founder-note p { margin: 1.05em 0; color: #40535e; font-size: 15px; line-height: 1.95; }
+.founder-note-emphasis { margin-top: 1.4em !important; color: var(--navy) !important; font-size: 18px !important; font-weight: 750; line-height: 1.7 !important; }
+
 .market-section { padding-block: 66px; background: #e7eded; border-bottom: 1px solid var(--line); }
 .market-heat { overflow: hidden; background: #071f2e; color: white; border: 1px solid #244555; box-shadow: 0 22px 55px rgba(7,31,46,.13); }
 .market-heat-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 42px; padding: 34px 38px 28px; border-bottom: 1px solid #294857; }
