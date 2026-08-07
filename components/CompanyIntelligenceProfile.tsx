@@ -182,15 +182,14 @@ export default function CompanyIntelligenceProfile({
 
                   <div className="market-status-panel">
                     <div className="market-status-head">
-                      <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
-                      <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
-                    </div>
-                    {publicIntel.marketStatus.isPublic && (
-                      <div className="market-status-facts">
-                        <div><span>上場</span><strong>{publicIntel.marketStatus.listedSince}〜</strong></div>
-                        <a className="market-status-stock-link" href={publicIntel.marketStatus.stockLinkUrl} target="_blank" rel="noreferrer">最新の株価を見る ↗</a>
+                      <div>
+                        <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
+                        <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
                       </div>
-                    )}
+                      {publicIntel.marketStatus.isPublic && (
+                        <a className="market-status-stock-link" href={publicIntel.marketStatus.stockLinkUrl} target="_blank" rel="noreferrer">最新の株価を見る ↗</a>
+                      )}
+                    </div>
 
                     {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.genbaVerdict && (
                       <div className="genba-verdict">
@@ -200,7 +199,9 @@ export default function CompanyIntelligenceProfile({
                       </div>
                     )}
 
-                    <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
+                    {!(publicIntel.marketStatus.isPublic && publicIntel.marketStatus.genbaVerdict) && (
+                      <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
+                    )}
                     {!publicIntel.marketStatus.isPublic && (
                       <div className="market-status-ipo-outlook">
                         <span>IPO見通し</span>

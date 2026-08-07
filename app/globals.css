@@ -363,14 +363,10 @@ button, input, select { font: inherit; }
 .public-fact-grid a { display: inline-block; margin-top: 12px; color: var(--signal); font-size: 11px; font-weight: 750; text-decoration: none; }
 
 .market-status-panel { margin-top: 9px; padding: 24px 26px; border: 1px solid var(--line); background: #f7f9f8; }
-.market-status-head { display: flex; align-items: baseline; gap: 12px; }
-.market-status-head h3 { margin: 0; color: var(--navy); font-size: 16px; font-weight: 850; }
-.market-status-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
-.market-status-facts div { padding: 10px 14px; border: 1px solid var(--line); background: white; }
-.market-status-facts div span { display: block; color: #6b7d84; font-size: 10px; font-weight: 750; }
-.market-status-facts div strong { display: block; margin-top: 4px; color: var(--navy); font-size: 14px; font-weight: 800; }
-.market-status-stock-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border: 1px solid var(--signal); color: var(--signal); font-size: 12px; font-weight: 800; text-decoration: none; background: white; }
-.market-status-stock-link:hover { background: var(--signal); color: white; }
+.market-status-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.market-status-head h3 { margin: 5px 0 0; color: var(--navy); font-size: 19px; font-weight: 850; letter-spacing: -.01em; }
+.market-status-stock-link { display: inline-flex; flex-shrink: 0; align-items: center; gap: 7px; padding: 11px 18px; background: var(--signal); color: white; font-size: 12px; font-weight: 800; text-decoration: none; box-shadow: 0 1px 2px rgba(10,109,99,.25); }
+.market-status-stock-link:hover { background: #085a52; }
 .market-status-summary { margin: 16px 0 0; color: #435760; font-size: 13px; line-height: 1.85; }
 .market-status-ipo-outlook { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--line); border-left-width: 4px; border-left-color: var(--signal); background: white; }
 .market-status-ipo-outlook span { display: block; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .06em; }

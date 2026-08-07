@@ -338,6 +338,14 @@ const salesforceSources: ResearchSource[] = [
     checkedAt: "2026-08-06",
   },
   {
+    id: "sf-founding",
+    label: "Wikipedia「Salesforce」",
+    url: "https://en.wikipedia.org/wiki/Salesforce",
+    kind: "外部集計",
+    scope: "1999年3月8日の創業経緯・共同創業者",
+    checkedAt: "2026-08-07",
+  },
+  {
     id: "sf-ipo",
     label: "Salesforce.com Form S-1(IPO目論見書)",
     url: "https://www.sec.gov/Archives/edgar/data/1108524/000119312503096073/ds1.htm",
@@ -437,12 +445,13 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
     stockLinkUrl: "https://stockanalysis.com/stocks/crm/",
     growthSummary: "1999年にMarc Benioff氏らが創業し、2004年6月にNYSEへ上場(公開価格$11、調達額約1.1億ドル)。上場後はMuleSoft(2018年、$65億)・Tableau(2019年、$153億)・Slack(2021年、$277億=同社史上最大の買収)と大型買収を重ねてCRMから統合プラットフォームへ拡張してきた。2023年には株価下落とアクティビスト投資家の圧力を受けて人員の約10%を削減し、成長一辺倒から収益性重視の経営へ転換。直近はAgentforce・Data 360を軸としたAIエージェント事業への大きな賭けに入っており、既存の人的ライセンス売上の伸び鈍化とAI事業の急拡大が同時に進む転換期にある、というのがGenbaの読み。",
     milestones: [
+      { year: "1999", label: "創業", detail: "元Oracle幹部のMarc Benioff氏がParker Harris氏らと共同で設立。", sourceId: "sf-founding" },
       { year: "2004", label: "NYSE上場", detail: "公開価格1株$11、調達額約1.1億ドルでIPO。", sourceId: "sf-ipo" },
       { year: "2018-21", label: "MuleSoft・Tableau・Slackを相次いで買収", detail: "MuleSoft($65億)・Tableau($153億)・Slack($277億、自社最大の買収)で統合プラットフォーム化を推進。", sourceId: "sf-acquisitions-history" },
       { year: "2023", label: "人員約10%削減・収益性重視へ転換", detail: "株価下落とアクティビスト投資家(Elliott等)の圧力を受け、成長一辺倒から利益重視の経営へ舵を切った。", sourceId: "sf-2023-layoffs" },
       { year: "2025-26", label: "Agentforce・Data 360のARRが前年比200%超で拡大", detail: "AIエージェント事業のARRが急拡大し、既存事業の減速とのせめぎ合いが続く。", sourceId: "sf-agentforce-arr-growth" },
     ],
-    sourceIds: ["sf-ipo", "sf-acquisitions-history", "sf-2023-layoffs", "sf-agentforce-arr-growth", "sf-q1fy27-earnings"],
+    sourceIds: ["sf-founding", "sf-ipo", "sf-acquisitions-history", "sf-2023-layoffs", "sf-agentforce-arr-growth", "sf-q1fy27-earnings"],
     genbaVerdict: {
       headline: "「座席の奪い合い」を恐れる市場と、「座席の外側」を狙うSalesforce。",
       body: "株価は2024年12月の史上最高値$364から現在は$187前後まで、年初来で30%超下落したまま戻っていない。AIエージェントが人間の座席を代替し、売上の95%を占める座席課金モデルを侵食するという懸念が晴れないためだ。ただしAgentforce・Data 360という「座席の外側」の従量課金収益はすでに合計で年間数十億ドル規模まで拡大しており、日本を含む既存15万社の顧客基盤にどこまで浸透させられるかが、今後1〜2年の成長シナリオを左右する、というのがGenbaの読み。",
