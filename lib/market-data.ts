@@ -147,6 +147,27 @@ const hubspotCorporateCareerFlow = {
   nextCompanies: "確認できる公開データはない。Corporate AEとしての実績は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
 };
 
+// Okta Japan株式会社は2020年9月設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
+const oktaTenureNote = "Okta Japan株式会社は2020年9月設立で、平均在籍年数・離職率を示す公開データは確認できていない。OpenWorkの口コミには「業績悪化、知名度の低さ、パートナー協業の課題」を指摘する声がある一方、「社員のモチベーションが高い」「自由度が高い」という声もあり、評価が分かれている。";
+
+const oktaSMECareerFlow = {
+  tenureAndPromotion: oktaTenureNote,
+  priorCompanies: "求人要件からは、他のテクノロジー企業でのインサイドセールス・フィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const oktaAuth0CareerFlow = {
+  tenureAndPromotion: oktaTenureNote,
+  priorCompanies: "求人要件からは、技術理解を伴う営業経験者、特にDevOps・エンジニアリング領域に強いSaaS企業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const oktaEnterpriseAuth0CareerFlow = {
+  tenureAndPromotion: oktaTenureNote,
+  priorCompanies: "求人要件からは、大型エンタープライズ商材を扱ってきた技術系SaaS企業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -312,6 +333,19 @@ export const companies: Company[] = [
       ],
       note: "corp-research.jp「HubSpot Japanへの転職チャンスをモノにする」など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
     },
+  },
+  {
+    slug: "okta",
+    name: "Okta",
+    category: "ID / セキュリティ",
+    hq: "San Francisco, US",
+    japanPresence: "Okta Japan株式会社・東京(2020年9月設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 3,
+    description: "従業員向けID管理のOkta本体と、開発者向けIDのAuth0で、複数の営業ポジションを継続掲載。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://www.okta.com/company/careers/",
+    tags: ["SME", "Developer", "Enterprise"],
   },
 ];
 
@@ -644,6 +678,72 @@ export const jobs: Job[] = [
       thingsToKnow: "『Corporate』という呼称は他社の『Enterprise』に相当する最上位セグメントだが、フィールドセールスではなくインサイドセールス型の体制である点は、他社のEnterprise AEとは働き方が大きく異なる可能性がある。面接で商談の進め方(訪問頻度等)を確認したい。",
       marketValue: "Corporate AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise・Strategic AE帯(目安1,500万〜3,000万円)に近い位置づけになると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、大企業への複雑な商談を非対面中心で完結させた実績で、効率的な営業手法の証明として評価されやすい。③キャリアの選択肢は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職。④フィールドセールス経験を重視する企業への転職では、インサイドセールス型の経験をどう位置づけるかの説明が必要になる場合がある。",
       ...hubspotCorporateCareerFlow,
+    },
+  },
+  {
+    id: "okta-ae-sme",
+    companySlug: "okta",
+    title: "Account Executive, Okta(Associate)",
+    segment: "SME",
+    location: "東京",
+    workStyle: "公式求人で確認(ハイブリッド)",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Okta Japan Careers(Greenhouse)", url: "https://job-boards.greenhouse.io/oktajp/jobs/8102278" },
+    descriptionSummary: "中小規模の新規顧客獲得と既存顧客への拡張を担当するアソシエイトレベルのポジション。テリトリープランの策定、パイプライン開拓、顧客のC級幹部へのプレゼンテーション、契約交渉までセールスサイクル全体を担う。",
+    genbaTake: "「アソシエイト」という肩書きと、必須要件がテクノロジー営業2年以上・日本語コミュニケーション力中心である点から、外資SaaS未経験からのAE挑戦の入り口になり得るポジションだと考えられる。裏を返せば、SME(中小企業)という商談規模の小ささゆえに、初期の実績作りには数をこなす負荷がかかる可能性がある。",
+    compensationReality: "OpenMoneyの自己申告データではEnterprise Account Executiveでベース1,200万円+コミッションという情報があるが、これはEnterprise職のものでSMEポジションの水準ではない。SME/Associateレベルの給与データは確認できておらず、求人にも給与レンジの記載はない。",
+    desiredProfile: "求人ではテクノロジー企業での営業経験2年以上またはインサイドセールス経験、日本市場での営業経験、中小企業向けセールスの実績、優れた日本語コミュニケーション能力が明記されている。SaaS業界経験・英語スキル・チャネルパートナーとの協働経験は歓迎要件。",
+    careerInsights: {
+      fit: "外資SaaS営業の経験を積み始めたい人、中小企業向けの商談数をこなしながら型を作りたい人に向く。逆に、いきなり大型商談を担当したい人には物足りない可能性がある。",
+      thingsToKnow: "OpenWorkの口コミでは「知名度の低さ」「パートナー協業の課題」を指摘する声もあり、大手ブランドほど問い合わせが来やすいわけではない。自らテリトリーを開拓する自走力が問われる可能性が高い。",
+      marketValue: "SME AEとしての実績の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯(目安700万〜1,300万円、転職エージェント記事の集計)への足がかりになる。②評価される実績は新規開拓の商談化率・受注率。③キャリアの選択肢は社内でのAuth0 AEやEnterprise AEへのステップアップ、他社のSMB/Commercial AEへの横移動。④ID/セキュリティ領域という専門性は、同業のセキュリティSaaS全般で評価されやすい。",
+      ...oktaSMECareerFlow,
+    },
+  },
+  {
+    id: "okta-ae-auth0",
+    companySlug: "okta",
+    title: "Account Executive, Auth0",
+    segment: "Developer",
+    location: "東京",
+    workStyle: "公式求人で確認(ハイブリッド)",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Okta Japan Careers(Greenhouse)", url: "https://job-boards.greenhouse.io/oktajp/jobs/7374462" },
+    descriptionSummary: "開発者向けID管理製品Auth0の新規顧客開拓を担う役割。新規ロゴ獲得に向けた長期アプローチの立案、アカウント戦略の策定・実行、意思決定者ネットワークの構築、契約交渉、Okta エコシステム(xDR・パートナー・プリセールス等)との連携が求められる。",
+    genbaTake: "Auth0はOktaが2021年に買収した開発者向けID製品で、買い手がエンジニアリング・プロダクト・セキュリティ部門という点が、従業員向けIDを売るOkta本体のAEとは異なる。「開発者コミュニティに響く技術的発見スキル」が要件化されている通り、技術理解を伴う営業力がより強く問われるポジションだと考えられる。",
+    compensationReality: "Auth0 AE特有の給与データは公開されていない。求人にも給与レンジの記載はない。Okta本体のEnterprise AEでベース1,200万円という自己申告データがあるが、Auth0特有の水準の裏付けにはならない。",
+    desiredProfile: "求人では複雑なエンタープライズSaaS製品における5年以上の営業成功経験、技術的発見スキルと製品開発ライフサイクル・DevOpsへの理解、エンジニアリングおよびデジタルトランスフォーメーション経験、MEDDPICC等のセールスフレームワーク習熟が明記されている。",
+    careerInsights: {
+      fit: "技術理解を武器に、開発者・エンジニアリング部門を相手にした商談を組み立てたい人に向く。逆に、非技術者向けの分かりやすい説明を得意とするタイプには、技術的発見のハードルが高く感じられる可能性がある。",
+      thingsToKnow: "Auth0はOkta買収後もブランド・製品として独立運用されており、Okta本体の顧客基盤とAuth0の顧客基盤が完全に重複しているわけではないと考えられる。担当予定のテリトリーがOkta既存顧客への追加提案中心か、Auth0単体の新規開拓中心かを面接で確認したい。",
+      marketValue: "Auth0 AEとしての経験の市場価値は、①報酬面では技術理解を要する分、一般的なSaaS AEより高いOTEが期待できる可能性があるが、日本固有の裏付けはない。②評価される実績は、開発者コミュニティ・エンジニアリング部門への提案実績で、これは技術系SaaS全般(Datadog、MongoDB等)への転職でも再現性を説明しやすい。③キャリアの選択肢は、社内でのEnterprise Auth0 AEへのステップアップ、または他の開発者向けSaaS企業のAEへの横移動。",
+      ...oktaAuth0CareerFlow,
+    },
+  },
+  {
+    id: "okta-enterprise-ae-auth0",
+    companySlug: "okta",
+    title: "Enterprise Account Executive, Auth0",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認(ハイブリッド)",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Okta Japan Careers(Greenhouse)", url: "https://job-boards.greenhouse.io/oktajp/jobs/7597551" },
+    descriptionSummary: "Auth0のエンタープライズ顧客層を担当する上位ポジション。新規ロゴ顧客のパイプライン生成に向けた長期アプローチの立案、収益目標の一貫した達成、パートナーを活用した機会開拓、Oktaエコシステム内でのパートナーシップ構築が求められる。",
+    genbaTake: "5年以上要件のAuth0 AEに対し、こちらは8年以上とさらに経験年数のハードルが上がっており、より大規模・複雑なエンタープライズ商談を任される即戦力採用と考えられる。「予測と機会衛生管理において一貫して高いレベルのエネルギーを維持する」という表現から、フォーキャストの精度がシビアに問われる文化がうかがえる。",
+    compensationReality: "Enterprise Auth0 AE特有の給与データは公開されていない。求人にも給与レンジの記載はなく、経験年数要件の高さから標準のAuth0 AEより高いOTE水準が期待されるが、確認事実ではない。",
+    desiredProfile: "求人では8年以上のエンタープライズSaaS製品における収益拡大実績、開発者コミュニティに響く深い技術的発見スキル、技術販売を企業のビジネス・変革成果に結びつける実績、MEDDPICC等のセールスフレームワーク活用経験が明記されている。",
+    careerInsights: {
+      fit: "既に大型の技術商材を売った実績があり、開発者向け製品特有の技術的な深さを求められる商談を任されたい人に向く。逆に、初めてのエンタープライズ営業挑戦や技術理解に不安がある人には難易度が高い。",
+      thingsToKnow: "「予測と機会衛生管理」への言及は、フォーキャストの正確性が評価軸として重視されていることを示唆する。パイプラインの精度管理をどう評価されるか、前任者の状況とあわせて面接で確認したい。",
+      marketValue: "Enterprise Auth0 AEとしての経験の市場価値は、①報酬面では技術理解を要するEnterprise AE帯として高水準が期待されるが、日本固有の裏付けはない。②評価される実績は大規模エンタープライズでの技術商材の契約獲得実績。③キャリアの選択肢は、他の開発者向け・技術系SaaS企業(Datadog、MongoDB、Snowflake等)のEnterprise/Strategic AE、またはOkta社内でのマネジメント職。",
+      ...oktaEnterpriseAuth0CareerFlow,
     },
   },
 ];
