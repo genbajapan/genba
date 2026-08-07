@@ -1,9 +1,29 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 type ChatMessage = { role: "user" | "assistant"; content: string; sources?: Array<{ id: string; title: string }> };
+
+// **太字** をReact要素の<strong>に変換する(dangerouslySetInnerHTMLは使わず、AI生成テキストへのHTML混入を避ける)
+function renderRichText(text: string) {
+  const lines = text.split("\n");
+  return lines.map((line, lineIndex) => {
+    const parts = line.split(/(\*\*[^*]+\*\*)/g).filter((part) => part.length > 0);
+    return (
+      <Fragment key={lineIndex}>
+        {lineIndex > 0 && <br />}
+        {parts.map((part, partIndex) =>
+          part.startsWith("**") && part.endsWith("**") ? (
+            <strong key={partIndex}>{part.slice(2, -2)}</strong>
+          ) : (
+            <Fragment key={partIndex}>{part}</Fragment>
+          ),
+        )}
+      </Fragment>
+    );
+  });
+}
 
 const WELCOME_MESSAGE: ChatMessage = {
   role: "assistant",
@@ -82,7 +102,7 @@ export default function GenbaChatWidget() {
             return (
               <div key={index} className={`genba-chat-message genba-chat-message-${message.role}`}>
                 <div className="genba-chat-bubble">
-                  <p>{message.content}</p>
+                  <p>{renderRichText(message.content)}</p>
                 </div>
                 {companySources.length > 0 && (
                   <div className="genba-chat-company-links">
