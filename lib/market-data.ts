@@ -183,6 +183,21 @@ const zendeskCommercialCareerFlow = {
   nextCompanies: "確認できる公開データはない。",
 };
 
+// UiPath株式会社は2017年3月設立、2026年2月にカントリーマネージャーが交代したばかりのため共通の非公開注記として保持
+const uipathTenureNote = "UiPath株式会社(日本法人)は2017年3月設立、東京都千代田区に本社を置く。2026年2月1日付で南哲夫氏がカントリーマネージャーに就任しており、リーダーシップ体制が最近更新されたばかり。平均在籍年数・離職率の公開データは確認できていない。";
+
+const uipathEnterpriseAECareerFlow = {
+  tenureAndPromotion: uipathTenureNote,
+  priorCompanies: "求人要件からは、エンタープライズソフトウェア営業の経験者、特に業務改善・自動化領域に関わってきた営業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const uipathEnterpriseSalesCareerFlow = {
+  tenureAndPromotion: uipathTenureNote,
+  priorCompanies: "求人要件からは、多国籍IT企業でのエンタープライズ営業経験者、ERP/CRM等のアプリケーション営業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -374,6 +389,19 @@ export const companies: Company[] = [
     lastChecked: "2026-08-07",
     careersUrl: "https://www.zendesk.co.jp/careers",
     tags: ["SMB", "Commercial"],
+  },
+  {
+    slug: "uipath",
+    name: "UiPath",
+    category: "RPA / 自動化",
+    hq: "New York, US",
+    japanPresence: "UiPath株式会社・東京都千代田区(2017年3月設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "Enterprise Account Executive、Enterprise Sales Executiveなど、複数の営業ポジションを継続掲載。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://www.uipath.com/ja/careers",
+    tags: ["Enterprise"],
   },
 ];
 
@@ -816,6 +844,50 @@ export const jobs: Job[] = [
       thingsToKnow: "Senior職のため、前任者の在籍期間や、新規:既存の商談比率がどの程度かを面接で確認したい。",
       marketValue: "Senior Commercial AEとしての実績の市場価値は、①報酬面では外資SaaSのCommercial/Mid-Market AE帯(目安900万〜1,300万円)への位置づけとなりやすい。②評価される実績は新規開拓と既存拡張の両立実績で、次の転職でも汎用性の高い実績として説明しやすい。③キャリアの選択肢は社内でのEnterprise AEへのステップアップ、他社のMid-Market/Enterprise AEへの転職。",
       ...zendeskCommercialCareerFlow,
+    },
+  },
+  {
+    id: "uipath-enterprise-ae",
+    companySlug: "uipath",
+    title: "Enterprise Account Executive",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "UiPath Careers", url: "https://careers.uipath.com/careers/jobs/9288?lang=en-us" },
+    descriptionSummary: "エンタープライズクライアント向けの高タッチ型営業でUiPathのソフトウェアソリューションを販売する役割。担当テリトリー・市場のポテンシャルを分析し、UiPathの収益最大化に向けた営業戦略を立案・実行する。年間売上目標の達成が求められる。",
+    genbaTake: "「高タッチ型営業」「テリトリー・市場ポテンシャルの分析」という表現から、単純な製品説明営業ではなく、担当エリア全体の自動化ニーズを掘り起こすコンサルティング型の動き方が求められると考えられる。RPAという成熟しつつある市場で、次の一手(エージェンティック・オートメーション)をどう語れるかが差になりそうだ。",
+    compensationReality: "OpenMoneyの自己申告データでは全社平均年収1,470万円、営業職平均1,792万円。OpenWorkの集計(40名回答)では平均年収1,192万円で、業界平均より611万円高いとされる。集計方法により数値に幅があるため、オファー時の実額は個別に確認したい。",
+    desiredProfile: "求人ではエンタープライズソフトウェア営業の経験、複雑な商談を進める力、担当テリトリー内での戦略立案・実行力が重視されると考えられる。同種のUiPath Enterprise AE求人では5年以上のエンタープライズソフトウェア営業経験が要件とされることが多い。",
+    careerInsights: {
+      fit: "テリトリー全体を俯瞰し、どこに自動化ニーズがあるかを自分で掘り起こせる人に向く。逆に、決まった商談リストをこなすスタイルを好む人には物足りない可能性がある。",
+      thingsToKnow: "UiPathは2026年にエージェンティック・オートメーション(LLMエージェントがRPAボットを統括する新しい形)へ全社的にピボットしており、従来のRPA単体の提案から、AIエージェントを含めた提案への転換が進んでいると考えられる。商談で求められる知識のアップデート頻度を面接で確認したい。",
+      marketValue: "Enterprise AEとしての実績の市場価値は、①報酬面では外資SaaSのEnterprise AE帯(目安1,200万〜2,000万円程度)に位置づけられると考えられる。②評価される実績はテリトリー開拓・大型契約の獲得実績。③キャリアの選択肢は他のRPA/自動化ベンダー(Automation Anywhere等)や、隣接する業務改善SaaS企業のEnterprise AEへの横移動。④RPA市場の次の論点(エージェンティックAI)を語れる経験は、AI関連の営業職全般で評価されやすい。",
+      ...uipathEnterpriseAECareerFlow,
+    },
+  },
+  {
+    id: "uipath-enterprise-sales-executive-2",
+    companySlug: "uipath",
+    title: "Enterprise Sales Executive II",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "UiPath Careers", url: "https://careers.uipath.com/jobs/5706?lang=en-us" },
+    descriptionSummary: "既存のエンタープライズクライアントポートフォリオの拡大と、複数階層・複数部門にわたる意思決定者との関係構築を担う役割。アカウント戦略の策定・実行、営業サポート・カスタマーサクセスとの連携を通じて顧客満足を確保する。四半期クオータの達成、達成率100%超でのアクセラレーターが一般的とされる。",
+    genbaTake: "「複数階層・複数部門の意思決定者との関係構築」が明記されている点は、単一の窓口担当者だけでなく、組織横断的な合意形成(いわゆる根回し)を主導する役割であることを示している。「II」というグレード表記からは、シニアクラスの即戦力採用である可能性が高い。",
+    compensationReality: "OpenMoneyの自己申告データでは営業職平均年収1,792万円。四半期クオータ制で、達成率100%超でアクセラレーターが効く設計が一般的とされる。日本オフィス固有の内訳は非公開。",
+    desiredProfile: "同種のUiPath Enterprise Sales Executive求人では、多国籍IT業界での5年以上のエンタープライズソフトウェア営業経験、高タッチ営業での3年以上の経験、継続的なクオータ達成実績、ERP/CRM等のアプリケーション営業経験が歓迎要件とされることが多い。",
+    careerInsights: {
+      fit: "既存の大口顧客ポートフォリオを組織横断的に拡大したい人、複数のステークホルダーを同時に動かす商談を得意とする人に向く。",
+      thingsToKnow: "「II」という表記の具体的な等級基準(担当アカウント数、クオータ規模)は求人票だけでは分からない。前任者の担当ポートフォリオ規模を面接で確認したい。",
+      marketValue: "Enterprise Sales Executiveとしての実績の市場価値は、①報酬面ではEnterprise AEと同等かそれ以上のOTE水準が期待される。②評価される実績は既存ポートフォリオの拡大率・複数部門への展開実績。③キャリアの選択肢は他社のシニアEnterprise AE、あるいは営業マネジメント職。",
+      ...uipathEnterpriseSalesCareerFlow,
     },
   },
 ];
