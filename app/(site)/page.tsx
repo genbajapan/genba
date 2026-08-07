@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">現役外資ITセールスマンによる運営</p>
             <h1>小中規模外資IT<br />企業研究所</h1>
-            <p className="hero-lead">小中規模の外資系IT企業に注力をして最新情報を随時更新。Genbaを知る現役外資AEの観点で事実と仮説を交えて企業研究。</p>
+            <p className="hero-lead">小中規模の外資系IT企業に注力をして最新情報を随時更新。<br />Genbaを知る現役外資AEの観点で事実と仮説を交えて企業研究。</p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業データを見る</Link>
               <Link href="/signals" className="button button-secondary">最新シグナルを見る</Link>
@@ -49,9 +49,9 @@ export default function HomePage() {
         <Container>
           <div className="founder-note">
             <p className="eyebrow">なぜGenbaを作ったか</p>
-            <p>大手外資から、知名度の低い小中規模の外資に移って、初めてわかったことがありました。テリトリーはまだ誰も耕していない。数字は肩書きより実力で見られる。移ってみて、その良さに気づいたんです。</p>
-            <p>でも、いざ探そうとすると情報がない。日本語で読める一次情報はほとんどなく、海外の情報を漁っては断片をつなぎ合わせるしかありませんでした。だったら、自分が欲しかった解像度でまとめよう。それがGenbaです。</p>
-            <p className="founder-note-emphasis">「ここなら働きたい」と思える小中規模の外資を、あなた自身の目で見つけられるように。</p>
+            <p>大手外資から小中規模の外資へ移って、初めてわかったことがありました。まだ誰も耕していないテリトリー。肩書きではなく「実力と成果」で見られる正当な評価。魅力的で高いOTE、無駄な社内政治のない風通しの良さ。自分の貢献がダイレクトに成長につながる手応え。厳しい環境であることに変わりはない。けれども同時に高いスキルと当事者意識を持つチャレンジャーにとって、これほど素晴らしい環境はありません。しかし、いざ次の挑戦先を探そうとすると、情報がとにかく少ない。日本語で読める一次情報はほとんどなく、海外やLinkedInの情報源を漁っては断片をつなぎ合わせるしかありませんでした。</p>
+            <p>「だったら、自分が本当に欲しかった解像度でまとめよう」そうして立ち上げたのがGenbaです。</p>
+            <p className="founder-note-emphasis">「ここで本気で戦いたい」と思える小中規模外資を見つけられるように。</p>
           </div>
         </Container>
       </section>
