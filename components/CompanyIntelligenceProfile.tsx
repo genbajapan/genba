@@ -295,7 +295,7 @@ export default function CompanyIntelligenceProfile({
                   <h3>{company.name}で働く人を、LinkedInで探してみる。</h3>
                   <p className="work-there-card-sub">経歴、前職、今の役割。実際に働いている人のプロフィールを見れば、求人票よりも解像度高くイメージできます。</p>
                   <p className="work-there-card-tip">
-                    <strong>採用角度アップTips</strong>
+                    <strong>採用確度アップのTips</strong>
                     アプライをする前に、勇気を振り絞って、応募しようと思っているポジションの方などに1on1を申し込んでみましょう!Genbaにも載っていないリアルな情報や雰囲気をつかめたり、その場でぜひ一緒に働きたいなとなれば通過しやすくなることもあります。これも立派な自分という商品を売るための営業スキルです。
                   </p>
                 </div>
