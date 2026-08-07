@@ -55,6 +55,7 @@ export default function GenbaChatWidget() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
   const isComposingRef = useRef(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const hydratedRef = useRef(false);
@@ -209,9 +210,21 @@ export default function GenbaChatWidget() {
             送信
           </button>
         </div>
-        <p className="genba-chat-disclaimer">
-          AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要です。この会話はブラウザのタブを閉じるまでの間だけ保持され、Genbaのサーバーには保存されません。
-        </p>
+        <div className="genba-chat-disclaimer-row">
+          <button type="button" className="genba-chat-disclaimer-toggle" onClick={() => setShowDisclaimer((prev) => !prev)}>
+            ご利用にあたって
+          </button>
+          {showDisclaimer && (
+            <div className="genba-chat-disclaimer-popover">
+              <p>
+                AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要です。この会話はブラウザのタブを閉じるまでの間だけ保持され、Genbaのサーバーには保存されません。
+              </p>
+              <button type="button" onClick={() => setShowDisclaimer(false)}>
+                閉じる
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
