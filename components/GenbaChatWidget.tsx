@@ -48,7 +48,9 @@ function loadStoredMessages(): ChatMessage[] | null {
 }
 
 export default function GenbaChatWidget() {
-  const [open, setOpen] = useState(false);
+  // closed: 非表示 / peek: モバイルではボトムシート(画面の2/5)、デスクトップでは通常のドッキングパネル / full: モバイルではほぼ全画面
+  const [sheetState, setSheetState] = useState<"closed" | "peek" | "full">("closed");
+  const open = sheetState !== "closed";
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -130,13 +132,13 @@ export default function GenbaChatWidget() {
 
   return (
     <>
-      {!open && (
-        <button type="button" className="genba-chat-toggle" onClick={() => setOpen(true)}>
+      {sheetState === "closed" && (
+        <button type="button" className="genba-chat-toggle" onClick={() => setSheetState("peek")}>
           AIチャット
         </button>
       )}
 
-      <div className={`genba-chat-dock ${open ? "genba-chat-dock-open" : "genba-chat-dock-closed"}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
+      <div className={`genba-chat-dock genba-chat-dock-${sheetState}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
         <div className="genba-chat-panel-head">
           <div>
             <strong>Genba AIチャット</strong>
@@ -146,7 +148,14 @@ export default function GenbaChatWidget() {
             <button type="button" onClick={resetConversation} className="genba-chat-reset">
               新しい会話
             </button>
-            <button type="button" aria-label="閉じる" onClick={() => setOpen(false)} className="genba-chat-close">
+            <button
+              type="button"
+              onClick={() => setSheetState(sheetState === "full" ? "peek" : "full")}
+              className="genba-chat-expand"
+            >
+              {sheetState === "full" ? "縮める" : "広げる"}
+            </button>
+            <button type="button" aria-label="閉じる" onClick={() => setSheetState("closed")} className="genba-chat-close">
               ✕
             </button>
           </div>
