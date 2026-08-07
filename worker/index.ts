@@ -75,7 +75,13 @@ async function handleChat(request: Request, env: Env, origin: string | null): Pr
     return jsonResponse({ error: "messages_required" }, { status: 400 }, origin);
   }
 
-  const relevantBlocks = retrieveRelevantBlocks(knowledgeBlocks, lastUserMessage.content, 3);
+  // 直近のuser発言だけでなく、直近数ターンの会話も検索クエリに含める(company名を省略したフォローアップ質問に対応するため)
+  const recentUserMessages = messages
+    .filter((message) => message.role === "user")
+    .slice(-3)
+    .map((message) => message.content)
+    .join(" ");
+  const relevantBlocks = retrieveRelevantBlocks(knowledgeBlocks, recentUserMessages || lastUserMessage.content, 3);
   const context = relevantBlocks.map((block) => `--- ${block.title} ---\n${block.text}`).join("\n\n");
 
   const aiMessages = [{ role: "system", content: `${SYSTEM_PROMPT}\n\n# 参考情報(Genba掲載データ)\n${context}` }, ...messages];
