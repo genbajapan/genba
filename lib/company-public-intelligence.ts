@@ -327,20 +327,20 @@ const salesforceSources: ResearchSource[] = [
 ];
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-05",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "CRM",
     exchange: "NYSE",
     priceAsOf: "2026-08-06",
-    price: "$184.75",
-    marketCap: "$151.31B(約23兆7,600億円)",
+    price: "$186.77",
+    marketCap: "$152.96B(約24兆205億円)",
     week52Range: "$146.32〜$269.11",
     analystConsensus: "Buy",
-    analystTargetAvg: "$241.72(現在値+30.81%)",
+    analystTargetAvg: "$241.72(現在値+29.42%)",
     analystTargetRange: "$160〜$475",
     analystCount: "53人",
-    outlookSummary: "FY27 Q1(2026年5月発表)ではAgentforce・Data 360のARRが前年比200%超の約34億ドルに拡大し、通期売上ガイダンスを459億〜462億ドルへ上方修正した。一方でMarketing/Commerce領域の弱さとTableauの契約更新の軟化が続いているとも会社側は説明しており、AI事業の急拡大と既存事業の減速という綱引きの真っ只中にある、というのがGenbaの読み。アナリスト大勢はBuyだが、目標株価レンジは160〜475ドルと幅が大きく、評価が割れている。",
+    outlookSummary: "FY27 Q1(2026年5月発表)ではAgentforce・Data 360のARRが前年比200%超の約34億ドルに拡大し、通期売上ガイダンスを459億〜462億ドルへ上方修正した。一方でMarketing/Commerce領域の弱さとTableauの契約更新の軟化が続いているとも会社側は説明しており、AI事業の急拡大と既存事業の減速という綱引きの真っ只中にある、というのがGenbaの読み。株価は2026年に入り年初来で30%超下落しており、AIエージェント(Agentforce)が既存の人的ライセンス課金モデルを侵食するのではという懸念や、Informatica統合コストへの警戒感が市場で語られている。アナリスト大勢はBuyだが、目標株価レンジは160〜475ドルと幅が大きく、評価が割れている。",
     outlookSignals: [
       {
         label: "Agentforce・Data 360 ARR",
@@ -349,10 +349,10 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
         sourceId: "sf-q1fy27-earnings",
       },
       {
-        label: "Marketing/Commerce・Tableau",
-        detail: "同領域の契約更新の軟化を会社側が決算で言及",
+        label: "株価は年初来30%超下落",
+        detail: "AIエージェントが既存の人的ライセンス売上を侵食するとの懸念、Informatica統合コストへの警戒感が市場で語られている",
         direction: "逆風",
-        sourceId: "sf-q1fy27-earnings",
+        sourceId: "sf-stock-forecast",
       },
       {
         label: "アナリスト評価の分散",
@@ -908,20 +908,20 @@ const datadogSources: ResearchSource[] = [
 ];
 
 const datadogIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "DDOG",
     exchange: "NASDAQ",
     priceAsOf: "2026-08-06",
-    price: "$236.60",
-    marketCap: "$84.22B(約1兆3,222億円)",
+    price: "$229.29",
+    marketCap: "$81.62B(約1兆2,814億円)",
     week52Range: "$98.01〜$292.72",
-    analystConsensus: "Strong Buy",
-    analystTargetAvg: "$276.10(現在値+16.89%)",
-    analystTargetRange: "$139〜$330",
+    analystConsensus: "Buy",
+    analystTargetAvg: "$276.36(現在値+20.53%)",
+    analystTargetRange: "$158〜$330",
     analystCount: "46人",
-    outlookSummary: "2026年8月発表のQ2決算は売上11.2億ドル(前年比+35.6%)とガイダンス(29〜31%成長)を上回ったが、決算発表後に株価は急落した。AI連携を使う顧客の比率は全体の約20%にとどまるが、その顧客群だけでARRの約80%を占めており、AI活用の有無が既存顧客内での成長格差を広げている。新規契約の年換算予約額は過去最高で前年比2倍超となり、新規開拓の勢いは強い。",
+    outlookSummary: "2026年8月発表のQ2決算はEPS・売上ともに市場予想を上回り(売上11.2億ドル・前年比+36%)、通期ガイダンスも上方修正されたが、発表翌日に株価は約19%急落した。直前まで最高値圏で推移していた反動の利益確定売りが主因とみられ、「決算は好調でも株価は下落する」という珍しいパターンになった。AI連携を使う顧客の比率は全体の約20%にとどまるが、その顧客群だけでARRの約80%を占めており、AI活用の有無が既存顧客内での成長格差を広げている。新規契約の年換算予約額は過去最高で前年比2倍超となり、新規開拓の勢いは強い。",
     outlookSignals: [
       {
         label: "新規ロゴの年換算予約額",
@@ -931,7 +931,7 @@ const datadogIntelligence: CompanyPublicIntelligence = {
       },
       {
         label: "決算好調でも株価急落",
-        detail: "売上・EPSともに市場予想を上回ったにも関わらず株価は下落し、成長鈍化への警戒が根強い",
+        detail: "売上・EPSともに市場予想を上回り通期ガイダンスも上方修正されたにも関わらず、発表翌日に株価は約19%下落した",
         direction: "逆風",
         sourceId: "dd-q2-2026-earnings",
       },
@@ -1432,28 +1432,12 @@ const servicenowSources: ResearchSource[] = [
     checkedAt: "2026-08-06",
   },
   {
-    id: "sn-enterprise-manufacturing-job",
-    label: "Enterprise Account Executive, Manufacturing求人",
-    url: "https://careers.servicenow.com/jobs/744000058131540/enterprise-account-executive-manufacturing-1/",
+    id: "sn-commercial-ae-job",
+    label: "Account Executive - Commercial求人(JB0074345)",
+    url: "https://careers.servicenow.com/jobs/744000140382539/account-executive-commercial/",
     kind: "企業公式",
-    scope: "Enterprise AE(製造業)の役割・要件",
-    checkedAt: "2026-08-06",
-  },
-  {
-    id: "sn-sr-enterprise-job",
-    label: "Sr Enterprise Account Executive求人",
-    url: "https://careers.servicenow.com/jobs/744000126215269/sr-enterprise-account-executive/",
-    kind: "企業公式",
-    scope: "Sr Enterprise AEの役割・要件",
-    checkedAt: "2026-08-06",
-  },
-  {
-    id: "sn-services-ae-job",
-    label: "Services Account Executive求人",
-    url: "https://careers.servicenow.com/jobs/744000088755823/services-account-executive/",
-    kind: "企業公式",
-    scope: "Services AEの役割・要件",
-    checkedAt: "2026-08-06",
+    scope: "Commercial AEの役割・要件",
+    checkedAt: "2026-08-07",
   },
   {
     id: "sn-q2-2026-earnings",
@@ -1482,36 +1466,36 @@ const servicenowSources: ResearchSource[] = [
 ];
 
 const servicenowIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "NOW",
     exchange: "NYSE",
     priceAsOf: "2026-08-06",
-    price: "$115.59",
-    marketCap: "$119.50B(約1兆8,761億円)",
+    price: "$117.35",
+    marketCap: "$121.32B(約1兆9,047億円)",
     week52Range: "$81.24〜$194.73",
     analystConsensus: "Strong Buy",
-    analystTargetAvg: "$140.25(現在値+21.24%)",
+    analystTargetAvg: "$140.25(現在値+19.51%)",
     analystTargetRange: "$72〜$248",
     analystCount: "49人",
-    outlookSummary: "2026年7月発表のQ2決算はサブスクリプション収益が前年比23%増、cRPO成長率21.5%とガイダンスを上回り、通期ガイダンスを再度上方修正した。AI ACV(年間契約額)が四半期で10億ドルを突破し、エージェンティックAIの本番運用は過去9か月で9倍に拡大するなど、AI関連指標の伸びが際立つ。2030年までにサブスクリプション収益300億ドル以上という長期目標を掲げており、経営陣の強気なメッセージが続いている。",
+    outlookSummary: "2026年7月発表のQ2決算はサブスクリプション収益が前年比23%増、cRPO成長率21.5%とガイダンスを上回り、AI ACV(年間契約額)は四半期で10億ドルを突破した。一方で通期のサブスクリプション粗利益率見通しを50bp下方修正しており、ハイパースケーラー利用増加・AI導入加速がコスト増要因になっていると会社側は説明している。株価は2026年に入り年初来で40%近く下落しており、1月末のAIエージェント台頭に伴う業界全体の売りに加え、下半期の成長鈍化を示唆するガイダンスが重石になっている。AI関連の商談自体は伸びているが、その収益化コストと成長率鈍化への警戒感が株価に反映されている、というのがGenbaの読み。",
     outlookSignals: [
       {
         label: "AI ACVが四半期で10億ドル突破",
-        detail: "AI関連の商談が本格的に収益化し始めている",
+        detail: "AI関連の商談が本格的に収益化し始めている一方、バックログは為替調整後+21.5%と底堅い",
         direction: "追い風",
         sourceId: "sn-q2-2026-earnings",
       },
       {
-        label: "通期ガイダンス上方修正",
-        detail: "サブスクリプション収益・営業利益率とも上方修正",
-        direction: "追い風",
-        sourceId: "sn-q2-2026-earnings",
+        label: "株価は年初来40%近く下落",
+        detail: "サブスクリプション粗利益率見通しを50bp下方修正、下半期の成長鈍化を示唆するガイダンスも重石に",
+        direction: "逆風",
+        sourceId: "sn-stock-forecast",
       },
       {
         label: "アナリスト目標株価のレンジ",
-        detail: "平均目標株価は現在値を+21%上回るが、レンジは72〜248ドルと幅が広く景気減速時の脆弱性を指摘する見方もある",
+        detail: "平均目標株価は現在値を+19.5%上回るが、レンジは72〜248ドルと幅が広く景気減速時の脆弱性を指摘する見方もある",
         direction: "中立",
         sourceId: "sn-stock-forecast",
       },
@@ -2031,20 +2015,20 @@ const snowflakeSources: ResearchSource[] = [
 ];
 
 const snowflakeIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "SNOW",
     exchange: "NYSE",
     priceAsOf: "2026-08-06",
-    price: "$319.13",
-    marketCap: "$110.61B(約1兆7,365億円)",
+    price: "$318.00",
+    marketCap: "$110.22B(約1兆7,304億円)",
     week52Range: "$118.30〜$323.10",
     analystConsensus: "Strong Buy",
-    analystTargetAvg: "$302.29(現在値-5.38%)",
+    analystTargetAvg: "$302.29(現在値-4.94%)",
     analystTargetRange: "$110〜$500",
     analystCount: "51人",
-    outlookSummary: "2026年5月発表のQ1 FY27決算で売上成長34%を記録し、FY27通期ガイダンスを27%→31%成長へ上方修正した。AI検索・エージェント開発機能「Cortex Code(CoCo)」の利用アカウントが前四半期比で倍増し、会社側はこれを上方修正の最大要因と説明している。ただし直近で株価が52週高値圏まで急伸しており、アナリストの平均目標株価(302.29ドル)は現在の株価をやや下回る水準にとどまる。事業モメンタムは強いが、株価はすでにその期待の多くを織り込んでいる可能性がある、というのがGenbaの読み。",
+    outlookSummary: "2026年5月発表のQ1 FY27決算で売上成長34%を記録し、FY27通期ガイダンスを27%→31%成長へ上方修正した。AI検索・エージェント開発機能「Cortex Code(CoCo)」の利用アカウントが前四半期比で倍増し、会社側はこれを上方修正の最大要因と説明している。株価は直近6か月で+102%という急騰を記録し、8月上旬に52週高値を更新した。BTIGやWells Fargoが目標株価を引き上げる一方、InvestingProは「市場で最も割高な銘柄の一つ」とバリュエーション過熱を指摘しており、平均目標株価(302.29ドル)がすでに現在の株価をやや下回るという珍しい状態になっている。事業モメンタムは強いが、株価はすでにその期待の多くを織り込んでいる可能性がある、というのがGenbaの読み。",
     outlookSignals: [
       {
         label: "CoCo(Cortex Code)利用拡大",
@@ -2549,17 +2533,17 @@ const mongodbSources: ResearchSource[] = [
 ];
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "MDB",
     exchange: "NASDAQ",
     priceAsOf: "2026-08-06",
-    price: "$370.32",
-    marketCap: "$29.79B(約4,677億円)",
+    price: "$370.00",
+    marketCap: "$29.76B(約4,672億円)",
     week52Range: "$198.47〜$444.72",
     analystConsensus: "Buy",
-    analystTargetAvg: "$396.21(現在値+6.99%)",
+    analystTargetAvg: "$396.21(現在値+7.08%)",
     analystTargetRange: "$272.64〜$545",
     analystCount: "40人",
     outlookSummary: "Q2 FY27ガイダンスでAtlas収益成長率を約26%と見込み、FY27通期売上ガイダンス29.2億〜29.6億ドル(成長率19〜20%)を提示。Atlasは4四半期連続で29%超の成長を維持しており、CFOは「Atlasの拡大により個別顧客の変動に業績が左右されにくくなった」と説明している。開発者主導のボトムアップ採用からエンタープライズ契約への移行が進んでいる局面。",
@@ -3076,7 +3060,7 @@ const brazeSources: ResearchSource[] = [
 ];
 
 const brazeIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "BRZE",
@@ -3086,7 +3070,7 @@ const brazeIntelligence: CompanyPublicIntelligence = {
     marketCap: "$2.90B(約455億円)",
     week52Range: "$15.26〜$37.33",
     analystConsensus: "Strong Buy",
-    analystTargetAvg: "$34.45(現在値+34.12%)",
+    analystTargetAvg: "$34.45(現在値+33.99%)",
     analystTargetRange: "$27〜$50",
     analystCount: "21人",
     outlookSummary: "Q1 FY27決算で売上が前年比30%増となり、4四半期連続で成長率が加速した。Q2ガイダンスは前年比約22%成長、FY27通期ガイダンスも約22%成長を見込む。アナリストの評価はStrong Buyで、平均目標株価は現在の株価を34%上回るなど強気な見方が優勢。ただし時価総額29億ドル・アナリストカバレッジ21人と他社より規模が小さく、株価の値動きが相対的に大きくなりやすい点は留意が必要。",
@@ -3571,25 +3555,41 @@ const crowdstrikeSources: ResearchSource[] = [
     url: "https://stockanalysis.com/stocks/crwd/forecast/",
     kind: "外部集計",
     scope: "アナリスト目標株価コンセンサス",
-    checkedAt: "2026-08-06",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "cs-delta-lawsuit",
+    label: "Judge Lets Delta Lawsuit Over CrowdStrike Outage Proceed(BankInfoSecurity)",
+    url: "https://www.bankinfosecurity.com/judge-lets-deltas-cyber-failure-suit-vs-crowdstrike-proceed-a-28443",
+    kind: "外部集計",
+    scope: "Delta Air Lines訴訟(2024年障害関連)の係争状況",
+    checkedAt: "2026-08-07",
+  },
+  {
+    id: "cs-corporate-ae-job",
+    label: "Corporate Account Executive(新規開拓担当営業)求人",
+    url: "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers/job/Japan---Tokyo/Corporate-Account-Executive---_R29332",
+    kind: "企業公式",
+    scope: "日本の新規開拓型AEポジションの役割・要件",
+    checkedAt: "2026-08-07",
   },
 ];
 
 const crowdstrikeIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "CRWD",
     exchange: "NASDAQ",
     priceAsOf: "2026-08-06",
-    price: "$205.46",
-    marketCap: "$209.21B(約3兆2,846億円)",
+    price: "$207.39",
+    marketCap: "$211.18B(約3兆3,155億円)",
     week52Range: "$85.68〜$219.35",
     analystConsensus: "Buy",
-    analystTargetAvg: "$193.13(現在値-6.04%)",
+    analystTargetAvg: "$193.13(現在値-6.88%)",
     analystTargetRange: "$103.25〜$250",
     analystCount: "53人",
-    outlookSummary: "Q1 FY27決算でサブスクリプション収益が前年比26%増、ARRは55.1億ドル(前年比24%増)に到達し、純新規ARR成長率は前年比32%増と加速した。会社は通期の純新規ARR成長率ガイダンスを27.7%へ上方修正した。一方で株価は52週高値圏で推移しており、アナリスト平均目標株価(193.13ドル)は現在の株価をやや下回る水準にとどまる。事業モメンタムは強いが、株価の割高感を指摘する声もある。",
+    outlookSummary: "Q1 FY27決算でサブスクリプション収益が前年比26%増、ARRは55.1億ドル(前年比24%増)に到達し、純新規ARR成長率は前年比32%増と加速した。会社は通期の純新規ARR成長率ガイダンスを27.7%へ上方修正した。株価は52週高値圏で推移しており、アナリスト平均目標株価(193.13ドル)は現在の株価をやや下回る水準にとどまる。2024年の大規模障害を巡るDelta Air Lines訴訟(当初請求約5億ドル)は、フルトン郡裁判所が重過失請求の審理継続を認めたものの、詐欺・製造物責任等の主張は棄却され、契約上の上限により実際の賠償額は一桁億円規模にとどまる見通しとされている。直近90日でインサイダー(役員・大株主)による売却が続き、買いはゼロという点も市場では留意されている。次回決算は2026年8月25日(FY27 Q2)予定。",
     outlookSignals: [
       {
         label: "純新規ARR成長の加速",
@@ -3598,19 +3598,19 @@ const crowdstrikeIntelligence: CompanyPublicIntelligence = {
         sourceId: "cs-q1fy27-outlook",
       },
       {
-        label: "52週高値圏での取引",
-        detail: "現在株価が52週レンジの上限付近にあり、平均目標株価を上回っている",
+        label: "Delta訴訟の一部継続",
+        detail: "重過失請求の審理は続くが、詐欺・製造物責任等の主張は棄却され、賠償額は契約上の上限により一桁億円規模にとどまる見通し",
+        direction: "中立",
+        sourceId: "cs-delta-lawsuit",
+      },
+      {
+        label: "52週高値圏での取引・インサイダー売却",
+        detail: "株価は52週レンジの上限付近で推移し、直近90日でインサイダーの売却が続いている(買いはゼロ)",
         direction: "逆風",
         sourceId: "cs-stock-forecast",
       },
-      {
-        label: "アナリスト評価のレンジ",
-        detail: "コンセンサスはBuyだが、目標株価レンジ(103.25〜250ドル)の幅広さが評価の割れを示す",
-        direction: "中立",
-        sourceId: "cs-stock-forecast",
-      },
     ],
-    sourceIds: ["cs-q1fy27-outlook", "cs-stock-price", "cs-stock-forecast"],
+    sourceIds: ["cs-q1fy27-outlook", "cs-stock-price", "cs-stock-forecast", "cs-delta-lawsuit"],
   },
   sellingPlaybook: {
     frameIntro: "CrowdStrikeの売り方は「侵入から検知までの時間」を可視化することが起点。EDR単体からモジュール拡張していく既存の拡張パターンをそのまま提案の型にする。",
@@ -3683,22 +3683,23 @@ const crowdstrikeIntelligence: CompanyPublicIntelligence = {
     {
       topic: "JAPAC LEADERSHIP",
       title: "新任JAPAC統括は『成長請負人』。日本オフィスの拡大投資が今後強まる可能性",
-      conclusion: "2026年2月に就任したJonathon Dixon氏は、CloudflareでAPACを最速成長市場に押し上げ、Verkadaでも同地域のGTM戦略を主導した実績を持ちます。本社が『JAPACは重要な成長市場』と位置づけている点と合わせると、日本オフィスへの投資が今後強まる可能性が高いとみます。",
+      conclusion: "2026年2月に就任したJonathon Dixon氏は、CloudflareでAPACを最速成長市場に押し上げ、Verkadaでも同地域のGTM戦略を主導した実績を持ちます。本社が『JAPACは重要な成長市場』と位置づけている点と合わせると、日本オフィスへの投資が今後強まる可能性が高いとみます。2026年8月には新規開拓型のCorporate Account Executiveポジションが東京拠点で新たに公開されており、しばらく途絶えていた日本セールスの採用が再開した兆候とみられます。",
       confidence: "中",
       evidence: [
         "Dixon氏はCloudflareでAPAC・日本・中国担当VPとして同地域を最速成長市場に押し上げた実績を持つ",
         "President Michael Sentonas氏が『JAPACは重要な成長市場』と公式にコメント",
         "Dixon氏はAWS・Cisco・IBMで数十億ドル規模の地域事業を統括した経歴を持つ",
+        "2026年8月、東京拠点の新規開拓型Corporate Account Executiveポジションが新規公開された(数か月ぶりの日本セールス求人)",
       ],
       counterSignals: [
         "具体的な日本オフィスの採用計画・予算規模は公開されていない",
-        "現時点(2026年8月)でJapan向けの営業求人は確認できておらず、投資が実際に採用増へ反映されるかは未確認",
+        "確認できた新規求人は現時点で1件のみで、大規模な採用拡大とまでは言い切れない",
       ],
       interviewQuestions: [
         "Dixon体制になってから、日本オフィスの方針・目標設定で変わった点は具体的に何か",
         "直近半年〜1年で日本チームの採用計画はどうなっているか",
       ],
-      sourceIds: ["cs-dixon-appointment"],
+      sourceIds: ["cs-dixon-appointment", "cs-corporate-ae-job"],
     },
     {
       topic: "QUOTA ATTAINABILITY",
@@ -4095,20 +4096,20 @@ const hubspotSources: ResearchSource[] = [
 ];
 
 const hubspotIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-06",
+  researchedAt: "2026-08-07",
   marketStatus: {
     isPublic: true,
     ticker: "HUBS",
     exchange: "NYSE",
     priceAsOf: "2026-08-06",
-    price: "$197.19",
-    marketCap: "$9.83B(約1,543億円)",
+    price: "$202.43",
+    marketCap: "$10.09B(約1,584億円)",
     week52Range: "$169.63〜$525.51",
     analystConsensus: "Buy",
-    analystTargetAvg: "$246.06(現在値+24.78%)",
+    analystTargetAvg: "$244.69(現在値+20.88%、決算後の下方修正を反映しきれていない可能性あり)",
     analystTargetRange: "$190〜$320",
     analystCount: "35人",
-    outlookSummary: "2026年8月発表のQ2決算は売上が前年比20%増の9.117億ドルとなり黒字転換したが、新規顧客純増数はガイダンス(9,000〜10,000件)を下回る7,000件にとどまり、通期の四半期あたり新規顧客数見込みを5,000〜6,000件へ引き下げた。背景にはAIエージェントをトライアル・成果報酬型の価格へ転換したことによる検討期間の長期化と、ソフトウェア需要環境全体の冷え込みがある。一方でAIエージェントの利用は急拡大しており(Data Agent利用企業が四半期比80%増の16,000社等)、「数から質へ」の移行期という評価もできる。52週高値(525.51ドル)から株価は大きく調整しており、アナリスト平均目標株価は現在値を+25%上回る。",
+    outlookSummary: "2026年8月5日発表のQ2決算はEPS 3.26ドル(市場予想3.02ドルを上回る)、売上9.117億ドル(前年比+20%、市場予想898.1百万ドル超)と決算自体は好調だったが、新規顧客純増数がガイダンス(9,000〜10,000件)を下回る7,000件にとどまり、通期の四半期あたり新規顧客数見込みを5,000〜6,000件へ引き下げたことを受け、発表翌日に株価は約19%急落した。背景にはAIエージェントをトライアル・成果報酬型の価格へ転換したことによる検討期間の長期化と、ソフトウェア需要環境全体の冷え込みがある。Bernstein・Oppenheimer・Piper Sandler等、複数のアナリストが目標株価を引き下げており、決算前集計を含む可能性のある平均目標株価は今後さらに下方修正される見込み。一方でAIエージェントの利用は急拡大しており(Data Agent利用企業が四半期比80%増の16,000社等)、「数から質へ」の移行期という評価もできる。",
     outlookSignals: [
       {
         label: "新規顧客数がガイダンス未達",
@@ -4123,10 +4124,10 @@ const hubspotIntelligence: CompanyPublicIntelligence = {
         sourceId: "hs-q2-2026-earnings",
       },
       {
-        label: "52週高値から大幅調整",
-        detail: "52週高値525.51ドルから現在197.19ドルまで下落しており、アナリスト目標株価は現在値を上回る水準にある",
-        direction: "中立",
-        sourceId: "hs-stock-forecast",
+        label: "決算翌日に株価-19%急落",
+        detail: "EPS・売上とも市場予想を上回るビートだったが、新規顧客数ガイダンス引き下げを受けて急落。52週高値525.51ドルからは大幅調整済み",
+        direction: "逆風",
+        sourceId: "hs-stock-price",
       },
     ],
     sourceIds: ["hs-q2-2026-earnings", "hs-stock-price", "hs-stock-forecast"],
@@ -5210,22 +5211,6 @@ const uipathSources: ResearchSource[] = [
     url: "https://www.uipath.com/ja/resources/automation-case-studies/nttcom",
     kind: "企業公式",
     scope: "日本導入事例",
-    checkedAt: "2026-08-07",
-  },
-  {
-    id: "uipath-enterprise-ae-job",
-    label: "Enterprise Account Executive求人",
-    url: "https://careers.uipath.com/careers/jobs/9288?lang=en-us",
-    kind: "企業公式",
-    scope: "Enterprise AEの役割・要件",
-    checkedAt: "2026-08-07",
-  },
-  {
-    id: "uipath-enterprise-sales-job",
-    label: "Enterprise Sales Executive II求人",
-    url: "https://careers.uipath.com/jobs/5706?lang=en-us",
-    kind: "企業公式",
-    scope: "Enterprise Sales Executiveの役割・要件",
     checkedAt: "2026-08-07",
   },
 ];
