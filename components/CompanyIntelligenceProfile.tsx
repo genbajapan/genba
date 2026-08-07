@@ -137,6 +137,7 @@ export default function CompanyIntelligenceProfile({
         <Container>
           <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
             <a href="#overview">会社概要</a>
+            <a href="#work-there">そこで働いている人を見る</a>
             <a href="#roles">募集中ポジション</a>
             <a href="#decision">5つの仮説</a>
             <a href="#solution">ソリューション深掘り</a>
@@ -154,17 +155,6 @@ export default function CompanyIntelligenceProfile({
                 <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}社概要</h2></div>
                 <p>公開されている企業情報・実績を、応募判断の前提としてまとめます。</p>
               </div>
-
-              <a
-                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&origin=SWITCH_SEARCH_VERTICAL`}
-                target="_blank"
-                rel="noreferrer"
-                className="linkedin-people-link"
-              >
-                <span className="card-index">LINKEDIN</span>
-                <strong>{company.name}で働いている人を見る</strong>
-                <span className="linkedin-people-link-arrow" aria-hidden="true">↗</span>
-              </a>
 
               {publicIntel ? (
                 <>
@@ -289,9 +279,33 @@ export default function CompanyIntelligenceProfile({
               {companySignals.length > 0 && <div className="company-signal-block"><h3>組織・採用の変化</h3><div className="signal-feed">{companySignals.map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div></div>}
             </section>
 
+            <section className="intel-section" id="work-there">
+              <div className="intel-heading">
+                <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>そこで働いている人を見る。</h2></div>
+                <p>会社概要や求人票だけでは分からない、実際の雰囲気やキャリアの歩み方は、そこで働く人を見るのが一番早いです。</p>
+              </div>
+              <a
+                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&origin=SWITCH_SEARCH_VERTICAL`}
+                target="_blank"
+                rel="noreferrer"
+                className="work-there-card"
+              >
+                <div className="work-there-card-glow" aria-hidden="true" />
+                <div className="work-there-card-body">
+                  <p className="work-there-card-kicker">LINKEDIN PEOPLE SEARCH</p>
+                  <h3>{company.name}で働く人を、LinkedInで探してみる。</h3>
+                  <p className="work-there-card-sub">経歴、前職、今の役割。実際に働いている人のプロフィールを見れば、求人票よりも解像度高くイメージできます。</p>
+                </div>
+                <span className="work-there-card-cta">
+                  LinkedInで見る
+                  <span aria-hidden="true">↗</span>
+                </span>
+              </a>
+            </section>
+
             <section className="intel-section" id="roles">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
+                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
@@ -437,9 +451,9 @@ export default function CompanyIntelligenceProfile({
             <section className="intel-section" id="decision">
               <div className="intel-heading">
                 {publicIntel ? (
-                  <div><p className="intel-kicker">03 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
+                  <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
                 ) : (
-                  <div><p className="intel-kicker">03 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
+                  <div><p className="intel-kicker">04 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
                 )}
                 <p>{publicIntel ? "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。" : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
               </div>
@@ -518,7 +532,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">
-                <div><p className="intel-kicker">04 / SOLUTION INTELLIGENCE</p><h2>売るソリューションの深掘り。</h2></div>
+                <div><p className="intel-kicker">05 / SOLUTION INTELLIGENCE</p><h2>売るソリューションの深掘り。</h2></div>
                 <span className="analysis-label">Genbaカテゴリ分析</span>
               </div>
 
@@ -656,7 +670,7 @@ export default function CompanyIntelligenceProfile({
             {publicIntel && (
               <section className="intel-section" id="playbook">
                 <div className="intel-heading">
-                  <div><p className="intel-kicker">05 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
+                  <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
                   <p>「何が課題で、なぜこの解決策で、なぜこの会社なのか」を、公開情報から組み立てたGenba仮説です。実際の商談設計は個社事情に合わせて調整してください。</p>
                 </div>
 
@@ -716,7 +730,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="compare">
               <div className="intel-heading">
-                <div><p className="intel-kicker">06 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
+                <div><p className="intel-kicker">07 / NEXT MOVES</p><h2>合わせて見るべき会社。</h2></div>
                 <p>同じ買い手・領域・営業経験を軸にした併願候補です。</p>
               </div>
               {publicIntel && (
@@ -746,7 +760,7 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="sources">
               <div className="intel-heading">
-                <div><p className="intel-kicker">07 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
                 <p>数字・判断材料の出所と更新日を追える状態にします。</p>
               </div>
               <div className="source-ledger">

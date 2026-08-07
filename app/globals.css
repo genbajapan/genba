@@ -56,8 +56,6 @@ button, input, select { font: inherit; }
 .eyebrow-light { color: #70d3c5; }
 .hero h1 { max-width: 760px; margin: 0; font-size: clamp(42px, 5vw, 70px); letter-spacing: -.055em; line-height: 1.09; font-weight: 780; }
 .hero-lead { max-width: 660px; margin: 28px 0 0; color: #c7d4db; font-size: 17px; line-height: 1.9; }
-.hero-lead-break-mobile { display: none; }
-.hero-lead-break-desktop { display: initial; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .hero-actions .button { min-height: 48px; padding: 0 23px; }
 .hero-actions .button-primary { background: #f8fbfa; color: var(--navy); }
@@ -293,11 +291,15 @@ button, input, select { font: inherit; }
 .dossier-nav a:hover { border-color: var(--signal); color: var(--signal); }
 
 
-.linkedin-people-link { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding: 14px 18px; border: 1px solid #bfe0d9; border-radius: 4px; background: #e9f6f2; text-decoration: none; transition: background .15s ease, transform .15s ease; }
-.linkedin-people-link:hover { background: #dcf0ea; transform: translateY(-1px); }
-.linkedin-people-link .card-index { margin: 0; flex-shrink: 0; }
-.linkedin-people-link strong { flex: 1; color: var(--navy); font-size: 13px; font-weight: 750; }
-.linkedin-people-link-arrow { color: var(--signal); font-size: 14px; font-weight: 800; }
+.work-there-card { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 28px; overflow: hidden; padding: 34px 38px; border: 1px solid #123b51; border-radius: 6px; background: linear-gradient(120deg, var(--navy) 0%, #0a3550 55%, #0b7a70 150%); text-decoration: none; box-shadow: 0 22px 50px rgba(11,38,56,.22); transition: transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s ease; }
+.work-there-card:hover { transform: translateY(-3px); box-shadow: 0 28px 60px rgba(11,38,56,.3); }
+.work-there-card-glow { position: absolute; top: -60%; right: -10%; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(112,211,197,.35), transparent 70%); pointer-events: none; }
+.work-there-card-body { position: relative; z-index: 1; max-width: 620px; }
+.work-there-card-kicker { margin: 0 0 10px; color: #70d3c5; font-size: 11px; font-weight: 850; letter-spacing: .16em; }
+.work-there-card h3 { margin: 0; color: white; font-size: 26px; font-weight: 800; letter-spacing: -.02em; line-height: 1.4; }
+.work-there-card-sub { margin: 12px 0 0; max-width: 480px; color: #c7d4db; font-size: 13px; line-height: 1.8; }
+.work-there-card-cta { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 15px 26px; border-radius: 999px; background: #70d3c5; color: var(--navy); font-size: 13px; font-weight: 850; white-space: nowrap; transition: transform .2s ease, background .2s ease; }
+.work-there-card:hover .work-there-card-cta { background: white; transform: scale(1.04); }
 
 .company-snapshot-strip { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 14px; border: 1px solid var(--line); background: #f7f9f8; }
 .company-snapshot-strip-5col { grid-template-columns: repeat(5,1fr); }
@@ -707,8 +709,6 @@ button, input, select { font: inherit; }
   .hero-copy { padding: 67px 0 45px; }
   .hero h1 { font-size: 43px; }
   .hero-panel { margin-bottom: 40px; }
-  .hero-lead-break-desktop { display: none; }
-  .hero-lead-break-mobile { display: initial; }
   .founder-note-card { padding: 24px 22px; }
   .founder-note-summary { flex-direction: column; align-items: flex-start; gap: 16px; }
   .founder-note-hook { font-size: 19px; }
@@ -811,6 +811,9 @@ button, input, select { font: inherit; }
   .hypothesis-chevron { grid-column: 3; grid-row: 1; }
   .hypothesis-conclusion { padding-left: 25px; }
   .customer-proof-wrap { padding: 22px; }
+  .work-there-card { flex-direction: column; align-items: flex-start; padding: 26px 24px; }
+  .work-there-card h3 { font-size: 21px; }
+  .work-there-card-cta { width: 100%; justify-content: center; }
   .role-hypothesis-grid,.comparison-map-grid { grid-template-columns: 1fr; }
   .evidence-card { grid-template-columns: 88px 1fr; gap: 18px; }
   .evidence-meter { width: 86px; height: 86px; }
