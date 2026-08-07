@@ -186,6 +186,51 @@ const zendeskCommercialCareerFlow = {
 // UiPath株式会社は2017年3月設立、2026年2月にカントリーマネージャーが交代したばかりのため共通の非公開注記として保持
 const uipathTenureNote = "UiPath株式会社(日本法人)は2017年3月設立、東京都千代田区に本社を置く。2026年2月1日付で南哲夫氏がカントリーマネージャーに就任しており、リーダーシップ体制が最近更新されたばかり。平均在籍年数・離職率の公開データは確認できていない。";
 
+// Confluent Japan合同会社は2021年4月設立、2026年3月にIBMへ完全子会社化されたばかりのため共通の非公開注記として保持
+const confluentTenureNote = "Confluent Japan合同会社は2021年4月設立、東京都新宿区に本社を置く。2026年3月、IBMが約110億ドルでConfluentを買収し完全子会社化した。2024年に石井晃一氏がカントリーマネージャーに就任(前職はRubrik・Tanium・VMware)。買収後の日本組織の体制変化については公開データが乏しい。";
+
+const confluentDigitalNativeCareerFlow = {
+  tenureAndPromotion: confluentTenureNote,
+  priorCompanies: "求人要件からは、ビッグデータ・クラウド・SaaS・OSS領域での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const confluentMSPISVCareerFlow = {
+  tenureAndPromotion: confluentTenureNote,
+  priorCompanies: "求人要件からは、パートナー・チャネル経由の販売経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+// PagerDuty株式会社は2022年5月にJapan Cloudとの合弁で設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
+const pagerdutyTenureNote = "PagerDuty株式会社は2022年5月、PagerDutyとJapan Cloudの合弁で設立。代表取締役社長の山根伸行氏はIBM Japan・Microsoft Japanで15年以上のエンタープライズ営業経験を持つ。平均在籍年数・離職率の公開データは確認できていない。";
+
+const pagerdutyEnterpriseAECareerFlow = {
+  tenureAndPromotion: pagerdutyTenureNote,
+  priorCompanies: "求人要件からは、エンタープライズ向け営業経験者、特にインフラ・運用管理系ソリューションの営業出身者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const pagerdutySrSalesManagerCareerFlow = {
+  tenureAndPromotion: pagerdutyTenureNote,
+  priorCompanies: "求人要件からは、IT業界でのハイタッチ・直販営業経験と、営業マネージャーとしてのピープルマネジメント経験を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+// AMPLITUDE JAPAN合同会社は2014年7月設立、2024年にカントリーマネージャーが交代したばかりのため共通の非公開注記として保持
+const amplitudeTenureNote = "AMPLITUDE JAPAN合同会社は2014年7月設立。2024年5月に仁枝かおり氏がカントリーマネージャーに就任(前職はRecorded Future、Vectra AI、Infoblox等で日本法人の立ち上げ・GTM戦略を主導)。平均在籍年数・離職率の公開データは確認できていない。";
+
+const amplitudeEnterpriseAECareerFlow = {
+  tenureAndPromotion: amplitudeTenureNote,
+  priorCompanies: "求人要件からは、急成長スタートアップ環境を経験した営業、新規テリトリー開拓の実績を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
+const amplitudeCommercialAECareerFlow = {
+  tenureAndPromotion: amplitudeTenureNote,
+  priorCompanies: "求人要件からは、SaaS営業の経験者、特にプロダクト主導型(PLG)組織での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 const uipathEnterpriseAECareerFlow = {
   tenureAndPromotion: uipathTenureNote,
   priorCompanies: "求人要件からは、エンタープライズソフトウェア営業の経験者、特に業務改善・自動化領域に関わってきた営業出身者が中心になると考えられる(求人要件からの読み解き)。",
@@ -402,6 +447,45 @@ export const companies: Company[] = [
     lastChecked: "2026-08-07",
     careersUrl: "https://www.uipath.com/ja/careers",
     tags: ["Enterprise"],
+  },
+  {
+    slug: "confluent",
+    name: "Confluent",
+    category: "データストリーミング",
+    hq: "Mountain View, US",
+    japanPresence: "Confluent Japan合同会社・東京都新宿区(2021年4月設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "Digital Native・MSP/ISVセグメントで営業ポジションを継続掲載。2026年3月にIBMの完全子会社化。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://careers.confluent.io/jobs",
+    tags: ["Digital Native", "MSP/ISV"],
+  },
+  {
+    slug: "pagerduty",
+    name: "PagerDuty",
+    category: "インシデント管理",
+    hq: "San Francisco, US",
+    japanPresence: "PagerDuty株式会社・東京(2022年5月、Japan Cloudとの合弁で設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "Enterprise Account Executive、Sr. Sales Managerなど、複数の営業ポジションを継続掲載。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://japancloud.jp/career/companies/pagerduty/",
+    tags: ["Enterprise", "Sales Leadership"],
+  },
+  {
+    slug: "amplitude",
+    name: "Amplitude",
+    category: "プロダクトアナリティクス",
+    hq: "San Francisco, US",
+    japanPresence: "AMPLITUDE JAPAN合同会社・東京(2014年7月設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "Enterprise・Commercialセグメントで営業ポジションを継続掲載。",
+    lastChecked: "2026-08-07",
+    careersUrl: "https://job-boards.greenhouse.io/amplitude",
+    tags: ["Enterprise", "Commercial"],
   },
 ];
 
@@ -888,6 +972,138 @@ export const jobs: Job[] = [
       thingsToKnow: "「II」という表記の具体的な等級基準(担当アカウント数、クオータ規模)は求人票だけでは分からない。前任者の担当ポートフォリオ規模を面接で確認したい。",
       marketValue: "Enterprise Sales Executiveとしての実績の市場価値は、①報酬面ではEnterprise AEと同等かそれ以上のOTE水準が期待される。②評価される実績は既存ポートフォリオの拡大率・複数部門への展開実績。③キャリアの選択肢は他社のシニアEnterprise AE、あるいは営業マネジメント職。",
       ...uipathEnterpriseSalesCareerFlow,
+    },
+  },
+  {
+    id: "confluent-ae-digital-native",
+    companySlug: "confluent",
+    title: "Account Executive (Digital Native)",
+    segment: "Digital Native",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Confluent Careers", url: "https://careers.confluent.io/jobs/15305884-account-executive-digital-native" },
+    descriptionSummary: "デジタルネイティブ企業(テック企業・スタートアップ等)を対象に、新規パイプラインの開拓から契約締結までを担当する役割。四半期の売上目標達成に向けて、見込み顧客のプロスペクティング・選定・開拓・クロージングまでの営業プロセス全体を管理し、ビジネス開発・カスタマーサクセス・サポートチームと連携する。",
+    genbaTake: "「デジタルネイティブ」という顧客セグメントの切り出し方は、伝統的な大企業とは異なる意思決定スピード・技術理解度を持つ顧客を相手にすることを示している。MEDDPICCやChallenger Saleといった型のある営業手法の習熟が要件化されている点は、体系化された営業プロセスを重視する文化を示唆する。",
+    compensationReality: "Confluent Japanの給与データはOpenWorkに口コミが未投稿(2026年8月時点で該当件数0件)で、公開情報がほぼない状態。求人にも給与レンジの記載はなく、オファー交渉は個別の情報収集が前提になる。",
+    desiredProfile: "求人ではビッグデータ・クラウド・SaaS・OSS・エンタープライズIT領域での営業経験、MEDDPICCやChallenger Sale等のセールス手法のトレーニング経験、継続的なクオータ達成実績、高いコミュニケーション・プレゼンテーション力が明記されている。",
+    careerInsights: {
+      fit: "技術理解が求められる商材を、型のある営業手法(MEDDPICC等)で進めたい人に向く。逆に、フィーリングやリレーション中心の営業スタイルを好む人には、プロセス重視の文化がやや窮屈に感じられる可能性がある。",
+      thingsToKnow: "2026年3月にIBMがConfluentを約110億ドルで買収し完全子会社化した。買収直後のタイミングであり、営業組織の目標設定・評価制度・IBMとの連携方針がどう変わるかは、面接で直接確認したい最重要ポイントの一つ。",
+      marketValue: "Digital Native AEとしての実績の市場価値は、①報酬面では外資SaaSのEnterprise AE帯(目安1,200万〜2,000万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績はテック企業向けの技術商材の契約獲得実績。③キャリアの選択肢はデータ/クラウド基盤系の他社(Snowflake、MongoDB等)のEnterprise AE、あるいはIBM社内での他プロダクトへの異動。④「買収後もConfluentの看板で売り続けられるか」という組織変化への適応力も、次の転職で語れる経験になり得る。",
+      ...confluentDigitalNativeCareerFlow,
+    },
+  },
+  {
+    id: "confluent-ae-msp-isv",
+    companySlug: "confluent",
+    title: "Japan MSP/ISV Account Executive",
+    segment: "MSP/ISV",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Confluent Careers", url: "https://careers.confluent.io/jobs/15311824-japan-msp-slash-isv-account-executive" },
+    descriptionSummary: "マネージドサービスプロバイダー(MSP)・独立系ソフトウェアベンダー(ISV)向けの新規パイプライン開拓と契約締結を担当する役割。パートナー経由の販売戦略を構築し、四半期の売上目標達成に向けて営業プロセス全体を管理する。",
+    genbaTake: "MSP/ISVという、直接のエンドユーザーではなくパートナー企業を主要顧客とするセグメントの存在は、Confluentの日本展開がパートナーエコシステム経由の拡大を重視していることを示している。パートナーとの関係構築力が、直接商談力と同じくらい重要になると考えられる。",
+    compensationReality: "Confluent Japan固有の給与データは確認できていない。求人にも給与レンジの記載はない。",
+    desiredProfile: "求人ではビッグデータ・クラウド・SaaS・OSS領域での営業経験、パートナー・チャネル経由の販売経験、継続的なクオータ達成実績が重視されると考えられる。",
+    careerInsights: {
+      fit: "パートナー企業とWin-Winの関係を構築しながら、間接販売チャネルを育てたい人に向く。逆に、エンドユーザーとの直接商談だけに集中したい人には向かない可能性がある。",
+      thingsToKnow: "IBMの完全子会社化後、IBMの既存パートナーエコシステムとConfluentのMSP/ISVパートナー網がどう統合されるかは、担当領域の広がり方に直結する重要な確認事項。",
+      marketValue: "MSP/ISV AEとしての実績の市場価値は、①報酬面ではEnterprise AE帯に準じる水準が期待されるが日本固有の裏付けはない。②評価される実績はパートナー経由のパイプライン構築・売上創出実績で、チャネル営業経験として汎用性が高い。③キャリアの選択肢は他社のパートナー営業・アライアンス職、あるいはIBM社内でのエコシステム関連職。",
+      ...confluentMSPISVCareerFlow,
+    },
+  },
+  {
+    id: "pagerduty-enterprise-ae",
+    companySlug: "pagerduty",
+    title: "Enterprise Account Executive",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "PagerDuty(Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/7278/" },
+    descriptionSummary: "大手企業向けのアカウント担当営業として、クラウド型インシデント管理ソリューションの提案・導入をリードする役割。新規顧客開拓から既存顧客の関係強化まで幅広い営業活動を担当し、CxOレベルの経営層と信頼関係を構築して最適なソリューション提案を行う。",
+    genbaTake: "「CxOレベルとの信頼関係構築」が要件の中心に置かれている点は、単なる機能訴求ではなく、システム障害という経営リスクをどう語れるかが問われるポジションであることを示している。必須要件が3年以上と他社のEnterprise AEより緩やかな点は、これから経験を積みたい層にも門戸が開かれていることを示唆する。",
+    compensationReality: "PagerDuty Japan固有の給与データは確認できていない。OpenMoneyにはコンサルタント職(L2)の年収例は投稿されているが、営業職の具体的なデータは確認できなかった。求人にも給与レンジの記載はない。",
+    desiredProfile: "求人では3年以上のエンタープライズ向け営業経験と実績、新規顧客開拓能力、CxOレベルとのコミュニケーション・関係構築能力が必須要件として明記されている。ビジネス英語、インフラ・運用管理系ソリューションビジネスの経験、SaaSビジネスの経験は歓迎要件。",
+    careerInsights: {
+      fit: "システム障害という経営リスクを切り口に、CxOと信頼関係を築きながら提案を進めたい人に向く。逆に、技術的な機能説明が中心の商談を好む人には、経営層への価値訴求という抽象度の高い提案力が求められる点でギャップがあるかもしれない。",
+      thingsToKnow: "PagerDutyはJapan Cloudとの合弁会社(2022年5月設立)として運営されている。Braze同様のパートナーシップモデルであり、評価・昇進の仕組みが本社と完全に同一かどうかは非公開。直近の業績はARRがほぼ横ばい(前年比+1%)、NRRが97%(前年104%から低下)と、既存顧客からの純増収が縮小している点は、担当テリトリーの状況を面接で確認する材料にしたい。",
+      marketValue: "Enterprise AEとしての実績の市場価値は、①報酬面では外資SaaSのEnterprise AE帯(目安1,200万〜1,800万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績はCxO層への提案・新規契約獲得実績。③キャリアの選択肢は同業(Datadog、ServiceNow等)のEnterprise AE、あるいはインシデント管理・SRE関連のSaaS企業への横移動。④NRRが100%を下回っている局面での新規開拓経験は、「厳しい環境でも数字を作った」実績として語れる可能性がある。",
+      ...pagerdutyEnterpriseAECareerFlow,
+    },
+  },
+  {
+    id: "pagerduty-sr-sales-manager",
+    companySlug: "pagerduty",
+    title: "Sr. Sales Manager",
+    segment: "Sales Leadership",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "PagerDuty(Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8097/" },
+    descriptionSummary: "日本セールスチームの指揮・育成、売上目標達成を担うマネジメント職。複雑な取引交渉・基本合意書の締結・顧客経営層との関係構築を主導し、Salesforce等のSFAを活用したデータドリブンなパイプライン管理・戦略立案を行う。",
+    genbaTake: "「天才の集団ではなくプロフェッショナルの集団」という価値観の明記や、Grit(やり抜く力)の強調は、個人の才能に頼るのではなく、型と粘り強さを重視するマネジメント文化を示している。7年以上の営業経験に加えて3年以上のピープルマネジメント経験を求める設計は、即戦力のプレイングマネージャー採用であることを示唆する。",
+    compensationReality: "PagerDuty Japan固有の給与データは確認できていない。求人にも給与レンジの記載はない。マネジメント職のため、配下のAEのクオータ達成に連動したインセンティブ設計になっている可能性が高いが、具体的な数値は非公開。",
+    desiredProfile: "求人では7年以上のIT業界における大手企業向けハイタッチ・直販セールス経験、3年以上の営業マネージャー(ピープルマネジメント)経験、Salesforce等のSFA活用によるデータドリブンな管理能力が明記されている。スタートアップ・急成長企業でのマネジメント経験、グローバルチーム連携経験は歓迎要件。",
+    careerInsights: {
+      fit: "自分自身の商談経験を土台に、データドリブンにチームを率いたい人に向く。逆に、感覚的な営業マネジメントを好む人には、SFAを軸にしたプロセス重視の文化がギャップに感じられる可能性がある。",
+      thingsToKnow: "Japan Cloudとの合弁会社という体制のため、本社とのレポートラインや評価制度の独立性を面接で確認したい。ARRがほぼ横ばい・NRRが100%を下回っている局面でのマネジメント採用であるため、期待されるミッションが「新規開拓の立て直し」なのか「既存基盤の防衛」なのかを具体的に確認しておきたい。",
+      marketValue: "Sr. Sales Managerとしての実績の市場価値は、①報酬面では個人AEを上回るOTE水準が期待できるが日本固有の数値は非公開。②評価される実績はチームのクオータ達成率・採用育成実績。③キャリアの選択肢は他の外資SaaS企業のSales Director・VP Sales、あるいはPagerDuty社内でのAPAC統括ポジションへの展開。",
+      ...pagerdutySrSalesManagerCareerFlow,
+    },
+  },
+  {
+    id: "amplitude-enterprise-ae",
+    companySlug: "amplitude",
+    title: "Enterprise Account Executive, Japan",
+    segment: "Enterprise",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Amplitude Careers", url: "https://job-boards.greenhouse.io/amplitude/jobs/8487436002" },
+    descriptionSummary: "日本の既存顧客基盤を土台に、急成長中のデジタルスタートアップ(従業員1,000名規模まで)を中心とした新規ロゴ獲得を担う役割。プロスペクティングとネットワーキングを通じて新規商談を創出し、複雑な営業サイクルをリードしながら主要ステークホルダーへ価値を訴求する。",
+    genbaTake: "「急成長中のデジタルスタートアップ」を主戦場に据えている点は、Amplitudeの日本展開が伝統的な大企業ではなく、プロダクト主導型(PLG)の成長企業を優先ターゲットにしていることを示している。「新しいテリトリーを自分で作る経験」が明記されている通り、まだ耕されていない市場を開拓する裁量の大きさが特徴と考えられる。",
+    compensationReality: "AMPLITUDE JAPANの給与データはOpenWork・OpenMoneyともに営業職の具体的な数値が確認できなかった。求人にも給与レンジの記載はない。",
+    desiredProfile: "求人では日本語・英語両方でのコミュニケーション・プレゼンテーション力、データを使ってストーリーを語る力、新規テリトリー・新規事業の立ち上げ経験、詳細なアカウントプランニング経験、トップパフォーマーとしての実績が明記されている。",
+    careerInsights: {
+      fit: "スタートアップ環境のスピード感を楽しみながら、新規テリトリーを自分で切り拓きたい人に向く。逆に、既に確立された大口顧客との関係を深耕したいタイプには、開拓中心の役割はやや負荷が高く感じられる可能性がある。",
+      thingsToKnow: "Amplitudeは2026年にStatsig(実験・フラグ管理ツール)を買収しており、製品ポートフォリオが拡大している。新しい買収製品を商談でどう扱うか(クロスセルの実態)を面接で確認したい。",
+      marketValue: "Enterprise AEとしての実績の市場価値は、①報酬面では外資SaaSのEnterprise AE帯(目安1,200万〜2,000万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績は新規テリトリーでのロゴ獲得数・パイプライン創出実績。③キャリアの選択肢は他のプロダクト分析・データ系SaaS企業(Snowflake、MongoDB等)のEnterprise AE。④$100,000以上のARR顧客が前年比30%増という開示が示す通り、大口化が進む成長期の会社であり、初期メンバーとしての実績を語りやすい局面にある。",
+      ...amplitudeEnterpriseAECareerFlow,
+    },
+  },
+  {
+    id: "amplitude-commercial-ae",
+    companySlug: "amplitude",
+    title: "Commercial Account Executive - Japan",
+    segment: "Commercial",
+    location: "東京",
+    workStyle: "公式求人で確認",
+    language: "日本語 / 英語",
+    firstSeen: "2026-08-07",
+    lastChecked: "2026-08-07",
+    source: { label: "Amplitude Careers", url: "https://boards.greenhouse.io/amplitude/jobs/5151817002" },
+    descriptionSummary: "中堅規模の企業を対象に、新規商談の創出からクロージングまでを担当する役割。Enterprise区分より小規模な顧客層を担当し、商談数をこなしながらAmplitudeの導入を広げていく。",
+    genbaTake: "Enterprise AEとは別にCommercial AEという区分が存在することから、Amplitudeの日本展開は企業規模別にセグメントを分けた本格的な体制構築フェーズにあると考えられる。日本組織がまだ成長途上であることを踏まえると、セグメント間の異動・キャリアパスの柔軟性が比較的高い可能性がある。",
+    compensationReality: "AMPLITUDE JAPANの給与データは確認できていない。求人にも給与レンジの記載はない。",
+    desiredProfile: "求人では日本語・英語でのコミュニケーション力、SaaS営業経験、新規開拓の実績が重視されると考えられる。Enterprise AEと比べて求められる経験年数はやや低いと推測されるが、公開情報からの確認はできていない。",
+    careerInsights: {
+      fit: "商談数をこなしながら、プロダクト主導型SaaSの新規開拓に挑戦したい人に向く。",
+      thingsToKnow: "Commercial区分の具体的な顧客規模の基準(従業員数・契約金額)は求人票だけでは分からない。面接で確認したい。",
+      marketValue: "Commercial AEとしての実績の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯(目安700万〜1,300万円)からのスタートになりやすい。②評価される実績は新規開拓の商談化率・受注率。③キャリアの選択肢は社内でのEnterprise AEへのステップアップ、他社のSMB/Commercial AEへの横移動。",
+      ...amplitudeCommercialAECareerFlow,
     },
   },
 ];
