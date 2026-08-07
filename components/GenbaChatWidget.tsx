@@ -147,9 +147,24 @@ export default function GenbaChatWidget() {
 
       <div className={`genba-chat-dock genba-chat-dock-${sheetState}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
         <div className="genba-chat-panel-head">
-          <div>
-            <strong>Genba AIチャット</strong>
+          <div className="genba-chat-title-wrap">
+            <div className="genba-chat-title-row">
+              <strong>Genba AIチャット</strong>
+              <button type="button" className="genba-chat-header-disclaimer-toggle" onClick={() => setShowDisclaimer((prev) => !prev)}>
+                (ご利用にあたって)
+              </button>
+            </div>
             <span>掲載企業データを根拠に回答します。ページを移動しても会話は続きます。</span>
+            {showDisclaimer && (
+              <div className="genba-chat-disclaimer-popover">
+                <p>
+                  AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要です。この会話はブラウザのタブを閉じるまでの間だけ保持され、Genbaのサーバーには保存されません。
+                </p>
+                <button type="button" onClick={() => setShowDisclaimer(false)}>
+                  閉じる
+                </button>
+              </div>
+            )}
           </div>
           <div className="genba-chat-panel-head-actions">
             <button type="button" onClick={resetConversation} className="genba-chat-reset">
@@ -215,21 +230,6 @@ export default function GenbaChatWidget() {
           <button type="button" onClick={sendMessage} disabled={loading || input.trim().length === 0}>
             送信
           </button>
-        </div>
-        <div className="genba-chat-disclaimer-row">
-          <button type="button" className="genba-chat-disclaimer-toggle" onClick={() => setShowDisclaimer((prev) => !prev)}>
-            ご利用にあたって
-          </button>
-          {showDisclaimer && (
-            <div className="genba-chat-disclaimer-popover">
-              <p>
-                AIによる自動回答です。内容の正確性は各企業の個別ページ・出典元でご確認ください。会員登録やメールアドレスの入力は不要です。この会話はブラウザのタブを閉じるまでの間だけ保持され、Genbaのサーバーには保存されません。
-              </p>
-              <button type="button" onClick={() => setShowDisclaimer(false)}>
-                閉じる
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </>
