@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import Container from "@/components/Container";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "掲載・スポンサーについて", description: "外資SaaS営業人材に届くGenbaの法人向け掲載・スポンサー情報。", alternates: { canonical: "/advertise" } };
+export const metadata = pageMetadata({ title: "掲載・スポンサーについて", description: "外資SaaS営業人材に届くGenbaの法人向け掲載・スポンサー情報。", path: "/advertise" });
 const options = [
   ["採用パートナー", "企業データ・公式求人・編集企画を組み合わせ、継続的な認知と候補者理解を支援します。", "月額 50万円〜"],
   ["メディアスポンサー", "ニュースレターや特集の提供表示。編集判断と広告領域を明確に分離します。", "月額 30万円〜"],

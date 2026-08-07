@@ -25,18 +25,57 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
+const siteUrl = "https://genbajapan.com";
+
 export default function CompanyPage({ params }: { params: { slug: string } }) {
   const company = getCompany(params.slug);
   if (!company) notFound();
   const companyJobs = getCompanyJobs(company.slug);
   const companySignals = getCompanySignals(company.slug);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Genba", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "企業一覧", item: `${siteUrl}/companies` },
+      { "@type": "ListItem", position: 3, name: company.name, item: `${siteUrl}/companies/${company.slug}` },
+    ],
+  };
+
+  const jobPostingsJsonLd = companyJobs.map((job) => ({
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: job.descriptionSummary,
+    datePosted: job.firstSeen,
+    dateModified: job.lastChecked,
+    employmentType: "FULL_TIME",
+    hiringOrganization: {
+      "@type": "Organization",
+      name: company.name,
+      sameAs: company.careersUrl,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: { "@type": "PostalAddress", addressLocality: job.location, addressCountry: "JP" },
+    },
+    directApply: false,
+    url: job.source.url,
+  }));
+
   return (
-    <CompanyIntelligenceProfile
-      company={company}
-      companyJobs={companyJobs}
-      companySignals={companySignals}
-      allCompanies={companies}
-    />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {jobPostingsJsonLd.map((jobLd) => (
+        <script key={jobLd.url} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobLd) }} />
+      ))}
+      <CompanyIntelligenceProfile
+        company={company}
+        companyJobs={companyJobs}
+        companySignals={companySignals}
+        allCompanies={companies}
+      />
+    </>
   );
 }

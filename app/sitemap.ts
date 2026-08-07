@@ -1,13 +1,29 @@
 import type { MetadataRoute } from "next";
 import { getAllPostsMeta } from "@/lib/posts";
-import { companies } from "@/lib/market-data";
+import { companies, jobs } from "@/lib/market-data";
 
 const siteUrl = "https://genbajapan.com";
-const staticPaths = ["", "/companies", "/jobs", "/signals", "/insights", "/newsletter", "/advertise", "/methodology", "/about", "/contact"];
+const staticInfoPaths = ["/newsletter", "/advertise", "/methodology", "/about", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = staticPaths.map((route) => ({ url: `${siteUrl}${route}`, lastModified: new Date("2026-08-04"), changeFrequency: route === "" ? "daily" as const : "weekly" as const }));
+  const latestCompanyUpdate = companies.reduce(
+    (latest, company) => (company.lastChecked > latest ? company.lastChecked : latest),
+    companies[0]?.lastChecked ?? new Date().toISOString().slice(0, 10)
+  );
+  const latestJobUpdate = jobs.reduce(
+    (latest, job) => (job.lastChecked > latest ? job.lastChecked : latest),
+    jobs[0]?.lastChecked ?? latestCompanyUpdate
+  );
+
+  const dataDrivenRoutes = [
+    { url: `${siteUrl}/`, lastModified: latestCompanyUpdate, changeFrequency: "daily" as const },
+    { url: `${siteUrl}/companies`, lastModified: latestCompanyUpdate, changeFrequency: "weekly" as const },
+    { url: `${siteUrl}/jobs`, lastModified: latestJobUpdate, changeFrequency: "weekly" as const },
+    { url: `${siteUrl}/signals`, lastModified: latestCompanyUpdate, changeFrequency: "weekly" as const },
+    { url: `${siteUrl}/insights`, lastModified: new Date(), changeFrequency: "weekly" as const },
+  ];
+  const staticRoutes = staticInfoPaths.map((route) => ({ url: `${siteUrl}${route}`, lastModified: new Date(), changeFrequency: "monthly" as const }));
   const companyRoutes = companies.map((company) => ({ url: `${siteUrl}/companies/${company.slug}`, lastModified: company.lastChecked, changeFrequency: "weekly" as const }));
   const jaPostRoutes = getAllPostsMeta("ja").map((post) => ({ url: `${siteUrl}/ja/blog/${post.slug}`, lastModified: post.publishedDate }));
-  return [...staticRoutes, ...companyRoutes, ...jaPostRoutes];
+  return [...dataDrivenRoutes, ...staticRoutes, ...companyRoutes, ...jaPostRoutes];
 }

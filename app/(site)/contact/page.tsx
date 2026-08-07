@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Container from "@/components/Container";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "お問い合わせ", description: "Genbaへの掲載、取材、訂正依頼のお問い合わせ。", alternates: { canonical: "/contact" } };
+export const metadata = pageMetadata({ title: "お問い合わせ", description: "Genbaへの掲載、取材、訂正依頼のお問い合わせ。", path: "/contact" });
 export default function ContactPage() { return <><section className="page-hero"><Container><p className="eyebrow">CONTACT</p><h1>お問い合わせ</h1><p className="page-lead">法人掲載、取材、情報提供、掲載内容の訂正を受け付けています。</p></Container></section><section className="content-section"><Container><div className="editorial-grid"><article className="editorial-card"><span>FOR BUSINESS</span><h3>掲載・スポンサー</h3><p>採用パートナー、メディアスポンサー、イベント掲載のご相談。</p><a href="mailto:js@genbajapan.com?subject=Genba%20%E6%B3%95%E4%BA%BA%E6%8E%B2%E8%BC%89%E3%81%AE%E7%9B%B8%E8%AB%87">メールを送る →</a></article><article className="editorial-card"><span>FOR EDITORIAL</span><h3>取材・情報提供</h3><p>外資SaaSの採用や営業組織に関する公開可能な情報。</p><a href="mailto:js@genbajapan.com?subject=Genba%20%E5%8F%96%E6%9D%90%E3%83%BB%E6%83%85%E5%A0%B1%E6%8F%90%E4%BE%9B">メールを送る →</a></article><article className="editorial-card"><span>CORRECTION</span><h3>訂正・更新</h3><p>企業名、求人状況、リンク切れなどの訂正依頼。</p><a href="mailto:js@genbajapan.com?subject=Genba%20%E6%8E%B2%E8%BC%89%E6%83%85%E5%A0%B1%E3%81%AE%E8%A8%82%E6%AD%A3">メールを送る →</a></article></div></Container></section></>; }

@@ -744,7 +744,18 @@ export default function CompanyIntelligenceProfile({
                   {publicIntel.comparisonMap.map((comparison) => (
                     <article key={comparison.arena}>
                       <span>{comparison.arena}</span>
-                      <div>{comparison.companies.map((name) => <strong key={name}>{name}</strong>)}</div>
+                      <div>
+                        {comparison.companies.map((name) => {
+                          const matched = allCompanies.find((c) => c.name === name);
+                          return matched ? (
+                            <Link key={name} href={`/companies/${matched.slug}`}>
+                              <strong>{name}</strong>
+                            </Link>
+                          ) : (
+                            <strong key={name}>{name}</strong>
+                          );
+                        })}
+                      </div>
                       <p>{comparison.why}</p>
                     </article>
                   ))}

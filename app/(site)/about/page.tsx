@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Container from "@/components/Container";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Genbaについて", description: "外資SaaSの日本採用を追う独立系メディア、Genbaの運営情報。", alternates: { canonical: "/about" } };
+export const metadata = pageMetadata({ title: "Genbaについて", description: "外資SaaSの日本採用を追う独立系メディア、Genbaの運営情報。", path: "/about" });
 export default function AboutPage() { return <><section className="page-hero"><Container><p className="eyebrow">ABOUT GENBA</p><h1>現場にいる人が、判断できる情報を。</h1><p className="page-lead">Genbaは、外資SaaS企業の日本採用と営業キャリアを扱う独立系インテリジェンスメディアです。</p></Container></section><section className="content-section"><Container><div className="prose-genba"><h2>なぜGenbaをつくるのか</h2><p>外資SaaSの求人情報は増えました。一方で、企業が日本市場でどの段階にあり、営業組織のどこへ投資しているのかを継続して比較できる場所は多くありません。Genbaは求人を単発で紹介するのではなく、その前後にある変化を記録します。</p><h2>運営・編集</h2><p>運営者は新卒で外資ITインフラ企業に入り、外資SaaSのBDRを経て、現在は新規開拓のAccount Executiveとして働いています。Xでは <a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08</a> として、営業とコマース領域について発信しています。</p><h2>独立性</h2><p>Genbaは運営者個人の独立した活動であり、勤務先を代表するものではありません。勤務先の非公開情報、顧客情報、社内事情は扱いません。掲載企業から対価を受ける場合は、その旨を明示します。</p><h2>読者への約束</h2><ul><li>公開情報の出典と確認日を示す</li><li>事実と編集部の解釈を混同しない</li><li>広告・スポンサーを明示する</li><li>転職を煽らず、長期的な判断材料を届ける</li></ul></div></Container></section></>; }

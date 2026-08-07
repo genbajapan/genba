@@ -39,6 +39,8 @@ const organizationJsonLd = {
   url: siteUrl,
   description,
   slogan: "外資IT戦士と予備軍の作戦会議所",
+  logo: `${siteUrl}/og-genba-v2.png`,
+  sameAs: ["https://x.com/chosenshi08"],
 };
 
 export default function RootLayout({
