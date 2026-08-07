@@ -293,6 +293,12 @@ button, input, select { font: inherit; }
 .dossier-nav a:hover { border-color: var(--signal); color: var(--signal); }
 
 
+.linkedin-people-link { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding: 14px 18px; border: 1px solid #bfe0d9; border-radius: 4px; background: #e9f6f2; text-decoration: none; transition: background .15s ease, transform .15s ease; }
+.linkedin-people-link:hover { background: #dcf0ea; transform: translateY(-1px); }
+.linkedin-people-link .card-index { margin: 0; flex-shrink: 0; }
+.linkedin-people-link strong { flex: 1; color: var(--navy); font-size: 13px; font-weight: 750; }
+.linkedin-people-link-arrow { color: var(--signal); font-size: 14px; font-weight: 800; }
+
 .company-snapshot-strip { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 14px; border: 1px solid var(--line); background: #f7f9f8; }
 .company-snapshot-strip-5col { grid-template-columns: repeat(5,1fr); }
 .company-snapshot-strip div { padding: 12px 14px; }

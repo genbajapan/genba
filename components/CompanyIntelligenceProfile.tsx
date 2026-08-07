@@ -155,6 +155,17 @@ export default function CompanyIntelligenceProfile({
                 <p>公開されている企業情報・実績を、応募判断の前提としてまとめます。</p>
               </div>
 
+              <a
+                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&origin=SWITCH_SEARCH_VERTICAL`}
+                target="_blank"
+                rel="noreferrer"
+                className="linkedin-people-link"
+              >
+                <span className="card-index">LINKEDIN</span>
+                <strong>{company.name}で働いている人を見る</strong>
+                <span className="linkedin-people-link-arrow" aria-hidden="true">↗</span>
+              </a>
+
               {publicIntel ? (
                 <>
                   <div className="company-snapshot-strip company-snapshot-strip-5col">
