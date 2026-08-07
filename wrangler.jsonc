@@ -1,5 +1,6 @@
 {
   "name": "genba",
+  "account_id": "9fcd5bf2766ea9eb1b4f4ff0b8a4e158",
   "compatibility_date": "2026-07-31",
   "main": "worker/index.ts",
   "assets": {
