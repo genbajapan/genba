@@ -157,7 +157,8 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  <div className="company-snapshot-strip">
+                  <div className="company-snapshot-strip company-snapshot-strip-5col">
+                    <div><span>本社</span><strong>{company.hq}</strong></div>
                     <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
                     <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
                     <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
