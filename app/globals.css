@@ -365,21 +365,22 @@ button, input, select { font: inherit; }
 .market-status-panel { margin-top: 9px; padding: 24px 26px; border: 1px solid var(--line); background: #f7f9f8; }
 .market-status-head { display: flex; align-items: baseline; gap: 12px; }
 .market-status-head h3 { margin: 0; color: var(--navy); font-size: 16px; font-weight: 850; }
-.market-status-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin-top: 14px; }
-.market-status-grid div { padding: 12px 14px; border: 1px solid var(--line); background: white; }
-.market-status-grid span { display: block; color: #6b7d84; font-size: 10px; font-weight: 750; }
-.market-status-grid strong { display: block; margin-top: 4px; color: var(--navy); font-size: 15px; font-weight: 800; }
-.market-status-grid small { display: block; margin-top: 3px; color: #8a9aa0; font-size: 10px; }
+.market-status-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
+.market-status-facts div { padding: 10px 14px; border: 1px solid var(--line); background: white; }
+.market-status-facts div span { display: block; color: #6b7d84; font-size: 10px; font-weight: 750; }
+.market-status-facts div strong { display: block; margin-top: 4px; color: var(--navy); font-size: 14px; font-weight: 800; }
+.market-status-stock-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border: 1px solid var(--signal); color: var(--signal); font-size: 12px; font-weight: 800; text-decoration: none; background: white; }
+.market-status-stock-link:hover { background: var(--signal); color: white; }
 .market-status-summary { margin: 16px 0 0; color: #435760; font-size: 13px; line-height: 1.85; }
-.market-signal-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 14px; }
-.market-signal { padding: 14px 16px; border: 1px solid var(--line); border-left-width: 4px; background: white; }
-.market-signal-up { border-left-color: #0a6d63; }
-.market-signal-down { border-left-color: #b8492f; }
-.market-signal-flat { border-left-color: #a8aeb0; }
-.market-signal > span { color: #6b7d84; font-size: 10px; font-weight: 850; letter-spacing: .06em; }
-.market-signal strong { display: block; margin-top: 6px; color: var(--navy); font-size: 12px; }
-.market-signal p { margin: 6px 0 0; color: #52646c; font-size: 11px; line-height: 1.6; }
-.market-signal a { display: inline-block; margin-top: 8px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
+.market-status-ipo-outlook { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--line); border-left-width: 4px; border-left-color: var(--signal); background: white; }
+.market-status-ipo-outlook span { display: block; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .06em; }
+.market-status-ipo-outlook p { margin: 6px 0 0; color: #435760; font-size: 12px; line-height: 1.7; }
+.market-status-timeline { display: flex; flex-direction: column; margin-top: 18px; border-top: 1px solid var(--line); }
+.market-status-milestone { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.market-status-milestone > span { color: var(--signal); font-size: 12px; font-weight: 850; font-variant-numeric: tabular-nums; }
+.market-status-milestone strong { display: block; color: var(--navy); font-size: 12px; }
+.market-status-milestone p { margin: 5px 0 0; color: #52646c; font-size: 11px; line-height: 1.6; }
+.market-status-milestone a { display: inline-block; margin-top: 6px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
 .market-status-disclaimer { margin: 14px 0 0; color: #8a9aa0; font-size: 10px; line-height: 1.6; }
 
 .playbook-frame-intro { margin: 4px 0 0; max-width: 760px; color: #435760; font-size: 14px; line-height: 1.85; }
@@ -694,8 +695,8 @@ button, input, select { font: inherit; }
   .role-hypothesis-grid,.comparison-map-grid { grid-template-columns: repeat(2,1fr); }
   .organization-read-card { grid-template-columns: 1fr 1fr; }
   .organization-read-card > a { grid-column: 2; }
-  .market-status-grid { grid-template-columns: repeat(2,1fr); }
-  .market-signal-row,.playbook-lens-row,.playbook-support-grid { grid-template-columns: 1fr; }
+  .market-status-milestone { grid-template-columns: 1fr; gap: 4px; }
+  .playbook-lens-row,.playbook-support-grid { grid-template-columns: 1fr; }
   .playbook-narrative-track { flex-direction: column; }
   .playbook-narrative-step { width: auto; }
   .playbook-narrative-connector { flex: 0 0 auto; height: 20px; }

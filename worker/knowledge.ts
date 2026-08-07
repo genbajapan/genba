@@ -16,13 +16,13 @@ function buildCompanyBlock(company: Company, companyJobs: Job[]): KnowledgeBlock
 
     if (intel.marketStatus.isPublic) {
       const market = intel.marketStatus;
-      lines.push(
-        `## 株式市場: ${market.exchange}: ${market.ticker}、株価${market.price}(${market.priceAsOf}時点のスナップショット、リアルタイムではない)、時価総額${market.marketCap}、52週レンジ${market.week52Range}、アナリスト評価${market.analystConsensus}(平均目標株価${market.analystTargetAvg})`,
-      );
-      lines.push(`成長見通し: ${market.outlookSummary}`);
+      lines.push(`## 株式市場: ${market.exchange}: ${market.ticker}(${market.listedSince}上場)。リアルタイム株価は${market.stockLinkUrl}を案内すること`);
+      lines.push(`成長の変遷: ${market.growthSummary}`);
     } else {
-      lines.push(`## 非上場企業のIPO見通し: ${intel.marketStatus.ipoOutlookSummary}`);
+      lines.push(`## 非上場企業の変遷: ${intel.marketStatus.growthSummary}`);
+      lines.push(`IPO見通し: ${intel.marketStatus.ipoOutlookSummary}`);
     }
+    intel.marketStatus.milestones.forEach((milestone) => lines.push(`- ${milestone.year} ${milestone.label}: ${milestone.detail}`));
 
     lines.push("## Genbaの5つの仮説(公開情報からの分析。事実そのものではない)");
     intel.hypotheses.forEach((hypothesis) =>

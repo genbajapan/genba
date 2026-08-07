@@ -185,48 +185,36 @@ export default function CompanyIntelligenceProfile({
                       <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
                       <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
                     </div>
-                    {publicIntel.marketStatus.isPublic ? (
-                      <>
-                        <div className="market-status-grid">
-                          <div><span>株価</span><strong>{publicIntel.marketStatus.price}</strong><small>{shortDate(publicIntel.marketStatus.priceAsOf)}時点</small></div>
-                          <div><span>時価総額</span><strong>{publicIntel.marketStatus.marketCap}</strong></div>
-                          <div><span>52週レンジ</span><strong>{publicIntel.marketStatus.week52Range}</strong></div>
-                          <div><span>アナリスト評価</span><strong>{publicIntel.marketStatus.analystConsensus}</strong><small>{publicIntel.marketStatus.analystCount}のカバレッジ</small></div>
-                          <div><span>平均目標株価</span><strong>{publicIntel.marketStatus.analystTargetAvg}</strong><small>レンジ {publicIntel.marketStatus.analystTargetRange}</small></div>
-                        </div>
-                        <p className="market-status-summary">{publicIntel.marketStatus.outlookSummary}</p>
-                        <div className="market-signal-row">
-                          {publicIntel.marketStatus.outlookSignals.map((signal) => {
-                            const source = getResearchSource(publicIntel, signal.sourceId);
-                            return (
-                              <article key={signal.label} className={`market-signal market-signal-${signal.direction === "追い風" ? "up" : signal.direction === "逆風" ? "down" : "flat"}`}>
-                                <span>{signal.direction}</span>
-                                <strong>{signal.label}</strong>
-                                <p>{signal.detail}</p>
-                                {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                              </article>
-                            );
-                          })}
-                        </div>
-                        <p className="market-status-disclaimer">株価は取得時点のスナップショットであり、リアルタイム更新ではありません。投資判断はご自身の責任で、最新の一次情報を確認してください。</p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="market-status-summary">{publicIntel.marketStatus.ipoOutlookSummary}</p>
-                        <div className="market-signal-row">
-                          {publicIntel.marketStatus.outlookSignals.map((signal) => {
-                            const source = getResearchSource(publicIntel, signal.sourceId);
-                            return (
-                              <article key={signal.label} className={`market-signal market-signal-${signal.direction === "追い風" ? "up" : signal.direction === "逆風" ? "down" : "flat"}`}>
-                                <span>{signal.direction}</span>
-                                <strong>{signal.label}</strong>
-                                <p>{signal.detail}</p>
-                                {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                              </article>
-                            );
-                          })}
-                        </div>
-                      </>
+                    {publicIntel.marketStatus.isPublic && (
+                      <div className="market-status-facts">
+                        <div><span>上場</span><strong>{publicIntel.marketStatus.listedSince}〜</strong></div>
+                        <a className="market-status-stock-link" href={publicIntel.marketStatus.stockLinkUrl} target="_blank" rel="noreferrer">最新の株価を見る ↗</a>
+                      </div>
+                    )}
+                    <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
+                    {!publicIntel.marketStatus.isPublic && (
+                      <div className="market-status-ipo-outlook">
+                        <span>IPO見通し</span>
+                        <p>{publicIntel.marketStatus.ipoOutlookSummary}</p>
+                      </div>
+                    )}
+                    <div className="market-status-timeline">
+                      {publicIntel.marketStatus.milestones.map((milestone) => {
+                        const source = getResearchSource(publicIntel, milestone.sourceId);
+                        return (
+                          <article key={`${milestone.year}-${milestone.label}`} className="market-status-milestone">
+                            <span>{milestone.year}</span>
+                            <div>
+                              <strong>{milestone.label}</strong>
+                              <p>{milestone.detail}</p>
+                              {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                    {publicIntel.marketStatus.isPublic && (
+                      <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。</p>
                     )}
                   </div>
                 </>
