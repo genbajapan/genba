@@ -386,7 +386,7 @@ export default function CompanyIntelligenceProfile({
                 <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{company.name}で働いている人を見る。</h2></div>
               </div>
               <a
-                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&geoUrn=%5B%22105646813%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
+                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&geoUrn=%5B%22101355337%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
                 target="_blank"
                 rel="noreferrer"
                 className="work-there-card"
