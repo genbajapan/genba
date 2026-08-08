@@ -386,7 +386,7 @@ export default function CompanyIntelligenceProfile({
                 <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{company.name}で働いている人を見る。</h2></div>
               </div>
               <a
-                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&origin=SWITCH_SEARCH_VERTICAL`}
+                href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&geoUrn=%5B%22105646813%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
                 target="_blank"
                 rel="noreferrer"
                 className="work-there-card"
@@ -413,6 +413,18 @@ export default function CompanyIntelligenceProfile({
                 <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>ポジションの実態を深ぼる。</h2></div>
                 <p>{companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
+
+              {publicIntel && (
+                <div className="role-hypothesis-wrap">
+                  <p className="card-index">ざっくりまとめ</p>
+                  <div className="role-hypothesis-grid">
+                    <article><span>セールスモーション</span><p>{publicIntel.roleLens.salesMotion}</p></article>
+                    <article><span>給与関連</span><p>{publicIntel.roleLens.compensation}</p></article>
+                    <article><span>Quota</span><p>{publicIntel.roleLens.quota}</p></article>
+                    <article><span>チーム連携</span><p>{publicIntel.roleLens.collaboration}</p></article>
+                  </div>
+                </div>
+              )}
 
               {companyJobs.length ? (
                 <>
@@ -516,18 +528,6 @@ export default function CompanyIntelligenceProfile({
                   <span>RADAR ON</span>
                   <h3>{profile.observedRoleCount > 0 ? `${profile.observedRoleCount}件を集計で確認` : "現在確認中の営業求人はありません"}</h3>
                   <p>{profile.observedRoleCount > 0 ? "個別求人の出典と要件を整理中です。応募前に公式採用ページでも最新情報を確認してください。" : "公式採用ページを継続観測し、募集を確認次第追加します。"}</p>
-                </div>
-              )}
-
-              {publicIntel && (
-                <div className="role-hypothesis-wrap">
-                  <p className="card-index">ざっくりまとめ</p>
-                  <div className="role-hypothesis-grid">
-                    <article><span>セールスモーション</span><p>{publicIntel.roleLens.salesMotion}</p></article>
-                    <article><span>給与関連</span><p>{publicIntel.roleLens.compensation}</p></article>
-                    <article><span>Quota</span><p>{publicIntel.roleLens.quota}</p></article>
-                    <article><span>チーム連携</span><p>{publicIntel.roleLens.collaboration}</p></article>
-                  </div>
                 </div>
               )}
 
