@@ -995,6 +995,38 @@ const mongodbSources: ResearchSource[] = [
     scope: "2018年のライセンス変更(SSPL)",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "mdb-q1fy27-results",
+    label: "StockTitan「MongoDB Announces First Quarter Fiscal 2027 Results」",
+    url: "https://www.stocktitan.net/news/MDB/mongo-db-inc-announces-first-quarter-fiscal-2027-financial-pn6ou0elo2cm.html",
+    kind: "外部集計",
+    scope: "Atlas比率・成長率、AI需要による株価反発",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "mdb-leadership-change",
+    label: "CNBC「MongoDB CEO Dev Ittycheria exits, replaced by Cloudflare's CJ Desai」",
+    url: "https://www.cnbc.com/2025/11/03/mongodb-ceo-dev-ittycheria-exits-replaced-by-cloudflares-cj-desai.html",
+    kind: "外部集計",
+    scope: "2025年11月のCEO交代",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "mdb-exec-departures",
+    label: "FinancialContent「MongoDB Shares Crater 25% as Conservative 2027 Guidance and Executive Exodus Rattle Cloud Sector」",
+    url: "https://markets.financialcontent.com/stocks/article/marketminute-2026-3-5-mongodb-shares-crater-25-as-conservative-2027-guidance-and-executive-exodus-rattle-cloud-sector",
+    kind: "外部集計",
+    scope: "2026年3月の株価急落と経営陣の相次ぐ離脱",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "mdb-postgres-competition",
+    label: "Tech Insider「MongoDB vs PostgreSQL 2026」比較記事",
+    url: "https://tech-insider.org/mongodb-vs-postgresql-2026/",
+    kind: "コミュニティ",
+    scope: "pgvector等によるPostgreSQL陣営の追い上げ",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
@@ -1013,6 +1045,59 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
       { year: "2026-27", label: "Atlas成長率が26〜30%から21〜23%へ鈍化見込み", detail: "ハイパーグロース期から安定成長期への移行が進んでいる。", sourceId: "mdb-q2fy27-outlook" },
     ],
     sourceIds: ["mdb-ipo", "mdb-sspl-license", "mdb-q2fy27-outlook"],
+    genbaVerdict: {
+      headline: "Atlasという勝ち筋は明確。ただし経営陣の相次ぐ離脱が「次の一手」への不安材料に。",
+      body: "Atlasの成長率が四半期で29〜34%まで再加速し、2026年3月に一度22%超急落した株価も6月には反発するなど、事業モメンタム自体は底堅い。一方でCEO・CFO・営業トップ(President of Field Operations)・CRO(最高収益責任者)が2025年後半から2026年前半にかけて相次いで交代しており、AIという最も説明責任を問われるテーマのタイミングで経営体制が入れ替わっているのは軽視できない、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "Atlasの成長率がAI需要で再加速",
+        body: "売上の73〜75%を占めるAtlas(フルマネージドクラウド)の成長率は、四半期ベースで29〜34%まで再加速。2026年3月の弱いガイダンスで株価が急落した後、6月のQ1 FY2027決算では「AI関連需要の強さ」を理由に株価が約20%反発した。",
+        sourceId: "mdb-q1fy27-results",
+      },
+      {
+        title: "特定顧客に依存しない、広く分散した顧客基盤の拡大",
+        body: "総顧客数は47,800社(2024年1月)→54,500社(2025年1月)→62,500社超(2025年10月)と着実に増加。開発者主導のボトムアップ採用による広く分散した成長パターンが続いており、一部の大口顧客に依存する構造ではない。",
+        sourceId: "mdb-q2fy27-outlook",
+      },
+      {
+        title: "増収率が鈍化する中でも利益率改善を優先",
+        body: "FY2027の非GAAP営業利益率ガイダンスは、前年から100〜150bpの改善を見込む水準。成長率だけでなく収益性を重視する経営へ、他の外資SaaS大手と同様の転換が進んでいる。",
+        sourceId: "mdb-q2fy27-outlook",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "経営陣の相次ぐ離脱は、単なる偶然ではないかもしれない",
+        body: "2025年11月にCEOのDev Ittycheria氏が退任(後任は元CloudflareのCJ Desai氏)、CFOも辞任。2026年に入るとPresident of Field Operations、CRO(最高収益責任者)も相次いで離脱した。2026年3月の株価急落時の報道では「保守的なガイダンスと経営陣の離脱」がセットで株安要因として語られている。",
+        confidence: "中",
+        evidence: [
+          "CEO(2025年11月)・CFO・President of Field Operations・CRO(2026年前半)が相次いで交代",
+          "2026年3月の株価急落(-22%超)の報道で、ガイダンスの弱さと経営陣離脱が同時に語られている",
+        ],
+        counterSignal: "後任(CJ Desai氏ら)は既に発表・着任済みで、空白期間を作らない移行が図られている。6月のQ1 FY2027決算は市場予想を上回り株価も反発しており、少なくとも足元の業績には経営体制の変化が悪影響を及ぼしていない。",
+        sourceIds: ["mdb-leadership-change", "mdb-exec-departures", "mdb-q1fy27-results"],
+      },
+      {
+        title: "PostgreSQL陣営(pgvector等)の追い上げが、新規案件での差別化を難しくしている可能性",
+        body: "ベクター検索機能を追加したPostgreSQL(pgvector)が標準的なベンチマークで高い精度を達成しており、「新規のAIネイティブアプリ開発ではPostgreSQLが最も無難な選択肢になりつつある」という論調が業界比較記事で見られる。AWS等のハイパースケーラーも自社DBサービスの値下げを進めている。",
+        confidence: "探索中",
+        evidence: [
+          "pgvector 0.8が標準的なANNベンチマークで約95%の再現率を達成したとされる",
+          "AWSがDynamoDBの従量課金価格を50%引き下げるなど、ハイパースケーラー製品との価格競争が続いている",
+        ],
+        counterSignal: "Atlasの成長率(29〜34%)は現時点でMongoDB全事業セグメントの中で最も高く、少なくとも既存顧客の拡張フェーズでは競合による目立った侵食は数字上確認できていない。新規案件での勝率低下という、より先行指標的なリスクである点には留意。",
+        sourceIds: ["mdb-postgres-competition", "mdb-q1fy27-results"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本法人の実態は、公開情報からはほとんど見えてこない。",
+      narrative: "MongoDB Japan合同会社は合同会社(GK)のため決算公告の義務がなく、売上・利益・成長率を示す公開データが一切ない。現在の代表者名も主要な企業データベースでは非公開で、直近の採用拡大やオフィス移転等のニュースリリースも確認できなかった。公式に確認できる日本のカスタマーストーリーはスクウェア・エニックス(100以上のクラスター・570以上のノードで複数タイトルの非同期マルチプレイヤー機能を支える)がほぼ唯一で、この事例の存在自体が「日本でも大規模本番運用に耐える」ことの証明にはなっているが、他の外資SaaS競合と比べても情報開示の薄さが際立つ、というのがGenbaの読み。過去にMongoDB Japanの幹部だった有信慶三氏が数年前に転出した記録は確認できたが、現在の日本チームを率いる人物は特定できていない。",
+      qualitativeSignals: [
+        { label: "確認できる日本導入事例はスクウェア・エニックスのみ", detail: "100以上のクラスター・570以上のノードで複数タイトルの非同期マルチプレイヤー機能を支える大規模事例。他に公式に確認できる日本企業の事例は見当たらない。", sourceId: "mdb-squareexnix" },
+      ],
+      sourceIds: ["mdb-squareexnix"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "MongoDBの売り方は「リリース速度を落とさずにデータモデルを進化させたい」という開発チームの痛みが起点。ボトムアップで入った後、AIユースケース(ベクター検索・RAG)を追加提案の切り口にする。",
@@ -1510,6 +1595,62 @@ const brazeSources: ResearchSource[] = [
     scope: "2023年North Star(豪州・NZ販売代理店)買収",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "brz-fy2026-margin-detail",
+    label: "Braze IR「Braze Reports Fiscal Year and Fourth Quarter 2026 Results」(詳細版)",
+    url: "https://investors.braze.com/news/news-details/2026/Braze-Reports-Fiscal-Year-and-Fourth-Quarter-2026-Results/default.aspx",
+    kind: "企業公式",
+    scope: "非GAAP営業利益率・GAAP営業損失・NRRの詳細",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-revenue-acceleration",
+    label: "Businesswire「Braze Delivers Fourth Straight Quarter of Organic Revenue Growth Acceleration」",
+    url: "https://www.businesswire.com/news/home/20260527699075/en/Braze-Delivers-Fourth-Straight-Quarter-of-Organic-Revenue-Growth-Acceleration",
+    kind: "企業公式",
+    scope: "5四半期連続の売上成長率加速",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-q1fy27-selloff",
+    label: "Motley Fool「Why Braze Stock Is Sinking Today」",
+    url: "https://www.fool.com/investing/2026/05/28/why-braze-stock-is-sinking-today/",
+    kind: "外部集計",
+    scope: "2026年5月、利益率悪化を理由とした株価下落",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-goldman-category-call",
+    label: "emailexpert.com「Goldman Backs the Orchestration Thesis, With Klaviyo as the Boldest Buy」",
+    url: "https://emailexpert.com/goldman-backs-the-orchestration-thesis-with-klaviyo-as-the-boldest-buy/",
+    kind: "外部集計",
+    scope: "Goldman SachsによるBraze/Twilio/Klaviyoの同時カバレッジ開始",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-japan-settlement",
+    label: "官報決算データベース「Braze株式会社」決算公告一覧",
+    url: "https://catr.jp/companies/b5beb/171443",
+    kind: "法定開示",
+    scope: "日本法人 2021〜2026年(第1〜6期)の純損益・総資産(貸借対照表のみ、売上高は非開示)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-japan-president",
+    label: "MarkeZine「Braze日本法人、水谷篤尚氏が社長に就任」",
+    url: "https://markezine.jp/article/detail/48081",
+    kind: "外部集計",
+    scope: "2024年4月の日本代表就任(水谷篤尚氏)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "brz-japan-datacenter",
+    label: "Braze「日本国内データセンター開設」プレスリリース",
+    url: "https://www.braze.com/ja/press-releases/braze-japan-data-center",
+    kind: "企業公式",
+    scope: "2026年3月開設予定の日本データセンター(FISC対応)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const brazeIntelligence: CompanyPublicIntelligence = {
@@ -1528,6 +1669,61 @@ const brazeIntelligence: CompanyPublicIntelligence = {
       { year: "2026", label: "FY2026通期売上7.38億ドル(前年比+24.4%)", detail: "直近四半期の成長率は22〜25%台で推移し、加速気味の高成長を維持。", sourceId: "brz-fy2026-results" },
     ],
     sourceIds: ["brz-ipo", "brz-northstar-acquisition", "brz-fy2026-results", "brz-q1fy27-earnings"],
+    genbaVerdict: {
+      headline: "売上成長は5四半期連続で加速中。ただし「加速すればするほど赤字も広がる」という構造がまだ解けていない。",
+      body: "Brazeの売上成長率はQ1 FY26の19.6%からQ1 FY27には30.2%まで、5四半期連続で加速している数少ない外資SaaSの一社。一方でGAAP営業損失はFY2026に▲1.448億ドルまで拡大(前年▲1.222億ドル)しており、非GAAPベースでは黒字化した収益性が、GAAPベースでは依然として広がり続けているという二面性がある。日本法人は逆に、赤字体質から黒字転換・急拡大という真逆の軌跡を辿っており、グローバルより一歩先を行っている、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "売上成長率が5四半期連続で加速",
+        body: "四半期売上成長率はQ1 FY26 +19.6%→Q2 +23.8%→Q3 +25.5%→Q4 +27.9%→Q1 FY27 +30.2%と、5四半期連続で加速。自社も「4四半期連続のオーガニック成長加速」と公式に発表している、大型SaaSの中では珍しい逆張りの成長パターン。",
+        sourceId: "brz-revenue-acceleration",
+      },
+      {
+        title: "AI機能の利用規模が桁違いに拡大",
+        body: "2025年の1年間でプラットフォームは4.5兆件のメッセージ・アクションを処理し、3.1兆件のAI判断推論を実行。新しいAIエージェント機能「Operator」はGA後数週間で顧客の3分の2以上が採用したと報告されている。ただしAI機能単体のARR・売上貢献額は開示されていない。",
+        sourceId: "brz-fy2026-margin-detail",
+      },
+      {
+        title: "140以上のパートナー統合によるエコシステムの厚み",
+        body: "Snowflake・Databricks・AWS・Twilio Segment等、140以上の技術パートナー統合を持つ「Alloys」エコシステムを構築。RPO(残存履行義務)は10億ドル超(前年比+30%)まで拡大しており、契約の積み上がりという点でも成長の裏付けがある。",
+        sourceId: "brz-fy2026-margin-detail",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "成長率が加速するほど、GAAPベースの赤字も広がっている",
+        body: "非GAAP営業利益はFY2026に2,850万ドル(利益率3.9%)まで黒字化した一方、GAAP営業損失は▲1.448億ドル(利益率-19.6%)まで拡大(前年▲1.222億ドル)。2026年5月のQ1 FY27決算では、売上はビートしたものの利益率悪化と粗利益率の低下(69.8%→68.7%)を理由に株価が1日で最大16%下落する場面があった。",
+        confidence: "中",
+        evidence: [
+          "GAAP営業損失がFY2026に▲1.448億ドルまで拡大(前年▲1.222億ドル)、非GAAP粗利益率も69.8%→68.7%へ低下",
+          "2026年5月、売上ビートにも関わらず利益率悪化を理由に株価が1日で最大16%下落",
+        ],
+        counterSignal: "非GAAP営業利益・フリーキャッシュフローは着実に改善しており(FCF: 1,960万ドル→5,810万ドル)、投資判断はJPMorganが「押し目買いの好機」と評したように分かれている。純収益維持率(NRR)も108%から110〜111%へ足元で回復している。",
+        sourceIds: ["brz-q1fy27-selloff", "brz-fy2026-margin-detail"],
+      },
+      {
+        title: "Goldman Sachsが競合3社を同時にカバレッジ開始——「代替可能なカテゴリー」と見られている可能性",
+        body: "Goldman SachsはBraze・Twilio・Klaviyoを「カスタマーエクスペリエンスソフトウェア」という単一カテゴリーとして同時にBuy格付けで新規カバレッジ開始した。これは市場が3社を明確に差別化された存在としてではなく、同じ予算を奪い合う代替可能な選択肢群として見ている可能性を示唆する。",
+        confidence: "探索中",
+        evidence: [
+          "Goldman SachsがBraze・Twilio・Klaviyoを同一カテゴリーとして同時にカバレッジ開始(2026年6月)",
+          "Iterable・Salesforce Marketing Cloud・MoEngage等との具体的な勝率・シェアデータは非開示",
+        ],
+        counterSignal: "アナリスト21名中、Strong Buy評価は15名・平均目標株価は現在値を+34%上回るなど、機関投資家からの評価自体はむしろ強気。カテゴリーとして括られること自体は、市場そのものの拡大を示すポジティブな側面もある。",
+        sourceIds: ["brz-goldman-category-call"],
+      },
+    ],
+    japanGrowth: {
+      headline: "赤字続きだった日本法人が、たった1年で純利益4倍。グローバルより一歩先を行く反転。",
+      narrative: "Braze株式会社(日本法人)は2020年7月設立の株式会社で、決算公告(貸借対照表のみ、売上高は非開示)を追うと、設立から4期連続で純損失を計上していた(第1期▲4,605万円→第2期▲3億3,163万円→第3期▲4億8,159万円→第4期▲3億6,110万円)。しかし第5期(2025年1月期)に+7,870万円で黒字転換し、第6期(2026年1月期)には+3億1,259万円(前年比+297.2%)まで急拡大。総資産も第6期には19.6億円(前年比+86.2%)まで倍近くに増えている。2024年4月には水谷篤尚氏(元SAP Japan)が代表取締役社長に就任しており、黒字転換のタイミングと重なる。2025年11月には金融機関のFISC(データ常駐)要件に対応するための国内データセンター開設(2026年3月予定)も発表しており、日本法人はグローバル本体に先行して黒字化と国内投資拡大の両方を実現しつつある、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "純利益が1年で約4倍に急拡大", detail: "赤字続きだった日本法人が第5期(2025年1月期)に黒字転換(+7,870万円)、第6期(2026年1月期)には+3億1,259万円(前年比+297.2%)まで拡大。総資産も同期間で+86.2%。", sourceId: "brz-japan-settlement" },
+        { label: "2024年4月に水谷篤尚氏(元SAP Japan)が社長就任", detail: "黒字転換のタイミングと社長交代の時期が重なる。", sourceId: "brz-japan-president" },
+        { label: "金融機関向けの国内データセンターを2026年3月開設予定", detail: "FISC(金融情報システムセンター)のデータ常駐要件に対応するため、Dentsu Digital・Hakuhodo・AWS・Snowflake・Databricks等とのパートナーシップも深化。", sourceId: "brz-japan-datacenter" },
+      ],
+      sourceIds: ["brz-japan-settlement", "brz-japan-president", "brz-japan-datacenter"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "Brazeの売り方は「今この瞬間のユーザー行動に反応できているか」という切り口が刺さる。バッチ配信中心の既存運用と、リアルタイムのトリガー配信を対比させて語る。",
@@ -2522,6 +2718,46 @@ const hubspotSources: ResearchSource[] = [
     scope: "Breeze AIプラットフォーム・Frame AI買収",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "hs-fy2025-results",
+    label: "HubSpot「Reports Strong Q4 and Full Year 2025 Results」",
+    url: "https://ir.hubspot.com/news-releases/news-release-details/hubspot-reports-strong-q4-and-full-year-2025-results",
+    kind: "企業公式",
+    scope: "FY2025通期の営業利益率(初のGAAP黒字化)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "hs-q2-2026-breeze-adoption",
+    label: "Yahoo Finance「HubSpot Inc (HUBS) Q2 2026」決算ハイライト",
+    url: "https://finance.yahoo.com/technology/ai/articles/hubspot-inc-hubs-q2-2026-051232063.html",
+    kind: "外部集計",
+    scope: "Breeze AI採用数・アウトカムベース課金・大型契約の伸び",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "hs-q3-2025-selloff",
+    label: "SiliconANGLE「HubSpot's Stock Plummets on Weak Sales Guidance, Slowing Growth」(詳細版)",
+    url: "https://siliconangle.com/2025/11/05/hubspots-stock-plummets-weak-sales-guidance-slowing-growth/",
+    kind: "外部集計",
+    scope: "2025年11月の決算発表後の株価急落・新規顧客純増数の鈍化",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "hs-japan-leadership",
+    label: "HubSpot Japan「新カントリーマネージャー就任」プレスリリース",
+    url: "https://www.hubspot.jp/country-manager-20260401",
+    kind: "企業公式",
+    scope: "2026年4月の日本代表交代(伊佐裕也氏)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "hs-japan-settlement",
+    label: "官報決算データベース「HubSpot Japan株式会社」決算公告一覧",
+    url: "https://catr.jp/companies/46a8c/32709",
+    kind: "法定開示",
+    scope: "日本法人 2017〜2025年の純利益・総資産(貸借対照表のみ、売上高は非開示)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const hubspotIntelligence: CompanyPublicIntelligence = {
@@ -2540,6 +2776,60 @@ const hubspotIntelligence: CompanyPublicIntelligence = {
       { year: "2022-25", label: "売上成長率が33.1%から19.2%へ一貫して鈍化", detail: "2025年11月の決算では市場予想を下回るガイダンスで株価が急落。成熟期への移行が進む。", sourceId: "hs-growth-deceleration" },
     ],
     sourceIds: ["hs-ipo", "hs-breeze-ai", "hs-growth-deceleration", "hs-q2-2026-earnings"],
+    genbaVerdict: {
+      headline: "決算は市場予想を上回り続けているのに、株価は下がり続ける。",
+      body: "2025年11月の決算は売上・EPSともに市場予想を上回るビートだったにも関わらず、翌四半期のガイダンスが市場予想をわずかに下回っただけで株価は時間外に13%超急落し、その日までの年初来下落率は30%を超えた。実際のFY2025通期は上方修正後のガイダンスすら上回って着地し、非GAAP営業利益率も過去最高を更新している。「実行力は落ちていないのに、成長率の鈍化ペースだけが売られている」という状態が続いている、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "9.8%→18.6%、一貫して改善する利益率",
+        body: "非GAAP営業利益率はFY2022の9.8%からFY2025には18.6%まで一貫して改善し、FY2025はGAAPベースでも初の通期黒字化(営業利益$7.4M)を達成した。Q4 2025単体では非GAAP営業利益率22.6%と過去最高を記録している。",
+        sourceId: "hs-fy2025-results",
+      },
+      {
+        title: "Breeze AIの利用が着実に広がり、アウトカム課金へ移行",
+        body: "Customer Agentは8,000社超、Prospecting Agentは10,000社超(四半期比+57%)が有効化。2026年4月からはBreezeエージェントを従量クレジットからアウトカムベース課金(解決した会話1件$0.50等)へ移行し、座席課金の外側に新しい収益源を作る動きを進めている。",
+        sourceId: "hs-q2-2026-breeze-adoption",
+      },
+      {
+        title: "アップマーケットの深耕が加速",
+        body: "$120,000超の大型契約は前年比+38%で成長し、Pro Plus顧客のうち4製品以上を契約する比率は40%(前年比+6pt)に達した。中堅・SMB中心のブランドイメージとは裏腹に、実態は大型顧客深耕がここ数四半期で最も勢いのあるセグメントになっている。",
+        sourceId: "hs-q2-2026-breeze-adoption",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "「ガイダンスの弱さ」だけで年初来30%超の株価下落を招くほど、市場の許容度が下がっている",
+        body: "2025年11月の決算では、Q3自体は売上・EPSともに市場予想を上回るビートだったが、Q4ガイダンス($828-830M)が市場予想($836.3M)をわずかに下回っただけで株価は時間外に13%超下落。新規顧客純増数もQ3の10,900件からQ4以降は四半期9,000〜10,000件のレンジへ鈍化する見通しが示され、NRR(純収益維持率)もQ3時点で102%(前年比-1pt)と伸び悩んだ。",
+        confidence: "高",
+        evidence: [
+          "Q4 2025ガイダンス($828-830M)が市場予想をわずかに下回っただけで株価が時間外に13%超急落、年初来下落率は30%超に達した",
+          "新規顧客純増数が四半期10,900件から9,000〜10,000件のレンジへ鈍化する見通し、NRRもQ3時点で102%(前年比-1pt)",
+        ],
+        counterSignal: "FY2025通期は結局、上方修正後のガイダンスすら上回る$3.13B(為替調整後+18.2%)で着地し、Q4の非GAAP営業利益率は22.6%と過去最高を更新した。市場の反応と実際の着地には明確なギャップがある。",
+        sourceIds: ["hs-q3-2025-selloff", "hs-fy2025-results"],
+      },
+      {
+        title: "Breeze AIが実際にどれだけ収益に貢献しているか、会社自身も明確な数字を示していない",
+        body: "利用社数(Customer Agent 8,000社超等)は開示されているが、Breeze/AI起因のARRやドル建て収益貢献は開示されていない。経営陣自身、決算説明会で「クレジットの消費量とAIの収益化は同じではない」と釘を刺しており、AI活用の広がりがそのまま収益成長に直結しているとは言い切れない。",
+        confidence: "中",
+        evidence: [
+          "Breeze/AI起因の具体的なARR・売上貢献額が一切開示されていない",
+          "CFOが決算説明会で「AI機能の利用拡大=AI収益化ではない」と明言している",
+        ],
+        counterSignal: "2026年4月からのアウトカムベース課金への移行は、AI機能を座席契約とは別建ての収益源として確立しようとする明確な意思表示であり、Pro Plus顧客の4製品以上契約比率の上昇(+6pt)等、周辺指標は着実に改善している。",
+        sourceIds: ["hs-q2-2026-breeze-adoption"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本法人の純利益は8年で右肩上がり。ただし代表者は4年で3人交代している。",
+      narrative: "HubSpot Japan株式会社は2016年設立の株式会社で、決算公告(貸借対照表のみ、売上高は非開示)を追うと、2017年・2018年は赤字だったが2019年に黒字転換し、以降は2022年+29.1%、2023年+81.2%、2024年+17.5%、2025年+47.5%と純利益が概ね右肩上がりで拡大している。総資産も2017年の1.2億円から2025年には50億円超まで、8年間で約40倍に拡大しており、事業規模自体は大きく成長していることがうかがえる。一方で日本代表(カントリーマネージャー)は、2022年時点のダン・ボグナー氏→2024年4月に須田孝雄氏→2026年4月に伊佐裕也氏(社内で2018年から在籍し、2023年から代行を務めていた人物)と、4年で3回交代している。急成長企業にありがちな組織の新陳代謝と見ることもできるが、代表交代のペースとしては速く、方針の一貫性という観点では留意しておきたい、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "純利益が9年連続で概ね拡大基調", detail: "2019年に黒字転換して以降、2025年まで純利益はほぼ一貫して増加。総資産は8年で約40倍(1.2億円→50億円超)に拡大。", sourceId: "hs-japan-settlement" },
+        { label: "カントリーマネージャーが4年で3回交代", detail: "ダン・ボグナー氏(〜2022年頃)→須田孝雄氏(2024年4月)→伊佐裕也氏(2026年4月、社内在籍歴は2018年から)。", sourceId: "hs-japan-leadership" },
+      ],
+      sourceIds: ["hs-japan-settlement", "hs-japan-leadership"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "HubSpotの売り方は「限られた予算で継続的にリードを獲得する仕組み」という中堅・SMB企業の切実な課題が起点。AI検索時代における新しいインバウンド手法という文脈で語ると響きやすい。",
@@ -3337,6 +3627,54 @@ const zendeskSources: ResearchSource[] = [
     scope: "Senior Commercial AEの役割・要件",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "zendesk-ai-momentum",
+    label: "Zendesk「Zendesk Secures Key Industry Recognition as Its AI-First Strategy Gains Momentum」",
+    url: "https://www.prnewswire.com/news-releases/zendesk-secures-key-industry-recognition-as-its-ai-first-strategy-gains-momentum-302711393.html",
+    kind: "企業公式",
+    scope: "AI ARRの実績・見通し、Forrester Wave評価",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "zendesk-marketplace-moat",
+    label: "Zendesk公式ブログ「Zendesk Marketplace」拡大状況",
+    url: "https://www.zendesk.co.jp/blog/zendesk-marketplace/",
+    kind: "企業公式",
+    scope: "マーケットプレイスのアプリ数・導入率",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "zendesk-ai-competitor-benchmark",
+    label: "usefini.com「Zendesk vs Intercom AI Support Alternatives」比較記事",
+    url: "https://www.usefini.com/guides/zendesk-vs-intercom-ai-support-alternatives",
+    kind: "コミュニティ",
+    scope: "AIエージェントの解決率比較(Forrester集計の二次引用)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "zendesk-lbo-debt",
+    label: "Axios「Zendesk LBO Debt Financing」(2022年6月)",
+    url: "https://www.kore1.com/zendesk-layoffs-2026/",
+    kind: "外部集計",
+    scope: "PE買収時の負債規模と人員削減の経緯",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "zendesk-japan-leadership-2025",
+    label: "PR TIMES「合同会社Zendesk、森太郎氏が代表執行役社長に就任」",
+    url: "https://prtimes.jp/main/html/rd/p/000000049.000064750.html",
+    kind: "企業公式",
+    scope: "2025年7月の日本代表交代(森太郎氏)・日本チーム人員規模",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "zendesk-japan-growth-interview",
+    label: "マイナビニュース「Zendesk CEOが語る日本市場戦略」",
+    url: "https://news.mynavi.jp/techplus/article/20251104-3624744/",
+    kind: "外部集計",
+    scope: "日本売上の世界順位・2桁成長・AI活用状況",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const zendeskIntelligence: CompanyPublicIntelligence = {
@@ -3352,6 +3690,60 @@ const zendeskIntelligence: CompanyPublicIntelligence = {
       { year: "2025-26", label: "AI関連ARRが急拡大", detail: "非公開化直後のほぼゼロから2025年末に約2億ドルへ拡大、2026年は最大5億ドルを見込む。", sourceId: "zendesk-stats-2026" },
     ],
     sourceIds: ["zendesk-ipo-and-buyout", "zendesk-acquisition-press", "zendesk-tokyo-expansion", "zendesk-stats-2026"],
+    genbaVerdict: {
+      headline: "PE傘下の負債とリストラの陰で、AI ARRはほぼゼロから2億ドルへ——非公開化は「守り」ではなく「攻め」の投資だった。",
+      body: "2022年の非公開化は約110億ドル(うち大部分が負債)というレバレッジド・バイアウトで、その後複数回のレイオフを伴う効率化が進んだ。しかし同時にAI関連ARRは非公開化直後のほぼゼロから2025年末に2億ドルへ急拡大し、2026年は最大5億ドルを見込む。日本市場では「グローバル8位の売上規模からトップ5入りを目指す」と経営陣自ら明言しており、コスト規律とAI投資の両輪を回せるかが今後の焦点、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "AI ARRがほぼゼロから2億ドルへ、2026年は最大5億ドルを見込む",
+        body: "2025年末時点でAI ARRは2億ドル(前年はほぼゼロ)、AI製品を利用する顧客は2万社超に達した。2026年通期のガイダンスは最大5億ドル(前年比約150%増)。Forrester Wave(2026年Q1)では評価項目13項目で最高評価「Superior」を獲得している。",
+        sourceId: "zendesk-ai-momentum",
+      },
+      {
+        title: "マーケットプレイスの厚みによる乗り換えコストの高さ",
+        body: "Zendeskマーケットプレイスは1,800以上のアプリ・パートナー統合を持ち、顧客の58%が1つ以上のアプリを導入済み。アプリを導入している顧客が年間売上の約75%を占めており、単純な価格競争では代替されにくいエコシステムの厚みがある。",
+        sourceId: "zendesk-marketplace-moat",
+      },
+      {
+        title: "日本市場を「グローバル8位からトップ5」に押し上げる方針",
+        body: "CEOのTom Eggemeier氏は日本市場について「新規受注・売上ともに2桁成長」「AIセグメントは前年比100%超の成長」と明言し、グローバルでの売上順位を現在の8位からトップ5へ引き上げたいと発言している。",
+        sourceId: "zendesk-japan-growth-interview",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "AIネイティブ競合(Intercom等)に解決率で先行されている可能性",
+        body: "第三者による比較記事(Forrester集計の二次引用)では、Zendesk AI Agentsの解決率が約38%とされる一方、Intercom Finは約50%(Intercomの自社発表では76%)とされている。出典の性質上、数値そのものは慎重に扱う必要があるが、AIエージェントの解決精度という土俵で競合と比較される場面が増えている。",
+        confidence: "探索中",
+        evidence: [
+          "第三者比較記事でZendesk AI Agentsの解決率が約38%、Intercom Finが約50%とされる(Forrester集計の二次引用、一次資料未確認)",
+          "Intercomは自社発表で解決率76%・1件あたり$0.99という成果報酬型の価格を打ち出している",
+        ],
+        counterSignal: "ZendeskはForrester Wave(2026年Q1)で評価13項目中最高評価「Superior」を獲得しており、第三者評価機関の総合評価では強みを見せている。またAI ARRの実際の拡大ペース(ほぼゼロ→2億ドル→最大5億ドル見込み)は、少なくとも商業的にはAI競争で後れを取っていないことを示唆する。",
+        sourceIds: ["zendesk-ai-competitor-benchmark", "zendesk-ai-momentum"],
+      },
+      {
+        title: "PE買収時の負債とリストラが、投資余力・人材定着に影を落としている可能性",
+        body: "2022年の買収は総額約50億ドル規模の負債(SOFR+6.25%、実質金利11%台とされる一部トランシェを含む)で調達されており、重い元利払い負担を抱える。非公開化以降、カリフォルニアで3回のWARN通知(計199人)、2026年1月にはダブリン拠点で約350人(同拠点の約半数)を削減するなど、複数回のレイオフが確認されている。",
+        confidence: "中",
+        evidence: [
+          "2022年の買収は総額約50億ドル規模の負債で調達され、一部トランシェは実質金利11%台とされる",
+          "非公開化以降、カリフォルニアで3回のWARN通知(計199人)、2026年1月にダブリン拠点で約350人(同拠点の約半数)を削減",
+        ],
+        counterSignal: "レイオフと同時に、グローバル全体の人員数はむしろ前年比+10.3%増(約6,821〜6,970人)と増加しており、ダブリンの削減は「地理的な拠点再編」であって全社的な縮小ではないとされる。会社側は2026年に全社的なエンジニア削減は予定していないと説明し、インド・フィリピン等の低コスト拠点への再配置(投資の継続)が実態に近いとみられる。",
+        sourceIds: ["zendesk-lbo-debt"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本代表が1年で交代。それでも「2桁成長」を掲げ続けられるかが焦点。",
+      narrative: "合同会社Zendeskは合同会社のため決算公告の義務がなく、日本法人単体の売上・利益は非公開。ただしCEOのTom Eggemeier氏自身が「日本は新規受注・売上ともに2桁成長」「AIセグメントは前年比100%超」「主要顧客の約7割が既にAIエージェントを利用」と繰り返し発言しており、グローバル本社が名指しで力を入れている市場であることがうかがえる。2025年5月には日本代表(冨永健氏)がjinjer株式会社のCEOへ転出し、後任として2025年7月に森太郎氏(元SAP Japan・Oracle Japan)が代表執行役社長に就任した。日本チームの人員規模は営業・コンサルティング・カスタマーサクセスを合わせて約80名とされる。2025年10〜11月には金融機関向けのコンタクトセンター新製品を日本でも正式提供開始し、SIerのUNIADEXを新たな販売パートナーに迎えるなど、代表交代と並行して製品・パートナー展開は継続している、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "CEOが名指しで「2桁成長」「AIセグメント+100%」と明言", detail: "日本の新規受注・売上ともに2桁成長、AIセグメントは前年比100%超、主要顧客の約7割がAIエージェントを利用済みとCEO自ら発言。グローバル売上順位は現在8位、トップ5入りを目指すとしている。", sourceId: "zendesk-japan-growth-interview" },
+        { label: "2025年7月に日本代表が交代", detail: "冨永健氏(2021年3月就任)がjinjer株式会社のCEOへ転出し、森太郎氏(元SAP Japan・Oracle Japan)が後任に。日本チームは営業・コンサル・CSで約80名。", sourceId: "zendesk-japan-leadership-2025" },
+      ],
+      sourceIds: ["zendesk-japan-growth-interview", "zendesk-japan-leadership-2025"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "Zendeskの売り方の起点は「サポートチケットが増え続け、対応品質もスピードも落ちている」という課題。Salesforce Service Cloudほど大掛かりでなく、Freshdeskより高機能という「ちょうど良さ」を軸に語る。",
@@ -3651,6 +4043,38 @@ const uipathSources: ResearchSource[] = [
     scope: "日本導入事例",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "uipath-q1fy27-results",
+    label: "UiPath IR「Reports First Quarter Fiscal 2027 Financial Results」",
+    url: "https://ir.uipath.com/news/detail/452/uipath-reports-first-quarter-fiscal-2027-financial-results",
+    kind: "企業公式",
+    scope: "ARR成長率の推移・NRR",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "uipath-agentic-skepticism",
+    label: "Diginomica「Hype, Hard Truths: UiPath's Ed Challis on What's Holding Agentic AI Back」",
+    url: "https://diginomica.com/hype-hard-truths-uipath-ed-challis-whats-holding-agentic-ai-back",
+    kind: "外部集計",
+    scope: "エージェンティックAI導入の実態への懐疑的な見方",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "uipath-stock-drop-2026",
+    label: "Motley Fool「UiPath Stock Just Fell 15%. Here's Why」",
+    url: "https://www.fool.com/investing/2026/07/24/uipath-stock-just-fell-15-heres-why-this-could-be-a-great-buying-opportunity/",
+    kind: "外部集計",
+    scope: "2026年7月の株価急落とAI自動化需要への懸念",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "uipath-japan-settlement",
+    label: "官報決算データベース「UiPath株式会社」決算公告一覧",
+    url: "https://catr.jp/companies/e9365/58572",
+    kind: "法定開示",
+    scope: "日本法人 2023〜2026年(第7〜10期)の純利益・総資産(貸借対照表のみ、売上高は非開示)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const uipathIntelligence: CompanyPublicIntelligence = {
@@ -3669,6 +4093,60 @@ const uipathIntelligence: CompanyPublicIntelligence = {
       { year: "2026", label: "創業以来初のGAAP通期黒字化", detail: "収益性は改善した一方、ARR成長率は+11%まで鈍化。新戦略の収益化が今後の焦点。", sourceId: "uipath-q1fy27-earnings" },
     ],
     sourceIds: ["uipath-rpa-pivot", "uipath-ipo", "uipath-agentic-platform", "uipath-q1fy27-earnings"],
+    genbaVerdict: {
+      headline: "成長率の鈍化は底を打ちつつあるが、「エージェンティック」の看板に見合う実績はまだない。",
+      body: "ARR成長率はFY24の+22%からFY26には+11%まで落ち込んだ後、Q1 FY27には+12%へわずかに反転し、鈍化に歯止めがかかりつつある。一方で「エージェンティック・オートメーション」という新戦略は、Gartnerの評価では確かにリーダー格と認められているものの、ARR・売上への貢献額は一切開示されておらず、2026年7月には需要への懐疑から株価が1日で15%下落する場面もあった。数字の底打ちと、新戦略の看板が実績として結びつくのはこれからだ、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "ARR成長率が鈍化から反転の兆し",
+        body: "ARR成長率はFY24 +22%→FY25 +14%→FY26 +11%と鈍化を続けていたが、Q1 FY27(2026年5月発表)には+12%へわずかに反転。NRR(純収益維持率)は109%で、$1M以上のARR顧客も374社まで拡大している。",
+        sourceId: "uipath-q1fy27-results",
+      },
+      {
+        title: "創業以来初のGAAP通期黒字化、非GAAP営業利益率は22%",
+        body: "FY2026は創業以来初めてGAAPベースの通期黒字を達成。Q1 FY27の非GAAP営業利益率は22%で、長期目標として非GAAP営業利益率30%への引き上げも掲げている。",
+        sourceId: "uipath-q1fy27-results",
+      },
+      {
+        title: "Gartnerがエージェンティック・オートメーション分野の「リーダー」に選出",
+        body: "Gartnerの「Magic Quadrant for Agentic Automation Platforms」(2026年版)で、Microsoft・ServiceNowと並びリーダーの一角に選出された。自社の主張だけでなく第三者評価機関からも独立した裏付けを得ている。",
+        sourceId: "uipath-agentic-skepticism",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "「エージェンティック」の看板に、まだ数字の裏付けがない",
+        body: "Maestro等のエージェンティック製品について、専用のARR・売上・顧客数は一切開示されておらず、決算での説明も「パイロットから本番運用へ移行中」という定性的な表現にとどまる。2026年7月には、AI自動化需要への投資家の懐疑と弱めのQ2 ARR見通しを理由に株価が1日で15%下落する場面もあった。",
+        confidence: "中",
+        evidence: [
+          "エージェンティック製品(Maestro等)専用のARR・売上・顧客数が一切開示されていない",
+          "2026年7月、AI自動化需要への懸念とQ2 ARR見通しの弱さを理由に株価が1日で15%下落",
+        ],
+        counterSignal: "GartnerのMagic Quadrant(2026年版)でMicrosoft・ServiceNowと並びリーダーに選出されており、第三者評価では独立した裏付けがある。ARR成長率自体もFY26の+11%からQ1 FY27には+12%へ反転しており、鈍化に歯止めがかかりつつある兆候もある。",
+        sourceIds: ["uipath-stock-drop-2026", "uipath-agentic-skepticism"],
+      },
+      {
+        title: "「エンタープライズ全般がAI活用の効果を測定できていない」という業界共通の壁に直面",
+        body: "自社のAI戦略責任者(Ed Challis氏)自身が、多くの企業がAIエージェントの技術的な能力と、実際のビジネスインパクトの間の「未実現ゾーン」で足踏みしていると公に指摘している。これはUiPath固有の弱さというより業界全体の壁だが、自動化ツールを売る企業自身がこの壁を公に認めている点は率直に評価すべき情報。",
+        confidence: "探索中",
+        evidence: [
+          "自社のAI戦略責任者が、企業のAIエージェント活用が「技術力とビジネスインパクトの間の未実現ゾーン」で止まっていると公言",
+          "Microsoft 365 Copilot Studio等、汎用プラットフォームとの価格・機能の収斂により、CFOから「なぜ専用ツールが必要か」を問われる場面が増えているとの業界分析がある",
+        ],
+        counterSignal: "業界全体が同じ壁に直面しているなら、最初に顧客の実運用データを蓄積し、具体的な成功パターンを提示できたベンダーが先行者優位を得られる可能性がある。UiPathは長年のRPA導入実績を持つ既存顧客基盤を、その実証の場として活用できる立場にある。",
+        sourceIds: ["uipath-agentic-skepticism"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本法人の純利益も、グローバルと同じタイミングで頭打ちの兆しを見せている。",
+      narrative: "UiPath株式会社(日本法人)は2017年設立の株式会社で、決算公告(貸借対照表のみ、売上高は非開示)を追うと、純利益は第7期(2023年1月期)4.0億円→第8期(2024年1月期)5.4億円(+35.9%)→第9期(2025年1月期)8.9億円(+64.2%)と急拡大した後、第10期(2026年1月期)は8.0億円(-10.9%)と減少に転じている。総資産も同時期に99.9億円→149.2億円→141.6億円→145.3億円と、第9期をピークに伸びが止まっている。これは、グローバルのARR成長率がFY24の+22%からFY26に+11%まで鈍化した時期とほぼ重なっており、日本法人単体でも同じ成長減速の波を受けている可能性が高い、というのがGenbaの読み。代表者名は決算公告上で表記が変わっており(第7期と第8期以降で異なる)、この間に代表者交代があったとみられるが、詳細な経緯は確認できていない。",
+      qualitativeSignals: [
+        { label: "純利益が第9期をピークに減少に転じる", detail: "4.0億円(第7期)→5.4億円→8.9億円(第9期、+64.2%)→8.0億円(第10期、-10.9%)。総資産も第9期をピークに伸びが止まっている。", sourceId: "uipath-japan-settlement" },
+        { label: "決算公告上、代表者表記が交代", detail: "第7期と第8期以降で登記上の代表者名の表記が変わっており、この間に代表者交代があったとみられる。詳細な経緯・後任者の経歴は確認できていない。", sourceId: "uipath-japan-settlement" },
+      ],
+      sourceIds: ["uipath-japan-settlement"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "UiPathの売り方は、従来の「定型作業の自動化(RPA)」から「AIエージェントがRPAボットを指揮する自動化(エージェンティック・オートメーション)」への転換をどう語れるかが軸になる。",
@@ -4248,6 +4726,46 @@ const pagerdutySources: ResearchSource[] = [
     scope: "Sr. Sales Managerの役割・要件",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "pagerduty-usage-pricing-detail",
+    label: "GuruFocus「PagerDuty Inc (PD) Q1 2027 Earnings Call Highlights」",
+    url: "https://www.gurufocus.com/news/8890377/pagerduty-inc-pd-q1-2027-earnings-call-highlights-steady-revenue-and-strategic-shifts-amidst-market-dynamics?mobile=true",
+    kind: "外部集計",
+    scope: "使用量ベース課金の比率・PLG新規顧客数の詳細",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "pagerduty-fy26-margin",
+    label: "PagerDuty「Announces Fourth Quarter, Full Year Fiscal 2026 Financial Results」",
+    url: "https://www.pagerduty.com/newsroom/pagerduty-announces-fourth-quarter-full-year-fiscal-2026-financial-results/",
+    kind: "企業公式",
+    scope: "FY2026通期の非GAAP営業利益率・フリーキャッシュフロー",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "pagerduty-growth-deceleration",
+    label: "PagerDuty IR「Q1 FY27決算資料」(売上成長率推移)",
+    url: "https://www.pagerduty.com/newsroom/pagerduty-announces-first-quarter-fiscal-2027-financial-results/",
+    kind: "企業公式",
+    scope: "四半期売上成長率・NRRの推移",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "pagerduty-morgan-stanley-downgrade",
+    label: "Investing.com「Morgan Stanley Downgrades PagerDuty Stock Rating on AI Threats」",
+    url: "https://www.investing.com/news/analyst-ratings/morgan-stanley-downgrades-pagerduty-stock-rating-on-ai-threats-93CH-4801994",
+    kind: "外部集計",
+    scope: "2026年7月のアナリスト格下げ・AI脅威評価",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "pagerduty-japan-settlement",
+    label: "官報決算データベース・決算公告データ倉庫「PagerDuty株式会社」決算公告",
+    url: "https://catr.jp/companies/c877b/225384",
+    kind: "法定開示",
+    scope: "日本法人 2023〜2025年(第1〜3期)の純損益・純資産(債務超過含む)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const pagerdutyIntelligence: CompanyPublicIntelligence = {
@@ -4266,6 +4784,60 @@ const pagerdutyIntelligence: CompanyPublicIntelligence = {
       { year: "2025-26", label: "座席課金から使用量ベース課金へ移行", detail: "価格モデルの移行が進行中で、短期的な成長率の重石になっている。", sourceId: "pagerduty-pricing-shift" },
     ],
     sourceIds: ["pagerduty-ipo", "pagerduty-acquisitions", "pagerduty-pricing-shift", "pagerduty-q1fy27-earnings"],
+    genbaVerdict: {
+      headline: "グローバルは成長ほぼ停止、日本法人は債務超過。正直、この9社の中で最も厳しい数字が並ぶ。",
+      body: "売上成長率は6.4%→2.7%→1.0%と3四半期連続で鈍化し、純収益維持率(NRR)も4四半期連続で低下、2026年7月にはMorgan StanleyがAI時代における構造的な劣位を理由に「Underweight」へ格下げした。日本法人も2025年1月期時点で債務超過(純資産がマイナス)の状態にあることが決算公告から確認できる。使用量ベース課金への移行やPLGでの新規顧客獲得など、次の一手の芽は見えるが、まだ数字として結実していない、というのが率直なGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "使用量ベース課金への移行が、小さいながらも進み始めている",
+        body: "AIOps等の使用量ベース製品は全ARRの約10%まで拡大し、この新価格モデルに移行した顧客のARRはQ4→Q1で前四半期比ほぼ倍増。年間10万ドル超を支払う顧客が15社以上、新モデルへ移行した。",
+        sourceId: "pagerduty-usage-pricing-detail",
+      },
+      {
+        title: "利益率・キャッシュフローは着実に改善",
+        body: "FY2026通期の非GAAP営業利益率は24.6%(前年から約700bp改善)、フリーキャッシュフローは1.027億ドル。成長が止まる中でも、コスト規律では明確な実績を出している。",
+        sourceId: "pagerduty-fy26-margin",
+      },
+      {
+        title: "PLG(製品主導型成長)による新規顧客獲得は継続",
+        body: "PLGモーション経由の新規顧客獲得は5四半期連続で600社超を維持し、有償+無償の総顧客数は35,000社超(前年比+14%)まで拡大。ただし有償顧客・ARRの伸びはほぼ横ばいで、無償から有償への転換が課題として残る。",
+        sourceId: "pagerduty-usage-pricing-detail",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "売上成長率・NRRとも、複数四半期連続で悪化が続いている",
+        body: "売上成長率(前年比)は6.4%(2025年7月期)→2.7%(2026年1月期)→1.0%(2026年4月期)と3四半期連続で鈍化。純収益維持率(NRR)も102%→100%→98%→97%と4四半期連続で低下しており、一時的な調整ではなく構造的なトレンドの可能性がある。",
+        confidence: "高",
+        evidence: [
+          "売上成長率が6.4%→2.7%→1.0%と3四半期連続で鈍化",
+          "NRRが102%→100%→98%→97%と4四半期連続で低下",
+        ],
+        counterSignal: "会社側はFY2026通期で+5.4%の増収を確保しており、「収益維持率は底打ちしつつある」と自ら説明している。使用量ベース課金への移行という構造変化の過渡期という側面もあり、移行完了後の姿はまだ見えていない。",
+        sourceIds: ["pagerduty-growth-deceleration"],
+      },
+      {
+        title: "Wall Streetは「AI時代の敗者」として織り込み始めている",
+        body: "Morgan Stanleyは2026年7月21日、AIオポチュニティ/脅威フレームワークで「下位20%」に位置づけ、AIネイティブ競合への防御力の弱さや座席圧縮リスクを理由に「Underweight」へ格下げ(目標株価$10→$9)。株価は2026年に入り年初来23.8%下落、52週高値から45%下落した水準で推移している。",
+        confidence: "中",
+        evidence: [
+          "Morgan Stanleyが2026年7月にAI脅威フレームワークで「下位20%」と評価し「Underweight」へ格下げ",
+          "株価は年初来-23.8%、52週高値から-45%の水準で推移。BofAも「Sell」評価を継続",
+        ],
+        counterSignal: "会社は同時期に1億ドルの自社株買い増枠を発表しており、経営陣自身は現在の株価水準を割安と見ていることを示唆している。フリーキャッシュフローが安定して黒字である点は、AI時代を生き残るための投資余力自体は残っていることを示す。",
+        sourceIds: ["pagerduty-morgan-stanley-downgrade"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本法人は2025年1月期時点で債務超過。決算公告が示す、グローバルより厳しい実態。",
+      narrative: "PagerDuty株式会社(日本法人、Japan Cloudとの合弁で2022年5月設立)の決算公告を追うと、第1期(2023年1月期)は純損失▲2.47億円・総資産2.87億円でスタートし、第2期(2024年1月期)には純損失が▲6.24億円まで拡大(「赤字拡大」と決算公告上でも明記)、総資産は4.66億円(+62.4%)まで増えた。第3期(2025年1月期)は純損失▲2.92億円とやや縮小したものの、総資産8.11億円に対して総負債9.21億円、純資産は▲1.10億円の債務超過となり、累積損失(9.16億円)が資本金(9,000万円)を上回っている状態にある。これは日本法人が単体では自立できておらず、親会社(PagerDuty本体)からの財務的な支援に依存していることを示す公開情報上の事実である。第4期(2026年1月期)の決算公告はまだ確認できていないが、合弁パートナーのJapan Cloudは「2年以上の協業を経て日本市場で大きく前進している」という定性的な表現に留めており、具体的な売上・成長率は開示していない。グローバル本体の成長鈍化と合わせて見ると、日本法人の立ち上げも厳しい局面にある可能性が高い、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "2025年1月期時点で債務超過(純資産▲1.10億円)", detail: "累積損失9.16億円が資本金9,000万円を上回る。3期連続の赤字で、親会社からの財務支援に依存している状態。", sourceId: "pagerduty-japan-settlement" },
+        { label: "合弁パートナーJapan Cloudは定性的な表現のみ", detail: "「2年以上の協業を経て日本市場で大きく前進」という表現に留まり、具体的な売上・成長率は開示されていない。", sourceId: "pagerduty-japan-settlement" },
+      ],
+      sourceIds: ["pagerduty-japan-settlement"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "PagerDutyの売り方は「システム障害への気づきと対応が遅れるほど、ビジネスの損失が拡大する」という課題が起点。成長が鈍化している局面だからこそ、既存顧客への深耕提案(AI活用等)の物語をどう作れるかが鍵になる。",
