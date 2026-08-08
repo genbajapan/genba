@@ -109,20 +109,31 @@ button, input, select { font: inherit; }
 .heat-tile-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-top: 4px; }
 .heat-tile { display: block; padding: 11px 12px 12px; border: 1px solid #244555; background: #0b2233; color: inherit; text-decoration: none; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
 .heat-tile:hover { border-color: #70d3c5; background: #0d2a3c; transform: translateY(-2px); }
-.heat-tile-hot { border-color: #3f7e80; background: #0c2a34; }
-.heat-tile-hot:hover { border-color: #51b8aa; }
+.heat-tile-hot { border-color: #7a3f3f; background: #2a0f0f; }
+.heat-tile-hot:hover { border-color: #f08585; }
+.heat-tile-active { border-color: #6b6234; background: #24200f; }
+.heat-tile-active:hover { border-color: #d9bd5f; }
+.heat-tile-selective { border-color: #3f7e5c; background: #0c2a1e; }
+.heat-tile-selective:hover { border-color: #70d39a; }
 .heat-tile-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .heat-tile-rank { color: #5f7f8c; font-size: 9px; font-weight: 850; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.heat-tile-badge { flex-shrink: 0; padding: 2px 5px; background: #134b44; color: #7edbce; font-size: 8px; font-weight: 850; letter-spacing: .08em; }
+.heat-tile-badge { flex-shrink: 0; padding: 2px 5px; font-size: 8px; font-weight: 850; letter-spacing: .08em; }
+.heat-tile-badge-hot { background: rgba(240,133,133,.16); color: #f79b9b; }
+.heat-tile-badge-active { background: rgba(217,189,95,.16); color: #e3c66f; }
+.heat-tile-badge-selective { background: rgba(112,211,154,.16); color: #7edbae; }
 .heat-tile h3 { margin: 7px 0 0; color: #cfdae0; font-size: 11px; font-weight: 750; line-height: 1.35; }
-.heat-tile-hot h3 { color: #80ded1; }
+.heat-tile-hot h3 { color: #f5a7a7; }
+.heat-tile-active h3 { color: #e3c66f; }
+.heat-tile-selective h3 { color: #7edbae; }
 .heat-tile-stats { display: flex; align-items: baseline; gap: 14px; margin-top: 9px; }
 .heat-tile-stats div { display: flex; align-items: baseline; gap: 2px; }
 .heat-tile-stats strong { color: white; font-size: 20px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .heat-tile-stats span { color: #78929e; font-size: 9px; }
 .heat-tile-track { position: relative; height: 3px; margin-top: 8px; background: rgba(255,255,255,.08); overflow: hidden; }
 .heat-tile-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: #3f7e80; transition: width .48s cubic-bezier(.2,.8,.2,1); }
-.heat-tile-hot .heat-tile-fill { background: #51b8aa; box-shadow: 0 0 12px rgba(81,184,170,.35); }
+.heat-tile-hot .heat-tile-fill { background: #f08585; box-shadow: 0 0 12px rgba(240,133,133,.35); }
+.heat-tile-active .heat-tile-fill { background: #d9bd5f; box-shadow: 0 0 12px rgba(217,189,95,.35); }
+.heat-tile-selective .heat-tile-fill { background: #70d39a; }
 .market-insight { padding: 30px 27px; background: #0b2a3b; border-left: 1px solid #294857; }
 .market-tier-board { padding: 26px 38px 30px; border-bottom: 1px solid #294857; }
 .market-tier-heading { margin: 0; color: #7b96a3; font-size: 9px; font-weight: 800; letter-spacing: .1em; }

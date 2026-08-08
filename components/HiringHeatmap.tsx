@@ -77,16 +77,17 @@ export default function HiringHeatmap() {
           <div className="heat-tile-grid">
             {rows.map((row, index) => {
               const width = row.count === 0 ? 0 : Math.max(6, (row.count / maximum) * 100);
-              const isHot = row.count > 0 && row.count === maximum;
+              const tier = row.count === 0 ? "selective" : row.count === maximum ? "hot" : "active";
+              const tierLabel = tier === "hot" ? "HOT" : tier === "active" ? "Active" : "Selective";
               return (
                 <Link
                   href={`/companies?category=${encodeURIComponent(row.area)}`}
-                  className={`heat-tile ${isHot ? "heat-tile-hot" : ""}`}
+                  className={`heat-tile heat-tile-${tier}`}
                   key={row.area}
                 >
                   <div className="heat-tile-top">
                     <span className="heat-tile-rank">{String(index + 1).padStart(2, "0")}</span>
-                    {isHot && <span className="heat-tile-badge">HOT</span>}
+                    <span className={`heat-tile-badge heat-tile-badge-${tier}`}>{tierLabel}</span>
                   </div>
                   <h3>{row.area}</h3>
                   <div className="heat-tile-stats">
