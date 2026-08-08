@@ -2810,6 +2810,46 @@ const oktaSources: ResearchSource[] = [
     scope: "Enterprise Auth0 AEの役割・要件",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "okta-fy26-results",
+    label: "Okta「Announces Fourth Quarter Fiscal Year 2026 Financial Results」",
+    url: "https://www.okta.com/newsroom/press-releases/okta-announces-fourth-quarter-fiscal-year-2026-financial-results/",
+    kind: "企業公式",
+    scope: "FY2026通期の営業利益率・新製品ブッキング比率",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "okta-ai-agents-launch",
+    label: "TIKR「Okta Stock Fell 20% in 2026: Why the April 30 Launch Changes the Math」",
+    url: "https://www.tikr.com/blog/okta-stock-fell-20-in-2026-why-the-april-30-launch-changes-the-math",
+    kind: "外部集計",
+    scope: "AWS Marketplace経由の契約額成長、Okta for AI Agents",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "okta-microsoft-competition",
+    label: "Decryption Digest「Okta vs Microsoft Entra ID Enterprise IAM Comparison」",
+    url: "https://www.decryptiondigest.com/blog/okta-vs-microsoft-entra-id-enterprise-iam-comparison",
+    kind: "コミュニティ",
+    scope: "IAMaaS市場でのマインドシェア推移",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "okta-2023-support-breach",
+    label: "Nightfall AI「Okta Data Breach: What Happened, Impact and Security Lessons Learned」",
+    url: "https://www.nightfall.ai/blog/okta-data-breach-what-happened-impact-and-security-lessons-learned",
+    kind: "外部集計",
+    scope: "2023年10月のサポートケース管理システム侵害事案",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "okta-japan-settlement",
+    label: "官報決算データベース「Okta Japan株式会社」決算公告",
+    url: "https://catr.jp/companies/35bfa/169662",
+    kind: "法定開示",
+    scope: "日本法人 第1期(2021年1月期)決算公告(以降の期は公開データベース上で確認できず)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const oktaIntelligence: CompanyPublicIntelligence = {
@@ -2826,8 +2866,63 @@ const oktaIntelligence: CompanyPublicIntelligence = {
       { year: "2021", label: "Auth0を$65億で買収", detail: "自社史上最大の買収。開発者向けID管理を取り込み、従業員向けIDとの両輪体制を構築。", sourceId: "okta-auth0-acquisition" },
       { year: "2022.1-3", label: "Lapsus$による侵害インシデント", detail: "サードパーティのサポートベンダー(Sitel)経由で攻撃者に内部ツールへ約5日間アクセスされた。", sourceId: "okta-lapsus-breach" },
       { year: "2022.12", label: "GitHubソースコード窃取事案", detail: "Workforce Identity Cloud関連のプライベートリポジトリが不正アクセスを受けた。本番環境・顧客データへの影響はないとOktaは説明。", sourceId: "okta-github-breach" },
+      { year: "2023.10", label: "3件目のセキュリティインシデント(サポートシステム侵害)", detail: "サポートケース管理システムが窃取された認証情報経由で侵害され、報道では顧客基盤の実質全体が影響を受けうる規模だったとされる。", sourceId: "okta-2023-support-breach" },
     ],
-    sourceIds: ["okta-ipo", "okta-auth0-acquisition", "okta-lapsus-breach", "okta-github-breach", "okta-q1fy27-earnings"],
+    sourceIds: ["okta-ipo", "okta-auth0-acquisition", "okta-lapsus-breach", "okta-github-breach", "okta-2023-support-breach", "okta-q1fy27-earnings"],
+    genbaVerdict: {
+      headline: "利益率は着実に改善しているが、成長率でMicrosoftとの差が開きつつある。",
+      body: "非GAAP営業利益率はFY24の14%からFY26には26%まで着実に改善し、AI関連の新製品(Identity Governance、Privileged Access、Okta for AI Agents)がQ4 FY26のブッキングの3割を占めるまでに育っている。一方で、IAMaaS市場でのマインドシェアはMicrosoft Entra IDの16.8%に対しOktaは8.9%まで低下(前年比)しており、増収率もFY27ガイダンスで9〜10%まで鈍化する見通し。利益体質の強化と、Microsoftとのシェア争いでの防戦という、2つの異なる戦いを同時に戦っている局面にある、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "非GAAP営業利益率がFY24の14%からFY26には26%へ改善",
+        body: "FY2026通期の非GAAP営業利益は7.66億ドル(売上29.19億ドルに対し26%の利益率)。増収率が鈍化する中でも、利益体質の強化では明確な実績を積み上げている。",
+        sourceId: "okta-fy26-results",
+      },
+      {
+        title: "新製品(ID統治・AIエージェントセキュリティ)がブッキングの3割を占める",
+        body: "Identity Governance、Privileged Access等の新製品は、Q4 FY26のブッキングの約3割を占め、これらを含む契約は平均契約額が約4割高い。2026年4月30日には「Okta for AI Agents」を発表し、AIエージェントのID管理という新しい領域への布石も打っている。",
+        sourceId: "okta-ai-agents-launch",
+      },
+      {
+        title: "AWS Marketplace経由の販売がFY26に前年比+45%で拡大",
+        body: "AWS Marketplace経由で取引された契約額はFY26に前年比45%超で成長し、約7.5億ドル規模に達した。直販に依存しない販売チャネルの多様化が進んでいる。",
+        sourceId: "okta-ai-agents-launch",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "Microsoft Entra IDとのマインドシェア争いで、明確に劣勢に立たされている",
+        body: "IAMaaS市場のマインドシェア調査では、Oktaは前年比14.0%→8.9%まで低下した一方、Microsoft Entra IDは16.8%とOktaのほぼ2倍の水準を維持している。Gartnerの実行力評価でもMicrosoftが1位、Oktaが2位という順位の逆転が起きている。売上成長率も12%→13%→12%→11%→11%(Q1 FY27)と鈍化が続き、FY27通期ガイダンスは9〜10%にとどまる。",
+        confidence: "高",
+        evidence: [
+          "IAMaaS市場のマインドシェアがOkta 8.9%に対しMicrosoft Entra ID 16.8%(前年比、約2倍の差)",
+          "売上成長率が12%→11%台まで鈍化し、FY27ガイダンスは9〜10%",
+        ],
+        counterSignal: "MicrosoftはM365・Azureに深く標準化した顧客での優位が中心で、Google Workspace・AWS・Salesforce・Snowflake等が混在するマルチベンダー環境では、18,000以上のアプリ連携を持つOktaが依然として選ばれやすいとされる。大口顧客(ACV$100万以上)は前年比+19%で増加を続けており、購買の最終局面での信頼は失われていない。",
+        sourceIds: ["okta-microsoft-competition", "okta-q1fy27-earnings"],
+      },
+      {
+        title: "2022年の2件に続き、2023年にも3件目のセキュリティインシデントが発生していた",
+        body: "2022年のLapsus$侵害・GitHubソースコード窃取に続き、2023年10月にはサポートケース管理システムが窃取された認証情報経由で侵害される事案が発生。報道では顧客基盤の実質全体が影響を受けうる規模とされ、セキュリティ企業としての信頼回復が思うように進んでいない可能性がある。純収益維持率(NRR)も複数四半期にわたり106%前後で横ばいが続いている。",
+        confidence: "中",
+        evidence: [
+          "2022年の2件に続き、2023年10月にもサポートシステム経由の侵害インシデントが発生",
+          "純収益維持率(NRR)が複数四半期にわたり106%前後で横ばい",
+        ],
+        counterSignal: "GartnerのMagic Quadrant(アクセス管理分野)では7年連続でリーダーに選出されており、セキュリティ企業としての第三者評価そのものは維持されている。大口顧客のACV成長が続いていることも、購買時点での信頼喪失が限定的であることを示唆する。",
+        sourceIds: ["okta-2023-support-breach"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本法人の決算公告は、設立直後の1期分しか公開データベース上で確認できない。",
+      narrative: "Okta Japan株式会社(2020年9月設立の株式会社)の決算公告を探すと、第1期(2021年1月期、純利益648.6万円・総資産1億4,554.8万円)のみが官報決算データベース上で確認でき、第2期以降の公告は複数の検索方法を試しても見つからなかった。小規模な株式会社では決算公告の継続的な提出が徹底されていないケースもあり、非公開化(意図的な不提出)なのか、単にデータベースの索引漏れなのかは判別できない。なお、買収したAuth0の日本法人だった「Auth0株式会社」は、同じ官報決算データベース上で「閉鎖済み」と表示されており、buyout後にOkta Japanへ統合されたとみられる。日本法人単体の直近の成長度合いを示す公開データはほぼ無く、この点は他社と比べても情報開示が薄い部類に入る、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "決算公告は設立直後の1期分のみ確認可能", detail: "第1期(2021年1月期)は純利益648.6万円・総資産1億4,554.8万円。第2期以降は公開データベース上で確認できず、継続提出の有無は不明。", sourceId: "okta-japan-settlement" },
+        { label: "Auth0の日本法人は「閉鎖済み」", detail: "買収前にAuth0の日本展開を担っていた「Auth0株式会社」は、官報決算データベース上で閉鎖済みとされており、Okta Japanへの統合が進んだとみられる。", sourceId: "okta-japan-settlement" },
+      ],
+      sourceIds: ["okta-japan-settlement"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "Oktaの売り方の起点は「ID基盤がベンダーごとに分散し、セキュリティの穴と運用負荷を生んでいる」という課題。Microsoft中心の環境か、マルチクラウド・マルチSaaS環境かで、刺さる切り口が変わる。",
@@ -3930,6 +4025,30 @@ const confluentSources: ResearchSource[] = [
     scope: "MSP/ISV AEの役割・要件",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "confluent-fy2025-results",
+    label: "Confluent「Fourth Quarter and Fiscal Year 2025 Financial Results」",
+    url: "https://finance.yahoo.com/news/confluent-announces-fourth-quarter-fiscal-210300269.html",
+    kind: "企業公式",
+    scope: "非公開化前最後の通期決算・Confluent Cloud成長率",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "confluent-deceleration-and-deal",
+    label: "WallStreetZen売上推移データ・CNBC買収報道",
+    url: "https://www.cnbc.com/2025/12/08/ibm-confluent-deal-data.html",
+    kind: "外部集計",
+    scope: "非公開化前4年間の増収率鈍化、買収発表時の株価反応",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "confluent-japan-salesnow",
+    label: "SalesNow「Confluent Japan合同会社」企業情報",
+    url: "https://salesnow.jp/db/companies/4010903006196",
+    kind: "外部集計",
+    scope: "日本法人の直近ニュース・GTM活動状況(2026年3月の買収完了後も継続)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const confluentIntelligence: CompanyPublicIntelligence = {
@@ -3944,6 +4063,60 @@ const confluentIntelligence: CompanyPublicIntelligence = {
       { year: "2026.3", label: "IBMが完全子会社化・上場廃止", detail: "1株31ドル・総額約110億ドルで買収完了。watsonx.data等IBM製品との統合を進める方針。", sourceId: "confluent-ibm-acquisition" },
     ],
     sourceIds: ["confluent-founding", "confluent-ipo", "confluent-ibm-acquisition"],
+    genbaVerdict: {
+      headline: "4年連続の増収率鈍化の末の身売り。ただし「安売り」ではなく、市場はこの買収を好感して迎えた。",
+      body: "Confluentの増収率は2021年の+64%から2025年には+21%まで4年連続で鈍化しており、これがIBMによる買収を招いた背景にあると考えられる。しかしIBMは直近30日間の出来高加重平均株価に35%のプレミアムを乗せて買収しており、発表当日の株価も+29%と急伸した。「業績が息切れしたから買われた」のではなく「事業の伸びしろをIBMが評価して買った」という構図に近い、というのがGenbaの読み。日本を含む営業組織が買収後どう変わるかは、公開情報からはほとんど確認できない。",
+    },
+    growthDrivers: [
+      {
+        title: "消費型のConfluent Cloudが、サブスクリプション全体より速いペースで成長",
+        body: "非公開化前最後の通期(2025年)で、サブスクリプション売上11.2億ドル(+21%)に対し、消費型のConfluent Cloud売上は6.24億ドル(+27%)とより高い成長率を記録。ストリーム処理機能Flinkの ARRはQ3 2025に前四半期比+70%超という急拡大を見せた。",
+        sourceId: "confluent-fy2025-results",
+      },
+      {
+        title: "長年の赤字体質から、利益率の明確な改善軌道へ",
+        body: "非GAAP営業利益率はほぼ収支トントンの水準から、2025年Q1に4.3%、Q2に6.3%(いずれも前年比約6pt改善)へ向上。Q3 2025の調整後フリーキャッシュフローは前年比2倍超の2,460万ドルに達した。",
+        sourceId: "confluent-fy2025-results",
+      },
+      {
+        title: "IBMは「コスト削減」ではなく「製品統合」を買収の理由として説明",
+        body: "IBMはConfluentの技術を、watsonx.data・IBM MQ・IBM Zと初日から統合する方針を示しており、エンタープライズAI戦略の中核技術として位置づけている。買収の動機がリストラよりも事業拡張にあることを、公式には強調している。",
+        sourceId: "confluent-ibm-acquisition",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "非公開化前、増収率は4年連続で鈍化しており、大口顧客の伸びも売上ほど強くなかった",
+        body: "増収率は2021年+64%→2022年+51%→2023年+33%→2024年+24%→2025年+21%と、きれいな右肩下がりの鈍化カーブを描いていた。$100,000以上のARR顧客数は前年比+10%(1,521社)にとどまり、売上成長率(+21%)の半分程度のペース。株価も2025年2月の高値$37.65から同年8月には$15.91まで下落し、買収発表直前(12月5日)時点でも$23.14と、高値からほぼ半減した水準にとどまっていた。",
+        confidence: "高",
+        evidence: [
+          "増収率が2021年+64%から2025年+21%まで4年連続で鈍化",
+          "$100,000以上のARR顧客数の伸びは+10%と、売上成長率(+21%)の半分程度のペース",
+        ],
+        counterSignal: "IBMは直近30日間の出来高加重平均株価に35%のプレミアムを乗せた1株31ドル(総額約110億ドル)で買収しており、発表当日の株価は+29%と急伸した。市場はこの買収を「苦境の身売り」ではなく「株主にとって good な決着」と評価したことになる。Cloud・Flinkの消費量ベースの指標は減速する中でもむしろ加速していた。",
+        sourceIds: ["confluent-deceleration-and-deal", "confluent-fy2025-results"],
+      },
+      {
+        title: "日本の営業組織が買収後どうなるか、公開情報からはほとんど分からない",
+        body: "IBM日本法人のプレスリリース、日本の主要IT系メディアのいずれも、APAC・日本の組織体制に関する具体的な言及は見当たらない。OpenWorkの給与口コミも引き続き0件のままで、社内の声を推測する材料もない。カントリーマネージャーの石井晃一氏は、買収完了後の時期とみられるイベント(Data Streaming World Tour 2026: Tokyo)でも引き続き対外的に会社を代表しているとみられるが、正式な続投発表があったわけではなく、確度の高い情報とは言えない。",
+        confidence: "探索中",
+        evidence: [
+          "IBM・Confluent双方の公式発表、日本の主要IT系メディアのいずれにも日本組織の統合方針に関する言及が見当たらない",
+          "OpenWorkの給与口コミは買収後も0件のまま",
+        ],
+        counterSignal: "2025年6月には日本市場向けに新サービス(Confluent Cloud for Apache Flink、Tableflow)を発表しており、買収プロセスが進行する中でも日本のGTM活動自体は止まっていなかったとみられる。ただしこれは買収完了(2026年3月)より前の活動であり、完了後の体制を直接示す証拠ではない。",
+        sourceIds: ["confluent-japan-salesnow"],
+      },
+    ],
+    japanGrowth: {
+      headline: "買収完了後の日本組織の姿は、公開情報からはまだ見えてこない。",
+      narrative: "Confluent Japan合同会社は合同会社のため決算公告の義務がなく、財務データは非公開。2026年3月のIBM完全子会社化を経て、日本の営業組織・目標設定がどう変わるかについても、IBM・Confluent双方から具体的な発表は確認できていない。買収プロセスが進行していた2025年6月時点では、日本市場向けの新サービス発表(Confluent Cloud for Apache Flink、Tableflow)を行うなど、GTM活動自体は継続していた。カントリーマネージャーの石井晃一氏(元Rubrik・Tanium・VMware)は、買収完了後とみられる時期のイベントでも引き続き名前が見られるが、正式な続投発表があったわけではない。日本を含むConfluentの営業組織がIBMの日本法人とどう統合されるか(あるいは独立性を保つか)は、今後の公開情報を継続的に追う必要がある、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "買収後の日本組織の方針は未発表", detail: "IBM・Confluentいずれの公式発表にも、日本を含むAPAC組織の統合方針に関する具体的な言及が見当たらない。", sourceId: "confluent-japan-salesnow" },
+        { label: "買収プロセス中も日本向けの新サービス発表は継続", detail: "2026年3月の買収完了に先立つ2025年6月、日本市場向けにConfluent Cloud for Apache Flink・Tableflowを発表。", sourceId: "confluent-japan-salesnow" },
+      ],
+      sourceIds: ["confluent-japan-salesnow"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "Confluentの売り方は「複数システムに散らばったデータが、リアルタイムで連携できていない」という課題が起点。IBM傘下入り後は、既存のIBM顧客基盤へどう食い込むかという新しい切り口も加わる。",
@@ -4612,6 +4785,54 @@ const amplitudeSources: ResearchSource[] = [
     scope: "Commercial AEの役割・要件",
     checkedAt: "2026-08-07",
   },
+  {
+    id: "amplitude-q2-2026-detail",
+    label: "Stocktitan「Amplitude Announces Second Quarter 2026 Financial」",
+    url: "https://www.stocktitan.net/news/AMPL/amplitude-announces-second-quarter-2026-financial-j4ykrz6k3c40.html",
+    kind: "外部集計",
+    scope: "ARR内訳(Statsig寄与分・オーガニック分)、粗利益率の低下",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "amplitude-growth-turnaround",
+    label: "Investing.com「Amplitude Q1 2026 Slides: 17% Revenue Growth」",
+    url: "https://www.investing.com/news/company-news/amplitude-q1-2026-slides-17-revenue-growth-profitability-pressures-93CH-4666031",
+    kind: "外部集計",
+    scope: "2024年後半からの増収率反転、NRRの回復",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "amplitude-competitor-posthog",
+    label: "productgrowth.in「Mixpanel vs Amplitude vs PostHog」比較記事",
+    url: "https://productgrowth.in/insights/ai-ml/mixpanel-vs-amplitude-vs-posthog/",
+    kind: "コミュニティ",
+    scope: "無料枠の比較、低価格帯競合の圧力",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "amplitude-2023-nrr-decline",
+    label: "Amplitude, Inc. - Form 8-K(2023年Q1決算、NRR低下の開示)",
+    url: "https://www.sec.gov/Archives/edgar/data/1866692/000095017023019655/ampl-ex99_1.htm",
+    kind: "法定開示",
+    scope: "2022〜2023年のNRR低下(127%→98%)",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "amplitude-japan-localization",
+    label: "ProductZine「Amplitude、日本語UI拡充を発表」",
+    url: "https://codezine.jp/productzine/article/detail/1834",
+    kind: "外部集計",
+    scope: "日本語UI拡充とNTTドコモの導入事例",
+    checkedAt: "2026-08-08",
+  },
+  {
+    id: "amplitude-japan-headcount",
+    label: "SalesNow「AMPLITUDE JAPAN合同会社」企業情報",
+    url: "https://salesnow.jp/db/companies/jcb4cb14cvycvskam",
+    kind: "外部集計",
+    scope: "日本オフィスの人員規模(2025年1月時点で8名)",
+    checkedAt: "2026-08-08",
+  },
 ];
 
 const amplitudeIntelligence: CompanyPublicIntelligence = {
@@ -4629,6 +4850,60 @@ const amplitudeIntelligence: CompanyPublicIntelligence = {
       { year: "2026", label: "四半期売上が初めて1億ドルを突破", detail: "Q2 2026売上1.009億ドル(前年比+21.2%)。$100,000以上のARR顧客も824社(前年比+30%)と加速。", sourceId: "amplitude-q2-2026-earnings" },
     ],
     sourceIds: ["amplitude-ipo", "amplitude-statsig-transfer", "amplitude-q2-2026-earnings"],
+    genbaVerdict: {
+      headline: "9社の中で最も鮮やかな成長反転。ただし「反転の中身」を分解すると、まだ純オーガニックとは言い切れない。",
+      body: "売上成長率は2024年後半の+6%から2026年Q2には+21%まで反転しており、この9社の中でも際立った回復ストーリーを持つ。ただしQ2 2026のARR増加分のうち一部はStatsigのブランド・顧客基盤引き継ぎによる寄与で、非GAAP粗利益率もAI推論コストの増加とStatsigの低採算構造の影響で75%台から71%まで低下している。「回復は本物だが、まだコストを払いながらの回復」という段階、というのがGenbaの読み。",
+    },
+    growthDrivers: [
+      {
+        title: "売上成長率が2024年後半の+6%から2026年Q2には+21%まで反転",
+        body: "四半期売上成長率は2024年Q3の+6%を底に、2026年Q1には+17%、Q2には+21%まで回復。純収益維持率(NRR)も2024年Q1の97%から2026年Q1には106%まで回復しており、既存顧客の解約・縮小に歯止めがかかっている。",
+        sourceId: "amplitude-growth-turnaround",
+      },
+      {
+        title: "初の四半期売上1億ドル突破、通期ガイダンスも上方修正",
+        body: "Q2 2026に四半期売上が初めて1億ドルを突破($100.9M)。FY2026通期ガイダンスは売上$407.2M〜$411.2M、非GAAP営業利益$630万〜$930万(初の通期黒字目標)へ上方修正された。",
+        sourceId: "amplitude-q2-2026-detail",
+      },
+      {
+        title: "Statsigのブランド引き継ぎで、実験・意思決定機能を製品ラインに追加",
+        body: "2026年5月、OpenAIが買収したStatsig(実験・フィーチャーフラグ管理)のブランドと顧客基盤を引き継ぐ提携を発表。Q2 2026のARR増加のうち1,700万ドルがStatsig起因、1,900万ドルがオーガニック成長という内訳が開示されている。",
+        sourceId: "amplitude-q2-2026-detail",
+      },
+    ],
+    riskHypotheses: [
+      {
+        title: "成長反転の一部はM&Aの寄与で、利益率はむしろ悪化している",
+        body: "Q2 2026のARR増加分のうち1,700万ドルはStatsigのブランド・顧客基盤引き継ぎによる寄与で、純粋なオーガニック成長(1,900万ドル)だけで見ると反転の勢いはやや割り引いて見る必要がある。非GAAP粗利益率も、AI機能の推論コスト増加とStatsigの低採算構造の影響で、前年の77%・前四半期の75%から71%まで低下。非GAAP営業利益率も足元ではまだマイナス(-1.4%、Q2 2026)にとどまる。",
+        confidence: "中",
+        evidence: [
+          "Q2 2026のARR増加分1,700万ドルがStatsig起因、1,900万ドルがオーガニック",
+          "非GAAP粗利益率が77%(前年)→75%(前四半期)→71%(Q2 2026)へ低下、非GAAP営業利益率もマイナス圏",
+        ],
+        counterSignal: "Statsigの寄与を除いたオーガニックARR成長(1,900万ドル)自体も健全な水準にあり、NRRの回復(97%→106%)はStatsig提携発表(2026年5月)より前の2024年から始まっている。既存事業自体が地力で回復している可能性が高い。",
+        sourceIds: ["amplitude-q2-2026-detail"],
+      },
+      {
+        title: "PostHog等の低価格・高機能な新興競合による、下位セグメントでの侵食リスク",
+        body: "Amplitudeの無料枠(月間MTU 1万)は主要3社の中で最も制限が厳しく、PostHogは分析・セッションリプレイ・フィーチャーフラグ・実験・アンケートを含む、より寛容な無料枠(月間イベント100万件)を提供している。2022〜2023年には実際にNRRが127%から98%まで急落する局面があり、この時期はPostHog等の低価格帯競合が台頭した時期と重なる。",
+        confidence: "中",
+        evidence: [
+          "無料枠の比較でAmplitudeが主要3社の中で最も制限が厳しい(月間MTU 1万)",
+          "2022〜2023年にNRRが127%→98%まで急落。低価格帯競合が台頭した時期と重なる",
+        ],
+        counterSignal: "Amplitudeは130以上の統合連携(Braze、HubSpot、Salesforce、Segment等)とアカウント単位の分析機能を持ち、特にB2B・エンタープライズSaaS領域ではPostHogの開発者ツール寄りのポジショニングに対して優位とされる。NRRがその後106%まで回復した事実は、この防御力が実際に機能していることを示唆する。",
+        sourceIds: ["amplitude-competitor-posthog", "amplitude-2023-nrr-decline"],
+      },
+    ],
+    japanGrowth: {
+      headline: "日本オフィスはわずか8名。それでもNTTドコモを事例に、日本語UIへの投資を続けている。",
+      narrative: "AMPLITUDE JAPAN合同会社は合同会社のため決算公告の義務がなく、財務データは非公開。2025年1月時点の情報では、日本オフィスの人員は8名(グローバル全体は約700名)と、9社の中でも際立って小規模なチームで運営されているとみられる。それでも会社としては、Analytics・A/Bテスト・CDP・レコメンデーションといった機能群の日本語UI対応を拡充しており、NTTドコモの複数サービスでの採用を成長ドライバーの一例として挙げている。導入事例としては、LIFULL(特定キャンペーンでコンバージョン10倍)、ゴルフダイジェスト・オンライン(コホート分析でメール開封率2倍)、大手小売企業(分析業務の年間182時間削減)等が確認できる。NTTコミュニケーションズがAmplitudeを取扱製品として掲載しており、パートナー経由の販売チャネルも持っている。8名という小さなチームで、複数の大企業導入事例と代理店網を回している状態は、量より質を優先した日本展開だと考えられる、というのがGenbaの読み。",
+      qualitativeSignals: [
+        { label: "日本オフィスの人員はわずか8名(2025年1月時点)", detail: "グローバル全体の従業員数(約700名)と比べても際立って小規模なチーム運営。", sourceId: "amplitude-japan-headcount" },
+        { label: "日本語UIへの投資とNTTドコモの導入事例", detail: "Analytics・A/Bテスト・CDP・レコメンデーション機能の日本語UI対応を拡充。NTTドコモの複数サービスでの採用を成長ドライバーの一例として挙げている。", sourceId: "amplitude-japan-localization" },
+      ],
+      sourceIds: ["amplitude-japan-headcount", "amplitude-japan-localization"],
+    },
   },
   sellingPlaybook: {
     frameIntro: "Amplitudeの売り方は「プロダクトのどの機能が使われていて、どこで離脱しているかが分からない」という課題が起点。PLG(プロダクト主導型成長)企業ほど刺さりやすい。",
