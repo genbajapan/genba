@@ -66,32 +66,6 @@ const salesforceSMBCareerFlow = {
   nextCompanies: "SMBでの実務経験を積んだ後は、社内でCommercial・Mid-Market AEへステップアップするか、他社のSMB/Commercial AEへ転職するケースが典型的。現役の外資ITセールスが書いたnote記事(「SMBしかやってこなかったAEはエンタープライズに行けないの？」)では、SMB経験のみでいきなり他社のEnterprise AEへ転職するのは、採用側が同規模・同複雑度の経験者を優先するため難易度が高いと指摘されており、「SMB経験だけで市場価値十分」と考えるのは危険だと警告している。",
 };
 
-const datadogMidMarketCareerFlow = {
-  tenureAndPromotion: "Datadog Japanは2019年設立と組織が新しく、平均在籍年数・離職率・社内昇進の傾向を示す公開データはほとんど確認できていない。グローバルでは2025年時点で6,000人超(NASDAQ: DDOG)まで急拡大しており、日本法人も同様の拡大フェーズにあると推測されるが、これは推測の域を出ない。",
-  priorCompanies: "AE個別の前職データは確認できていない。求人要件が「新規ロゴ獲得の実績」「アカウントマッピングへの習熟」を明示している点から、他のSaaS/クラウド企業で新規開拓を担っていた営業が中心になっている可能性がある(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。一般的な外資Observability/クラウド監視SaaS営業のキャリアパターンから推測すると、New Relic、Dynatrace、Splunk、AWS/Google CloudのISV営業など同業他社への転職が中心になりやすいと考えられるが、これは未確認の一般論であり、Datadog Japan固有のデータではない。",
-};
-
-const datadogCommercialCareerFlow = {
-  tenureAndPromotion: "Datadog Japanは2019年設立と組織が新しく、平均在籍年数・離職率・社内昇進の傾向を示す公開データはほとんど確認できていない。求人ページでは「早期昇格」を打ち出しており、Commercial領域は他セグメントより昇進サイクルが速い可能性はあるが、確認された事実ではない。",
-  priorCompanies: "AE個別の前職データは確認できていない。求人要件が「IT製品のフィールドセールス経験(クロージング含む)2年以上」とMid-Market・Public Sectorより経験年数のハードルが低く設定されている点から、他セグメントよりポテンシャル採用の比率が高い可能性がある(求人要件からの読み解み)。",
-  nextCompanies: "確認できる公開データはない。",
-};
-
-const datadogPublicSectorCareerFlow = {
-  tenureAndPromotion: "Datadog Japanは2019年設立と組織が新しく、平均在籍年数・離職率・社内昇進の傾向を示す公開データはほとんど確認できていない。",
-  priorCompanies: "求人要件に「官公庁・自治体・教育機関向け営業経験2〜3年以上」「SLED領域でのフィールドセールス経験」が明記されているため、同分野を専門に担当してきた外資・国内ベンダーの営業出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。SLED専門の営業経験は希少性が高いため、同領域を強化したい他のセキュリティ・クラウド基盤企業からの引き合いにつながりやすいと考えられるが、これは未確認の一般論である。",
-};
-
-// 会社全体の離職率・在籍年数の公開データは無いため、共通の非公開注記として保持
-const servicenowTenureNote = "ServiceNow全体の離職率・在籍年数を示す公開データは確認できていない。日本法人は2023年に米本社直轄の独立事業体へ昇格したばかりで、組織体制が変化している時期にあたる。";
-
-const servicenowCommercialCareerFlow = {
-  tenureAndPromotion: servicenowTenureNote,
-  priorCompanies: "求人要件からは、7年以上のソフトウェア/ソリューション営業経験を持つ他SaaS企業のAE出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
-};
 
 // Braze Japanは2020年7月設立で、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
 const brazeTenureNote = "Braze Japanは2020年7月設立と組織が若く、平均在籍年数・離職率の公開データは確認できていない。Japan Cloud Consultingとの協業体制のため、評価・昇進の仕組みが本社と完全に同一かは非公開。";
@@ -259,65 +233,6 @@ export const companies: Company[] = [
       ],
       note: "複数の転職エージェント記事・口コミサイトの記述を基にGenbaが整理した一般的な流れです。ポジションや年度により変わる可能性があり、実際のフローは選考案内で確認してください。",
     },
-  },
-  {
-    slug: "datadog",
-    name: "Datadog",
-    category: "Observability",
-    hq: "New York, US",
-    japanPresence: "東京",
-    hiringStatus: "積極採用",
-    salesRoles: 3,
-    description: "Commercial、Mid-Market、Public Sectorまで複数セグメントで営業人材を募集。",
-    lastChecked: "2026-08-07",
-    careersUrl: "https://careers.datadoghq.com/ja/",
-    tags: ["Commercial", "Mid-Market", "Public Sector"],
-    interviewFlow: {
-      steps: [
-        { label: "書類選考", detail: "職務経歴書による書類選考。" },
-        { label: "リクルーター面談", detail: "社内リクルーターとのカジュアル面談。経歴確認と会社説明が中心。" },
-        { label: "一次面接", detail: "採用予定ポジションのハイアリングマネージャーが担当。" },
-        { label: "二次面接", detail: "チームメンバーやクロスファンクショナルな関係者との面接。カルチャーフィットやスピード感への適応力が見られる傾向がある。" },
-        { label: "最終面接", detail: "シニアリーダーとの面接。ポジションによっては技術面接やロールプレイが追加される場合がある。" },
-      ],
-      note: "note.com「Datadog Japan面接対策」記事など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
-    },
-  },
-  {
-    slug: "servicenow",
-    name: "ServiceNow",
-    category: "Enterprise Workflow",
-    hq: "Santa Clara, US",
-    japanPresence: "日本法人・東京",
-    hiringStatus: "積極採用",
-    salesRoles: 1,
-    description: "以前掲載していたEnterprise/Sr Enterprise/Services向け3求人は募集終了を確認。新たにCommercialセグメントのAccount Executiveを新規掲載。",
-    lastChecked: "2026-08-07",
-    careersUrl: "https://careers.servicenow.com/locations/apj/japan/",
-    tags: ["Enterprise", "Manufacturing", "Partner"],
-    interviewFlow: {
-      steps: [
-        { label: "書類選考", detail: "職務経歴書による書類選考。" },
-        { label: "リクルーター面談", detail: "社内リクルーターとの電話面談。経歴確認と会社説明が中心。" },
-        { label: "一次面接", detail: "採用予定ポジションのハイアリングマネージャーが担当。" },
-        { label: "二次面接", detail: "クロスファンクショナルな関係者との面接。業界理解や提案力が問われる傾向がある。" },
-        { label: "最終面接", detail: "シニアリーダーとの面接。ケーススタディやロールプレイが含まれる場合がある。" },
-      ],
-      note: "note.com「ServiceNow Japan面接対策」、ワンキャリアの面接体験談など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
-    },
-  },
-  {
-    slug: "snowflake",
-    name: "Snowflake",
-    category: "Data Cloud",
-    hq: "Bozeman, US",
-    japanPresence: "日本法人・東京",
-    hiringStatus: "継続観測",
-    salesRoles: 0,
-    description: "東京拠点で営業採用を継続観測。以前確認していた求人は募集終了を確認したため取り下げ。",
-    lastChecked: "2026-08-07",
-    careersUrl: "https://careers.snowflake.com/us/en/search-results?keywords=Tokyo",
-    tags: ["Enterprise", "Data Cloud"],
   },
   {
     slug: "mongodb",
@@ -536,94 +451,6 @@ export const jobs: Job[] = [
       thingsToKnow: "コンサル型営業は商談化までの準備(業界研究・提案資料作成)の負荷が高い。Enterprise採用では日系大手SIerや大手代理店で大型商談を経験した人、Oracle・IBM・SAPなど大手IT事業会社出身者、戦略コンサル出身者が優先される傾向があるとされ、同格の経験がない場合は「ニーズを自分で創る」動き方をどう証明するかが選考の焦点になりやすい。オンボーディング期間中にどれだけ手厚いプリセールス・SEサポートを受けられるかも確認しておきたい。",
       marketValue: "BtoC大手企業の経営層向けコンサル型提案の実績は、複数の観点で市場価値がある。①報酬面では、外資SaaSのEnterprise AE帯(目安1,200万〜1,800万円)、実績次第でStrategic AE帯(1,500万〜2,500万円超)を狙える(転職エージェント記事の集計値)。②キャリアの選択肢としては、他の外資SaaSのEnterprise/Strategic AEへの横移動に加え、事業会社の事業開発・経営企画、戦略コンサルティングファームへの転身など、営業職の枠を超えた選択肢が開けやすい。これはC-level商談という経験の希少性による。③ただし大型商談は成約までのリードタイムが長く、在籍1〜2年では実績が数字として出ていない可能性もある。転職市場では「動かした金額」だけでなく「商談を前に進めた具体的なプロセス」を語れるかが問われる。④退職後の競業避止条項によって、同業界・同顧客層への転職に一定期間制約がかかる場合がある点も、実務では確認しておきたい。",
       ...salesforceEnterpriseCareerFlow,
-    },
-  },
-  {
-    id: "dd-midmarket-ae",
-    companySlug: "datadog",
-    title: "Mid-Market Account Executive",
-    segment: "Mid-Market",
-    location: "東京",
-    workStyle: "公式求人で確認",
-    language: "日本語 / 英語",
-    firstSeen: "2026-08-04",
-    lastChecked: "2026-08-07",
-    source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/6523631/" },
-    descriptionSummary: "従業員1,000〜5,000名規模の中堅企業への新規開拓(新規ロゴ獲得)に特化した役割。交渉から技術デモまで営業サイクル全体をリードし、CTOやエンジニアリング・ITリーダー層への戦略的営業、SDR・パートナー・マーケティングとの連携が求められる。Sales NavigatorやDemandbaseなど営業支援ツールの活用も明記されており、出張は最大30%程度を想定。",
-    genbaTake: "「新規ロゴ獲得に特化」と明記されている点は、既存顧客の深耕やクロスセルより新規開拓の負荷が高いことを意味する。裏を返せば、意思決定者が少数で決裁が比較的速いMid-Marketで新規開拓力を鍛えられるのは、次にEnterpriseへステップアップする際の強力な武器になる。",
-    compensationReality: "OpenMoneyの自己申告データでは営業平均年収1,238万円、レンジは760万〜3,000万円。Datadogはジュニアレベルの職務でも入社時にRSUが付与されるという口コミがあり、Salesforceのような等級による支給ライン(グレード7以上)とは前提が異なる可能性がある。一方で「ポジションごとに給与がほぼ一律で交渉の余地が少ない」という口コミもあり、オファー時の上振れ幅は限定的かもしれない。Mid-Marketは新規開拓中心という役割上、インセンティブの変動幅も大きくなりやすい。",
-    desiredProfile: "求人では新規開拓の実績とアカウントマッピングへの習熟、物怖じしないパイプライン創出力が明記されている。Datadogは経験者とポテンシャル層の両方を採用対象としており、技術への好奇心とSaaS企業で経験を積みたいという意欲があれば、必ずしも同業界の経験がなくても評価対象になり得ると案内されている。面接ではスピード感への適応力とカルチャーフィットが重視される傾向があり、変化の速いグローバル企業でオーナーシップを持って動けるかが問われる。",
-    careerInsights: {
-      fit: "自分でパイプラインを作りながら、CTOなど技術層に刺さる説明ができる人に向く。逆に、既存顧客のリレーション管理を中心にしたい人には向かない。",
-      thingsToKnow: "新規ロゴ獲得に特化と明記されているため、既存顧客への拡張提案の機会は限定的な可能性がある。担当エリアの企業密度(未開拓の見込み顧客がどれだけ残っているか)を面接で確認したい。",
-      marketValue: "Mid-Marketで新規開拓の実績を作れた場合の市場価値は、①報酬面では外資SaaSのMidMarket AE帯(目安900万〜1,300万円)からEnterprise AE帯(1,200万〜1,800万円)へのステップアップ材料になる(転職エージェント記事の集計値)。②評価される実績は、新規ロゴ獲得数・Win Rate・自己開拓によるパイプライン創出比率など、次の転職で「自走できる営業力」を証明する定量指標になりやすい。③キャリアの選択肢は、同業(Observability/Cloud監視)のEnterprise AE、あるいはSaaS全般のMidMarket〜Enterprise AEへの横展開が中心。④Datadog Japan自体が新しい組織のため、社内でのマネジメント昇格実績はまだ蓄積が薄いと見られ、管理職を目指すなら他社での実績提示が必要になる可能性がある(未確認の一般論)。",
-      ...datadogMidMarketCareerFlow,
-    },
-  },
-  {
-    id: "dd-commercial-ae",
-    companySlug: "datadog",
-    title: "Commercial Account Executive",
-    segment: "Commercial",
-    location: "東京",
-    workStyle: "公式求人で確認",
-    language: "日本語 / 英語",
-    firstSeen: "2026-08-04",
-    lastChecked: "2026-08-07",
-    source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/6009777/?gh_jid=6009777" },
-    descriptionSummary: "中小規模市場へのアウトバウンド営業による新規顧客獲得が中心の役割。IT製品のフィールドセールス経験(クロージング含む)2年以上が要件として明記されており、CTO・CIO・エンジニアリング層への提案とセールス・デベロップメント・チームとの連携が求められる。技術製品を扱った経験と、営業KPI達成の実績が重視されている。",
-    genbaTake: "「中小規模市場」「アウトバウンド営業」という組み合わせは、商談数をこなしながら自分でパイプラインを作る負荷が高いポジションであることを示唆している。裏を返せば、未経験からのAE挑戦の入り口として、自走できる営業力を最短距離で鍛えられるポジションとも言える。",
-    compensationReality: "OpenMoneyの自己申告データでは営業平均年収1,238万円、レンジは760万〜3,000万円で、Commercialはこのレンジの下〜中位に位置しやすいと考えられる。ジュニアレベルでもRSUが付与されるという口コミがある一方、「給与はポジション一律で交渉の余地が少ない」という指摘もある。未経験・ポテンシャル採用の比率が高いセグメントであるため、オファー額そのものより、達成率次第でのインセンティブ変動幅を面接で確認しておきたい。",
-    desiredProfile: "求人ではIT製品のフィールドセールス経験(クロージング含む)2年以上、技術への高い学習意欲と好奇心、継続的な成長マインドセットが明記されている。Datadogはスキル・経験・強みで公平に評価する実力主義文化を掲げており、全くの未経験者よりは基礎的な営業経験を積んだ人が対象になりやすいと考えられる。面接ではカルチャーフィットや外資特有のスピード感への適応力も問われる傾向がある。",
-    careerInsights: {
-      fit: "IT製品のフィールドセールス経験を活かして、数多くの商談を自走できる人に向く。逆に、未経験からいきなりクロージングを任される負荷に不安がある人には難易度が高い。",
-      thingsToKnow: "アウトバウンド中心のため、担当エリア・顧客リストの質によって成果の出やすさが大きく変わる。他求人媒体ではDatadog Japanの営業職について「早期昇格」「上限のないインセンティブ」を掲げる募集も見られ、Commercial領域は他セグメントよりポテンシャル採用・早期昇格の比率が高い可能性がある。前任者の達成率と、担当替えの頻度を面接で確認しておきたい。",
-      marketValue: "中小規模市場での新規開拓を自走できた実績の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯(目安700万〜1,300万円のレンジ)からMidMarket AE帯へのステップアップの土台になる。②評価される実績は、アウトバウンドでの新規開拓率、商談化率、クロージング経験の有無であり、「未経験からのAE挑戦を成功させた」というストーリー自体が、次の転職での再現性の証明になる。③キャリアの選択肢としては、社内でのMid-Market昇格、他社のCommercial/MidMarket AEへの横移動が中心的なルート。④ただし中小規模市場での成果は担当エリア・リストの質に依存する部分が大きいため、転職市場では「どれだけ厳しいテリトリーで、どんな成果を出したか」の背景説明が問われやすい。",
-      ...datadogCommercialCareerFlow,
-    },
-  },
-  {
-    id: "dd-public-sector",
-    companySlug: "datadog",
-    title: "Strategic Account Executive, Public Sector",
-    segment: "Public Sector",
-    location: "東京",
-    workStyle: "公式求人で確認",
-    language: "日本語 / 英語",
-    firstSeen: "2026-08-04",
-    lastChecked: "2026-08-07",
-    source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/7439573/" },
-    descriptionSummary: "自治体・教育機関・病院・大学など大規模SLED(State/Local/Education)組織への新規開拓・既存深耕を担う役割。5年以上のクロージング経験、官公庁向け営業経験2〜3年以上、年間売上目標100万ドル(1ドル=157円換算で約1.57億円)以上・平均ディールサイズ10万ドル(約1,570万円)以上の実績が要件として挙げられている。自らプロスペクティングしパイプラインを構築できることも求められている。",
-    genbaTake: "官公庁向け営業経験を明確に要件化している点から、同領域での実績がある即戦力採用である可能性が高い。裏を返せば、SLED特有の長い調達プロセス・予算サイクルを理解している人にとっては、その参入障壁の高さがそのまま自分の希少価値になるポジションだと言える。",
-    compensationReality: "OpenMoneyの自己申告データでは営業平均年収1,238万円、レンジは760万〜3,000万円。SLED専門性を要件化しているポジションのため、レンジの上位に位置する可能性があるが、公開データでの裏付けはない。ジュニアレベルでもRSUが付与されるという口コミがある一方、給与はポジション一律で交渉余地が少ないという口コミもあり、オファー額の伸びしろは入社後の達成率とインセンティブ設計に依存すると考えられる。",
-    desiredProfile: "求人では5年以上のクロージング経験、官公庁向け営業経験2〜3年以上、自らプロスペクティングしパイプラインを構築できる自走力が明記されており、他セグメントよりも即戦力性を強く求める採用であることがうかがえる。SLED特有の長い調達プロセスに向き合う忍耐力と、予算サイクルを見据えた長期的な関係構築力が問われるポジションだと考えられる。",
-    careerInsights: {
-      fit: "官公庁特有の長い調達プロセスに付き合える忍耐力があり、既に同領域の実績がある人に向く。逆に、スピード感のある民間エンタープライズ営業を求める人には不向き。",
-      thingsToKnow: "SLED特有の予算サイクル(年度予算・入札)への理解が前提となる。案件のリードタイムが長いため、短期の成果を求められるプレッシャーとのバランスを面接で確認しておきたい。",
-      marketValue: "官公庁向けSaaS営業の実績は、他のセグメントと違う軸で市場価値が評価される。①報酬面ではEnterprise・Strategic AE帯に準じる水準が期待できるが、公開データでの確認はできていない。②最大の価値は希少性で、SLED特有の調達プロセス・予算サイクルへの理解は代替が効きにくく、同領域を強化したいセキュリティ・クラウド基盤企業からの引き合いにつながりやすい。③一方で、官公庁向け営業の経験は民間エンタープライズ営業への転換では評価が割り引かれる場合があり、「意思決定の速い民間営業」を次に目指すなら、そのギャップをどう埋めるかを面接で説明できる準備が要る。④商談サイクルが長いため、在籍が浅いと成果として語れる実績がまだ蓄積されていない可能性があり、入社時期と現時点の実績を正直に伝えることが重要になる。",
-      ...datadogPublicSectorCareerFlow,
-    },
-  },
-  {
-    id: "sn-commercial-ae",
-    companySlug: "servicenow",
-    title: "Account Executive - Commercial",
-    segment: "Commercial",
-    location: "東京",
-    workStyle: "柔軟(求人票では「Flexible」と表記)",
-    language: "日本語 / 英語",
-    firstSeen: "2026-07-29",
-    lastChecked: "2026-08-07",
-    source: { label: "ServiceNow Careers(JB0074345)", url: "https://careers.servicenow.com/jobs/744000140382539/account-executive-commercial/" },
-    descriptionSummary: "アカウントプランニング・テリトリープランニング・フィールド営業活動を通じて新規SaaSライセンス収益を創出する役割。C級幹部との関係構築、複数の仮想チームを横断したアカウント戦略のオーケストレーション、顧客のITロードマップに対する信頼されるアドバイザーとしての立ち回りが求められる。",
-    genbaTake: "以前掲載していたEnterprise/Sr Enterprise/Services向けの3求人は募集終了を確認しており、代わりにCommercialセグメントの新規AEポジションが新たに公開された。募集要件にAI活用経験が明記されている点は、他社と同様にServiceNowも選考でAIリテラシーを重視し始めていることを示している。",
-    compensationReality: "本ポジション固有の給与データは公開されていない。OpenMoney自己申告データでは営業部門の平均年収が1,766万円と、全社平均(1,639万円)より高い水準だが、Commercialセグメント特有の水準の裏付けにはならない。",
-    desiredProfile: "求人ではソフトウェア/ソリューション営業7年以上の経験、AIを意思決定・業務プロセスに活用してきた経験、C級幹部との信頼関係構築力、新規事業創出・契約交渉の実績、ITロードマップへの理解が明記されている。",
-    careerInsights: {
-      fit: "Commercialセグメントで新規開拓の型を作りたい人、AI活用への理解を強みにしたい人に向く。",
-      thingsToKnow: "Enterprise向け求人と異なり業界特化ではないため、幅広い業種への提案経験が積める一方、特定業界の専門性は別途自分で作る必要がある。",
-      marketValue: "Commercial AEとしての実績の市場価値は、①報酬面ではEnterprise AE帯よりやや低いクオータ規模から始まる可能性が高いが、実績次第でEnterprise AEへのステップアップが見込める。②評価される実績は新規ロゴ獲得数とパイプライン創出力。③キャリアの選択肢は社内でのEnterprise AEへの昇格、または他社のCommercial/Mid-Market AEへの横移動。",
-      ...servicenowCommercialCareerFlow,
     },
   },
   {
@@ -1034,26 +861,6 @@ export const signals: Signal[] = [
     title: "Data CloudとAgentforceで複数セグメントを同時募集",
     summary: "専門領域とSMBのAE求人を同時に確認。日本市場でAI・データ商材の販売体制を広げている可能性があります。",
     source: { label: "Salesforce Careers", url: "https://careers.salesforce.com/jp/ja/" },
-  },
-  {
-    id: "signal-dd-segments",
-    companySlug: "datadog",
-    date: "2026-08-04",
-    type: "採用拡大",
-    confidence: "Genba分析",
-    title: "Commercialから公共まで営業セグメントを横断して募集",
-    summary: "複数の顧客規模・業界向けAE求人を確認。日本営業組織のカバレッジ拡大を示すシグナルです。",
-    source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/" },
-  },
-  {
-    id: "signal-servicenow-breadth",
-    companySlug: "servicenow",
-    date: "2026-08-04",
-    type: "採用拡大",
-    confidence: "Genba分析",
-    title: "営業・パートナー・アーキテクトを横断して日本採用",
-    summary: "日本拠点ページで複数職種を確認。フロント営業だけでなく、周辺組織も含む採用が見られます。",
-    source: { label: "ServiceNow Japan Careers", url: "https://careers.servicenow.com/locations/apj/japan/" },
   },
 ];
 
