@@ -386,6 +386,7 @@ export default function CompanyIntelligenceProfile({
                 <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{company.name}で働いている人を見る。</h2></div>
               </div>
               <a
+                // geoUrn 101355337 = 日本(2026-08-08検証済み。105646813は誤りでスペインを指していたため修正した経緯あり)
                 href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&geoUrn=%5B%22101355337%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
                 target="_blank"
                 rel="noreferrer"
