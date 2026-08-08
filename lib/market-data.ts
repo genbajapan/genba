@@ -191,6 +191,14 @@ const amplitudeCommercialAECareerFlow = {
   nextCompanies: "確認できる公開データはない。",
 };
 
+const contentsquareTenureNote = "Contentsquare Japan合同会社は2022年4月設立。初代カントリーマネージャーの伊奈憲一郎氏(前職Salesforce Japanでリージョナルバイスプレジデント等を13年間歴任)は2026年1月末に退任しDatabricksへ転じ、2026年2月から堀井健一郎氏(前職Salesforce Japanでリージョナルセールスディレクター)が後任に就いている。平均在籍年数・離職率の公開データは確認できていない。";
+
+const contentsquareSdrCareerFlow = {
+  tenureAndPromotion: contentsquareTenureNote,
+  priorCompanies: "求人要件からは、B2Bテクノロジー・SaaS・分析・CRM領域で1年以上の営業/事業開発経験を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "確認できる公開データはない。",
+};
+
 export type Signal = {
   id: string;
   companySlug: string;
@@ -362,6 +370,19 @@ export const companies: Company[] = [
     lastChecked: "2026-08-07",
     careersUrl: "https://job-boards.greenhouse.io/amplitude",
     tags: ["Enterprise", "Commercial"],
+  },
+  {
+    slug: "contentsquare",
+    name: "Contentsquare",
+    category: "デジタル体験分析",
+    hq: "Paris, France / New York, US",
+    japanPresence: "Contentsquare Japan合同会社・東京都千代田区(2022年4月設立)",
+    hiringStatus: "積極採用",
+    salesRoles: 1,
+    description: "東京拠点でSales Development Representativeを募集中。公式採用ページ経由で確認できる日本向け求人はこの1件のみ。",
+    lastChecked: "2026-08-09",
+    careersUrl: "https://contentsquare.com/careers/",
+    tags: ["SDR", "APAC"],
   },
 ];
 
@@ -804,6 +825,28 @@ export const jobs: Job[] = [
       thingsToKnow: "Commercial区分の具体的な顧客規模の基準(従業員数・契約金額)は求人票だけでは分からない。面接で確認したい。",
       marketValue: "Commercial AEとしての実績の市場価値は、①報酬面では外資SaaSのSMB/Commercial AE帯(目安700万〜1,300万円)からのスタートになりやすい。②評価される実績は新規開拓の商談化率・受注率。③キャリアの選択肢は社内でのEnterprise AEへのステップアップ、他社のSMB/Commercial AEへの横移動。",
       ...amplitudeCommercialAECareerFlow,
+    },
+  },
+  {
+    id: "csq-sdr-tokyo",
+    companySlug: "contentsquare",
+    title: "Sales Development Representative",
+    segment: "APAC / SDR",
+    location: "東京(ハイブリッド)",
+    workStyle: "ハイブリッド",
+    language: "日本語 / ビジネスレベルの英語",
+    firstSeen: "2026-01-13",
+    lastChecked: "2026-08-09",
+    source: { label: "Contentsquare Careers(Lever)", url: "https://jobs.lever.co/contentsquare/ca8108e5-4993-40e0-b89a-5728218df5cb" },
+    descriptionSummary: "Head of Sales Development APJ配下で、新規商談の開拓を担うSDRポジション。パーソナライズしたメール・ネットワーキング・業界イベント・紹介を通じた新規開拓、C-level含む意思決定者との関係構築、構造化された営業計画の実行、四半期・年間の目標達成が求められる。",
+    genbaTake: "求人票では日本チームが約18名(AE・SDR・プリセールス・CSM・マーケティング・パートナーセールス)と紹介されているが、公式採用ページで現在確認できる日本向け求人はこのSDR職1件のみだった。他の職種の募集が一時的に止まっているのか、欠員が出ていないだけなのかは求人票からは分からないが、少なくとも今の採用の主戦場は新規開拓の入り口(SDR)にあると考えられる。",
+    compensationReality: "Contentsquare Japan固有の給与データは確認できていない。求人にも給与レンジの記載はない。",
+    desiredProfile: "求人ではB2Bテクノロジー・SaaS・分析・CRM領域での1年以上の営業/事業開発経験、日本語・ビジネスレベル英語でのコミュニケーション力、信頼関係構築を重視する日本のビジネス文化への適応力が明記されている。",
+    careerInsights: {
+      fit: "地道な新規開拓とパイプライン構築から外資SaaS営業のキャリアを始めたい人に向く。日本市場でまだ拡大途上のフランス発企業という、大手ほど型が固まっていない環境で自走したい人にも合う。",
+      thingsToKnow: "求人票内で「60社超の日本エンタープライズ顧客(ソニー・三井住友カード・カシオ・ベルーナ・ソフトバンク等)」への言及があり、SDRとして開拓する対象がゼロからの新規開拓なのか、これら大手のような有名企業への食い込みも含むのかは面接で確認したい。",
+      marketValue: "SDRとしての実績の市場価値は、①報酬面では外資SaaSのSDR帯からのスタートで、AE昇格後にCommercial/Enterprise AE帯への引き上げが典型的なパス。②評価される実績は新規商談の創出数・質、パイプライン転換率。③キャリアの選択肢は社内でのAEへの昇格、または他の外資SaaS企業のSDR/AEへの横移動。デジタル体験分析という専門性は、同領域(Amplitude等)や隣接するCX/マーケティングテクノロジー企業への転職でも説明しやすい。",
+      ...contentsquareSdrCareerFlow,
     },
   },
 ];
