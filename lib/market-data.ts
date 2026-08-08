@@ -191,14 +191,6 @@ const amplitudeCommercialAECareerFlow = {
   nextCompanies: "確認できる公開データはない。",
 };
 
-const crowdstrikeTenureNote = "クラウドストライク合同会社の平均在籍年数・離職率を示す公開データは確認できていない。RepVueの集計ではAccount Executiveのクオータ達成率は約36%、SDRは約1%と職種による差が非常に大きい。OpenMoneyの自己申告データでは営業平均年収2,035万円(全社平均1,827万円)と外資ITの中でも高水準。";
-
-const crowdstrikeCorporateAECareerFlow = {
-  tenureAndPromotion: crowdstrikeTenureNote,
-  priorCompanies: "求人要件からは、他のセキュリティ/SaaS企業での新規開拓型営業経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
-};
-
 export type Signal = {
   id: string;
   companySlug: string;
@@ -269,19 +261,6 @@ export const companies: Company[] = [
       ],
       note: "求人票・Braze面接官トレーニング事例など複数の情報を基にGenbaが整理した一般的な流れです。ポジションにより変わる可能性があり、実際のフローは選考案内で確認してください。",
     },
-  },
-  {
-    slug: "crowdstrike",
-    name: "CrowdStrike",
-    category: "Cybersecurity",
-    hq: "Austin, US",
-    japanPresence: "日本法人",
-    hiringStatus: "積極採用",
-    salesRoles: 1,
-    description: "数か月ぶりに東京拠点の新規開拓型Corporate Account Executiveポジションが新規公開。今後の採用動向を継続観測。",
-    lastChecked: "2026-08-07",
-    careersUrl: "https://www.crowdstrike.com/ja-jp/careers/",
-    tags: ["Security", "Enterprise", "Channel"],
   },
   {
     slug: "hubspot",
@@ -517,28 +496,6 @@ export const jobs: Job[] = [
       thingsToKnow: "求人票にメルカリ・コスモ石油・マネーフォワード・freeeが導入企業として明記されており、担当予定のアカウントリストにこれらと同様のテック/成長企業がどれだけ含まれるかを面接で確認したい。",
       marketValue: "Enterprise AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise AE帯に位置づけられると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、日本発グローバル企業・成長企業への大型商談獲得実績で、これはマーケティングテクノロジー領域全般で説明しやすい。③キャリアの選択肢は、他社(Salesforce、Adobe等)のEnterprise/Strategic AE、または社内でのSales Directorへの昇格。④Braze全体で大口顧客(ARR50万ドル以上)へのシフトが進んでいるため、Enterprise AEとしての実績はますます重要になる位置づけにある。",
       ...brazeAEEnterpriseCareerFlow,
-    },
-  },
-  {
-    id: "cs-corporate-ae",
-    companySlug: "crowdstrike",
-    title: "Corporate Account Executive(新規開拓担当営業)",
-    segment: "Corporate",
-    location: "東京",
-    workStyle: "公式求人で確認",
-    language: "日本語",
-    firstSeen: "2026-08-07",
-    lastChecked: "2026-08-07",
-    source: { label: "CrowdStrike Careers(Workday)", url: "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers/job/Japan---Tokyo/Corporate-Account-Executive---_R29332" },
-    descriptionSummary: "ミッドマーケット(中堅)region内の新規アカウント獲得を担う、いわゆる「ハンター」型のポジション。Value Sellingプロセスをプロスペクティングからクロージングまで一貫して実行し、Sales Engineer・マーケティング・チャネルパートナーと連携してアカウント戦略を立案する。",
-    genbaTake: "CrowdStrikeの日本向け営業求人は数か月にわたり確認できていなかったが、2026年8月に本ポジションが新規公開された。求人票が新規ロゴ獲得(ハンター気質)を強く求めている点から、既存の大企業アカウント深耕よりも、ミッドマーケット層でのシェア拡大を狙った採用だと考えられる。",
-    compensationReality: "本ポジション固有の給与データは非公開。OpenMoneyの自己申告データではCrowdStrike Japan全体の営業平均年収2,035万円(全社平均1,827万円)という水準があるが、これはEnterprise等を含む全体平均でありCorporate/ミッドマーケット職の水準の裏付けにはならない。",
-    desiredProfile: "求人ではコールドコールや商談・交渉スキル、複雑なソリューションをC級幹部まで含む組織全体に売り込んだ実績、個人でクオータを担うロールでの実績、AI技術を意思決定・業務効率化に活用した経験が明記されている。",
-    careerInsights: {
-      fit: "新規開拓(ハンティング)を主戦場にしたい人、自分でテリトリーを切り拓く裁量を求める人に向く。逆に、既存の大口顧客との関係深耕を中心にしたい人には物足りない可能性がある。",
-      thingsToKnow: "CrowdStrike Japanの営業求人は長期間途絶えていたため、採用背景(欠員補充か増員か)を面接で確認したい。RepVueの集計ではSDRのクオータ達成率が約1%と職種によって大きな差があり、募集セグメント特有の達成難易度も併せて確認したい。",
-      marketValue: "Corporate AEとしての経験の市場価値は、①報酬面では外資セキュリティSaaSの中でも高水準グループに位置づけられる可能性がある。②評価される実績は新規ロゴ獲得数・パイプライン創出力で、これはセキュリティ領域全般の営業職で再現性を説明しやすい。③キャリアの選択肢は社内でのEnterprise/Sr. Corporate AEへのステップアップ、または他のセキュリティSaaS企業のAEへの横移動。",
-      ...crowdstrikeCorporateAECareerFlow,
     },
   },
   {
