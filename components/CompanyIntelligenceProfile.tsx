@@ -191,7 +191,7 @@ export default function CompanyIntelligenceProfile({
                       )}
                     </div>
 
-                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.genbaVerdict && (
+                    {publicIntel.marketStatus.genbaVerdict && (
                       <div className="genba-verdict">
                         <span>GENBAの結論</span>
                         <h4>{publicIntel.marketStatus.genbaVerdict.headline}</h4>
@@ -199,7 +199,7 @@ export default function CompanyIntelligenceProfile({
                       </div>
                     )}
 
-                    {!(publicIntel.marketStatus.isPublic && publicIntel.marketStatus.genbaVerdict) && (
+                    {!publicIntel.marketStatus.genbaVerdict && (
                       <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
                     )}
                     {!publicIntel.marketStatus.isPublic && (
@@ -224,7 +224,7 @@ export default function CompanyIntelligenceProfile({
                       })}
                     </div>
 
-                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.growthDrivers && (
+                    {publicIntel.marketStatus.growthDrivers && (
                       <div className="growth-driver-section">
                         <p className="card-index">成長ドライバー</p>
                         <div className="growth-driver-grid">
@@ -245,7 +245,7 @@ export default function CompanyIntelligenceProfile({
                       </div>
                     )}
 
-                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.riskHypotheses && (
+                    {publicIntel.marketStatus.riskHypotheses && (
                       <div className="risk-hypothesis-section">
                         <p className="card-index">Genbaのリスク仮説</p>
                         <div className="risk-hypothesis-grid">
@@ -277,30 +277,46 @@ export default function CompanyIntelligenceProfile({
                       </div>
                     )}
 
-                    {publicIntel.marketStatus.isPublic && publicIntel.marketStatus.japanGrowth && (() => {
+                    {publicIntel.marketStatus.japanGrowth && (() => {
                       const japan = publicIntel.marketStatus.japanGrowth;
-                      const maxRevenue = Math.max(...japan.fiscalData.map((d) => parseFloat(d.revenue)));
+                      const maxRevenue = japan.fiscalData ? Math.max(...japan.fiscalData.map((d) => parseFloat(d.revenue))) : 0;
                       return (
                         <div className="japan-growth-panel">
                           <p className="card-index">日本での成長性</p>
                           <h4 className="japan-growth-headline">{japan.headline}</h4>
                           <p className="japan-growth-narrative">{japan.narrative}</p>
-                          <div className="japan-fiscal-chart">
-                            {japan.fiscalData.map((point) => (
-                              <div className="japan-fiscal-row" key={point.period}>
-                                <span>{point.period}</span>
-                                <div className="japan-fiscal-bar-track">
-                                  <div className="japan-fiscal-bar-fill" style={{ width: `${(parseFloat(point.revenue) / maxRevenue) * 100}%` }}>
-                                    <strong>{point.revenue}</strong>
+                          {japan.fiscalData && (
+                            <div className="japan-fiscal-chart">
+                              {japan.fiscalData.map((point) => (
+                                <div className="japan-fiscal-row" key={point.period}>
+                                  <span>{point.period}</span>
+                                  <div className="japan-fiscal-bar-track">
+                                    <div className="japan-fiscal-bar-fill" style={{ width: `${(parseFloat(point.revenue) / maxRevenue) * 100}%` }}>
+                                      <strong>{point.revenue}</strong>
+                                    </div>
+                                  </div>
+                                  <div className="japan-fiscal-meta">
+                                    <strong>{point.revenueGrowth}</strong>
+                                    <span>純利益{point.netIncomeGrowth}</span>
                                   </div>
                                 </div>
-                                <div className="japan-fiscal-meta">
-                                  <strong>{point.revenueGrowth}</strong>
-                                  <span>純利益{point.netIncomeGrowth}</span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
+                              ))}
+                            </div>
+                          )}
+                          {japan.qualitativeSignals && (
+                            <div className="japan-qualitative-grid">
+                              {japan.qualitativeSignals.map((signal) => {
+                                const source = getResearchSource(publicIntel, signal.sourceId);
+                                return (
+                                  <article key={signal.label}>
+                                    <span>{signal.label}</span>
+                                    <p>{signal.detail}</p>
+                                    {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                                  </article>
+                                );
+                              })}
+                            </div>
+                          )}
                           <div className="japan-fiscal-sources">
                             {japan.sourceIds.map((sourceId) => {
                               const source = getResearchSource(publicIntel, sourceId);
@@ -311,8 +327,8 @@ export default function CompanyIntelligenceProfile({
                       );
                     })()}
 
-                    {publicIntel.marketStatus.isPublic && (
-                      <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。</p>
+                    {(publicIntel.marketStatus.isPublic || publicIntel.marketStatus.genbaVerdict) && (
+                      <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。{publicIntel.marketStatus.isPublic ? "株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。" : ""}</p>
                     )}
                   </div>
                 </>

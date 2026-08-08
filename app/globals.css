@@ -410,6 +410,11 @@ button, input, select { font: inherit; }
 .japan-fiscal-meta { text-align: right; }
 .japan-fiscal-meta strong { display: block; color: var(--navy); font-size: 13px; font-weight: 850; }
 .japan-fiscal-meta span { display: block; margin-top: 2px; color: #8a9aa0; font-size: 10px; }
+.japan-qualitative-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 22px; }
+.japan-qualitative-grid article { padding: 16px 18px; border: 1px solid #b8d4cd; background: white; }
+.japan-qualitative-grid span { display: block; color: #2f6b60; font-size: 10.5px; font-weight: 850; letter-spacing: .04em; }
+.japan-qualitative-grid p { margin: 8px 0 0; color: #435760; font-size: 12px; line-height: 1.75; }
+.japan-qualitative-grid a { display: inline-block; margin-top: 8px; color: var(--signal); font-size: 10px; font-weight: 750; text-decoration: none; }
 .japan-fiscal-sources { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 20px; padding-top: 16px; border-top: 1px dashed #b8d4cd; }
 .japan-fiscal-sources a { color: #2f6b60; font-size: 10px; font-weight: 700; text-decoration: none; }
 .japan-fiscal-sources a:hover { color: var(--signal); text-decoration: underline; }
@@ -748,6 +753,7 @@ button, input, select { font: inherit; }
   .organization-read-card > a { grid-column: 2; }
   .market-status-milestone { grid-template-columns: 1fr; gap: 4px; }
   .japan-fiscal-row { grid-template-columns: 1fr; gap: 6px; }
+  .japan-qualitative-grid { grid-template-columns: 1fr; }
   .japan-fiscal-meta { text-align: left; }
   .risk-hypothesis-card > summary { flex-wrap: wrap; }
   .genba-verdict { padding: 26px 22px; }
