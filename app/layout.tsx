@@ -9,7 +9,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Genba — 外資IT戦士と予備軍の作戦会議所",
+    default: "Genba — 外資IT戦士と予備軍の作戦会議室",
     template: "%s — Genba",
   },
   description,
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Genba",
-    title: "Genba — 外資IT戦士と予備軍の作戦会議所",
+    title: "Genba — 外資IT戦士と予備軍の作戦会議室",
     description,
-    images: [{ url: "/og-genba-v2.png", width: 1200, height: 630, alt: "Genba — 外資IT戦士と予備軍の作戦会議所" }],
+    images: [{ url: "/og-genba-v2.png", width: 1200, height: 630, alt: "Genba — 外資IT戦士と予備軍の作戦会議室" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Genba — 外資IT戦士と予備軍の作戦会議所",
+    title: "Genba — 外資IT戦士と予備軍の作戦会議室",
     description,
     images: ["/og-genba-v2.png"],
   },
@@ -38,7 +38,7 @@ const organizationJsonLd = {
   name: "Genba",
   url: siteUrl,
   description,
-  slogan: "外資IT戦士と予備軍の作戦会議所",
+  slogan: "外資IT戦士と予備軍の作戦会議室",
   logo: `${siteUrl}/og-genba-v2.png`,
   sameAs: ["https://x.com/chosenshi08"],
 };

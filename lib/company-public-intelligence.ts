@@ -444,7 +444,7 @@ const salesforceSources: ResearchSource[] = [
 ];
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "CRM",
@@ -1030,7 +1030,7 @@ const mongodbSources: ResearchSource[] = [
 ];
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "MDB",
@@ -1654,7 +1654,7 @@ const brazeSources: ResearchSource[] = [
 ];
 
 const brazeIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "BRZE",
@@ -2269,7 +2269,7 @@ const hubspotSources: ResearchSource[] = [
 ];
 
 const hubspotIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "HUBS",
@@ -2853,7 +2853,7 @@ const oktaSources: ResearchSource[] = [
 ];
 
 const oktaIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "OKTA",
@@ -3281,7 +3281,7 @@ const zendeskSources: ResearchSource[] = [
 ];
 
 const zendeskIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2007年にコペンハーゲンでMikkel Svane氏ら3名が創業し、2009年に本社をカリフォルニアへ移転。2014年5月にNYSEへ上場したが、2022年6月にHellman & FriedmanとPermira主導の投資家グループによる買収(1株$77.50、企業価値約102億ドルの全額現金)が発表され、同年11月22日に買収完了・上場廃止となった。非公開化後はPE傘下で収益性・効率性重視の経営へ転換しつつ、AI自動化(Resolution Platform)への投資を加速。財務詳細の開示は限定的だが、AI関連ARRは非公開化直後のほぼゼロから2025年末には約2億ドルまで拡大し、2026年は最大5億ドルを見込むなど、非公開化後も明確な成長シグナルが確認できる、というのがGenbaの読み。",
@@ -3681,7 +3681,7 @@ const uipathSources: ResearchSource[] = [
 ];
 
 const uipathIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "PATH",
@@ -4052,7 +4052,7 @@ const confluentSources: ResearchSource[] = [
 ];
 
 const confluentIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2014年に、LinkedIn社内でApache Kafkaを開発した3名(Jay Kreps氏・Neha Narkhede氏・Jun Rao氏)がスピンアウトする形で創業。2021年6月にNASDAQへ上場(公開価格$36、初日+25%)し、データストリーミングという新カテゴリーを公開市場に定着させた。しかし2025年12月にIBMによる買収が発表され、2026年3月17日に1株31ドル・総額約110億ドルで買収が完了、完全子会社化・上場廃止となった。IBMはConfluentのリアルタイムデータストリーミング技術を、自社のwatsonx.data・IBM MQ・webMethods・IBM Zと初日から統合し、エンタープライズAI・エージェント活用の基盤に据える方針を示している。買収直後のため、日本を含む営業組織の統合方針・目標設定がどう変わるかは、公開情報だけでは確認できていない、というのがGenbaの読み。",
@@ -4450,7 +4450,7 @@ const pagerdutySources: ResearchSource[] = [
 ];
 
 const pagerdutyIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "PD",
@@ -4836,7 +4836,7 @@ const amplitudeSources: ResearchSource[] = [
 ];
 
 const amplitudeIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-07",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "AMPL",
@@ -5222,7 +5222,7 @@ const contentsquareSources: ResearchSource[] = [
 ];
 
 const contentsquareIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-09",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2012年、Jonathan Cherki氏がESSEC Business School在学中に着想した学生プロジェクトから創業。「企業が提供していると思っているデジタル体験」と「実際に消費者が体験している中身」のギャップに着目したのが原点で、2012〜2016年はブートストラップで運営し社員約100人まで成長した。2016年のSeries A($2,000万)以降、2021年5月のSeries E($5億、評価額$28億、SoftBank Vision Fund 2主導)、2022年7月のSeries F($6億、評価額を1年で倍増させ$56億、Sixth Street主導)と大型調達を重ね、累計調達額は$14億に達している。2023年にはプロダクト分析大手Heapを、2025年には会話型AI・CX分析のLoris AIを買収し、単なるヒートマップ・セッションリプレイのツールから「Experience Intelligence」を掲げる統合プラットフォームへ拡張してきた。非公開企業のため財務詳細は開示されていないが、2023年以降ほぼ毎年レイオフを実施しながらも大型買収を続けるという、拡大と縮小が同時に進む局面が続いている、というのがGenbaの読み。",
@@ -5630,7 +5630,7 @@ const anaplanSources: ResearchSource[] = [
 ];
 
 const anaplanIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-09",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2006年、英ヨークシャーでGuy Haddleton・Sue Haddleton夫妻とMichael Gould氏が創業。独自の演算エンジン「Hyperblock」を核に、財務・サプライチェーン・営業・人員配置など複数部門の計画をひとつのモデルでつなぐ「コネクテッドプランニング」という概念を掲げてきた。2018年10月にNYSEへ上場(ティッカーPLAN)、2021年2月に株価がピークをつけた後は約4割下落し、Corvex Management・Sachem Head Capital Managementといったアクティビスト投資家が合計約9%の株式を取得して経営改革を要求する状況になった。2022年3月、Thoma Bravoが総額$10.7B(1株$66.00、後に$63.75へ修正)で買収することに合意し、同年6月に非公開化が完了。同年12月には新CEOにCharlie Gottdiener氏(元Neustar CEO)が就任し、成長一辺倒から利益・効率重視の経営への転換が進められてきたとみられる。非公開化後の売上高は非開示だが、顧客数は買収時の約1,900社から現在2,400社超へ拡大しているとされ、2025年12月には$500M規模の複数年AI投資ロードマップを発表するなど、AIエージェント機能への再投資も並行して進んでいる。",
@@ -6030,7 +6030,7 @@ const qualtricsSources: ResearchSource[] = [
 ];
 
 const qualtricsIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-09",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2002年、Brigham Young大学教授だったScott M. Smith氏が、闘病中に息子Ryan Smith氏、そしてJared Smith氏・Stuart Orgill氏と共に、Utah州Provoの自宅地下室で創業。2016年まではブートストラップで運営し、社員約100人規模まで成長した。2019年1月、IPO直前というタイミングでSAPが$8Bの現金で買収。2021年1月、SAPが過半数株式(約82.8%)を維持したままQualtricsをNasdaqへ再上場(ティッカーXM)させ、約$1.2Bを調達した。2023年3月、Silver Lake・CPP Investmentsが総額$12.5B(1株$18.15、30日VWAPに対し73%のプレミアム)でSAPの持株も含め全株式を買収し完全非公開化。直近では2025年10月に契約・2026年5月に完了した形で、米ヘルスケア/市場調査データ企業Press Ganey Forstaを$6.75Bで買収しており、「人間の体験に関する世界最大のAIデータセット」の構築を掲げている。非公開化前最後の公表財務(FY2022)は売上高$1,458.6M(+36%)で、現在は$2Bの売上規模を目指す方針が示されているが、これは目標であり確定した数値ではない。",
@@ -6439,7 +6439,7 @@ const celonisSources: ResearchSource[] = [
 ];
 
 const celonisIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2011年、Technical University of Munich(TUM)出身のAlexander Rinke氏(数学専攻)・Bastian Nominacher氏(ファイナンス専攻)・Martin Klenk氏(情報工学専攻)が、公共放送局Bayerischer Rundfunk向けのプロジェクトで、業務システムに蓄積された取引データから業務の非効率を分析できることに着想を得て創業。Nominacher氏の自宅アパートから始まり、プロセスマイニングという新しいカテゴリーを切り拓いてきた。2019年11月に$290Mを調達し評価額$2.5B、2021年に評価額$11B、2022年8月には$1Bのシリーズラウンドで評価額$13.2Bに達し、2019年比420%の評価額成長を遂げた(累計調達額$2.4B)。2023年8月にはCarsten Thoma氏がPresidentに就任し、共同CEOのRinke氏(商業サイド)・Nominacher氏(技術サイド)体制を補完している。非公開企業のため詳細な財務数値は開示されていないが、2026年時点で社員3,000人超・拠点14か所・顧客5,000社超・累計創出顧客価値$6.5Bを掲げている。",
@@ -6769,7 +6769,7 @@ const workatoSources: ResearchSource[] = [
 ];
 
 const workatoIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2013年12月、Qikの創業者だったVijay Tella氏(CEO)が、Gautham Viswanathan氏・Harish Shetty氏・Dimitris Kogias氏と共に創業。企業システム間の連携(iPaaS)を、従来のMuleSoft等より軽量・迅速に導入できるプラットフォームとして成長し、2021年1月に$110MのシリーズDで評価額$1.7B(ユニコーン化)、同年11月には$200MのシリーズEで評価額$5.7Bに到達した(累計調達額$421M)。しかし2025年6月時点では、セカンダリー市場で評価額が$1.7B程度まで下落したとの観測があり、2021年のピークから大きく後退している可能性がある(非公開企業のため公式な評価額改定は確認できていない)。2023年2月には約85人のレイオフを実施。2025年以降は、単なるアプリ間連携(iPaaS)の会社から、AIエージェントが実際に業務を実行する基盤への製品転換を進めており、2026年には複数エージェントシステム「Workato AIRO」やAIチームメイト「Otto」を発表している。",
@@ -7070,7 +7070,7 @@ const mondayDotComSources: ResearchSource[] = [
 ];
 
 const mondayDotComIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: true,
     ticker: "MNDY",
@@ -7389,7 +7389,7 @@ const miroSources: ResearchSource[] = [
 ];
 
 const miroIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2011年、Andrey Khusid氏・Oleg Shardin氏が「RealtimeBoard」として創業し、後にMiroへ改称。オンラインホワイトボード・ビジュアルコラボレーションのカテゴリーを切り拓き、2022年1月には$400MのシリーズCで評価額$17.5Bに到達した(累計調達額$476.3M)。しかしその後、2023年に一桁台後半%の人員削減、2024年11月には全社員の18%を削減するという大規模なレイオフを実施しており、CEO Andrey Khusid氏は「組織が複雑になりすぎ、階層が多く、役割の重複がある」と述べている。2026年半ば時点でIPOのS-1提出や引受幹事の決定はなく、非公開のまま推移している。主要競合のFigmaが2025年後半に上場準備を進めていると報じられる中、Miro自身は組織のスリム化を優先している局面にあると考えられる。",
@@ -7705,7 +7705,7 @@ const newRelicSources: ResearchSource[] = [
 ];
 
 const newRelicIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2008年、Lew Cirne氏がアプリケーションパフォーマンス監視(APM)のパイオニアとして創業。2014年12月にNYSEへ上場(ティッカーNEWR、公開価格$23、調達額$115M)し、長らく公開企業としてオブザーバビリティ市場を牽引してきた。しかし2023年7月31日、投資会社のFrancisco Partners・TPGが総額$6.5B(1株$87)での買収を発表し、同年11月8日に完了、9年間の上場企業としての歴史を終えて完全非公開化した。非公開化後は、Datadog・Dynatrace・Splunk(2024年にCiscoが$28Bで買収)といった競合とのAI駆動型オブザーバビリティ市場での競争が続いている。2026年3月には、APAC地域で初となる日本データセンター「東京リージョン」の開設を発表するなど、非公開化後も地域投資を継続している。",
@@ -7979,7 +7979,7 @@ const coupaSources: ResearchSource[] = [
 ];
 
 const coupaIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-10",
+  researchedAt: "2026-08-11",
   marketStatus: {
     isPublic: false,
     growthSummary: "2006年創業、2016年に上場し、調達購買・支出管理(Business Spend Management)分野のクラウドプラットフォームとして成長した。2022年12月、投資会社Thoma Bravoが企業価値$8Bでの買収に合意したことを発表し、2023年前半に完了、完全非公開化した。買収価格は1株$81で、発表前終値に対して77%のプレミアムが付いており、アブダビ投資庁系のファンドもマイノリティ出資者として参加している。非公開化後は、AI・コミュニティ生成データを活用した「Total Spend Management」プラットフォームとして、SAP Ariba・Ivalua・Zipのような競合とグローバルで競争を続けている。",
@@ -8168,6 +8168,107 @@ const coupaIntelligence: CompanyPublicIntelligence = {
   sources: coupaSources,
 };
 
+const rubrikSources: ResearchSource[] = [
+  { id: "rubrik-careers", label: "Rubrik Sales Careers", url: "https://www.rubrik.com/company/careers/departments/sales", kind: "企業公式", scope: "日本の公開求人一覧", checkedAt: "2026-08-11" },
+  { id: "rubrik-job-midmarket", label: "Mid Market Account Executive | Tokyo", url: "https://www.rubrik.com/company/careers/departments/job.8014986.54284?reqId=11055", kind: "企業公式", scope: "東京AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "rubrik-fy26", label: "Rubrik FY2026通期決算", url: "https://ir.rubrik.com/news-events/press-releases/news-details/2026/Rubrik-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Financial-Results/default.aspx", kind: "企業公式", scope: "業績・ARR・顧客数", checkedAt: "2026-08-11" },
+  { id: "rubrik-q1fy27", label: "Rubrik Q1 FY2027決算", url: "https://ir.rubrik.com/financials/quarterly-results/default.aspx", kind: "企業公式", scope: "最新ARR・成長率", checkedAt: "2026-08-11" },
+  { id: "rubrik-japan-leader", label: "Rubrik Japan新営業最高責任者就任", url: "https://www.rubrik.com/ja/company/newsroom/press-releases/24/rubrik-named-new-chief-sales-officer-of-japan-announcement-of-the-appointment-of-yuki-takayama", kind: "企業公式", scope: "日本営業リーダー・パートナー方針", checkedAt: "2026-08-11" },
+  { id: "rubrik-nec", label: "NEC導入事例", url: "https://www.rubrik.com/ja/customers/nec", kind: "企業公式", scope: "国内顧客・導入成果", checkedAt: "2026-08-11" },
+  { id: "rubrik-nttdata", label: "NTTデータグループ導入事例", url: "https://www.rubrik.com/content/dam/rubrik/ja/resources/case-study/ntt-data.pdf", kind: "企業公式", scope: "国内顧客・導入規模", checkedAt: "2026-08-11" },
+  { id: "rubrik-gree", label: "グリー導入事例", url: "https://www.rubrik.com/ja/customers/gree", kind: "企業公式", scope: "国内顧客・運用効率化", checkedAt: "2026-08-11" },
+  { id: "rubrik-partners", label: "Rubrik Japan Partner Award 2026", url: "https://www.rubrik.com/ja/blog/company/26/5/rubrik-japan-partner-award-announcement", kind: "企業公式", scope: "日本のパートナーエコシステム", checkedAt: "2026-08-11" },
+  { id: "rubrik-customers", label: "Rubrikお客様事例", url: "https://www.rubrik.com/ja/customers/all-customers", kind: "企業公式", scope: "国内導入事例一覧", checkedAt: "2026-08-11" },
+];
+
+const rubrikIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: true,
+    ticker: "RBRK",
+    exchange: "NYSE",
+    listedSince: "2024年4月",
+    stockLinkUrl: "https://ir.rubrik.com/stock-info/stock-quote/default.aspx",
+    growthSummary: "2014年創業、2024年4月にNYSEへ上場。従来のバックアップ製品から、データ保護・脅威監視・復旧を統合するRubrik Security Cloudへと拡張した。FY2026通期売上高は13.16億ドル(前年比+48%)、2026年4月末のSubscription ARRは15.7億ドル(同+32%)。日本では創立10周年のパートナー表彰と東京AE採用が同時に確認でき、直販とチャネルの両輪で国内市場を拡大する局面と読める。",
+    milestones: [
+      { year: "2014", label: "創業", detail: "Bipul Sinha氏らが創業。クラウドデータ管理から事業を開始。", sourceId: "rubrik-fy26" },
+      { year: "2016", label: "日本法人を創立", detail: "2026年の公式Partner Awardで「Rubrik Japan創立10周年」と公表。", sourceId: "rubrik-partners" },
+      { year: "2024", label: "NYSE上場", detail: "2024年4月にティッカーRBRKで上場。", sourceId: "rubrik-fy26" },
+      { year: "FY2026", label: "売上高48%成長", detail: "通期売上高13.16億ドル、Subscription ARR 14.6億ドル。", sourceId: "rubrik-fy26" },
+      { year: "2026", label: "ARR 15.7億ドル", detail: "2026年4月末のSubscription ARRは前年比32%増。", sourceId: "rubrik-q1fy27" },
+    ],
+    sourceIds: ["rubrik-fy26", "rubrik-q1fy27", "rubrik-partners"],
+  },
+  sellingPlaybook: {
+    frameIntro: "「バックアップ更新」ではなく、ランサムウェア後に事業を戻せるかという経営リスクを起点にする。",
+    issueLenses: [
+      { title: "復旧可能性", body: "バックアップがあることと、攻撃後にクリーンなデータへ迅速に復旧できることを分けて問う。" },
+      { title: "運用の分断", body: "オンプレミス、クラウド、SaaSごとに分かれた保護運用とツールスプロールを可視化する。" },
+      { title: "取締役会リスク", body: "RTO/RPOだけでなく、事業停止時間、監査、顧客信頼への影響に接続する。" },
+    ],
+    narrative: [
+      { label: "診断", body: "保護対象・管理ツール・復旧手順・演習実績を棚卸しする。" },
+      { label: "仮説", body: "復旧時間と運用負荷のボトルネックを数値化する。" },
+      { label: "実証", body: "NECの復旧時間半減見込みや運用コスト20%削減等、条件が明示された事例で検証する。" },
+      { label: "展開", body: "パートナーと実装・運用設計を固め、データ保護からサイバーレジリエンスへ拡張する。" },
+    ],
+    openingHook: "最後に本番環境をクリーンな状態へ戻す演習をしたのはいつですか。",
+    valueHypothesis: "分散した保護と復旧を統合し、有事の復旧時間と平時の運用負荷を同時に下げられる可能性がある。",
+    commonObjection: { objection: "既存のバックアップで十分。", reframe: "バックアップ成功率ではなく、攻撃後の復旧成功時間とクリーンデータの判定能力で比較する。" },
+  },
+  facts: [
+    { label: "日本法人", value: "2016年創立", detail: "2026年にRubrik Japan創立10周年を公式発表。", sourceIds: ["rubrik-partners"] },
+    { label: "公開求人", value: "東京AE 1件", detail: "Mid Market Account Executiveを公式採用ページで確認。", sourceIds: ["rubrik-careers", "rubrik-job-midmarket"] },
+    { label: "成長", value: "FY2026売上高+48%", detail: "通期売上高13.16億ドル。", sourceIds: ["rubrik-fy26"] },
+    { label: "国内導入事例", value: "NEC・NTTデータ・グリー等", detail: "複数の日本企業の公式事例を公開。", sourceIds: ["rubrik-nec", "rubrik-nttdata", "rubrik-gree"] },
+    { label: "パートナー", value: "国内エコシステムあり", detail: "CTC、JBS、NECセキュリティ、ノックス等をFY26の実績で表彰。", sourceIds: ["rubrik-partners"] },
+  ],
+  hypotheses: [
+    { topic: "日本市場", title: "直販とチャネルの両輪で拡大中", conclusion: "東京AEの募集とパートナー表彰の同時展開から、日本での拡大は直販単独ではない。", confidence: "高", evidence: ["求人がSDR・チャネル・VAR協業を明記", "FY26 Partner Awardで案件創出・大型成約・導入支援を表彰"], counterSignals: ["日本の直販・間接売上比率は非公開"], interviewQuestions: ["パートナー由来と直販由来のパイプライン比率は。"], sourceIds: ["rubrik-job-midmarket", "rubrik-partners"] },
+    { topic: "営業モーション", title: "Mid-Marketでも即戦力性は高い", conclusion: "バックアップ・データセンター領域の実務経験を重く見る。", confidence: "高", evidence: ["ITインフラ/SaaS営業3年以上", "応募時に直近2年のバックアップ商材経験を質問"], counterSignals: ["必須年数は3年で、シニア層だけに限定していない"], interviewQuestions: ["立ち上がり期間と製品認定の要件は。"], sourceIds: ["rubrik-job-midmarket"] },
+    { topic: "商談価値", title: "バックアップ費用より事業復旧で経営層へ入る", conclusion: "導入事例は運用効率と有事の復旧を一つの投資理由として語れる。", confidence: "高", evidence: ["NEC事例で運用コスト20%削減", "復旧時間半減の見込み"], counterSignals: ["有事の実測値ではなく見込みを含む"], interviewQuestions: ["CIOとCISOのどちらが主なEconomic Buyerになりますか。"], sourceIds: ["rubrik-nec"] },
+    { topic: "成長性", title: "グローバル成長は強いが、日本の配分は非公開", conclusion: "ARRと売上は高成長だが、日本のクオータ・人員増に同じ勢いがあるかは選考で検証が必要。", confidence: "中", evidence: ["FY2026売上高+48%", "2026年4月末ARR+32%"], counterSignals: ["日本単体の売上・ARR・人員は非公開"], interviewQuestions: ["日本のFY27の投資優先順位と採用計画は。"], sourceIds: ["rubrik-fy26", "rubrik-q1fy27"] },
+    { topic: "キャリア", title: "データ保護とセキュリティの境界領域を強みにできる", conclusion: "インフラ更新とCISO向けリスク提案の両方を経験できる可能性がある。", confidence: "中", evidence: ["Rubrik Security Cloudは保護・監視・復旧を統合", "求人は複雑なデータセンター環境への提案を要求"], counterSignals: ["実際の商談でCISOがどの程度関与するかは非公開"], interviewQuestions: ["現在の商談でインフラチームとセキュリティチームのどちらが主導しますか。"], sourceIds: ["rubrik-job-midmarket", "rubrik-japan-leader"] },
+  ],
+  cultureNotes: { organizationReadTitle: "新規ロゴとOne Rubrik型チームセリングの両方を求める。", hypothesis: { title: "個人戦より社内外のオーケストレーションが重い", body: "求人はプリセールス・SDR・チャネル・パートナー連携を反復して強調。" }, careerValue: { title: "チャネル共同販売とサイバーレジリエンスの両方を積める。", body: "新規開拓に加え、国内SIer・VARとの共同提案実績を残せる可能性がある。", confidence: "中" } },
+  customerProof: [
+    { company: "NEC", products: "Rubrikデータレジリエンスプラットフォーム", outcome: "2.7PBへ適用、セキュリティインシデント管理コストを約20%削減。", implication: "大手企業の複雑なマルチクラウドでの大規模導入証拠。", sourceId: "rubrik-nec" },
+    { company: "NTTデータグループ", products: "Rubrikアプライアンス", outcome: "国内グループ約70社・8万ユーザーのプライベートクラウドバックアップを更新。", implication: "国内の大規模エンタープライズ実績。", sourceId: "rubrik-nttdata" },
+    { company: "グリー", products: "Rubrik r6404s", outcome: "分散したバックアップ運用を統合し、運用負荷と属人化を削減。", implication: "デジタルネイティブ企業での実績。", sourceId: "rubrik-gree" },
+  ],
+  externalSignals: [
+    { label: "Subscription ARR", value: "$1.57B", detail: "2026年4月末、前年比32%増。", caveat: "グローバル全体の数値。", sourceId: "rubrik-q1fy27" },
+    { label: "$100K+顧客", value: "2,805社", detail: "2026年1月末、Subscription ARR 10万ドル以上の顧客。", caveat: "日本単体の社数は非公開。", sourceId: "rubrik-fy26" },
+  ],
+  roleLens: { salesMotion: "新規ロゴと既存拡大の両方を担当し、プリセールス・SDR・チャネル・ディストリビューター・VARと連携する。", compensation: "Rubrik Japan固有の給与・OTE・Pay Mixは非公開。", quota: "応募フォームで現在のクオータを確認するが、当該ポジションのクオータ額は非公開。", collaboration: "日本のSIer・VAR・ディストリビューターを含むチームセリングが明記されている。" },
+  leadership: { name: "高山 勇喜", role: "Rubrik Japan株式会社 常務執行役員 営業最高責任者", read: "2024年3月18日付で就任。公式発表では、ServiceNow Japanのソリューション営業統括、SAPジャパンのHybris事業本部長・営業部長等を歴任し、国内パートナーとの協業強化を掲げている。", sourceId: "rubrik-japan-leader" },
+  companyStats: { globalHeadcount: { value: "非公開(今回の確認ソースでは特定できず)", detail: "", sourceId: "rubrik-fy26" }, japanHeadcount: { value: "非公開", detail: "公式の日本単体従業員数は確認できていない。" }, japanOffice: { value: "東京", detail: "公式求人の拠点表示。", sourceId: "rubrik-careers" }, japanSince: { value: "2016年", detail: "2026年に創立10周年。", sourceId: "rubrik-partners" } },
+  salesAppeal: { intro: "高成長の上場サイバーセキュリティ企業で、日本の大手導入事例とパートナー基盤を使いながら新規ロゴを開拓する環境。", points: [
+    { title: "NEC・NTTデータ等の国内証拠を使える", detail: "大規模導入と定量成果を伴う事例がある。", sourceIds: ["rubrik-nec", "rubrik-nttdata"] },
+    { title: "成長市場と会社成長が重なる", detail: "FY2026売上高は48%増。", sourceIds: ["rubrik-fy26"] },
+    { title: "チャネル共同販売の実戦経験", detail: "CTC、JBS、NECセキュリティ等の公式パートナー実績がある。", sourceIds: ["rubrik-partners"] },
+    { title: "インフラとセキュリティの境界領域", detail: "バックアップ更新から事業復旧・取締役会リスクまで提案を広げられる。", sourceIds: ["rubrik-nec", "rubrik-japan-leader"] },
+  ] },
+  interviewPrep: { intro: "成長の強さだけでなく、日本のテリトリーとチャネル依存度を確認する。", questions: [
+    { question: "Mid-Marketの定義、担当アカウント数、年間クオータは。", why: "ポジションの実際の難易度を確認したい。", sourceIds: ["rubrik-job-midmarket"] },
+    { question: "新規と既存拡大、パートナー由来と自己開拓の比率は。", why: "パイプライン創出の責任範囲を確認したい。", sourceIds: ["rubrik-job-midmarket", "rubrik-partners"] },
+    { question: "日本ではCIO、CISO、インフラ責任者の誰が最も多いEconomic Buyerですか。", why: "実際の販売モーションを確認したい。", sourceIds: ["rubrik-nec", "rubrik-japan-leader"] },
+    { question: "入社後90日の製品認定・パイプライン目標は。", why: "即戦力性と立ち上がり支援のバランスを確認したい。", sourceIds: ["rubrik-job-midmarket"] },
+  ] },
+  solutions: [
+    { name: "Rubrik Security Cloud", valueProp: "オンプレミス、クラウド、SaaSのデータを保護・監視・復旧するサイバーレジリエンスプラットフォーム。", url: "https://www.rubrik.com/ja/products/rubrik-security-cloud", competitors: "Cohesity、Veeam、Commvault、Dell Technologies、クラウドネイティブのバックアップ機能等。", differentiation: "イミュータブルなデータ保護、脅威の検知、クリーンな復旧を一つの運用に統合する点を訴求。", retention: "日本固有の継続率は非公開。" },
+    { name: "Rubrik Agent Cloud", valueProp: "AIエージェントの行動監視、ガードレール、精度改善、誤操作の取り消しを支援。", url: "https://www.rubrik.com/", competitors: "AIセキュリティ・AIガバナンス製品群。", differentiation: "データ保護と復旧の基盤から、AIエージェント操作の復元性まで拡張する点。", retention: "新規領域であり、日本固有の継続率は非公開。" },
+  ],
+  customerStoriesUrl: "https://www.rubrik.com/ja/customers/all-customers",
+  fitTags: ["サイバーレジリエンスを売りたい", "データセンター商材の経験がある", "新規ロゴ開拓が得意", "SIer・VARとの協業経験がある", "CIO・CISO層に経営リスクを提案したい", "成長中の上場外資SaaSを見たい", "複雑なチームセリングを楽しめる", "製品学習と技術対話を苦にしない"],
+  comparisonMap: [
+    { arena: "データ保護/サイバーレジリエンス", companies: ["Rubrik", "Cohesity", "Veeam"], why: "復旧・データ保護予算の比較" },
+    { arena: "サイバーセキュリティ", companies: ["Rubrik", "CrowdStrike", "Palo Alto Networks"], why: "予防・検知か、侵害後の復旧まで含めるかの比較" },
+    { arena: "クラウド・データセンター", companies: ["Rubrik", "Dell Technologies", "Commvault"], why: "ハイブリッドクラウドのデータ管理予算の比較" },
+  ],
+  sources: rubrikSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
   mongodb: mongodbIntelligence,
@@ -8188,6 +8289,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   miro: miroIntelligence,
   "new-relic": newRelicIntelligence,
   coupa: coupaIntelligence,
+  rubrik: rubrikIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
