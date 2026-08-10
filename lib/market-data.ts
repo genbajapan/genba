@@ -112,37 +112,43 @@ const hubspotCorporateCareerFlow = {
 // Okta Japan株式会社は2020年9月設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
 const oktaTenureNote = "Okta Japan株式会社は2020年9月設立で、平均在籍年数・離職率を示す公開データは確認できていない。OpenWorkの口コミには「業績悪化、知名度の低さ、パートナー協業の課題」を指摘する声がある一方、「社員のモチベーションが高い」「自由度が高い」という声もあり、評価が分かれている。";
 
+// LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点の営業職で実例1件)、Oracle・Tanium・BEA Systemsなど大手エンタープライズソフトウェア/セキュリティベンダーでの営業経験(金融機関等の大口顧客担当)を経て入社しているケースが見られる。サンプル数が非常に少なく、傾向の確証ではない点に留意。
+const oktaLinkedInNote = "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点の営業職で実例1件)、Oracle・Tanium・BEA Systemsなど大手エンタープライズソフトウェア/セキュリティベンダーで金融機関等の大口顧客を担当してきた人材が入社しているケースが見られる。サンプル数が非常に少なく、傾向の確証ではない。";
+
 const oktaSMECareerFlow = {
   tenureAndPromotion: oktaTenureNote,
-  priorCompanies: "求人要件からは、他のテクノロジー企業でのインサイドセールス・フィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: `${oktaLinkedInNote} SME/Associate向けの本求人では、求人要件上は他のテクノロジー企業でのインサイドセールス・フィールドセールス経験者も対象に含まれる(求人要件からの読み解き)。`,
+  nextCompanies: "LinkedIn検索でも、Okta Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。ID/セキュリティ領域という専門性は、CrowdStrike・SailPoint・CyberArkなど同業のセキュリティSaaS企業や、社内でのAuth0 AE・Enterprise AEへのステップアップで評価されやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const oktaAuth0CareerFlow = {
   tenureAndPromotion: oktaTenureNote,
-  priorCompanies: "求人要件からは、技術理解を伴う営業経験者、特にDevOps・エンジニアリング領域に強いSaaS企業出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: `${oktaLinkedInNote} Auth0という開発者向け製品の特性上、技術理解を伴う営業経験者、特にDevOps・エンジニアリング領域に強いSaaS企業出身者も中心層になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: "LinkedIn検索でも、Okta Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。開発者向け製品を扱った経験は、他の開発者向けSaaS企業(Datadog、MongoDB等)のAEへの転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const oktaEnterpriseAuth0CareerFlow = {
   tenureAndPromotion: oktaTenureNote,
-  priorCompanies: "求人要件からは、大型エンタープライズ商材を扱ってきた技術系SaaS企業出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: `${oktaLinkedInNote} Enterprise区分では、求人要件にある通り大型エンタープライズ商材を扱ってきた技術系SaaS企業出身者がより中心になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: "LinkedIn検索でも、Okta Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。大規模エンタープライズでの技術商材の契約獲得実績は、他の開発者向け・技術系SaaS企業のEnterprise/Strategic AEへの転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 // 合同会社Zendeskは2013年2月設立、2022年の非公開化以降は組織データの開示が限定的なため共通の非公開注記として保持
 const zendeskTenureNote = "合同会社Zendesk(旧・株式会社Zendesk)は2013年2月設立。2022年にHellman & FriedmanとPermira主導の投資家グループにより非公開化されて以降、詳細な組織データの開示は限定的。OpenWorkの口コミには「外資ITなので、実績(予算達成率)が全て」という声がある。";
 
+// LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のAEで実例1件)、Oracle・Microsoft・Salesforceのような大手エンタープライズソフトウェア企業で10年超のキャリアを積んだ後にZendeskへ移り、2017年の入社から9年以上在籍している例が見られる。「外資は数年で転職」という一般論と異なり、長期在籍する人材もいることがうかがえる(実例1件、傾向の確証ではない)。
+const zendeskLinkedInNote = "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のAEで実例1件)、大手エンタープライズソフトウェア企業を渡り歩いたシニア層が入社し、Zendeskでも数年以上の長期在籍が続いている例が見られる。「外資は数年で転職」という一般論と必ずしも一致しない人材もいることがうかがえるが、実例1件でありサンプル数は非常に少ない。";
+
 const zendeskSMBCareerFlow = {
-  tenureAndPromotion: zendeskTenureNote,
+  tenureAndPromotion: `${zendeskTenureNote} ${zendeskLinkedInNote}`,
   priorCompanies: "求人要件からは、他のSaaS企業でのインサイドセールス・フィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  nextCompanies: "LinkedIn検索でも、Zendesk Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。新規開拓とアップセルの両立実績は、他社のSMB/Commercial AEへの横移動材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const zendeskCommercialCareerFlow = {
-  tenureAndPromotion: zendeskTenureNote,
+  tenureAndPromotion: `${zendeskTenureNote} ${zendeskLinkedInNote}`,
   priorCompanies: "求人要件からは、新規開拓と既存アカウント管理の両方を経験したSaaS営業出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  nextCompanies: "LinkedIn検索でも、Zendesk Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。新規開拓と既存拡張の両立実績は、他社のMid-Market/Enterprise AEへの転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 // UiPath株式会社は2017年3月設立、2026年2月にカントリーマネージャーが交代したばかりのため共通の非公開注記として保持
@@ -151,29 +157,32 @@ const confluentTenureNote = "Confluent Japan合同会社は2021年4月設立、�
 
 const confluentDigitalNativeCareerFlow = {
   tenureAndPromotion: confluentTenureNote,
-  priorCompanies: "求人要件からは、ビッグデータ・クラウド・SaaS・OSS領域での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: "LinkedIn公開プロフィールを検索したが、Confluent Japanの営業職個人を具体的に示す例は確認できなかった(2026年8月時点、OpenWorkの口コミ投稿も0件)。求人要件からは、ビッグデータ・クラウド・SaaS・OSS領域での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "LinkedIn検索でも、Confluent Japanの退職者・転職先を示す例は確認できなかった(2026年8月時点)。テック企業向けの技術商材の契約獲得実績は、データ/クラウド基盤系の他社(Snowflake、MongoDB等)のEnterprise AE、あるいはIBM社内での異動材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const confluentMSPISVCareerFlow = {
   tenureAndPromotion: confluentTenureNote,
-  priorCompanies: "求人要件からは、パートナー・チャネル経由の販売経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: "LinkedIn公開プロフィールを検索したが、Confluent Japanの営業職個人を具体的に示す例は確認できなかった(2026年8月時点、OpenWorkの口コミ投稿も0件)。求人要件からは、パートナー・チャネル経由の販売経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "LinkedIn検索でも、Confluent Japanの退職者・転職先を示す例は確認できなかった(2026年8月時点)。パートナー経由のパイプライン構築実績は、他社のパートナー営業・アライアンス職、あるいはIBM社内でのエコシステム関連職への転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 // PagerDuty株式会社は2022年5月にJapan Cloudとの合弁で設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
 const pagerdutyTenureNote = "PagerDuty株式会社は2022年5月、PagerDutyとJapan Cloudの合弁で設立。代表取締役社長の山根伸行氏はIBM Japan・Microsoft Japanで15年以上のエンタープライズ営業経験を持つ。平均在籍年数・離職率の公開データは確認できていない。";
 
+// LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のEnterprise AEで実例1件)、Microsoftで新卒からAE・Strategic AEへ昇格した人材が、その後PagerDutyへ移籍している例が見られる。大手クラウドベンダーで営業の基礎を積んだ若手〜中堅層が採用されている可能性がある(実例1件、傾向の確証ではない)。
+const pagerdutyLinkedInNote = "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のEnterprise AEで実例1件)、大手クラウドベンダーで営業の基礎を積んだ人材が、その後PagerDutyへ移籍している例が見られる。若手〜中堅層が採用されている可能性があるが、実例1件でありサンプル数は非常に少ない。";
+
 const pagerdutyEnterpriseAECareerFlow = {
   tenureAndPromotion: pagerdutyTenureNote,
-  priorCompanies: "求人要件からは、エンタープライズ向け営業経験者、特にインフラ・運用管理系ソリューションの営業出身者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: `${pagerdutyLinkedInNote} 求人要件からは、インフラ・運用管理系ソリューションの営業出身者も中心層になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: "LinkedIn検索でも、PagerDuty Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。CxO層への提案・新規契約獲得実績は、同業(Datadog、ServiceNow等)のEnterprise AE、あるいはインシデント管理・SRE関連のSaaS企業への横移動材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const pagerdutySrSalesManagerCareerFlow = {
   tenureAndPromotion: pagerdutyTenureNote,
   priorCompanies: "求人要件からは、IT業界でのハイタッチ・直販営業経験と、営業マネージャーとしてのピープルマネジメント経験を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  nextCompanies: "LinkedIn検索でも、PagerDuty Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。チームのクオータ達成率・採用育成実績は、他の外資SaaS企業のSales Director・VP Salesへの転職材料になりやすいと考えられる(職務の性質からの仮説)。",
 };
 
 // AMPLITUDE JAPAN合同会社は2014年7月設立、2024年にカントリーマネージャーが交代したばかりのため共通の非公開注記として保持
@@ -181,22 +190,22 @@ const amplitudeTenureNote = "AMPLITUDE JAPAN合同会社は2014年7月設立。2
 
 const amplitudeEnterpriseAECareerFlow = {
   tenureAndPromotion: amplitudeTenureNote,
-  priorCompanies: "求人要件からは、急成長スタートアップ環境を経験した営業、新規テリトリー開拓の実績を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: "LinkedIn公開プロフィールを検索したが、AMPLITUDE JAPANの営業職個人を具体的に示す例は確認できなかった(2026年8月時点)。求人要件からは、急成長スタートアップ環境を経験した営業、新規テリトリー開拓の実績を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "LinkedIn検索でも、AMPLITUDE JAPANの退職者・転職先を示す例は確認できなかった(2026年8月時点)。新規テリトリーでのロゴ獲得実績は、他のプロダクト分析・データ系SaaS企業(Snowflake、MongoDB等)のEnterprise AEへの転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 const amplitudeCommercialAECareerFlow = {
   tenureAndPromotion: amplitudeTenureNote,
-  priorCompanies: "求人要件からは、SaaS営業の経験者、特にプロダクト主導型(PLG)組織での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: "LinkedIn公開プロフィールを検索したが、AMPLITUDE JAPANの営業職個人を具体的に示す例は確認できなかった(2026年8月時点)。求人要件からは、SaaS営業の経験者、特にプロダクト主導型(PLG)組織での営業経験者が中心になると考えられる(求人要件からの読み解き)。",
+  nextCompanies: "LinkedIn検索でも、AMPLITUDE JAPANの退職者・転職先を示す例は確認できなかった(2026年8月時点)。新規開拓の商談化率・受注率は、社内でのEnterprise AEへのステップアップ、他社のSMB/Commercial AEへの横移動材料になりやすいと考えられる(職務の性質からの仮説)。",
 };
 
 const contentsquareTenureNote = "Contentsquare Japan合同会社は2022年4月設立。初代カントリーマネージャーの伊奈憲一郎氏(前職Salesforce Japanでリージョナルバイスプレジデント等を13年間歴任)は2026年1月末に退任しDatabricksへ転じ、2026年2月から堀井健一郎氏(前職Salesforce Japanでリージョナルセールスディレクター)が後任に就いている。平均在籍年数・離職率の公開データは確認できていない。";
 
 const contentsquareSdrCareerFlow = {
   tenureAndPromotion: contentsquareTenureNote,
-  priorCompanies: "求人要件からは、B2Bテクノロジー・SaaS・分析・CRM領域で1年以上の営業/事業開発経験を持つ人材が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。",
+  priorCompanies: "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点の営業職で実例1件)、大手SaaS/セキュリティベンダーで複数年にわたり高い目標達成率を継続的に記録してきた人材が入社しているケースが見られる(実例1件、傾向の確証ではない)。求人要件上はB2Bテクノロジー・SaaS・分析・CRM領域で1年以上の営業/事業開発経験があれば応募対象になり、SDRというエントリー層のポジションとしては幅広い経歴を受け入れていると考えられる。",
+  nextCompanies: "LinkedIn検索でも、Contentsquare Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。新規商談の創出実績は、社内でのAEへの昇格、または同領域(Amplitude等)や隣接するCX/マーケティングテクノロジー企業への転職材料になりやすいと考えられる(製品領域の隣接性からの仮説)。",
 };
 
 export type Signal = {
@@ -907,9 +916,9 @@ export const jobs: Job[] = [
       fit: "大型商談(単独ACV1億円超)を動かした経験があり、金融業界の意思決定者との関係構築に自信がある人に向く。1〜8社という少数の戦略アカウントに深く入り込むスタイルのため、幅広く数をこなす営業よりも、少数の大型案件をじっくり育てる営業スタイルを好む人に合う。",
       thingsToKnow: "求人票(Solution Consulting Manager職)には「新しいセールスブループリント」という表現があり、Anaplan Japanで営業プロセスの刷新が進行中である可能性がある。また日本法人(Ａｎａｐｌａｎ　Ｊａｐａｎ株式会社)は9期の決算公告で純資産が約▲6.1億円の債務超過状態にあることが確認できた。米国本社の完全子会社における債務超過は資金繰りの実態を直接反映しない場合も多いが、面接で日本事業の投資方針を確認しておきたい。",
       marketValue: "Enterprise AE(業種特化)としての実績の市場価値は、①報酬面では単独ACV1億円超の実績が求められる分、外資SaaSのEnterprise AE帯の中でも上位水準(目安1,500万〜2,500万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績は大型商談の単独クロージング実績とC-level層への提案力。③キャリアの選択肢は他の外資EPM/FP&A系SaaS企業(Workday Adaptive Planning、OneStream、Pigment等)のEnterprise AE、または社内でのRVPへの昇進。④Thoma Bravoの非公開化後、Anaplan自身がAIエージェント関連機能に約5億ドル規模の複数年投資を表明しており、この投資局面での実績は次のキャリアでも語りやすい材料になり得る。",
-      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。代表取締役は米本社のChief Legal Officerが登記上の役職者を務め、実務上のカントリーマネージャーは中田淳氏(VP of Sales, Country Manager - Japan)とされる二層構造になっている。",
-      priorCompanies: "求人要件から、大手SIer・外資ITベンダーで金融機関向けの大型商談(ACV1億円超)を担当した営業経験者、またはEPM/FP&A領域のコンサルティング経験者が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。業種特化のEnterprise AEとしての実績は、他社のFP&A/EPM系SaaS企業のEnterprise AEや、社内でのRVPへのステップアップにつながりやすいと考えられるが、これは未確認の一般論。",
+      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。代表取締役は米本社のChief Legal Officerが登記上の役職者を務め、実務上のカントリーマネージャーは中田淳氏(VP of Sales, Country Manager - Japan)とされる二層構造になっている。OpenWorkの回答者11件(2026年8月時点、営業職中心)では総合評価3.75(全企業上位2%)、月間残業37.7時間、有休消化率72.7%。在籍年数は3年未満〜5〜10年まで幅があり、「成果を出せない人への責任転嫁」を指摘する退職者コメントも見られる。",
+      priorCompanies: "LinkedIn公開プロフィールを検索した限り(2026年8月時点、業種特化の営業ポジションで実例1件)、大手エンタープライズソフトウェアベンダーで特定業種(製造/自動車)を長年一貫して担当した人材が、Anaplanでも同じ業種を担当する形で長期在籍しているケースが見られる。業種特化型の採用では、SaaS経験の有無よりも業界知識の連続性が重視されている可能性がある(実例1件、傾向の確証ではない)。金融業界向けの本求人では、求人要件上は大手SIer・外資ITベンダーで金融機関向けの大型商談(ACV1億円超)を担当した営業経験者、またはEPM/FP&A領域のコンサルティング経験者も対象になると考えられる(求人要件からの読み解き)。",
+      nextCompanies: "LinkedIn検索でも、Anaplan Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。業種特化のEnterprise AEとしての実績は、他社のFP&A/EPM系SaaS企業のEnterprise AEや、社内でのRVPへのステップアップにつながりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
@@ -931,9 +940,9 @@ export const jobs: Job[] = [
       fit: "既存のAEチームを率いながら、金融業界という単一業種に特化した戦略を描きたい人に向く。プレイングマネージャーではなく、チームのネットARR成長全体に責任を持つ立場。",
       thingsToKnow: "求人票の「新しい地域・業種へソフトウェア企業を導いた実績」という表現から、金融業界向けの体制がまだ立ち上げ期にある可能性が高い。何名体制でスタートするのか、既存の金融顧客(みずほ銀行など公開事例がある)からの引き継ぎがあるのかは面接で確認したい。",
       marketValue: "RVP(業種特化マネジメント)としての実績の市場価値は、①報酬面では配下チームの規模・業種特化度に応じて外資SaaSのセールスマネージャー帯の中でも上位水準になると考えられるが日本固有の裏付けはない。②評価される実績はチームのネットARR成長率とチームビルディングの実績。③キャリアの選択肢は他社の営業責任者(Head of Sales Japan等)、または社内でのカントリーマネージャーへのステップアップ。",
-      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。",
-      priorCompanies: "求人要件から、外資エンタープライズソフトウェア企業で日本市場のセールスリーダーシップを10年以上経験した人材が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。業種特化のセールスマネジメント経験は、他社のカントリーマネージャー・Head of Sales職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。OpenWorkの回答者11件(2026年8月時点、営業職中心)では総合評価3.75(全企業上位2%)、月間残業37.7時間、有休消化率72.7%。在籍年数は3年未満〜5〜10年まで幅がある。",
+      priorCompanies: "LinkedIn公開プロフィールを検索した限り(2026年8月時点、業種特化の営業ポジションで実例1件)、大手エンタープライズソフトウェアベンダーで特定業種を長年一貫して担当し、Anaplanでも同じ業種を長期担当しているケースが見られる(実例1件、傾向の確証ではない)。求人要件からは、外資エンタープライズソフトウェア企業で日本市場のセールスリーダーシップを10年以上経験した人材も中心層になると考えられる(求人要件からの読み解き)。",
+      nextCompanies: "LinkedIn検索でも、Anaplan Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。業種特化のセールスマネジメント経験は、他社のカントリーマネージャー・Head of Sales職への転職材料になりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
@@ -955,9 +964,9 @@ export const jobs: Job[] = [
       fit: "技術提案(デモ・PoC設計)とチームマネジメントの両方に関わりたい人に向く。プリセールス組織の体制刷新期に入るため、型がまだ固まっていない環境で自らプロセスを作りたい人に合う。",
       thingsToKnow: "「新しいセールスブループリント」の具体的な内容や、既存のプリセールスチームの人数・体制は求人票だけでは分からない。面接で確認したい。",
       marketValue: "Solution Consulting Managerとしての実績の市場価値は、①報酬面では外資SaaSのプリセールスマネージャー帯(目安1,300万〜2,000万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績はチームの技術提案の質と受注貢献度。③キャリアの選択肢は他社のプリセールスディレクター、または社内でのセールスサイドへの転向。",
-      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。",
-      priorCompanies: "求人要件から、他の外資エンタープライズSaaS企業でプリセールス/ソリューションコンサルタントとしてマネジメント経験を積んだ人材が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。プリセールスマネジメント経験は、他社のプリセールスディレクター職や、社内でのセールス職への転向材料になりやすいと考えられるが、これは未確認の一般論。",
+      tenureAndPromotion: "Anaplan Japanの離職率・在籍年数の公開データは確認できていない。OpenWorkの回答者11件(2026年8月時点、営業職中心)では総合評価3.75(全企業上位2%)、月間残業37.7時間、有休消化率72.7%。在籍年数は3年未満〜5〜10年まで幅がある。",
+      priorCompanies: "LinkedIn公開プロフィールを検索した限り(2026年8月時点、業種特化の営業ポジションで実例1件)、対象業界(製造業・自動車業界)を長年一貫して担当してきた人材が、業種知識を軸にAnaplanへ移っているケースが見られる(実例1件、傾向の確証ではない)。求人要件からは、他の外資エンタープライズSaaS企業でプリセールス/ソリューションコンサルタントとしてマネジメント経験を積んだ人材も中心層になると考えられる(求人要件からの読み解き)。",
+      nextCompanies: "LinkedIn検索でも、Anaplan Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。プリセールスマネジメント経験は、他社のプリセールスディレクター職や、社内でのセールス職への転向材料になりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
@@ -980,8 +989,8 @@ export const jobs: Job[] = [
       thingsToKnow: "Qualtricsは2025年10月にCEOが交代(Zig Serafin氏→暫定共同CEO体制→2026年2月にJason Maynard氏就任)し、2026年4月には主要幹部5名が同時に退任するなど、経営体制が大きく揺れている最中。新CEOはOracle/NetSuite出身で営業・レベニュー畑の人材であり、現場の営業戦略にどう影響するかは面接で確認したい。",
       marketValue: "Commercial AEとしての実績の市場価値は、①報酬面では外資SaaSのCommercial/Mid-Market AE帯(目安900万〜1,500万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績は新規商談の受注率とパイプライン創出。③キャリアの選択肢は社内でのEnterprise AEへのステップアップ、他社のExperience Management/CX系SaaS企業(Medallia等)への横移動。",
       tenureAndPromotion: "Qualtrics Japan(クアルトリクス合同会社)は合同会社のため決算公告義務がなく、離職率・在籍年数の公開データも確認できていない。カントリーマネージャーの熊代悟氏は2018年の日本法人1人目の社員として入社し、8年間その職を続けている。",
-      priorCompanies: "求人要件から、他のテクノロジー/SaaS企業でMid-Market層への営業経験を積んだ人材が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。Commercial AEとしての実績は、社内でのEnterprise AEへのステップアップや、他のCX/XM系SaaS企業への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+      priorCompanies: "LinkedIn公開プロフィールを検索した限り(2026年8月時点、インサイドセールス系職種で実例1件)、SaaS/IT業界出身ではなく専門商社での営業経験を経て入社しているケースも見られる(実例1件、傾向の確証ではない)。求人要件上は他のテクノロジー/SaaS企業でMid-Market層への営業経験を積んだ人材が中心対象になると考えられる(求人要件からの読み解き)。",
+      nextCompanies: "LinkedIn検索でも、Qualtrics Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。Commercial AEとしての実績は、社内でのEnterprise AEへのステップアップや、他のCX/XM系SaaS企業への転職材料になりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
@@ -1004,8 +1013,8 @@ export const jobs: Job[] = [
       thingsToKnow: "2026年に入りQualtricsは新CEO就任(2月)から3か月足らずで主要幹部5名が同時退任(4月)するという大きな組織再編を経験している。2025年10月には米ヘルスケア/市場調査データ企業Press Ganey Forstaを67.5億ドルで買収する契約を結び2026年5月に完了しており、大型買収の統合と経営体制の刷新が同時進行している局面にある。",
       marketValue: "Enterprise AEとしての実績の市場価値は、①報酬面では外資SaaSのEnterprise AE帯(目安1,300万〜2,200万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績は新規ロゴ獲得数とアップセル実績。③キャリアの選択肢は他のCX/XM系SaaS企業(Medallia等)、または社内でのマネジメント職へのステップアップ。④2024年公表の日本市場投資($100M/5年)が実行されていれば、拡大期の実績として語りやすい材料になり得る。",
       tenureAndPromotion: "Qualtrics Japanの離職率・在籍年数の公開データは確認できていない。カントリーマネージャーの熊代悟氏は日本法人立ち上げから8年間その職を続けている。",
-      priorCompanies: "求人要件から、他の外資SaaS企業でエンタープライズ営業を経験した人材、特にMarTech/HR Tech領域の経験者が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。Enterprise AEとしての実績は、他のCX/XM系SaaS企業や、より大型のエンタープライズSaaS企業への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+      priorCompanies: "求人要件から、他の外資SaaS企業でエンタープライズ営業を経験した人材、特にMarTech/HR Tech領域の経験者が中心になると考えられる(求人要件からの読み解き)。LinkedIn検索では、Enterprise層に絞った実例までは確認できなかった(2026年8月時点)。",
+      nextCompanies: "LinkedIn検索でも、Qualtrics Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。Enterprise AEとしての実績は、他のCX/XM系SaaS企業や、より大型のエンタープライズSaaS企業への転職材料になりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
@@ -1028,8 +1037,8 @@ export const jobs: Job[] = [
       thingsToKnow: "Qualtricsの主要競合であるMedallia(Thoma Bravo傘下)が2026年に入り財務面で苦境に陥り、Blackstone/Apollo/FS KKR主導のグループへの事業再編合意が報じられている。競合の不安定化はQualtricsにとって追い風となり得る一方、Qualtrics自身も新CEOの下で大型買収の統合と組織再編を同時に進めている最中であり、両社とも変化の大きい局面にある。",
       marketValue: "Commercial Sales Managerとしての実績の市場価値は、①報酬面では外資SaaSのセールスマネージャー帯(目安1,400万〜2,000万円程度)に位置づけられると考えられるが日本固有の裏付けはない。②評価される実績はチームの受注実績とAEの育成・定着。③キャリアの選択肢は他社のセールスディレクター職、または社内でのカントリーマネージャー配下のシニアポジションへのステップアップ。",
       tenureAndPromotion: "Qualtrics Japanの離職率・在籍年数の公開データは確認できていない。",
-      priorCompanies: "求人要件から、他の外資SaaS企業でフィールドセールスのチームマネジメント経験を積んだ人材が中心になると考えられる(求人要件からの読み解き)。",
-      nextCompanies: "確認できる公開データはない。セールスマネジメント経験は、他社のセールスディレクター職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+      priorCompanies: "求人要件から、他の外資SaaS企業でフィールドセールスのチームマネジメント経験を積んだ人材が中心になると考えられる(求人要件からの読み解き)。LinkedIn検索では、マネジメント層に絞った実例までは確認できなかった(2026年8月時点)。",
+      nextCompanies: "LinkedIn検索でも、Qualtrics Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。セールスマネジメント経験は、他社のセールスディレクター職への転職材料になりやすいと考えられる(職務の性質からの仮説)。",
     },
   },
   {
