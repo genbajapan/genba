@@ -19,6 +19,8 @@
 - 各社について、国内(OpenWork・OpenMoney・日本語ニュース・日本法人プレスリリース)、海外(英語ニュース・IR資料・決算資料)、LinkedIn(現従業員・カントリーマネージャー等の異動)、公式採用ページの実求人を横断して徹底的に調査する。手を抜かず、Genbaが読者に届けたい「解像度の高さ」を満たす
 - `lib/company-public-intelligence.ts`の`CompanyPublicIntelligence`型に沿って、既存登録企業と同じ深さで全フィールドを埋める(`marketStatus`、`sellingPlaybook`、`facts`、5件の`hypotheses`、`cultureNotes`、`customerProof`、`externalSignals`、`roleLens`、`leadership`、`companyStats`、`salesAppeal`、`interviewPrep`、`solutions`、`fitTags`、`comparisonMap`、`sources`)。`marketStatus`は日次の株価スナップショットではなく、変遷・成長性ストーリー形式(`growthSummary`+`milestones`、上場企業は`stockLinkUrl`)で作成する
 - `lib/market-data.ts`に会社情報と、実在が確認できた求人だけを追加する。求人詳細が取得できない場合は無理に件数を揃えない
+- 各求人の`careerInsights`のうち`tenureAndPromotion`・`priorCompanies`・`nextCompanies`は、「公開データがない」で済ませない。その会社(またはその求人と同じ職種・セグメント)に在籍中・在籍していたと公開プロフィールで確認できる人物をLinkedIn検索し、在籍期間・前職・現職(離職している場合)を具体的な実例として引用する。実例が見つからない場合に限り、製品領域・セールスモーション・ターゲット顧客層から導ける仮説(前職に来やすい業界・次のキャリアで評価されやすい方向性)を、根拠を示した上で書く。どちらも書かずに「未確認の一般論」で終わらせない(2026-08-10、Jio指示。Salesforceページの水準を全社の最低基準にする)
+- 個人が特定されるLinkedIn情報を引用する際、社名代表者・カントリーマネージャー等の対外公表済みの役職者は実名で構わないが、一般の個人社員は実名を出さず、役職・在籍期間・前職/転職先などの職歴情報のみを匿名で扱う
 - 事実確認できない情報を補完・推測・創作しない
 
 ## 2. 既存企業ページを全社更新する
