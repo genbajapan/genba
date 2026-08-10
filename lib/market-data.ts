@@ -70,43 +70,51 @@ const salesforceSMBCareerFlow = {
 // Braze Japanは2020年7月設立で、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
 const brazeTenureNote = "Braze Japanは2020年7月設立と組織が若く、平均在籍年数・離職率の公開データは確認できていない。Japan Cloud Consultingとの協業体制のため、評価・昇進の仕組みが本社と完全に同一かは非公開。";
 
+// LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点の営業マネジメント職で実例1件)、Salesforceで特定プロダクトのスペシャリストAEを務めた人材が、Brazeでセールスマネジメント職に就いている例が見られる。CRM/マーケティングテクノロジー領域のプロダクト専門性が、マネジメント層への登用でも評価されている可能性がある(実例1件、傾向の確証ではない)。
+const brazeLinkedInNote = "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点の営業マネジメント職で実例1件)、Salesforceで特定プロダクトのスペシャリストAEを務めた人材が、Brazeでセールスマネジメント職に就いている例が見られる。CRM/マーケティングテクノロジー領域のプロダクト専門性が、マネジメント層への登用でも評価されている可能性があるが、実例1件でありサンプル数は非常に少ない。";
+
 const brazeSalesDirectorCareerFlow = {
   tenureAndPromotion: brazeTenureNote,
-  priorCompanies: "求人要件で「5年以上、5人以上のクオータ保有Enterprise AEを率いた経験」が明記されているため、他の外資SaaS企業で営業マネージャー・ディレクター職を務めた経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。マネジメント経験を積んだ後は、他社のVP Sales・Sales Director職、あるいはBraze社内でのAPACリージョン統括などへの展開が考えられるが、これは未確認の一般論。",
+  priorCompanies: `${brazeLinkedInNote} 求人要件上は「5年以上、5人以上のクオータ保有Enterprise AEを率いた経験」が明記されており、他の外資SaaS企業で営業マネージャー・ディレクター職を務めた経験者も中心層になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: "LinkedIn検索でも、Braze Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。マネジメント経験を積んだ後は、他社のVP Sales・Sales Director職、あるいはBraze社内でのAPACリージョン統括などへの展開が考えられる(職務の性質からの仮説)。",
 };
 
 const brazeAECommercialCareerFlow = {
   tenureAndPromotion: brazeTenureNote,
-  priorCompanies: "求人要件で「3年以上のSaaS営業でのValue Selling経験」が明記されており、他の外資/国内SaaS企業でのフィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。Commercial区分での実績を積んだ後は、社内でEnterprise AEへステップアップするケースが典型的と考えられるが、これは未確認の一般論。",
+  priorCompanies: "求人要件で「3年以上のSaaS営業でのValue Selling経験」が明記されており、他の外資/国内SaaS企業でのフィールドセールス経験者が中心になると考えられる(求人要件からの読み解き)。LinkedIn検索では、Commercial区分に絞った実例までは確認できなかった(2026年8月時点)。",
+  nextCompanies: "LinkedIn検索でも、Braze Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。Commercial区分での実績を積んだ後は、社内でEnterprise AEへステップアップするケースが典型的と考えられる(職務の性質からの仮説)。",
 };
 
 const brazeAEEnterpriseCareerFlow = {
   tenureAndPromotion: brazeTenureNote,
-  priorCompanies: "求人要件で「Enterprise区分でのSaaS営業実績、複雑な商談のマネジメント経験」に加え、「スタートアップ企業での経験」が歓迎要件として明記されている。",
-  nextCompanies: "確認できる公開データはない。Enterprise AEとしての実績は、他社のStrategic/Named AE、あるいはSales Director職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+  priorCompanies: "求人要件で「Enterprise区分でのSaaS営業実績、複雑な商談のマネジメント経験」に加え、「スタートアップ企業での経験」が歓迎要件として明記されている。LinkedIn検索では、Enterprise区分に絞った実例までは確認できなかった(2026年8月時点)。",
+  nextCompanies: "LinkedIn検索でも、Braze Japanの退職者・転職先を具体的に示す例は確認できなかった(2026年8月時点)。Enterprise AEとしての実績は、他社のStrategic/Named AE、あるいはSales Director職への転職材料になりやすいと考えられる(職務の性質からの仮説)。",
 };
 
 // HubSpot Japanは2016年2月設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
 const hubspotTenureNote = "HubSpot Japanは2016年2月設立、2026年6月時点で約300人規模とされる。全社的な離職率・在籍年数の公開データは確認できていない。「カルチャーに100%マッチする人材以外は採用しない」という評判があり、カルチャーフィットが在籍・昇進に強く影響する可能性がある。";
 
+// LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のAEで実例1件)、国内外のSaaS企業(Sansan・UiPath等)で営業経験を積んだ人材が、Enterprise/大企業区分のAEとしてHubSpotへ入社しているケースが見られる(実例1件、傾向の確証ではない)。
+const hubspotPriorNote = "LinkedIn公開プロフィールを検索した限り(2026年8月時点、東京拠点のAEで実例1件)、国内SaaS企業と外資SaaS企業(Sansan・UiPath等)の両方で営業経験を積んだ人材が、大企業区分のAEとしてHubSpotへ入社しているケースが見られるが、実例1件でありサンプル数は非常に少ない。";
+// LinkedIn公開プロフィールでは、HubSpotでの経験を経て、他の技術系SaaS企業(Fastly、New Relic等)のAEへ転職している例も確認できる(実例1件、傾向の確証ではない)。
+const hubspotNextNote = "LinkedIn公開プロフィールでは、HubSpotでの経験を経て、他の技術系SaaS企業(Fastly、New Relic等)のAEへ転職している例も確認できる。ただし実例1件でありサンプル数は非常に少ない。";
+
 const hubspotSMBCareerFlow = {
   tenureAndPromotion: hubspotTenureNote,
   priorCompanies: "求人要件で「2年以上のSaaS/Web・IT製品営業経験」が明記されており、他のSaaS企業でのインサイドセールス・フィールドセールス経験者、または未経験に近いポテンシャル層が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。SMB区分での実績を積んだ後は、社内でMid Market AEへステップアップするケースが典型的と考えられるが、これは未確認の一般論。",
+  nextCompanies: `${hubspotNextNote} SMB区分での実績を積んだ後は、社内でMid Market AEへステップアップするケースが典型的と考えられる(職務の性質からの仮説)。`,
 };
 
 const hubspotMidMarketCareerFlow = {
   tenureAndPromotion: hubspotTenureNote,
-  priorCompanies: "求人要件で「5年以上のSaaS/Web・IT製品営業経験」が明記されており、複数ステークホルダーとの複雑な商談経験を持つ営業が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。Mid Market区分での実績は、社内でCorporate AEへのステップアップ、または他社のMid-Market/Enterprise AEへの転職材料になりやすいと考えられるが、これは未確認の一般論。",
+  priorCompanies: `${hubspotPriorNote} 求人要件上は「5年以上のSaaS/Web・IT製品営業経験」が明記されており、複数ステークホルダーとの複雑な商談経験を持つ営業が中心になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: `${hubspotNextNote} Mid Market区分での実績は、社内でCorporate AEへのステップアップ材料にもなりやすいと考えられる(職務の性質からの仮説)。`,
 };
 
 const hubspotCorporateCareerFlow = {
   tenureAndPromotion: hubspotTenureNote,
-  priorCompanies: "求人要件で「7年以上のSaaS/Web・IT製品営業経験」が明記されており、大型・複雑商談の経験を持つシニア層が中心になると考えられる(求人要件からの読み解き)。",
-  nextCompanies: "確認できる公開データはない。Corporate AEとしての実績は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職材料になりやすいと考えられるが、これは未確認の一般論。",
+  priorCompanies: `${hubspotPriorNote} 求人要件上は「7年以上のSaaS/Web・IT製品営業経験」が明記されており、大型・複雑商談の経験を持つシニア層も中心層になると考えられる(求人要件からの読み解き)。`,
+  nextCompanies: `${hubspotNextNote} Corporate AEとしての実績は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職材料にもなりやすいと考えられる(職務の性質からの仮説)。`,
 };
 
 // Okta Japan株式会社は2020年9月設立、離職率・在籍年数の公開データは無いため共通の非公開注記として保持
