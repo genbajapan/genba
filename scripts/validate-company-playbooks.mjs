@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const target = path.join(process.cwd(), "lib/company-public-intelligence.ts");
-const source = fs.readFileSync(target, "utf8");
+const targets = [
+  "lib/company-public-intelligence.ts",
+  "lib/company-public-intelligence-expansion.ts",
+].map((target) => path.join(process.cwd(), target));
+const source = targets.map((target) => fs.readFileSync(target, "utf8")).join("\n");
 const errors = [];
 
 const expectedIssueLenses = [
@@ -23,7 +26,7 @@ const issueBlocks = Array.from(
 );
 
 const narrativeBlocks = Array.from(
-  source.matchAll(/narrative:\s*\[([\s\S]*?)\n\s*\],\n\s*openingHook:/g),
+  source.matchAll(/narrative:\s*\[([\s\S]*?)\n\s*\],\s*(?:\n\s*)?openingHook:/g),
   (match) => match[1],
 );
 

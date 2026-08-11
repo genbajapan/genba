@@ -1,3 +1,5 @@
+import { expansionIntelligenceBySlug } from "@/lib/company-public-intelligence-expansion";
+
 export type ResearchSourceKind = "企業公式" | "法定開示" | "外部集計" | "コミュニティ";
 
 export type ResearchSource = {
@@ -9314,6 +9316,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   dataiku: dataikuIntelligence,
   verkada: verkadaIntelligence,
   mirakl: miraklIntelligence,
+  ...expansionIntelligenceBySlug,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
