@@ -311,9 +311,13 @@ button, input, select { font: inherit; }
 .decision-console-foot { padding: 13px 27px; background: rgba(255,255,255,.025); color: #617b88; font-size: 11px; line-height: 1.65; }
 
 .dossier-nav-wrap { position: sticky; top: 72px; z-index: 30; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
-.dossier-nav { display: flex; overflow-x: auto; scrollbar-width: none; }
+.dossier-nav-bar { display: flex; align-items: stretch; min-width: 0; }
+.dossier-company-marker { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; max-width: 190px; padding-right: 18px; border-right: 1px solid var(--line); color: var(--navy); font-size: 12px; text-decoration: none; }
+.dossier-company-marker > span { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 4px rgba(10,109,99,.09); }
+.dossier-company-marker strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dossier-company-marker:hover { color: var(--signal); }
+.dossier-nav { display: flex; min-width: 0; flex: 1; overflow-x: auto; scrollbar-width: none; }
 .dossier-nav a { flex-shrink: 0; padding: 17px 19px 15px; border-bottom: 2px solid transparent; color: #667780; font-size: 13px; font-weight: 750; text-decoration: none; }
-.dossier-nav a:first-child { padding-left: 0; }
 .dossier-nav a:hover { border-color: var(--signal); color: var(--signal); }
 
 
@@ -912,6 +916,7 @@ button, input, select { font: inherit; }
   .company-identity h1 { margin-top: 24px; font-size: 48px; }
   .decision-console { max-width: none; }
   .dossier-nav-wrap { top: 99px; }
+  .dossier-company-marker { max-width: 150px; }
   .dossier-nav a { padding-inline: 15px; }
   .intel-section { scroll-margin-top: 155px; }
   .intel-section + .intel-section { margin-top: 65px; padding-top: 58px; }
@@ -965,6 +970,9 @@ button, input, select { font: inherit; }
   .decision-stats strong { font-size: 17px; }
   .decision-console-foot { padding-inline: 20px; }
   .dossier-nav-wrap { top: 98px; }
+  .dossier-company-marker { max-width: 112px; gap: 7px; padding-right: 12px; font-size: 11px; }
+  .dossier-company-marker > span { width: 6px; height: 6px; }
+  .dossier-nav a { padding-inline: 13px; font-size: 12px; }
   .fit-card,.evidence-card { padding: 22px; }
   .public-fact-grid { grid-template-columns: 1fr; }
   .public-fact-grid article { min-height: 145px; }
