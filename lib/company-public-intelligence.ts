@@ -145,33 +145,6 @@ export type SellingPlaybook = {
   openingHook: string;
   valueHypothesis: string;
   commonObjection: { objection: string; reframe: string };
-  discoveryQuestions?: {
-    stakeholder: string;
-    objective: string;
-    questions: string[];
-  }[];
-  stakeholderMap?: {
-    role: string;
-    priority: string;
-    message: string;
-    proof: string;
-  }[];
-  dealPlan?: {
-    phase: string;
-    aim: string;
-    action: string;
-    exitCriteria: string;
-  }[];
-  competitiveAngles?: {
-    situation: string;
-    leadWith: string;
-    avoid: string;
-  }[];
-  objections?: {
-    objection: string;
-    reframe: string;
-    proof: string;
-  }[];
 };
 
 export type CompanyPublicIntelligence = {
@@ -8236,144 +8209,140 @@ const rubrikIntelligence: CompanyPublicIntelligence = {
       { year: "2016", label: "日本法人を創立", detail: "2026年の公式Partner Awardで「Rubrik Japan創立10周年」と公表。", sourceId: "rubrik-partners" },
       { year: "2024", label: "NYSE上場", detail: "2024年4月にティッカーRBRKで上場。", sourceId: "rubrik-fy26" },
       { year: "FY2026", label: "クラウド移行と拡張が進展", detail: "売上高13.16億ドル、Subscription ARR 14.6億ドル、Cloud ARR 12.93億ドル。", sourceId: "rubrik-10k" },
-      { year: "2026/02", label: "Rubrik Agent Cloudを商用化", detail: "データ・IDに加え、AIエージェントの監視・統制・修復へ製品領域を拡張。", sourceId: "rubrik-agent-cloud" },
-      { year: "FY2027 Q1", label: "ARR 15.7億ドル", detail: "2026年4月末のSubscription ARRは前年比32%増、四半期売上高は39%増。", sourceId: "rubrik-q1fy27" },
+      { year: "2026", label: "Data・Identity・AIへ拡張", detail: "2月にRubrik Agent Cloudを商用化し、AIエージェントの監視・統制・修復へ製品領域を拡張。", sourceId: "rubrik-agent-cloud" },
     ],
     growthDrivers: [
-      { title: "既存顧客内で3方向に拡張", body: "10-Kは、既存アプリのデータ量増加、新しいアプリの保護、追加のデータセキュリティ製品という3つの拡張軸を説明。FY2026の平均Subscription DBNRRは120%超で、拡張の再現性が数値にも表れている。", sourceId: "rubrik-10k" },
-      { title: "5つの入口からlandできる", body: "enterprise、非構造化データ、cloud、SaaS、identity providerのいずれかから入り、同一基盤上で別ワークロードへ広げる設計。単一のバックアップ更改だけに依存しない。", sourceId: "rubrik-10k" },
-      { title: "データ・ID・AIへカテゴリを拡張", body: "Rubrik Security CloudのData Protection、Cyber Recovery、Identity Securityに加え、2026年2月にRubrik Agent Cloudを商用化。新しいBuyerと予算への入口が増える一方、製品教育の難度も上がる。", sourceId: "rubrik-agent-cloud" },
-      { title: "チャネルとクラウドマーケットプレイスで到達範囲を拡大", body: "Channel Partnerの二層間接モデルに加え、GCP・Azure・AWSのマーケットプレイスでも提供。日本でもCTC、JBS、NECセキュリティ、ノックス等の案件創出・成約・支援実績を表彰している。", sourceId: "rubrik-partners" },
+      { title: "DBNRR 120%超を支えるland-and-expand", body: "10-Kは、enterprise、非構造化データ、cloud、SaaS、identity providerの5つを最初の導入入口として説明。導入後は、既存アプリのデータ量、新しいアプリ、追加のデータセキュリティ製品という3方向へ拡張する。FY2026の平均Subscription DBNRRが120%超だったことは、この拡張モーションが全社成長を支えている証拠になる。", sourceId: "rubrik-10k" },
+      { title: "Cloud ARR 48%増とsubscriptionへの移行", body: "FY2026のCloud ARRは12.93億ドルで前年比48%増、Subscription ARRは14.6億ドルで34%増。新規・既存顧客の多くがRubrik Security Cloudを採用し、legacy CDMからRSCへの移行も概ね完了した。FY2027 Q1もSubscription ARR 15.7億ドル、売上高39%増と成長が継続している。", sourceId: "rubrik-10k" },
+      { title: "データ保護からIdentity・AIへ予算の入口を拡張", body: "Rubrik Security CloudはData Protection、Cyber Recovery、Identity Securityを一つのplatformで扱い、2026年2月にはRubrik Agent Cloudを商用化した。バックアップ更新だけでなく、CISO向けのdata risk、identity recovery、AI agent governanceへ提案領域を広げられる一方、営業には複数Buyerへの価値翻訳が求められる。", sourceId: "rubrik-agent-cloud" },
     ],
     japanGrowth: {
-      headline: "国内財務は非公開。ただし、10年の事業継続・業界横断の顧客証拠・チャネル活動は確認できる。",
-      narrative: "Rubrik Japan単体の売上、ARR、従業員数、顧客数は今回の公式・法定開示では確認できないため、日本の成長率は推測しない。一方、製造、ITサービス、ゲーム、医療にまたがる公開事例と、東京Mid-Market AEの採用、国内Partner Awardは、国内GTMが単発案件だけでなく直販・SIer・VAR・導入支援を組み合わせて動いていることを示す。",
+      headline: "2016年の日本法人創立から10年。財務は非公開だが、大規模顧客・チャネル・営業採用の3点は確認できる。",
+      narrative: "Rubrik Japanは2026年に創立10周年を迎えた。日本単体の売上、ARR、従業員数、顧客数は公式・法定開示で確認できないため、グローバルの32〜48%成長を日本へそのまま当てはめることはできない。一方、NECはhybrid multi-cloudの2.7PBへ適用し、NTTデータグループは国内約70社・8万ユーザーの基盤を更新。グリー、LIXIL、信州大学医学部附属病院まで、製造・ITサービス・ゲーム・医療に事例が広がっている。2024年にはServiceNow Japan・SAPジャパンで営業責任者を歴任した高山勇喜氏が営業最高責任者へ就任し、国内パートナーとの協業強化を明示。2026年のPartner AwardではCTC、JBS、NECセキュリティ、ノックス等を案件創出・大型成約・新規パートナー・サービスの役割別に表彰している。東京Mid Market AEの求人もSDR、channel、distributor、VARとの連携を明記しており、日本のGTMは直販単独ではなくpartnerとの共同販売を前提に動いている、というのがGenbaの読み。",
       qualitativeSignals: [
-        { label: "事業継続", detail: "2026年にRubrik Japan創立10周年を公式に発表。", sourceId: "rubrik-partners" },
-        { label: "営業採用", detail: "東京でMid Market Account Executiveを募集中。新規と既存拡大の双方を担当。", sourceId: "rubrik-job-midmarket" },
-        { label: "顧客の幅", detail: "NEC、NTTデータグループ、グリー、LIXIL、信州大学医学部附属病院の公式事例を確認。", sourceId: "rubrik-customers" },
-        { label: "チャネル", detail: "案件創出、大型成約、新規パートナー、サービス提供を複数社に分けて表彰。", sourceId: "rubrik-partners" },
-        { label: "営業体制", detail: "2024年就任の営業最高責任者は、国内パートナーとの協業強化を方針として明示。", sourceId: "rubrik-japan-leader" },
+        { label: "2016年創立、2026年に日本法人10周年", detail: "日本単体の財務・人員は非公開だが、国内事業の継続期間は確認できる。", sourceId: "rubrik-partners" },
+        { label: "NEC・NTTデータ・LIXIL等の大規模導入", detail: "製造、ITサービス、ゲーム、医療まで公式事例が広がる。", sourceId: "rubrik-customers" },
+        { label: "Partner Awardと東京AE採用を同時に確認", detail: "案件創出・成約・導入支援をpartnerと分担するGTM。", sourceId: "rubrik-job-midmarket" },
       ],
       sourceIds: ["rubrik-partners", "rubrik-job-midmarket", "rubrik-customers", "rubrik-japan-leader"],
     },
     riskHypotheses: [
-      { title: "日本の成長率は公開シグナルだけでは測れない", body: "顧客事例・採用・パートナー活動は強いが、日本単体の売上、ARR、顧客数、従業員数が非公開。グローバル32〜48%成長をそのまま日本へ当てはめるのは危険。", confidence: "高", evidence: ["東京AE求人と国内Partner Awardを確認", "複数の国内事例を確認", "日本単体の財務・人員KPIは確認できず"], counterSignal: "創立10周年と業界横断の導入事例は、一定の国内基盤があることを示す。", sourceIds: ["rubrik-job-midmarket", "rubrik-partners", "rubrik-customers"] },
-      { title: "パートナー活用は強みであり、案件統制の難しさでもある", body: "10-KではFY2026売上の約68%を上位3社のChannel Partnerとその関連会社が生成。これはグローバル値で日本構成は不明だが、AEには直販だけでなく案件登録、役割分担、成果配分、導入品質の管理が求められる。", confidence: "高", evidence: ["売上の大半がChannel Partner経由", "上位3社でFY2026売上の約68%", "東京求人もディストリビューター・VAR協業を明記"], counterSignal: "日本では複数のパートナーが案件創出・成約・サービスで表彰され、機能分散は確認できる。", sourceIds: ["rubrik-10k", "rubrik-job-midmarket", "rubrik-partners"] },
-      { title: "Enterprise案件は技術評価と合意形成が長期化しやすい", body: "10-Kは、大企業ほど評価・テスト・監査要件・設定・統合・価格交渉が増え、限定導入で始まる場合もあると明記。強い市場需要があっても、PoCと事業稟議を別物として設計できないと案件が止まりやすい。", confidence: "高", evidence: ["大企業で長い販売サイクルと複雑な要件", "購入前の広範な評価・テスト", "限定導入後も設定・統合・価格交渉が発生"], counterSignal: "NECやNTTデータグループの大規模導入は、複雑な環境でも展開できた国内証拠になる。", sourceIds: ["rubrik-10k", "rubrik-nec", "rubrik-nttdata"] },
-      { title: "高成長と収益規律を同時に見る必要がある", body: "FY2026は売上・ARR・フリーキャッシュフローが伸びた一方、GAAP純損失3.49億ドルを計上。採用候補者は成長率だけでなく、テリトリー投資、営業生産性、値引き規律が日本でどう管理されるかを確認したい。", confidence: "高", evidence: ["FY2026売上高48%増", "FY2026フリーキャッシュフロー2.38億ドル", "FY2026 GAAP純損失3.49億ドル"], counterSignal: "Q1 FY2027のフリーキャッシュフローマージンは19%で、キャッシュ創出は改善している。", sourceIds: ["rubrik-fy26", "rubrik-q1fy27", "rubrik-10k"] },
-      { title: "Agent Cloudは上振れ余地と実行リスクの両方を持つ", body: "AIエージェントの監視・ガードレール・巻き戻しは新しい予算への入口だが、2026年2月に商用化されたばかり。FY2027もRSC suiteが売上の大半とARR成長の主因になるという会社開示から、RACの日本での販売成熟度は選考で切り分けたい。", confidence: "中", evidence: ["RACは2026年2月に商用化", "RSC suiteがFY2027売上の大半を占める見込み", "製品対象がデータ・ID・AIへ拡張"], counterSignal: "主要AI基盤への対応発表が進み、エコシステム拡張は速い。", sourceIds: ["rubrik-10k", "rubrik-agent-cloud"] },
+      { title: "日本の成長性は、公開事例の厚さと数値開示の薄さを分けて見る", body: "国内の大規模事例、創立10周年、partner活動、東京AE採用は確認できる一方、日本単体の売上、ARR、顧客数、従業員数、quota達成率は非公開。グローバルの高成長を日本の営業機会へそのまま置き換えることはできない。", confidence: "中", evidence: ["製造・ITサービス・ゲーム・医療の公式事例を確認", "Partner Awardと東京Mid Market AE採用を確認", "日本単体の財務・人員・営業生産性KPIは未開示"], counterSignal: "NEC 2.7PB、NTTデータグループ約70社・8万ユーザー、LIXILの復旧時間半減見込みは、国内で大型案件を実行できる顧客・partner基盤があることを示す。", sourceIds: ["rubrik-nec", "rubrik-nttdata", "rubrik-lixil", "rubrik-job-midmarket", "rubrik-partners"] },
+      { title: "チャネル依存と長い技術評価が、成長市場でもquotaの再現性を左右する", body: "10-KではFY2026売上の約68%を上位3社のChannel Partnerと関連会社が生成し、大企業案件では長い評価・テスト・監査・統合・価格交渉が発生すると説明している。グローバル値で日本の構成は不明だが、AEにはpipeline創出だけでなく、partnerの案件登録・役割分担・導入品質とPoC後の事業稟議を管理する力が求められる。", confidence: "中", evidence: ["売上の大半がChannel Partner経由", "上位3社と関連会社がFY2026売上の約68%を生成", "Enterprise案件で長い販売サイクルと広範な技術評価"], counterSignal: "日本ではCTC、JBS、NECセキュリティ、ノックス等が案件創出・大型成約・新規partner・serviceで役割別に表彰されており、共同販売を支える実働実績はある。", sourceIds: ["rubrik-10k", "rubrik-partners", "rubrik-job-midmarket"] },
     ],
     sourceIds: ["rubrik-fy26", "rubrik-q1fy27", "rubrik-10k", "rubrik-partners"],
   },
   sellingPlaybook: {
-    frameIntro: "入口は「バックアップ製品を入れ替えませんか」ではない。重要業務が止まったとき、どのデータとIDを、どの順序で、感染を持ち込まず、何時間で戻せるかを問う。技術評価では保護範囲・不変性・クリーンポイント・復旧手順を確かめ、稟議では停止損失・規制・顧客信頼・運用工数に翻訳する。RubrikはData Protectionだけでなく、Threat Analytics、Identity Recovery、SaaS保護、Agent Cloudまで広がるため、最初の課題を絞ってlandし、保護対象とセキュリティ製品をexpandする設計が想定される。",
+    frameIntro: "Rubrikの売り方は「バックアップは取得しているが、サイバー攻撃後にクリーンなデータとIDを、事業の優先順に戻せるか証明できていない」という課題が起点。バックアップ製品の更改ではなく、攻撃前のリスク把握、攻撃中の影響分析、攻撃後の復旧を一続きのサイバーレジリエンスとして提案する。",
     issueLenses: [
-      { title: "復旧の実証性", body: "バックアップ成功率ではなく、最後に復旧演習を完了した日、クリーンポイントを特定する時間、Minimum Viable Businessを戻す順序まで聞く。" },
-      { title: "侵害範囲と再感染", body: "どのファイル・アプリ・IDが影響を受けたかを判定できるか。感染スナップショットを隔離し、復旧後に同じ攻撃を持ち込まない運用があるかを確認する。" },
-      { title: "保護対象の分断", body: "オンプレ、AWS/Azure/GCP、NAS、Microsoft 365、Salesforce、AD/Entra ID/Oktaで、ツール・ポリシー・担当・監査証跡が何個に分かれているかを棚卸しする。" },
-      { title: "事業停止の金額", body: "RTO/RPOを、停止1時間あたりの売上・人件費・違約金・患者や顧客への影響へ変換する。BCP、財務、法務が稟議に入る理由を作る。" },
-      { title: "運用能力と人材", body: "平時のバックアップ運用、監査対応、有事の指揮系統が特定の担当者へ集中していないか。復旧手順の自動化とRRT支援で埋める余地を測る。" },
+      { title: "既存顧客の導入目的から見る課題", body: "NECはhybrid multi-cloud環境の2.7PBを保護し、インシデント管理コストを約20%削減。LIXILはランサムウェア被災時のバックアップ健全性と復旧時間を課題に挙げ、想定復旧時間を従来比で半分以下にできる見込みを示している。運用効率と有事の復旧を一つの投資理由にできる。" },
+      { title: "製品の成り立ちから見る課題", body: "Rubrikはデータ保護から出発し、Rubrik Security Cloud上でData Threat Analytics、Cyber Recovery、Identity Recoveryへ拡張した。製品の成り立ちそのものが「バックアップの有無」ではなく、侵害範囲を特定し、感染データを隔離してクリーンな状態へ戻すという課題を指し示している。" },
+      { title: "外部環境の要求から見る課題", body: "オンプレミス、cloud、SaaS、AD・Entra ID・Oktaへ保護対象が広がり、ITだけでなくCISO、BCP、監査部門も復旧可能性の説明を求める。XDRやSIEMが予防・検知を担っても、重要業務をどの順序で戻すかは別の経営課題として残る。" },
     ],
     narrative: [
-      { label: "Triggerを定める", body: "更改期限、監査指摘、サイバー保険、復旧演習の失敗、cloud移行、インシデントのいずれが優先度を作っているか特定する。" },
-      { label: "現状を数値化する", body: "保護対象、運用ツール数、復旧手順、担当工数、RTO/RPO、クリーンポイント判定、停止損失を共通シートへ落とす。" },
-      { label: "復旧仮説を合意する", body: "最初に戻す業務とデータを決め、IT・Security・BCP・経営で成功条件を共有する。単なる機能比較から事業継続の判断へ引き上げる。" },
-      { label: "技術検証する", body: "不変性、異常検知、影響範囲、隔離、クリーン復旧、既存SIEM/SOAR・cloudとの統合を、顧客環境と攻撃シナリオで検証する。" },
-      { label: "稟議と展開を設計", body: "停止損失と運用削減でBusiness Caseを作り、partnerの実装責任を明確化。1ワークロードからcloud・SaaS・identity・追加製品へ広げる。" },
+      { label: "背景", body: "企業データはオンプレミス、複数cloud、SaaS、identity providerへ分散し、保護ツール・担当・復旧手順も環境ごとに分かれている。" },
+      { label: "課題", body: "バックアップの取得には成功していても、攻撃後に侵害範囲とクリーンポイントを特定し、再感染させず重要業務から戻せるかを実測できていない。" },
+      { label: "解決策", body: "Rubrik Security Cloudで不変バックアップ、異常検知、影響分析、隔離、data・SaaS・identityの復旧を統合し、平時から復旧計画を検証する。" },
+      { label: "選定の理由", body: "NECの2.7PB運用、NTTデータグループ約70社・8万ユーザー、LIXILの想定復旧時間半減など、日本の大規模環境で定量成果を伴う公式事例が選定理由として語りやすい。" },
     ],
-    openingHook: "最後に、本番相当の環境で「侵害範囲を特定し、クリーンなデータとIDを、業務優先順に戻す」ところまで演習したのはいつですか。そのとき実測で何時間かかりましたか。",
-    valueHypothesis: "分散したデータ・SaaS・IDの保護と復旧を単一の制御面へ寄せ、攻撃前はリスクを可視化、攻撃中は影響範囲を特定、攻撃後はクリーンな状態へ戻す。結果として、有事の停止時間・再感染リスクと、平時の運用・監査工数を同時に下げられる可能性がある。",
-    commonObjection: { objection: "既存のバックアップで十分。", reframe: "製品の有無ではなく、攻撃者が管理者権限を得た前提で、コピーの不変性、侵害範囲、クリーンポイント、AD/Entra IDを含む復旧順序、実測時間を並べる。既存環境で条件を満たすなら無理な置き換えはせず、満たさないギャップだけを提案対象にする。" },
-    discoveryQuestions: [
-      { stakeholder: "CIO・IT責任者", objective: "事業復旧の責任と優先順位を明らかにする", questions: ["停止から4時間、24時間、72時間で必ず戻す業務は何ですか。", "RTO/RPOは文書値ではなく、直近の演習で何時間でしたか。", "復旧の最終判断者と、経営への報告責任者は誰ですか。"] },
-      { stakeholder: "CISO・SOC/CSIRT", objective: "検知からクリーン復旧までの空白を特定する", questions: ["SIEM/XDRで検知した後、影響を受けたデータとスナップショットをどう特定しますか。", "侵害されたID基盤とバックアップ管理権限をどう切り離していますか。", "復旧前にマルウェアとIoCを隔離する手順は自動化されていますか。"] },
-      { stakeholder: "インフラ・クラウド運用", objective: "保護範囲と運用負荷を定量化する", questions: ["オンプレ、cloud、NAS、SaaS、IDで何種類の保護ツールとコンソールを使っていますか。", "月次の失敗対応、容量計画、監査レポートに何人日かかりますか。", "復旧対象をファイル単位・アプリ単位で検索し、依存関係順に戻せますか。"] },
-      { stakeholder: "BCP・財務・法務", objective: "技術投資を停止損失と規制へ翻訳する", questions: ["重要業務が1日止まった場合の売上、人件費、違約金、顧客影響はいくらですか。", "復旧能力の証明を求める監査・規制・サイバー保険条件はありますか。", "身代金を払わず復旧する判断に必要な証拠と承認者は誰ですか。"] },
-    ],
-    stakeholderMap: [
-      { role: "CIO", priority: "事業継続と投資対効果", message: "バックアップ更改ではなく、重要業務を戻す時間と運用コストを一つのKPIで管理する。", proof: "LIXILの想定復旧時間半減、NECの運用コスト約20%削減" },
-      { role: "CISO / CSIRT", priority: "侵害範囲、再感染防止、説明責任", message: "検知ツールを置き換えるのではなく、データ層の影響分析・隔離・クリーン復旧でResponseを閉じる。", proof: "Data Threat AnalyticsとSecurity Cloudの攻撃前・中・後の設計" },
-      { role: "インフラ・クラウド責任者", priority: "運用統合、RTO/RPO、復旧の再現性", message: "オンプレ・cloud・SaaS・NASをポリシー駆動で管理し、復旧演習を属人手順から再現可能な運用へ変える。", proof: "NEC 2.7PB、NTTデータグループ約70社・8万ユーザー" },
-      { role: "BCP・リスク・監査", priority: "継続計画と証跡", message: "復旧計画を定期的に検証し、重要データの保護状況と改善項目を経営・監査へ説明できる形にする。", proof: "Data Security Command CenterとCyber Recovery Simulation" },
-      { role: "調達・財務", priority: "総費用、重複投資、契約リスク", message: "ライセンス単価だけでなく、ツール集約、運用人日、停止損失、段階導入の費用を含む3年TCOで比較する。", proof: "グリーの運用統合、NECの管理コスト削減" },
-    ],
-    dealPlan: [
-      { phase: "Account仮説", aim: "優先アカウントを絞る", action: "公開インシデント、更改時期、cloud移行、規制、M&A、SaaS/ID拡大を調べ、Triggerと仮説Buyerを1ページにする。", exitCriteria: "顧客固有のTrigger、最初のworkload、IT/Security双方の接点が見える。" },
-      { phase: "Discovery", aim: "技術課題を事業KPIへ接続", action: "保護対象・復旧実測・運用人日・停止損失を定量化し、CIO/CISO/運用/BCPで優先順位を合意する。", exitCriteria: "現状値、目標値、意思決定者、期限が文書化される。" },
-      { phase: "Validation", aim: "クリーン復旧を顧客環境で証明", action: "代表workloadと攻撃シナリオを選び、不変性、検知、影響分析、隔離、復旧時間、既存ツール連携を検証する。", exitCriteria: "成功基準を満たし、未解決の技術・運用リスクと担当者が明確。" },
-      { phase: "Business Case", aim: "技術合格を予算化", action: "停止損失回避、運用削減、ツール集約、監査対応を3年TCOへ反映。partnerの作業範囲とRRT支援も明記する。", exitCriteria: "Economic Buyer、調達、法務、導入責任者が投資理由と契約案に合意。" },
-      { phase: "Land & Expand", aim: "小さく入り、保護面を広げる", action: "最重要workloadから導入し、成果reviewを起点にcloud、SaaS、identity、Threat Analytics等へ共同roadmapを作る。", exitCriteria: "初期価値を測定し、次の保護対象・製品・予算時期が合意される。" },
-    ],
-    competitiveAngles: [
-      { situation: "従来型バックアップとの比較", leadWith: "バックアップ速度や容量単価だけでなく、管理者侵害時の不変性、影響分析、クリーンポイント、復旧演習、ID復旧を評価表へ入れる。", avoid: "競合の機能不足を一般化すること。顧客の現行環境で実測し、埋まらないギャップだけを示す。" },
-      { situation: "Cohesity・Veeam・Commvault等との比較", leadWith: "10-Kが挙げる競争軸に沿い、hybrid/cloud/SaaSの統合、cyber recovery、data posture、API連携、導入容易性、支援品質を重み付けする。", avoid: "機能数の一覧だけで勝敗を決めること。顧客の復旧シナリオと運用体制で優先順位を決める。" },
-      { situation: "XDR・SIEM・EDR投資との比較", leadWith: "防御・検知投資を否定せず、攻撃がデータやIDへ到達した後の影響特定、隔離、復旧を補完するlayerとして置く。", avoid: "Rubrikを予防・検知製品の代替として売ること。SOCとインフラの連携点を設計する。" },
-      { situation: "cloud/SaaS標準機能・現状維持との比較", leadWith: "shared responsibility、複数cloud横断の可視性、SaaSデータの独立コピー、重要業務順の復旧、監査証跡を比較する。", avoid: "標準機能が無価値だと決めつけること。必要なRTO/RPOと復旧範囲を満たすかで判断する。" },
-    ],
-    objections: [
-      { objection: "既存バックアップで十分", reframe: "成功したバックアップが、侵害後に安全に戻せる保証かを分ける。管理者侵害、クリーンポイント、ID停止を含む演習で現行環境と比較する。", proof: "直近演習の実測時間、隔離手順、復旧成功率、再感染テスト" },
-      { objection: "高い。停止するか分からないリスクへ投資できない", reframe: "ライセンス価格ではなく、停止1日あたりの損失、復旧人日、重複ツール、監査対応を含む期待損失と3年TCOへ置き換える。", proof: "停止損失、運用人日、現行TCO、LIXIL・NECの条件付き成果" },
-      { objection: "SIEM/EDR/XDRへ既に投資している", reframe: "それらは攻撃の予防・検知・対応を担う。Rubrikはデータ層の影響範囲とクリーン復旧を補完し、既存SecOpsへデータコンテキストを返す役割として検証する。", proof: "既存ツール連携、incident runbook、検知後から復旧までの空白" },
-      { objection: "移行が大きすぎる。今は触れない", reframe: "全社一括ではなく、復旧優先度が高く成功基準を測りやすい1 workloadからlandする。既存環境と並行し、価値確認後に拡張する。", proof: "段階導入計画、rollback、partner責任、初期workloadのexit criteria" },
-      { objection: "cloud/SaaS側が保護している", reframe: "サービス可用性と、顧客側の誤削除・権限侵害・大量変更から任意時点へ戻す責任を分ける。必要な粒度と時間を標準機能で満たすかを先に確認する。", proof: "shared responsibility、保持期間、復旧粒度、cross-tenant/ID復旧テスト" },
-    ],
+    openingHook: "御社では最後に、本番相当の環境で侵害範囲を特定し、クリーンなデータとIDを重要業務の順に戻すところまで演習したのはいつですか。",
+    valueHypothesis: "NECでインシデント管理コストを約20%削減し、LIXILで想定復旧時間を従来比半分以下にできる見込みが示された事例を根拠に、平時の運用負荷と有事の停止時間を同じ基盤で下げられる、という価値仮説を立てる。",
+    commonObjection: { objection: "既存のバックアップで十分", reframe: "バックアップ成功率ではなく、管理者権限が侵害された前提での不変性、侵害範囲の特定、クリーンポイントの判定、IDを含む復旧順序、実測時間で比較する。現行環境で条件を満たす部分は残し、復旧ギャップだけを提案対象にする。" },
   },
   facts: [
-    { label: "日本法人", value: "2016年創立", detail: "2026年にRubrik Japan創立10周年を公式発表。", sourceIds: ["rubrik-partners"] },
-    { label: "公開求人", value: "東京AE 1件", detail: "Mid Market Account Executiveを公式採用ページで確認。", sourceIds: ["rubrik-careers", "rubrik-job-midmarket"] },
-    { label: "最新成長", value: "Q1 FY2027売上高+39%", detail: "売上高3.87億ドル、Subscription ARR 15.7億ドル。", sourceIds: ["rubrik-q1fy27"] },
-    { label: "既存拡張", value: "DBNRR 120%超", detail: "FY2026の平均Subscription Dollar-Based Net Retention Rate。", sourceIds: ["rubrik-10k"] },
-    { label: "Cloud ARR", value: "$1.293B / +48%", detail: "2026年1月末。RSC等のcloud-based subscription。", sourceIds: ["rubrik-10k"] },
-    { label: "世界従業員", value: "約3,797人", detail: "2026年1月31日時点のfull-time employee。", sourceIds: ["rubrik-10k"] },
-    { label: "国内導入事例", value: "製造・IT・ゲーム・医療", detail: "NEC、NTTデータ、グリー、LIXIL、信州大学医学部附属病院等を公式公開。", sourceIds: ["rubrik-customers", "rubrik-lixil", "rubrik-shinshu"] },
-    { label: "パートナー", value: "国内エコシステムあり", detail: "CTC、JBS、NECセキュリティ、ノックス等をFY26の実績で表彰。", sourceIds: ["rubrik-partners"] },
-    { label: "販売構造", value: "二層の間接販売モデル", detail: "グローバルでは売上の大半がChannel Partner経由。", sourceIds: ["rubrik-10k"] },
-    { label: "製品拡張", value: "Data・Identity・AI", detail: "Rubrik Agent Cloudを2026年2月に商用化。", sourceIds: ["rubrik-agent-cloud", "rubrik-10k"] },
+    { label: "FY26売上", value: "$1.316B(約2,066億円)", detail: "前年比48%増。Subscription売上は12.64億ドル、前年比53%増(1ドル=157円換算、2026年8月時点の目安)。", sourceIds: ["rubrik-fy26"] },
+    { label: "Subscription ARR", value: "$1.57B(約2,465億円)", detail: "2026年4月30日時点、前年比32%増。Q1 FY2027売上高は3.87億ドル、前年比39%増。", sourceIds: ["rubrik-q1fy27"] },
+    { label: "Subscription DBNRR", value: "120%超", detail: "FY2026平均。既存顧客のupsell、contraction、attritionを含む指標。", sourceIds: ["rubrik-10k"] },
+    { label: "$100K+ ARR顧客", value: "2,805社", detail: "2026年1月31日時点、前年比25%増。大型顧客への浸透を示す指標。", sourceIds: ["rubrik-fy26", "rubrik-10k"] },
+    { label: "グローバル従業員", value: "約3,797人", detail: "2026年1月31日時点の法定開示値。", sourceIds: ["rubrik-10k"] },
+    { label: "日本法人・公開求人", value: "2016年創立 / 東京AE 1件", detail: "2026年に創立10周年。Mid Market Account Executiveを公式採用ページで確認。", sourceIds: ["rubrik-partners", "rubrik-careers", "rubrik-job-midmarket"] },
   ],
   hypotheses: [
-    { topic: "日本市場", title: "直販とチャネルの両輪で拡大中", conclusion: "東京AEの募集とパートナー表彰の同時展開から、日本での拡大は直販単独ではない。", confidence: "高", evidence: ["求人がSDR・チャネル・VAR協業を明記", "FY26 Partner Awardで案件創出・大型成約・導入支援を表彰"], counterSignals: ["日本の直販・間接売上比率は非公開"], interviewQuestions: ["パートナー由来と直販由来のパイプライン比率は。"], sourceIds: ["rubrik-job-midmarket", "rubrik-partners"] },
-    { topic: "営業モーション", title: "Mid-Marketでも即戦力性は高い", conclusion: "バックアップ・データセンター領域の実務経験を重く見る。", confidence: "高", evidence: ["ITインフラ/SaaS営業3年以上", "応募時に直近2年のバックアップ商材経験を質問"], counterSignals: ["必須年数は3年で、シニア層だけに限定していない"], interviewQuestions: ["立ち上がり期間と製品認定の要件は。"], sourceIds: ["rubrik-job-midmarket"] },
-    { topic: "商談価値", title: "バックアップ費用より事業復旧で経営層へ入る", conclusion: "導入事例は運用効率と有事の復旧を一つの投資理由として語れる。", confidence: "高", evidence: ["NEC事例で運用コスト20%削減", "復旧時間半減の見込み"], counterSignals: ["有事の実測値ではなく見込みを含む"], interviewQuestions: ["CIOとCISOのどちらが主なEconomic Buyerになりますか。"], sourceIds: ["rubrik-nec"] },
-    { topic: "成長性", title: "グローバル成長は強いが、日本の配分は非公開", conclusion: "ARRと売上は高成長だが、日本のクオータ・人員増に同じ勢いがあるかは選考で検証が必要。", confidence: "中", evidence: ["FY2026売上高+48%", "2026年4月末ARR+32%"], counterSignals: ["日本単体の売上・ARR・人員は非公開"], interviewQuestions: ["日本のFY27の投資優先順位と採用計画は。"], sourceIds: ["rubrik-fy26", "rubrik-q1fy27"] },
-    { topic: "キャリア", title: "データ保護とセキュリティの境界領域を強みにできる", conclusion: "インフラ更新とCISO向けリスク提案の両方を経験できる可能性がある。", confidence: "中", evidence: ["Rubrik Security Cloudは保護・監視・復旧を統合", "求人は複雑なデータセンター環境への提案を要求"], counterSignals: ["実際の商談でCISOがどの程度関与するかは非公開"], interviewQuestions: ["現在の商談でインフラチームとセキュリティチームのどちらが主導しますか。"], sourceIds: ["rubrik-job-midmarket", "rubrik-japan-leader"] },
+    {
+      topic: "PRODUCT / MARKET",
+      title: "売る土台は強い。バックアップからData・Identity・AIへ拡張フェーズにある",
+      conclusion: "ARR成長、DBNRR 120%超、日本の大規模事例を合わせると、単品のバックアップ更改より、既存顧客で保護対象とセキュリティ製品を広げる余地が大きいとみます。",
+      confidence: "高",
+      evidence: ["Q1 FY2027のSubscription ARRは15.7億ドル、前年比32%増", "FY2026の平均Subscription DBNRRは120%超", "NEC 2.7PB、NTTデータグループ約70社・8万ユーザー等の国内事例"],
+      counterSignals: ["FY2026はGAAP純損失3.49億ドル", "2026年2月商用化のAgent Cloudは日本での販売実績が未開示"],
+      interviewQuestions: ["日本で最も成長しているworkloadと製品は何か", "既存顧客で2製品目・2 workload目へ拡張する標準playbookはあるか"],
+      sourceIds: ["rubrik-q1fy27", "rubrik-10k", "rubrik-nec", "rubrik-nttdata", "rubrik-agent-cloud"],
+    },
+    {
+      topic: "SALES MOTION",
+      title: "新規と既存拡張の両方を持ち、partnerを動かす力が成果を左右しそう",
+      conclusion: "東京求人は新規ロゴと既存成長を同時に担当し、SDR、presales、channel、distributor、VARとの協働を明記。単独ハンターより、複数の社内外関係者を動かせるAE向きです。",
+      confidence: "高",
+      evidence: ["求人が新規顧客獲得と既存顧客成長の双方を職務に設定", "10-Kは二層の間接販売モデルとland-and-expandをGTMの中核に置く", "国内Partner Awardで案件創出・大型成約・serviceを役割別に表彰"],
+      counterSignals: ["日本の直販・partner由来pipeline比率は非公開", "account ownership、quota credit、更新責任の分担は求人から分からない"],
+      interviewQuestions: ["自己創出・SDR・partner由来pipelineの比率はどれくらいか", "partner案件の登録、値引き、quota credit、導入責任はどう分かれるか"],
+      sourceIds: ["rubrik-job-midmarket", "rubrik-10k", "rubrik-partners"],
+    },
+    {
+      topic: "QUOTA ATTAINABILITY",
+      title: "全社成長より、日本のテリトリーとPoC後の稟議再現性を見るべき",
+      conclusion: "グローバルの成長率は強い一方、日本のquota達成率・平均ACV・sales cycleは非公開。大企業案件は評価・監査・統合・価格交渉が長く、配属territoryと支援体制で達成難度が変わりそうです。",
+      confidence: "中",
+      evidence: ["10-KがEnterprise案件の長い販売サイクルと広範な評価を明記", "求人がcomplex data center環境とFortune 1000への販売経験を重視", "日本では東京Mid Market AE 1件の採用を確認"],
+      counterSignals: ["NEC・NTTデータ・LIXIL等の国内大型事例は、複雑な案件を完遂できる証拠", "会社全体では新規獲得と既存拡張の双方でARRが成長"],
+      interviewQuestions: ["fully-ramped AEの直近4四半期のquota達成者比率と中央値は", "担当named account数、white space、平均ACV、PoC期間、主な失注段階は"],
+      sourceIds: ["rubrik-10k", "rubrik-job-midmarket", "rubrik-nec", "rubrik-lixil"],
+    },
+    {
+      topic: "COMPENSATION",
+      title: "報酬水準は未確認。OTEより先にquotaとcrediting ruleを検証したい",
+      conclusion: "Rubrik Japan固有の基本給、OTE、Pay Mix、equity、実支給中央値は公開されていません。外資SaaS相場を個社の確認値に見せず、提示条件と同一teamの達成実績で判断すべきです。",
+      confidence: "探索中",
+      evidence: ["公式求人に日本の給与レンジ・OTE・Pay Mixの記載なし", "応募フォームは候補者の現在quotaと直近2年のbackup/recovery販売経験を質問"],
+      counterSignals: ["NYSE上場企業でequityを含む可能性はあるが、日本ポジションへの付与は未確認", "表示中のOTE相場はsegment別のGenba目安でRubrik固有値ではない"],
+      interviewQuestions: ["base / variable、equity、ramp保証、accelerator、実支給中央値は", "新規・既存・partner案件のquota creditとsplit ruleを書面で確認できるか"],
+      sourceIds: ["rubrik-job-midmarket", "rubrik-10k"],
+    },
+    {
+      topic: "CULTURE / CAREER",
+      title: "インフラ営業を、CIO・CISO向けのサイバーレジリエンスへ広げられそう",
+      conclusion: "Data ProtectionだけでなくThreat Analytics、Identity Recovery、Agent Cloudまで扱うため、技術更新を事業停止・監査・顧客信頼へ翻訳する経験を積める可能性があります。",
+      confidence: "中",
+      evidence: ["会社valueにRelentlessness、Integrity、Velocity、Excellence、Transparency", "求人がpresales・SDR・channel・partnerとのOne Rubrik型協業を明記", "製品範囲がData・Identity・AIへ拡張"],
+      counterSignals: ["日本teamのmanager差、昇進実績、在籍年数は公開情報で確認できない", "製品範囲の拡大はenablement負荷と複数Buyer対応の難しさにもなる"],
+      interviewQuestions: ["入社後30・60・90日の認定・pipeline・初回受注の期待値は", "同teamの直近12カ月の昇進、離職、managerのspan of controlは"],
+      sourceIds: ["rubrik-10k", "rubrik-job-midmarket", "rubrik-platform", "rubrik-agent-cloud"],
+    },
   ],
-  cultureNotes: { organizationReadTitle: "Relentlessness・Integrity・Velocity・Excellence・Transparencyを掲げ、個人の新規開拓とOne Rubrik型の共同販売を両方求める。", hypothesis: { title: "スピードだけでなく、複雑な案件を透明に動かすオーケストレーション力が重い", body: "10-KはVelocityとTransparencyを含む5つのvalueで業績を評価すると説明。東京求人もプリセールス、SDR、チャネル、ディストリビューター、VARとの連携を反復しており、個人で商談を抱えるより、役割・次アクション・リスクを明確にして社内外を動かす営業が合うと考えられる。" }, careerValue: { title: "データセンター営業から、CIO/CISO向けのサイバーレジリエンスとチャネル共同販売へ専門性を広げられる。", body: "新規ロゴ、既存拡張、技術検証、パートナー共同提案を一つの役割で経験できる可能性がある。一方、製品範囲がData・Identity・AIへ広がるため、継続的な学習と複数Buyerへの価値翻訳が前提。", confidence: "高" } },
+  cultureNotes: {
+    organizationReadTitle: "個人の新規開拓だけでなく、社内外の共同販売力を見る。",
+    hypothesis: {
+      title: "VelocityとTransparencyを、複雑な案件で両立できるか。",
+      body: "会社はRelentlessness、Integrity、Velocity、Excellence、Transparencyをvalueに掲げています。東京求人はpresales、SDR、channel、distributor、VARとの協働を反復しており、個人で案件を抱えるより、役割・次アクション・リスクを透明にして周囲を動かす営業が合いそうです。",
+    },
+    careerValue: {
+      title: "インフラ営業を、サイバーレジリエンスへ広げる。",
+      body: "Data・Identity・AIへ製品が広がる中で、新規ロゴ、既存拡張、技術検証、partner共同提案を経験できる可能性があります。一方、日本teamの昇進実績やmanager差は面接で確認が必要です。",
+      confidence: "中",
+    },
+  },
   customerProof: [
     { company: "NEC", products: "Rubrikデータレジリエンスプラットフォーム", outcome: "2.7PBへ適用し、セキュリティインシデント管理コストを約20%削減。復旧時間は半分以下となる見込み。", implication: "大規模なhybrid multi-cloudで、平時の運用と有事の復旧を同じBusiness Caseにできる証拠。", sourceId: "rubrik-nec" },
     { company: "NTTデータグループ", products: "Rubrikアプライアンス", outcome: "国内グループ約70社・8万ユーザーのプライベートクラウドバックアップを更新。", implication: "国内の大規模エンタープライズ実績。", sourceId: "rubrik-nttdata" },
-    { company: "グリー", products: "Rubrik r6404s", outcome: "分散したバックアップ運用を統合し、運用負荷と属人化を削減。", implication: "デジタルネイティブ企業での実績。", sourceId: "rubrik-gree" },
     { company: "LIXIL", products: "Rubrik Security Cloud / Threat Monitoring / RRT", outcome: "バックアップからの想定復旧時間を従来比で半分以下へ。24時間の無償復旧支援も選定理由。", implication: "製造業のBCPで、機能・復旧時間・支援体制を一体で評価された証拠。", sourceId: "rubrik-lixil" },
-    { company: "信州大学医学部附属病院", products: "Rubrikデータ保護・Ransomware Recovery Team", outcome: "120TBを保護し、復旧操作は5クリック。医療停止リスクを41億円と試算。", implication: "予算制約がある公共性の高い組織でも、停止損失と簡易な復旧操作で稟議を組み立てられる証拠。", sourceId: "rubrik-shinshu" },
   ],
   externalSignals: [
-    { label: "Subscription ARR", value: "$1.57B", detail: "2026年4月末、前年比32%増。", caveat: "グローバル全体の数値。", sourceId: "rubrik-q1fy27" },
-    { label: "$100K+顧客", value: "2,805社", detail: "2026年1月末、Subscription ARR 10万ドル以上の顧客。", caveat: "日本単体の社数は非公開。", sourceId: "rubrik-fy26" },
-    { label: "Subscription DBNRR", value: "120%超", detail: "FY2026平均。upsell、contraction、attritionを含む。", caveat: "グローバル全体。maintenanceからsubscriptionへの移行効果を一部含む。", sourceId: "rubrik-10k" },
-    { label: "Free Cash Flow", value: "$237.8M", detail: "FY2026。FY2025の2,150万ドルから増加。", caveat: "GAAP純損失3.49億ドルとは分けて見る必要がある。", sourceId: "rubrik-fy26" },
-    { label: "Global headcount", value: "約3,797人", detail: "2026年1月31日時点の正社員。", caveat: "日本単体人数は非公開。", sourceId: "rubrik-10k" },
+    { label: "グローバル成長シグナル", value: "ARR $1.57B / +32%", detail: "Q1 FY2027の売上高は前年比39%増、Free Cash Flow marginは19%。", caveat: "グローバル全体の数値で、日本単体の成長率・営業生産性ではありません。", sourceId: "rubrik-q1fy27" },
+    { label: "既存拡張シグナル", value: "DBNRR 120%超", detail: "FY2026平均。$100K+ Subscription ARR顧客は2,805社、前年比25%増。", caveat: "maintenanceからsubscriptionへの移行効果を一部含み、日本・製品別の継続率は非公開です。", sourceId: "rubrik-10k" },
   ],
   roleLens: { salesMotion: "Mid-Market担当でも、新規ロゴ獲得と既存顧客の成長を両方持つ。担当アカウント戦略、pipeline生成、complex data center環境での提案を担い、最初のworkloadから追加アプリ・データ量・セキュリティ製品へland-and-expandするモーションが想定される。", compensation: "Rubrik Japan固有の基本給、OTE、Pay Mix、accelerator、equityは公式求人で確認できない。表示する相場値はGenbaのセグメント目安であり、選考時に給与レンジ、変動比率、quota credit、partner案件の配分を確認する必要がある。", quota: "当該ポジションの年間quota、平均ACV、達成率、ramp期間は非公開。応募フォームは現在のquotaを質問しており、即戦力性を測る材料にしていると読める。新規/既存のcredit、複数AE・partnerが関わる案件の配分も確認したい。", collaboration: "プリセールス、SDR、チャネルセールス、ディストリビューター、VARとの協働が職務に明記。10-KもPartner Networkと二層間接モデルをGTMの中核に置くため、AEの価値は単独クロージングだけでなく、技術評価・案件登録・提案役割・導入支援を束ねることにある。" },
   leadership: { name: "高山 勇喜", role: "Rubrik Japan株式会社 常務執行役員 営業最高責任者", read: "2024年3月18日付で就任。公式発表では、ServiceNow Japanのソリューション営業統括、SAPジャパンのHybris事業本部長・営業部長等を歴任し、国内パートナーとの協業強化を掲げている。", sourceId: "rubrik-japan-leader" },
   companyStats: { globalHeadcount: { value: "約3,797人", detail: "2026年1月31日時点のfull-time employee。", sourceId: "rubrik-10k" }, japanHeadcount: { value: "非公開", detail: "公式・法定開示で日本単体従業員数は確認できていない。" }, japanOffice: { value: "東京", detail: "公式求人の拠点表示。", sourceId: "rubrik-careers" }, japanSince: { value: "2016年", detail: "2026年に創立10周年。", sourceId: "rubrik-partners" } },
-  salesAppeal: { intro: "ARR成長中の上場企業で、製品はバックアップからData・Identity・AIへ広がる。国内の定量事例とpartner基盤を使いながら、新規ロゴ、技術検証、経営稟議、既存拡張を一気通貫で経験できる可能性がある。", points: [
-    { title: "国内の証拠が業界・価値の両面で厚い", detail: "NECの2.7PB・管理コスト約20%削減、LIXILの想定復旧時間半減、信州大学病院の停止損失試算など、顧客条件に応じた定量事例を使える。", sourceIds: ["rubrik-nec", "rubrik-lixil", "rubrik-shinshu"] },
-    { title: "新規獲得だけでなく拡張の型を学べる", detail: "既存顧客はデータ量、新しいアプリ、追加セキュリティ製品の3方向へ拡張。FY2026の平均Subscription DBNRRは120%超。", sourceIds: ["rubrik-10k"] },
-    { title: "CIOとCISOをまたぐ提案力が身につく", detail: "運用効率とRTO/RPOだけでなく、侵害範囲、再感染、監査、取締役会への説明まで一つの案件で扱える。", sourceIds: ["rubrik-platform", "rubrik-command-center"] },
-    { title: "チャネル共同販売を本流として経験できる", detail: "求人と10-Kの双方がPartner NetworkをGTMの中核に置く。日本でも案件創出、大型成約、サービス提供の役割別実績がある。", sourceIds: ["rubrik-job-midmarket", "rubrik-10k", "rubrik-partners"] },
-    { title: "Data・Identity・AIへ専門性を広げられる", detail: "Rubrik Security Cloudに加え、Identity RecoveryとAgent Cloudがあり、同じaccountでBuyerと予算の入口を増やせる。", sourceIds: ["rubrik-identity", "rubrik-agent-cloud"] },
-    { title: "成長と経営規律の両方を見られる", detail: "FY2026は売上48%増、FY2027 Q1も39%増。Free Cash FlowはプラスだがGAAP最終赤字で、効率を伴う成長が問われる局面。", sourceIds: ["rubrik-fy26", "rubrik-q1fy27"] },
+  salesAppeal: { intro: "求人票だけでは伝わらない、営業として働く上での具体的な面白さを公開情報から整理しました。", points: [
+    { title: "インフラ更新を、CIO・CISO向けの経営課題へ引き上げられる", detail: "バックアップの容量・速度だけでなく、侵害範囲、クリーンな復旧、事業停止、監査まで提案対象にできる。NEC・LIXIL等の国内事例には運用コストや想定復旧時間の定量成果がある。", sourceIds: ["rubrik-nec", "rubrik-lixil", "rubrik-platform"] },
+    { title: "新規ロゴとland-and-expandの両方を経験できる", detail: "東京求人は新規顧客と既存成長の双方を担当。全社では5つの導入入口と3つの拡張軸を持ち、FY2026の平均Subscription DBNRRは120%超だった。", sourceIds: ["rubrik-job-midmarket", "rubrik-10k"] },
+    { title: "partner共同販売を本流として学べる", detail: "presales、SDR、channel、distributor、VARとの協働が求人に明記され、日本でも案件創出・大型成約・serviceを複数partnerと分担している。単独営業ではなく、社内外を束ねる経験を積みやすい。", sourceIds: ["rubrik-job-midmarket", "rubrik-partners"] },
   ] },
-  interviewPrep: { intro: "成長率やブランドだけで判断せず、territoryの質、quotaの再現性、partnerとの成果配分、製品拡張に対するenablement、日本の投資優先順位を具体値で確認する。", questions: [
-    { question: "Mid-Marketの売上または従業員定義、named account数、white space、年間quota、平均ACVは。", why: "同じMid-Marketでも担当範囲と案件規模で難易度が大きく変わる。", sourceIds: ["rubrik-job-midmarket", "rubrik-10k"] },
-    { question: "直近4四半期のquota達成者比率、中央値、ramp後の平均達成期間は。", why: "会社全体の成長が、日本の個人quotaの再現性につながっているかを確認したい。", sourceIds: ["rubrik-q1fy27", "rubrik-10k"] },
-    { question: "新規ロゴと既存拡大、自己創出・SDR・partner由来pipelineの比率は。", why: "求人が持つ複数の責任のうち、実際にどこへ時間を使うかを把握したい。", sourceIds: ["rubrik-job-midmarket", "rubrik-partners"] },
-    { question: "partner案件の登録、account ownership、quota credit、値引き、導入責任はどう分担しますか。", why: "チャネルが本流のGTMでは、成果配分と案件統制が達成可能性を左右する。", sourceIds: ["rubrik-10k", "rubrik-job-midmarket"] },
-    { question: "日本ではCIO、CISO、インフラ、BCPの誰がChampionとEconomic Buyerになりやすいですか。", why: "バックアップ更改とサイバーレジリエンスでは、入口と稟議の作り方が異なる。", sourceIds: ["rubrik-platform", "rubrik-nec", "rubrik-lixil"] },
-    { question: "PoCの標準期間、成功基準、SE稼働、失注しやすい段階は。", why: "10-Kが示す長い技術評価を、日本チームがどこまで型化できているか確認したい。", sourceIds: ["rubrik-10k"] },
-    { question: "入社後30・60・90日の製品認定、pipeline、初回受注の期待値と支援は。", why: "製品範囲がData・Identity・AIへ広がる中で、rampの現実性を見たい。", sourceIds: ["rubrik-job-midmarket", "rubrik-agent-cloud", "rubrik-identity"] },
-    { question: "日本のFY2027で最優先するsegment、industry、workload、製品は何ですか。", why: "グローバル成長を日本の具体的な投資・勝ち筋へ翻訳できているか確認したい。", sourceIds: ["rubrik-q1fy27", "rubrik-partners"] },
-    { question: "Rubrik Agent Cloudは日本で誰が売り、既存AEのquotaとenablementへどう入りますか。", why: "新製品の上振れ余地と、コアRSC営業への負荷を分けて判断したい。", sourceIds: ["rubrik-agent-cloud", "rubrik-10k"] },
+  interviewPrep: { intro: "会社全体の成長率だけでなく、実際に割り当てられるterritory、partnerとの成果配分、技術評価を商談へ変える再現性を確認したいポイントです。", questions: [
+    { question: "Mid-Marketの定義、named account数、white space、年間quota、平均ACVは。", why: "同じ職位名でも担当範囲と案件規模で達成難度が大きく変わる。", sourceIds: ["rubrik-job-midmarket", "rubrik-10k"] },
+    { question: "fully-ramped AEの直近4四半期のquota達成者比率と中央値は。", why: "グローバルのARR成長ではなく、日本teamでのquota再現性を確認するため。", sourceIds: ["rubrik-q1fy27", "rubrik-10k"] },
+    { question: "自己創出・SDR・partner由来pipelineの比率と、partner案件のquota creditは。", why: "チャネル共同販売が本流のGTMでは、pipeline責任と成果配分が実支給を左右する。", sourceIds: ["rubrik-job-midmarket", "rubrik-partners", "rubrik-10k"] },
+    { question: "PoCの標準期間・成功基準・失注段階と、入社後90日のenablementは。", why: "複雑な技術評価をBusiness Caseへ変える支援体制と、立ち上がりの現実性を確認したい。", sourceIds: ["rubrik-10k", "rubrik-job-midmarket", "rubrik-platform"] },
   ] },
   solutions: [
     { name: "Rubrik Security Cloud / Data Protection", valueProp: "オンプレ、AWS/Azure/GCP、NAS、SaaSのデータを、policy-drivenな不変バックアップと単一の制御面で保護・復旧する基盤。", url: "https://www.rubrik.com/ja/products/data-protection", competitors: "会社の10-Kが挙げるCommvault、Dell EMC、IBM、Veeam、Cohesityと、cloud/SaaSの個別保護製品・標準機能。", differentiation: "native immutability、logical air gap、時系列のdata/metadata、データ・cloud・SaaSをまたぐ統合と、cyber recoveryまで同じplatformで扱う点を訴求。", retention: "FY2026の平均Subscription DBNRRはグローバルで120%超。日本・製品別の継続率は非公開。" },

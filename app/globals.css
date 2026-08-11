@@ -473,28 +473,6 @@ button, input, select { font: inherit; }
 .playbook-value-card p:not(.card-index) { margin: 10px 0 0; color: #435760; font-size: 12px; line-height: 1.8; }
 .playbook-objection-card p:not(.card-index) { margin: 10px 0 0; color: #435760; font-size: 12px; line-height: 1.75; }
 .playbook-objection-card p > span { display: block; margin-bottom: 4px; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .06em; }
-.playbook-deep-section { margin-top: 28px; }
-.playbook-deep-section > .card-index { margin: 0 0 11px; }
-.playbook-discovery-grid,.playbook-stakeholder-grid,.playbook-competitive-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
-.playbook-discovery-grid article,.playbook-stakeholder-grid article,.playbook-competitive-grid article { padding: 22px; border: 1px solid var(--line); background: white; }
-.playbook-discovery-grid article > span,.playbook-stakeholder-grid article > span { display: block; color: var(--signal); font-size: 10px; font-weight: 850; letter-spacing: .08em; }
-.playbook-discovery-grid strong,.playbook-stakeholder-grid strong,.playbook-competitive-grid strong { display: block; margin-top: 7px; color: var(--navy); font-size: 14px; line-height: 1.55; }
-.playbook-discovery-grid ul { margin: 13px 0 0; padding-left: 18px; }
-.playbook-discovery-grid li { margin-top: 7px; color: #52646c; font-size: 12px; line-height: 1.75; }
-.playbook-stakeholder-grid p,.playbook-competitive-grid p { margin: 10px 0 0; color: #52646c; font-size: 12px; line-height: 1.75; }
-.playbook-stakeholder-grid small,.playbook-objection-list small { display: block; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); color: #6c7d84; font-size: 10.5px; line-height: 1.65; }
-.playbook-deal-table { border-top: 1px solid var(--line); }
-.playbook-deal-table article { display: grid; grid-template-columns: 42px minmax(150px,.7fr) 1.25fr 1fr; gap: 16px; align-items: start; padding: 18px 16px; border: 1px solid var(--line); border-top: 0; background: white; }
-.playbook-deal-table article > span { display: grid; place-items: center; width: 34px; height: 34px; background: var(--navy); color: #70d3c5; font-size: 11px; font-weight: 850; }
-.playbook-deal-table strong { display: block; color: var(--navy); font-size: 13px; }
-.playbook-deal-table small { display: block; margin-top: 5px; color: var(--signal); font-size: 10px; font-weight: 750; line-height: 1.5; }
-.playbook-deal-table p { margin: 0; color: #52646c; font-size: 11.5px; line-height: 1.75; }
-.playbook-deal-table p b,.playbook-competitive-grid p span { display: block; margin-bottom: 4px; color: var(--signal); font-size: 9.5px; font-weight: 850; letter-spacing: .06em; }
-.playbook-objection-list { display: grid; gap: 8px; }
-.playbook-objection-list article { display: grid; grid-template-columns: minmax(180px,.7fr) 1.3fr minmax(180px,.8fr); gap: 18px; padding: 20px 22px; border: 1px solid var(--line); background: white; }
-.playbook-objection-list strong { color: var(--navy); font-size: 13px; line-height: 1.65; }
-.playbook-objection-list p { margin: 0; color: #52646c; font-size: 12px; line-height: 1.75; }
-.playbook-objection-list small { margin: 0; padding: 0; border: 0; }
 .hypothesis-intro { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin: 45px 0 18px; }
 .hypothesis-intro h3 { margin: 0; color: var(--navy); font-size: 24px; letter-spacing: -.035em; }
 .hypothesis-intro > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
@@ -791,11 +769,10 @@ button, input, select { font: inherit; }
   .risk-hypothesis-card > summary { flex-wrap: wrap; }
   .genba-verdict { padding: 26px 22px; }
   .genba-verdict h4 { font-size: 21px; }
-  .playbook-lens-row,.playbook-support-grid,.playbook-discovery-grid,.playbook-stakeholder-grid,.playbook-competitive-grid { grid-template-columns: 1fr; }
+  .playbook-lens-row,.playbook-support-grid { grid-template-columns: 1fr; }
   .playbook-narrative-track { flex-direction: column; }
   .playbook-narrative-step { width: auto; }
   .playbook-narrative-connector { flex: 0 0 auto; height: 20px; }
-  .playbook-deal-table article,.playbook-objection-list article { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
   .header-inner { min-height: 62px; }
