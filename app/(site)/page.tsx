@@ -6,7 +6,7 @@ import CompanyCard from "@/components/CompanyCard";
 import JobCard from "@/components/JobCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import HiringHeatmap from "@/components/HiringHeatmap";
-import { companies, jobs, signals } from "@/lib/market-data";
+import { companies, jobs } from "@/lib/market-data";
 
 export const metadata: Metadata = {
   title: { absolute: "Genba — 外資IT戦士と予備軍の作戦会議所" },
@@ -38,11 +38,14 @@ export default function HomePage() {
             </div>
           </div>
           <aside className="hero-panel" aria-label="Genbaデータの概要">
-            <div className="terminal-head"><span>GENBA / MARKET WATCH</span><span className="terminal-live">UPDATED</span></div>
+            <div className="terminal-head"><span>GENBA / MARKET WATCH</span><span className="terminal-live">更新中</span></div>
             <div className="terminal-stat"><span>観測企業</span><strong>{companies.length}</strong><small>初期公開版</small></div>
             <div className="terminal-stat"><span>確認中の営業求人</span><strong>{jobs.length}</strong><small>公式採用ページへ直結</small></div>
-            <div className="terminal-stat"><span>最近の採用動向</span><strong>{signals.length}</strong><small>事実と分析を区別</small></div>
-            <div className="terminal-foot">LAST UPDATED — {lastUpdated.replaceAll("-", ".")} / TOKYO</div>
+            <div className="terminal-foot">
+              <span>サイト内更新日</span>
+              <strong>{lastUpdated.replaceAll("-", ".")}</strong>
+              <small>東京時間</small>
+            </div>
           </aside>
         </Container>
       </section>

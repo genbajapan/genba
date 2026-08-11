@@ -68,7 +68,10 @@ button, input, select { font: inherit; }
 .terminal-stat span { color: #aebfc8; font-size: 12px; }
 .terminal-stat strong { grid-row: span 2; font-size: 26px; font-variant-numeric: tabular-nums; }
 .terminal-stat small { color: #70d3c5; font-size: 10px; }
-.terminal-foot { padding: 17px 19px; color: #8ea3af; font-size: 11px; }
+.terminal-foot { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6px 18px; padding: 21px 19px 22px; background: rgba(112,211,197,.08); border-top: 1px solid rgba(112,211,197,.3); }
+.terminal-foot span { color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .1em; }
+.terminal-foot strong { grid-row: span 2; color: white; font-size: 27px; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.terminal-foot small { color: #8ea3af; font-size: 9px; letter-spacing: .08em; }
 
 .trust-bar { background: white; border-bottom: 1px solid var(--line); }
 .trust-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
