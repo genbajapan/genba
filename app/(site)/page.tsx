@@ -4,7 +4,6 @@ import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import CompanyCard from "@/components/CompanyCard";
 import JobCard from "@/components/JobCard";
-import SignalCard from "@/components/SignalCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import HiringHeatmap from "@/components/HiringHeatmap";
 import { companies, jobs, signals } from "@/lib/market-data";
@@ -83,13 +82,6 @@ export default function HomePage() {
         <Container>
           <SectionHeader eyebrow="COMPANY TRACKER" title="「現場」でどの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel={`（${companies.length}件の企業を全て見る）`} />
           <div className="card-grid">{companies.slice(0, 4).map((company) => <CompanyCard key={company.slug} company={company} />)}</div>
-        </Container>
-      </section>
-
-      <section id="hiring-signals" className="content-section surface-section">
-        <Container>
-          <SectionHeader eyebrow="RECENT HIRING ACTIVITY" title="最近動いた企業・求人" description="求人の新設や対象セグメントの広がりを、公式情報とGenbaの分析に分けて記録します。" />
-          <div className="signal-feed">{signals.slice(0, 4).map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div>
         </Container>
       </section>
 
