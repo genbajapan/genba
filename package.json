@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "validate:agents": "node scripts/validate-agent-rules.mjs",
-    "check": "npm run validate:agents && npm run build"
+    "validate:playbooks": "node scripts/validate-company-playbooks.mjs",
+    "check": "npm run validate:agents && npm run validate:playbooks && npm run build"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

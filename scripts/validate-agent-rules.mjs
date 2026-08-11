@@ -36,6 +36,7 @@ const requiredRuleReferences = [
   "ops/guardrails.md",
   "ops/legal-checklist.md",
   "ops/daily-workflow.md",
+  "ops/company-selling-playbook-standard.md",
 ];
 
 if (fs.existsSync(canonical)) {
