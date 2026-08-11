@@ -1,4 +1,4 @@
-# Genba Signal Brief / Kit接続手順
+# Genbaニュースレター / Kit接続手順
 
 最終更新: 2026-08-11
 
@@ -11,6 +11,8 @@
 - 登録方式: ダブルオプトイン
 - 配信停止: 全メール末尾に表示
 - 配信基盤: Kit Newsletter Plan
+- 公開Form UID: `e55c8dd730`
+- Embed URL: `https://genba-2.kit.com/e55c8dd730/index.js`
 
 ## Kit側の設定
 
@@ -27,7 +29,7 @@
 
 ## サイト側の環境変数
 
-`.env.example`の3項目をCloudflareの本番ビルド環境へ設定する。
+サイトには現在の公開Form識別子を既定値として設定済み。フォームを差し替える場合は、`.env.example`の3項目をCloudflareの本番ビルド環境へ設定して上書きする。
 
 ```text
 NEXT_PUBLIC_KIT_FORM_UID=<scriptのdata-uid>

@@ -58,7 +58,7 @@ Genbaを、海外SaaS企業向けの日本営業アドバイザリーから、**
 
 - 発信者ブランド: `超戦士｜外資SaaS AE`（`@chosenshi08`）
 - メディアブランド: `Genba`
-- 無料ニュースレター: `Genba Signal Brief`
+- 無料ニュースレター: `Genba`ブランドで配信し、別の商品名は付けない
 - 求人セクション: `Genba Jobs`
 - 企業データベース: `Genba Companies`
 - ソリューション領域別の採用温度: `Solution Hiring Heat`

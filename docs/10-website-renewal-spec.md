@@ -444,7 +444,7 @@ interface Source {
 
 ### 週3回
 
-- Genba Signal Brief
+- Genbaニュースレター
 - 新着・終了求人の差分
 - 注目企業と日本採用の変化
 - 外資AE向け一次情報の要点

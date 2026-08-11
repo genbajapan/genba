@@ -9,7 +9,7 @@ export default function NewsletterPage() {
     <>
       <section className="page-hero">
         <Container>
-          <p className="eyebrow">GENBA SIGNAL BRIEF</p>
+          <p className="eyebrow">GENBA NEWSLETTER</p>
           <h1>情報を追いかける時間を、減らす。</h1>
           <p className="page-lead">動いた企業、新しい営業求人、見落としたくない採用変化を週3回に分けて短く整理。読者は無料です。</p>
         </Container>

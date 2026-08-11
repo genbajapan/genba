@@ -206,6 +206,15 @@ button, input, select { font: inherit; }
 .newsletter-signup h2 { margin: 10px 0 12px; color: var(--navy); font-size: 23px; letter-spacing: -.025em; }
 .newsletter-signup > p:not(.eyebrow) { color: var(--muted); font-size: 12px; line-height: 1.75; }
 .newsletter-kit-embed { min-height: 132px; margin-top: 23px; }
+.newsletter-kit-embed .formkit-form { width: 100% !important; max-width: none !important; margin: 0 !important; }
+.newsletter-kit-embed .formkit-form [data-style="clean"] { padding: 0 !important; }
+.newsletter-kit-embed .formkit-fields { display: grid !important; gap: 10px; }
+.newsletter-kit-embed .formkit-field,.newsletter-kit-embed .formkit-submit { width: 100% !important; margin: 0 !important; }
+.newsletter-kit-embed .formkit-input { min-height: 48px; border-color: var(--line) !important; border-radius: 0 !important; background: var(--canvas) !important; color: var(--ink) !important; font-size: 12px !important; }
+.newsletter-kit-embed .formkit-input:focus { border-color: var(--signal) !important; box-shadow: 0 0 0 3px var(--signal-soft); }
+.newsletter-kit-embed .formkit-submit { min-height: 48px; border-radius: 0 !important; background: var(--navy) !important; font-size: 12px !important; font-weight: 750 !important; }
+.newsletter-kit-embed .formkit-submit > span { padding: 14px 20px !important; }
+.newsletter-kit-embed .formkit-powered-by-convertkit-container { margin-top: 8px !important; }
 .newsletter-form-pending { margin-top: 23px; padding: 19px; border: 1px solid var(--line); background: var(--canvas); }
 .newsletter-form-pending p { margin: 0 0 16px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .newsletter-form-pending .button { width: 100%; }
