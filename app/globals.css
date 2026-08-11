@@ -460,7 +460,7 @@ button, input, select { font: inherit; }
 .playbook-lens-row p { margin: 10px 0 0; color: #52646c; font-size: 12px; line-height: 1.75; }
 .playbook-narrative { margin-top: 26px; padding: 26px 28px; border: 1px solid var(--line); background: #f7f9f8; }
 .playbook-narrative .card-index { margin: 0 0 20px; }
-.playbook-narrative-track { display: flex; align-items: stretch; gap: 4px; }
+.playbook-narrative-track { display: flex; align-items: stretch; justify-content: center; gap: 4px; }
 .playbook-narrative-step { display: flex; flex-direction: column; width: 210px; flex-shrink: 0; padding: 18px; border: 1px solid #cfe0dc; background: white; }
 .playbook-narrative-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--signal), #0a6d63); color: white; font-size: 13px; font-weight: 850; }
 .playbook-narrative-body { margin-top: 10px; }
