@@ -25,11 +25,10 @@ export default function HomePage() {
             <p className="eyebrow eyebrow-light">現役外資ITセールスマンによる運営</p>
             <h1>小中規模外資IT<br />企業研究所</h1>
             <p className="hero-lead">
-              小中規模の外資系IT企業をメインに最新情報を発信。
-              <br className="hero-lead-break-desktop" />
-              Genbaを知る現役外資AEの観点で事実と仮説を交えて企業研究。
-              <br className="hero-lead-break-mobile" />
-              「ここだ」と思える外資IT企業を見つけられるように。
+              Genbaを知る現役外資AEが
+              公開情報をもとに、小中規模外資ITに特化した最新求人情報の掲載とセールスパーソンの目線から企業を徹底研究。
+              <br />
+              「ここだ」と思える次のフィールドを見つけられるように。
             </p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業一覧</Link>
