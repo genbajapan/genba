@@ -141,15 +141,15 @@ export default function GenbaChatWidget() {
     <>
       {sheetState === "closed" && (
         <button type="button" className="genba-chat-toggle" onClick={() => setSheetState("peek")}>
-          AIチャット
+          AIと壁打ち
         </button>
       )}
 
-      <div className={`genba-chat-dock genba-chat-dock-${sheetState}`} role="dialog" aria-label="Genba AIチャット" aria-hidden={!open}>
+      <div className={`genba-chat-dock genba-chat-dock-${sheetState}`} role="dialog" aria-label="Genba AIと壁打ち" aria-hidden={!open}>
         <div className="genba-chat-panel-head">
           <div className="genba-chat-title-wrap">
             <div className="genba-chat-title-row">
-              <strong>Genba AIチャット</strong>
+              <strong>AIと壁打ち</strong>
               <button type="button" className="genba-chat-header-disclaimer-toggle" onClick={() => setShowDisclaimer((prev) => !prev)}>
                 (ご利用にあたって)
               </button>
