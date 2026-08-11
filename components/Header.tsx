@@ -6,7 +6,6 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
   en: [
     { href: "/companies", label: "企業を探す" },
     { href: "/jobs", label: "求人を探す" },
-    { href: "/signals", label: "採用シグナル" },
     { href: "/insights", label: "外資ITのリアル記事" },
     { href: "/advertise", label: "掲載について" },
   ],

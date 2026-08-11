@@ -12,7 +12,6 @@ export async function GET() {
     "## Main pages",
     `- [企業データ](${siteUrl}/companies)`,
     `- [営業求人](${siteUrl}/jobs)`,
-    `- [採用シグナル](${siteUrl}/signals)`,
     `- [調査・編集方針](${siteUrl}/methodology)`,
     `- [掲載・スポンサー](${siteUrl}/advertise)`,
     "",

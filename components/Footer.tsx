@@ -8,7 +8,6 @@ const copy: Record<Locale, { tagline: string; nav: { href: string; label: string
     nav: [
       { href: "/companies", label: "企業" },
       { href: "/jobs", label: "求人" },
-      { href: "/signals", label: "シグナル" },
       { href: "/methodology", label: "調査方針" },
       { href: "/advertise", label: "掲載・広告" },
       { href: "/about", label: "運営情報" },

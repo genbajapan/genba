@@ -108,6 +108,10 @@ export default {
       return handleChat(request, env, origin);
     }
 
+    if (url.pathname === "/signals" || url.pathname === "/signals/") {
+      return Response.redirect(`${url.origin}/#hiring-signals`, 301);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };

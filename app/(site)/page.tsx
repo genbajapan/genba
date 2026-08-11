@@ -34,7 +34,7 @@ export default function HomePage() {
             </p>
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業一覧</Link>
-              <Link href="/signals" className="button button-secondary">最新シグナルを見る</Link>
+              <Link href="/jobs" className="button button-secondary">営業求人を見る</Link>
               <Link href="/insights" className="button button-secondary">外資ITのリアル記事</Link>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function HomePage() {
             <div className="terminal-head"><span>GENBA / MARKET WATCH</span><span className="terminal-live">UPDATED</span></div>
             <div className="terminal-stat"><span>観測企業</span><strong>{companies.length}</strong><small>初期公開版</small></div>
             <div className="terminal-stat"><span>確認中の営業求人</span><strong>{jobs.length}</strong><small>公式採用ページへ直結</small></div>
-            <div className="terminal-stat"><span>最新シグナル</span><strong>{signals.length}</strong><small>事実と分析を区別</small></div>
+            <div className="terminal-stat"><span>最近の採用動向</span><strong>{signals.length}</strong><small>事実と分析を区別</small></div>
             <div className="terminal-foot">LAST UPDATED — {lastUpdated.replaceAll("-", ".")} / TOKYO</div>
           </aside>
         </Container>
@@ -86,9 +86,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="content-section surface-section">
+      <section id="hiring-signals" className="content-section surface-section">
         <Container>
-          <SectionHeader eyebrow="HIRING SIGNALS" title="採用シグナル" description="求人の新設や対象セグメントの広がりを、公式情報とGenbaの分析に分けて記録します。" href="/signals" linkLabel="シグナル一覧" />
+          <SectionHeader eyebrow="RECENT HIRING ACTIVITY" title="最近動いた企業・求人" description="求人の新設や対象セグメントの広がりを、公式情報とGenbaの分析に分けて記録します。" />
           <div className="signal-feed">{signals.slice(0, 4).map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div>
         </Container>
       </section>

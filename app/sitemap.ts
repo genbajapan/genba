@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/`, lastModified: latestCompanyUpdate, changeFrequency: "daily" as const },
     { url: `${siteUrl}/companies`, lastModified: latestCompanyUpdate, changeFrequency: "weekly" as const },
     { url: `${siteUrl}/jobs`, lastModified: latestJobUpdate, changeFrequency: "weekly" as const },
-    { url: `${siteUrl}/signals`, lastModified: latestCompanyUpdate, changeFrequency: "weekly" as const },
     { url: `${siteUrl}/insights`, lastModified: new Date(), changeFrequency: "weekly" as const },
   ];
   const staticRoutes = staticInfoPaths.map((route) => ({ url: `${siteUrl}${route}`, lastModified: new Date(), changeFrequency: "monthly" as const }));
