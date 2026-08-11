@@ -83,6 +83,20 @@ const categoryLenses: Record<string, CategoryLens> = {
     appeal: "バックアップ更新だけでなく、サイバー攻撃後の事業復旧をCIO・CISO・経営層へ提案できる。",
     salesQuestion: "復旧可能性を技術指標だけで終わらせず、停止損失・規制・顧客信頼まで数値化できるか。",
   },
+  "AIワークスペース / ナレッジ管理": {
+    cluster: "Enterprise Platform",
+    buyers: ["情報システム部長", "業務改革責任者", "各事業部長", "AI推進責任者"],
+    problem: "散在する文書・プロジェクト・会議・業務知識を一つのworkspaceに集め、AIで検索・実行できるようにする領域。",
+    appeal: "個人・team利用から全社標準へ広げるPLGとEnterprise営業の両方を経験しやすい。",
+    salesQuestion: "既存利用の人気を、全社ガバナンス・定着・AI活用のBusiness Caseへ変えられるか。",
+  },
+  "Voice AI / Conversational AI": {
+    cluster: "AI Platform",
+    buyers: ["コンタクトセンター責任者", "プロダクト責任者", "開発責任者", "AI推進責任者"],
+    problem: "人間らしい音声生成・認識と会話型AIを、顧客対応・コンテンツ・製品体験へ組み込む領域。",
+    appeal: "AIモデル、API、agent運用を、顧客KPIと利用量拡大へ結びつける営業経験を積みやすい。",
+    salesQuestion: "デモの新奇性を超え、品質・遅延・安全性・統合・運用コストを本番導入の価値へ変えられるか。",
+  },
   "CRM / Marketing": {
     cluster: "Revenue Platform",
     buyers: ["マーケティング責任者", "営業部長", "カスタマーサービス責任者", "経営層(CxO)"],

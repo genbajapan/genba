@@ -8168,6 +8168,260 @@ const coupaIntelligence: CompanyPublicIntelligence = {
   sources: coupaSources,
 };
 
+const notionSources: ResearchSource[] = [
+  { id: "notion-careers", label: "Notion Careers", url: "https://www.notion.com/careers", kind: "企業公式", scope: "企業情報・採用一覧", checkedAt: "2026-08-11" },
+  { id: "notion-job-bdr", label: "Business Development Representative, Japan", url: "https://jobs.ashbyhq.com/notion/c64a2cda-4c84-45bd-823d-f9141c316733", kind: "企業公式", scope: "日本BDRの職務・要件", checkedAt: "2026-08-11" },
+  { id: "notion-job-manager", label: "Commercial Sales Manager, Japan", url: "https://jobs.ashbyhq.com/notion/e95ff317-92fe-4e34-88da-a83fe093f017", kind: "企業公式", scope: "日本営業managerの職務・要件", checkedAt: "2026-08-11" },
+  { id: "notion-japan-sales", label: "Notion Japan Sales Meetup", url: "https://www.notion.com/ja/blog/notion-japan-salesmeetup", kind: "企業公式", scope: "日本営業組織・PLG・責任者", checkedAt: "2026-08-11" },
+  { id: "notion-jp-launch", label: "Notion日本語版ローンチ", url: "https://www.notion.com/blog/notion-launching-in-japanese", kind: "企業公式", scope: "日本市場参入・初期成長", checkedAt: "2026-08-11" },
+  { id: "notion-data-residency", label: "日本・韓国のデータレジデンシー", url: "https://www.notion.com/blog/notion-expands-data-residency-to-japan-south-korea", kind: "企業公式", scope: "日本のEnterprise基盤・セキュリティ", checkedAt: "2026-08-11" },
+  { id: "notion-customers", label: "Notion Customer Stories", url: "https://www.notion.com/ja/customers", kind: "企業公式", scope: "ユーザー規模・顧客事例", checkedAt: "2026-08-11" },
+  { id: "notion-toyota", label: "トヨタ自動車 導入事例", url: "https://www.notion.com/ja/customers/toyota", kind: "企業公式", scope: "国内Enterprise導入成果", checkedAt: "2026-08-11" },
+  { id: "notion-uzabase", label: "ユーザベース 導入事例", url: "https://www.notion.com/ja/customers/uzabase-jp", kind: "企業公式", scope: "全社定着・情報探索成果", checkedAt: "2026-08-11" },
+  { id: "notion-jrwest", label: "JR西日本 導入事例", url: "https://www.notion.com/ja/customers/jrwest-jp", kind: "企業公式", scope: "国内ナレッジ・オンボーディング成果", checkedAt: "2026-08-11" },
+  { id: "notion-ai", label: "Notion AI", url: "https://www.notion.com/ja/product/ai", kind: "企業公式", scope: "Agent・AI Meeting Notes・Enterprise Search", checkedAt: "2026-08-11" },
+  { id: "notion-enterprise-search", label: "Notion Enterprise Search", url: "https://www.notion.com/ja/product/enterprise-search", kind: "企業公式", scope: "権限を考慮した横断検索・connectors", checkedAt: "2026-08-11" },
+  { id: "notion-projects", label: "Notion Projects", url: "https://www.notion.com/ja/product/projects", kind: "企業公式", scope: "Wiki・Docs・Projects統合", checkedAt: "2026-08-11" },
+  { id: "notion-ai-security", label: "Notion AI Security & Privacy", url: "https://www.notion.com/help/enterprise-search-security-and-privacy-practices", kind: "企業公式", scope: "AI・connectorの権限・データ利用", checkedAt: "2026-08-11" },
+];
+
+const notionIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Notionは非公開企業で、売上・ARR・日本単体の業績は開示していない。公式ページでは1億ユーザー、Fortune 100の62%、140万人のcommunityを掲げ、日本では2020年の初期採用、2021年の日本語版提供を経て、2025年時点で従業員規模別のAE 3 teamとRelationship Manager teamを展開。2026年5月からEnterprise向け日本データレジデンシーも提供し、個人・team利用から全社AI workspaceへのupmarketを進めている。",
+    ipoOutlookSummary: "IPOの時期・計画は公式には確認できない。評価額や二次市場情報を会社の確定事実として扱わず、候補者は提示されるequityの株数・行使価格・希薄化・流動性条件を個別に確認したい。",
+    genbaVerdict: {
+      headline: "強いPLGを、AI込みの全社標準へ変える日本GTMの拡張局面。",
+      body: "1億ユーザーと大規模communityは商談の入口を作る一方、Enterprise契約はセキュリティ、権限、データ所在地、既存suiteとの重複、全社定着を越える必要がある。日本は4つの営業teamと2つの現行営業求人を確認でき、データレジデンシーも整った。ただし日本のARR、顧客数、quota達成率は非公開で、製品人気を営業の達成しやすさへ短絡しない見極めが必要。",
+    },
+    milestones: [
+      { year: "2013", label: "Notionを創業", detail: "Ivan Zhao氏らが、softwareを誰でも組み立てられるworkspaceの構想から事業を開始。", sourceId: "notion-careers" },
+      { year: "2020", label: "日本の初期GTMを開始", detail: "公式Sales Meetupで、西勝清氏が2020年に日本1人目の社員として入社したと説明。", sourceId: "notion-japan-sales" },
+      { year: "2021", label: "日本語版を正式提供", detail: "日本語の製品、support、help center、template galleryを提供。発表時点で日本のDAUは前年比4倍。", sourceId: "notion-jp-launch" },
+      { year: "2025", label: "日本営業を4 teamで展開", detail: "従業員規模別のAE 3 teamとRelationship Manager teamを公式Meetupで紹介。", sourceId: "notion-japan-sales" },
+      { year: "2026", label: "日本データレジデンシーを提供", detail: "5月からEnterprise顧客が日本国内にdata at restを保持できる選択肢を追加。", sourceId: "notion-data-residency" },
+    ],
+    growthDrivers: [
+      { title: "1億ユーザーとcommunityを起点にしたPLG", body: "無料・個人・小teamの利用と140万人規模のcommunityが認知と内部championを生む。日本営業は、既存利用者を起点にworkflowと組織課題を見つけ、企業契約へ変える余地がある。", sourceId: "notion-customers" },
+      { title: "Docs・Wiki・ProjectsからAI teamへportfolioを拡張", body: "Agent、Enterprise Search、AI Meeting Notesをworkspaceのcontext上で提供し、単なる文書管理ではなく検索・会議・反復業務の実行まで価値範囲を広げている。", sourceId: "notion-ai" },
+      { title: "データレジデンシーが日本Enterpriseの障壁を下げる", body: "日本国内でdata at restを保持する選択肢をEnterpriseへ追加。規制業界や大企業で、data locationとsecurity reviewを理由に止まっていた案件を前へ進める材料になる。", sourceId: "notion-data-residency" },
+    ],
+    japanGrowth: {
+      headline: "日本は初期ローカライズから、複数営業teamとEnterprise基盤を持つ段階へ。",
+      narrative: "2021年の日本語版発表時点で日本のDAUは前年比4倍だった。2025年の公式Sales Meetupでは、従業員規模別のAE 3 teamとRelationship Manager teamを紹介し、日本事業をscale-up phaseと説明。2026年には日本データレジデンシーを追加した。トヨタ、ユーザベース、JR西日本の事例では承認、情報探索、オンボーディングの定量改善も確認できる。一方、日本の売上・ARR・有料顧客数・従業員数は非公開で、growth rateそのものは断定できない。",
+      qualitativeSignals: [
+        { label: "日本営業4 team", detail: "従業員規模別AE 3 teamとRelationship Manager teamを2025年に公開。", sourceId: "notion-japan-sales" },
+        { label: "東京の現行営業求人2件", detail: "BDRとCommercial Sales Managerを公式APIで確認。", sourceId: "notion-job-bdr" },
+        { label: "日本データレジデンシー", detail: "2026年5月からEnterprise顧客向けに提供。", sourceId: "notion-data-residency" },
+      ],
+      sourceIds: ["notion-jp-launch", "notion-japan-sales", "notion-job-bdr", "notion-job-manager", "notion-data-residency", "notion-toyota", "notion-uzabase", "notion-jrwest"],
+    },
+    riskHypotheses: [
+      { title: "製品人気とquota再現性は別に検証する必要がある", body: "既存ユーザーとcommunityは接点を作るが、企業契約ではsecurity、governance、migration、全社定着、競合suiteとの重複を越える必要がある。日本のquota達成率・平均ACV・sales cycleは非公開。", confidence: "中", evidence: ["1億ユーザーと140万人community", "日本でCommercial leadershipを採用", "日本単体の営業生産性KPIは未開示"], counterSignal: "国内大手の定量事例と日本データレジデンシーは、Enterprise案件の障壁を下げる材料になる。", sourceIds: ["notion-customers", "notion-job-manager", "notion-data-residency", "notion-toyota"] },
+      { title: "portfolio拡張は価値を増やす一方、競争とchange managementを広げる", body: "Docs・Wiki・ProjectsにAI、Search、Meeting Notes、Calendar等が重なるほど、Microsoft 365、Google Workspace、Slack、Atlassian、Asanaなど複数予算と比較される。営業は機能比較ではなく統合後の運用設計と定着を示す必要がある。", confidence: "中", evidence: ["workspace上でAI機能を統合", "Enterprise Searchが外部appを横断", "日本営業managerにupmarket経験を要求"], counterSignal: "同一workspaceの権限とcontextをAIが利用できる点は、分断されたpoint solutionとの差別化になりうる。", sourceIds: ["notion-ai", "notion-enterprise-search", "notion-job-manager"] },
+    ],
+    sourceIds: ["notion-customers", "notion-japan-sales", "notion-jp-launch", "notion-data-residency", "notion-job-bdr", "notion-job-manager"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Notionを『使いやすいメモ』としてではなく、散在する知識・project・会議・AIを同じ権限とcontextで動かす業務基盤として売る。既存の社内利用を起点に、検索時間、会議待ち、onboarding、tool分断を定量化する。",
+    issueLenses: [
+      { title: "知識の分断", body: "情報がdrive、chat、個人folder、複数wikiに散らばり、検索と最新版確認に時間を失っていないか。" },
+      { title: "仕事とAIの分断", body: "汎用AIが社内権限・文書・project contextを持たず、回答後の実行までつながっていないか。" },
+      { title: "全社定着とgovernance", body: "teamごとの便利toolが増え、権限、data location、退職者対応、template標準化が管理できていないか。" },
+    ],
+    narrative: [
+      { label: "1. 現状を測る", body: "検索、会議準備、onboarding、進捗確認に使う時間と、重複tool・license・更新漏れを可視化する。" },
+      { label: "2. workflowを一つ選ぶ", body: "新入社員onboarding、product spec、営業account plan等、ownerとKPIが明確な業務からworkspaceを設計する。" },
+      { label: "3. AIをcontext上で動かす", body: "Enterprise Search、Meeting Notes、Agentを、既存権限を保った知識とprojectへ接続する。" },
+      { label: "4. 全社標準へ広げる", body: "利用率、検索時間、cycle time、問い合わせ件数を測り、template・権限・データ所在地を整えて部門横断へ拡張する。" },
+    ],
+    openingHook: "すでに社内でNotionを使っている人は何人いて、その利用は個人の便利toolで止まっていますか。それとも会社の意思決定を速くする共通基盤になっていますか。",
+    valueHypothesis: "知識・project・会議・AIを一つのworkspaceへ集めれば、検索と引き継ぎの時間を減らし、会議後の作業を早め、shadow ITをgovernanceされた全社基盤へ変えられる。",
+    commonObjection: { objection: "Microsoft 365やGoogle Workspace、既存wikiで足りる。移行と定着の負荷が大きい。", reframe: "全置換から始めず、既存toolをconnectしながら一つのworkflowでcycle timeと検索時間を比較する。重複削減だけでなく、AIが権限付きcontextから回答・実行できる価値まで検証する。" },
+  },
+  facts: [
+    { label: "公式ユーザー規模", value: "1億人", detail: "公式Customer Storiesページの全世界ユーザー数。日本の有料席数ではない。", sourceIds: ["notion-customers"] },
+    { label: "Enterprise浸透", value: "Fortune 100の62%", detail: "公式Customer Storiesページの利用比率。契約製品・席数は非公開。", sourceIds: ["notion-customers"] },
+    { label: "Community", value: "140万人", detail: "50超の国に広がる公式community規模。", sourceIds: ["notion-customers"] },
+    { label: "日本初期成長", value: "DAU前年比4倍", detail: "2021年の日本語版発表時点。現在の成長率ではない。", sourceIds: ["notion-jp-launch"] },
+    { label: "日本営業体制", value: "4 team", detail: "2025年時点の従業員規模別AE 3 teamとRelationship Manager team。", sourceIds: ["notion-japan-sales"] },
+    { label: "日本の公開営業求人", value: "2件", detail: "BDRとCommercial Sales Managerを2026年8月11日に公式APIで確認。", sourceIds: ["notion-job-bdr", "notion-job-manager"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "PLGの強さを、AI込みのEnterprise標準へ広げる余地がある", conclusion: "1億ユーザー、国内大手事例、日本データレジデンシーを合わせると、認知獲得より既存利用を全社標準へ変えるupmarketが日本成長の中心とみます。", confidence: "高", evidence: ["1億ユーザー・Fortune 100の62%が利用", "日本営業4 team", "2026年に日本データレジデンシー"], counterSignals: ["日本のARR・有料顧客数は非公開", "AIを含む製品別の日本採用率は未開示"], interviewQuestions: ["日本で最も拡張率の高い入口workflowは何か", "free/team利用からEnterprise化する標準conversion rateは"], sourceIds: ["notion-customers", "notion-japan-sales", "notion-data-residency"] },
+    { topic: "SALES MOTION", title: "product signalをworkflow仮説へ変えるbuilder-led sales", conclusion: "BDR求人はICP・intent・workflow fitを重視し、manager求人はPLGとsales-ledの統合とupmarketを要求。大量接触より、既存利用の文脈を企業課題へ翻訳する力が重要です。", confidence: "高", evidence: ["BDRがsignal/dataでaccountを優先", "Commercial teamが新規・拡張・更新をfull cycleで担当", "PLGとsales-led双方の経験をmanager要件に設定"], counterSignals: ["marketing・community・product由来pipelineの比率は非公開", "role間のaccount ownershipは求人から不明"], interviewQuestions: ["self-source、product signal、marketing由来pipelineの比率は", "BDRからAEへのhandoffと受注creditはどう設計されるか"], sourceIds: ["notion-job-bdr", "notion-job-manager", "notion-japan-sales"] },
+    { topic: "QUOTA ATTAINABILITY", title: "brandではなくsegment定義とEnterprise化の再現性を見る", conclusion: "強い認知は入口になるが、日本のquota、達成率、平均ACV、sales cycleは非公開。Commercialの企業規模と既存free workspaceの質で達成難度が変わります。", confidence: "探索中", evidence: ["Commercial managerを採用", "日本営業は規模別team", "国内で定量成果を持つ導入事例"], counterSignals: ["日本teamのquota達成率は未開示", "検索に残る終了求人を現行採用と誤認しやすい"], interviewQuestions: ["fully-ramped AE/BDRの直近4四半期の達成者比率は", "Commercialのaccount数、平均ACV、sales cycle、white spaceは"], sourceIds: ["notion-job-manager", "notion-japan-sales", "notion-toyota", "notion-uzabase"] },
+    { topic: "COMPENSATION", title: "日本固有の報酬は未確認。private equityの条件まで分けて見る", conclusion: "日本求人に基本給、OTE、Pay Mix、equityの記載はありません。提示額だけでなくquota、達成中央値、ramp保証と非公開株式の条件を確認すべきです。", confidence: "探索中", evidence: ["日本の2求人に給与レンジ記載なし", "Notionは非公開企業"], counterSignals: ["equityが付与される可能性はあるが日本roleの条件は未確認", "外資SaaS相場は個社の実支給を示さない"], interviewQuestions: ["base/variable、team quota、accelerator、ramp保証は", "equityの株数、行使価格、vesting、流動性条件は"], sourceIds: ["notion-job-bdr", "notion-job-manager", "notion-careers"] },
+    { topic: "CULTURE / CAREER", title: "日本のscale-upで、GTMの型づくりに関われる可能性", conclusion: "日本初期社員がAPAC GMとなり、営業を4 teamへ広げた経緯とbuilderを求める求人から、完成したprocessの運用より自ら仕組みを作る人に合いそうです。", confidence: "中", evidence: ["日本1人目社員がAPAC GM", "Commercial managerにupmarketとcross-functional設計を要求", "BDRにworkflow-firstのbuilder姿勢を要求"], counterSignals: ["日本teamの離職・昇進実績は非公開", "managerやsegmentによる文化差は公開情報で判断できない"], interviewQuestions: ["直近12カ月の昇進・離職とmanager spanは", "日本で決められるpricing、campaign、product feedbackの範囲は"], sourceIds: ["notion-japan-sales", "notion-job-manager", "notion-job-bdr"] },
+  ],
+  cultureNotes: { organizationReadTitle: "productの人気に乗るだけでなく、workflowとGTMを作るbuilder文化。", hypothesis: { title: "透明な文書化と速い実験を両立する人が合いそう。", body: "Notion自身がknowledgeとprojectを一つのworkspaceで運営する製品会社で、日本求人もclear handoff、forecast、cross-functional collaborationを重視する。個人技より、仮説・判断・学びを文書化してteamへ再利用できる動きが評価されそうです。" }, careerValue: { title: "PLGからEnterpriseへの拡張を実績にできる。", body: "既存利用signalをpipelineへ変え、AI workspaceを全社標準へ広げる経験は希少。ただし昇進率やquota再現性は非公開で、配属teamの実績確認が必要です。", confidence: "中" } },
+  customerProof: [
+    { company: "トヨタ自動車 Frontier Research Center", products: "Notion workspace", outcome: "情報共有と承認workflowを集約し、承認までの時間を3倍高速化。", implication: "大企業でも、文書・意思決定のcycle timeを定量Business Caseにできる。", sourceId: "notion-toyota" },
+    { company: "ユーザベース", products: "Notion / Notion AI", outcome: "1,093人が利用。導入6カ月で利用率約80%、現在は90%台後半。70%が情報へ速く到達できると回答。", implication: "全社定着とAI活用を、利用率・探索時間で示せる国内事例。", sourceId: "notion-uzabase" },
+    { company: "JR西日本", products: "Wiki / Docs / Projects", outcome: "データ分析組織でonboarding対応時間を50%以上削減し、組織は3年で4人から約50人へ拡大。", implication: "急拡大組織の知識移転と進捗管理を一つのworkflowとして提案できる。", sourceId: "notion-jrwest" },
+  ],
+  externalSignals: [
+    { label: "利用・community規模", value: "1億users / 140万community", detail: "Fortune 100の62%が利用すると公式に掲載。", caveat: "free userを含む全世界値で、ARR・有料席数・日本比率ではありません。", sourceId: "notion-customers" },
+    { label: "日本Enterpriseシグナル", value: "営業4 team / data residency", detail: "2025年に日本営業4 team、2026年に日本data residencyを確認。", caveat: "日本の売上、顧客数、quota達成率は非公開です。", sourceId: "notion-japan-sales" },
+  ],
+  roleLens: { salesMotion: "free・個人・team利用とcommunityから得られるproduct signalを、workflow単位の商談へ変え、CommercialからEnterpriseへupmarketするPLG + sales-led motion。BDRはpipeline創出、Commercial teamは新規・拡張・更新を担う。", compensation: "Notion Japan固有の基本給、OTE、Pay Mix、accelerator、equityは非公開。非公開企業のため、cashとequityを分け、株式条件は流動性まで確認する必要がある。", quota: "BDR/Commercialの目標、平均ACV、達成率、ramp期間は非公開。既存workspaceの有無・利用活性度とsegment定義が達成難度を左右しそう。", collaboration: "BDRからseller/SCへのhandoff、manager求人ではSales、Channel、Customer Success、Deal Desk、Operations、Legalとの連携を明記。全社標準化にはIT/securityと現場championを同時に動かす必要がある。" },
+  leadership: { name: "西 勝清", role: "General Manager, APAC", read: "2020年に日本1人目の社員として入社し、日本事業の立ち上げを経てAPACの事業運営を統括。公式Sales Meetupでは日本組織をscale-up phaseと説明している。", sourceId: "notion-japan-sales" },
+  companyStats: { globalHeadcount: { value: "非公開", detail: "現在の全世界従業員数を裏付ける公式値は確認できていない。" }, japanHeadcount: { value: "非公開", detail: "日本単体の従業員数は公式に確認できていない。" }, japanOffice: { value: "東京", detail: "現行2求人のlocation。", sourceId: "notion-job-bdr" }, japanSince: { value: "2021年", detail: "日本語版を正式提供。日本初期社員の入社は2020年。", sourceId: "notion-jp-launch" } },
+  salesAppeal: { intro: "求人票だけでは見えにくい、Notion Japanで営業する具体的な面白さを公開情報から整理しました。", points: [
+    { title: "PLGの利用signalをEnterprise商談へ変えられる", detail: "1億ユーザーと大規模communityを入口に、既存利用の深さ・workflow fit・組織課題を見極めて全社契約へ広げる。ゼロ認知からの営業とは異なるGTMを学べる。", sourceIds: ["notion-customers", "notion-job-bdr", "notion-japan-sales"] },
+    { title: "AIを単品ではなく、仕事のcontext上で提案できる", detail: "Agent、Enterprise Search、Meeting NotesをDocs・Wiki・Projectsと同じ権限・contextで動かすため、AI model比較ではなく業務cycle全体を提案対象にできる。", sourceIds: ["notion-ai", "notion-enterprise-search", "notion-projects"] },
+    { title: "日本のupmarket playbookづくりに関われる", detail: "営業4 teamと日本data residencyを持ちながら、Commercial leadershipとBDRを同時採用。既存の認知を大企業のgovernance・定着へ変える型づくりに参加できる可能性がある。", sourceIds: ["notion-japan-sales", "notion-data-residency", "notion-job-manager"] },
+  ] },
+  interviewPrep: { intro: "brandの強さではなく、配属segmentのterritory、product signalの質、全社化のconversionと報酬条件を確認したいポイントです。", questions: [
+    { question: "BDR/AEのpipelineはself-source、product signal、marketing、partnerで何%ずつか。", why: "PLGの強さが各roleの実際のpipeline負担をどこまで軽くするかを見る。", sourceIds: ["notion-job-bdr", "notion-japan-sales"] },
+    { question: "fully-rampedの直近4四半期のquota達成者比率と中央値は。", why: "ユーザー規模と日本teamの達成再現性を分けて判断する。", sourceIds: ["notion-customers", "notion-job-manager"] },
+    { question: "Commercialの企業規模、account数、平均ACV、sales cycle、更新責任は。", why: "同じtitleでもterritoryとfull-cycle責任で難度が大きく変わる。", sourceIds: ["notion-job-manager"] },
+    { question: "日本data residencyとAI機能が、security review・win rate・拡張へ与えた実績は。", why: "新しい製品投資が日本で実際に商談を前へ進めているか確認する。", sourceIds: ["notion-data-residency", "notion-ai-security"] },
+  ] },
+  solutions: [
+    { name: "Notion Workspace / Wiki / Docs", valueProp: "文書、knowledge base、databaseを一つのworkspaceに集め、teamの情報作成・共有・検索を標準化する。", url: "https://www.notion.com/ja/product", competitors: "Microsoft 365、Google Workspace、Confluence、各種wiki・document tool。", differentiation: "柔軟なblock/databaseと、同じworkspace上のproject・AIを組み合わせ、利用者自身がworkflowを組み立てられる点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "Notion Projects", valueProp: "project、task、document、knowledgeを同じdatabaseとpageで管理し、進捗と背景情報を分断しない。", url: "https://www.notion.com/ja/product/projects", competitors: "Asana、monday.com、Jira、ClickUp等のwork management製品。", differentiation: "project itemと仕様・議事録・wikiを同じworkspaceで柔軟に接続できる点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "Notion Agent", valueProp: "workspace、接続app、webのcontextを使い、質問回答だけでなく多段階taskの実行まで支援する。", url: "https://www.notion.com/ja/product/ai", competitors: "Microsoft 365 Copilot、Google Gemini for Workspace、汎用AI assistant、AI agent platform。", differentiation: "teamのdocs・database・projectと同じ権限付きcontextで、情報取得からworkspace内の実行へつなぐ点。", retention: "新しいAI機能で、日本の利用・継続率は非公開。" },
+    { name: "Enterprise Search", valueProp: "Notionに加えSlack、Google Drive、GitHub等の接続appを横断し、権限を考慮した回答を返す。", url: "https://www.notion.com/ja/product/enterprise-search", competitors: "Glean、Microsoft Search/Copilot、Google Cloud Search、各suite内検索。", differentiation: "検索結果をknowledge workspace、AI、workflowの実行へ同じUIでつなぐ点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "AI Meeting Notes", valueProp: "会議の記録、要約、action itemを自動作成し、既存projectやknowledgeへ残す。", url: "https://www.notion.com/ja/product/ai", competitors: "Zoom AI Companion、Microsoft Teams/Copilot、Otter、Fireflies等。", differentiation: "transcriptを単独保存せず、teamのworkspace・task・databaseへ直接つなげる点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "Enterprise Security / Data Residency", valueProp: "SSO、権限、監査・security controlと、日本国内のdata at rest保管選択肢で全社導入を支える。", url: "https://www.notion.com/blog/notion-expands-data-residency-to-japan-south-korea", competitors: "大手productivity suiteとEnterprise wiki/work management製品。", differentiation: "柔軟なPLG workspaceを、local data residencyとEnterprise管理へ拡張できる点。", retention: "日本data residencyは2026年5月提供開始。日本の継続率は非公開。" },
+  ],
+  customerStoriesUrl: "https://www.notion.com/ja/customers",
+  fitTags: ["PLGからEnterpriseへ広げたい", "AI workspaceを売りたい", "workflow課題を言語化できる", "既存利用signalを活かしたい", "Commercialをupmarketしたい", "日本のGTMを作りたい", "部門横断のchange managementが得意", "private companyのscale-upを楽しめる"],
+  comparisonMap: [
+    { arena: "AI productivity suite", companies: ["Notion", "Microsoft", "Google"], why: "既存suite内AIか、workspace統合型AIかの比較" },
+    { arena: "Knowledge / Enterprise Search", companies: ["Notion", "Atlassian", "Glean"], why: "knowledge作成・検索・権限・AI回答の比較" },
+    { arena: "Work Management", companies: ["Notion", "monday.com", "Miro"], why: "project管理と文書・collaborationの統合度を比較" },
+  ],
+  sources: notionSources,
+};
+
+const elevenLabsSources: ResearchSource[] = [
+  { id: "eleven-careers", label: "ElevenLabs Careers", url: "https://elevenlabs.io/careers", kind: "企業公式", scope: "組織・働き方・採用一覧", checkedAt: "2026-08-11" },
+  { id: "eleven-job-ae", label: "Account Executive, Japan", url: "https://jobs.ashbyhq.com/elevenlabs/ac7cc39a-a58b-4ef2-961a-ca16e060a361", kind: "企業公式", scope: "日本AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "eleven-job-am", label: "Account Manager, Japan", url: "https://jobs.ashbyhq.com/elevenlabs/15eb4b53-fdd8-49e6-8c7c-0951f6e40b99", kind: "企業公式", scope: "日本AMの職務・要件", checkedAt: "2026-08-11" },
+  { id: "eleven-japan", label: "ElevenLabs日本法人設立", url: "https://elevenlabs.io/blog/elevenlabs-establishes-japanese-subsidiary-elevenlabs-gk", kind: "企業公式", scope: "日本法人・責任者・国内協業", checkedAt: "2026-08-11" },
+  { id: "eleven-series-d", label: "ElevenLabs Series D", url: "https://elevenlabs.io/blog/series-d", kind: "企業公式", scope: "資金調達・評価額・ARR", checkedAt: "2026-08-11" },
+  { id: "eleven-arr", label: "$500M ARR and new investors", url: "https://elevenlabs.io/blog/500m-arr-and-new-investors", kind: "企業公式", scope: "最新ARR・成長", checkedAt: "2026-08-11" },
+  { id: "eleven-docs", label: "ElevenLabs Documentation", url: "https://elevenlabs.io/docs/overview/intro", kind: "企業公式", scope: "製品portfolio・models・languages", checkedAt: "2026-08-11" },
+  { id: "eleven-agents", label: "ElevenAgents", url: "https://elevenlabs.io/docs/eleven-agents/overview/", kind: "企業公式", scope: "会話型AI agent・統合", checkedAt: "2026-08-11" },
+  { id: "eleven-aiuc", label: "AIUC-1 insurance for ElevenAgents", url: "https://elevenlabs.io/blog/aiuc-announcement", kind: "企業公式", scope: "agent利用規模・Fortune 500・安全性", checkedAt: "2026-08-11" },
+  { id: "eleven-ailas", label: "AILASとの音声権利保護協業", url: "https://elevenlabs.io/blog/ailas", kind: "企業公式", scope: "日本の音声本人確認・同意", checkedAt: "2026-08-11" },
+  { id: "eleven-tbs", label: "TBS KASSOの多言語吹替", url: "https://elevenlabs.io/blog/elevenlabs-establishes-japanese-subsidiary-elevenlabs-gk", kind: "企業公式", scope: "日本の商用利用事例", checkedAt: "2026-08-11" },
+  { id: "eleven-deloitte", label: "DeloitteとのEnterprise AI協業", url: "https://elevenlabs.io/blog/elevenlabs-and-deloitte-partner", kind: "企業公式", scope: "contact center導入・partner GTM", checkedAt: "2026-08-11" },
+  { id: "eleven-headcount", label: "Field CTO appointment", url: "https://elevenlabs.io/blog/alex-holt-field-cto", kind: "企業公式", scope: "2026年の組織規模", checkedAt: "2026-08-11" },
+];
+
+const elevenLabsIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "ElevenLabsは2023年に製品を公開した非公開AI企業。2025年末ARR 3.5億ドルから2026年最初の4カ月で5億ドル超へ伸び、2026年2月のSeries Dでは5億ドルを調達し評価額110億ドル。製品は音声生成・認識・cloning・dubbingから、会話型agentとAPI platformへ広がる。日本では2025年4月に初の海外子会社を東京へ設立し、2026年8月時点でAEとAMを採用している。",
+    ipoOutlookSummary: "IPOの時期・計画は公式には確認できない。高い評価額と急成長はequityの魅力になりうる一方、非公開株の行使価格、希薄化、流動性、税務を分けて確認する必要がある。",
+    genbaVerdict: { headline: "超高速成長のVoice AIを、日本でPoCから本番利用と拡張へ変える局面。", body: "ARR 5億ドル超、300万超のvoice agent、Fortune 500企業の75%超で従業員利用というglobal signalは強い。日本でも法人・責任者・TBS事例・権利保護partner・2営業求人を確認できる。一方、日本のARR、顧客数、quota達成率、agentの本番KPIは非公開。AEはself-source、AMはagent設計とNRRまで負い、成長市場でも役割の広さと実装負荷を見極める必要がある。" },
+    milestones: [
+      { year: "2023", label: "製品を公開", detail: "AI voice platformを立ち上げ、text-to-speechとvoice cloningから利用を拡大。", sourceId: "eleven-series-d" },
+      { year: "2025", label: "日本法人を設立", detail: "4月に東京で初の海外子会社ElevenLabs Japan合同会社を設立。", sourceId: "eleven-japan" },
+      { year: "2025年末", label: "ARR 3.5億ドル", detail: "公式発表で2025年末ARRを3.5億ドルと更新。", sourceId: "eleven-arr" },
+      { year: "2026年2月", label: "Series D / $11B評価", detail: "5億ドルを調達し、評価額110億ドル。", sourceId: "eleven-series-d" },
+      { year: "2026年4月", label: "ARR 5億ドル超", detail: "2026年最初の4カ月でARR 5億ドルを突破。", sourceId: "eleven-arr" },
+    ],
+    growthDrivers: [
+      { title: "ARRの急拡大とEnterprise利用", body: "2025年末ARR 3.5億ドルから4カ月で5億ドル超へ成長。300万超のvoice agentとFortune 500企業の75%超での従業員利用を公式に掲げ、developer/self-serveからEnterpriseまで入口が広い。", sourceId: "eleven-arr" },
+      { title: "Creative・Agents・APIの三つの製品family", body: "生成音声だけでなく、speech-to-text、dubbing、music、会話型agent、APIへportfolioを拡張。新規導入後に利用量・use case・製品を横へ広げる余地がある。", sourceId: "eleven-docs" },
+      { title: "日本法人とlocal ecosystem", body: "東京法人をAsia hubとして設立し、TBS、DOCOMO Innovations、MBC C&I、LLSOLLUとの協業を公表。AILASとはvoice IDとconsentを組み合わせ、音声権利への国内懸念にも対応する。", sourceId: "eleven-japan" },
+    ],
+    japanGrowth: {
+      headline: "初の海外子会社を東京に置き、新規獲得と既存拡張を同時採用。",
+      narrative: "2025年4月、ElevenLabsは初の海外子会社としてElevenLabs Japan合同会社を東京に設立し、日本・韓国GMに田村元氏を任命。TBSのKASSOで多言語dubbingを支援し、DOCOMO Innovationsによる技術評価、AILASとの音声ID・consent連携を公表した。2026年8月にはAEとAMを採用し、新規logoと既存顧客のagent設計・NRRを並行して強化している。ただし日本のARR、顧客数、production agent数、従業員数は非公開で、国内の成長率は断定しない。",
+      qualitativeSignals: [
+        { label: "2025年4月に日本法人", detail: "初の海外子会社を東京へ設立し、Asia expansionのhubと位置づけ。", sourceId: "eleven-japan" },
+        { label: "国内の商用・技術・安全性partner", detail: "TBS、DOCOMO Innovations、AILASとの取り組みを公式発表。", sourceId: "eleven-ailas" },
+        { label: "日本営業求人2件", detail: "新規AEと、agent設計・NRRを持つAMを公式APIで確認。", sourceId: "eleven-job-ae" },
+      ],
+      sourceIds: ["eleven-japan", "eleven-job-ae", "eleven-job-am", "eleven-ailas", "eleven-tbs"],
+    },
+    riskHypotheses: [
+      { title: "超高速成長は、日本teamのrole幅とenablement負荷も大きくする", body: "AEはself-source、AMはagent設計・API連携・利用分析・NRRまで担当。製品とmodelの更新が速い中、日本のSolutions、Support、Legal、CS体制が不足すると個人へ負荷が集中する可能性がある。", confidence: "中", evidence: ["AEにself-sourced pipelineを要求", "AMにtechnical designとexpansion quotaを要求", "global headcountは500人超まで拡大"], counterSignal: "Series D資金とDeloitte等のpartnerはEnterprise deliveryを補強できる。", sourceIds: ["eleven-job-ae", "eleven-job-am", "eleven-headcount", "eleven-series-d", "eleven-deloitte"] },
+      { title: "音声品質だけでなく権利・安全性・本番運用が購買条件になる", body: "voice cloningとagentは本人同意、なりすまし、data handling、失言、業務systemへの誤操作を伴う。デモ成功後もsecurity・legal・brand reviewで販売cycleが長くなる可能性がある。", confidence: "高", evidence: ["AILASとvoice ID・consentを連携", "AIUC-1で5,000 adversarial simulationとinsuranceを提供", "AM求人がconversation logとperformance監視を要求"], counterSignal: "権利保護とinsuranceを製品化している点は、規制懸念を競争力へ変える材料になる。", sourceIds: ["eleven-ailas", "eleven-aiuc", "eleven-job-am"] },
+    ],
+    sourceIds: ["eleven-series-d", "eleven-arr", "eleven-japan", "eleven-job-ae", "eleven-job-am", "eleven-aiuc"],
+  },
+  sellingPlaybook: {
+    frameIntro: "『自然な声を作れるAI』のdemoでは終わらせず、顧客対応、予約・督促、game/content、accessibility等のworkflowで、完了率・応答時間・制作cycle・単価を改善するplatformとして売る。権利・安全性・human handoffまで最初から設計する。",
+    issueLenses: [
+      { title: "顧客接点のcapacity", body: "電話・voice supportが採用難、多言語、営業時間、peak需要で詰まり、応答率や機会損失を生んでいないか。" },
+      { title: "content制作の速度", body: "収録、再収録、多言語化、localizationが高コストで、公開地域と改善cycleを制限していないか。" },
+      { title: "AI voiceのgovernance", body: "voice権利、本人同意、brand consistency、agent誤動作、監査log、human escalationを本番要件として設計できているか。" },
+    ],
+    narrative: [
+      { label: "1. workflowとKPIを限定", body: "一つの電話journeyまたはcontent formatを選び、完了率、待ち時間、制作時間、cost、CSATをbaseline化する。" },
+      { label: "2. 品質と統合を検証", body: "日本語の自然さだけでなく、latency、noise、tool/API連携、data handling、human handoffをproduction条件で試す。" },
+      { label: "3. 安全性と運用を組み込む", body: "consent、voice ID、guardrail、red-team、monitoring、fallback、auditをLegal・Security・現場と合意する。" },
+      { label: "4. 利用量とuse caseを拡張", body: "本番KPIの改善を確認して、言語、channel、agent、Creative、APIへ広げ、NRRとmultiproduct adoptionにつなげる。" },
+    ],
+    openingHook: "御社の音声業務で、人が話さなければならない部分と、品質・安全性を保ちながらAIへ任せられる部分はどこですか。そこで失っている時間・機会・制作費はいくらですか。",
+    valueHypothesis: "高品質なvoice model、agent orchestration、API、monitoringを一体で使えば、顧客体験を落とさず音声業務のcapacityを増やし、多言語展開と改善cycleを速められる。",
+    commonObjection: { objection: "日本語品質や誤応答、voice権利が不安で、本番の顧客接点には使えない。", reframe: "全面自動化ではなく、限定workflowでhuman handoffを残し、成功KPIと停止条件を合意する。voice ID・consent、adversarial test、monitoringを導入条件に入れ、品質とriskを同時に測る。" },
+  },
+  facts: [
+    { label: "ARR", value: "$500M超", detail: "2026年最初の4カ月で突破。2025年末は$350M。", sourceIds: ["eleven-arr"] },
+    { label: "Series D", value: "$500M / 評価額$11B", detail: "2026年2月の公式発表。", sourceIds: ["eleven-series-d"] },
+    { label: "Voice agents", value: "300万超", detail: "2026年2月時点の公式発表。production比率・日本比率は非公開。", sourceIds: ["eleven-aiuc"] },
+    { label: "Enterprise利用signal", value: "Fortune 500の75%超", detail: "該当企業の従業員がElevenLabs技術を利用。企業契約率を意味しない。", sourceIds: ["eleven-aiuc"] },
+    { label: "グローバル組織", value: "500人超", detail: "2026年6月の公式blog時点。", sourceIds: ["eleven-headcount"] },
+    { label: "日本の公開営業求人", value: "2件", detail: "AEとAMを2026年8月11日に公式APIで確認。", sourceIds: ["eleven-job-ae", "eleven-job-am"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "Voice modelからEnterprise agent platformへ拡張するhypergrowth", conclusion: "ARR 5億ドル超と300万agentは需要の強さを示す。Creative・Agents・APIの三方向を持ち、日本では新規と拡張を同時採用しているため、単品音声生成より本番workflowのplatform化が成長軸とみます。", confidence: "高", evidence: ["2026年4月にARR 5億ドル超", "300万超のvoice agent", "AEとAMを日本で同時採用"], counterSignals: ["日本のARR・production顧客数は非公開", "agent数は有料・本番のみとは限らない"], interviewQuestions: ["日本でproduction化が進む上位3 use caseは", "Creative、Agents、API別の日本pipelineとNRRは"], sourceIds: ["eleven-arr", "eleven-aiuc", "eleven-job-ae", "eleven-job-am", "eleven-docs"] },
+    { topic: "SALES MOTION", title: "AEのself-sourceとAMのtechnical expansionをつなぐ", conclusion: "AEが新規pipelineを自ら作り、AMがagent設計・利用改善・multiproduct adoption・NRRを持つ。new logoの契約より、本番利用量と拡張までが一連のsales motionです。", confidence: "高", evidence: ["AEにself-sourced pipelineを明記", "AMにexpansion quotaとNRR ownership", "AMがAPI/SDKとagent flowを設計"], counterSignals: ["renewal、Solutions、Supportとの役割境界は不明", "usage-based revenueのcredit ruleは未開示"], interviewQuestions: ["AE/AM/Solutionsのhandoffとaccount ownershipは", "契約、usage、renewal、cross-sellのquota creditはどう分かれるか"], sourceIds: ["eleven-job-ae", "eleven-job-am"] },
+    { topic: "QUOTA ATTAINABILITY", title: "全社ARRより、日本のproduction conversionを確認したい", conclusion: "global成長は強いが、日本のquota達成率、平均ACV、sales cycle、PoC-to-production率は非公開。voice品質のdemoからintegration・security・legalを越える力が達成を左右します。", confidence: "探索中", evidence: ["日本法人設立から約1年", "TBSの国内事例", "AE/AMを同時採用"], counterSignals: ["全社ARRは短期間で大幅成長", "Deloitte等のpartnerがEnterprise実装を補強"], interviewQuestions: ["fully-rampedの達成者比率、平均ACV、sales cycleは", "PoC-to-production率と、最も多い失注・停滞理由は"], sourceIds: ["eleven-arr", "eleven-japan", "eleven-tbs", "eleven-deloitte", "eleven-job-ae"] },
+    { topic: "COMPENSATION", title: "日本報酬は未確認。usage creditとequityを分けて見る", conclusion: "日本求人に給与、OTE、Pay Mix、equityの記載はありません。高速成長や評価額ではなく、quota計上ルール、ramp保証、同teamの実支給と株式条件で判断すべきです。", confidence: "探索中", evidence: ["日本2求人に給与レンジ記載なし", "ElevenLabsは非公開企業", "AMはNRRとexpansion quotaを持つ"], counterSignals: ["Series Dの大型調達は採用投資余力のsignal", "equity付与の可能性はあるが日本条件は未確認"], interviewQuestions: ["base/variable、quota、accelerator、ramp保証は", "usage増、renewal、multiproductのcreditとequity条件は"], sourceIds: ["eleven-job-ae", "eleven-job-am", "eleven-series-d"] },
+    { topic: "CULTURE / CAREER", title: "remote・high ownershipで、技術と商売の境界を越える", conclusion: "30超の国でremote/asynchronousに働き、AEは市場開拓、AMはagent設計まで持つ。役割の境界を待たず、英語でglobal product teamと動ける人ほど機会を得やすそうです。", confidence: "中", evidence: ["careersでremote・asynchronous・high ownershipを掲げる", "日本AEにproduct intuitionを要求", "日本AMにtechnical integrationを要求"], counterSignals: ["日本teamのmanager差・昇進・離職は非公開", "広いownershipは支援不足の場合に負荷へ転じる"], interviewQuestions: ["日本teamのmeeting cadence、時差、意思決定範囲は", "直近12カ月の昇進・離職と、Solutions/Supportのcoverageは"], sourceIds: ["eleven-careers", "eleven-job-ae", "eleven-job-am"] },
+  ],
+  cultureNotes: { organizationReadTitle: "高いownershipで、model・product・顧客運用をつなぐ。", hypothesis: { title: "速さと安全性を同時に扱える人が合いそう。", body: "remote/asynchronousで役割の範囲が広く、製品更新も市場変化も速い。一方、voice AIは権利・安全性・brand riskを伴うため、勢いだけで進めず、仮説・実験・停止条件・学びを文書化できる人が向きそうです。" }, careerValue: { title: "AI agentを本番KPIとNRRまで持つ経験。", body: "音声modelのdemoではなく、API統合、agent運用、安全性、利用量拡大まで経験できれば希少性が高い。ただし日本のenablementと役割分担は面接確認が必要です。", confidence: "中" } },
+  customerProof: [
+    { company: "TBS", products: "ElevenLabs Dubbing", outcome: "video game番組KASSOを英語、スペイン語、ポルトガル語へdubbingし、global audienceへ展開。", implication: "日本発contentの多言語化を、制作速度と海外配信のBusiness Caseにできる。", sourceId: "eleven-tbs" },
+    { company: "DOCOMO Innovations", products: "ElevenLabs voice technology", outcome: "日本法人発表で技術評価を実施した企業として公表。production導入や定量成果は非公開。", implication: "通信・Enterpriseで評価対象になる一方、検証と本番導入を分けて見る必要がある。", sourceId: "eleven-japan" },
+    { company: "AILAS", products: "Voice ID / consent + ElevenLabs", outcome: "本人確認済みvoice IDと同意情報をElevenLabsのAI音声作成workflowへ接続する協業を発表。", implication: "日本市場のvoice権利・同意を、導入障壁ではなくgovernance提案へ変える材料。", sourceId: "eleven-ailas" },
+  ],
+  externalSignals: [
+    { label: "成長signal", value: "ARR $500M超", detail: "2025年末$350Mから2026年4月までに$500M超。Series D評価額は$11B。", caveat: "全世界値で、日本の売上・営業生産性ではありません。", sourceId: "eleven-arr" },
+    { label: "agent adoption signal", value: "300万agents", detail: "Fortune 500の75%超で従業員利用と公式発表。", caveat: "agentの有料・production比率と、日本比率は開示されていません。", sourceId: "eleven-aiuc" },
+  ],
+  roleLens: { salesMotion: "AEが日本のnew logoとself-sourced pipelineを作り、AMがagent設計・利用改善・NRR・multiproduct expansionを担う。契約締結より、production化とusage拡大までが成長モーション。", compensation: "日本固有の基本給、OTE、Pay Mix、accelerator、equityは非公開。usage-based productでは契約額・消費量・更新・cross-sellのcredit定義が実支給を左右する。", quota: "AE/AMのquota、達成率、平均ACV、rampは非公開。PoC-to-production率、usage forecast、technical/legal reviewの期間をteam実績で確認したい。", collaboration: "AEはGrowth、AMは顧客のtechnical teamと連携。実運用ではSolutions、Product、Engineering、Support、Legal/Safety、partnerを束ね、agentの品質・統合・governance・KPIを同時に管理する必要がある。" },
+  leadership: { name: "田村 元 (Hajime Jim Tamura)", role: "General Manager, Japan & Korea", read: "2025年4月の日本法人設立時に就任。SAP Japan、NetSuite Japan、Microsoft、Asana Japan等で日本GTMを率いた経歴を公式発表し、日本をAsia expansionのhubと位置づけている。", sourceId: "eleven-japan" },
+  companyStats: { globalHeadcount: { value: "500人超", detail: "2026年6月の公式blog時点。", sourceId: "eleven-headcount" }, japanHeadcount: { value: "非公開", detail: "日本単体の従業員数は公式に確認できていない。" }, japanOffice: { value: "東京 / remote求人", detail: "日本法人本拠は東京。営業2求人はJapan remote。", sourceId: "eleven-japan" }, japanSince: { value: "2025年4月", detail: "ElevenLabs Japan合同会社を初の海外子会社として設立。", sourceId: "eleven-japan" } },
+  salesAppeal: { intro: "求人票だけでは見えにくい、ElevenLabs Japanで営業する具体的な面白さを公開情報から整理しました。", points: [
+    { title: "急成長するAI categoryを、日本で市場開拓できる", detail: "ARR 5億ドル超のglobal demandを背景に、設立約1年の日本法人でnew logoとindustry use caseを作る。完成したterritoryより市場定義に近い営業経験になりうる。", sourceIds: ["eleven-arr", "eleven-japan", "eleven-job-ae"] },
+    { title: "AI demoをproduction KPIへ変える経験", detail: "Agentはconversation flow、tool integration、voice、log分析まで対象。応答率、完了率、cost、CSAT等を改善し、利用量とNRRへつなげる技術・commercial両面の経験を積める。", sourceIds: ["eleven-agents", "eleven-job-am"] },
+    { title: "安全性と権利保護を含めたEnterprise提案", detail: "AILASとのvoice ID・consent、AIUC-1 insuranceとadversarial simulationを持ち、AI riskを避けるだけでなく導入条件として設計できる。", sourceIds: ["eleven-ailas", "eleven-aiuc"] },
+  ] },
+  interviewPrep: { intro: "全社ARRの勢いより、日本のterritory、production conversion、usage credit、技術支援体制を確認したいポイントです。", questions: [
+    { question: "日本のAE/AMでfully-rampedのquota達成者比率、平均ACV、sales cycleは。", why: "global ARRと日本teamの達成再現性を分けて判断する。", sourceIds: ["eleven-arr", "eleven-job-ae", "eleven-job-am"] },
+    { question: "AEのself-source比率と、PoC-to-production率、主な停滞理由は。", why: "認知・demo需要が継続売上へ変わる実態を見る。", sourceIds: ["eleven-job-ae", "eleven-aiuc"] },
+    { question: "AM、Solutions、Support、Productの導入・障害・renewal責任はどう分かれるか。", why: "technical designとcommercial ownershipが一人へ集中しないか確認する。", sourceIds: ["eleven-job-am", "eleven-agents"] },
+    { question: "契約額、usage、renewal、multiproduct expansionのquota creditとforecast方法は。", why: "usage-based businessで実支給と達成管理を理解する。", sourceIds: ["eleven-job-am", "eleven-docs"] },
+  ] },
+  solutions: [
+    { name: "ElevenAgents", valueProp: "voice/chatの会話型AIを作り、knowledge、tool、workflow、telephonyへ接続して顧客対応を自動化する。", url: "https://elevenlabs.io/docs/eleven-agents/overview/", competitors: "Google Dialogflow/CCAI、Amazon Connect、Genesys、Twilio、OpenAI等のagent/voice stack。", differentiation: "高品質なvoice modelとlow-latency conversation、agent orchestration、tool integrationを同じplatformで扱う点。", retention: "製品別・日本別のNRRは非公開。" },
+    { name: "Text to Speech / ElevenAPI", valueProp: "多言語・表現豊かな音声をAPIまたはUIで生成し、app、media、accessibility、agentへ組み込む。", url: "https://elevenlabs.io/ja/text-to-speech", competitors: "Google Cloud TTS、Amazon Polly、Azure AI Speech、OpenAI、音声合成専業製品。", differentiation: "自然さ、speaker表現、multilingual modelとdeveloper APIを一つのplatformで提供。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "Speech to Text / Scribe", valueProp: "音声を文字起こしし、speaker diarizationやtimestampを含めてagent、media、分析workflowへ渡す。", url: "https://elevenlabs.io/ja/speech-to-text", competitors: "OpenAI Whisper、Google Speech-to-Text、AWS Transcribe、Deepgram等。", differentiation: "生成・認識・agentを同一platform/APIで組み合わせ、voice workflowをend-to-endで作れる点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "Voice Cloning", valueProp: "本人の同意を前提にvoiceを再現し、brand voice、creator、localization、personalized experienceへ使う。", url: "https://elevenlabs.io/ja/voice-cloning", competitors: "Resemble AI、PlayHT、Azure Custom Neural Voice等。", differentiation: "短いsampleからの作成、multilingual表現と広い生成・agent platformへの接続。", retention: "製品別・日本別の継続率は非公開。権利・同意が購買条件。" },
+    { name: "Dubbing Studio", valueProp: "video/audioを多言語へ翻訳・吹替し、speakerの声質と表現を保ちながらglobal配信を速める。", url: "https://elevenlabs.io/ja/dubbing-studio", competitors: "従来の翻訳・収録studio、HeyGen、Papercup等のAI localization。", differentiation: "90超の言語・accentとvoice preservation、編集workflowを組み合わせる点。", retention: "製品別・日本別の継続率は非公開。" },
+    { name: "ElevenCreative", valueProp: "voice、music、sound effect、dubbing等をcontent制作環境として提供し、企画から多言語展開までのcycleを短縮する。", url: "https://elevenlabs.io/", competitors: "音声・music・videoの個別生成toolと従来制作studio。", differentiation: "複数のgenerative audio機能とlicensed voice ecosystemを一つの制作platformで扱う点。", retention: "製品別・日本別の継続率は非公開。" },
+  ],
+  customerStoriesUrl: "https://elevenlabs.io/customer-stories/agents",
+  fitTags: ["Voice AIを売りたい", "日本市場を新規開拓したい", "self-sourceが得意", "AI agentの技術対話ができる", "API/SDKに抵抗がない", "usage expansionを作りたい", "remote・asynchronousで自走できる", "AI safetyを商談に組み込める"],
+  comparisonMap: [
+    { arena: "Voice AI API", companies: ["ElevenLabs", "OpenAI", "Google Cloud"], why: "音声品質・latency・model/API・価格の比較" },
+    { arena: "Conversational AI / Contact Center", companies: ["ElevenLabs", "Genesys", "Twilio"], why: "agent orchestration、telephony、Enterprise運用の比較" },
+    { arena: "AI Dubbing / Content", companies: ["ElevenLabs", "HeyGen", "従来制作会社"], why: "voice preservation、多言語化速度、編集・権利管理の比較" },
+  ],
+  sources: elevenLabsSources,
+};
+
 const rubrikSources: ResearchSource[] = [
   { id: "rubrik-careers", label: "Rubrik Sales Careers", url: "https://www.rubrik.com/company/careers/departments/sales", kind: "企業公式", scope: "日本の公開求人一覧", checkedAt: "2026-08-11" },
   { id: "rubrik-job-midmarket", label: "Mid Market Account Executive | Tokyo", url: "https://www.rubrik.com/company/careers/departments/job.8014986.54284?reqId=11055", kind: "企業公式", scope: "東京AEの職務・要件", checkedAt: "2026-08-11" },
@@ -8383,6 +8637,8 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   "new-relic": newRelicIntelligence,
   coupa: coupaIntelligence,
   rubrik: rubrikIntelligence,
+  notion: notionIntelligence,
+  elevenlabs: elevenLabsIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
