@@ -28,6 +28,10 @@ const warmTierAreas = rows.filter((row) => row.count > 0 && row.count < maximum)
 const quietTierAreas = rows.filter((row) => row.count === 0).map((row) => row.area);
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
 
+function areaHref(area: string) {
+  return `/companies?category=${encodeURIComponent(area)}#company-results`;
+}
+
 export default function HiringHeatmap() {
   return (
     <section className="market-heat" aria-labelledby="market-heat-title">
@@ -50,21 +54,21 @@ export default function HiringHeatmap() {
           <div className="market-tier market-tier-hot">
             <span className="market-tier-label">HOT</span>
             <div className="market-tier-tags">
-              {hotTierAreas.length ? hotTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              {hotTierAreas.length ? hotTierAreas.map((area) => <Link key={area} href={areaHref(area)} className="market-tier-tag" aria-label={`${area}の企業一覧を見る`}>{area}</Link>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
             <p>求人数が最も多い領域。応募者の競合も多いと想定されます。</p>
           </div>
           <div className="market-tier market-tier-warm">
             <span className="market-tier-label">Active</span>
             <div className="market-tier-tags">
-              {warmTierAreas.length ? warmTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              {warmTierAreas.length ? warmTierAreas.map((area) => <Link key={area} href={areaHref(area)} className="market-tier-tag" aria-label={`${area}の企業一覧を見る`}>{area}</Link>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
             <p>採用は動いているが、激戦区ほど競合は多くない領域。</p>
           </div>
           <div className="market-tier market-tier-quiet">
             <span className="market-tier-label">Selective</span>
             <div className="market-tier-tags">
-              {quietTierAreas.length ? quietTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
+              {quietTierAreas.length ? quietTierAreas.map((area) => <Link key={area} href={areaHref(area)} className="market-tier-tag" aria-label={`${area}の企業一覧を見る`}>{area}</Link>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
             <p>現在確認できる求人は少数。穴場として狙える可能性があります。</p>
           </div>
@@ -81,7 +85,7 @@ export default function HiringHeatmap() {
               const tierLabel = tier === "hot" ? "HOT" : tier === "active" ? "Active" : "Selective";
               return (
                 <Link
-                  href={`/companies?category=${encodeURIComponent(row.area)}`}
+                  href={areaHref(row.area)}
                   className={`heat-tile heat-tile-${tier}`}
                   key={row.area}
                 >

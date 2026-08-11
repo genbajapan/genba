@@ -142,7 +142,9 @@ button, input, select { font: inherit; }
 .market-tier { flex: 1; min-width: 0; padding: 12px 13px 13px; border: 1px solid #244555; background: #0d2634; }
 .market-tier-label { display: block; font-size: 9px; font-weight: 850; letter-spacing: .1em; color: #9db4bd; }
 .market-tier-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
-.market-tier-tag { padding: 4px 9px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #e5f3f0; font-size: 11px; font-weight: 650; letter-spacing: -.01em; }
+.market-tier-tag { display: inline-flex; padding: 4px 9px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #e5f3f0; font-size: 11px; font-weight: 650; letter-spacing: -.01em; text-decoration: none; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.market-tier-tag:not(.market-tier-tag-empty):hover { transform: translateY(-2px); border-color: #70d3c5; background: rgba(112,211,197,.16); }
+.market-tier-tag:not(.market-tier-tag-empty):focus-visible { outline: 2px solid #70d3c5; outline-offset: 2px; }
 .market-tier-tag-empty { color: #7f97a2; font-weight: 500; border-style: dashed; background: transparent; }
 .market-tier p { margin: 10px 0 0; color: #7f97a2; font-size: 9.5px; line-height: 1.55; }
 .market-tier-hot { border-color: #7a3f3f; background: #2a0f0f; }
@@ -164,6 +166,7 @@ button, input, select { font: inherit; }
 .market-disclaimer { margin: 30px 0 0; color: #69838f; font-size: 8px; line-height: 1.7; }
 
 .content-section { padding: 82px 0; }
+.company-results-section { scroll-margin-top: 95px; }
 .content-section-tight { padding: 58px 0; }
 .surface-section { background: white; border-block: 1px solid var(--line); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 30px; }
