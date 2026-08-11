@@ -18,6 +18,10 @@
 - 既存の登録企業とカテゴリ・業界が偏りすぎないよう配慮する
 - 各社について、国内(OpenWork・OpenMoney・日本語ニュース・日本法人プレスリリース)、海外(英語ニュース・IR資料・決算資料)、LinkedIn(現従業員・カントリーマネージャー等の異動)、公式採用ページの実求人を横断して徹底的に調査する。手を抜かず、Genbaが読者に届けたい「解像度の高さ」を満たす
 - `lib/company-public-intelligence.ts`の`CompanyPublicIntelligence`型に沿って、既存登録企業と同じ深さで全フィールドを埋める(`marketStatus`、`sellingPlaybook`、`facts`、5件の`hypotheses`、`cultureNotes`、`customerProof`、`externalSignals`、`roleLens`、`leadership`、`companyStats`、`salesAppeal`、`interviewPrep`、`solutions`、`fitTags`、`comparisonMap`、`sources`)。`marketStatus`は日次の株価スナップショットではなく、変遷・成長性ストーリー形式(`growthSummary`+`milestones`、上場企業は`stockLinkUrl`)で作成する
+- 新規企業ページは`/companies/salesforce`と`lib/company-public-intelligence.ts`の`salesforceIntelligence`を参考実装とし、共通の`CompanyIntelligenceProfile`のセクション順、見出し、カード構成、文章密度に合わせる。企業固有の表示コンポーネント、CSS、スキーマ、追加セクションは、Jioが明示的に指示した場合を除き作らない
+- 標準の粒度は、原則として`milestones` 5件、`growthDrivers` 3件、`riskHypotheses` 2件、日本の成長シグナル 3件、`facts` 6件、`hypotheses` 5件、`customerProof` 3件、`externalSignals` 2件、`salesAppeal` 3件、`interviewPrep` 4件を目安とする。`sellingPlaybook`は3つの課題レンズ、4段のストーリー(背景・課題・解決策・選定の理由)、オープニングの問いかけ、価値仮説、よくある反論への返しで構成する
+- 公式根拠が不足している項目は、件数を揃えるために推測・水増ししない。その場合も独自フォーマットに変えず、標準の枠内で「未確認」「非公開」「仮説」を明示する
+- 公開前にSalesforceページと新規企業ページを実画面で比較し、セクション順、見出し、カード数、文章量、展開パターンが標準内かを確認する。独自セクションや明らかに薄い項目が残っている場合は完了・公開しない
 - `lib/market-data.ts`に会社情報と、実在が確認できた求人だけを追加する。求人詳細が取得できない場合は無理に件数を揃えない
 - 各求人の`careerInsights`のうち`tenureAndPromotion`・`priorCompanies`・`nextCompanies`は、「公開データがない」で思考停止しない。その会社(またはその求人と同じ職種・セグメント)についてLinkedInで公開プロフィールを複数検索し、入社元・在籍傾向・転職先の**傾向**を掴んだ上で書く。ただし`ops/job-publication-and-sponsor-policy.md`3章・`ops/guardrails.md`2章の非交渉ルールを必ず守る
   - 個人を特定できる形の経歴紹介(実名はもちろん、実名を伏せても役職・在籍期間・前職・専門性の組み合わせで一人に絞り込める記述)を作らない。書けるのは対象地域・職種・サンプル数・出典を明示した**集計・傾向**まで(例:「LinkedIn公開プロフィールを数件確認した限り、前職は◯◯系企業であるケースが多い」)
