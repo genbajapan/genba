@@ -28,10 +28,6 @@ const warmTierAreas = rows.filter((row) => row.count > 0 && row.count < maximum)
 const quietTierAreas = rows.filter((row) => row.count === 0).map((row) => row.area);
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
 
-function areaHref(area: string) {
-  return `/companies?category=${encodeURIComponent(area)}#company-results`;
-}
-
 function tierHref(tier: "hot" | "active" | "selective") {
   return `/companies?tier=${tier}#company-results`;
 }
@@ -45,9 +41,16 @@ export default function HiringHeatmap() {
           <h2 id="market-heat-title">各領域の現状</h2>
           <p>Genbaで公式確認できた掲載中の営業求人を、企業のソリューション領域別に集計しています。</p>
         </div>
-        <div className="market-date">
-          <span>最終更新日</span>
-          <strong>{lastUpdated.replaceAll("-", ".")}</strong>
+        <div className="market-head-status">
+          <div className="market-head-metrics" aria-label="現在の掲載状況">
+            <div><strong>{hiringCompanies}<small>社</small></strong><span>求人掲載中の企業</span></div>
+            <div><strong>{total}<small>件</small></strong><span>掲載中の営業求人</span></div>
+            <div><strong>{activeAreas}<small>領域</small></strong><span>営業求人を確認</span></div>
+          </div>
+          <div className="market-date">
+            <span>最終更新日</span>
+            <strong>{lastUpdated.replaceAll("-", ".")}</strong>
+          </div>
         </div>
       </div>
 
@@ -79,51 +82,7 @@ export default function HiringHeatmap() {
         </div>
       </div>
 
-      <div className="market-dashboard">
-        <div className="market-plot">
-          <div className="market-axis"><span>ソリューション領域</span><span>掲載中の営業求人</span></div>
-          <div className="heat-tile-grid">
-            {rows.map((row, index) => {
-              const width = row.count === 0 ? 0 : Math.max(6, (row.count / maximum) * 100);
-              const tier = row.count === 0 ? "selective" : row.count === maximum ? "hot" : "active";
-              const tierLabel = tier === "hot" ? "HOT" : tier === "active" ? "Active" : "Selective";
-              return (
-                <Link
-                  href={areaHref(row.area)}
-                  className={`heat-tile heat-tile-${tier}`}
-                  key={row.area}
-                >
-                  <div className="heat-tile-top">
-                    <span className="heat-tile-rank">{String(index + 1).padStart(2, "0")}</span>
-                    <span className={`heat-tile-badge heat-tile-badge-${tier}`}>{tierLabel}</span>
-                  </div>
-                  <h3>{row.area}</h3>
-                  <div className="heat-tile-stats">
-                    <div><strong>{row.companies}</strong><span>社</span></div>
-                    <div><strong>{row.count}</strong><span>件</span></div>
-                  </div>
-                  <div className="heat-tile-track">
-                    <div
-                      className="heat-tile-fill"
-                      style={{ width: `${width}%`, transitionDelay: `${index * 30}ms` }}
-                    />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        <aside className="market-insight">
-          <p className="market-insight-label">現在の採用温度</p>
-          <div className="market-total-row">
-            <div><strong>{hiringCompanies}<small>社</small></strong><span>求人掲載中の企業</span></div>
-            <div><strong>{total}<small>件</small></strong><span>掲載中の営業求人</span></div>
-          </div>
-          <p>{activeAreas}領域で営業求人を確認</p>
-          <p className="market-disclaimer">現在確認できている営業求人を集計しています。募集終了・新規掲載は確認次第更新します。</p>
-        </aside>
-      </div>
+      <p className="market-disclaimer">現在確認できている営業求人を集計しています。募集終了・新規掲載は確認次第更新します。</p>
     </section>
   );
 }

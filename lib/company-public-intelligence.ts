@@ -9288,7 +9288,6 @@ const miraklIntelligence: CompanyPublicIntelligence = {
 };
 
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
-  salesforce: salesforceIntelligence,
   mongodb: mongodbIntelligence,
   braze: brazeIntelligence,
   hubspot: hubspotIntelligence,

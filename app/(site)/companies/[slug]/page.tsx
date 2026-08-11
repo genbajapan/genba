@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import CompanyIntelligenceProfile from "@/components/CompanyIntelligenceProfile";
 import { companies, getCompany, getCompanyJobs, getCompanySignals } from "@/lib/market-data";
 
+export const dynamicParams = false;
 export function generateStaticParams() { return companies.map(({ slug }) => ({ slug })); }
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const company = getCompany(params.slug);

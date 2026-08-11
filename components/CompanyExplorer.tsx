@@ -57,7 +57,7 @@ export default function CompanyExplorer() {
       <div className="filter-panel company-filter-panel">
         <label className="search-field">
           <span>企業・カテゴリを検索</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Data、Enterprise、Salesforce" />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Data、Enterprise、Braze" />
         </label>
         <label className="select-field">
           <span>ソリューション領域</span>

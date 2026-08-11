@@ -19,12 +19,12 @@
 - 各社について、国内(OpenWork・OpenMoney・日本語ニュース・日本法人プレスリリース)、海外(英語ニュース・IR資料・決算資料)、LinkedIn(現従業員・カントリーマネージャー等の異動)、公式採用ページの実求人を横断して徹底的に調査する。手を抜かず、Genbaが読者に届けたい「解像度の高さ」を満たす
 - `lib/company-public-intelligence.ts`の`CompanyPublicIntelligence`型に沿って、既存登録企業と同じ深さで全フィールドを埋める(`salesSnapshot`、`marketStatus`、`sellingPlaybook`、`facts`、5件の`hypotheses`、`cultureNotes`、`customerProof`、`externalSignals`、`roleLens`、`leadership`、`companyStats`、`salesAppeal`、`interviewPrep`、`solutions`、`fitTags`、`comparisonMap`、`sources`)。`marketStatus`は日次の株価スナップショットではなく、変遷・成長性ストーリー形式(`growthSummary`+`milestones`、上場企業は`stockLinkUrl`)で作成する
 - ページ上部の`営業視点サマリー`(`salesSnapshot`)を必ず作る。文章は原則3文とし、1文目で「誰に、何を提供する会社か」、2文目で顧客が抱える具体的な課題を3点、3文目で「どの部門・経営課題へ入り、何へ提案を広げられることが営業として面白いか」を断定調で示す。`です・ます`調、求人の列挙、どのSaaSにも当てはまる抽象表現だけで済ませない。`solutions`、`customerProof`、`sellingPlaybook`、`salesAppeal`の根拠と矛盾しないよう企業ごとに編集する
-- 新規企業ページは`/companies/salesforce`と`lib/company-public-intelligence.ts`の`salesforceIntelligence`を参考実装とし、共通の`CompanyIntelligenceProfile`のセクション順、見出し、カード構成に合わせる。固定するのはフォーマットだけであり、各カード内の根拠と分析は、その企業で確認できる情報に応じてSalesforceより深くてよい。企業固有の表示コンポーネント、CSS、スキーマ、追加セクションは、Jioが明示的に指示した場合を除き作らない
+- 新規企業ページは、共通の`CompanyIntelligenceProfile`、`CompanyPublicIntelligence`型、本章に定義した件数目安、`ops/company-selling-playbook-standard.md`を参考実装とし、同じセクション順、見出し、カード構成に合わせる。Salesforce個別ページは編集対象から削除済みだが、同ページを起点に改善してきた粒度と品質基準はこの共通仕様へ引き継ぐ。固定するのはフォーマットだけであり、各カード内の根拠と分析は、企業ごとに確認できる情報を徹底調査して最善の深さにする。企業固有の表示コンポーネント、CSS、スキーマ、追加セクションは、Jioが明示的に指示した場合を除き作らない
 - 標準の構造は、原則として`milestones` 5件、`growthDrivers` 3件、`riskHypotheses` 2件、日本の成長シグナル 3件、`facts` 6件、`hypotheses` 5件、`customerProof` 3件、`externalSignals` 2件、`salesAppeal` 3件、`interviewPrep` 4件を目安とする。これは調査量や文章の深さの上限ではない。`sellingPlaybook`は3つの課題レンズ、4段のストーリー(背景・課題・解決策・選定の理由)、オープニングの問いかけ、価値仮説、よくある反論への返しで構成する
 - 調査は検索上位の数ページで終えず、企業公式サイト、日本法人の発表、公式求人、製品資料、国内導入事例、IR・決算資料・法定開示、公式インタビューを横断する。数値・日付・固有名詞は複数ソースで照合できる限り照合し、強い根拠と反証の両方から仮説を組み立てる
 - 各仮説は、結論、支持材料、反証・留保、確度、面接で検証できる質問が一続きになるよう編集する。公開事実の要約だけで止めず、「営業候補者の応募判断にどう影響するか」まで言語化する
 - 公式根拠が不足している項目は、件数を揃えるために推測・水増ししない。その場合も独自フォーマットに変えず、標準の枠内で「未確認」「非公開」「仮説」を明示する
-- 公開前にSalesforceページと新規企業ページを実画面で比較し、セクション順、見出し、カード数、文章量、展開パターンが標準内かを確認する。独自セクションや明らかに薄い項目が残っている場合は完了・公開しない
+- 公開前に新規企業ページを`CompanyIntelligenceProfile`の全セクションと、現時点で最も情報密度の高い既存企業ページ1社以上と実画面で比較し、セクション順、見出し、カード数、文章量、展開パターンが標準内かを確認する。比較先の会社固有情報をコピーせず、独自セクションや明らかに薄い項目が残っている場合は完了・公開しない
 - 各社の追加後に、現時点の最良ページと比べて「より強い出典、より鋭い仮説、より実用的な面接質問にできないか」を再点検する。共通フォーマット自体の改善案に気づいた場合は、企業固有で先行実装せず、全社共通の改善案としてJioへ提案する
 - `lib/market-data.ts`に会社情報と、実在が確認できた求人だけを追加する。求人詳細が取得できない場合は無理に件数を揃えない
 - 各求人の`careerInsights`のうち`tenureAndPromotion`・`priorCompanies`・`nextCompanies`は、「公開データがない」で思考停止しない。その会社(またはその求人と同じ職種・セグメント)についてLinkedInで公開プロフィールを複数検索し、入社元・在籍傾向・転職先の**傾向**を掴んだ上で書く。ただし`ops/job-publication-and-sponsor-policy.md`3章・`ops/guardrails.md`2章の非交渉ルールを必ず守る
@@ -45,7 +45,7 @@
   - Workday: `https://<company>.wd#.myworkdayjobs.com/wday/cxs/<company>/<board>/jobs`(POSTで`searchText`指定可、`curl`で直接叩ける)
 - 404・リンク切れが確認できた求人は募集終了として取り下げ、`hiringStatus`・`salesRoles`もあわせて更新する
 - API・ステータス確認で新しいタイトルが見つかった場合は、その求人に限り通常と同じ深さ(`descriptionSummary`・`genbaTake`・`compensationReality`・`desiredProfile`・`careerInsights`)の分析を書く。発見コストが下がっても、書く内容の深さは省略しない
-- ボット対策等でAPI・ステータス確認ができない企業(例: Salesforce公式サイト)は、この軽量チェックでは新着求人を検出できない前提を置き、2-2で補う
+- ボット対策等でAPI・ステータス確認ができない企業は、この軽量チェックでは新着求人を検出できない前提を置き、2-2で補う
 
 ### 2-2. 全社の深掘り棚卸し(週1回程度、または軽量チェックで不審な変化を検知した場合)
 

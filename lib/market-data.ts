@@ -227,7 +227,7 @@ export type Signal = {
   source: Source;
 };
 
-export const companies: Company[] = [
+const companyRecords: Company[] = [
   {
     slug: "salesforce",
     name: "Salesforce",
@@ -611,7 +611,10 @@ export const companies: Company[] = [
   },
 ];
 
-export const jobs: Job[] = [
+// Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
+export const companies = companyRecords.filter((company) => company.slug !== "salesforce");
+
+const jobRecords: Job[] = [
   {
     id: "sf-data-cloud-ae",
     companySlug: "salesforce",
@@ -1833,7 +1836,9 @@ export const jobs: Job[] = [
   },
 ];
 
-export const signals: Signal[] = [
+export const jobs = jobRecords.filter((job) => job.companySlug !== "salesforce");
+
+const signalRecords: Signal[] = [
   {
     id: "signal-sf-data-ai",
     companySlug: "salesforce",
@@ -1845,6 +1850,8 @@ export const signals: Signal[] = [
     source: { label: "Salesforce Careers", url: "https://careers.salesforce.com/jp/ja/" },
   },
 ];
+
+export const signals = signalRecords.filter((signal) => signal.companySlug !== "salesforce");
 
 export function getCompany(slug: string) {
   return companies.find((company) => company.slug === slug);
