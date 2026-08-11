@@ -271,7 +271,8 @@ button, input, select { font: inherit; }
 .company-identity h1 { max-width: 720px; margin: 28px 0 0; font-size: clamp(48px,6vw,78px); letter-spacing: -.06em; line-height: .98; }
 .company-category { margin: 18px 0 0; color: #8ba2ad; font-size: 14px; font-weight: 750; letter-spacing: .04em; }
 .company-category span { margin-inline: 7px; color: #456573; }
-.company-description { max-width: 690px; margin: 22px 0 0; color: #c1d0d7; font-size: 14px; line-height: 1.85; }
+.company-sales-snapshot-label { margin: 22px 0 0; color: #73d5c8; font-size: 11px; font-weight: 850; letter-spacing: .14em; }
+.company-description { max-width: 690px; margin: 8px 0 0; color: #c1d0d7; font-size: 14px; line-height: 1.85; }
 .company-tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 25px; }
 .company-tag-row span { padding: 6px 9px; border: 1px solid #355462; color: #9eb4bd; font-size: 12px; font-weight: 750; }
 

@@ -1,6 +1,6 @@
 # デイリータスク・ワークフロー
 
-最終更新: 2026-08-10
+最終更新: 2026-08-11
 
 「デイリータスク」という指示を受けた場合に実行する、拡張版の運用ワークフロー。`ops/daily-workflow.md`(日々の求人差分更新)とは別に、企業追加・全社更新・X下書き・SEO/AEO点検をまとめて実行する回として使う。
 
@@ -17,7 +17,8 @@
 - 初期の追加分は、ある程度名前を聞いたことがある知名度の企業から始め、実施回を重ねるごとに、より知名度の低いニッチな企業へ選定範囲を広げていく(2026-08-07 Jio指示)
 - 既存の登録企業とカテゴリ・業界が偏りすぎないよう配慮する
 - 各社について、国内(OpenWork・OpenMoney・日本語ニュース・日本法人プレスリリース)、海外(英語ニュース・IR資料・決算資料)、LinkedIn(現従業員・カントリーマネージャー等の異動)、公式採用ページの実求人を横断して徹底的に調査する。手を抜かず、Genbaが読者に届けたい「解像度の高さ」を満たす
-- `lib/company-public-intelligence.ts`の`CompanyPublicIntelligence`型に沿って、既存登録企業と同じ深さで全フィールドを埋める(`marketStatus`、`sellingPlaybook`、`facts`、5件の`hypotheses`、`cultureNotes`、`customerProof`、`externalSignals`、`roleLens`、`leadership`、`companyStats`、`salesAppeal`、`interviewPrep`、`solutions`、`fitTags`、`comparisonMap`、`sources`)。`marketStatus`は日次の株価スナップショットではなく、変遷・成長性ストーリー形式(`growthSummary`+`milestones`、上場企業は`stockLinkUrl`)で作成する
+- `lib/company-public-intelligence.ts`の`CompanyPublicIntelligence`型に沿って、既存登録企業と同じ深さで全フィールドを埋める(`salesSnapshot`、`marketStatus`、`sellingPlaybook`、`facts`、5件の`hypotheses`、`cultureNotes`、`customerProof`、`externalSignals`、`roleLens`、`leadership`、`companyStats`、`salesAppeal`、`interviewPrep`、`solutions`、`fitTags`、`comparisonMap`、`sources`)。`marketStatus`は日次の株価スナップショットではなく、変遷・成長性ストーリー形式(`growthSummary`+`milestones`、上場企業は`stockLinkUrl`)で作成する
+- ページ上部の`営業視点サマリー`(`salesSnapshot`)を必ず作る。文章は原則3文とし、1文目で「誰に、何を提供する会社か」、2文目で顧客が抱える具体的な課題を3点、3文目で「どの部門・経営課題へ入り、何へ提案を広げられることが営業として面白いか」を断定調で示す。`です・ます`調、求人の列挙、どのSaaSにも当てはまる抽象表現だけで済ませない。`solutions`、`customerProof`、`sellingPlaybook`、`salesAppeal`の根拠と矛盾しないよう企業ごとに編集する
 - 新規企業ページは`/companies/salesforce`と`lib/company-public-intelligence.ts`の`salesforceIntelligence`を参考実装とし、共通の`CompanyIntelligenceProfile`のセクション順、見出し、カード構成に合わせる。固定するのはフォーマットだけであり、各カード内の根拠と分析は、その企業で確認できる情報に応じてSalesforceより深くてよい。企業固有の表示コンポーネント、CSS、スキーマ、追加セクションは、Jioが明示的に指示した場合を除き作らない
 - 標準の構造は、原則として`milestones` 5件、`growthDrivers` 3件、`riskHypotheses` 2件、日本の成長シグナル 3件、`facts` 6件、`hypotheses` 5件、`customerProof` 3件、`externalSignals` 2件、`salesAppeal` 3件、`interviewPrep` 4件を目安とする。これは調査量や文章の深さの上限ではない。`sellingPlaybook`は3つの課題レンズ、4段のストーリー(背景・課題・解決策・選定の理由)、オープニングの問いかけ、価値仮説、よくある反論への返しで構成する
 - 調査は検索上位の数ページで終えず、企業公式サイト、日本法人の発表、公式求人、製品資料、国内導入事例、IR・決算資料・法定開示、公式インタビューを横断する。数値・日付・固有名詞は複数ソースで照合できる限り照合し、強い根拠と反証の両方から仮説を組み立てる

@@ -101,7 +101,8 @@ export default function CompanyIntelligenceProfile({
               </div>
               <h1>{company.name}</h1>
               <p className="company-category">{company.category} <span>/</span> {company.hq}</p>
-              <p className="company-description">{company.description}</p>
+              {publicIntel && <p className="company-sales-snapshot-label">営業から見たこの会社</p>}
+              <p className="company-description">{publicIntel?.salesSnapshot ?? company.description}</p>
               <div className="company-tag-row">
                 {company.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>

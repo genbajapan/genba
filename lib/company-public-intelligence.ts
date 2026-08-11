@@ -149,6 +149,7 @@ export type SellingPlaybook = {
 
 export type CompanyPublicIntelligence = {
   researchedAt: string;
+  salesSnapshot: string;
   marketStatus: MarketStatus;
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];
@@ -445,6 +446,7 @@ const salesforceSources: ResearchSource[] = [
 
 const salesforceIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Salesforceは、営業・マーケティング・顧客対応部門が分散した顧客情報と業務を統合し、CRMからAIエージェントによる実行までつなぐ顧客接点基盤。「顧客情報が部門ごとに分断されている」「営業活動を可視化・標準化できない」「AIを導入しても業務成果につながらない」といった課題を解決する。経営課題から現場の業務設計、データ統合、AI活用まで複数部門を巻き込み、単一製品から全社変革へ提案を広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "CRM",
@@ -1031,6 +1033,7 @@ const mongodbSources: ResearchSource[] = [
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "MongoDBは、アプリケーション開発企業や大企業の開発・IT部門が、変化の速いデータを柔軟に扱いながらクラウドとAIサービスを構築するためのデータ基盤。「リレーショナルDBの変更に時間がかかる」「複数クラウドでデータ基盤の運用が複雑」「生成AI向け検索と業務データが分断している」といった課題を解決する。開発者起点の技術採用から、基幹システム移行や全社のAIアプリケーション基盤へ案件を広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "MDB",
@@ -1655,6 +1658,7 @@ const brazeSources: ResearchSource[] = [
 
 const brazeIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Brazeは、アプリやWebサービスを展開するBtoC企業に対し、顧客データを活用してメール、プッシュ通知、アプリ内メッセージなどを最適化する顧客エンゲージメント基盤。「獲得したユーザーが定着しない」「顧客データや施策がチャネルごとに分断している」「一人ひとりに合った体験をリアルタイムで届けられない」といった課題を解決する。単なる配信ツールではなく、マーケティング、プロダクト、データ部門を巻き込みながら、売上・継続率・LTVの向上まで提案できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "BRZE",
@@ -2270,6 +2274,7 @@ const hubspotSources: ResearchSource[] = [
 
 const hubspotIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "HubSpotは、成長企業のマーケティング、営業、カスタマーサービス部門が、顧客獲得から継続支援までを一つのCRMで運営するための顧客基盤。「リード獲得を広告や属人的な営業に頼っている」「顧客情報がツールごとに分断している」「部門間の引き継ぎで商談や顧客対応が途切れる」といった課題を解決する。SMBの経営課題に入り込み、マーケティング施策から営業プロセス、サポート、Web、AI活用へ段階的に提案を拡張できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "HUBS",
@@ -2854,6 +2859,7 @@ const oktaSources: ResearchSource[] = [
 
 const oktaIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Oktaは、IT・セキュリティ部門やアプリケーション開発組織が、従業員と顧客のIDを安全に管理するためのアイデンティティ基盤。「SaaSごとに認証が分散している」「入退社に伴う権限変更が遅く、不要なアクセスが残る」「顧客向けアプリへ安全な認証を迅速に組み込めない」といった課題を解決する。セキュリティ対策だけでなく、働き方、クラウド移行、顧客体験まで横断し、CISO、IT、開発、事業責任者を巻き込む提案ができる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "OKTA",
@@ -3282,6 +3288,7 @@ const zendeskSources: ResearchSource[] = [
 
 const zendeskIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Zendeskは、カスタマーサポート部門がメール、チャット、電話などの問い合わせを統合し、AIと人で迅速に解決するための顧客対応基盤。「問い合わせが増えて対応が追いつかない」「チャネルごとに履歴が分断している」「担当者によって品質や解決時間に差が出る」といった課題を解決する。顧客満足度とサポートコストという両方の経営指標を扱い、チケット管理からAI自動化や業務改革へ提案を広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2007年にコペンハーゲンでMikkel Svane氏ら3名が創業し、2009年に本社をカリフォルニアへ移転。2014年5月にNYSEへ上場したが、2022年6月にHellman & FriedmanとPermira主導の投資家グループによる買収(1株$77.50、企業価値約102億ドルの全額現金)が発表され、同年11月22日に買収完了・上場廃止となった。非公開化後はPE傘下で収益性・効率性重視の経営へ転換しつつ、AI自動化(Resolution Platform)への投資を加速。財務詳細の開示は限定的だが、AI関連ARRは非公開化直後のほぼゼロから2025年末には約2億ドルまで拡大し、2026年は最大5億ドルを見込むなど、非公開化後も明確な成長シグナルが確認できる、というのがGenbaの読み。",
@@ -3682,6 +3689,7 @@ const uipathSources: ResearchSource[] = [
 
 const uipathIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "UiPathは、企業に残る定型作業や複数システムをまたぐ業務を、RPAとAIエージェントで自動化するエンタープライズオートメーション基盤。「人が転記・照合・入力を繰り返している」「レガシーシステムが分断され、業務を一気通貫で処理できない」「部門ごとの自動化が乱立し、全社展開や統制が進まない」といった課題を解決する。一つの作業効率化を入口に、業務プロセス全体の再設計や全社的な自動化基盤へ提案を広げ、削減時間・コスト・ミス率で成果を可視化できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "PATH",
@@ -4053,6 +4061,7 @@ const confluentSources: ResearchSource[] = [
 
 const confluentIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Confluentは、金融、製造、小売、デジタルサービス企業のIT・データ部門が、システム間で発生するデータをリアルタイムに流し続けるためのデータストリーミング基盤。「バッチ連携では顧客行動や異常への対応が遅れる」「システムごとにデータが分断している」「Kafkaの運用負荷が高く本番展開が進まない」といった課題を解決する。不正検知、在庫、顧客体験、AIなど事業成果に近いユースケースから入り、企業全体のデータ基盤へ展開できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2014年に、LinkedIn社内でApache Kafkaを開発した3名(Jay Kreps氏・Neha Narkhede氏・Jun Rao氏)がスピンアウトする形で創業。2021年6月にNASDAQへ上場(公開価格$36、初日+25%)し、データストリーミングという新カテゴリーを公開市場に定着させた。しかし2025年12月にIBMによる買収が発表され、2026年3月17日に1株31ドル・総額約110億ドルで買収が完了、完全子会社化・上場廃止となった。IBMはConfluentのリアルタイムデータストリーミング技術を、自社のwatsonx.data・IBM MQ・webMethods・IBM Zと初日から統合し、エンタープライズAI・エージェント活用の基盤に据える方針を示している。買収直後のため、日本を含む営業組織の統合方針・目標設定がどう変わるかは、公開情報だけでは確認できていない、というのがGenbaの読み。",
@@ -4451,6 +4460,7 @@ const pagerdutySources: ResearchSource[] = [
 
 const pagerdutyIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "PagerDutyは、デジタルサービスを運営する企業の開発・IT運用部門が、システム障害を検知し、適切な担当者を動かして復旧までを統制するインシデント対応基盤。「障害への気づきが遅い」「通知が乱立し、誰が対応すべきか分からない」「復旧手順が属人化し、停止時間が長引く」といった課題を解決する。障害対応ツールの導入にとどまらず、売上損失、顧客離反、開発生産性を数字で捉え、経営と技術組織の双方へ価値を示せる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "PD",
@@ -4837,6 +4847,7 @@ const amplitudeSources: ResearchSource[] = [
 
 const amplitudeIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Amplitudeは、デジタルプロダクトを持つ企業のプロダクト、データ、マーケティング部門が、ユーザー行動を分析し、継続利用や成長につながる改善を判断するためのプロダクト分析基盤。「どの機能が利用されているか分からない」「離脱の原因を感覚で判断している」「施策や機能変更の効果を検証できない」といった課題を解決する。分析ツールを売るだけでなく、プロダクトの成長モデルや実験文化に入り込み、利用率・継続率・売上の改善まで顧客と追える点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "AMPL",
@@ -5223,6 +5234,7 @@ const contentsquareSources: ResearchSource[] = [
 
 const contentsquareIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Contentsquareは、ECやWebサービスを運営する企業のデジタル、UX、マーケティング部門が、ユーザーが画面上で迷い、離脱する理由を可視化するデジタル体験分析基盤。「アクセス数は分かるが離脱理由が分からない」「UX改善が担当者の感覚に依存している」「サイト障害や使いにくさによる売上損失を把握できない」といった課題を解決する。ユーザー行動の発見から改善施策の優先順位、売上影響までつなぎ、経営、マーケティング、プロダクト、開発を横断する提案ができる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2012年、Jonathan Cherki氏がESSEC Business School在学中に着想した学生プロジェクトから創業。「企業が提供していると思っているデジタル体験」と「実際に消費者が体験している中身」のギャップに着目したのが原点で、2012〜2016年はブートストラップで運営し社員約100人まで成長した。2016年のSeries A($2,000万)以降、2021年5月のSeries E($5億、評価額$28億、SoftBank Vision Fund 2主導)、2022年7月のSeries F($6億、評価額を1年で倍増させ$56億、Sixth Street主導)と大型調達を重ね、累計調達額は$14億に達している。2023年にはプロダクト分析大手Heapを、2025年には会話型AI・CX分析のLoris AIを買収し、単なるヒートマップ・セッションリプレイのツールから「Experience Intelligence」を掲げる統合プラットフォームへ拡張してきた。非公開企業のため財務詳細は開示されていないが、2023年以降ほぼ毎年レイオフを実施しながらも大型買収を続けるという、拡大と縮小が同時に進む局面が続いている、というのがGenbaの読み。",
@@ -5631,6 +5643,7 @@ const anaplanSources: ResearchSource[] = [
 
 const anaplanIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Anaplanは、経営企画、財務、営業、サプライチェーン、人事部門が、部門別の計画を一つのモデルにつなぎ、変化に応じて意思決定するための計画基盤。「Excelが部門ごとに乱立して数字が合わない」「予算や需要の変化を全社計画へ反映するのが遅い」「複数シナリオを比較できず意思決定が後手に回る」といった課題を解決する。単一部門の予算管理から経営全体の計画プロセスへ広げ、CFOや事業責任者と企業の意思決定そのものを設計できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2006年、英ヨークシャーでGuy Haddleton・Sue Haddleton夫妻とMichael Gould氏が創業。独自の演算エンジン「Hyperblock」を核に、財務・サプライチェーン・営業・人員配置など複数部門の計画をひとつのモデルでつなぐ「コネクテッドプランニング」という概念を掲げてきた。2018年10月にNYSEへ上場(ティッカーPLAN)、2021年2月に株価がピークをつけた後は約4割下落し、Corvex Management・Sachem Head Capital Managementといったアクティビスト投資家が合計約9%の株式を取得して経営改革を要求する状況になった。2022年3月、Thoma Bravoが総額$10.7B(1株$66.00、後に$63.75へ修正)で買収することに合意し、同年6月に非公開化が完了。同年12月には新CEOにCharlie Gottdiener氏(元Neustar CEO)が就任し、成長一辺倒から利益・効率重視の経営への転換が進められてきたとみられる。非公開化後の売上高は非開示だが、顧客数は買収時の約1,900社から現在2,400社超へ拡大しているとされ、2025年12月には$500M規模の複数年AI投資ロードマップを発表するなど、AIエージェント機能への再投資も並行して進んでいる。",
@@ -6031,6 +6044,7 @@ const qualtricsSources: ResearchSource[] = [
 
 const qualtricsIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Qualtricsは、企業のCX、EX、マーケティング、人事部門が、顧客や従業員の声を収集・分析し、改善行動へつなげるエクスペリエンス管理基盤。「アンケートが部門ごとに分散している」「不満の兆候を把握しても現場が動けない」「顧客体験や従業員体験を経営指標と結びつけられない」といった課題を解決する。調査ツールの置き換えではなく、顧客離反、ブランド、人材定着など経営課題へ入り込み、データ収集から組織の行動変革まで提案できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2002年、Brigham Young大学教授だったScott M. Smith氏が、闘病中に息子Ryan Smith氏、そしてJared Smith氏・Stuart Orgill氏と共に、Utah州Provoの自宅地下室で創業。2016年まではブートストラップで運営し、社員約100人規模まで成長した。2019年1月、IPO直前というタイミングでSAPが$8Bの現金で買収。2021年1月、SAPが過半数株式(約82.8%)を維持したままQualtricsをNasdaqへ再上場(ティッカーXM)させ、約$1.2Bを調達した。2023年3月、Silver Lake・CPP Investmentsが総額$12.5B(1株$18.15、30日VWAPに対し73%のプレミアム)でSAPの持株も含め全株式を買収し完全非公開化。直近では2025年10月に契約・2026年5月に完了した形で、米ヘルスケア/市場調査データ企業Press Ganey Forstaを$6.75Bで買収しており、「人間の体験に関する世界最大のAIデータセット」の構築を掲げている。非公開化前最後の公表財務(FY2022)は売上高$1,458.6M(+36%)で、現在は$2Bの売上規模を目指す方針が示されているが、これは目標であり確定した数値ではない。",
@@ -6440,6 +6454,7 @@ const celonisSources: ResearchSource[] = [
 
 const celonisIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Celonisは、大企業の経営企画、業務改革、IT部門が、ERPなどの実データから業務プロセスの詰まりや逸脱を可視化し、改善を実行するためのプロセスインテリジェンス基盤。「業務が実際にどう流れているか把握できない」「部門間の手戻りや遅延が利益を圧迫している」「改革施策の効果を数字で追えない」といった課題を解決する。経営課題を受注、調達、在庫、財務などの現場データへ落とし込み、発見した価値を自動化やAI実行まで広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2011年、Technical University of Munich(TUM)出身のAlexander Rinke氏(数学専攻)・Bastian Nominacher氏(ファイナンス専攻)・Martin Klenk氏(情報工学専攻)が、公共放送局Bayerischer Rundfunk向けのプロジェクトで、業務システムに蓄積された取引データから業務の非効率を分析できることに着想を得て創業。Nominacher氏の自宅アパートから始まり、プロセスマイニングという新しいカテゴリーを切り拓いてきた。2019年11月に$290Mを調達し評価額$2.5B、2021年に評価額$11B、2022年8月には$1Bのシリーズラウンドで評価額$13.2Bに達し、2019年比420%の評価額成長を遂げた(累計調達額$2.4B)。2023年8月にはCarsten Thoma氏がPresidentに就任し、共同CEOのRinke氏(商業サイド)・Nominacher氏(技術サイド)体制を補完している。非公開企業のため詳細な財務数値は開示されていないが、2026年時点で社員3,000人超・拠点14か所・顧客5,000社超・累計創出顧客価値$6.5Bを掲げている。",
@@ -6770,6 +6785,7 @@ const workatoSources: ResearchSource[] = [
 
 const workatoIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Workatoは、企業のIT部門と業務部門が、SaaSや基幹システムをつなぎ、部門横断の業務を自動化するためのエンタープライズiPaaS。「システム間の転記や連携を人に頼っている」「個別開発が積み上がり変更に時間がかかる」「AIエージェントを導入しても実際の業務を実行できない」といった課題を解決する。単一の連携案件から全社の自動化・AI実行基盤へ拡張し、ITと事業部門の双方を巻き込みながら業務そのものを再設計できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2013年12月、Qikの創業者だったVijay Tella氏(CEO)が、Gautham Viswanathan氏・Harish Shetty氏・Dimitris Kogias氏と共に創業。企業システム間の連携(iPaaS)を、従来のMuleSoft等より軽量・迅速に導入できるプラットフォームとして成長し、2021年1月に$110MのシリーズDで評価額$1.7B(ユニコーン化)、同年11月には$200MのシリーズEで評価額$5.7Bに到達した(累計調達額$421M)。しかし2025年6月時点では、セカンダリー市場で評価額が$1.7B程度まで下落したとの観測があり、2021年のピークから大きく後退している可能性がある(非公開企業のため公式な評価額改定は確認できていない)。2023年2月には約85人のレイオフを実施。2025年以降は、単なるアプリ間連携(iPaaS)の会社から、AIエージェントが実際に業務を実行する基盤への製品転換を進めており、2026年には複数エージェントシステム「Workato AIRO」やAIチームメイト「Otto」を発表している。",
@@ -7071,6 +7087,7 @@ const mondayDotComSources: ResearchSource[] = [
 
 const mondayDotComIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "monday.comは、企業のプロジェクト、営業、IT、人事などの部門が、業務の進捗と責任を一つの画面で管理するためのWork OS。「部門ごとにツールや表計算が分かれている」「誰が何を進めているか見えない」「現場に合わないシステムが定着しない」といった課題を解決する。個人やチームの使いやすさを入口に、プロジェクト管理からCRM、ITサービス管理、全社標準へ利用範囲を広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "MNDY",
@@ -7390,6 +7407,7 @@ const miroSources: ResearchSource[] = [
 
 const miroIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Miroは、分散したプロダクト、開発、デザイン、事業部門が、アイデアや複雑な議論を同じキャンバス上で可視化し、意思決定するためのコラボレーション基盤。「会議で議論が発散し結論が残らない」「部門間で仕様や背景を共有できない」「リモート環境で創造的な共同作業が進まない」といった課題を解決する。ホワイトボード利用を入口に、企画、設計、技術検討、ワークショップなど企業のイノベーションプロセス全体へ展開できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2011年、Andrey Khusid氏・Oleg Shardin氏が「RealtimeBoard」として創業し、後にMiroへ改称。オンラインホワイトボード・ビジュアルコラボレーションのカテゴリーを切り拓き、2022年1月には$400MのシリーズCで評価額$17.5Bに到達した(累計調達額$476.3M)。しかしその後、2023年に一桁台後半%の人員削減、2024年11月には全社員の18%を削減するという大規模なレイオフを実施しており、CEO Andrey Khusid氏は「組織が複雑になりすぎ、階層が多く、役割の重複がある」と述べている。2026年半ば時点でIPOのS-1提出や引受幹事の決定はなく、非公開のまま推移している。主要競合のFigmaが2025年後半に上場準備を進めていると報じられる中、Miro自身は組織のスリム化を優先している局面にあると考えられる。",
@@ -7706,6 +7724,7 @@ const newRelicSources: ResearchSource[] = [
 
 const newRelicIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "New Relicは、デジタルサービスを運営する企業の開発、SRE、IT運用部門が、アプリケーションとインフラの状態を横断して把握するためのオブザーバビリティ基盤。「障害の原因特定に時間がかかる」「ログやメトリクスがツールごとに分断している」「性能劣化が顧客体験や売上へ与える影響を把握できない」といった課題を解決する。技術課題を停止時間、開発生産性、クラウドコスト、顧客体験へ翻訳し、エンジニアから経営層まで価値を示せる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2008年、Lew Cirne氏がアプリケーションパフォーマンス監視(APM)のパイオニアとして創業。2014年12月にNYSEへ上場(ティッカーNEWR、公開価格$23、調達額$115M)し、長らく公開企業としてオブザーバビリティ市場を牽引してきた。しかし2023年7月31日、投資会社のFrancisco Partners・TPGが総額$6.5B(1株$87)での買収を発表し、同年11月8日に完了、9年間の上場企業としての歴史を終えて完全非公開化した。非公開化後は、Datadog・Dynatrace・Splunk(2024年にCiscoが$28Bで買収)といった競合とのAI駆動型オブザーバビリティ市場での競争が続いている。2026年3月には、APAC地域で初となる日本データセンター「東京リージョン」の開設を発表するなど、非公開化後も地域投資を継続している。",
@@ -7980,6 +7999,7 @@ const coupaSources: ResearchSource[] = [
 
 const coupaIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Coupaは、大企業の調達、財務、経理、サプライチェーン部門が、購買・請求・経費・取引先リスクを横断して管理するための支出管理基盤。「誰が何にいくら使っているか把握できない」「購買や承認が部門ごとに分断している」「コスト、供給リスク、コンプライアンスを同時に管理できない」といった課題を解決する。単なるコスト削減ではなく、全社支出を経営資源として捉え、CFOや調達責任者と利益改善・リスク管理の変革を設計できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "2006年創業、2016年に上場し、調達購買・支出管理(Business Spend Management)分野のクラウドプラットフォームとして成長した。2022年12月、投資会社Thoma Bravoが企業価値$8Bでの買収に合意したことを発表し、2023年前半に完了、完全非公開化した。買収価格は1株$81で、発表前終値に対して77%のプレミアムが付いており、アブダビ投資庁系のファンドもマイノリティ出資者として参加している。非公開化後は、AI・コミュニティ生成データを活用した「Total Spend Management」プラットフォームとして、SAP Ariba・Ivalua・Zipのような競合とグローバルで競争を続けている。",
@@ -8188,6 +8208,7 @@ const notionSources: ResearchSource[] = [
 
 const notionIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Notionは、企業の全部門が文書、ナレッジ、プロジェクトを一つのワークスペースに集約し、人とAIが同じ業務文脈を使うためのコラボレーション基盤。「情報が複数ツールに散在して探せない」「議事録や知識が業務に再利用されない」「AIが参照すべき社内情報と権限を整えられない」といった課題を解決する。個人やチームの自発的な利用を入口に、全社標準、エンタープライズ検索、AIエージェントへ拡張し、働き方そのものを提案できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Notionは非公開企業で、売上・ARR・日本単体の業績は開示していない。公式ページでは1億ユーザー、Fortune 100の62%、140万人のcommunityを掲げ、日本では2020年の初期採用、2021年の日本語版提供を経て、2025年時点で従業員規模別のAE 3 teamとRelationship Manager teamを展開。2026年5月からEnterprise向け日本データレジデンシーも提供し、個人・team利用から全社AI workspaceへのupmarketを進めている。",
@@ -8318,6 +8339,7 @@ const elevenLabsSources: ResearchSource[] = [
 
 const elevenLabsIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "ElevenLabsは、メディア、ゲーム、教育、顧客対応などの企業が、高品質なAI音声を多言語のコンテンツや会話型エージェントへ組み込むための音声AI基盤。「収録や吹き替えに時間と費用がかかる」「言語や話者を増やしてグローバル展開できない」「顧客対応を自動化すると会話品質が落ちる」といった課題を解決する。音声デモの分かりやすさを入口に、制作工程、海外展開、コンタクトセンターの本番業務へ提案を広げ、技術、事業、権利管理を横断できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "ElevenLabsは2023年に製品を公開した非公開AI企業。2025年末ARR 3.5億ドルから2026年最初の4カ月で5億ドル超へ伸び、2026年2月のSeries Dでは5億ドルを調達し評価額110億ドル。製品は音声生成・認識・cloning・dubbingから、会話型agentとAPI platformへ広がる。日本では2025年4月に初の海外子会社を東京へ設立し、2026年8月時点でAEとAMを採用している。",
@@ -8450,6 +8472,7 @@ const rubrikSources: ResearchSource[] = [
 
 const rubrikIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Rubrikは、企業のIT・セキュリティ部門が、ランサムウェアや誤操作で失われたデータとIDを安全に復旧するためのサイバーレジリエンス基盤。「バックアップはあるが攻撃後に戻せるか分からない」「どのデータが侵害されたか特定できない」「復旧手順が部門ごとに分断し事業再開が遅れる」といった課題を解決する。バックアップ製品の更改ではなく、CISOや経営層と事業停止リスクを定量化し、攻撃前の備えから復旧訓練まで全社課題として提案できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: true,
     ticker: "RBRK",
@@ -8638,6 +8661,7 @@ const gleanSources: ResearchSource[] = [
 
 const gleanIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Gleanは、企業の全社員とIT・AI推進部門が、複数のSaaSに散在する社内情報を権限付きで検索し、AIエージェントの行動へつなげるためのEnterprise AI基盤。「必要な情報を探すのに時間がかかる」「生成AIが正しい社内文脈を参照できない」「AIのPoCが個別部門に閉じ、全社展開できない」といった課題を解決する。検索という分かりやすい課題から入り、全社員向けAIアシスタントや部門別エージェントへ広げ、企業のAI活用基盤を経営層と設計できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Gleanは非公開企業。2025年2月にARR 1億ドル到達、同年6月に1.5億ドルを調達して評価額72億ドル、さらに公式発表ではARR 2億ドルまで9カ月で倍増した。従業員は1,000人超、顧客は27カ国以上。日本では2023年の国内初reseller販売から、2026年の日本カントリーマネージャー任命と直販3職種採用へ進み、partner-ledの市場開拓に直販coverageを重ねる段階にある。",
@@ -8774,6 +8798,7 @@ const speakSources: ResearchSource[] = [
 
 const speakIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Speakは、グローバル展開する企業の人事・事業部門が、社員の英語で話す力をAIとの反復練習で高める法人向け語学学習基盤。「研修を受けても会議や交渉で話せない」「社員ごとの業務場面に合う練習を提供できない」「受講状況は追えても実践力の向上を測れない」といった課題を解決する。福利厚生の英語研修ではなく、海外売上、グローバル人材育成、現場の実行力へ価値を結びつけ、消費者向けAI製品を法人課題へ転換して売れる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Speakは非公開企業。2016年創業、2019年に韓国で最初の市場を立ち上げ、2023年に日本語版を正式提供。2024年12月のSeries Cで7,800万ドルを調達し評価額10億ドル、累計調達は1.62億ドルとなった。法人事業は2024年時点の200社超・employee adoption 85%から、日本公式では500社超へ拡大。現在はJapan AE、Japan CSM、Head of APAC Salesを同時採用し、consumer productの成長をB2Bのrepeatable revenueへ変える局面。",
@@ -8910,6 +8935,7 @@ const dataikuSources: ResearchSource[] = [
 
 const dataikuIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Dataikuは、企業のデータ活用から機械学習、生成AI・AIエージェントの開発と運用までを一つの環境で進めるエンタープライズAI基盤。「専門家が足りずデータ活用が一部門に閉じている」「PoCは増えるが本番運用に進まない」「ツールやデータが分散し、品質・権限・ガバナンスを管理できない」といった課題を解決する。データ部門だけでなく、事業部門、IT、経営層を巻き込み、個別のAI案件から全社共通基盤へ提案を広げられる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Dataikuは非公開企業。2025年10月にARR 3.5億ドルを超え、750社超、従業員1,250人超、13拠点を公式発表した。日本では渋谷拠点、日立ソリューションズ等のpartner、JAL・SoftBank・三菱電機の公開事例を持ち、2026年8月時点でFSIとRetail/Telcoに分けたEnterprise AEを採用している。",
@@ -9033,6 +9059,7 @@ const verkadaSources: ResearchSource[] = [
 
 const verkadaIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Verkadaは、多拠点を持つ企業の総務、セキュリティ、IT部門が、防犯カメラ、入退室、アラームなどをクラウドで一元管理するための物理セキュリティ基盤。「拠点ごとに機器と管理方法が分断している」「事故発生時に映像や入退室履歴をすぐ確認できない」「保守や権限管理が現地担当者に依存している」といった課題を解決する。ハードウェアとSaaSを組み合わせ、現場の安全、全社ガバナンス、運用効率を同時に扱い、IT以外の多様な意思決定者を巻き込める点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Verkadaは非公開企業。2025年12月に評価額58億ドル、annualized bookings 10億ドル超、170カ国超・200万台超のdevice、3万社超を公式発表した。2026年4月時点で従業員2,200人、17拠点。日本では渋谷office、国内顧客・partner、東京と大阪の直販採用に加え、追加Channel Sales Managerを募集している。",
@@ -9155,6 +9182,7 @@ const miraklSources: ResearchSource[] = [
 
 const miraklIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  salesSnapshot: "Miraklは、小売、メーカー、卸売企業が自社ECをマーケットプレイスへ拡張し、在庫を抱えずに品揃えと新たな収益源を増やすためのコマース基盤。「自社在庫だけでは品揃えを広げられない」「出品者、商品、受注、品質の管理が複雑で運営できない」「既存の顧客基盤やブランドを新たなプラットフォーム事業に変えられない」といった課題を解決する。ECツールの導入にとどまらず、経営層と新しい事業のP&Lを設計し、IT、商品、物流、法務まで巻き込んで事業を立ち上げる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
     growthSummary: "Miraklは非公開企業。2025年にARR 2.18億ドル(前年比23%増)、group通期黒字化、Marketplace/Dropship GMV 146億ドル(31%増)を公式発表。450社超、10万超のbrand・sellerを支える。日本法人は2022年にJapan Cloudと設立し、JR西日本、ニトリ、アイリスプラザ、サツドラ等の採用を公開。2026年8月時点でSenior AEとSolution Consultantを募集している。",

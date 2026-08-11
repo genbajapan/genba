@@ -27,6 +27,11 @@ const narrativeBlocks = Array.from(
   (match) => match[1],
 );
 
+const salesSnapshots = Array.from(
+  source.matchAll(/salesSnapshot:\s*"([^"]+)"/g),
+  (match) => match[1],
+);
+
 function extractValues(block, key) {
   return Array.from(
     block.matchAll(new RegExp(`\\b${key}:\\s*"([^"]+)"`, "g")),
@@ -46,6 +51,10 @@ if (narrativeBlocks.length !== intelligenceCount) {
   errors.push(`CompanyPublicIntelligence ${intelligenceCount}件に対し、narrativeは${narrativeBlocks.length}件です。`);
 }
 
+if (salesSnapshots.length !== intelligenceCount) {
+  errors.push(`CompanyPublicIntelligence ${intelligenceCount}件に対し、salesSnapshotは${salesSnapshots.length}件です。`);
+}
+
 issueBlocks.forEach((block, index) => {
   const actual = extractValues(block, "title");
   if (!sameValues(actual, expectedIssueLenses)) {
@@ -60,6 +69,19 @@ narrativeBlocks.forEach((block, index) => {
   }
 });
 
+salesSnapshots.forEach((snapshot, index) => {
+  const issueCount = Array.from(snapshot.matchAll(/「/g)).length;
+  if (issueCount !== 3) {
+    errors.push(`salesSnapshot #${index + 1}: 顧客課題は3点必要ですが、${issueCount}点です。`);
+  }
+  if (!snapshot.includes("営業としての面白さ")) {
+    errors.push(`salesSnapshot #${index + 1}: 営業としての面白さが明記されていません。`);
+  }
+  if (/(です|ます)。/.test(snapshot)) {
+    errors.push(`salesSnapshot #${index + 1}: です・ます調ではなく断定調で記載してください。`);
+  }
+});
+
 if (errors.length) {
   console.error("企業ページの課題啓蒙フォーマット検証に失敗しました:\n");
   for (const error of errors) console.error(`- ${error}`);
@@ -68,4 +90,4 @@ if (errors.length) {
 
 console.log("企業ページの課題啓蒙フォーマット: OK");
 console.log(`- ${intelligenceCount}社すべてで3つの課題視点と4段階のnarrativeを確認`);
-
+console.log(`- ${salesSnapshots.length}社すべてで営業視点サマリーの標準構成を確認`);
