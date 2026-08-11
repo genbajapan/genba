@@ -8893,6 +8893,372 @@ const speakIntelligence: CompanyPublicIntelligence = {
   sources: speakSources,
 };
 
+const dataikuSources: ResearchSource[] = [
+  { id: "dataiku-about", label: "About Dataiku", url: "https://www.dataiku.com/company", kind: "企業公式", scope: "会社規模・使命・顧客数", checkedAt: "2026-08-11" },
+  { id: "dataiku-origin", label: "The Dataiku Story", url: "https://www.dataiku.com/blog/the-dataiku-story", kind: "企業公式", scope: "創業背景・資金調達史", checkedAt: "2026-08-11" },
+  { id: "dataiku-arr", label: "Dataiku $350M ARR発表", url: "https://www.dataiku.com/company/news/dataiku-surpasses-350-million-arr", kind: "企業公式", scope: "ARR・顧客・従業員・製品方向", checkedAt: "2026-08-11" },
+  { id: "dataiku-product", label: "Dataiku日本公式 製品概要", url: "https://www.dataiku.com/ja/", kind: "企業公式", scope: "AI・分析・Agent・governance", checkedAt: "2026-08-11" },
+  { id: "dataiku-japan-office", label: "Dataiku日本 お問い合わせ", url: "https://www.dataiku.com/ja/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/", kind: "企業公式", scope: "日本オフィス所在地", checkedAt: "2026-08-11" },
+  { id: "dataiku-hitachi", label: "日立ソリューションズとの販売代理店契約", url: "https://prtimes.jp/main/html/rd/p/000000299.000053429.html", kind: "企業公式", scope: "日本責任者・国内partner・導入支援", checkedAt: "2026-08-11" },
+  { id: "dataiku-jal", label: "JALがDataikuを導入", url: "https://prtimes.jp/main/html/rd/p/000000018.000084325.html", kind: "企業公式", scope: "国内顧客・分析標準化・CX", checkedAt: "2026-08-11" },
+  { id: "dataiku-softbank", label: "SoftBank customer story", url: "https://www.dataiku.com/blog/softbank", kind: "企業公式", scope: "国内顧客・Agent営業成果", checkedAt: "2026-08-11" },
+  { id: "dataiku-mitsubishi", label: "Mitsubishi Electric customer story", url: "https://www.dataiku.com/blog/mitsubishi-electric", kind: "企業公式", scope: "国内顧客・製造分析成果", checkedAt: "2026-08-11" },
+  { id: "dataiku-job-fsi", label: "Enterprise Account Executive, Japan | FSI", url: "https://job-boards.greenhouse.io/dataiku/jobs/5592425004", kind: "企業公式", scope: "日本FSI営業の職務・要件", checkedAt: "2026-08-11" },
+  { id: "dataiku-job-retail", label: "Enterprise Account Executive – Japan | Retail & Telco", url: "https://job-boards.greenhouse.io/dataiku/jobs/5999894004", kind: "企業公式", scope: "日本Retail/Telco営業の職務・要件", checkedAt: "2026-08-11" },
+  { id: "dataiku-fsa", label: "金融庁 AIディスカッションペーパー第1.1版", url: "https://www.fsa.go.jp/news/r6/sonota/20250304/aidp.html", kind: "外部集計", scope: "金融AIの活用・リスク・governance要求", checkedAt: "2026-08-11" },
+];
+
+const dataikuIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Dataikuは非公開企業。2025年10月にARR 3.5億ドルを超え、750社超、従業員1,250人超、13拠点を公式発表した。日本では渋谷拠点、日立ソリューションズ等のpartner、JAL・SoftBank・三菱電機の公開事例を持ち、2026年8月時点でFSIとRetail/Telcoに分けたEnterprise AEを採用している。",
+    ipoOutlookSummary: "IPO計画・時期は公式確認できない。2022年の資金調達時評価額37億ドルは過去時点の非公開株式評価で、現在価値や流動性を保証しない。equityは株数、行使価格、希薄化、売却条件を個別に確認したい。",
+    genbaVerdict: { headline: "AI実験を、業界別の統制された本番運用へ変えるEnterprise platform sale。", body: "ARRと国内事例は強いが、日本の2求人はいずれも5〜7年のfield salesとC-level alignmentを要求する。既存需要の刈り取りではなく、data platform・cloud・modelが混在する顧客で、use case、governance、ROIを一本のprogramへまとめる局面。日本ARR、territory、quota、implementation capacityは面接で分けて確認したい。" },
+    milestones: [
+      { year: "2013", label: "Dataiku創業", detail: "4人の創業者がdata scienceを専門家だけでなくbusiness teamも協働できるものにする目的で創業。", sourceId: "dataiku-origin" },
+      { year: "2022", label: "2億ドルを調達", detail: "評価額37億ドルで資金調達し、platformとglobal expansionへ投資。", sourceId: "dataiku-origin" },
+      { year: "2023", label: "日本カントリーマネージャー就任", detail: "佐藤豊氏が日本事業責任者に就任。", sourceId: "dataiku-hitachi" },
+      { year: "2025", label: "ARR 3.5億ドル突破", detail: "750社超、従業員1,250人超、13拠点を公式発表。", sourceId: "dataiku-arr" },
+      { year: "2026", label: "日本で業界別Enterprise AEを採用", detail: "FSIとRetail/Telcoを分けた2求人を公式ATSで確認。", sourceId: "dataiku-job-fsi" },
+    ],
+    growthDrivers: [
+      { title: "analytics・ML・GenAI・Agentを一つのgovernanceへ", body: "既存data/cloud/modelの上にorchestration layerを置き、business userとtechnical teamが同じ統制下で開発・運用できる。個別toolから全社programへ契約を広げやすい。", sourceId: "dataiku-product" },
+      { title: "国内顧客の定量成果", body: "SoftBankは営業1人あたり月約20時間削減、三菱電機は分析output時間60%削減を公開。生産性・cycle timeでBusiness Caseを作れる。", sourceId: "dataiku-softbank" },
+      { title: "業界GTMとpartner delivery", body: "FSI、Retail/Telcoに営業coverageを分け、日立ソリューションズ等が販売・定着化を支援。業界知識と導入capacityを組み合わせる余地がある。", sourceId: "dataiku-hitachi" },
+    ],
+    japanGrowth: {
+      headline: "渋谷拠点・国内大手事例・業界別AE採用が揃うscale段階。",
+      narrative: "JALは部門横断のdata分析と手法標準化、SoftBankはAgentを使った営業活動、三菱電機は製造・energy分析で成果を公開。2025年には日立ソリューションズが販売と定着支援を開始し、2026年8月時点でFSIとRetail/TelcoのEnterprise AEを同時募集している。日本の売上・顧客数・team人数・quota達成率は非公開。",
+      qualitativeSignals: [
+        { label: "国内partnerを拡張", detail: "日立ソリューションズが販売代理店契約を締結し、導入・定着化支援を提供。", sourceId: "dataiku-hitachi" },
+        { label: "日本発の定量事例", detail: "SoftBankと三菱電機が削減時間・分析cycleの具体的成果を公開。", sourceId: "dataiku-softbank" },
+        { label: "industry coverageを採用", detail: "FSIとRetail/TelcoのEnterprise AEを別求人で募集。", sourceId: "dataiku-job-fsi" },
+      ],
+      sourceIds: ["dataiku-hitachi", "dataiku-jal", "dataiku-softbank", "dataiku-mitsubishi", "dataiku-job-fsi", "dataiku-job-retail"],
+    },
+    riskHypotheses: [
+      { title: "AI platform競争でscopeが広がり、差別化説明が難しくなる", body: "cloud/data warehouse/model vendorもAI開発・governance・Agentを拡張する。Dataikuはvendor-neutralなorchestrationを訴求できる一方、既存platform内機能との重複と追加費用を問われる。", confidence: "中", evidence: ["複数vendor環境を統合すると求人が説明", "analyticsからAgentまでportfolioを拡張", "Enterprise営業がcompetitive positioningを要件化"], counterSignal: "business userとtechnical teamを同じgovernanceへ載せるcross-stack設計は、単一vendorの機能と異なる選定軸になる。", sourceIds: ["dataiku-product", "dataiku-job-fsi", "dataiku-job-retail"] },
+      { title: "日本の成長はuse case量より本番化capacityに左右される", body: "regulated FSIや大企業ではsecurity、risk、data、legal、change managementを通過する必要がある。pipelineが増えてもSE・CS・partnerがPoCからproductionを支えられなければ拡張が遅れる。", confidence: "中", evidence: ["FSI求人がsecurity・compliance・legal inquiryを明記", "日立ソリューションズが定着支援を提供", "日本team人数は非公開"], counterSignal: "複数の国内事例とpartner deliveryはlocal proofとcapacityの土台になる。", sourceIds: ["dataiku-job-fsi", "dataiku-hitachi", "dataiku-jal"] },
+    ],
+    sourceIds: ["dataiku-arr", "dataiku-origin", "dataiku-hitachi", "dataiku-softbank", "dataiku-mitsubishi", "dataiku-job-fsi", "dataiku-job-retail"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Dataikuの売り方は『AIを作れるか』ではなく、部門ごとの実験が統制・再利用・成果測定を欠き、全社の本番運用へ進まない問題が起点。data stackを置換する提案ではなく、人・data・model・Agentを一つの運用systemへするBusiness Caseを作る。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "JALは複数sourceのdata分析と分析手法の標準化、SoftBankは営業conversationから商談につながるAgent活用、三菱電機はPython中心の分析cycle短縮を目的に導入した。共通するのはmodel精度だけでなく、専門家依存、手作業、部門分断、再現できない分析を解消し、業務KPIへ反復してつなぐことにある。" },
+      { title: "製品の成り立ちから見る課題", body: "Dataikuは、data scienceがcodeを書ける少数の専門家に閉じ、business側と共同で価値へ変えにくい問題から生まれた。visual workflowとcodeを共存させ、data準備からML・GenAI・Agent・governanceへ広げた成り立ちは、個別modelより人と工程の分断がscaleのbottleneckだという見方を示す。" },
+      { title: "外部環境の要求から見る課題", body: "企業は生成AIの速度と同時に、dataの出所、model判断、access、risk、説明可能性、費用対効果を問われる。金融庁のAIディスカッションペーパー第1.1版も、AIのリスク管理だけでなく『挑戦しないリスク』を踏まえた健全な利活用とgovernanceを求める。部門ごとのnotebookや汎用AIでは、迅速な実装と全社統制を同時に証明しにくい。" },
+    ],
+    narrative: [
+      { label: "背景", body: "各部門がdata分析、ML、生成AI、Agentを試し、経営は実験数ではなく本番成果と投資回収を求めている。cloud、warehouse、modelは複数vendorへ分散している。" },
+      { label: "課題", body: "専門家不足、手作業、重複pipeline、権限・承認・監視の分断により、PoCがproductionへ進まない。部門ごとにtoolを足すほど再利用と監査が難しくなる。" },
+      { label: "解決策", body: "既存stackの上にDataikuを置き、data準備、analytics、ML、GenAI、Agentを共通workflow・governanceで運用。最初の業務use caseでcycle time、利用者、品質、損失回避・増収を測り、templateとcontrolを横展開する。" },
+      { label: "選定の理由", body: "Databricks・Snowflakeはdata/AI基盤、SASは高度analytics、cloud各社は自社stackに強い。Dataikuはbusiness userとdata scientist、codeとvisual、複数cloud/model、開発とgovernanceを一つのorchestration layerでつなぐ点が選定条件になる。" },
+    ],
+    openingHook: "AIのPoC数ではなく、誰が・どのdataとmodelで・どの承認を通し・いくらの業務成果を出したかを、全社で説明できますか。",
+    valueHypothesis: "一つの高頻度業務を8〜12週間で対象にし、現行の分析cycle、手作業時間、production化率、利用者数、review工数をbaseline化。Dataikuでworkflowとcontrolを共通化し、SoftBankや三菱電機のように削減時間とbusiness KPIを測ってから、隣接use caseへtemplate展開する。",
+    commonObjection: { objection: "Databricks、Snowflake、各cloudのAI機能があり、新しいplatformは不要。", reframe: "data保存やmodel提供の重複ではなく、複数stackを跨ぐ人・workflow・approval・monitoringが既存投資で共通化されているかを比較する。一つのuse caseで開発速度だけでなくgovernance工数と利用定着も同じKPIで測る。" },
+  },
+  facts: [
+    { label: "グローバルARR", value: "$350M超", detail: "2025年10月の会社公式発表。", sourceIds: ["dataiku-arr"] },
+    { label: "顧客数", value: "750社超", detail: "世界の組織数。日本単体ではない。", sourceIds: ["dataiku-arr"] },
+    { label: "従業員規模", value: "1,250人超", detail: "13拠点・remoteを含むグローバル値。", sourceIds: ["dataiku-arr"] },
+    { label: "創業", value: "2013年", detail: "Parisで創業。現在はNew Yorkにも本社機能。", sourceIds: ["dataiku-origin"] },
+    { label: "日本の定量成果", value: "月約20時間削減", detail: "SoftBankの営業1人あたりの会社公式事例。", sourceIds: ["dataiku-softbank"] },
+    { label: "日本の公開営業求人", value: "2件", detail: "FSI、Retail & Telco向けEnterprise AEを確認。", sourceIds: ["dataiku-job-fsi", "dataiku-job-retail"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "AI本番化の競争軸はmodelからorchestrationとgovernanceへ", conclusion: "複数vendorを残したまま人・workflow・controlを共通化できれば、単発PoCを全社AI programへ変える余地があります。", confidence: "高", evidence: ["ARR 3.5億ドル・750社超", "日本顧客がcycle timeを定量化", "金融庁が活用とrisk管理の両立を提起"], counterSignals: ["cloud/data vendorが隣接機能を拡張", "日本の顧客数・renewalは非公開"], interviewQuestions: ["日本で初回契約の主use caseと競合は", "PoCからproduction・expandへのconversionは"], sourceIds: ["dataiku-arr", "dataiku-softbank", "dataiku-fsa"] },
+    { topic: "SALES MOTION", title: "industry painからC-level programを作るfull-cycle sale", conclusion: "業界別AEがRisk・Compliance・Technology・Operationsを束ねるため、technical demoより規制・業務・ROIを同じvisionへ揃える比重が高い。", confidence: "高", evidence: ["FSIとRetail/Telcoで求人を分割", "C-level vision alignmentを明記", "security・legal・technical inquiryもAEが管理"], counterSignals: ["partner/inboundの比率は非公開", "既存customer expansionも含みnew logo比率は不明"], interviewQuestions: ["self-source・partner・marketing由来pipelineの比率は", "AE/SE/CS/partnerのstage別ownershipは"], sourceIds: ["dataiku-job-fsi", "dataiku-job-retail", "dataiku-hitachi"] },
+    { topic: "QUOTA ATTAINABILITY", title: "global ARRより日本のterritoryとproduction capacityを見る", conclusion: "国内proofはあるがquota、平均ACV、達成率、rampは非公開。industry account数とSE・CS・partner容量が達成難度を決める。", confidence: "探索中", evidence: ["2業界AEを同時採用", "日立ソリューションズが支援", "国内定量事例が複数"], counterSignals: ["日本売上・顧客数は非公開", "長いsecurity/governance reviewの可能性"], interviewQuestions: ["fully-ramped AEの達成者比率と中央値は", "named account、平均ACV、sales cycle、PoC conversionは"], sourceIds: ["dataiku-job-fsi", "dataiku-job-retail", "dataiku-hitachi"] },
+    { topic: "COMPENSATION", title: "日本のOTE・Pay Mix・equityは非公開", conclusion: "過去評価額やARRを個人報酬へ短絡せず、quota economics、ramp保証、equity条件をofferで確認すべきです。", confidence: "探索中", evidence: ["日本求人に給与rangeなし", "会社は非公開", "AEがnewとexistingを担当"], counterSignals: ["ARR成長は投資余力のsignal", "報酬条件は個別offer次第"], interviewQuestions: ["base/variable、accelerator、cap、equity、rampは", "new・expansion・multi-year・partner dealのcreditは"], sourceIds: ["dataiku-arr", "dataiku-job-fsi", "dataiku-job-retail"] },
+    { topic: "CULTURE / CAREER", title: "業界知識とAI platformの両方を深めるbuilder role", conclusion: "顧客の規制・業務課題をProduct・Engineeringへ返しながらindustry playbookを作る経験になりうる。", confidence: "中", evidence: ["求人がvoice of customerを明記", "cross-functionalにProduct/Engineeringと連携", "日本partner網を拡張"], counterSignals: ["日本のpromotion・tenureは非公開", "急速なproduct拡張でenablement負荷が高い可能性"], interviewQuestions: ["入社90日のindustry/product enablementは", "日本からmanagement/APACへ進んだ実例は"], sourceIds: ["dataiku-job-fsi", "dataiku-job-retail", "dataiku-hitachi"] },
+  ],
+  cultureNotes: { organizationReadTitle: "業界課題とAI技術を横断し、顧客の声をplatformへ戻す組織。", hypothesis: { title: "consultativeだが、full-cycleのrevenue ownershipは明確。", body: "求人はC-level vision、industry expertise、proactive outreach、複数account、security/legal/technical escalationを同時に要求する。専門家へ任せきらず、課題発見からcloseまで統合する姿勢が合いそう。" }, careerValue: { title: "regulated Enterprise AIを本番化する経験。", body: "AI/data platformを業界規制、governance、ROIへ翻訳し、partnerとproductionへ進める実績は希少。一方、日本の昇進dataは未確認。", confidence: "中" } },
+  customerProof: [
+    { company: "SoftBank", products: "Dataiku / AI Agent", outcome: "営業のconversationを商談へ結び付けるAgent modelを展開し、営業1人あたり月約20時間、年25万時間の削減を見込むと公式事例で説明。", implication: "AI導入をlicense数でなく営業活動の質・時間・商談接続で売れる。", sourceId: "dataiku-softbank" },
+    { company: "三菱電機", products: "Dataiku analytics platform", outcome: "analytics output作成時間を60%、data visualization時間を80%削減したと公式事例で公開。", implication: "専門家のPython作業を共通workflowへ変え、cycle timeをBusiness Caseにできる。", sourceId: "dataiku-mitsubishi" },
+    { company: "日本航空(JAL)", products: "Dataiku", outcome: "複数data sourceの横断分析と分析手法の標準化を進め、1to1 marketingと顧客体験向上を狙う。", implication: "部門単体の分析toolより、全社の再利用・標準化を入口にできる。", sourceId: "dataiku-jal" },
+  ],
+  externalSignals: [
+    { label: "成長traction", value: "ARR $350M超", detail: "2025年10月に750社超で到達。", caveat: "グローバル値で、日本売上やrenewalを示さない。", sourceId: "dataiku-arr" },
+    { label: "外部要求", value: "AI活用とrisk管理の両立", detail: "金融庁AIディスカッションペーパー第1.1版が、健全な利活用とgovernance、挑戦しないリスクを論点化。", caveat: "法的義務を一律に定める資料ではなく、個社要件は業態・use caseで異なる。", sourceId: "dataiku-fsa" },
+  ],
+  roleLens: { salesMotion: "業界別named accountへproactive outreachし、business・data・IT・Risk/ComplianceのC-level visionを揃え、use case・security・legal・technical reviewを通してland。production成果をtemplate化し、部門・use caseへexpandする。", compensation: "日本のbase、OTE、Pay Mix、equity、acceleratorは未公開。推測せず、new/expansion、partner deal、multi-yearのcreditとrampを確認する。", quota: "quota、平均ACV、達成率、rampは非公開。industry account density、existing/new比率、PoC conversion、SE/CS/partner capacityが達成難度を左右する。", collaboration: "AEはMarketing、Product Management、Engineering、SE、CS、partnerと連携。特にFSIではRisk・Compliance・Technology・Operationsの社内外stakeholderを一つのdecision processへまとめる。" },
+  leadership: { name: "佐藤 豊", role: "Dataiku Japan カントリーマネージャー", read: "2023年就任。2025年の日立ソリューションズ提携発表でも日本責任者として確認でき、partner販売と定着支援を含む日本scaleを進める。営業組織の詳細なreporting lineは選考で確認したい。", sourceId: "dataiku-hitachi" },
+  companyStats: { globalHeadcount: { value: "1,250人超", detail: "13拠点・remoteを含む2025年10月時点。", sourceId: "dataiku-arr" }, japanHeadcount: { value: "非公開", detail: "日本team単体の最新人数は確認できていない。" }, japanOffice: { value: "東京・渋谷", detail: "神宮前1-5-8 神宮前タワービルディング14階。", sourceId: "dataiku-japan-office" }, japanSince: { value: "確認中", detail: "日本officeの現住所と2023年の責任者就任は確認したが、日本法人の設立年月を一次情報で確定できていない。", sourceId: "dataiku-hitachi" } },
+  salesAppeal: { intro: "AIの追い風だけでなく、営業として積める再現可能な経験を整理しました。", points: [
+    { title: "AIを業界KPIとgovernanceへ翻訳する", detail: "FSIのfraud・risk・reporting、Retail/Telcoの顧客・運用課題を、platform機能ではなくC-level programとBusiness Caseへ変える。", sourceIds: ["dataiku-job-fsi", "dataiku-job-retail", "dataiku-fsa"] },
+    { title: "PoCから全社productionを売る", detail: "SoftBank・三菱電機のように削減時間と業務成果を測り、workflowとcontrolを再利用して部門横断へexpandする。", sourceIds: ["dataiku-softbank", "dataiku-mitsubishi", "dataiku-product"] },
+    { title: "directとpartner deliveryを組み合わせる", detail: "AEが顧客visionを持ち、日立ソリューションズ等が導入・定着を支える。Enterprise platformのecosystem saleを経験できる。", sourceIds: ["dataiku-hitachi", "dataiku-job-fsi"] },
+  ] },
+  interviewPrep: { intro: "global成長と日本territoryの実現可能性を分けて確認する質問です。", questions: [
+    { question: "日本の業界別ARR、顧客数、平均ACV、平均sales cycle、renewal/expansionは。", why: "750社・ARR 3.5億ドルはglobal値で、日本quotaの土台を示さない。", sourceIds: ["dataiku-arr", "dataiku-job-fsi"] },
+    { question: "fully-ramped AEのquota達成者比率と中央値、ramp期間は。", why: "業界知識とcomplex salesを求める分、立ち上がりとterritoryの質が重要。", sourceIds: ["dataiku-job-fsi", "dataiku-job-retail"] },
+    { question: "PoC開始・成功・production・expandのconversionと標準KPIは。", why: "AI実験を本番成果へ変える再現性を確認する。", sourceIds: ["dataiku-softbank", "dataiku-mitsubishi", "dataiku-product"] },
+    { question: "AE、SE、CS、Product、日立等partnerのstage別ownershipとcapacityは。", why: "security・integration・定着支援がquota達成を左右する。", sourceIds: ["dataiku-hitachi", "dataiku-job-fsi"] },
+  ] },
+  solutions: [
+    { name: "Dataiku Platform", valueProp: "analytics、ML、GenAI、Agentを一つのenterprise orchestration layerで構築・展開・govern。", url: "https://www.dataiku.com/ja/", competitors: "Databricks、Snowflake、SAS、各cloud AI platform等。", differentiation: "visualとcode、businessとtechnical、複数data/model vendor、開発とgovernanceを同じ環境で接続。", retention: "製品別NRR・日本renewalは非公開。" },
+    { name: "Agent Hub", valueProp: "Enterprise AI Agentの作成・利用・監視・governanceを共通workspaceへまとめる。", url: "https://www.dataiku.com/product/deliver-ai-agents", competitors: "Microsoft Copilot Studio、Google Vertex AI Agent Builder、AWS Bedrock Agents等。", differentiation: "既存analytics/ML workflowと同じdata・権限・governanceの文脈でAgentを運用。", retention: "Agent Hub単体のcommercial指標は非公開。" },
+    { name: "Dataiku for FSI", valueProp: "fraud、risk、AML、regulatory reporting、customer intelligenceを統制されたAI programとして支援。", url: "https://www.dataiku.com/solutions/banking", competitors: "SAS、Databricks、cloud各社、内製platform。", differentiation: "business analystからdata scientistまで協働し、regulated workflowのcontrolと再利用を両立。", retention: "日本FSIの顧客数・renewalは非公開。" },
+  ],
+  customerStoriesUrl: "https://www.dataiku.com/company/customers",
+  fitTags: ["Enterprise AIを売りたい", "FSIに強い", "Retail/Telcoに強い", "C-level商談が得意", "data/analyticsを理解する", "governanceを価値へ変えたい", "partnerと協業できる", "複雑商談を動かせる"],
+  comparisonMap: [
+    { arena: "Enterprise AI / Data Science", companies: ["Dataiku", "Databricks", "SAS"], why: "collaboration、ML lifecycle、governanceの比較" },
+    { arena: "Data Cloud上のAI", companies: ["Dataiku", "Snowflake", "Google Cloud"], why: "vendor-neutral orchestrationかstack-native機能かの比較" },
+    { arena: "Enterprise Agent", companies: ["Dataiku", "Microsoft Copilot Studio", "AWS Bedrock"], why: "Agent作成だけでなく既存analyticsとgovernanceをどう共通化するか" },
+  ],
+  sources: dataikuSources,
+};
+
+const verkadaSources: ResearchSource[] = [
+  { id: "verkada-about", label: "Verkada会社概要", url: "https://www.verkada.com/jp/about/", kind: "企業公式", scope: "会社規模・製品・成長史・leadership", checkedAt: "2026-08-11" },
+  { id: "verkada-origin", label: "Verkada創業背景", url: "https://www.verkada.com/uk/blog/modern-video-security-businesses-schools/", kind: "企業公式", scope: "製品の原点・cloud architecture", checkedAt: "2026-08-11" },
+  { id: "verkada-valuation", label: "Verkada 2025年評価額発表", url: "https://www.verkada.com/ca/blog/our-new-valuation-dec-2025/", kind: "企業公式", scope: "評価額・bookings・導入規模", checkedAt: "2026-08-11" },
+  { id: "verkada-japan-contact", label: "Verkada Japan お問い合わせ", url: "https://www.verkada.com/jp/contact/", kind: "企業公式", scope: "日本オフィス所在地", checkedAt: "2026-08-11" },
+  { id: "verkada-japac", label: "Verkada JAPAC成長・責任者発表", url: "https://www.prnewswire.com/apac/news-releases/verkada-continues-rapid-growth-and-expansion-in-japan-and-asia-pacific-302272487.html", kind: "企業公式", scope: "JAPAC顧客成長・責任者・国内partner", checkedAt: "2026-08-11" },
+  { id: "verkada-chiba", label: "千葉ロッテマリーンズ導入事例", url: "https://www.verkada.com/jp/customers/chiba-lotte-marines/", kind: "企業公式", scope: "国内顧客・stadium security", checkedAt: "2026-08-11" },
+  { id: "verkada-nishimachi", label: "西町インターナショナルスクール導入事例", url: "https://www.verkada.com/jp/customers/nishimachi-international-school/", kind: "企業公式", scope: "国内顧客・school・privacy", checkedAt: "2026-08-11" },
+  { id: "verkada-chunichi", label: "中日美容専門学校導入事例", url: "https://www.verkada.com/jp/customers/chunichi-beauty-school/", kind: "企業公式", scope: "国内顧客・camera・air quality", checkedAt: "2026-08-11" },
+  { id: "verkada-partners", label: "Verkada partner program", url: "https://www.verkada.com/jp/partners/", kind: "企業公式", scope: "channel model・partner value", checkedAt: "2026-08-11" },
+  { id: "verkada-job-ae", label: "Account Executive, Tokyo", url: "https://job-boards.greenhouse.io/verkada/jobs/4915934007", kind: "企業公式", scope: "東京AEの職務・勤務条件", checkedAt: "2026-08-11" },
+  { id: "verkada-job-enterprise", label: "Enterprise Account Executive, Tokyo", url: "https://job-boards.greenhouse.io/verkada/jobs/4913872007", kind: "企業公式", scope: "Enterprise AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "verkada-job-channel", label: "Channel Sales Manager, Japan", url: "https://job-boards.greenhouse.io/verkada/jobs/4568144007", kind: "企業公式", scope: "Channel Salesの職務・要件", checkedAt: "2026-08-11" },
+  { id: "verkada-ppc", label: "個人情報保護委員会 カメラ画像利用資料", url: "https://www.ppc.go.jp/news/camera_related/", kind: "外部集計", scope: "顔識別cameraの透明性・利用目的・安全管理", checkedAt: "2026-08-11" },
+  { id: "verkada-ftc", label: "FTC Verkada enforcement", url: "https://www.ftc.gov/news-events/news/press-releases/2024/08/ftc-takes-action-against-security-camera-firm-verkada-over-charges-it-failed-secure-videos-other", kind: "外部集計", scope: "過去breach・security program・監査要求", checkedAt: "2026-08-11" },
+];
+
+const verkadaIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Verkadaは非公開企業。2025年12月に評価額58億ドル、annualized bookings 10億ドル超、170カ国超・200万台超のdevice、3万社超を公式発表した。2026年4月時点で従業員2,200人、17拠点。日本では渋谷office、国内顧客・partner、東京と大阪の直販採用に加え、追加Channel Sales Managerを募集している。",
+    ipoOutlookSummary: "IPO計画・時期は公式確認できない。58億ドルは2025年の非公開株式評価であり、equityの流動性や将来価値を保証しない。株数、行使価格、優先株条件、希薄化、売却可能性を確認したい。",
+    genbaVerdict: { headline: "日本は直販・channel・地域coverageを同時に増やす、field-heavyなscale局面。", body: "cloud SaaSの分かりやすさとphysical siteの複雑さが同居する。東京・大阪のAE、Enterprise AE、Channel Salesの同時採用は拡張signalだが、hardware、施工、network、privacy、travel、partner executionまでquotaに影響する。30,000社のglobal momentumだけでなく、日本のpilot conversion、partner capacity、territoryを確認したい。" },
+    milestones: [
+      { year: "2016", label: "Verkada創業", detail: "consumer cameraの簡単さをEnterprise securityへ持ち込む目的で創業。", sourceId: "verkada-origin" },
+      { year: "2017", label: "初期video securityをlaunch", detail: "on-premise NVRと複雑なnetwork設定を減らすcloud-managed architectureを市場投入。", sourceId: "verkada-origin" },
+      { year: "2024", label: "JAPAC顧客が前年比72%増", detail: "Jonathon Dixon氏をJAPAC VP/MDへ任命し、regional GTMを強化。", sourceId: "verkada-japac" },
+      { year: "2025", label: "評価額58億ドル", detail: "annualized bookings 10億ドル超、200万台超を公式発表。", sourceId: "verkada-valuation" },
+      { year: "2026", label: "30,000社・2,200人規模", detail: "17拠点へ拡大し、日本で東京・大阪・channelの営業採用を継続。", sourceId: "verkada-about" },
+    ],
+    growthDrivers: [
+      { title: "単一platformで複数product lineをexpand", body: "video、access、alarm、intercom、air quality、visitorを一つのcloud管理へ統合。cameraからlandし、site・product・use caseを増やす余地がある。", sourceId: "verkada-about" },
+      { title: "hybrid cloudの導入容易性", body: "edge側の保存・処理とcloud管理を組み合わせ、NVRや複雑なnetwork運用を減らす。multi-site顧客で遠隔管理とrolloutのBusiness Caseを作れる。", sourceId: "verkada-origin" },
+      { title: "channelで施工・地域coverageをscale", body: "integrator・installer・resellerをenableし、direct AEとco-sellする。日本全域のsite対応を直販人員だけに依存せず広げられる。", sourceId: "verkada-job-channel" },
+    ],
+    japanGrowth: {
+      headline: "国内reference、partner、東京・大阪の直販採用が同時に進む。",
+      narrative: "千葉ロッテマリーンズ、西町インターナショナルスクール、中日美容専門学校など、stadium・school・複数buildingで国内事例を公開。2024年には高千穂交易を含むregional partnerを挙げ、JAPAC顧客が1年で72%増と発表した。2026年8月時点で東京・大阪のAE/Enterprise AEと追加Channel Sales Managerを募集。日本のARR、顧客数、team人数、quota達成率は非公開。",
+      qualitativeSignals: [
+        { label: "国内業界reference", detail: "stadium、school、municipality、manufacturing等の日本事例を公開。", sourceId: "verkada-chiba" },
+        { label: "JAPAC顧客72%増", detail: "2024年発表。日本単体の成長率ではない。", sourceId: "verkada-japac" },
+        { label: "地域・channel採用", detail: "東京・大阪の直販roleと追加Channel Sales Managerを公式ATSで確認。", sourceId: "verkada-job-channel" },
+      ],
+      sourceIds: ["verkada-japac", "verkada-chiba", "verkada-nishimachi", "verkada-chunichi", "verkada-job-ae", "verkada-job-enterprise", "verkada-job-channel"],
+    },
+    riskHypotheses: [
+      { title: "privacy-sensitive productは信頼がsales cycleの前提", body: "cameraと顔識別dataを扱うため、利用目的、通知、安全管理、access、retentionを説明できなければ導入が止まる。日本の個人情報保護委員会も顔識別機能の利用目的特定と公表等を求める。", confidence: "高", evidence: ["製品がprivacy-sensitiveを使命に明記", "PPCがcamera画像利用の留意点を公開", "教育・医療等sensitive siteへ展開"], counterSignal: "granular permissionとcentralized managementをprivacy designとして提案できる。", sourceIds: ["verkada-about", "verkada-ppc", "verkada-nishimachi"] },
+      { title: "過去のsecurity breachを踏まえたtrust verificationが必要", body: "FTCは2020〜2021年のbreach等をめぐり、2024年に包括的information security programと第三者監査等を含む措置を公表した。営業は現在のcontrol・監査・運用改善をfactで説明する必要がある。", confidence: "高", evidence: ["FTCが2024年の措置を公表", "過去breachでcamera access等を指摘", "cloud physical securityは信頼がpurchase条件"], counterSignal: "現在はprivacy-sensitive missionとtrust programを掲げ、規模も3万社超へ成長しているが、顧客は個別に最新audit evidenceを確認すべき。", sourceIds: ["verkada-ftc", "verkada-about"] },
+    ],
+    sourceIds: ["verkada-about", "verkada-valuation", "verkada-japac", "verkada-job-ae", "verkada-job-enterprise", "verkada-job-channel", "verkada-ppc", "verkada-ftc"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Verkadaの売り方は『cameraを新しくする』ではなく、security systemがsiteごとに分断され、incident対応・maintenance・access・privacy説明を全社で再現できない問題が起点。hardwareとsoftwareを別々に売らず、人と場所を守る運用systemとして提案する。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "千葉ロッテマリーンズは3万人規模stadiumで遠距離の状況把握と要注意人物の早期検知、西町インターナショナルスクールは470人・35国籍のcommunityで高速検索と細かなaccess権限、中日美容専門学校は4棟のcameraとair qualityを統合した。共通課題は録画機器の更新ではなく、少人数でも複数site・多様なriskを素早く把握し、権限と証跡を管理することにある。" },
+      { title: "製品の成り立ちから見る課題", body: "Verkadaは、consumer cameraは簡単なのにEnterprise video securityはNVR、network設定、現地maintenance、古いUIで複雑だという問題から生まれた。edge processing/storageとcloud managementを組み合わせ、videoからaccess・alarm等へ広げた成り立ちは、個別deviceより分断された運用とownershipがbottleneckだという見方を示す。" },
+      { title: "外部環境の要求から見る課題", body: "人手不足、複数拠点、盗難・災害・労働安全への対応が増える一方、camera・顔特徴dataには説明責任がある。個人情報保護委員会は顔識別機能の利用目的を特定し、機能利用を明らかにして通知・公表すること等を示す。企業は『見える範囲を増やす』だけでなく、誰が何の目的でdataへaccessし、どう守るかを同時に証明しなければならない。" },
+    ],
+    narrative: [
+      { label: "背景", body: "店舗、工場、学校、office、stadiumの物理securityはcamera、入退室、alarm、visitor、sensorが別systemで増え、現場人員は限られている。" },
+      { label: "課題", body: "incident時の映像探索、remote確認、user管理、更新、施工がsiteごとに分断。古いNVRとnetwork運用がIT負荷を増やし、privacy・security reviewも全社標準化できない。" },
+      { label: "解決策", body: "一つのpilot siteでcameraと必要productをcloud管理へ統合し、検索時間、false alert、現地出動、maintenance、access reviewを測る。権限・retention・利用目的を設計し、partnerと標準構成を複数siteへrolloutする。" },
+      { label: "選定の理由", body: "Axis・Hanwha等はcamera ecosystem、Genetec・Milestoneはopen VMS、既存security vendorはlocal integrationに強い。Verkadaはdevice、cloud software、AI search、複数product、remote supportをsingle-vendorで簡素化し、導入・運用速度を出せる点が選定条件になる。" },
+    ],
+    openingHook: "incidentが起きた時、何分で該当映像へ到達し、誰が閲覧したかを示し、別siteでも同じ手順を再現できますか。",
+    valueHypothesis: "一つの代表siteで6〜10週間のpilotを行い、映像検索時間、現地出動、device downtime、alert-to-action、user access review工数をbaseline比較。privacy notice、role、retention、incident responseも同時に設計し、成果と標準構成をpartnerと複数siteへ展開する。",
+    commonObjection: { objection: "既存cameraは動いており、cloud化はcostとcyber riskを増やす。", reframe: "camera台数や購入価格だけでなく、NVR、server、VPN、更新、現地maintenance、検索時間、downtime、権限監査を含む3〜5年TCOとriskを比較する。全置換せず、一siteで同じincident scenarioとsecurity requirementを検証する。" },
+  },
+  facts: [
+    { label: "顧客数", value: "30,000社超", detail: "Fortune 500の100社超を含む会社公式値。", sourceIds: ["verkada-about"] },
+    { label: "年間換算bookings", value: "$1B超", detail: "2025年12月の会社公式発表。ARRとは異なる。", sourceIds: ["verkada-valuation"] },
+    { label: "評価額", value: "$5.8B", detail: "2025年12月時点の非公開株式評価。", sourceIds: ["verkada-valuation"] },
+    { label: "導入device", value: "200万台超", detail: "170カ国超に展開するglobal値。", sourceIds: ["verkada-valuation"] },
+    { label: "従業員規模", value: "2,200人", detail: "2026年4月時点、17拠点。", sourceIds: ["verkada-about"] },
+    { label: "日本の掲載営業求人", value: "3件", detail: "東京AE、Enterprise AE、Channel SalesをGenbaに掲載。大阪にも別求人を確認。", sourceIds: ["verkada-job-ae", "verkada-job-enterprise", "verkada-job-channel"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "physical securityの統合とremote運用に強い追い風", conclusion: "multi-site顧客でcameraから入り、access・alarm・sensor等へ広げれば、securityとfacilityの共通platformになりうる。", confidence: "高", evidence: ["30,000社・200万台超", "6 product line", "国内で多業界の事例"], counterSignals: ["legacy/open ecosystemを好む顧客", "privacy・cyber reviewが導入障壁"], interviewQuestions: ["日本で最初に売れるproductとcross-sell順序は", "pilotからmulti-site rolloutのconversionは"], sourceIds: ["verkada-about", "verkada-chiba", "verkada-nishimachi"] },
+    { topic: "SALES MOTION", title: "direct full-cycleとchannel executionを一体化するsale", conclusion: "AEがoutbound・demo・closeを持ち、integrator/resellerが施工と地域coverageを支える。案件ownershipとpartner enablementの質がscaleを決める。", confidence: "高", evidence: ["AEがfull-cycleとpartner連携を担当", "Channel Managerがnet-new pipeline責任", "Enterprise AEは出張50%超"], counterSignals: ["direct/channel別pipeline比率は非公開", "siteごとの導入条件でcycleが変動"], interviewQuestions: ["sourced/influenced/directのcredit ruleは", "partner別のactive pipelineと施工capacityは"], sourceIds: ["verkada-job-ae", "verkada-job-enterprise", "verkada-job-channel"] },
+    { topic: "QUOTA ATTAINABILITY", title: "global bookingsより日本のsite economicsを見る", conclusion: "東京・大阪・channelの採用は成長signalだが、日本のquota、平均deal、達成率は非公開。pilot conversion、site数、hardware供給、partner capacityが重要。", confidence: "探索中", evidence: ["日本で複数営業roleを採用", "JAPAC顧客72%増", "国内referenceを公開"], counterSignals: ["日本単体売上・顧客数は非公開", "Enterprise roleは移動負荷が高い"], interviewQuestions: ["fully-ramped AEのquota達成者比率は", "平均初回site数、ACV、cycle、rollout expansionは"], sourceIds: ["verkada-japac", "verkada-job-enterprise", "verkada-job-channel"] },
+    { topic: "COMPENSATION", title: "日本のOTE・equity・expense economicsは非公開", conclusion: "報酬だけでなく、travel、partner deal、hardware/software、multi-year、rolloutのcreditを確認しないと実支給を判断できない。", confidence: "探索中", evidence: ["日本求人に給与rangeなし", "Enterprise roleは出張50%超", "会社は非公開"], counterSignals: ["bookings 10億ドル超は成長signal", "条件はrole・offerで異なる"], interviewQuestions: ["base/variable、equity、ramp、accelerator、capは", "hardware、license、partner、site expansionのcreditは"], sourceIds: ["verkada-valuation", "verkada-job-enterprise", "verkada-job-channel"] },
+    { topic: "CULTURE / CAREER", title: "office・field・partnerを動かすhigh-activity culture", conclusion: "求人は原則office、頻繁なtravel、outbound、demo、site visit、partner QBRを明記。desk-based SaaSより現場密度が高い。", confidence: "高", evidence: ["Tokyo AEは原則office", "Enterprise AEは出張50%超", "Channel roleは全国出張"], counterSignals: ["日本のtenure・promotionは非公開", "rapid scalingでterritory変更の可能性"], interviewQuestions: ["週次のoffice/customer/partner/travel配分は", "AEからEnterprise/managerへの実例と基準は"], sourceIds: ["verkada-job-ae", "verkada-job-enterprise", "verkada-job-channel"] },
+  ],
+  cultureNotes: { organizationReadTitle: "officeと現場で高速に動き、directとpartnerで売上を作る組織。", hypothesis: { title: "activity量だけでなく、現地導入までownershipを持つ。", body: "prospecting、demo、site visit、integrator連携、market feedbackをAEが持ち、Channel Managerはonboardingからrevenueまで担当。曖昧なhandoffを拾い、現場の学びをGTMへ返せる人が合いそう。" }, careerValue: { title: "SaaS・hardware・AI・channelを横断する。", body: "physical securityのBusiness Caseからmulti-site rolloutまで経験できれば、IoTやSecurityのEnterprise GTMで希少性がある。一方、travelとtrust workの負荷は高い。", confidence: "高" } },
+  customerProof: [
+    { company: "千葉ロッテマリーンズ", products: "Video Security", outcome: "3万人規模stadiumで28倍zoom・360度viewを活用し、100m離れた人物の状況把握や要注意人物の早期検知を支援。", implication: "画質ではなく、混雑環境の検索・判断・初動速度を価値にできる。", sourceId: "verkada-chiba" },
+    { company: "西町インターナショナルスクール", products: "Video Security", outcome: "470人・35国籍のcommunityで高速なsmart searchと細かなaccess権限を評価。", implication: "school safetyとprivacyを二者択一にせず、permission設計を選定条件にできる。", sourceId: "verkada-nishimachi" },
+    { company: "中日美容専門学校", products: "Video Security / Air Quality Sensors", outcome: "4棟でcameraとair quality sensorを統合し、喫煙対策をdataで追跡。", implication: "security部門だけでなくfacility・health complianceへmulti-productを広げられる。", sourceId: "verkada-chunichi" },
+  ],
+  externalSignals: [
+    { label: "global traction", value: "30,000社超", detail: "200万台超、170カ国超へ展開。", caveat: "日本単体の顧客数・ARR・renewalを示さない。", sourceId: "verkada-valuation" },
+    { label: "privacy要求", value: "顔識別機能の利用目的・公表", detail: "個人情報保護委員会がcamera画像と顔特徴dataの適切な取扱いを整理。", caveat: "具体的義務は機能・利用目的・dataの扱いで異なり、個別法務確認が必要。", sourceId: "verkada-ppc" },
+  ],
+  roleLens: { salesMotion: "AEがoutbound・demo・proposal・negotiationをfull-cycleで持ち、pilot siteの成果をEnterprise rolloutへ展開。integrator/resellerが設計・施工・地域coverageを支え、Channel Managerがpartner plan・enablement・QBR・co-sellをrevenueまで持つ。", compensation: "日本のbase、OTE、Pay Mix、equity、acceleratorは未公開。hardware/software、partner、rollout、multi-yearのcreditとtravel expenseを確認する。", quota: "quota、平均deal、達成率、rampは非公開。site density、pilot conversion、partner capacity、travel、supply・installation timelineが達成難度を左右する。", collaboration: "AEはSolutions Engineer、integrator、reseller、Channel Sales、Marketing、Productと連携。顧客側ではSecurity、IT、Facilities、Operations、Legal/Privacy、現地siteを束ねる。" },
+  leadership: { name: "Jonathon Dixon", role: "Vice President & Managing Director, JAPAC", read: "2024年に就任し、日本を含むAustralia、Korea、Taiwan、SingaporeのGTMとoperationsを統括。日本Country Managerの公開確認はできず、国内営業のreporting lineと権限は面接で確認したい。", sourceId: "verkada-japac" },
+  companyStats: { globalHeadcount: { value: "2,200人", detail: "2026年4月時点、17拠点。", sourceId: "verkada-about" }, japanHeadcount: { value: "非公開", detail: "Tokyo officeと複数求人は確認したが、日本単体人数は未開示。" }, japanOffice: { value: "東京・渋谷", detail: "渋谷1-17-4 PMO渋谷9階。", sourceId: "verkada-japan-contact" }, japanSince: { value: "確認中", detail: "Tokyo officeと2024年のJAPAC拡大は確認したが、日本法人の設立年月を一次情報で確定できていない。", sourceId: "verkada-japac" } },
+  salesAppeal: { intro: "cloud SaaS営業とは異なる、現場とecosystemを含む経験を整理しました。", points: [
+    { title: "physical siteのBusiness Caseを作る", detail: "検索時間、現地出動、downtime、maintenance、incident responseを定量化し、security投資を経営判断へ変える。", sourceIds: ["verkada-chiba", "verkada-nishimachi", "verkada-job-enterprise"] },
+    { title: "pilotからmulti-site・multi-productへexpand", detail: "cameraでlandし、access、alarm、sensor等と別siteへ展開。HQ標準と現場実装を同時に経験できる。", sourceIds: ["verkada-about", "verkada-chunichi", "verkada-job-enterprise"] },
+    { title: "channelをrevenue engineへ変える", detail: "integrator・VARの採用、enablement、QBR、co-sell、pipelineを一貫して動かす。", sourceIds: ["verkada-job-channel", "verkada-partners"] },
+  ] },
+  interviewPrep: { intro: "global momentumと、日本のfield economics・trust要求を分けて確認します。", questions: [
+    { question: "日本の顧客数、ARR/bookings、平均初回site・ACV、pilot-to-rollout conversionは。", why: "globalの3万社・10億ドルbookingsだけでは日本quotaを判断できない。", sourceIds: ["verkada-valuation", "verkada-japac"] },
+    { question: "fully-ramped AE/Enterprise AEのquota達成者比率、ramp、territory変更は。", why: "東京・大阪で採用が進むためcoverageの安定性が重要。", sourceIds: ["verkada-job-ae", "verkada-job-enterprise"] },
+    { question: "direct・partner sourced/influenced案件のownership、margin、credit、施工capacityは。", why: "channel conflictとdeliveryがclose・rolloutを左右する。", sourceIds: ["verkada-job-channel", "verkada-partners"] },
+    { question: "FTC措置後のsecurity program、第三者監査、顧客へ提示する最新evidenceは。", why: "過去incidentを曖昧にせず、現在のtrust postureをfactで確認する。", sourceIds: ["verkada-ftc", "verkada-about"] },
+  ] },
+  solutions: [
+    { name: "Video Security", valueProp: "edgeとcloudを組み合わせ、AI検索、remote管理、alert、共有をmulti-siteで提供。", url: "https://www.verkada.com/jp/security-cameras/", competitors: "Axis、Hanwha Vision、Avigilon、Rhombus、Eagle Eye等。", differentiation: "device・software・cloud management・supportを統合し、NVR運用と導入複雑性を減らす。", retention: "製品別NRR・日本renewalは非公開。" },
+    { name: "Access Control", valueProp: "door accessとvideoを同じplatformで管理し、entry eventと映像を統合。", url: "https://www.verkada.com/jp/access-control/", competitors: "LenelS2、Genetec、Brivo、HID ecosystem等。", differentiation: "video・identity・door eventを一つのcloud interfaceで扱い、remote operationを簡素化。", retention: "cross-sell・renewal指標は非公開。" },
+    { name: "Command Platform", valueProp: "video、access、alarm、intercom、air quality、visitorを一つの管理面へ統合。", url: "https://www.verkada.com/jp/command/", competitors: "Genetec、Milestone、複数vendor統合、各security suite。", differentiation: "single-vendorのproduct統合、permission、AI search、remote supportによる展開速度。", retention: "platformの日本NRRは非公開。" },
+  ],
+  customerStoriesUrl: "https://www.verkada.com/jp/customers/",
+  fitTags: ["Physical Securityを売りたい", "field salesが得意", "Enterprise rolloutを動かせる", "channelを作れる", "IoTに関心がある", "privacyを説明できる", "出張に対応できる", "demoからcloseまで持ちたい"],
+  comparisonMap: [
+    { arena: "Cloud video security", companies: ["Verkada", "Rhombus", "Eagle Eye Networks"], why: "device、cloud、AI、managementの統合比較" },
+    { arena: "Enterprise VMS", companies: ["Verkada", "Genetec", "Milestone"], why: "single-vendor simplicityかopen ecosystemか" },
+    { arena: "Camera ecosystem", companies: ["Verkada", "Axis", "Hanwha Vision"], why: "hardware選択肢、partner網、cloud運用の比較" },
+  ],
+  sources: verkadaSources,
+};
+
+const miraklSources: ResearchSource[] = [
+  { id: "mirakl-about", label: "Mirakl会社概要", url: "https://www.mirakl.com/ja-jp/company/about-mirakl/", kind: "企業公式", scope: "創業史・顧客規模・leadership", checkedAt: "2026-08-11" },
+  { id: "mirakl-arr", label: "Mirakl 2025年業績発表", url: "https://www.mirakl.com/fr-fr/news/mirakl-a-atteint-218-m-darr-23-et-a-lance-mirakl-nexus-sa-solution-pour-le-commerce-agentique-1/", kind: "企業公式", scope: "ARR・profitability・GMV・製品成長", checkedAt: "2026-08-11" },
+  { id: "mirakl-series-e", label: "Mirakl Series E発表", url: "https://www.mirakl.com/news/mirakl-announces-555-million-series-e-funding-2", kind: "企業公式", scope: "資金調達・評価額", checkedAt: "2026-08-11" },
+  { id: "mirakl-japan-launch", label: "Mirakl日本法人設立", url: "https://www.mirakl.com/ja-jp/news/press-release-20220525/", kind: "企業公式", scope: "日本参入・Japan Cloud・日本責任者", checkedAt: "2026-08-11" },
+  { id: "mirakl-japan-2025", label: "Mirakl Japan 年頭所感2025", url: "https://www.mirakl.com/ja-JP/blog/hew-year-thought-2025", kind: "企業公式", scope: "国内顧客・日本事業方向", checkedAt: "2026-08-11" },
+  { id: "mirakl-nitori", label: "ニトリ採用発表", url: "https://www.mirakl.com/ja-JP/news/jp-press-2024-01-22", kind: "企業公式", scope: "国内顧客・品揃え・在庫物流cost", checkedAt: "2026-08-11" },
+  { id: "mirakl-satsudora", label: "サツドラ採用発表", url: "https://www.mirakl.com/ja-jp/news/sapporo-drug-store-241011/", kind: "企業公式", scope: "国内顧客・地域marketplace・launch速度", checkedAt: "2026-08-11" },
+  { id: "mirakl-gladd", label: "GLADD導入事例", url: "https://www.mirakl.com/ja-JP/news/jp-press-230728", kind: "企業公式", scope: "国内顧客・assortment・customer experience", checkedAt: "2026-08-11" },
+  { id: "mirakl-platform", label: "Mirakl日本公式", url: "https://www.mirakl.com/ja-jp/", kind: "企業公式", scope: "Marketplace・Dropship・Ads・Agentic Commerce", checkedAt: "2026-08-11" },
+  { id: "mirakl-job-ae", label: "Senior Account Executive", url: "https://job-boards.greenhouse.io/japan/jobs/5735648004", kind: "企業公式", scope: "日本AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "mirakl-job-sc", label: "Solution Consultant", url: "https://job-boards.greenhouse.io/japan/jobs/6006507004", kind: "企業公式", scope: "日本Solution Consultantの職務・要件", checkedAt: "2026-08-11" },
+  { id: "mirakl-meti-ec", label: "経済産業省 令和6年度EC市場調査", url: "https://www.meti.go.jp/press/2025/08/20250826005/20250826005.html", kind: "外部集計", scope: "日本のB2C/B2B EC市場・EC化率", checkedAt: "2026-08-11" },
+  { id: "mirakl-meti-platform", label: "経済産業省 デジタルプラットフォーム取引透明化法", url: "https://www.meti.go.jp/policy/mono_info_service/digitalplatform/provider.html", kind: "外部集計", scope: "platformの透明性・公正性・運営体制", checkedAt: "2026-08-11" },
+];
+
+const miraklIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Miraklは非公開企業。2025年にARR 2.18億ドル(前年比23%増)、group通期黒字化、Marketplace/Dropship GMV 146億ドル(31%増)を公式発表。450社超、10万超のbrand・sellerを支える。日本法人は2022年にJapan Cloudと設立し、JR西日本、ニトリ、アイリスプラザ、サツドラ等の採用を公開。2026年8月時点でSenior AEとSolution Consultantを募集している。",
+    ipoOutlookSummary: "IPO計画・時期は公式確認できない。2021年Series Eの評価額35億ドル超は過去時点の非公開株式評価で、現在価値や流動性を保証しない。黒字化とARR成長は事業signalだが、equityは個別条件を確認したい。",
+    genbaVerdict: { headline: "日本はcategory教育から、国内platform businessの実装・拡張へ進む段階。", body: "国内大手の採用とcurrent ARRは強い一方、marketplaceはSaaS導入だけで成功せず、assortment、seller獲得、catalog、物流、決済、CS、governance、P&Lの再設計が必要。AEは経営変革を売り、Solution Consultantは受注後のarchitectureとlaunchを担う。日本顧客のlive状況、GMV、quota、delivery capacityを確認したい。" },
+    milestones: [
+      { year: "2012", label: "Mirakl創業", detail: "SplitGames/Fnac marketplaceの経験をもとに、企業が自社marketplaceを持てるよう創業。", sourceId: "mirakl-about" },
+      { year: "2013", label: "初のDropship platform", detail: "El Corte Inglésと初のDropship platformをlaunch。", sourceId: "mirakl-about" },
+      { year: "2021", label: "Series E 5.55億ドル", detail: "評価額35億ドル超で調達。", sourceId: "mirakl-series-e" },
+      { year: "2022", label: "日本法人を設立", detail: "Japan Cloudと提携し、佐藤恭平氏が代表取締役社長に就任。", sourceId: "mirakl-japan-launch" },
+      { year: "2025", label: "ARR 2.18億ドル・通期黒字", detail: "GMV 146億ドル、前年比31%増を達成。", sourceId: "mirakl-arr" },
+    ],
+    growthDrivers: [
+      { title: "MarketplaceからCommerce OSへ拡張", body: "Marketplace、Dropship、catalog、payment、Ads、seller network、Agentic Commerceを組み合わせ、GMVだけでなく効率・広告・新channelへwallet shareを広げる。", sourceId: "mirakl-platform" },
+      { title: "core businessの黒字化とGMV成長", body: "2025年にARR 23%増、通期黒字、GMV 31%増。45社の新規Enterprise顧客がMarketplace、Dropship、payment、catalogを採用。", sourceId: "mirakl-arr" },
+      { title: "国内大手のplatform戦略", body: "ニトリ、サツドラ、JR西日本、アイリスプラザ等が自社brandを軸に品揃え・地域ecosystem・新収益を狙う。日本向けreferenceでcategory教育を進めやすい。", sourceId: "mirakl-japan-2025" },
+    ],
+    japanGrowth: {
+      headline: "2022年設立から、国内大手の複数platform計画と実装人材採用へ。",
+      narrative: "Japan Cloudとの共同体制で2022年に法人を設立。ニトリは品揃え拡大と在庫・物流cost削減、サツドラは自社ECと地域marketplaceの同時launch、GLADDは商品数と購買体験の拡張を目的に採用した。2025年の会社発表ではJR西日本、ニトリ、アイリスプラザ、サツドラを公開顧客として挙げる。日本のARR、顧客数、live marketplace数、GMV、team人数は非公開。",
+      qualitativeSignals: [
+        { label: "国内大手4社を公開", detail: "JR西日本、ニトリ、アイリスプラザ、サツドラがplatform構築を開始。", sourceId: "mirakl-japan-2025" },
+        { label: "地域ecosystem use case", detail: "サツドラが北海道の商品・地域事業者をつなぐmarketplaceを計画。", sourceId: "mirakl-satsudora" },
+        { label: "post-sale consultingを採用", detail: "受注直後からarchitecture・integration・launchを担うSolution Consultantを募集。", sourceId: "mirakl-job-sc" },
+      ],
+      sourceIds: ["mirakl-japan-launch", "mirakl-japan-2025", "mirakl-nitori", "mirakl-satsudora", "mirakl-gladd", "mirakl-job-ae", "mirakl-job-sc"],
+    },
+    riskHypotheses: [
+      { title: "software導入よりoperating modelが成否を左右する", body: "marketplaceはseller recruitment、catalog quality、pricing、service level、returns、payment、trust、P&Lを継続運営する必要がある。顧客側のexecutive sponsorと専任teamが弱いと、launchやGMVが遅れる。", confidence: "高", evidence: ["Solution Consultantが受注直後からlaunchを支援", "AEはtechnical/legal/financeを含む全cycleを担当", "国内事例が品揃え・物流・地域partnerを目的化"], counterSignal: "Miraklの10万超seller networkとglobal best practice、local consultingが運営立上げを支援できる。", sourceIds: ["mirakl-job-ae", "mirakl-job-sc", "mirakl-nitori", "mirakl-about"] },
+      { title: "platform規模拡大でseller governanceと透明性が重くなる", body: "品揃えを第三者sellerへ広げるほど、取引条件、審査、品質、苦情、返品、ranking、payment、product safetyの管理が必要。経産省も大規模online mallに透明性・公正性の体制と報告を求める。", confidence: "中", evidence: ["Transparency Actが取引条件開示等を要求", "marketplaceはsellerとの継続関係を持つ", "Solution Consultantがriskと要件を設計"], counterSignal: "Miraklのseller・catalog・payment機能とoperating practiceを、顧客の適用法・policyに合わせて設計できる。", sourceIds: ["mirakl-meti-platform", "mirakl-platform", "mirakl-job-sc"] },
+    ],
+    sourceIds: ["mirakl-arr", "mirakl-about", "mirakl-japan-launch", "mirakl-japan-2025", "mirakl-job-ae", "mirakl-job-sc", "mirakl-meti-ec"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Miraklの売り方は『EC siteを作る』ではなく、自社在庫と既存channelだけでは品揃え・成長・収益性を同時に伸ばせず、顧客接点を巨大platformへ明け渡す問題が起点。technology、seller ecosystem、運営modelを一つのP&L変革として提案する。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "ニトリは品揃えを広げながら在庫・物流costを抑え事業領域を拡大、サツドラは自社ECと北海道の地域事業者をつなぐmarketplaceを同時launch、GLADDは目的買いに対応する商品数とpersonalization dataの拡充を狙った。共通課題はEC機能不足ではなく、自社brandと顧客dataを保ちながら外部sellerの供給力を成長へ変える運営能力にある。" },
+      { title: "製品の成り立ちから見る課題", body: "創業者は2005年のSplitGamesとFnac marketplace運営を通じ、Amazon等のplatform modelに対し、既存企業もopenでscalableなecosystemを持つ必要があると考えた。2012年の創業後、Marketplace、Dropship、B2Bへ広げた成り立ちは、ECを自社在庫のonline販売だけで捉えると品揃え・speed・network effectで限界が来るという見方を示す。" },
+      { title: "外部環境の要求から見る課題", body: "経産省調査では2024年の国内B2C-ECは26.1兆円、B2B-ECは514.4兆円へ増加し、EC化率も上昇した。成長する一方、platform運営にはsellerとの取引条件、透明性、公正性、苦情処理等の説明責任が強まる。企業は商品数を増やすだけでなく、第三者sellerを速くonboardし、品質・service・payment・dataを自社brand基準で統制できなければならない。" },
+    ],
+    narrative: [
+      { label: "背景", body: "EC市場と顧客期待が拡大し、retailer・manufacturer・wholesalerは自社在庫だけで幅広い品揃え、即時性、新channel、収益性を実現しにくい。" },
+      { label: "課題", body: "marketplaceを内製するとseller onboarding、catalog、order、payment、quality、returns、reportingの開発・運用が増える。大手mall依存では顧客data・brand・marginを自社で持ちにくい。" },
+      { label: "解決策", body: "一つのcategoryでseller・assortment・economicsを設計し、MiraklでMarketplace/Dropship、catalog、paymentをlaunch。SKU、active seller、GMV、margin、fulfillment、NPSを測り、categoryとAds等へ拡張する。" },
+      { label: "選定の理由", body: "Adobe Commerce・commercetools等はcommerce stack、marketplacer等はmarketplace構築、内製は自由度に強い。MiraklはEnterprise規模のMarketplace/Dropship運営、10万超のseller network、catalog・payment・Ads、global best practiceを一体で提供する点が選定条件になる。" },
+    ],
+    openingHook: "自社ECの売上だけでなく、『在庫を持たずに増やせる品揃え』と、そのseller品質・margin・顧客体験を経営指標として管理できていますか。",
+    valueHypothesis: "優先categoryで8〜12週間のbusiness designを行い、現行SKU、欠品検索、在庫cost、supplier onboarding、margin、顧客離脱をbaseline化。限定sellerでlaunchし、active seller、time-to-onboard、SKU、GMV、contribution margin、delivery/return、NPSを確認してからcategoryとchannelを拡張する。",
+    commonObjection: { objection: "自社EC基盤や大手mallがあり、marketplaceを増やすと運用が複雑になる。", reframe: "新site追加ではなく、自社brand・顧客dataを維持したまま品揃えとmarginを増やすoperating modelとして比較する。内製・mall・Miraklでseller onboarding時間、在庫risk、take rate、data ownership、運用headcountを同じP&Lに置く。" },
+  },
+  facts: [
+    { label: "ARR", value: "$218M", detail: "2025年、前年比23%増。", sourceIds: ["mirakl-arr"] },
+    { label: "Marketplace/Dropship GMV", value: "$14.6B", detail: "2025年、前年比31%増。", sourceIds: ["mirakl-arr"] },
+    { label: "収益性", value: "通期黒字", detail: "2025年group全体で達成した会社公式発表。", sourceIds: ["mirakl-arr"] },
+    { label: "顧客規模", value: "450社超", detail: "B2C/B2BのEnterprise顧客。", sourceIds: ["mirakl-about"] },
+    { label: "日本法人", value: "2022年設立", detail: "Japan Cloudと提携して東京に設立。", sourceIds: ["mirakl-japan-launch"] },
+    { label: "日本の公開求人", value: "2件", detail: "Senior AEとSolution Consultantを確認。", sourceIds: ["mirakl-job-ae", "mirakl-job-sc"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "EC成長をinventory-lightなplatform modelへ変える余地", conclusion: "自社brandとdataを保ちながら第三者assortmentを増やす需要は、小売だけでなくB2B・manufacturerにも広がる可能性があります。", confidence: "高", evidence: ["ARR 23%・GMV 31%成長", "450社超", "日本のB2C/B2B EC市場が拡大"], counterSignals: ["marketplace運営能力がないと成果が遅れる", "日本のlive/renewal/GMVは非公開"], interviewQuestions: ["日本でlive済みmarketplaceとGMVは", "Marketplace/Dropship/Adsの初回・cross-sell比率は"], sourceIds: ["mirakl-arr", "mirakl-meti-ec", "mirakl-japan-2025"] },
+    { topic: "SALES MOTION", title: "経営P&Lをchallenger型で作るcomplex sale", conclusion: "AEはC-suiteへ新しいbusiness modelを提案し、technical/legal/financeをcloseまで管理。既製categoryのlicense販売よりbusiness case設計が中心。", confidence: "高", evidence: ["AEが8年以上とROI/challengerを要件化", "newとupsell/cross-sellを担当", "SCが受注後のarchitectureとlaunchを主導"], counterSignals: ["inbound・partner比率は非公開", "顧客側の専任team不足でcycleが長期化"], interviewQuestions: ["商談のeconomic buyerと平均stakeholder数は", "AEからSC/partnerへのhandoffと共同KPIは"], sourceIds: ["mirakl-job-ae", "mirakl-job-sc"] },
+    { topic: "QUOTA ATTAINABILITY", title: "global成長より日本のlive実績とdelivery capacityを見る", conclusion: "国内logoは強いが日本ARR、ACV、quota、達成率は非公開。契約だけでなくlaunchとGMVがreferenceとexpansionを左右する。", confidence: "探索中", evidence: ["国内大手4社を公開", "AEとSCを同時採用", "groupは黒字化"], counterSignals: ["日本のlive件数・GMVは未開示", "complex transformationでsales cycleが長い可能性"], interviewQuestions: ["fully-ramped AEの達成者比率、quota、ACV、cycleは", "signed-to-live期間とSC/partner capacityは"], sourceIds: ["mirakl-japan-2025", "mirakl-job-ae", "mirakl-job-sc", "mirakl-arr"] },
+    { topic: "COMPENSATION", title: "日本の報酬・equity・quota creditは非公開", conclusion: "ARRと黒字化は会社signalだが、個人報酬はnew、upsell、multi-product、go-live、partner dealのcreditで判断すべきです。", confidence: "探索中", evidence: ["求人に給与rangeなし", "会社は非公開", "AEはnewとexisting拡張を担当"], counterSignals: ["収益性改善は安定性のsignal", "offer条件は個別"], interviewQuestions: ["base/variable、equity、ramp、accelerator、capは", "new、upsell、multi-product、go-liveのcredit ruleは"], sourceIds: ["mirakl-arr", "mirakl-job-ae"] },
+    { topic: "CULTURE / CAREER", title: "expertiseとexecutionを同時に求める小規模Japan team", conclusion: "5つのvalueはGet Things Done、expertise、client empowerment、teamworkを強調。AEもSCもrole境界を越えてplatform businessの成功へ関与する可能性が高い。", confidence: "中", evidence: ["求人が5 core valuesを明記", "SCが複数projectとProduct feedbackを担当", "Japan Cloudとlocal operationを構築"], counterSignals: ["日本のtenure・promotionは非公開", "global/localの意思決定分担は不明"], interviewQuestions: ["日本team人数と12カ月の採用計画は", "日本からAPAC/managementへ進む実例は"], sourceIds: ["mirakl-job-ae", "mirakl-job-sc", "mirakl-japan-launch"] },
+  ],
+  cultureNotes: { organizationReadTitle: "platform businessのP&Lとlaunchを、expertiseで最後まで動かす組織。", hypothesis: { title: "categoryを教えるだけでなく、clientの運営能力まで作る。", body: "AEはchallengerとROI、SCはarchitecture・risk・go-live、会社valueはGet Things DoneとSatisfy & Empower Clientsを掲げる。契約だけでなく顧客の自走とscaleへ踏み込む人が合いそう。" }, careerValue: { title: "Commerce SaaSと事業開発の中間経験。", body: "marketplace P&L、seller ecosystem、Enterprise architecture、launchを横断できれば、platform strategyやCommerce Transformationで希少性がある。", confidence: "高" } },
+  customerProof: [
+    { company: "ニトリ", products: "Mirakl Marketplace Platform", outcome: "品揃え拡大、在庫・物流cost削減、収益性向上を狙い採用。2032年の事業visionに向けECの事業領域を広げる。", implication: "marketplaceを商品数ではなくinventory-lightな成長P&Lとして売れる。", sourceId: "mirakl-nitori" },
+    { company: "サッポロドラッグストアー", products: "Mirakl Marketplace Platform", outcome: "自社EC刷新とmarketplaceを同時に立ち上げ、北海道の商品・地域事業者との連携を目指す。", implication: "地域ecosystemとmember baseをplatform businessへ変えるuse case。", sourceId: "mirakl-satsudora" },
+    { company: "la belle vie / GLADD", products: "Mirakl Marketplace Platform", outcome: "約600万人の会員基盤で商品数を増やし、目的買い、personalization、購買体験、新収益を狙う。", implication: "assortment拡大をdata・discovery・revenueへつなげる提案ができる。", sourceId: "mirakl-gladd" },
+  ],
+  externalSignals: [
+    { label: "国内EC市場", value: "B2C 26.1兆円", detail: "2024年、前年比5.1%増。B2B-ECは514.4兆円、10.6%増。", caveat: "市場全体の成長で、Miraklの売上や顧客成果を直接示さない。", sourceId: "mirakl-meti-ec" },
+    { label: "platform運営要求", value: "透明性・公正性", detail: "経産省が指定platformに取引条件開示、手続・体制整備、年次報告等を要求。", caveat: "すべてのMirakl顧客が指定対象になるわけではなく、規模・業態・法適用を個別確認する必要がある。", sourceId: "mirakl-meti-platform" },
+  ],
+  roleLens: { salesMotion: "AEがretail・manufacturer・wholesalerのC-suiteへplatform P&Lを提案し、technical/legal/financeを含むcomplex cycleをclose。SCが受注直後からarchitecture、integration、risk、launchを主導し、MarketplaceからDropship・catalog・payment・Adsへexpandする。", compensation: "日本のbase、OTE、Pay Mix、equity、acceleratorは未公開。new/upsell、multi-product、partner、go-liveのcreditとrampを確認する。", quota: "quota、平均ACV、達成率、rampは非公開。greenfield category、顧客のexecutive sponsor、business case、signed-to-live capacityが達成難度を左右する。", collaboration: "AEはSolution Consulting、Customer Success、Product、Legal、Finance、SI/agencyと連携。顧客側では経営、EC、Merchandising、IT、Operations、Finance、Legal、seller teamを束ねる。" },
+  leadership: { name: "佐藤 恭平", role: "Mirakl株式会社 代表取締役 兼 日本カントリーマネージャー", read: "2022年の日本法人設立時に就任し、現行会社概要でも日本カントリーマネージャーとして掲載。SAP・Microsoft等でのSaaS/cloud・business network経験を持ち、Japan Cloudと日本GTMを進める。", sourceId: "mirakl-about" },
+  companyStats: { globalHeadcount: { value: "非公開", detail: "最新のグローバル従業員数は会社公式ページで確認できていない。" }, japanHeadcount: { value: "非公開", detail: "日本teamの最新人数は未開示。" }, japanOffice: { value: "東京", detail: "2022年設立発表で東京拠点を明記。詳細住所は本調査の一次情報で確定していない。", sourceId: "mirakl-japan-launch" }, japanSince: { value: "2022年", detail: "Japan Cloudとの戦略提携でMirakl株式会社を設立。", sourceId: "mirakl-japan-launch" } },
+  salesAppeal: { intro: "Commerce software営業を超えて積める経験を整理しました。", points: [
+    { title: "新しいplatform P&LをC-suiteへ売る", detail: "品揃え、inventory、take rate、margin、seller、customer dataを一つのgrowth modelとして提案する。", sourceIds: ["mirakl-job-ae", "mirakl-nitori", "mirakl-satsudora"] },
+    { title: "契約からlaunch・GMVまでをつなぐ", detail: "AEのBusiness CaseをSCがarchitecture・integration・riskへ落とし、signed dealをlive businessへ変える。", sourceIds: ["mirakl-job-ae", "mirakl-job-sc"] },
+    { title: "MarketplaceからCommerce OSへexpand", detail: "Marketplace/Dropshipを入口にcatalog、payment、seller network、Ads、Agentic Commerceへ広げるmulti-product motion。", sourceIds: ["mirakl-platform", "mirakl-arr"] },
+  ] },
+  interviewPrep: { intro: "国内logoだけでなく、日本のlive economicsとroleの実現可能性を確認します。", questions: [
+    { question: "日本の有料顧客、live marketplace、GMV、ARR、renewal、multi-product比率は。", why: "公開採用logoと実稼働・commercial tractionを分けて見る。", sourceIds: ["mirakl-japan-2025", "mirakl-arr"] },
+    { question: "fully-ramped AEのquota達成者比率、平均ACV、sales cycle、rampは。", why: "greenfieldのbusiness model saleでterritoryとcycleが重要。", sourceIds: ["mirakl-job-ae"] },
+    { question: "signed-to-liveの中央値、同時project数、SC/partner capacity、launch KPIは。", why: "deliveryがreference・renewal・expansionを左右する。", sourceIds: ["mirakl-job-sc", "mirakl-satsudora"] },
+    { question: "new、upsell、Marketplace、Dropship、Ads、partner案件のcreditとhandoffは。", why: "Commerce OSへの拡張でownershipが曖昧だとquota評価が読めない。", sourceIds: ["mirakl-job-ae", "mirakl-platform"] },
+  ] },
+  solutions: [
+    { name: "Mirakl Marketplace Platform", valueProp: "Enterpriseが第三者sellerをonboardし、自社brandのmarketplaceを立ち上げ・運営・scaleする。", url: "https://www.mirakl.com/ja-jp/products/marketplace-platform/", competitors: "Marketplacer、Spryker、Adobe Commerce拡張、内製等。", differentiation: "Enterprise運営機能、10万超のseller network、global best practice、B2C/B2B実績。", retention: "日本renewal・product別NRRは非公開。" },
+    { name: "Mirakl Dropship Platform", valueProp: "supplier在庫を活用し、retailerがpricing・margin・customer experienceを管理しながら品揃えを増やす。", url: "https://www.mirakl.com/ja-jp/products/dropship-platform/", competitors: "CommerceHub、fabric、EDI/OMS内製等。", differentiation: "Marketplaceと共通のseller・catalog・order infrastructureでmodelを組み合わせられる。", retention: "Dropship単体のcommercial指標は非公開。" },
+    { name: "Mirakl Ads / Commerce Suite", valueProp: "marketplace trafficとfirst-party commerce dataをretail media収益へ変え、catalog・payment・seller管理と統合。", url: "https://www.mirakl.com/ja-jp/products/ads/", competitors: "Criteo、CitrusAd、Amazon Ads、retailer内製等。", differentiation: "marketplace operating dataとseller ecosystemに近い位置で広告収益化を設計。", retention: "Mirakl Adsの日本売上・renewalは非公開。" },
+  ],
+  customerStoriesUrl: "https://www.mirakl.com/ja-jp/content/customer-stories/",
+  fitTags: ["Enterprise Commerceを売りたい", "小売に強い", "製造・卸売に強い", "C-suite商談が得意", "challenger saleができる", "P&Lを設計できる", "複雑導入を動かせる", "platform businessに関心がある"],
+  comparisonMap: [
+    { arena: "Enterprise Marketplace", companies: ["Mirakl", "Marketplacer", "Spryker"], why: "seller運営、scale、B2B/B2C、ecosystemの比較" },
+    { arena: "Commerce Platform", companies: ["Mirakl", "Adobe Commerce", "commercetools"], why: "transaction storefrontかplatform operating modelか" },
+    { arena: "Dropship / Supplier Network", companies: ["Mirakl", "CommerceHub", "fabric"], why: "supplier onboarding、catalog、order、marketplace統合の比較" },
+  ],
+  sources: miraklSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
   mongodb: mongodbIntelligence,
@@ -8918,6 +9284,9 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   elevenlabs: elevenLabsIntelligence,
   glean: gleanIntelligence,
   speak: speakIntelligence,
+  dataiku: dataikuIntelligence,
+  verkada: verkadaIntelligence,
+  mirakl: miraklIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
