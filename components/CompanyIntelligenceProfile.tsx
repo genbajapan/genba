@@ -113,8 +113,6 @@ export default function CompanyIntelligenceProfile({
                 <span className="decision-live">PUBLIC DATA</span>
               </div>
               <div className="decision-console-body">
-                <p>成長意欲があり、市場価値を上げたい人にとって</p>
-                <h2>{publicIntel ? "重点検討に値する" : profile.verdict}</h2>
                 <p className="decision-reason">{profile.verdictReason}</p>
                 <div className="decision-fit-tags">
                   {(publicIntel?.fitTags ?? profile.fitSignals).map((tag) => <span key={tag}>#{tag}</span>)}
