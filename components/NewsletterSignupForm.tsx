@@ -28,7 +28,7 @@ export default function NewsletterSignupForm() {
     <div className="newsletter-signup" aria-labelledby="newsletter-signup-title">
       <p className="eyebrow" id="newsletter-signup-title">FREE SUBSCRIPTION</p>
       <h2>無料購読に登録</h2>
-      <p>メールアドレスを入力後、届いた確認メールのボタンを押すと登録完了。Genbaから週3回、必要な変化を短く届けます。</p>
+      <p>メールアドレスを入力後、届いた確認メールのボタンを押すと登録完了。Genbaから毎週月曜・木曜・土曜に、必要な変化を短く届けます。</p>
 
       {isConfigured ? (
         <div ref={embedRef} className="newsletter-kit-embed">
@@ -48,7 +48,7 @@ export default function NewsletterSignupForm() {
         </div>
       )}
 
-      <p className="newsletter-consent">登録により、<a href="/privacy">プライバシーポリシー</a>と週3回のメール配信に同意したものとします。確認前のアドレスには本配信を行わず、いつでも解除できます。</p>
+      <p className="newsletter-consent">登録により、<a href="/privacy">プライバシーポリシー</a>と毎週月曜・木曜・土曜のメール配信に同意したものとします。確認前のアドレスには本配信を行わず、いつでも解除できます。</p>
       <p className="newsletter-sender">送信元：Genba &lt;js@genbajapan.com&gt;</p>
     </div>
   );

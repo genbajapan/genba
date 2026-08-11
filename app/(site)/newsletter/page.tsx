@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import NewsletterSignupForm from "@/components/NewsletterSignupForm";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({ title: "無料ニュースレター", description: "外資IT企業の採用変化を週3回、無料で受け取る。", path: "/newsletter" });
+export const metadata = pageMetadata({ title: "無料ニュースレター", description: "外資IT企業の採用変化を毎週月曜・木曜・土曜に無料で受け取る。", path: "/newsletter" });
 
 export default function NewsletterPage() {
   return (
@@ -11,13 +11,13 @@ export default function NewsletterPage() {
         <Container>
           <p className="eyebrow">GENBA NEWSLETTER</p>
           <h1>情報を追いかける時間を、減らす。</h1>
-          <p className="page-lead">動いた企業、新しい営業求人、見落としたくない採用変化を週3回に分けて短く整理。読者は無料です。</p>
+          <p className="page-lead">動いた企業、新しい営業求人、見落としたくない採用変化を毎週月曜・木曜・土曜に分けて短く整理。読者は無料です。</p>
         </Container>
       </section>
       <section className="content-section">
         <Container className="detail-grid newsletter-detail-grid">
           <div className="prose-genba">
-            <h2>週3回届くもの</h2>
+            <h2>月曜・木曜・土曜に届くもの</h2>
             <ul>
               <li>新しく確認した外資IT・SaaS営業求人</li>
               <li>募集開始・停止・対象領域の変化</li>
