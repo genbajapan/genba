@@ -6,4 +6,4 @@ description: 新規企業1社追加・全社更新・X下書き3本・SEO/AEO点
 
 このコマンドへ事業ルールを複製しないでください。ルール変更は`PROJECT_RULES.md`または各正本、手順変更は`ops/daily-task-workflow.md`だけに反映してください。
 
-依頼文にpush・公開の明示承認がない場合は、検証済みの公開候補を作成したところで停止してください。
+push・公開を含む外部操作は、`PROJECT_RULES.md`と`ops/daily-task-workflow.md`の最新ルールに従ってください。

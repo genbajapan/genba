@@ -759,6 +759,11 @@ const companyRecords: Company[] = [
     description: "application security、SASE、network、developer platformをNamed enterpriseへ売るSenior AEを募集。",
     lastChecked: "2026-08-12", careersUrl: "https://www.cloudflare.com/careers/jobs/", tags: ["Named Accounts", "Security", "Network", "Developer Platform", "Partner"],
   },
+  {
+    slug: "planet", name: "Planet", category: "Earth Observation / Geospatial Intelligence", broadCategory: "コマース・業界特化", hq: "San Francisco, US", japanPresence: "Planet Labs Japan KK / Japan remote", hiringStatus: "採用中", salesRoles: 1,
+    description: "高頻度の衛星画像と変化分析を、日本の防衛・情報機関へ展開するAccount Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.planet.com/company/careers/", tags: ["Government", "Defense", "GEOINT", "Satellite Data", "Japan Remote"],
+  },
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -768,6 +773,9 @@ type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "l
   fit: string;
   thingsToKnow: string;
   marketValue: string;
+  tenureAndPromotion?: string;
+  priorCompanies?: string;
+  nextCompanies?: string;
 };
 
 function makeWaveTwoJob(draft: WaveTwoJobDraft): Job {
@@ -790,9 +798,9 @@ function makeWaveTwoJob(draft: WaveTwoJobDraft): Job {
       fit: draft.fit,
       thingsToKnow: draft.thingsToKnow,
       marketValue: draft.marketValue,
-      tenureAndPromotion: "日本teamの平均在籍年数、離職率、昇進速度を示す公式dataは確認できない。入社後のramp基準と昇進実例を面接で確認したい。",
-      priorCompanies: "日本営業の出身企業を示す十分な公開sampleは未確認。求人要件に記載された業界・segment・sales motionとの隣接性から判断する必要がある。",
-      nextCompanies: "退職後の転職先を示す十分な公開sampleは未確認。隣接カテゴリへの展開可能性は仮説であり、実績として語れるbuyer、deal size、技術領域で評価が変わる。",
+      tenureAndPromotion: draft.tenureAndPromotion ?? "日本teamの平均在籍年数、離職率、昇進速度を示す公式dataは確認できない。入社後のramp基準と昇進実例を面接で確認したい。",
+      priorCompanies: draft.priorCompanies ?? "日本営業の出身企業を示す十分な公開sampleは未確認。求人要件に記載された業界・segment・sales motionとの隣接性から判断する必要がある。",
+      nextCompanies: draft.nextCompanies ?? "退職後の転職先を示す十分な公開sampleは未確認。隣接カテゴリへの展開可能性は仮説であり、実績として語れるbuyer、deal size、技術領域で評価が変わる。",
     },
   };
 }
@@ -909,6 +917,16 @@ const waveTwoJobs: Job[] = [
     genbaTake: "CDN単体でなく、application security、SASE、network、developer platformのどこから入りaccount-wideに広げるかが核心。",
     desiredProfile: "公式求人はJapan enterprise network、technical sales背景、partner開拓、日本語流暢、最大60%未満の出張対応を求める。",
     fit: "internet architectureを理解し複数buying centerへplatform saleできるsenior AEに向く。", thingsToKnow: "named account数、global account rule、SE/partner coverage、product credit、attainmentは非公開。", marketValue: "Security、Network、Developer Platformを横断するenterprise sale。",
+  }),
+  makeWaveTwoJob({
+    id: "planet-account-executive-defence-intelligence-japan", companySlug: "planet", title: "Account Executive, Defence & Intelligence", segment: "Government / Defense & Intelligence", location: "日本", workStyle: "remote（office近隣は週3日出社）", language: "日本語 / 英語", source: { label: "Planet Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/planetlabs/jobs/7564777" },
+    descriptionSummary: "日本のGovernment Intelligence、Defense、National Security機関でpipelineを作り、政府調達、technical validation、契約、onboardingまでpartner・pre-sales・CSと進めるAE。",
+    genbaTake: "衛星画像を単発で売る役割ではなく、平常時の継続監視、異常検知、tasking、政府調達を一つの運用へ組み込むmission sale。既存networkの強さだけでなく、commercial GEOINTの価値を調達要件へ翻訳する力が問われる。",
+    desiredProfile: "公式求人ではEnterprise Solution Salesと政府営業を各6年以上、日本の政府・partner ecosystemとの関係、geospatial imageryの理解、日本語・英語、最大10%の出張対応を求める。応募期限は2026年9月27日。",
+    fit: "公共・防衛の長い調達cycleを理解し、technical specialistと大型案件を作れるsenior sellerに向く。", thingsToKnow: "対象account、既存contract、security clearance、partner ownership、平均cycle、quota、attainmentは非公開。", marketValue: "Government sales、GEOINT、satellite data、AI change detection、partner co-sellの希少な複合経験。",
+    tenureAndPromotion: "日本teamの在籍年数・昇進速度の公式集計は未確認。LinkedIn公開プロフィールをJapan/APJの営業・CSで複数件確認した範囲では、役割がsales、country leadership、customer successへ分かれており、少人数組織で専門職として動く構造が見える。ただしサンプルが小さく、一般化には限界がある。",
+    priorCompanies: "LinkedIn公開プロフィールをJapan/APJの営業・CSで複数件確認した範囲では、geospatial・remote sensing、公共IT、通信・enterprise transformationの経験者が見られる。個人を特定しない集計的な傾向であり、今回のD&I求人は公式要件どおり政府調達と防衛・情報分野の経験がより強く求められる。",
+    nextCompanies: "退職後の転職先を十分に集計できる公開sampleは未確認。職務構造からは、commercial space、GEOINT、defense tech、公共向けdata platform、政府系consultingが隣接候補になるという仮説であり、実際の転職実績ではない。",
   }),
 ];
 
@@ -2228,6 +2246,16 @@ const jobRecords: Job[] = [
 export const jobs = jobRecords.filter((job) => job.companySlug !== "salesforce");
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-planet-japan-defense-ae",
+    companySlug: "planet",
+    date: "2026-08-12",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "日本の防衛・情報機関向けAccount Executiveを募集",
+    summary: "Planet公式Greenhouseで、日本のGovernment Intelligence、Defense、National Security機関を担当する営業求人を確認。応募期限は2026年9月27日です。",
+    source: { label: "Planet Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/planetlabs/jobs/7564777" },
+  },
   {
     id: "signal-sf-data-ai",
     companySlug: "salesforce",

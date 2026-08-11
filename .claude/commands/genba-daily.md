@@ -6,4 +6,4 @@ description: Genbaの企業・求人・採用シグナルを公式情報から�
 
 このコマンドへ事業ルールを複製しないでください。ルール変更は`PROJECT_RULES.md`または各正本、日次手順変更は`ops/daily-workflow.md`だけに反映してください。
 
-依頼文にpush・公開の明示承認がない場合は、検証済みの公開候補を作成したところで停止してください。
+push・公開を含む外部操作は、`PROJECT_RULES.md`と`ops/daily-workflow.md`の最新ルールに従ってください。

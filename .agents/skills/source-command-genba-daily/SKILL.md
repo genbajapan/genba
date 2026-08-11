@@ -9,6 +9,6 @@ description: Run Genba's shared daily media workflow for official company, sales
 2. Read `ops/daily-workflow.md` completely.
 3. Execute the shared workflow in order without duplicating or weakening its rules.
 4. Run `npm run validate:agents` before treating the task as complete.
-5. Do not push, deploy, post to X, send email, or contact sponsors unless the current user request explicitly authorizes that external action.
+5. Apply the external-action rules in `PROJECT_RULES.md` and `ops/daily-workflow.md`; do not maintain a separate approval rule in this skill.
 
 Keep business rules in `PROJECT_RULES.md` and detailed steps in `ops/daily-workflow.md`. Do not copy them into this skill. If either shared file changes, this skill uses the new version automatically.

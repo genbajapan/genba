@@ -37,6 +37,7 @@ type Profile = {
 
 function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
   const sourceId = (suffix: string) => `${profile.slug}-${suffix}`;
+  const roleWithoutTerminalPeriod = profile.role.replace(/。$/, "");
   const sources: ResearchSource[] = [
     { id: sourceId("job"), label: `${profile.name} 日本向け営業求人`, url: profile.jobUrl, kind: "企業公式", scope: "職務・勤務地・採用要件", checkedAt },
     { id: sourceId("company"), label: `${profile.name} 公式情報`, url: profile.officialUrl, kind: "企業公式", scope: "製品・会社概要・事業展開", checkedAt },
@@ -70,7 +71,7 @@ function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
   marketStatus.growthDrivers = [
     { title: "顧客課題の構造変化", body: profile.issueLenses[2].body, sourceId: sourceId("external") },
     { title: "製品の統合価値", body: profile.issueLenses[1].body, sourceId: sourceId("company") },
-    { title: "日本GTMへの投資", body: `日本向けに${profile.role}を採用し、local pipelineと顧客接点を広げる。`, sourceId: sourceId("job") },
+    { title: "日本GTMへの投資", body: `日本向けに${roleWithoutTerminalPeriod}を採用し、local pipelineと顧客接点を広げる。`, sourceId: sourceId("job") },
   ];
   marketStatus.japanGrowth = {
     headline: "日本営業採用を確認、組織・売上は非公開",
@@ -651,6 +652,59 @@ const cloudflareIntelligence: CompanyPublicIntelligence = buildIntelligence({
   ],
 });
 
+const planetIntelligence: CompanyPublicIntelligence = buildIntelligence({
+  slug: "planet", name: "Planet", jobUrl: "https://job-boards.greenhouse.io/planetlabs/jobs/7564777", officialUrl: "https://www.planet.com/faqs/", customersUrl: "https://www.planet.com/company/customer-stories/", externalUrl: "https://www.mod.go.jp/j/policy/defense/space_domain_defense/index.html", financeUrl: "https://investors.planet.com/financials/quarterly-results/default.aspx", publicInfo: { ticker: "PL", exchange: "NYSE", listedSince: "2021年" },
+  salesSnapshot: "Planetは、防衛・政府・農業・インフラ組織へ、地球全体を高頻度で観測する衛星画像と変化分析を提供し、「広域の変化を単発画像では継続把握できない課題」をmission ownerへ問う会社。顧客が抱える「複数dataの人手照合で意思決定が遅れる課題」と「調達した画像を現場の監視業務へ組み込めない課題」を、衛星群、archive、API、analyticsで可視化する。防衛・情報機関のmissionから入り、継続監視、tasking、AI変化検知、partner連携へ提案を広げられる営業としての面白さがある。",
+  growthSummary: "約200機の地球観測衛星とcloud platformを運用し、FY2026売上は3億770万ドル、recurring ACV比率は98%。日本では防衛・情報機関を担当するAccount Executiveを採用し、APACでは日本企業との大型satellite services契約も公表している。",
+  milestones: [
+    { year: "2010", label: "創業", detail: "NASA出身者3名が、地球の変化を日次で可視化する構想から創業。", source: "company" },
+    { year: "2013", label: "初の衛星展開", detail: "小型衛星の継続投入を始め、daily monitoringの基盤を構築。", source: "company" },
+    { year: "2021", label: "NYSE上場", detail: "Public Benefit Corporationとしてticker PLで上場。", source: "finance" },
+    { year: "2025", label: "日本企業との大型契約", detail: "SKY Perfect JSATとの2.3億ドル規模のsatellite services契約を公表。", source: "finance" },
+    { year: "2026", label: "Japan D&I営業採用", detail: "日本の防衛・情報機関を担当するAccount Executiveを募集。", source: "job" },
+  ],
+  issueLenses: [
+    { title: "既存顧客の導入目的から見る課題", body: "New South Wales州政府は水移動の時期と量、ブラジル連邦警察は遠隔地の環境犯罪、Humboldt Countyは許可対象の栽培活動を把握するためPlanetの画像を利用した。共通課題は、広い地域の変化を現地調査や単発画像だけでは継続的に把握できず、対応の優先順位を付けられないこと。" },
+    { title: "製品の成り立ちから見る課題", body: "Planetは大型衛星を少数運用する発想ではなく、小型衛星群で地球全体を高頻度に撮影する構想から始まった。衛星設計、打上げ、ground station、archive、API、analyticsまで垂直統合した理由は、画像を納品物で終わらせず、変化を継続監視するdata productへ変えるため。" },
+    { title: "外部環境の要求から見る課題", body: "日本では宇宙領域防衛指針の策定や民間衛星を活用した情報収集体制の強化が進み、防衛・情報機関には広域を継続監視し、異常を早期に説明できる能力が求められる。監視頻度、解析速度、調達・export control、data governanceを満たせなければ意思決定が事象の後追いになるため、商用衛星dataを運用workflowへ組み込むことが投資テーマになる。" },
+  ],
+  narrative: [
+    { label: "背景", body: "安全保障、災害、森林、海洋、supply chainの変化が速まり、広域を継続的に観測する必要が高まる。" },
+    { label: "課題", body: "単発の高解像度画像と人手分析だけでは、平常時のbaselineを作れず、異常の発見、優先順位付け、現場への共有が遅れる。" },
+    { label: "解決策", body: "対象地域を定め、PlanetScopeの高頻度monitoring、tasking、archive、change analyticsを既存のGEOINT workflowへ接続し、検知から判断までを測る。" },
+    { label: "選定の理由", body: "政府保有衛星、Maxar、Airbus、BlackSky、SAR事業者との比較で、広域の日次級coverage、長期archive、tasking、API、analyticsを同じplatformで扱う条件なら選ばれる。" },
+  ],
+  openingHook: "重要地域で異常が起きたとき、最初の兆候を何日後に発見し、過去の平常状態と比較して誰へ共有できますか。", valueHypothesis: "観測間隔、異常検知までの時間、analystの手作業、現地調査回数、判断までのlead time、監視対象面積を測る。", objection: "政府保有衛星と必要時の高解像度画像だけで足りる。", reframe: "一枚の解像度ではなく、平常時のbaselineを作る頻度、archive、tasking、analytics、既存systemへの統合、data governanceを含む運用全体で比較する。",
+  facts: [
+    { label: "創業", value: "2010年", detail: "NASA出身者3名が創業。", source: "company" },
+    { label: "衛星群", value: "約200機", detail: "公式FAQの公表値。", source: "company" },
+    { label: "上場", value: "NYSE: PL", detail: "2021年上場のPBC。", source: "finance" },
+    { label: "FY2026売上", value: "$307.7M", detail: "会社公表値。", source: "finance" },
+    { label: "Recurring ACV", value: "98%", detail: "FY2026期末の会社公表値。", source: "finance" },
+    { label: "日本求人", value: "D&I AE 1件", detail: "応募期限2026年9月27日の公式求人を確認。", source: "job" },
+  ],
+  customers: [
+    { company: "New South Wales州政府", products: "PlanetScope / Platform", outcome: "衛星画像からwater movementの時期と貯水量変化を推定する活用を公式事例で紹介。", implication: "広域行政では継続観測を判断dataへ変える統合が価値になる。" },
+    { company: "ブラジル連邦警察", products: "Planet imagery / change alerts", outcome: "SCCONと連携し、遠隔地の環境犯罪を把握する活用を公式事例で紹介。", implication: "画像販売よりpartner analyticsと捜査workflowへの実装が重要。" },
+    { company: "Humboldt County", products: "SkySat imagery", outcome: "許可対象の栽培活動を監視し、complianceと環境影響の把握に活用。", implication: "現地確認の優先順位付けに高頻度taskingを使える。" },
+  ],
+  externalSignals: [
+    { label: "宇宙領域防衛", value: "継続監視と早期把握", detail: "防衛省は2025年に宇宙領域防衛指針を策定し、宇宙利用と情報収集能力の強化を進める。", caveat: "個別調達要件、機密区分、data residency、export controlは案件ごとに異なる。" },
+    { label: "官民衛星活用", value: "commercial dataの運用組込み", detail: "政府保有assetだけでなく民間衛星を利用して観測頻度とcoverageを補完する政策方向が確認できる。", caveat: "商用画像だけで全missionを代替できず、sensor fusionとanalyst判断が必要。" },
+  ],
+  role: "日本のGovernment Intelligence、Defense、National Security機関でpipelineを作り、partner、pre-sales、Customer Successと連携して政府調達・technical validation・契約を進めるD&I Account Executive。", organization: "衛星hardware、data platform、AI analyticsと公共benefit missionを一体で扱い、仮説検証と結果責任を重視する組織。", careerValue: "政府調達、GEOINT、satellite data、AI change detection、partner co-sellを横断する希少なenterprise sales経験を積める。", globalHeadcount: "600人超（公式FAQ）", japanPresence: "Planet Labs Japan KK / Japan remote", japanSince: "日本法人の公式表記を確認、設立年は未確認",
+  solutions: [
+    { name: "Planet Monitoring", valueProp: "PlanetScopeで広域を高頻度に撮影し、変化のbaselineを作る。", url: "https://www.planet.com/products/satellite-monitoring/", competitors: "Airbus OneAtlas、Maxar、政府保有衛星。", differentiation: "地球全陸域の日次級coverageと長期archive。" },
+    { name: "Planet Tasking", valueProp: "高解像度衛星を対象地域へtaskingし、必要な時点の詳細を取得。", url: "https://www.planet.com/products/tasking/", competitors: "Maxar、BlackSky、Airbus。", differentiation: "monitoringで変化を見つけtaskingへ接続できる。" },
+    { name: "Planet Insights Platform", valueProp: "imagery、API、analysis-ready data、change analyticsをworkflowへ統合。", url: "https://www.planet.com/products/planet-insights-platform/", competitors: "Esri ecosystem、cloud geospatial platform、内製GEOINT基盤。", differentiation: "自社衛星dataとanalyticsを一つのplatformで運用。" },
+  ],
+  fitTags: ["Government", "Defense", "GEOINT", "Satellite Data", "Enterprise", "Partner", "Japan Remote", "Public Company"], comparisons: [
+    { arena: "Wide-area monitoring", companies: ["Planet", "Airbus", "government constellations"], why: "revisit、coverage、archiveの比較" },
+    { arena: "High-resolution tasking", companies: ["Planet", "Maxar", "BlackSky"], why: "resolution、latency、capacityの比較" },
+    { arena: "Operational GEOINT", companies: ["Planet", "Esri ecosystem", "internal platforms"], why: "dataから意思決定workflowまでの比較" },
+  ],
+});
+
 export const waveTwoIntelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   replit: replitIntelligence,
   "grafana-labs": grafanaLabsIntelligence,
@@ -666,4 +720,5 @@ export const waveTwoIntelligenceBySlug: Record<string, CompanyPublicIntelligence
   wasabi: wasabiIntelligence,
   zscaler: zscalerIntelligence,
   cloudflare: cloudflareIntelligence,
+  planet: planetIntelligence,
 };
