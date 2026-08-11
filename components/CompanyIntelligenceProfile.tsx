@@ -119,7 +119,9 @@ export default function CompanyIntelligenceProfile({
                   {(publicIntel?.fitTags ?? profile.fitSignals).map((tag) => <span key={tag}>#{tag}</span>)}
                 </div>
                 <div className="decision-stats">
-                  <div><strong>{profile.observedRoleCount}</strong><span>観測した営業求人</span></div>
+                  <a href="#roles" aria-label={`現在の求人${profile.observedRoleCount}件を見る`}>
+                    <strong>{profile.observedRoleCount}</strong><span>現在の求人</span>
+                  </a>
                   <div><strong>{publicIntel?.sources.length ?? companySignals.length}</strong><span>{publicIntel ? "調査ソース" : "採用シグナル"}</span></div>
                   <div><strong>{shortDate(publicIntel?.researchedAt ?? company.lastChecked).slice(5)}</strong><span>最終更新日</span></div>
                 </div>

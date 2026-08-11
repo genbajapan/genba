@@ -300,8 +300,11 @@ button, input, select { font: inherit; }
 .decision-fit-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 23px; }
 .decision-fit-tags span { padding: 6px 10px; border: 1px solid #355867; background: rgba(112,211,197,.06); color: #9eddd3; font-size: 11px; font-weight: 700; }
 .decision-stats { display: grid; grid-template-columns: repeat(3,1fr); border-block: 1px solid #294957; }
-.decision-stats div { padding: 14px 0; }
-.decision-stats div + div { padding-left: 13px; border-left: 1px solid #294957; }
+.decision-stats > * { padding: 14px 0; }
+.decision-stats > * + * { padding-left: 13px; border-left: 1px solid #294957; }
+.decision-stats a { color: inherit; text-decoration: none; transition: background .18s ease; }
+.decision-stats a:hover { background: rgba(112,211,197,.08); }
+.decision-stats a:focus-visible { outline: 2px solid #70d3c5; outline-offset: -2px; }
 .decision-stats strong,.decision-stats span { display: block; }
 .decision-stats strong { color: white; font-size: 20px; font-variant-numeric: tabular-nums; }
 .decision-stats span { margin-top: 4px; color: #718c98; font-size: 11px; line-height: 1.4; }
