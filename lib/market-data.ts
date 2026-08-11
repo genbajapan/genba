@@ -689,12 +689,231 @@ const companyRecords: Company[] = [
     description: "UniFiのnetwork、Wi-Fi、surveillance、accessをend customerとchannelへ展開するJapan Account Executiveを募集。",
     lastChecked: "2026-08-12", careersUrl: "https://careers.ui.com/", tags: ["Account Executive", "Networking", "Channel", "IoT", "Physical Security"],
   },
+  {
+    slug: "replit", name: "Replit", category: "AI Software Creation Platform", broadCategory: "業務自動化・コラボレーション", hq: "San Francisco, US", japanPresence: "Japan remote（将来Tokyo hybridを想定）", hiringStatus: "採用中", salesRoles: 1,
+    description: "AIでideaからproduction applicationまで作るplatformの日本市場を立ち上げるFounding Account Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://jobs.ashbyhq.com/replit", tags: ["Founding AE", "AI", "Developer Tools", "PLG", "Japan Launch"],
+  },
+  {
+    slug: "grafana-labs", name: "Grafana Labs", category: "Observability / Open Source", broadCategory: "セキュリティ・IT運用", hq: "New York, US / Remote", japanPresence: "Tokyo / remote", hiringStatus: "採用中", salesRoles: 1,
+    description: "Grafana OSSの利用基盤をGrafana Cloudのenterprise契約へ転換するAcquisition Account Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://grafana.com/about/careers/open-positions/", tags: ["Enterprise AE", "Observability", "OSS", "Cloud", "Remote"],
+  },
+  {
+    slug: "elastic", name: "Elastic", category: "Search AI / Observability / Security", broadCategory: "AI・データ基盤", hq: "San Francisco, US / Amsterdam, NL", japanPresence: "東京 / distributed", hiringStatus: "採用中", salesRoles: 1,
+    description: "Search AI、Observability、SecurityをMid-Marketのnew logoと既存拡張へ提案するAccount Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://jobs.elastic.co/", tags: ["Mid-Market", "Search AI", "Observability", "Security", "Open Source"],
+  },
+  {
+    slug: "knowbe4", name: "KnowBe4", category: "Human Risk Management / Cybersecurity", broadCategory: "セキュリティ・IT運用", hq: "Clearwater, US", japanPresence: "東京オフィス", hiringStatus: "採用中", salesRoles: 1,
+    description: "security awareness、phishing simulation、human riskをEnterpriseの新規・既存へ売るRegional AEを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.knowbe4.com/careers/locations/tokyo", tags: ["Enterprise", "Cybersecurity", "Human Risk", "New Logo", "Expansion"],
+  },
+  {
+    slug: "deel", name: "Deel", category: "Global Payroll / HR Platform", broadCategory: "HR・人材育成", hq: "San Francisco, US / Remote", japanPresence: "Japan remote（東京優先）", hiringStatus: "採用中", salesRoles: 1,
+    description: "EOR、global payroll、HRISの日本pipelineをSMBからEnterpriseまでoutboundで作るSDRを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://jobs.ashbyhq.com/deel", tags: ["SDR", "HR Tech", "Global Payroll", "Remote", "Outbound"],
+  },
+  {
+    slug: "cohere", name: "Cohere", category: "Enterprise AI / Foundation Models", broadCategory: "AI・データ基盤", hq: "Toronto, Canada / San Francisco, US", japanPresence: "Tokyo / remote", hiringStatus: "採用中", salesRoles: 1,
+    description: "security-firstのfoundation model、RAG、agent platformを日本enterpriseへ売るAccount Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://jobs.ashbyhq.com/cohere", tags: ["Enterprise AI", "Account Executive", "RAG", "Security", "Remote"],
+  },
+  {
+    slug: "deepl", name: "DeepL", category: "Language AI / Translation", broadCategory: "業務自動化・コラボレーション", hq: "Cologne, Germany", japanPresence: "東京オフィス", hiringStatus: "積極採用", salesRoles: 2,
+    description: "Translator、Write、Voice、APIを日本のCorporate・Enterpriseへ売る2区分のAccount Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://jobs.ashbyhq.com/DeepL", tags: ["Corporate", "Enterprise", "Language AI", "New Logo", "Expansion"],
+  },
+  {
+    slug: "pendo", name: "Pendo", category: "Product Experience / Digital Adoption", broadCategory: "CRM・顧客体験", hq: "Raleigh, US", japanPresence: "東京オフィス / hybrid", hiringStatus: "採用中", salesRoles: 1,
+    description: "Product Analytics、In-app Guides、Feedbackを1,500人超の企業へ提案するEnterprise AEを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.pendo.io/careers/", tags: ["Enterprise", "Product Analytics", "Digital Adoption", "MEDDPICC", "Hybrid"],
+  },
+  {
+    slug: "dragos", name: "Dragos", category: "OT / ICS Cybersecurity", broadCategory: "セキュリティ・IT運用", hq: "Hanover, US", japanPresence: "Japan / remote", hiringStatus: "採用中", salesRoles: 1,
+    description: "energy、water、transport、manufacturingへOT securityを売り日本territoryを作るSenior Enterprise AEを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.dragos.com/careers/", tags: ["Enterprise", "OT Security", "Critical Infrastructure", "Channel", "Country Build"],
+  },
+  {
+    slug: "anthropic", name: "Anthropic", category: "Frontier AI / Enterprise AI", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "東京オフィス", hiringStatus: "採用中", salesRoles: 1,
+    description: "Claudeを日本のtransportation・utilitiesへ展開する業界別Enterprise Account Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.anthropic.com/careers/jobs", tags: ["Enterprise AI", "Vertical Sales", "Transportation", "Utilities", "AI Safety"],
+  },
+  {
+    slug: "fireblocks", name: "Fireblocks", category: "Digital Asset Infrastructure / FinTech", broadCategory: "経営管理・FinTech", hq: "New York, US / Tel Aviv, Israel", japanPresence: "Tokyo Prefecture", hiringStatus: "積極採用", salesRoles: 2,
+    description: "institutional digital asset infrastructureの日本pipelineと売上を作るBDR・Sales Directorを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.fireblocks.com/careers/", tags: ["FinTech", "Digital Assets", "BDR", "Sales Director", "Regulated"],
+  },
+  {
+    slug: "wasabi", name: "Wasabi Technologies", category: "Cloud Object Storage / Backup", broadCategory: "AI・データ基盤", hq: "Boston, US", japanPresence: "日本channel team", hiringStatus: "採用中", salesRoles: 1,
+    description: "hot cloud storageのdistributor・reseller・MSPを採用し共同pipelineを作るChannel Account Managerを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://wasabi.com/company/careers", tags: ["Channel", "Cloud Storage", "Backup", "Partners", "Infrastructure"],
+  },
+  {
+    slug: "zscaler", name: "Zscaler", category: "Zero Trust / Security Service Edge", broadCategory: "セキュリティ・IT運用", hq: "San Jose, US", japanPresence: "東京 / hybrid", hiringStatus: "採用中", salesRoles: 1,
+    description: "Zero Trust Exchangeを日本enterpriseのCIO・CISOへ提案するAccount Executiveを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.zscaler.com/careers/search", tags: ["Enterprise", "Zero Trust", "SSE", "CIO", "CISO"],
+  },
+  {
+    slug: "cloudflare", name: "Cloudflare", category: "Connectivity Cloud / Edge Security", broadCategory: "セキュリティ・IT運用", hq: "San Francisco, US", japanPresence: "東京オフィス", hiringStatus: "採用中", salesRoles: 1,
+    description: "application security、SASE、network、developer platformをNamed enterpriseへ売るSenior AEを募集。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.cloudflare.com/careers/jobs/", tags: ["Named Accounts", "Security", "Network", "Developer Platform", "Partner"],
+  },
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
 export const companies = companyRecords.filter((company) => company.slug !== "salesforce");
 
+type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
+  fit: string;
+  thingsToKnow: string;
+  marketValue: string;
+};
+
+function makeWaveTwoJob(draft: WaveTwoJobDraft): Job {
+  return {
+    id: draft.id,
+    companySlug: draft.companySlug,
+    title: draft.title,
+    segment: draft.segment,
+    location: draft.location,
+    workStyle: draft.workStyle,
+    language: draft.language,
+    firstSeen: "2026-08-12",
+    lastChecked: "2026-08-12",
+    source: draft.source,
+    descriptionSummary: draft.descriptionSummary,
+    genbaTake: draft.genbaTake,
+    compensationReality: "日本の給与、OTE、equity、quotaは公式求人で確認できない。pay mix、ramp、accelerator、案件creditを選考で確認したい。",
+    desiredProfile: draft.desiredProfile,
+    careerInsights: {
+      fit: draft.fit,
+      thingsToKnow: draft.thingsToKnow,
+      marketValue: draft.marketValue,
+      tenureAndPromotion: "日本teamの平均在籍年数、離職率、昇進速度を示す公式dataは確認できない。入社後のramp基準と昇進実例を面接で確認したい。",
+      priorCompanies: "日本営業の出身企業を示す十分な公開sampleは未確認。求人要件に記載された業界・segment・sales motionとの隣接性から判断する必要がある。",
+      nextCompanies: "退職後の転職先を示す十分な公開sampleは未確認。隣接カテゴリへの展開可能性は仮説であり、実績として語れるbuyer、deal size、技術領域で評価が変わる。",
+    },
+  };
+}
+
+const waveTwoJobs: Job[] = [
+  makeWaveTwoJob({
+    id: "replit-founding-account-executive-japan", companySlug: "replit", title: "Founding Account Executive (Japan)", segment: "Founding / Enterprise", location: "日本", workStyle: "remote（将来Tokyo hybridを想定）", language: "日本語 / 英語", source: { label: "Replit Careers (Ashby)", url: "https://jobs.ashbyhq.com/replit/bcfdb564-48c9-42c9-ab5b-c901b6babb44" },
+    descriptionSummary: "日本のnew logoをprospectingからdemo、non-engineer hackathon、security review、close、adoptionまで持ち、local GTMを作るFounding AE。",
+    genbaTake: "AI coding seatを売るより、engineering backlog、外注費、shadow ITをbusiness caseへ変える役割。self-serve Enterpriseとの役割分担も重要。",
+    desiredProfile: "公式求人ではfull-cycle enterprise sales、technical curiosity、executive engagement、自律的なpipeline形成、日本語・英語、最大25%の出張対応を求める。",
+    fit: "categoryを説明するだけでなく、日本のICP、demo、event、referenceを自分で作りたいbuilder型AEに向く。", thingsToKnow: "日本の既存顧客、territory、SE/CS体制、quota達成率、self-serveからのcreditは非公開。", marketValue: "AI application platform、PLG-to-enterprise、country launchを同時に経験できる。",
+  }),
+  makeWaveTwoJob({
+    id: "grafana-labs-senior-enterprise-ae-japan", companySlug: "grafana-labs", title: "Senior Enterprise Account Executive, Acquisition", segment: "Enterprise / New Logo", location: "東京", workStyle: "remote", language: "日本語 / 英語", source: { label: "Grafana Labs Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/grafanalabs/jobs/6092347004" },
+    descriptionSummary: "enterprise new logoを自ら開拓し、technical discovery、demo・PoC、proposal、negotiation、closeまでSEと進めるacquisition AE。",
+    genbaTake: "OSSの知名度をcloud contractへ変えるsales。自前Grafanaの運用cost、telemetry economics、MTTRを同じbusiness caseへ束ねる必要がある。",
+    desiredProfile: "公式求人では5年以上のinfrastructure technology sales、new business、full-cycle、demo/PoC、forecast disciplineを求める。",
+    fit: "developer/SREの信頼を保ちながらCIOへobservability consolidationを売りたい人に向く。", thingsToKnow: "Japan OSS usageからpaidへの転換率、ACV、cycle、SE ratio、達成率は非公開。", marketValue: "OSS commercialisation、observability、cloud consumptionの専門性がつく。",
+  }),
+  makeWaveTwoJob({
+    id: "elastic-mid-market-ae-japan", companySlug: "elastic", title: "Mid-Market Account Executive", segment: "Mid-Market", location: "東京", workStyle: "distributed", language: "日本語 / 英語", source: { label: "Elastic Careers", url: "https://jobs.elastic.co/jobs/sales/tokyo-japan/mid-market-account-executive/7938834" },
+    descriptionSummary: "Search AI、Observability、SecurityをMid-Marketのnew logoと既存拡張へ提案し、partner・SEとfull-cycleでcloseするAE。",
+    genbaTake: "単一use caseのtool saleではなく、search、security、observabilityのどこから入りplatformへ広げるかを設計する。",
+    desiredProfile: "公式求人はquota-carrying SaaS sales、technical curiosity、value storytelling、multi-stakeholder managementを重視。",
+    fit: "technical data platformを複数buyerへ翻訳しland-and-expandしたい人に向く。", thingsToKnow: "Japan segment定義、territory、cloud consumption credit、ACV、達成率は非公開。", marketValue: "Search AI、open source、security、observabilityを横断するplatform sale。",
+  }),
+  makeWaveTwoJob({
+    id: "knowbe4-regional-ae-enterprise-japan", companySlug: "knowbe4", title: "Regional Account Executive (Enterprise)", segment: "Enterprise / New & Expansion", location: "東京", workStyle: "Tokyo office", language: "日本語流暢 / 英語", source: { label: "KnowBe4 Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/knowbe4/jobs/7089100002" },
+    descriptionSummary: "Enterpriseのnew logoと既存cross-sellを月次quotaで追い、outbound、inbound、demo、channel、renewal expansionを持つAE。",
+    genbaTake: "研修completionではなく、phishing failure、reporting、triage時間をbehavior riskとして経営へ売るhigh-velocity security sale。",
+    desiredProfile: "公式求人では3年以上のEnterprise sales、日本語流暢、activity discipline、cybersecurity理解、channel・CS連携を求める。",
+    fit: "高頻度のpipeline活動とsecurity educationを両立できる人に向く。", thingsToKnow: "monthly quotaの定義、平均deal数、inbound/channel構成、renewal credit、達成率は非公開。", marketValue: "Human Risk ManagementとEnterprise high-velocity salesの専門性。",
+  }),
+  makeWaveTwoJob({
+    id: "deel-sales-development-representative-japan", companySlug: "deel", title: "Sales Development Representative | Japan", segment: "SMB / Mid-Market / Enterprise", location: "日本（東京優先）", workStyle: "remote", language: "日本語ネイティブ / 英語", source: { label: "Deel Careers (Ashby)", url: "https://jobs.ashbyhq.com/deel/c0af44a5-7e40-4bf3-9d74-6a888ff2b5b9" },
+    descriptionSummary: "global hiring、payroll、HR platformのJapan prospectへemail・phone・socialでoutboundし、全segmentのqualified meetingとpipelineを作るSDR。",
+    genbaTake: "人事toolのappointmentではなく、採用国、worker type、法人有無、payroll providerを診断してcomplianceとgrowthの優先度を作る。",
+    desiredProfile: "公式求人では1年以上のsales development、quota実績、outbound copy、CRM、remoteでの自律性、日本語ネイティブを求める。",
+    fit: "global HR/FinTechを学びながら高いactivityでpipelineを作りたいSDRに向く。", thingsToKnow: "Japan TAM、meeting quota、AE acceptance、promotion実績、達成率は非公開。", marketValue: "global payroll、EOR、multi-segment outboundの基礎を積める。",
+  }),
+  makeWaveTwoJob({
+    id: "cohere-account-executive-japan", companySlug: "cohere", title: "Account Executive Japan", segment: "Enterprise AI", location: "東京", workStyle: "remote", language: "日本語 / 英語", source: { label: "Cohere Careers (Ashby)", url: "https://jobs.ashbyhq.com/cohere/85e808ab-ee45-4944-bedc-832bf933d0b6" },
+    descriptionSummary: "日本enterpriseのAI use caseを開拓し、model・RAG・private deploymentのtechnical evaluationからsecurity・commercial closeまで担当。",
+    genbaTake: "benchmarkで勝つのではなく、企業dataを使うworkflowでquality、security、latency、unit economicsを同時に証明するsales。",
+    desiredProfile: "公式求人はenterprise software sales、AIへの関心、new logo、executive relationship、technical stakeholderとの協働を求める。",
+    fit: "frontier modelをproduction business caseへ翻訳したいtechnical AEに向く。", thingsToKnow: "Japan reference、cloud partner構成、POC support、model margin、ACV、達成率は非公開。", marketValue: "Foundation model、RAG、private AI deploymentの最前線。",
+  }),
+  makeWaveTwoJob({
+    id: "deepl-account-executive-corporate-japan", companySlug: "deepl", title: "Account Executive - Corporate (Japan)", segment: "Corporate / Mid-Market", location: "東京", workStyle: "hybrid", language: "日本語ネイティブ / 英語ビジネス", source: { label: "DeepL Careers (Ashby)", url: "https://jobs.ashbyhq.com/DeepL/33708c39-653b-477f-80ae-77036d242087" },
+    descriptionSummary: "大量のinboundと自ら作るpipelineを並行し、Corporate顧客のnew logo、upsell、cross-sellを月次目標でcloseするAE。",
+    genbaTake: "翻訳精度だけでなく、外注待ち、用語統一、data protection、部門展開を短いcycleで定量化するhigh-volume sale。",
+    desiredProfile: "公式求人では4年以上のSaaS full-cycle sales、pipeline管理、presentation、日本語ネイティブ、英語ビジネスを求める。",
+    fit: "AI productのinbound momentumを丁寧なdiscoveryと高速executionで収益化したい人に向く。", thingsToKnow: "Corporateのemployee band、inbound/self-source比率、平均件数、ACV、達成率は非公開。", marketValue: "Language AI、high-volume full-cycle、multi-product expansionを積める。",
+  }),
+  makeWaveTwoJob({
+    id: "deepl-account-executive-enterprise-japan", companySlug: "deepl", title: "Account Executive - Enterprise (Japan)", segment: "Enterprise", location: "東京", workStyle: "hybrid（週2日office）", language: "日本語ネイティブ / 英語ビジネス", source: { label: "DeepL Careers (Ashby)", url: "https://jobs.ashbyhq.com/DeepL/b324d0b7-bc20-4fcf-a747-61aeb9849c9b" },
+    descriptionSummary: "大手企業のnew logoとexpansionを持ち、executive、IT、procurementを巻き込みLanguage AIのenterprise processを作るAE。",
+    genbaTake: "全社翻訳toolではなく、legal、support、engineering、salesごとのworkflowとriskを束ねてenterprise標準へ広げる。",
+    desiredProfile: "公式求人では8年以上のenterprise software sales、大手新規・拡張、quota超過、cross-functional orchestrationを求める。",
+    fit: "少数精鋭のJapan teamでenterprise playbookを作りたいAEに向く。", thingsToKnow: "named account数、global account ownership、security review、multi-product credit、達成率は非公開。", marketValue: "AI enterprise standardisationとexecutive multi-threadの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "pendo-enterprise-account-executive-japan", companySlug: "pendo", title: "Account Executive, Enterprise Sales - Japan", segment: "Enterprise（1,500+ employees）", location: "東京", workStyle: "hybrid（週3日office）", language: "日本語 / 英語", source: { label: "Pendo Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/pendo/jobs/8518472002" },
+    descriptionSummary: "1,500人超の企業でnew logoを作り、MEDDPICCとForce Managementでmulti-year account strategyとcomplex dealをcloseするAE。",
+    genbaTake: "analytics seatではなく、adoption、support cost、retention、digital productivityをProduct・CX・IT共通のbusiness caseへする。",
+    desiredProfile: "公式求人ではcomplex enterprise sales、executive relationship、pipeline generation、MEDDPICC、forecast disciplineを求める。",
+    fit: "Product、CS、ITを跨ぐenterprise transformation saleが得意な人に向く。", thingsToKnow: "Japan customer base、territory、partner、ACV、cycle、ramped attainmentは非公開。", marketValue: "Product AnalyticsとDigital Adoptionをenterprise経営課題へ変える経験。",
+  }),
+  makeWaveTwoJob({
+    id: "dragos-senior-enterprise-ae-japan", companySlug: "dragos", title: "Senior Enterprise Account Executive JPN", segment: "Enterprise / OT Security", location: "日本", workStyle: "remote-first", language: "日本語 / 英語", source: { label: "Dragos Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/dragos/jobs/5254855008" },
+    descriptionSummary: "energy、water、transport、manufacturingの売上責任を持ち、distribution partnerと日本市場のGTMを作る自律的なSenior AE。",
+    genbaTake: "security eventではなく、操業停止、安全、asset visibility、incident readinessを工場責任者とCISOの共通言語へする。",
+    desiredProfile: "公式求人はenterprise cyber sales、Japan market、partner management、critical infrastructure buyer、自治的なterritory構築を求める。",
+    fit: "country buildと社会infra missionの両方に強く動機づけられるsenior sellerに向く。", thingsToKnow: "Japan install base、local SE/IR、distributor責任、POC、ACV、達成率は非公開。", marketValue: "OT security、critical infrastructure、channelとcountry ownershipの希少性。",
+  }),
+  makeWaveTwoJob({
+    id: "anthropic-enterprise-ae-transportation-utilities-japan", companySlug: "anthropic", title: "Enterprise Account Executive, Transportation & Utilities", segment: "Enterprise / Industry", location: "東京", workStyle: "Tokyo based", language: "日本語 / 英語", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5104755008" },
+    descriptionSummary: "鉄道、航空、物流、電力・gas・waterの大手へClaudeを提案し、new logoと既存拡張のfull sales cycleを持つvertical AE。",
+    genbaTake: "AI seatを売るより、critical operationでhuman oversight、安全、reliability、cost、業務成果を同じevaluationへ載せる。",
+    desiredProfile: "公式求人はenterprise sales、transport/utilitiesのdomain、C-level engagement、complex deal、AIへのtechnical curiosityを重視。",
+    fit: "frontier AIをregulated・mission-critical industryへ持ち込みたいvertical sellerに向く。", thingsToKnow: "Japan reference、model/provider partner、solution architecture、ACV、cycle、attainmentは非公開。", marketValue: "Frontier AI、critical infrastructure、AI governance、C-level transformationの複合経験。",
+  }),
+  makeWaveTwoJob({
+    id: "fireblocks-bdr-japanese-speaking", companySlug: "fireblocks", title: "Business Development Representative, Japanese speaking", segment: "Business Development / FinTech", location: "Tokyo Prefecture", workStyle: "公式求人で確認", language: "日本語流暢 / 英語", source: { label: "Fireblocks Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/fireblocks/jobs/4440710006" },
+    descriptionSummary: "日本の金融機関・FinTechへoutbound/inboundで接点を作り、digital asset infrastructureのqualified opportunityをSalesへ渡すBDR。",
+    genbaTake: "crypto相場の話ではなく、wallet、custody、settlement、tokenizationの事業計画とregulatory readinessをqualifyする。",
+    desiredProfile: "公式求人ではtechnology BDR経験、pipeline形成、CRM hygiene、日本語流暢を求め、FinTech・blockchain・security経験を歓迎。",
+    fit: "新しい金融infraを学びながらcategory education型outboundへ挑みたい人に向く。", thingsToKnow: "Japan target account、meeting quota、Sales acceptance、promotion、達成率は非公開。", marketValue: "Digital assets、FinTech、regulated enterprise prospectingの専門性。",
+  }),
+  makeWaveTwoJob({
+    id: "fireblocks-sales-director-japan", companySlug: "fireblocks", title: "Sales Director, Japan", segment: "Enterprise / Country Sales", location: "Tokyo Prefecture", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Fireblocks Careers (Japan openings)", url: "https://job-boards.greenhouse.io/fireblocks" },
+    descriptionSummary: "日本の金融機関・FinTech・payment企業でterritoryとpipelineを作り、technical・regulatory stakeholderを巻き込んで売上を持つSales Director。",
+    genbaTake: "country manager的な市場形成とquota-carrying closeを兼ねる可能性が高い。BDR、partner、global productの実支援を確認したい。",
+    desiredProfile: "公式採用一覧でJapan Sales Directorを確認。詳細要件とreporting lineは応募時点の求人票で再確認が必要。",
+    fit: "FinTechの経営層networkとnew categoryを作る自律性を持つsenior sellerに向く。", thingsToKnow: "個別求人の詳細、territory、team、quota、legal entity、attainmentは非公開。", marketValue: "Digital asset infrastructureとJapan market leadershipの実績になり得る。",
+  }),
+  makeWaveTwoJob({
+    id: "wasabi-channel-account-manager-japan", companySlug: "wasabi", title: "Channel Account Manager - Japan", segment: "Channel / Cloud Storage", location: "日本", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Wasabi Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/wasabi/jobs/5132017008" },
+    descriptionSummary: "distributor、reseller、MSPを採用・activateし、共同business plan、enablement、partner-led opportunityで日本の売上を作るChannel AM。",
+    genbaTake: "安価なstorageを紹介するより、backup・media・surveillance partnerのsolutionへ組み込み、marginとcustomer TCOを両立する。",
+    desiredProfile: "公式求人では5年以上のtechnology channel sales、storage歓迎、joint planning、CRM、日本語・英語を求める。",
+    fit: "direct closeよりecosystemを作りpartnerを勝たせることに強い人に向く。", thingsToKnow: "Japan partner数、inactive率、lead flow、revenue credit、inventory/network責任、達成率は非公開。", marketValue: "Cloud storage、backup、channel recruitmentとpartner economicsを積める。",
+  }),
+  makeWaveTwoJob({
+    id: "zscaler-account-executive-japan", companySlug: "zscaler", title: "Account Executive", segment: "Enterprise / Zero Trust", location: "東京", workStyle: "hybrid", language: "日本語 / 英語", source: { label: "Zscaler Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/zscaler/jobs/4771753007" },
+    descriptionSummary: "Japan accountのC-suite relationshipと長期account strategyを作り、SE・partnerとzero trust transformationを進めるAE。",
+    genbaTake: "security product saleより、VPN、network、branch、cloud、data protectionを複数年のoperating model変革へまとめる。",
+    desiredProfile: "公式求人はC-suite relationship、account planning、cross-functional collaboration、cloud security transformationを重視。",
+    fit: "長期のenterprise accountを組織横断で動かすsellerに向く。", thingsToKnow: "account数、install base、partner ownership、product split、quota、attainmentは非公開。", marketValue: "Zero Trust、SSE、network transformationの大型案件経験。",
+  }),
+  makeWaveTwoJob({
+    id: "cloudflare-senior-named-ae-japan", companySlug: "cloudflare", title: "Senior Named Account Executive, Japan", segment: "Named Enterprise", location: "東京", workStyle: "公式求人で確認", language: "日本語流暢 / 英語", source: { label: "Cloudflare Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/cloudflare/jobs/7421718" },
+    descriptionSummary: "named enterpriseでJapan sales plan、pipeline、technical value、contract negotiation、partner development、customer satisfactionを持つSenior AE。",
+    genbaTake: "CDN単体でなく、application security、SASE、network、developer platformのどこから入りaccount-wideに広げるかが核心。",
+    desiredProfile: "公式求人はJapan enterprise network、technical sales背景、partner開拓、日本語流暢、最大60%未満の出張対応を求める。",
+    fit: "internet architectureを理解し複数buying centerへplatform saleできるsenior AEに向く。", thingsToKnow: "named account数、global account rule、SE/partner coverage、product credit、attainmentは非公開。", marketValue: "Security、Network、Developer Platformを横断するenterprise sale。",
+  }),
+];
+
 const jobRecords: Job[] = [
+  ...waveTwoJobs,
   {
     id: "sf-data-cloud-ae",
     companySlug: "salesforce",
