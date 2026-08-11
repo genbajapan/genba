@@ -39,7 +39,7 @@ export default function Footer({ locale = "en" }: { locale?: Locale }) {
         </div>
         <div className="footer-publisher"><span>運営・編集</span><a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a><p>外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。</p></div>
       </Container>
-      <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p>求人応募は各社の公式サイトで行われます。</p></Container>
+      <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p><Link href="/privacy">プライバシーポリシー</Link><span>求人応募は各社の公式サイトで行われます。</span></p></Container>
     </footer>
   );
 }

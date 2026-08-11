@@ -41,6 +41,7 @@ ops/             ガードレール、法務・利益相反チェックなど運
 | [08-open-items.md](docs/08-open-items.md) | 未確定・要検討事項 |
 | [09-pivot-business-plan.md](docs/09-pivot-business-plan.md) | 外資SaaS営業インテリジェンスメディアへのピボット後の事業計画 |
 | [10-website-renewal-spec.md](docs/10-website-renewal-spec.md) | ピボットに対応するWebサイト・データ・自動運用の実装指示書 |
+| [11-newsletter-kit-setup.md](docs/11-newsletter-kit-setup.md) | 週3回のニュースレター配信とKit接続・検証手順 |
 
 ## ローンチまでのアクションリスト
 
