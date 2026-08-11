@@ -450,7 +450,7 @@ export default function CompanyIntelligenceProfile({
                             {publicIntel ? (
                               <>
                                 <div className="analysis"><span>報酬の見立て</span><strong>{tier.label}帯 {tier.oteRange}が目安</strong></div>
-                                <div className="analysis"><span>英語の実務利用</span><strong>募集要項では必須。実務は日本語中心が一般的</strong></div>
+                                <div className="analysis"><span>英語の実務利用</span><strong>{/英語|English/i.test(job.language) && !/明記なし|不問/.test(job.language) ? "募集要項で英語要件あり。使用場面と頻度は要確認" : "募集要項では要件を確認できず。使用場面と頻度は要確認"}</strong></div>
                                 <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>
                               </>
                             ) : (
@@ -786,7 +786,7 @@ export default function CompanyIntelligenceProfile({
                 <p className="playbook-frame-intro">{publicIntel.sellingPlaybook.frameIntro}</p>
 
                 <div className="playbook-lens-grid">
-                  <p className="card-index">課題を見つける3つのレンズ</p>
+                  <p className="card-index">課題を見つける{publicIntel.sellingPlaybook.issueLenses.length}つのレンズ</p>
                   <div className="playbook-lens-row">
                     {publicIntel.sellingPlaybook.issueLenses.map((lens, index) => (
                       <article key={lens.title}>
@@ -834,6 +834,83 @@ export default function CompanyIntelligenceProfile({
                     <p><span>切り返し</span>{publicIntel.sellingPlaybook.commonObjection.reframe}</p>
                   </article>
                 </div>
+
+                {publicIntel.sellingPlaybook.discoveryQuestions && (
+                  <div className="playbook-deep-section">
+                    <p className="card-index">相手別の発見質問</p>
+                    <div className="playbook-discovery-grid">
+                      {publicIntel.sellingPlaybook.discoveryQuestions.map((group) => (
+                        <article key={group.stakeholder}>
+                          <span>{group.stakeholder}</span>
+                          <strong>{group.objective}</strong>
+                          <ul>{group.questions.map((question) => <li key={question}>{question}</li>)}</ul>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {publicIntel.sellingPlaybook.stakeholderMap && (
+                  <div className="playbook-deep-section">
+                    <p className="card-index">ステークホルダー別の価値</p>
+                    <div className="playbook-stakeholder-grid">
+                      {publicIntel.sellingPlaybook.stakeholderMap.map((item) => (
+                        <article key={item.role}>
+                          <span>{item.role}</span>
+                          <strong>{item.priority}</strong>
+                          <p>{item.message}</p>
+                          <small>使う証拠: {item.proof}</small>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {publicIntel.sellingPlaybook.dealPlan && (
+                  <div className="playbook-deep-section">
+                    <p className="card-index">案件を前に進める設計</p>
+                    <div className="playbook-deal-table">
+                      {publicIntel.sellingPlaybook.dealPlan.map((item, index) => (
+                        <article key={item.phase}>
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+                          <div><strong>{item.phase}</strong><small>{item.aim}</small></div>
+                          <p>{item.action}</p>
+                          <p><b>次へ進む条件</b>{item.exitCriteria}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {publicIntel.sellingPlaybook.competitiveAngles && (
+                  <div className="playbook-deep-section">
+                    <p className="card-index">競合・現状維持との比べ方</p>
+                    <div className="playbook-competitive-grid">
+                      {publicIntel.sellingPlaybook.competitiveAngles.map((item) => (
+                        <article key={item.situation}>
+                          <strong>{item.situation}</strong>
+                          <p><span>先に置く軸</span>{item.leadWith}</p>
+                          <p><span>避けたい進め方</span>{item.avoid}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {publicIntel.sellingPlaybook.objections && (
+                  <div className="playbook-deep-section">
+                    <p className="card-index">よくある反論と、確認すべき証拠</p>
+                    <div className="playbook-objection-list">
+                      {publicIntel.sellingPlaybook.objections.map((item) => (
+                        <article key={item.objection}>
+                          <strong>「{item.objection}」</strong>
+                          <p>{item.reframe}</p>
+                          <small>確認する証拠: {item.proof}</small>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </section>
             )}
 

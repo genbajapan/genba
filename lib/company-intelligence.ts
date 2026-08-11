@@ -76,6 +76,13 @@ const categoryLenses: Record<string, CategoryLens> = {
     appeal: "経営優先度が高く、専門性とEnterprise営業力を同時に磨きやすい。",
     salesQuestion: "脅威の緊急性だけに頼らず、既存投資からの置き換え価値を示せるか。",
   },
+  "データセキュリティ / サイバーレジリエンス": {
+    cluster: "Cloud & Developer",
+    buyers: ["CISO", "CIO・情報システム責任者", "インフラ・クラウド責任者", "BCP・事業継続責任者"],
+    problem: "攻撃を完全に防ぐ前提ではなく、重要なデータ・ID・業務をクリーンな状態へ戻し、事業停止の影響を最小化する領域。",
+    appeal: "バックアップ更新だけでなく、サイバー攻撃後の事業復旧をCIO・CISO・経営層へ提案できる。",
+    salesQuestion: "復旧可能性を技術指標だけで終わらせず、停止損失・規制・顧客信頼まで数値化できるか。",
+  },
   "CRM / Marketing": {
     cluster: "Revenue Platform",
     buyers: ["マーケティング責任者", "営業部長", "カスタマーサービス責任者", "経営層(CxO)"],
