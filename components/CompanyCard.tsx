@@ -6,7 +6,7 @@ export default function CompanyCard({ company }: { company: Company }) {
   return (
     <article className="data-card group">
       <div className="data-card-topline">
-        <span>{company.category}</span>
+        <span>{company.broadCategory}</span>
         <StatusBadge status={company.hiringStatus} />
       </div>
       <h3><Link href={`/companies/${company.slug}`}>{company.name}</Link></h3>
