@@ -8619,6 +8619,280 @@ const rubrikIntelligence: CompanyPublicIntelligence = {
   sources: rubrikSources,
 };
 
+const gleanSources: ResearchSource[] = [
+  { id: "glean-about", label: "About Glean", url: "https://www.glean.com/about", kind: "企業公式", scope: "創業背景・創業者・製品の原点", checkedAt: "2026-08-11" },
+  { id: "glean-arr-200", label: "Glean ARR 2億ドル発表", url: "https://prtimes.jp/main/html/rd/p/000000001.000179911.html", kind: "企業公式", scope: "ARR・顧客地域・従業員規模", checkedAt: "2026-08-11" },
+  { id: "glean-series-f", label: "Glean Series F発表", url: "https://www.glean.com/blog/glean-series-f-announcement", kind: "企業公式", scope: "資金調達・評価額・成長戦略", checkedAt: "2026-08-11" },
+  { id: "glean-japan-leader", label: "小澤正治氏 日本カントリーマネージャー就任", url: "https://prtimes.jp/main/html/rd/p/000000004.000179911.html", kind: "企業公式", scope: "日本責任者・日本市場方針", checkedAt: "2026-08-11" },
+  { id: "glean-japan-entry", label: "アシストによる国内初販売開始", url: "https://www.ashisuto.co.jp/news/detail/1220972_1675.html", kind: "企業公式", scope: "日本参入時期・国内販売体制", checkedAt: "2026-08-11" },
+  { id: "glean-konoike", label: "鴻池運輸 導入事例", url: "https://prtimes.jp/main/html/rd/p/000000003.000179911.html", kind: "企業公式", scope: "国内顧客・導入規模・AI活用成果", checkedAt: "2026-08-11" },
+  { id: "glean-booking", label: "Booking.com 導入事例", url: "https://www.glean.com/jp/resources/customer-stories/booking-com", kind: "企業公式", scope: "全社導入・業務成果・選定条件", checkedAt: "2026-08-11" },
+  { id: "glean-zillow", label: "Zillow 導入事例", url: "https://www.glean.com/resources/customer-stories/zillow", kind: "企業公式", scope: "利用率・時間削減・Agent活用", checkedAt: "2026-08-11" },
+  { id: "glean-platform", label: "Glean Work AI Platform", url: "https://www.glean.com/jp/platform", kind: "企業公式", scope: "製品構成・Enterprise Context・差別化", checkedAt: "2026-08-11" },
+  { id: "glean-agents", label: "Glean Agents発表", url: "https://www.glean.com/jp/blog/glean-agents-launch-blog", kind: "企業公式", scope: "Agent・governance・製品拡張", checkedAt: "2026-08-11" },
+  { id: "glean-job-commercial", label: "Commercial Account Executive, Japan", url: "https://job-boards.greenhouse.io/gleanwork/jobs/4671954005", kind: "企業公式", scope: "Commercial AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "glean-job-enterprise", label: "Enterprise Account Executive, Japan", url: "https://job-boards.greenhouse.io/gleanwork/jobs/4672064005", kind: "企業公式", scope: "Enterprise AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "glean-job-sdr", label: "Sales Development Representative, Japan", url: "https://job-boards.greenhouse.io/gleanwork/jobs/4689174005", kind: "企業公式", scope: "SDRの職務・要件", checkedAt: "2026-08-11" },
+  { id: "glean-ai-guideline", label: "経済産業省 AI事業者ガイドライン第1.2版", url: "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html", kind: "外部集計", scope: "AIガバナンスに関する外部環境", checkedAt: "2026-08-11" },
+];
+
+const gleanIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Gleanは非公開企業。2025年2月にARR 1億ドル到達、同年6月に1.5億ドルを調達して評価額72億ドル、さらに公式発表ではARR 2億ドルまで9カ月で倍増した。従業員は1,000人超、顧客は27カ国以上。日本では2023年の国内初reseller販売から、2026年の日本カントリーマネージャー任命と直販3職種採用へ進み、partner-ledの市場開拓に直販coverageを重ねる段階にある。",
+    ipoOutlookSummary: "IPO計画・時期は公式には確認できない。評価額72億ドルは2025年Series F時点の資金調達評価であり、流動性や将来価値を保証しない。equity提示時は株数、行使価格、優先株条件、希薄化、売却可能性を確認したい。",
+    genbaVerdict: { headline: "日本はreseller起点から、直販・leadership・国内実績を揃えるscale-up初期。", body: "ARR成長と企業AI需要は強いが、日本では新カントリーマネージャー就任直後で、Commercial・Enterprise・SDRを同時採用している。完成したterritoryを引き継ぐより、category教育、PoC、security review、利用定着、partner co-sellを組み立てるbuilder型の局面。グローバル成長を日本のquota達成へ短絡せず、segment別account数と支援体制を確認したい。" },
+    milestones: [
+      { year: "2019", label: "Glean創業", detail: "Google Search等の経験を持つ創業teamが、社内情報を見つけにくい問題からEnterprise Searchを開発。", sourceId: "glean-about" },
+      { year: "2023", label: "日本で国内販売を開始", detail: "アシストが国内初resellerとしてGleanの取り扱いを開始。", sourceId: "glean-japan-entry" },
+      { year: "2025", label: "ARR 1億ドル・Series F", detail: "ARR 1億ドル到達後、1.5億ドルを調達し評価額72億ドル。国際展開を資金使途に掲げた。", sourceId: "glean-series-f" },
+      { year: "2026", label: "ARR 2億ドルへ倍増", detail: "公式発表でARR 1億ドルから9カ月で2億ドルへ到達、従業員1,000人超。", sourceId: "glean-arr-200" },
+      { year: "2026", label: "日本責任者を任命", detail: "小澤正治氏が日本カントリーマネージャーに就任し、市場進出戦略・Enterprise Sales・日本組織構築を統括。", sourceId: "glean-japan-leader" },
+    ],
+    growthDrivers: [
+      { title: "検索からAssistant・Agentへ拡張", body: "100超のconnectorとEnterprise Graphで社内contextを整え、検索、回答、Agent実行を同じ権限基盤へ載せる。seat利用だけでなく部門workflowとAgent数へ拡張できる。", sourceId: "glean-platform" },
+      { title: "定量ROIを持つ全社導入事例", body: "Zillowは従業員1人あたり週1.5時間超を削減し、80%超の利用率と3,400超のAgent作成を公開。PoCを利用率・削減時間・Agent活用でBusiness Case化できる。", sourceId: "glean-zillow" },
+      { title: "日本の直販体制を本格強化", body: "2026年に日本カントリーマネージャーを任命し、市場進出戦略、Enterprise Sales、日本組織構築を一体で担う体制へ移行。reseller起点の市場開拓に直販coverageを重ねる段階に入った。", sourceId: "glean-japan-leader" },
+    ],
+    japanGrowth: {
+      headline: "国内初resellerから3年で、named customer・Country Manager・3職種採用へ。",
+      narrative: "2023年にアシストが国内初販売を開始。2026年には鴻池運輸が第1phaseで1,200 licenseを本格稼働し、会議資料の検索・作成工数を体感約9割削減したとの利用者評価を公開した。同年6月に小澤正治氏を日本カントリーマネージャーへ任命し、Commercial AE、Enterprise AE、SDRを同時採用。日本を最優先の成長市場とする会社発言はあるが、日本のARR・顧客数・quota達成率・team人数は非公開。",
+      qualitativeSignals: [
+        { label: "国内大手の全社AI基盤", detail: "鴻池運輸が1,200 licenseを導入し、75本のAI Agent開発を目標化。", sourceId: "glean-konoike" },
+        { label: "日本責任者を任命", detail: "2026年6月、小澤正治氏が市場進出戦略・Enterprise Sales・日本組織構築を統括。", sourceId: "glean-japan-leader" },
+        { label: "Commercial AEを採用", detail: "日本のCommercial・Mid-Marketでnet-new ARRとterritory構築を担う求人を公式ATSで確認。", sourceId: "glean-job-commercial" },
+      ],
+      sourceIds: ["glean-japan-entry", "glean-konoike", "glean-japan-leader", "glean-job-commercial", "glean-job-enterprise", "glean-job-sdr"],
+    },
+    riskHypotheses: [
+      { title: "AI categoryの追い風と競争激化が同時に進む", body: "Microsoft、Google、OpenAI、Notion等が既存suiteやassistantへ企業検索・Agentを統合する。Gleanはvendor-neutralなcontext layerを主張できる一方、既存契約内のbundleとの価格比較を避けられない。", confidence: "中", evidence: ["検索からWork AIへportfolioを拡張", "35種類超のLLMと100超connectorを訴求", "求人がROI reportとstructured PoCを要求"], counterSignal: "複数suiteを横断する権限付きcontextと定量事例は、単一suite内assistantとの差別化になる。", sourceIds: ["glean-platform", "glean-job-commercial", "glean-booking"] },
+      { title: "日本の成長速度は、local実装とchange managementの容量に左右される", body: "全社AI導入はconnector、権限、security review、use case設計、利用定着を伴う。営業採用が先行しても、Solutions・CS・partnerのdelivery capacityが追いつかなければPoC後のscaleが詰まる。", confidence: "中", evidence: ["日本でAE 2職種とSDRを採用", "鴻池運輸がAI人材育成とAgent目標を設定", "日本team人数と導入支援capacityは非公開"], counterSignal: "国内reseller網とCustomer Successを組み合わせれば、直販だけに依存せず支援をscaleできる。", sourceIds: ["glean-job-commercial", "glean-job-enterprise", "glean-konoike", "glean-japan-entry"] },
+    ],
+    sourceIds: ["glean-arr-200", "glean-series-f", "glean-japan-leader", "glean-konoike", "glean-job-commercial", "glean-job-enterprise", "glean-job-sdr"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Gleanの売り方は『社員が情報を探す時間』だけでなく、生成AIが権限付きの正しい社内contextへ到達できず、PoCから全社成果へ進めない課題が起点。検索、Assistant、Agentを別々に売らず、企業知識を安全に行動へ変える共通基盤として提案する。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "Booking.comは複数appに分散した古い情報と非効率な検索を解消し、動画制作を8週から2週へ短縮。Zillowは30超のdata source・1.38億文書を横断し、従業員1人あたり週1.5時間超を削減、利用率80%超を実現。鴻池運輸もBox、Outlook、ServiceNow横断とAgent開発を全社AI基盤の目的に置いた。共通課題は、情報分散を検索時間だけでなく、意思決定・制作・support・AI活用の遅延へ変えてしまうことにある。" },
+      { title: "製品の成り立ちから見る課題", body: "Gleanは、Google Search等を作った創業者たちが『Web上の情報より、自社の仕事に必要な答えの方が見つけにくい』と感じたことから始まった。最初のEnterprise Searchから、権限、人物・content・activityの関係を理解するEnterprise Graphへ進み、AssistantとAgentを追加した成り立ちは、model単体では社内固有のcontextと実行権限を持てないという課題を示す。" },
+      { title: "外部環境の要求から見る課題", body: "生成AIが個人の試用から企業の業務実行へ移るほど、経営とITはROIだけでなく、入力data、access権、出典、model選択、Agentの行動、監査を説明する必要がある。経産省のAI事業者ガイドライン第1.2版もAI governanceの継続的な構築を求める。外部要求が強まる中、部門ごとに汎用AIを足すだけでは統制と再利用が分断し、全社scaleの投資判断が止まる。" },
+    ],
+    narrative: [
+      { label: "背景", body: "SaaSと生成AIが増え、社員の文書・会話・ticket・顧客情報は複数systemへ分散。各部門が個別にAIを試し、経営は生産性向上を求めている。" },
+      { label: "課題", body: "人もAIも最新版・権限・業務contextを揃えられず、回答確認とsystem横断に時間を失う。PoCが増えても利用率、security、ROI、Agent governanceを共通化できず、全社展開へ進まない。" },
+      { label: "解決策", body: "100超のconnectorで既存systemを権限付きで接続し、Enterprise Graphを共通contextにSearch、Assistant、Agentを展開。最初のuse caseで検索時間・ticket処理・cycle timeを測り、利用率とAgent成果を見ながら部門横断へ広げる。" },
+      { label: "選定の理由", body: "Microsoft CopilotやGoogle Geminiは各suite内、Notionはworkspace内の統合に強い。Gleanは複数vendorを横断するpermission-aware search、model flexibility、既存systemを置換しない100超connector、検索からAgentまで同じcontextを使う点が選定条件になる。" },
+    ],
+    openingHook: "生成AIのlicense数ではなく、社員とAgentが『権限を守った最新版の答え』へ到達するまでの時間を、いま測れていますか。",
+    valueHypothesis: "最初の8〜12週間で一つの部門と3〜5 data sourceを接続し、検索時間、問い合わせ解決時間、weekly active use、回答の出典確認率をbaseline比較する。Booking.com、Zillow、鴻池運輸の成果を参考に、効果が出たworkflowからAgent化し、削減時間だけでなくcycle timeと利用率で全社展開を判断する。",
+    commonObjection: { objection: "Microsoft CopilotやGoogle Geminiを既に契約しており、Enterprise AIを増やしたくない。", reframe: "modelやchat UIの重複ではなく、複数suiteにまたがる権限付きcontextとAgent governanceが既存投資で共通化できているかを比較する。全置換ではなく、検索失敗が多い部門で同じ質問群・同じsecurity条件・同じKPIのPoCを行う。" },
+  },
+  facts: [
+    { label: "グローバルARR", value: "$200M", detail: "公式発表でARR 1億ドルから9カ月で倍増。日本単体ではない。", sourceIds: ["glean-arr-200"] },
+    { label: "Series F評価額", value: "$7.2B", detail: "2025年6月に1.5億ドルを調達した時点の評価。", sourceIds: ["glean-series-f"] },
+    { label: "従業員規模", value: "1,000人超", detail: "2026年の会社公式発表。日本team人数は非公開。", sourceIds: ["glean-arr-200"] },
+    { label: "日本参入", value: "2023年", detail: "アシストが国内初resellerとして販売開始。", sourceIds: ["glean-japan-entry"] },
+    { label: "国内導入規模", value: "1,200 license", detail: "鴻池運輸の第1phase。Glean全体の日本顧客数ではない。", sourceIds: ["glean-konoike"] },
+    { label: "日本の公開営業求人", value: "3件", detail: "Commercial AE、Enterprise AE、SDRを2026年8月11日に公式ATSで確認。", sourceIds: ["glean-job-commercial", "glean-job-enterprise", "glean-job-sdr"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "企業AIの競争軸はmodelからcontext・governance・adoptionへ移る", conclusion: "Gleanは検索を入口に、権限付きcontext、Assistant、Agentを全社基盤として売ることで、個別AI toolの乱立を統合する余地があります。", confidence: "高", evidence: ["ARR 2億ドルへ9カ月で倍増", "100超connectorと複数LLM対応", "顧客が検索時間・利用率・Agent数を定量化"], counterSignals: ["Microsoft・Google等のsuite bundleが競争を強める", "日本の有料顧客数と更新率は非公開"], interviewQuestions: ["日本で検索、Assistant、Agentのどれが初回契約の主入口か", "既存suiteとの競合時に勝敗を分ける評価項目は何か"], sourceIds: ["glean-arr-200", "glean-platform", "glean-zillow"] },
+    { topic: "SALES MOTION", title: "category educationとstructured PoCを担うvalue sellerが必要", conclusion: "AE求人がROI reportと成功基準付きPoCを明記し、SDRもoutbound中心。既製需要の刈り取りより、分散情報を経営KPIへ翻訳し自らterritoryを作る比重が高そうです。", confidence: "高", evidence: ["Commercial AEがnet-newとterritory構築を担当", "Enterprise AEがC-levelと複雑商談を担当", "SDRがAPAC outbound pipelineを担当"], counterSignals: ["強いglobal brandとpartner経由のinboundも想定される", "役割別pipeline比率は非公開"], interviewQuestions: ["self-source、SDR、partner、marketing由来pipelineの比率は", "PoC開始・成功・有償化の標準conversion rateは"], sourceIds: ["glean-job-commercial", "glean-job-enterprise", "glean-job-sdr"] },
+    { topic: "QUOTA ATTAINABILITY", title: "ARR成長よりsegment別territoryとimplementation capacityを検証する", conclusion: "日本で3職種を同時採用する成長局面だが、quota、平均ACV、達成率、rampは非公開。CommercialとEnterpriseのaccount設計、SE・CS・partnerの容量で達成難度が大きく変わります。", confidence: "探索中", evidence: ["日本責任者就任と3営業職採用", "国内1,200 license事例", "日本を重点成長市場と表明"], counterSignals: ["日本のARR・顧客数・quota達成者比率は未開示", "新任体制ではterritory再設計の可能性"], interviewQuestions: ["fully-ramped AEの達成者比率と中央値は", "named account数、white space、平均ACV、平均sales cycleは"], sourceIds: ["glean-japan-leader", "glean-konoike", "glean-job-commercial", "glean-job-enterprise"] },
+    { topic: "COMPENSATION", title: "日本の報酬は非公開。equityとquota economicsを同時に見る", conclusion: "公式求人はvariable compensationとequityの可能性を示すが、金額・Pay Mix・acceleratorは非公開。高い評価額を報酬価値と同一視せず、quotaと実支給実績を確認すべきです。", confidence: "探索中", evidence: ["日本求人に給与rangeなし", "役割によりvariable compensation・equity対象の可能性", "会社は非公開でSeries F評価額72億ドル"], counterSignals: ["equityの付与有無と条件は個別offer次第", "日本の現金報酬benchmarkは公式確認できない"], interviewQuestions: ["base/variable、equity、ramp保証、accelerator、clawbackは", "同segmentの実支給中央値とquota credit ruleは"], sourceIds: ["glean-job-commercial", "glean-job-enterprise", "glean-series-f"] },
+    { topic: "CULTURE / CAREER", title: "AI productを使いながら日本GTMを作るbuilder経験になりうる", conclusion: "求人はAI fluencyを選考で確認し、account・ROI・PoCをdata-drivenに運ぶことを要求。日本GTMの型を作る経験は希少だが、曖昧さと高速変更を受け入れる必要があります。", confidence: "中", evidence: ["全候補者にAI-focused exercise/discussion", "新Country Managerが日本組織構築を統括", "Sales・SE・BDR・PM・Engineeringのcross-functional motion"], counterSignals: ["日本の昇進・離職・在籍年数は非公開", "組織拡大期は役割境界が変わりやすい"], interviewQuestions: ["入社90日のenablementとAI exerciseの評価基準は", "日本からAPAC/managementへ進んだ実例と期待条件は"], sourceIds: ["glean-job-commercial", "glean-job-enterprise", "glean-japan-leader"] },
+  ],
+  cultureNotes: {
+    organizationReadTitle: "AI fluencyを前提に、dataでterritoryとPoCを作る組織。",
+    hypothesis: { title: "完成したplaybookより、仮説検証の速度を重視。", body: "日本のAE求人はgreenfield territory、ROI report、metric-based bookings、tight PoCを反復し、選考にもAI活用のexerciseを含む。曖昧な市場でaccount researchと成功基準を自ら設計し、学習を営業processへ戻せる人が合いそうです。" },
+    careerValue: { title: "Enterprise AIのcategory creationと全社展開を経験できる。", body: "CIO/ITだけでなく各部門へuse caseを広げ、security・data・change management・ROIを一つの商談で扱う経験を積める可能性がある。一方、昇進実績と日本teamの安定性は未確認。", confidence: "中" },
+  },
+  customerProof: [
+    { company: "鴻池運輸", products: "Glean Work AI Platform", outcome: "第1phaseで1,200 licenseを導入。先行利用では会議資料の検索・作成工数が体感約9割減との声を公開し、75本のAgent開発を目標化。", implication: "日本大企業で、検索だけでなくAI人材育成とAgent創出まで全社Business Caseにできる証拠。", sourceId: "glean-konoike" },
+    { company: "Booking.com", products: "Glean Search / AI / Agents", outcome: "14,000人へ展開。動画制作を8週から2週へ短縮し、月2本から5本へ増加。IT ticketの情報探索も最大10分からほぼ即時へ。", implication: "全社導入でも、部門別cycle timeを明確な価値指標にできる。", sourceId: "glean-booking" },
+    { company: "Zillow", products: "Glean Search / Agents / MCP", outcome: "7,000人規模で80%超が利用し、1人週1.5時間超を削減。3,400超のAgentを作成。", implication: "導入後のadoptionとAgent expansionをrenewal・拡張の根拠にできる。", sourceId: "glean-zillow" },
+  ],
+  externalSignals: [
+    { label: "グローバル成長", value: "ARR $200M", detail: "ARR 1億ドルから9カ月で倍増し、従業員1,000人超、顧客は27カ国以上。", caveat: "会社発表のグローバル値で、日本の売上・継続率・営業生産性ではない。", sourceId: "glean-arr-200" },
+    { label: "日本GTM拡張", value: "Country Manager任命", detail: "2026年に日本責任者を任命し、市場進出戦略・Enterprise Sales・日本組織構築を一体で統括。", caveat: "体制強化は成長意欲のsignalであり、受注やquota達成を保証しない。", sourceId: "glean-japan-leader" },
+  ],
+  roleLens: {
+    salesMotion: "Commercial/Enterpriseともnet-new logoとgreenfield territory構築が中心。account research、executive sponsor、ROI report、success criteria付きPoC、cross-functional closeを一貫して担い、導入後は部門・connector・Agentへ広げるland-and-expandが想定される。",
+    compensation: "日本の基本給、OTE、Pay Mix、accelerator、equity条件は公式求人で確認できない。variable compensation・equity対象の可能性はあるが、金額や付与を推測せずofferで確認する。",
+    quota: "年間quota、平均ACV、達成率、ramp期間は非公開。CommercialとEnterpriseでaccount規模・cycleが異なるため、segment別のfully-ramped達成率、white space、PoC conversionを確認したい。",
+    collaboration: "AEはSE、BDR、PM、Executive、Engineerと連携。日本ではreseller/partner網も先行しているため、直販商談だけでなくpartnerとの案件登録、technical validation、導入・定着責任を束ねる力が必要。",
+  },
+  leadership: { name: "小澤 正治", role: "日本カントリーマネージャー", read: "2026年6月就任。公式発表では日本の市場進出戦略、Enterprise Sales、日本組織構築を統括。Looker、Treasure Data、GitLab等で日本GTMを率いた経験を持ち、安全で実用的なEnterprise AIを定量成果へつなぐ方針を掲げる。", sourceId: "glean-japan-leader" },
+  companyStats: {
+    globalHeadcount: { value: "1,000人超", detail: "2026年の会社公式発表。日本team人数は含まれるが内訳は未開示。", sourceId: "glean-arr-200" },
+    japanHeadcount: { value: "非公開", detail: "公式発表で国内team拡充は確認できるが人数は未開示。" },
+    japanOffice: { value: "日本remote", detail: "公開中の3営業職はいずれも日本在住remote。法人・固定officeの住所は確認できていない。", sourceId: "glean-job-commercial" },
+    japanSince: { value: "2023年", detail: "国内初resellerによる販売開始。直販組織の開始時期とは限らない。", sourceId: "glean-japan-entry" },
+  },
+  salesAppeal: { intro: "強いAI市場の追い風だけでなく、営業として獲得できる具体的な経験を公開情報から整理しました。", points: [
+    { title: "AIをdemoではなくROIと全社adoptionで売れる", detail: "求人はROI reportとstructured PoCを明記し、顧客事例は削減時間・利用率・cycle timeを公開。AIの新奇性からBusiness Caseへ翻訳する実績を作りやすい。", sourceIds: ["glean-job-commercial", "glean-zillow", "glean-booking"] },
+    { title: "日本GTMのsegment設計に関われる", detail: "新Country Managerの下でCommercial、Enterprise、SDRを同時採用。既存組織の運用だけでなく、account coverage、outbound、partner連携の型を作る余地がある。", sourceIds: ["glean-japan-leader", "glean-job-commercial", "glean-job-enterprise", "glean-job-sdr"] },
+    { title: "検索・data・security・Agentを横断する提案経験", detail: "複数systemの権限とcontextを扱い、検索からAgent実行まで広げるため、IT、Security、部門責任者、経営の異なる評価軸を一つの商談で扱える。", sourceIds: ["glean-platform", "glean-agents", "glean-konoike"] },
+  ] },
+  interviewPrep: { intro: "成長率の強さと、日本の個別territoryの達成可能性を分けて確認したい論点です。", questions: [
+    { question: "Commercial/Enterpriseのaccount定義、named account数、white space、平均ACVは。", why: "職種名だけでは実際の市場余地と商談複雑度を判断できない。", sourceIds: ["glean-job-commercial", "glean-job-enterprise"] },
+    { question: "fully-ramped AEの直近4四半期のquota達成者比率・中央値・平均sales cycleは。", why: "ARR倍増を日本の個人quota再現性へ誤変換しないため。", sourceIds: ["glean-arr-200", "glean-job-enterprise"] },
+    { question: "self-source、SDR、partner、marketing由来pipelineの比率とcredit ruleは。", why: "outboundとpartner-ledの両方があり、成果配分が実支給を左右する。", sourceIds: ["glean-job-sdr", "glean-japan-entry", "glean-job-commercial"] },
+    { question: "PoCの標準成功基準、有償化率、SE/CS/partnerの同時案件capacityは。", why: "security reviewとchange managementを越えて本番scaleできる支援体制を確認する。", sourceIds: ["glean-job-commercial", "glean-konoike", "glean-booking"] },
+  ] },
+  solutions: [
+    { name: "Glean Search", valueProp: "SaaS、文書、会話、ticketを権限付きで横断し、利用者の役割とcontextに合う回答・出典を返すEnterprise Search。", url: "https://www.glean.com/jp/enterprise-ai", competitors: "Microsoft Search/Copilot、Google Cloud Search/Gemini、Elastic、Coveo等。", differentiation: "既存sourceを置換せず100超connectorで接続し、Enterprise Graphとsource側permissionを反映する点。", retention: "製品別・日本別のNRRは非公開。" },
+    { name: "Glean Assistant", valueProp: "社内contextを使って回答、分析、content作成、業務実行を支援する全社員向けAI assistant。", url: "https://www.glean.com/jp", competitors: "Microsoft 365 Copilot、Google Gemini Enterprise、ChatGPT Enterprise、Notion AI。", differentiation: "複数suiteを横断するcontextとmodel flexibilityを一つの利用面へ載せる点。", retention: "製品別・日本別のNRRは非公開。" },
+    { name: "Glean Agents", valueProp: "自然言語で部門workflowのAgentを作り、企業knowledge・world knowledge・actionを接続して実行する。", url: "https://www.glean.com/jp/blog/glean-agents-launch-blog", competitors: "Microsoft Copilot Studio、Google Agentspace、Salesforce Agentforce、各種agent builder。", differentiation: "検索で整えた権限付きEnterprise ContextをそのままAgentへ使い、全社で発見・管理・統制する点。", retention: "Agent actionsは全社成長指標を公開するが、日本・製品別継続率は非公開。" },
+    { name: "Glean Platform / APIs", valueProp: "Search、Graph、connector、governance、APIを使い、自社appや既存workflowへEnterprise AIを組み込む。", url: "https://www.glean.com/jp/platform", competitors: "自社RAG構築、data platform、cloud AI search、iPaaS連携。", differentiation: "connector・permission・retrieval・Agentをturnkeyで提供し、modelや既存SaaSを選べる点。", retention: "製品別・日本別のNRRは非公開。" },
+  ],
+  customerStoriesUrl: "https://www.glean.com/jp/resources/customer-stories",
+  fitTags: ["Enterprise AIを売りたい", "greenfield territoryを作りたい", "ROI型PoCが得意", "CIO・IT・Securityへ提案したい", "partner co-sellを経験したい", "複雑なtechnical SaaSを学べる", "AIを日常業務で使える", "曖昧なscale-up局面を楽しめる"],
+  comparisonMap: [
+    { arena: "Enterprise AI Assistant", companies: ["Glean", "Microsoft Copilot", "Google Gemini"], why: "既存suite内AIか、cross-platform context layerかの比較" },
+    { arena: "AI Workspace / Knowledge", companies: ["Glean", "Notion", "Atlassian"], why: "検索・knowledge・workflow・Agentの中心をどこに置くかの比較" },
+    { arena: "Enterprise Search", companies: ["Glean", "Elastic", "Coveo"], why: "permission-aware search、導入速度、AI実行までの比較" },
+  ],
+  sources: gleanSources,
+};
+
+const speakSources: ResearchSource[] = [
+  { id: "speak-series-c", label: "Speak Series C発表", url: "https://www.speak.com/blog/series-c", kind: "企業公式", scope: "資金調達・評価額・法人事業の成長", checkedAt: "2026-08-11" },
+  { id: "speak-origin", label: "Speakの言語学習再設計", url: "https://www.speak.com/blog/how-speak-reinvents-language-learning", kind: "企業公式", scope: "学習設計・製品思想", checkedAt: "2026-08-11" },
+  { id: "speak-asr", label: "Speak音声認識基盤の開発", url: "https://www.speak.com/blog/asr-levelup", kind: "企業公式", scope: "非native音声認識・技術差別化", checkedAt: "2026-08-11" },
+  { id: "speak-live-roleplay", label: "Live Roleplays発表", url: "https://www.speak.com/blog/live-roleplays", kind: "企業公式", scope: "会話練習の課題・Realtime AI", checkedAt: "2026-08-11" },
+  { id: "speak-japan-b2b", label: "Speak for Business日本本格提供", url: "https://prtimes.jp/main/html/rd/p/000000016.000116340.html", kind: "企業公式", scope: "日本法人・国内導入・製品・日本責任者", checkedAt: "2026-08-11" },
+  { id: "speak-b2b", label: "Speak for Business 日本公式", url: "https://www.speak.com/jp/b2b", kind: "企業公式", scope: "導入企業数・管理機能・法人価値", checkedAt: "2026-08-11" },
+  { id: "speak-japan-product", label: "Speak日本公式", url: "https://www.speak.com/jp", kind: "企業公式", scope: "日本製品・法人導入規模", checkedAt: "2026-08-11" },
+  { id: "speak-job-ae", label: "Account Executive - Japan", url: "https://jobs.ashbyhq.com/speak/ef2e18e0-81be-4d1f-a460-ff90049d969c", kind: "企業公式", scope: "Japan AEの職務・要件", checkedAt: "2026-08-11" },
+  { id: "speak-job-apac-head", label: "Head of APAC Sales", url: "https://jobs.ashbyhq.com/speak/29647892-bc3f-40fb-bd1b-8f70017073fd", kind: "企業公式", scope: "APAC営業組織・GTM・要件", checkedAt: "2026-08-11" },
+  { id: "speak-job-csm", label: "Customer Success Manager - Japan", url: "https://jobs.ashbyhq.com/speak/b7cba6a0-9ba0-4f7d-be62-6331ef5038a6", kind: "企業公式", scope: "Japan CSM・更新拡張・導入支援", checkedAt: "2026-08-11" },
+  { id: "speak-jetro-workforce", label: "JETRO 2025年度日本企業の海外事業展開調査", url: "https://www.jetro.go.jp/ext_images/_News/releases/2026/fb2468413e5d19f0/survey_v3.pdf", kind: "外部集計", scope: "海外営業人材・多言語人材の外部需要", checkedAt: "2026-08-11" },
+  { id: "speak-ef-epi", label: "EF English Proficiency Index 2025 日本", url: "https://www.ef.com/wwen/epi/regions/asia/japan/", kind: "外部集計", scope: "日本の英語・speaking skill指標", checkedAt: "2026-08-11" },
+];
+
+const speakIntelligence: CompanyPublicIntelligence = {
+  researchedAt: "2026-08-11",
+  marketStatus: {
+    isPublic: false,
+    growthSummary: "Speakは非公開企業。2016年創業、2019年に韓国で最初の市場を立ち上げ、2023年に日本語版を正式提供。2024年12月のSeries Cで7,800万ドルを調達し評価額10億ドル、累計調達は1.62億ドルとなった。法人事業は2024年時点の200社超・employee adoption 85%から、日本公式では500社超へ拡大。現在はJapan AE、Japan CSM、Head of APAC Salesを同時採用し、consumer productの成長をB2Bのrepeatable revenueへ変える局面。",
+    ipoOutlookSummary: "IPO計画・時期は公式には確認できない。10億ドル評価は2024年Series C時点で、将来の株式価値や流動性を保証しない。equityが提示される場合は、株数、行使価格、希薄化、vesting、売却機会を確認したい。",
+    genbaVerdict: { headline: "日本のconsumer PMFを、Enterprise L&Dの継続売上へ変える0→1後半。", body: "日本では2023年のconsumer launch、2024年の法人先行導入、2025年の本格提供を経て500社超を掲げる。今はJapan AE・CSMに加えAPAC Sales責任者を採用し、獲得・定着・地域playbookを同時に作っている。ただし日本B2B ARR、平均契約額、renewal、quota達成率は非公開。アプリの知名度とEnterprise salesの再現性を分けて見る必要がある。" },
+    milestones: [
+      { year: "2016", label: "Speak創業", detail: "Connor Zwick氏とAndrew Hsu氏が、人の会話partnerへ依存せず発話量を増やすAI tutorを構想。", sourceId: "speak-series-c" },
+      { year: "2019", label: "韓国で最初の市場を展開", detail: "英語学習appとして韓国でlaunchし、その後日本・台湾等へ拡張。", sourceId: "speak-job-ae" },
+      { year: "2023", label: "日本語版を正式提供", detail: "日本で英語speaking特化appを正式launchし、東京拠点を運営。", sourceId: "speak-japan-b2b" },
+      { year: "2024", label: "Series CでUnicornへ", detail: "7,800万ドルを調達し評価額10億ドル、累計調達1.62億ドル。法人事業は200社超・adoption 85%を公開。", sourceId: "speak-series-c" },
+      { year: "2025", label: "日本B2Bを本格提供", detail: "サッポロビール・LIXILの先行導入を経て、2025年2月にSpeak for Businessを日本で本格提供。", sourceId: "speak-japan-b2b" },
+    ],
+    growthDrivers: [
+      { title: "consumerの利用体験を法人導入の入口にできる", body: "日本のindividual利用とbrand認知が社員側の導入障壁を下げ、HR/L&Dは既知のmobile体験を福利厚生・人材育成・global readinessへ広げられる。", sourceId: "speak-japan-product" },
+      { title: "AIで1対1の発話練習をscale", body: "人の講師では時間・供給・心理負担に制約がある発話練習を、非native音声向けASR、Realtime conversation、個別scenarioで常時提供。seat当たりの練習量を増やせる。", sourceId: "speak-asr" },
+      { title: "管理portalとCSでrenewalへ接続", body: "法人版はlearner追加、content customization、engagement測定を管理portalで提供し、Japan CSMがonboarding、QBR、renewal、expansionを担う。福利厚生配布で終わらず利用率を運用できる。", sourceId: "speak-job-csm" },
+    ],
+    japanGrowth: {
+      headline: "consumer launchから2年でB2B本格提供、500社超と獲得・定着の採用へ。",
+      narrative: "2023年に日本語正式版を提供し、2024年からサッポロビール、LIXIL等で法人版を先行導入。2025年2月に本格提供を開始し、現在の日本公式ページは500社超を掲げる。Japan AEは5,000人超企業へのHR/L&D sales、Japan CSMはonboarding・QBR・renewal/expansion、Head of APAC Salesは日本を含む地域playbookとteam運営を担当する。日本B2BのARR・有料seat数・更新率は非公開。",
+      qualitativeSignals: [
+        { label: "法人導入500社超", detail: "日本公式B2Bページの現在値。日本企業だけの件数か、対象時点の詳細は非公開。", sourceId: "speak-b2b" },
+        { label: "国内Enterprise reference", detail: "サッポロビールとLIXILが2024年から先行導入。", sourceId: "speak-japan-b2b" },
+        { label: "Japan AEを採用", detail: "日本のnew ARR、full-cycle sales、land-and-expandを担う求人を公式ATSで確認。", sourceId: "speak-job-ae" },
+      ],
+      sourceIds: ["speak-japan-b2b", "speak-b2b", "speak-job-ae", "speak-job-csm", "speak-job-apac-head"],
+    },
+    riskHypotheses: [
+      { title: "高いapp engagementを、会社が更新するBusiness Outcomeへ変換できるか", body: "英語学習は利用者満足が高くても、HR予算の更新にはactivation、継続利用、skill improvement、業務での活用を説明する必要がある。self-reportのconfidenceだけでは大型契約のROIとして弱い場合がある。", confidence: "中", evidence: ["法人版が管理portalとengagement測定を提供", "Japan CSMがQBR・renewal・expansionを担当", "日本の顧客別定量成果は限定的"], counterSignal: "2024年Series C時点で法人顧客200社超・adoption 85%、現在は500社超を掲げる。", sourceIds: ["speak-series-c", "speak-b2b", "speak-job-csm"] },
+      { title: "consumerとEnterpriseの優先順位が変化しやすい", body: "同じproduct・brandを使えるのは強みだが、consumer acquisition、言語追加、AI research、法人管理機能ではroadmap要求が異なる。B2Bが成長エンジン化する過程ではsales promiseとproduct deliveryの整合が重要。", confidence: "中", evidence: ["求人がB2Bを最大級のgrowth engineへ育てる方針", "Head of APAC Salesがmarket feedbackでroadmapへ影響", "Japan CSMがProduct/Engineeringへ課題を翻訳"], counterSignal: "専任Engineering、Product、Content、CS teamをB2B向けに構築済みと求人が説明。", sourceIds: ["speak-job-ae", "speak-job-apac-head", "speak-job-csm"] },
+    ],
+    sourceIds: ["speak-series-c", "speak-japan-b2b", "speak-b2b", "speak-job-ae", "speak-job-csm", "speak-job-apac-head"],
+  },
+  sellingPlaybook: {
+    frameIntro: "Speak for Businessの売り方は『英語研修を提供しているのに、社員が実際の会議・交渉で話せない』というexecution gapが起点。学習contentの量ではなく、個別の業務scenarioで発話量を増やし、HRがengagementと成長を測れる仕組みとして提案する。",
+    issueLenses: [
+      { title: "既存顧客の導入目的から見る課題", body: "サッポロビールはglobal businessで必要なspeaking力の向上・維持を目的に、時間・場所・回数を問わず、本人が業務場面をcustomizeできる点を評価した。LIXILも法人版を先行導入。法人顧客群では2024年時点でemployee adoption 85%、現在は500社超を掲げる。導入目的は英語教材の配布ではなく、会議・presentation・顧客対応で発話できる状態を、社員ごとに反復して作ることにある。" },
+      { title: "製品の成り立ちから見る課題", body: "Speakは『語彙や文法を学んでも、実際に声を出す機会が足りず大半が流暢になれない』『最も有効な1対1tutorは高価でscaleしない』という問題から生まれた。非native・accented speechに最適化したASR、Learn→Practice→Apply、Realtime roleplayを積み上げた成り立ちは、knowledge不足より発話量・即時feedback・心理的安全性がbottleneckだという見方を示す。" },
+      { title: "外部環境の要求から見る課題", body: "JETROの2025年度調査では海外展開人材で海外営業・marketing不足が目立ち、英語も必要言語として挙がる。一方、EF EPI 2025で日本のspeaking scoreは393と低位。海外顧客・外国人同僚とのlive communicationが増えるほど、企業は『研修を置いたか』ではなく、必要人材が業務で話せるか、利用と成長を測れているかを問われる。人の講師だけで全社員へ十分な会話量を配るのは費用・予約・供給面で難しく、常時使える個別練習が投資テーマになる。" },
+    ],
+    narrative: [
+      { label: "背景", body: "日本企業の海外展開、越境team、外国人採用が進み、会議・交渉・presentationで英語を話す役割が一部の駐在員から幅広い社員へ広がっている。" },
+      { label: "課題", body: "従来研修は時間固定、講師供給、受講の心理負担、level差、実務scenario不足で発話量が限られる。seatを配っても利用と業務成果を追えなければ、HRは更新理由を説明できない。" },
+      { label: "解決策", body: "AI tutorでいつでも発話し、非native音声向け認識と即時feedback、業務別roleplay、custom contentを提供。管理portalとCSでactivation、学習量、継続利用を見ながら、対象部署の実務scenarioへ合わせる。" },
+      { label: "選定の理由", body: "真人英会話は人間の臨場感、Duolingo等は広いconsumer学習、ELSA等は発音、Udemy等はcontent catalogに強い。Speakはspeaking-firstの反復量、Realtime AI conversation、非native音声への技術投資、法人portal・CS、consumerで磨いた継続設計を同時に持つ点が選定条件になる。" },
+    ],
+    openingHook: "英語研修の受講率ではなく、次の海外会議で社員が自分の意見を話した回数と、話せなかった場面を把握できていますか。",
+    valueHypothesis: "global projectや海外顧客対応がある一部門で8〜12週間実施し、activation、週次発話回数、継続率、pre/post speaking assessment、会議での発言自己効力感、manager評価を測る。利用量だけでなく対象業務の行動変化を確認してから、職種別scenarioと管理運用を全社へ広げる。",
+    commonObjection: { objection: "オンライン英会話やe-learningの補助制度が既にあり、新しい英語研修は不要。", reframe: "制度の有無ではなく、社員1人あたりの実発話時間、予約離脱、level別利用率、業務scenarioの再現、管理者が見える成果を比較する。既存制度を全置換せず、発話が必要な一部門で同じ期間・同じoutcomeを測る。" },
+  },
+  facts: [
+    { label: "Series C", value: "$78M", detail: "2024年12月に調達。累計調達は1.62億ドル。", sourceIds: ["speak-series-c"] },
+    { label: "評価額", value: "$1B", detail: "2024年Series C時点の非公開株式評価。", sourceIds: ["speak-series-c"] },
+    { label: "法人導入", value: "500社超", detail: "日本公式B2Bページの現在値。日本企業のみかは明記されていない。", sourceIds: ["speak-b2b"] },
+    { label: "日本consumer launch", value: "2023年", detail: "日本語正式版を提供。", sourceIds: ["speak-japan-b2b"] },
+    { label: "日本B2B本格提供", value: "2025年2月", detail: "2024年からサッポロビール・LIXIL等で先行導入。", sourceIds: ["speak-japan-b2b"] },
+    { label: "公開B2B求人", value: "3件", detail: "Japan AE、Japan CSM、東京勤務可能なHead of APAC Salesを確認。", sourceIds: ["speak-job-ae", "speak-job-csm", "speak-job-apac-head"] },
+  ],
+  hypotheses: [
+    { topic: "PRODUCT / MARKET", title: "consumer PMFを法人の高利用率へ移植できる可能性がある", conclusion: "speaking-firstのmobile体験と日本brandを入口に、管理portal・CS・custom scenarioを加えれば、従来研修の低利用を改善する余地があります。", confidence: "高", evidence: ["法人導入500社超", "Series C時点の法人adoption 85%", "サッポロビール・LIXILの国内先行導入"], counterSignals: ["日本企業だけの有料seat数・renewalは非公開", "自己学習appの利用は企業cultureとmanager支援に左右される"], interviewQuestions: ["日本B2Bのactivation、WAU、renewal、seat expansionは", "最も利用率が高い企業の導入運用に共通する条件は"], sourceIds: ["speak-b2b", "speak-series-c", "speak-japan-b2b"] },
+    { topic: "SALES MOTION", title: "HR/L&Dへのland後、職種・地域・use caseでexpandするmotion", conclusion: "Japan AEは5,000人超企業のcomplex salesとnew/upsellを担当し、CSMはQBR・renewal・expansionを担う。福利厚生一括導入より、global役割の明確な部門から成果を作る売り方が再現性を持ちそうです。", confidence: "高", evidence: ["AEが3〜12カ月sales cycleとland-and-expandを要件化", "CSMがdata分析とQBRを担当", "APAC責任者がnew logoと既存拡張を統括"], counterSignals: ["日本のinbound/self-source比率は非公開", "HR予算の季節性・年度調達がcycleを左右する可能性"], interviewQuestions: ["初回導入の平均seat数と拡張triggerは", "AEとCSMのrenewal/upsell ownershipとcreditは"], sourceIds: ["speak-job-ae", "speak-job-csm", "speak-job-apac-head"] },
+    { topic: "QUOTA ATTAINABILITY", title: "500社のheadlineより日本Enterprise economicsを確認したい", conclusion: "顧客logoの広がりは強いsignalだが、日本のARR、ACV、quota、達成率、sales cycle中央値は非公開。大企業向けの3〜12カ月cycleとself-source負荷を前提にterritoryを確認すべきです。", confidence: "探索中", evidence: ["Japan AEがnew ARRと自らpipelineを担当", "5,000人超企業への経験を重視", "APAC Sales責任者を新規採用"], counterSignals: ["consumer brandと国内導入事例はdoor openerになる", "専任Product・Content・CS teamを構築済み"], interviewQuestions: ["fully-ramped Japan AEのquota達成者比率、平均ACV、win rateは", "inbound、self-source、partner由来pipelineの比率は"], sourceIds: ["speak-job-ae", "speak-job-apac-head", "speak-japan-b2b"] },
+    { topic: "COMPENSATION", title: "日本のOTE・Pay Mix・equityは未確認", conclusion: "公式求人に日本の報酬rangeはなく、role別のquotaやcommissionも非公開。Unicorn評価を現金報酬やequityの実現価値へ短絡せず、offerと実支給を確認したい。", confidence: "探索中", evidence: ["Japan求人に報酬rangeなし", "Series C評価額10億ドル", "AEはnew ARRとupsellを担当"], counterSignals: ["累計調達1.62億ドルは投資余力のsignal", "equityの付与有無・条件は未確認"], interviewQuestions: ["base/variable、equity、ramp保証、accelerator、capは", "new ARR、upsell、multi-year、seat expansionのcredit ruleは"], sourceIds: ["speak-job-ae", "speak-series-c"] },
+    { topic: "CULTURE / CAREER", title: "B2B 0→1とAPAC scaleの両方を経験できる可能性", conclusion: "Japan AEはfounding B2B team、CSMはprogramをground-upで作り、Headはmulti-country playbookを整備する。役割定義を待つ人より、実務からprocessを文書化できる人に向きます。", confidence: "中", evidence: ["求人がrare 0-to-1 momentと説明", "Headがplaybook・battlecard・scriptを整備", "CSMがprogram構築とProduct feedbackを担当"], counterSignals: ["日本B2Bの昇進・在籍・離職実績は非公開", "consumer/B2B間の優先順位変更リスク"], interviewQuestions: ["日本B2B teamの現在人数と12カ月後のorg designは", "東京からAPAC leadershipへ進む評価指標と実例は"], sourceIds: ["speak-job-ae", "speak-job-csm", "speak-job-apac-head"] },
+  ],
+  cultureNotes: {
+    organizationReadTitle: "小さなB2B teamで、売上とplaybookを同時に作る。",
+    hypothesis: { title: "high-velocityとcraftの両立を求める。", body: "求人はtight-knit team、fast-changing environment、data-driven pipeline、playbook整備を強調する。AEは自ら商談を作り、CSMは運用を作り、APAC Headは地域間で再現させる。役割の外にある課題も拾い、学習をprocessへ変える姿勢が合いそうです。" },
+    careerValue: { title: "AI × L&D × Enterprise Salesのcategoryを作る。", body: "HR/L&D buyerへAI productを売り、利用dataからrenewal・expansionまでつなぐ経験は、EdTech、HR Tech、AI applicationのGTMで説明しやすい。一方、日本組織の昇進実績はこれから検証が必要。", confidence: "中" },
+  },
+  customerProof: [
+    { company: "サッポロビール", products: "Speak for Business", outcome: "時間・場所・回数を問わないAI会話、業務scenarioのcustomize、継続しやすさを評価。実務communicationへの寄与を担当者が説明。", implication: "一般英語ではなく、global businessの具体的な発話場面と習慣化が選定理由になる。", sourceId: "speak-japan-b2b" },
+    { company: "LIXIL", products: "Speak for Business", outcome: "2024年から日本で先行導入。公開資料では利用seat・定量成果は未開示。", implication: "大手日本企業での初期referenceだが、営業では未公開成果を補わず、評価項目を確認する必要がある。", sourceId: "speak-japan-b2b" },
+    { company: "Speak for Business導入企業群", products: "AI tutor / 管理portal / Customer Success", outcome: "2024年Series C時点で法人顧客200社超、employee adoption 85%と公式発表。", implication: "法人需要と利用のsignal。ただし地域・契約規模・renewalの内訳は非公開。", sourceId: "speak-series-c" },
+  ],
+  externalSignals: [
+    { label: "法人traction", value: "500社超", detail: "日本公式B2Bページが掲げる現在の導入企業数。", caveat: "日本企業のみの件数か、有料seat・ARR・renewalの内訳は非公開。", sourceId: "speak-b2b" },
+    { label: "市場課題", value: "日本speaking score 393", detail: "EF EPI 2025で公開された日本のspeaking score。", caveat: "EF受験者に基づく外部集計で、個別企業やSpeak利用者の能力を示さない。", sourceId: "speak-ef-epi" },
+  ],
+  roleLens: {
+    salesMotion: "Japan AEはHR/L&D/Talent buyerと5,000人超企業を想定し、inbound/outboundから3〜12カ月のcomplex cycle、trial、Business Case、new ARR、upsellまで担当。初期部門でlandし、CSMと利用率・成果を作ってseat・region・scenarioをexpandするmotion。",
+    compensation: "日本の基本給、OTE、Pay Mix、equity、acceleratorは公式求人で確認できない。金額を推測せず、new/upsellのcredit、ramp、multi-year、renewal分担と同時に確認する。",
+    quota: "Japan AEのquota、平均ACV、達成率、rampは非公開。self-sourceとcomplex Enterprise salesの双方を求めるため、brand inboundだけでなくoutbound capacityと年度調達cycleが達成難度を左右する。",
+    collaboration: "AEはCSM、SDR、Marketing、Product、Content、Engineeringと連携。CSMはonboarding、training、QBR、data分析、renewal/expansionを担い、APAC Headは地域playbookとforecastを統括する。小規模teamでhand-offとownershipを明確にする必要がある。",
+  },
+  leadership: { name: "Yan Kindyushenko", role: "スピークジャパン合同会社 日本統括", read: "2025年の法人版本格提供発表と2026年の日本向け公式発表で日本統括として確認。日本consumer事業と法人展開を率いる。一方、B2B営業の日常reporting lineやHead of APAC Sales採用後の役割分担は面接で確認したい。", sourceId: "speak-japan-b2b" },
+  companyStats: {
+    globalHeadcount: { value: "非公開", detail: "現行求人はSan Francisco、Seoul、Tokyo、Taipei、Ljubljanaの分散teamを説明するが、最新人数は未開示。", sourceId: "speak-job-ae" },
+    japanHeadcount: { value: "非公開", detail: "東京にB2C/B2B teamがあるが、日本単体人数は確認できていない。" },
+    japanOffice: { value: "東京・渋谷", detail: "Japan AE求人が渋谷officeを拠点とするhybrid勤務を記載。法人登記上の所在地と実勤務officeが異なる可能性は選考で確認したい。", sourceId: "speak-job-ae" },
+    japanSince: { value: "2023年", detail: "日本語正式版をlaunch。法人版は2025年2月に本格提供。", sourceId: "speak-japan-b2b" },
+  },
+  salesAppeal: { intro: "consumer appの知名度だけでなく、B2B営業として得られる具体的な経験を整理しました。", points: [
+    { title: "consumer PMFをEnterprise revenueへ変える0→1", detail: "日本で既に利用されるproductを、HR/L&DのBusiness Case、管理portal、CS運用へ翻訳する。brandのdoor openerと、未完成なB2B playbook作りを同時に経験できる。", sourceIds: ["speak-japan-product", "speak-job-ae", "speak-job-apac-head"] },
+    { title: "学習効果とcommercial outcomeをつなぐ", detail: "AEがtrialとBusiness Caseを作り、CSMがactivation、QBR、renewal、expansionを担う。license販売だけでなく利用dataから継続売上を作る経験になる。", sourceIds: ["speak-job-ae", "speak-job-csm", "speak-b2b"] },
+    { title: "AI音声技術を非technical buyerへ売る", detail: "非native speech向けASR、Realtime conversation、個別学習を、HR/L&Dの人材戦略と現場の会話行動へ翻訳する。AI infrastructure営業とは異なるapplication-layerの価値販売を学べる。", sourceIds: ["speak-asr", "speak-live-roleplay", "speak-japan-b2b"] },
+  ] },
+  interviewPrep: { intro: "appの成長と、日本B2B teamのquota economics・renewalの再現性を分けて確認したいポイントです。", questions: [
+    { question: "日本B2BのARR、平均初回seat数、平均ACV、renewal、seat expansionは。", why: "500社超という導入数だけでは契約規模と継続性を判断できない。", sourceIds: ["speak-b2b", "speak-job-csm"] },
+    { question: "fully-ramped Japan AEのquota、達成者比率、平均sales cycle、win rateは。", why: "consumer brandがEnterprise salesへどこまで転換しているかを見る。", sourceIds: ["speak-job-ae", "speak-series-c"] },
+    { question: "inbound/self-source/SDR/partner由来pipelineと、new/upsellのcredit分担は。", why: "AEに自走pipelineとland-and-expandの双方を求めるため、実際の責任範囲が重要。", sourceIds: ["speak-job-ae", "speak-job-apac-head"] },
+    { question: "trial成功を何で判定し、CSMはactivation・skill・業務成果をどうQBRへ載せるか。", why: "福利厚生利用で終わらず、renewalできるBusiness Outcomeの測定方法を確認する。", sourceIds: ["speak-job-csm", "speak-b2b", "speak-japan-b2b"] },
+  ] },
+  solutions: [
+    { name: "Speak for Business", valueProp: "AI tutor、business English、custom roleplay、管理portal、Customer Successを企業向けに提供し、社員のspeaking実践と運用を支援。", url: "https://www.speak.com/jp/b2b", competitors: "Bizmates、RareJob、EF Corporate Learning、Duolingo for Business、ELSA等。", differentiation: "speaking-firstの反復量、AIによる個別scenario、consumerで磨いた継続設計、管理portalとCSを一体化。", retention: "日本のrenewal/NRRは非公開。2024年時点のemployee adoption 85%は会社公式値。" },
+    { name: "AI Tutor / Tutor Lessons", valueProp: "個人のlevelと目標に合わせて説明・会話・feedbackを生成し、1対1の学習体験を常時提供。", url: "https://help.speak.com/en/articles/11966855-what-are-tutor-lessons", competitors: "ChatGPT音声、Duolingo Max、ELSA、真人tutor。", differentiation: "Learn→Practice→Applyのpedagogyと音声systemを組み合わせ、会話だけでなくlesson progressionを設計する点。", retention: "製品別・地域別の継続率は非公開。" },
+    { name: "Live Roleplays", valueProp: "業務・日常のscenarioをAI相手に低latencyで練習し、tone、発音、prosody等のfeedbackを得る。", url: "https://www.speak.com/blog/live-roleplays", competitors: "真人英会話、汎用voice AI、他のAI英会話app。", differentiation: "Realtime speech-to-speechと学習contextを統合し、非native learnerが繰り返し話せる設計。", retention: "機能別の利用継続率は非公開。" },
+    { name: "Speak Method / Business Content", valueProp: "Learn、Practice、Applyの3段階でphrase patternを実際の会話へ移し、会議・presentation・顧客対応等のbusiness scenarioへ適用。", url: "https://www.speak.com/blog/how-speak-reinvents-language-learning", competitors: "動画e-learning、語学教材、集合研修、online英会話。", differentiation: "content専門家とAI personalizationを組み合わせ、暗記より発話とcontextual feedbackを優先する点。", retention: "course別・法人別の継続率は非公開。" },
+  ],
+  customerStoriesUrl: "https://www.speak.com/jp/b2b",
+  fitTags: ["HR/L&Dへ売りたい", "AI EdTechに関心がある", "Enterprise新規開拓が得意", "land-and-expandを作りたい", "0→1のplaybookを作れる", "利用dataをQBRへ変えたい", "日本語・英語で協業できる", "consumer PMFをB2Bへ広げたい"],
+  comparisonMap: [
+    { arena: "法人英会話", companies: ["Speak", "Bizmates", "RareJob"], why: "AI self-practiceか、真人lesson中心かの比較" },
+    { arena: "AI語学学習", companies: ["Speak", "Duolingo", "ELSA Speak"], why: "発話量、curriculum、発音、法人管理の比較" },
+    { arena: "Global人材育成", companies: ["Speak", "EF Corporate Learning", "Udemy Business"], why: "speaking skill特化か、広い研修portfolioかの比較" },
+  ],
+  sources: speakSources,
+};
+
 const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   salesforce: salesforceIntelligence,
   mongodb: mongodbIntelligence,
@@ -8642,6 +8916,8 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   rubrik: rubrikIntelligence,
   notion: notionIntelligence,
   elevenlabs: elevenLabsIntelligence,
+  glean: gleanIntelligence,
+  speak: speakIntelligence,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
