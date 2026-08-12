@@ -213,6 +213,9 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://www.intercom.com/", locale: "global" },
     globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/intercom/"),
   },
+  cursor: {
+    officialWebsite: { url: "https://cursor.com/ja", locale: "ja" },
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

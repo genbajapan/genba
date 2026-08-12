@@ -834,6 +834,10 @@ const companyRecords: Company[] = [
     slug: "intercom", name: "Intercom", category: "AI Customer Service / Helpdesk", broadCategory: "CRM・顧客体験", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
     description: "SydneyをAPAC拠点にFin AI Agentを展開。日本語品質・channel・国内referenceを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.intercom.com/careers", tags: ["日本未進出", "Customer Service", "AI Agent", "CX", "APAC"], entryStatus: "not-entered",
   },
+  {
+    slug: "cursor", name: "Cursor", category: "AI Coding Agent / Developer Platform", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本語公式サイト / Japan向け初期GTM採用", hiringStatus: "積極採用", salesRoles: 5,
+    description: "Strategic AE、Channel責任者、Field Engineering、FDE、Solutions Architectを同時募集。Money Forwardの国内導入を起点に日本Enterprise GTMを立ち上げる段階。", lastChecked: "2026-08-12", careersUrl: "https://cursor.com/careers", tags: ["日本進出直後", "AI Coding", "Developer Tools", "Enterprise", "Founding Team", "PLG", "Partner"],
+  },
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1062,10 +1066,54 @@ const waveFourJobs: Job[] = [
   }),
 ];
 
+const cursorJobs: Job[] = [
+  makeWaveTwoJob({
+    id: "cursor-strategic-enterprise-account-executive-japan", companySlug: "cursor", title: "Strategic Enterprise Account Executive - Japan", segment: "Strategic Enterprise / New & Expansion", location: "日本", workStyle: "公式求人で確認", language: "公式求人で明記なし", source: { label: "Cursor Careers", url: "https://cursor.com/careers/strategic-enterprise-account-executive-japan" },
+    descriptionSummary: "日本のnamed strategic accountを担当し、新規logo獲得から既存拡張までfull-cycleで所有するEnterprise AE。outbound、inbound、partner起点の案件を作り、engineering leadership、security、legal、procurementを束ねて全社展開へ進める。",
+    genbaTake: "AI coding seatを売る役割ではなく、developerの個人利用をenterprise標準へ変える営業。issueからreview済みproduction codeまでのcycle time、品質、governanceをCTO・VP Engineeringのbusiness caseへ置き換える必要がある。",
+    desiredProfile: "公式求人では10年以上のenterprise B2B sales、日本の大手企業への販売実績、新規logoを自ら作るhunter mindset、複雑なmulti-stakeholder cycle、技術・security・procurementを越えてcloseする力を求める。",
+    fit: "完成した日本組織を引き継ぐより、戦略account、message、reference、partner motionを自ら作りたいEnterprise sellerに向く。", thingsToKnow: "Japanの既存顧客数、territory account数、quota、平均ACV、ramp、SE/CS coverage、partner-sourced比率は非公開。", marketValue: "AI developer platform、PLG-to-enterprise、executive value selling、Japan market buildを一つのroleで経験できる。",
+    priorCompanies: "個人profileの十分な集計は行っていない。公式求人は、日本の大手企業へdeveloper tool、cloud、security、data等の複雑なB2B technologyを新規開拓した経験と隣接する。", nextCompanies: "公開集計は未確認。成果をtime-to-production、enterprise adoption、new ARR、expansion、governanceの指標で残せれば、AI・cloud・developer platformのStrategic AEやJapan leadershipへ説明しやすい。",
+  }),
+  makeWaveTwoJob({
+    id: "cursor-director-channel-partners-tokyo", companySlug: "cursor", title: "Director, Channel & Partners", segment: "Channel / Partnerships / Japan Build", location: "東京", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Cursor Careers", url: "https://cursor.com/careers/director-channel-partners" },
+    descriptionSummary: "partner-firstの日本市場で、最初のlocal partner選定、enablement、joint account planning、co-sell、pipeline、受注までを一人目として構築するChannel責任者。APJ Directorへreportし、partner側のFDE capacityと実装品質も設計する。",
+    genbaTake: "紹介件数を増やすだけではなく、AI codingを大企業へ安全に展開できる販売・技術delivery網を同時に作るrole。direct AEとpartnerのaccount ownership、案件credit、導入責任を曖昧にしないoperating modelが成否を分ける。",
+    desiredProfile: "公式求人では日本のenterprise technology ecosystemでpartner programをゼロから作った経験、GSI・reseller・technology partnerとのco-sell、partner-sourced pipeline、executive relationship、日本語・英語を求める。",
+    fit: "既存programの運用より、少数の戦略partnerを選び、共同提案とdelivery capacityまで設計したいbuilderに向く。", thingsToKnow: "初期partner候補、direct/partnerの役割分担、MDF、案件登録、revenue credit、FDEの所属と品質責任は非公開。", marketValue: "AI developer toolのpartner ecosystemをmarket entryから構築し、pipelineと導入成果の双方で語れる経験になる。",
+    priorCompanies: "公式求人要件から、外資enterprise software、cloud、developer toolsでGSI・reseller・technology allianceを構築した人材と隣接する。個人profileからの傾向断定はしない。", nextCompanies: "公開集計は未確認。partner-sourced ARR、joint win、enabled capacityを残せれば、AI・cloud企業のAlliance Head、Country GTM、GSI事業開発へ展開しやすい。",
+  }),
+  makeWaveTwoJob({
+    id: "cursor-field-engineering-japan", companySlug: "cursor", title: "Field Engineering - Japan", segment: "Pre-Sales / Solutions", location: "日本", workStyle: "公式求人で確認", language: "公式求人で明記なし", source: { label: "Cursor Careers", url: "https://cursor.com/careers/field-engineering-japan" },
+    descriptionSummary: "CTO・engineering leaderとのtechnical discovery、demo、PoC、security・architecture検討を担い、顧客のworkflowで価値を実証するpre-sales role。営業と連携して評価をproduction rolloutへ進める。",
+    genbaTake: "一般的なdemoより、顧客repo、開発規約、review、securityを前提に『AIで速くなった』を再現可能なtechnical proofへ変える仕事。PoC成功条件と全社展開条件を最初から分けて設計する必要がある。",
+    desiredProfile: "公式求人はsoftware engineeringの実務理解、technical discovery・demo・evaluation、executiveとdeveloper双方への説明、曖昧な環境での自律性を重視する。",
+    fit: "codeを書けるだけでなく、engineering workflowを診断し、技術成果をbuying decisionへ翻訳したい人に向く。", thingsToKnow: "日本のPoC件数、AE比率、評価期間、production転換率、security reviewの標準、導入後ownershipは非公開。", marketValue: "AI coding、developer productivity、enterprise architecture、technical value engineeringを横断する経験になる。",
+    priorCompanies: "個人profileの集計は未確認。求人内容からsoftware engineer、solution engineer、developer advocate、cloud/platform consultant等の経験が隣接する。", nextCompanies: "公開集計は未確認。PoC-to-production率とdeveloper/CTO双方を動かした成果は、AI・cloud・developer platformのSE、FDE、Solutions leadershipで評価されやすい。",
+  }),
+  makeWaveTwoJob({
+    id: "cursor-forward-deployed-engineer-japan", companySlug: "cursor", title: "Forward Deployed Engineer - Japan", segment: "Forward Deployed / Customer Engineering", location: "日本 / Australia / Singapore", workStyle: "公式求人で確認", language: "公式求人で明記なし", source: { label: "Cursor Careers", url: "https://cursor.com/careers/forward-deployed-engineer-australia-japan-singapore" },
+    descriptionSummary: "顧客engineering teamへ深く入り、discoveryからproductionまで伴走するcustomer engineering role。migration、refactor、review loop、incident等の実workflowでCursorを使い、導入を測定可能な成果へ変える。",
+    genbaTake: "product adoptionをtraining回数やactive seatで終わらせず、顧客codebase上のdelivery outcomeへ落とす役割。現場の個別解と、複数顧客に再利用できるproduct feedback・playbookの境界設計が重要になる。",
+    desiredProfile: "公式求人では強いsoftware engineering、顧客と並走して曖昧な問題を解く力、production systemへの理解、技術とbusiness outcomeを接続する力を求める。",
+    fit: "標準demoより顧客repoの現実へ入り、実装しながら導入成果を作りたいengineerに向く。", thingsToKnow: "Japan案件へのallocation、出張、同時担当社数、custom workとproduct workの比率、on-call、success metricは非公開。", marketValue: "frontier AI productをlarge engineering organizationへproduction導入した経験を、FDE・Solutions・Productの複数careerへつなげられる。",
+    priorCompanies: "公式求人内容から、software engineer、solutions architect、professional services、developer productivity、platform engineeringの経験が隣接する。個人profileの傾向は断定しない。", nextCompanies: "公開集計は未確認。大規模codebaseでのproduction adoption、migration、measurable outcomeを残せればAI FDE、Solutions Architecture、Product Engineeringへ説明しやすい。",
+  }),
+  makeWaveTwoJob({
+    id: "cursor-solutions-architect-japan", companySlug: "cursor", title: "Solutions Architect - Japan", segment: "Post-Sales / Adoption & Expansion", location: "日本", workStyle: "公式求人で確認", language: "公式求人で明記なし", source: { label: "Cursor Careers", url: "https://cursor.com/careers/solutions-architect-japan" },
+    descriptionSummary: "契約後のenterprise rolloutを設計し、workflow、governance、adoption、productivity、expansionを顧客と作るpost-sales Solutions Architect。engineering leaderと現場developerをつなぎ、stickinessを高める。",
+    genbaTake: "license配布後の利用率ではなく、どのteam・repo・workflowで成果を出し、どの統制で安全に横展開するかを設計するrole。renewalとexpansionの根拠をproduct usageとbusiness outcomeの両方で残す必要がある。",
+    desiredProfile: "公式求人はenterprise software導入、technical stakeholderとの設計、change management、adoption、executive communication、複数部門を横断するprogram推進を重視する。",
+    fit: "受注後に顧客の行動変容まで入り、technical rolloutとcommercial expansionを両立したい人に向く。", thingsToKnow: "担当社数、renewal ownership、usage目標、FDE/CSMとの境界、support escalation、expansion creditは非公開。", marketValue: "AI adoption、developer productivity、enterprise governance、land-and-expandを定量化するcareerになる。",
+    priorCompanies: "個人profileの集計は未確認。求人内容からSolutions Architect、Customer Success、Technical Account Management、developer productivity programの経験が隣接する。", nextCompanies: "公開集計は未確認。adoption、renewal、expansion、workflow transformationを成果化できればAI・cloud platformのSA、CS leadership、Value Engineeringへ広げやすい。",
+  }),
+];
+
 const jobRecords: Job[] = [
   ...waveTwoJobs,
   ...waveThreeJobs,
   ...waveFourJobs,
+  ...cursorJobs,
   {
     id: "sf-data-cloud-ae",
     companySlug: "salesforce",
