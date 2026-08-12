@@ -41,6 +41,11 @@ const salesSnapshots = Array.from(
   (match) => match[1],
 );
 
+const entryAssessmentBlocks = Array.from(
+  source.matchAll(/entryAssessment:\s*\{([\s\S]*?)\n\s*\},\n\s*sourceIds:/g),
+  (match) => match[1],
+);
+
 const companySlugs = new Set(Array.from(
   marketDataSource.matchAll(/\bslug:\s*"([a-z0-9-]+)"/g),
   (match) => match[1],
@@ -53,6 +58,29 @@ const directorySlugs = new Set(Array.from(
 for (const slug of companySlugs) {
   if (!directorySlugs.has(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
 }
+
+const notEnteredCount = Array.from(
+  marketDataSource.matchAll(/\bentryStatus:\s*"not-entered"/g),
+).length;
+
+if (entryAssessmentBlocks.length !== notEnteredCount) {
+  errors.push(`日本未進出企業 ${notEnteredCount}件に対し、entryAssessmentは${entryAssessmentBlocks.length}件です。`);
+}
+
+entryAssessmentBlocks.forEach((block, index) => {
+  const factSignals = block.match(/factSignals:\s*\[([\s\S]*?)\n\s*\],\n\s*hurdles:/)?.[1] ?? "";
+  const hurdles = block.match(/hurdles:\s*\[([\s\S]*?)\n\s*\],\n\s*readinessConditions:/)?.[1] ?? "";
+  const readinessConditions = block.match(/readinessConditions:\s*\[([\s\S]*?)\n\s*\],\n\s*watchSignals:/)?.[1] ?? "";
+  const watchSignals = block.match(/watchSignals:\s*\[([\s\S]*?)\n\s*\],?\s*$/)?.[1] ?? "";
+  const countTitles = (value) => Array.from(value.matchAll(/\btitle:\s*"/g)).length;
+  const watchSignalCount = Array.from(watchSignals.matchAll(/^\s*"[^"]+",?$/gm)).length;
+
+  if (!/\bverdict:\s*"[^"]+"/.test(block)) errors.push(`entryAssessment #${index + 1}: verdictがありません。`);
+  if (countTitles(factSignals) < 4) errors.push(`entryAssessment #${index + 1}: factSignalsは4件以上必要です。`);
+  if (countTitles(hurdles) < 4) errors.push(`entryAssessment #${index + 1}: hurdlesは4件以上必要です。`);
+  if (countTitles(readinessConditions) < 5) errors.push(`entryAssessment #${index + 1}: readinessConditionsは5件以上必要です。`);
+  if (watchSignalCount < 6) errors.push(`entryAssessment #${index + 1}: watchSignalsは6件以上必要です。`);
+});
 
 function extractValues(block, key) {
   return Array.from(
@@ -114,3 +142,4 @@ console.log("企業ページの課題啓蒙フォーマット: OK");
 console.log(`- ${intelligenceCount}社すべてで3つの課題視点と4段階のnarrativeを確認`);
 console.log(`- ${salesSnapshots.length}社すべてで営業視点サマリーの標準構成を確認`);
 console.log(`- ${companySlugs.size}社すべてで公式トップページ導線を確認`);
+console.log(`- 日本未進出企業 ${notEnteredCount}社すべてでGong基準のentryAssessmentを確認`);

@@ -37,6 +37,7 @@ Genbaは「外資戦士と予備軍の作戦会議室。」を掲げる、無料
 - 法務確認状況: `ops/legal-checklist.md`
 - 日次更新: `ops/daily-workflow.md`
 - 拡張運用(企業追加・全社更新・X下書き・SEO/AEO点検): `ops/daily-task-workflow.md`
+- 日本未進出企業の標準: `ops/pre-entry-company-standard.md`
 - 企業ページの課題啓蒙・売り方: `ops/company-selling-playbook-standard.md`
 
 旧資料と新資料が矛盾する場合は、日付が新しいという理由だけで決めず、上記の正本を優先する。それでも矛盾する場合は、公開や収益化を止めてJioへ確認する。
