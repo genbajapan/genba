@@ -9,7 +9,7 @@ import HiringHeatmap from "@/components/HiringHeatmap";
 import { companies, jobs } from "@/lib/market-data";
 
 export const metadata: Metadata = {
-  title: { absolute: "Genba — 外資IT戦士と予備軍の作戦会議所" },
+  title: { absolute: "Genba — 外資IT戦士と予備軍の作戦会議室" },
   description: "転職のたびにOTEを上げてきた現役外資SaaS AEが、日本の外資SaaS採用市場を毎日ウォッチ。情報収集・面接準備に役立つ知見を無料で届けます。",
   alternates: { canonical: "/" },
 };
