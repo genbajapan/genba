@@ -6,6 +6,8 @@ const targets = [
   "lib/company-public-intelligence-expansion.ts",
   "lib/company-public-intelligence-wave-two.ts",
   "lib/company-public-intelligence-pre-entry.ts",
+  "lib/company-public-intelligence-wave-three.ts",
+  "lib/company-public-intelligence-pre-entry-wave-two.ts",
 ].map((target) => path.join(process.cwd(), target));
 const source = targets
   .map((target) => fs.readFileSync(target, "utf8"))
@@ -27,12 +29,12 @@ const intelligenceCount = Array.from(
 ).length;
 
 const issueBlocks = Array.from(
-  source.matchAll(/issueLenses:\s*\[([\s\S]*?)\n\s*\],\n\s*narrative:/g),
+  source.matchAll(/issueLenses:\s*\[([\s\S]*?)\s*\],\s*narrative:/g),
   (match) => match[1],
 );
 
 const narrativeBlocks = Array.from(
-  source.matchAll(/narrative:\s*\[([\s\S]*?)\n\s*\],\s*(?:\n\s*)?openingHook:/g),
+  source.matchAll(/narrative:\s*\[([\s\S]*?)\s*\],\s*openingHook:/g),
   (match) => match[1],
 );
 
@@ -68,12 +70,12 @@ if (entryAssessmentBlocks.length !== notEnteredCount) {
 }
 
 entryAssessmentBlocks.forEach((block, index) => {
-  const factSignals = block.match(/factSignals:\s*\[([\s\S]*?)\n\s*\],\n\s*hurdles:/)?.[1] ?? "";
-  const hurdles = block.match(/hurdles:\s*\[([\s\S]*?)\n\s*\],\n\s*readinessConditions:/)?.[1] ?? "";
-  const readinessConditions = block.match(/readinessConditions:\s*\[([\s\S]*?)\n\s*\],\n\s*watchSignals:/)?.[1] ?? "";
-  const watchSignals = block.match(/watchSignals:\s*\[([\s\S]*?)\n\s*\],?\s*$/)?.[1] ?? "";
+  const factSignals = block.match(/factSignals:\s*\[([\s\S]*?)\s*\],\s*hurdles:/)?.[1] ?? "";
+  const hurdles = block.match(/hurdles:\s*\[([\s\S]*?)\s*\],\s*readinessConditions:/)?.[1] ?? "";
+  const readinessConditions = block.match(/readinessConditions:\s*\[([\s\S]*?)\s*\],\s*watchSignals:/)?.[1] ?? "";
+  const watchSignals = block.match(/watchSignals:\s*\[([\s\S]*?)\s*\],?\s*$/)?.[1] ?? "";
   const countTitles = (value) => Array.from(value.matchAll(/\btitle:\s*"/g)).length;
-  const watchSignalCount = Array.from(watchSignals.matchAll(/^\s*"[^"]+",?$/gm)).length;
+  const watchSignalCount = Array.from(watchSignals.matchAll(/"[^"]+"/g)).length;
 
   if (!/\bverdict:\s*"[^"]+"/.test(block)) errors.push(`entryAssessment #${index + 1}: verdictがありません。`);
   if (countTitles(factSignals) < 4) errors.push(`entryAssessment #${index + 1}: factSignalsは4件以上必要です。`);

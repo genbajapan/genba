@@ -2,7 +2,7 @@ import type { CompanyPublicIntelligence, ResearchSource } from "@/lib/company-pu
 
 const checkedAt = "2026-08-12";
 
-type Profile = {
+export type Profile = {
   slug: string;
   name: string;
   jobUrl: string;
@@ -35,7 +35,7 @@ type Profile = {
   comparisons: Array<{ arena: string; companies: string[]; why: string }>;
 };
 
-function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
+export function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
   const sourceId = (suffix: string) => `${profile.slug}-${suffix}`;
   const roleWithoutTerminalPeriod = profile.role.replace(/。$/, "");
   const sources: ResearchSource[] = [

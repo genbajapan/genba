@@ -164,6 +164,32 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://www.gong.io/", locale: "global" },
     globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/gong-io/"),
   },
+  nexthink: { officialWebsite: { url: "https://nexthink.com/ja", locale: "ja" } },
+  mendix: {
+    officialWebsite: { url: "https://www.mendix.com/ja/", locale: "ja" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/mendix/"),
+  },
+  cognition: {
+    officialWebsite: { url: "https://cognition.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/cognition-ai/"),
+  },
+  harvey: {
+    officialWebsite: { url: "https://www.harvey.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/harvey-ai/"),
+  },
+  clay: { officialWebsite: { url: "https://www.clay.com/", locale: "global" } },
+  vanta: {
+    officialWebsite: { url: "https://www.vanta.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/vanta-security/"),
+  },
+  cribl: {
+    officialWebsite: { url: "https://cribl.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/cribl/"),
+  },
+  writer: {
+    officialWebsite: { url: "https://writer.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/getwriter/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

@@ -770,6 +770,38 @@ const companyRecords: Company[] = [
     description: "日本法人・日本向け求人は未確認。ARR 5億ドル超、5,000社超の顧客基盤とSingapore拠点から、日本進出の可能性を継続観測。",
     lastChecked: "2026-08-12", careersUrl: "https://www.gong.io/careers", tags: ["日本未進出", "Revenue AI", "Enterprise", "APAC"], entryStatus: "not-entered",
   },
+  {
+    slug: "nexthink", name: "Nexthink", category: "Digital Employee Experience / IT Operations", broadCategory: "業務自動化・コラボレーション", hq: "Lausanne, Switzerland / Boston, US", japanPresence: "Nexthink合同会社 / 東京都港区", hiringStatus: "採用中", salesRoles: 1,
+    description: "2025年に日本法人・日本語platformを開始。Japan founding teamのEnterprise Account Executiveを募集。", lastChecked: "2026-08-12", careersUrl: "https://jobs.smartrecruiters.com/Nexthink", tags: ["Enterprise", "DEX", "CIO", "IT Operations", "Japan launch"],
+  },
+  {
+    slug: "mendix", name: "Mendix", category: "Enterprise Low-Code / Application Development", broadCategory: "業務自動化・コラボレーション", hq: "Rotterdam, Netherlands / Boston, US", japanPresence: "Tokyo sales / partner team", hiringStatus: "採用中", salesRoles: 1,
+    description: "Siemens傘下のlow-code platform。TokyoでEnterprise Account Executiveを募集し、channelと日本pipelineを拡張。", lastChecked: "2026-08-12", careersUrl: "https://jobs.lever.co/mendix?location=Tokyo", tags: ["Enterprise", "Low-code", "Application Modernization", "Partner", "Siemens"],
+  },
+  {
+    slug: "cognition", name: "Cognition", category: "AI Software Engineering / Developer Tools", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "Cognition Japan / Tokyo local team", hiringStatus: "積極採用", salesRoles: 3,
+    description: "2026年4月にAsia初の市場としてJapanを正式launch。Account Director・partnership等のGTM人材を採用。", lastChecked: "2026-08-12", careersUrl: "https://cognition.com/careers", tags: ["Enterprise AI", "Developer Tools", "Account Director", "Japan launch", "Partner"],
+  },
+  {
+    slug: "harvey", name: "Harvey", category: "Legal AI / Professional Services AI", broadCategory: "コマース・業界特化", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "2,400社超・70カ国超とSingapore拠点、日本顧客事例を持つLegal AI。日本専任組織の動きを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.harvey.ai/company/careers", tags: ["日本未進出", "Legal AI", "Enterprise", "APAC", "Professional Services"], entryStatus: "not-entered",
+  },
+  {
+    slug: "clay", name: "Clay", category: "GTM Engineering / Sales Data", broadCategory: "CRM・顧客体験", hq: "New York, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "ARR 1億ドル・14,000顧客のGTM development environment。community・agency起点の日本需要を継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.clay.com/careers", tags: ["日本未進出", "GTM Engineering", "RevOps", "PLG", "AI"], entryStatus: "not-entered",
+  },
+  {
+    slug: "vanta", name: "Vanta", category: "Trust Management / GRC", broadCategory: "セキュリティ・IT運用", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "ARR 3億ドル、SydneyのAPAC拠点を持つTrust Management Platform。国内framework・partner展開を継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.vanta.com/careers", tags: ["日本未進出", "Security", "GRC", "Trust", "APAC"], entryStatus: "not-entered",
+  },
+  {
+    slug: "cribl", name: "Cribl", category: "Telemetry Data Engine / Observability", broadCategory: "セキュリティ・IT運用", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "ARR 1億ドル超、Fortune 100の半数が利用するtelemetry Data Engine。Sydney regionから日本進出条件を観測。", lastChecked: "2026-08-12", careersUrl: "https://cribl.io/careers/", tags: ["日本未進出", "Observability", "Security", "Telemetry", "APAC"], entryStatus: "not-entered",
+  },
+  {
+    slug: "writer", name: "Writer", category: "Enterprise Agentic AI Platform", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "SingaporeにAPJ hubを置くfull-stack Enterprise AI企業。日本語・国内顧客・partnerのシグナルを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://writer.com/company/careers/", tags: ["日本未進出", "Enterprise AI", "Agentic AI", "APJ", "Partner"], entryStatus: "not-entered",
+  },
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -936,8 +968,33 @@ const waveTwoJobs: Job[] = [
   }),
 ];
 
+const waveThreeJobs: Job[] = [
+  makeWaveTwoJob({
+    id: "nexthink-enterprise-account-executive-japan", companySlug: "nexthink", title: "Enterprise Account Executive", segment: "Enterprise / Founding Team", location: "東京", workStyle: "hybrid", language: "日本語 / 英語", source: { label: "Nexthink Careers (SmartRecruiters)", url: "https://jobs.smartrecruiters.com/Nexthink/744000103694809-enterprise-account-executive" },
+    descriptionSummary: "日本のenterprise市場でstrategic sales planを作り、large enterpriseのexecutiveへDEXを提案し、marketing・pre-sales・professional services・partnerとcloseまで担うfounding営業。",
+    genbaTake: "device monitoringを売るのではなく、問い合わせ前のfriction、employee productivity、AI/SaaS adoptionをCIOのbusiness caseへ変えるcategory creation。",
+    desiredProfile: "公式求人ではenterprise software sales 5年以上、日本IT市場の実績、SaaS/IT infrastructure、executive relationship、日本語fluency・business English、channel経験を求める。",
+    fit: "完成したterritoryを回すより、日本のDEX category、reference、partner、pipelineを自ら作りたいEnterprise sellerに向く。", thingsToKnow: "Japanの既存顧客数、pipeline、quota、ACV、cycle、ramped attainment、SE/CS人数は非公開。", marketValue: "CIO向けDEX、IT Operations、value engineering、Japan launch、partner saleを同時に経験できる。",
+  }),
+  makeWaveTwoJob({
+    id: "mendix-specialized-account-executive-japan", companySlug: "mendix", title: "Specialized Account Executive", segment: "Enterprise", location: "東京", workStyle: "on-site", language: "日本語 / 英語", source: { label: "Mendix Careers (Lever)", url: "https://jobs.lever.co/mendix/e6a4788f-a823-412f-bde9-44a926043011" },
+    descriptionSummary: "日本のenterprise顧客・prospectへlow-codeのtechnical/business valueを提案し、channel partnerとpipelineを作り、executive relationship、procurement、negotiation、closeを統括。",
+    genbaTake: "低code toolのseatではなく、application backlog、内製化、legacy modernization、governanceをportfolio-levelの変革へ上げる営業。",
+    desiredProfile: "公式求人ではenterprise software sales 5年以上、継続的なquota達成、executive relationship、complex cycle、Salesforceでのpipeline disciplineを求める。",
+    fit: "businessとIT、SI partner、Siemens ecosystemを束ね、long-cycleのapplication transformationを作りたい人に向く。", thingsToKnow: "Japanのsegment、territory、partner-sourced比率、ACV、cycle、quota達成率、MendixとSiemensのcredit ruleは非公開。", marketValue: "enterprise low-code、application modernization、partner-led sale、business/IT fusionの経験になる。",
+  }),
+  makeWaveTwoJob({
+    id: "cognition-account-director-apac-tokyo", companySlug: "cognition", title: "Account Director - APAC", segment: "Enterprise / Strategic", location: "東京", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Cognition Careers (Ashby)", url: "https://jobs.ashbyhq.com/cognition/0aabb166-3e97-437b-ab84-b04fe20dd426" },
+    descriptionSummary: "Japan launch後のenterprise顧客へDevin・Windsurfを提案し、engineering leaderとのbusiness case、technical evaluation、partner、close、expansionを進めるAccount Director。",
+    genbaTake: "AI coding seatではなく、完了task、review工数、release、legacy modernizationへ成果を変換し、frontier productの変化をlarge enterpriseへ安全に導入する役割。",
+    desiredProfile: "公式求人とJapan launch方針から、complex enterprise sales、executive/technical stakeholder、AI・developer tool理解、自律的なmarket build、日本語・英語が中核。",
+    fit: "product変化が速い環境でCTO・VP Engineeringへ定量的なproductivity caseを作り、Japan playbookを発明したい人に向く。", thingsToKnow: "Japan quota、既存pipeline、customer ownership、Devin/Windsurfのcredit、SE/deployed engineer coverage、rampは非公開。", marketValue: "frontier AI、developer tool、Japan country build、partner、enterprise transformationを横断する希少な経験。",
+  }),
+];
+
 const jobRecords: Job[] = [
   ...waveTwoJobs,
+  ...waveThreeJobs,
   {
     id: "sf-data-cloud-ae",
     companySlug: "salesforce",
