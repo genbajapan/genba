@@ -1,8 +1,9 @@
 import type { CompanyPublicIntelligence, JapanEntryAssessment, ResearchSource } from "@/lib/company-public-intelligence";
 
-const checkedAt = "2026-08-12";
+const defaultCheckedAt = "2026-08-12";
 
 type PreEntryProfile = {
+  checkedAt?: string;
   slug: string;
   name: string;
   homepage: string;
@@ -42,6 +43,7 @@ type PreEntryProfile = {
 };
 
 export function buildPreEntryIntelligence(profile: PreEntryProfile): CompanyPublicIntelligence {
+  const checkedAt = profile.checkedAt ?? defaultCheckedAt;
   const id = (suffix: string) => `${profile.slug}-${suffix}`;
   const sources: ResearchSource[] = [
     { id: id("company"), label: `${profile.name}公式サイト`, url: profile.homepage, kind: "企業公式", scope: "製品・会社概要・拠点", checkedAt },

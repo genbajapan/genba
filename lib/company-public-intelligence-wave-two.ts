@@ -1,8 +1,10 @@
 import type { CompanyPublicIntelligence, ResearchSource } from "@/lib/company-public-intelligence";
 
-const checkedAt = "2026-08-12";
+const defaultCheckedAt = "2026-08-12";
 
 export type Profile = {
+  checkedAt?: string;
+  jobConfirmed?: boolean;
   slug: string;
   name: string;
   jobUrl: string;
@@ -36,10 +38,12 @@ export type Profile = {
 };
 
 export function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
+  const checkedAt = profile.checkedAt ?? defaultCheckedAt;
+  const jobConfirmed = profile.jobConfirmed ?? true;
   const sourceId = (suffix: string) => `${profile.slug}-${suffix}`;
   const roleWithoutTerminalPeriod = profile.role.replace(/。$/, "");
   const sources: ResearchSource[] = [
-    { id: sourceId("job"), label: `${profile.name} 日本向け営業求人`, url: profile.jobUrl, kind: "企業公式", scope: "職務・勤務地・採用要件", checkedAt },
+    { id: sourceId("job"), label: jobConfirmed ? `${profile.name} 日本向け営業求人` : `${profile.name} 日本市場展開`, url: profile.jobUrl, kind: "企業公式", scope: jobConfirmed ? "職務・勤務地・採用要件" : "日本進出・現地組織・市場戦略", checkedAt },
     { id: sourceId("company"), label: `${profile.name} 公式情報`, url: profile.officialUrl, kind: "企業公式", scope: "製品・会社概要・事業展開", checkedAt },
     { id: sourceId("customers"), label: `${profile.name} 顧客事例`, url: profile.customersUrl, kind: "企業公式", scope: "導入目的・顧客成果", checkedAt },
     { id: sourceId("external"), label: "日本の外部環境資料", url: profile.externalUrl, kind: "外部集計", scope: "法規制・ガイドライン・市場要請", checkedAt },
@@ -71,13 +75,13 @@ export function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
   marketStatus.growthDrivers = [
     { title: "顧客課題の構造変化", body: profile.issueLenses[2].body, sourceId: sourceId("external") },
     { title: "製品の統合価値", body: profile.issueLenses[1].body, sourceId: sourceId("company") },
-    { title: "日本GTMへの投資", body: `日本向けに${roleWithoutTerminalPeriod}を採用し、local pipelineと顧客接点を広げる。`, sourceId: sourceId("job") },
+    { title: "日本GTMへの投資", body: jobConfirmed ? `日本向けに${roleWithoutTerminalPeriod}を採用し、local pipelineと顧客接点を広げる。` : `${roleWithoutTerminalPeriod}。公式発表でlocal組織への投資を確認できる。`, sourceId: sourceId("job") },
   ];
   marketStatus.japanGrowth = {
-    headline: "日本営業採用を確認、組織・売上は非公開",
-    narrative: `${profile.japanPresence}。公開求人から日本市場への投資は確認できるが、Japan ARR、顧客数、営業人数、達成率は開示されていない。`,
+    headline: jobConfirmed ? "日本営業採用を確認、組織・売上は非公開" : "日本進出とlocal teamを確認、営業求人は未確認",
+    narrative: `${profile.japanPresence}。${jobConfirmed ? "公開求人" : "公式の進出発表"}から日本市場への投資は確認できるが、Japan ARR、顧客数、営業人数、達成率は開示されていない。`,
     qualitativeSignals: [
-      { label: "営業求人", detail: profile.role, sourceId: sourceId("job") },
+      { label: jobConfirmed ? "営業求人" : "日本市場体制", detail: profile.role, sourceId: sourceId("job") },
       { label: "日本拠点", detail: profile.japanPresence, sourceId: sourceId("company") },
       { label: "顧客価値", detail: profile.valueHypothesis, sourceId: sourceId("customers") },
     ],
@@ -117,7 +121,7 @@ export function buildIntelligence(profile: Profile): CompanyPublicIntelligence {
     facts: profile.facts.map(({ source, ...fact }, index) => ({ ...fact, sourceIds: [sourceId(source ?? (index === 5 ? "job" : index < 3 ? "company" : "finance"))] })),
     hypotheses: [
       { topic: "PRODUCT / MARKET", title: "選定条件は機能数ではなく業務変化", conclusion: profile.narrative[3].body, confidence: "中", evidence: [profile.issueLenses[0].body], counterSignals: [profile.objection], interviewQuestions: ["日本で最も再現性のあるuse caseとbuyerは", "直近の競合勝因・敗因は"], sourceIds: [sourceId("company"), sourceId("customers")] },
-      { topic: "SALES MOTION", title: "求人が示す日本の営業モデル", conclusion: profile.role, confidence: "高", evidence: ["公式求人を確認", profile.openingHook], counterSignals: ["inbound・partner・self-sourceの構成は非公開"], interviewQuestions: ["self-sourced pipeline比率は", "SE・CS・partnerの役割分担は"], sourceIds: [sourceId("job")] },
+      { topic: "SALES MOTION", title: jobConfirmed ? "求人が示す日本の営業モデル" : "進出発表が示す日本の営業モデル", conclusion: profile.role, confidence: jobConfirmed ? "高" : "中", evidence: [jobConfirmed ? "公式求人を確認" : "日本進出とlocal teamを公式確認", profile.openingHook], counterSignals: ["inbound・partner・self-sourceの構成は非公開"], interviewQuestions: ["self-sourced pipeline比率は", "SE・CS・partnerの役割分担は"], sourceIds: [sourceId("job")] },
       { topic: "QUOTA ATTAINABILITY", title: "territory設計の確認が先", conclusion: "日本のquota、ACV、cycle、ramped seller達成率は非公開。面接で数値と失注理由を確認する必要がある。", confidence: "探索中", evidence: ["日本向け営業採用を確認"], counterSignals: ["global顧客事例と製品投資は確認できる"], interviewQuestions: ["直近4四半期のramped seller達成率は", "平均ACV・sales cycle・pipeline coverageは"], sourceIds: [sourceId("job"), sourceId("customers")] },
       { topic: "COMPENSATION", title: "報酬とcredit ruleは非公開", conclusion: "日本のbase、OTE、equity、accelerator、ramp保証は求人で確認できない。", confidence: "探索中", evidence: ["求人に給与rangeなし"], counterSignals: [profile.growthSummary], interviewQuestions: ["pay mix、equity、acceleratorは", "renewal・expansion・usageのcredit ruleは"], sourceIds: [sourceId("job"), sourceId("finance")] },
       { topic: "CULTURE / CAREER", title: "日本で型を作る経験", conclusion: profile.careerValue, confidence: "中", evidence: [profile.organization, profile.role], counterSignals: ["日本teamの昇進・離職dataは非公開"], interviewQuestions: ["Japan teamの人数と12カ月の採用計画は", "localで変えられるGTM判断は"], sourceIds: [sourceId("job"), sourceId("company")] },

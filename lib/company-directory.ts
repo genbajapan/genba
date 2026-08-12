@@ -216,6 +216,17 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
   cursor: {
     officialWebsite: { url: "https://cursor.com/ja", locale: "ja" },
   },
+  sierra: {
+    officialWebsite: { url: "https://sierra.ai/jp", locale: "ja" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/sierra-ai/"),
+  },
+  lucanet: {
+    officialWebsite: { url: "https://www.lucanet.com/ja/", locale: "ja" },
+  },
+  addepar: {
+    officialWebsite: { url: "https://addepar.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/addepar/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

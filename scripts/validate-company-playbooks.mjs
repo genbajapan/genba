@@ -10,6 +10,7 @@ const targets = [
   "lib/company-public-intelligence-pre-entry-wave-two.ts",
   "lib/company-public-intelligence-wave-four.ts",
   "lib/company-public-intelligence-pre-entry-wave-three.ts",
+  "lib/company-public-intelligence-daily-2026-08-13.ts",
 ].map((target) => path.join(process.cwd(), target));
 const source = targets
   .map((target) => fs.readFileSync(target, "utf8"))

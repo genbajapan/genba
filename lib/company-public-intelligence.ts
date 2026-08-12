@@ -6,6 +6,7 @@ import { preEntryWaveTwoIntelligenceBySlug } from "@/lib/company-public-intellig
 import { waveFourIntelligenceBySlug } from "@/lib/company-public-intelligence-wave-four";
 import { preEntryWaveThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-pre-entry-wave-three";
 import { cursorIntelligenceBySlug } from "@/lib/company-public-intelligence-cursor";
+import { daily20260813IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-13";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9341,6 +9342,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...waveFourIntelligenceBySlug,
   ...preEntryWaveThreeIntelligenceBySlug,
   ...cursorIntelligenceBySlug,
+  ...daily20260813IntelligenceBySlug,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
