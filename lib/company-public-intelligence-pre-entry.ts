@@ -13,6 +13,7 @@ const gongSources: ResearchSource[] = [
   { id: "gong-anthropic", label: "Anthropic導入事例", url: "https://www.gong.io/customers/case-studies/anthropics-64-productivity-gain-combining-revenue-ai-with-a-customer-centric-gtm-strategy", kind: "企業公式", scope: "生産性・立ち上がり・組織拡大", checkedAt: "2026-08-12" },
   { id: "gong-canva", label: "Canva導入事例", url: "https://www.gong.io/customers/case-studies/canvas-6-revenue-boost-how-using-gong-transformed-their-strategy", kind: "企業公式", scope: "営業余力・売上・部門横断利用", checkedAt: "2026-08-12" },
   { id: "gong-experian", label: "Experian導入事例", url: "https://www.gong.io/customers/case-studies/how-experian-boosted-win-rates-by-25-and-achieved-sustainable-growth-with-gong-s-ai-insights", kind: "企業公式", scope: "勝率・販売量・規制産業", checkedAt: "2026-08-12" },
+  { id: "gong-linkedin-company", label: "Gong LinkedIn企業ページ", url: "https://www.linkedin.com/company/gong-io/", kind: "外部集計", scope: "会社規模レンジ・公開拠点", checkedAt: "2026-08-12" },
   { id: "gong-linkedin", label: "LinkedIn公開プロフィール検索", url: "https://www.linkedin.com/search/results/people/?keywords=Gong%20Singapore%20sales&origin=GLOBAL_SEARCH_HEADER", kind: "外部集計", scope: "Singaporeの公開GTMプロフィール4件を役割単位で集計", checkedAt: "2026-08-12" },
   { id: "meti-ai", label: "経済産業省 AI事業者ガイドライン第1.2版", url: "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html", kind: "公的機関", scope: "国内企業のAIガバナンス要求", checkedAt: "2026-08-12" },
   { id: "ppc-recording", label: "個人情報保護委員会 通話録音Q&A", url: "https://www.ppc.go.jp/all_faq_index/faq1-q1-10/", kind: "公的機関", scope: "通話内容・録音と個人情報の取扱い", checkedAt: "2026-08-12" },
@@ -40,14 +41,76 @@ const gongIntelligence: CompanyPublicIntelligence = {
       { title: "APACと多言語対応", body: "Singapore拠点とAustralia採用を確認。70以上の言語、日本語音声の文字起こし・分析にも対応する。", sourceId: "gong-language" },
     ],
     japanGrowth: {
-      headline: "日本は未進出。APACの基盤はあるが、Japan固有のシグナルはまだ弱い",
-      narrative: "公式拠点一覧と採用地域にはSingapore・Australiaがある一方、Japan・Tokyoは確認できない。日本語音声には対応するが、日本語UIと全機能の同等提供は未完成。日本進出の可能性はAPAC拡大の延長線上にあるものの、時期を断定できる公式材料はない。",
+      headline: "可能性は中。進出できる会社規模には達したが、日本で売り切る条件はまだ揃っていない",
+      narrative: "GongはARR 5億ドル超、前年比55%超の成長、5,000社超の顧客、半数での複数製品利用を公表しており、日本法人を置ける財務・製品基盤は十分に見える。Singapore拠点とAustralia採用を持ち、日本語音声の文字起こしにも対応するため、APACの延長として日本を検討する合理性もある。一方で、Japan・Tokyoの拠点や求人、国内顧客事例、日本語UI、全機能の日本語同等提供は確認できない。日本市場との親和性は高いが、現時点で確認できるのは『売れる可能性』であって『進出を決めた事実』ではない。Genbaは2〜3年以内の進出余地を中程度と見るが、以下の条件とシグナルが揃うまでは時期を断定しない。",
       qualitativeSignals: [
         { label: "公式拠点", detail: "San Francisco、New York、Dublin、Tel Aviv、Singapore等を掲載。Japan・Tokyoは掲載なし。", sourceId: "gong-about" },
         { label: "公式採用地域", detail: "US、Dublin、London、Singapore、Australiaの採用を確認。日本向け求人は未確認。", sourceId: "gong-careers" },
         { label: "海外GTM人材", detail: "Singaporeの公開プロフィール4件からField Sales、SDR、Sales Management、Marketingを確認。小標本のため組織全体の傾向は断定しない。", sourceId: "gong-linkedin" },
       ],
-      sourceIds: ["gong-about", "gong-careers", "gong-language", "gong-linkedin"],
+      entryAssessment: {
+        verdict: "進出可能性は中。財務・製品・APACの土台は強いが、日本固有のcommercial proofが不足",
+        factSignals: [
+          {
+            title: "会社規模と成長余力は進出候補水準",
+            body: "2026年5月時点でARR 5億ドル超、直近四半期の前年比成長率55%超、5,000社超の顧客を公表。LinkedIn企業ページでは1,001〜5,000人規模と表示される。日本進出を検討できないほど小さい会社ではなく、複数製品化による投資回収の選択肢もある。",
+            sourceIds: ["gong-growth", "gong-linkedin-company"],
+          },
+          {
+            title: "APACの足場はすでに存在",
+            body: "公式拠点にSingaporeを掲載し、採用地域にはSingaporeとAustraliaがある。公開プロフィールの小標本でもSingaporeでField Sales、SDR、Sales Management、Marketingを確認でき、少なくとも北米だけのGTMではない。",
+            sourceIds: ["gong-about", "gong-careers", "gong-linkedin"],
+          },
+          {
+            title: "日本の営業課題との製品親和性は高い",
+            body: "GongはCRMの自己申告だけでは見えない顧客会話を、Forecast、Coaching、Enablement、Engagementへ接続する。日本語音声の文字起こしに対応しており、大規模営業組織が抱える案件可視化、マネージャー育成、勝ち筋の標準化という課題へ当てはめられる。",
+            sourceIds: ["gong-platform", "gong-language"],
+          },
+          {
+            title: "Enterprise審査を支える統制を持つ",
+            body: "SOC 2やISO群、BYOK、region controlを掲げ、顧客データを生成AIモデルの学習に使わないと説明する。録音・メール・CRMデータを扱う製品として、日本の大企業でSecurity・Legalを巻き込むための土台はある。",
+            sourceIds: ["gong-trust", "meti-ai"],
+          },
+        ],
+        hurdles: [
+          {
+            title: "日本語対応は文字起こしに留まる",
+            body: "日本語音声には対応するが、UIは英語・フランス語が中心で、一部機能は英語限定。営業担当者が使えることと、管理職・管理部門を含む全社標準ツールとして定着できることは別問題。日本語UI、用語精度、サポート、機能同等性の実証が必要。",
+            sourceIds: ["gong-language"],
+          },
+          {
+            title: "国内の顧客証拠と販売導線がない",
+            body: "国内顧客事例、日本向け求人、日本法人、Tokyo拠点、国内partnerの公式発表を確認できない。Singaporeから日本企業へ販売しているかも公開情報では分からず、TAMがあっても初期pipelineとreference customerがなければ現地固定費を正当化しにくい。",
+            sourceIds: ["gong-about", "gong-careers", "gong-customers"],
+          },
+          {
+            title: "録音・個人情報・AIガバナンスが導入速度を左右",
+            body: "通話内容は個人を識別できる場合に個人情報となり、利用目的、通知・公表、保存、権限、削除を設計する必要がある。営業現場の録音に対する心理的抵抗も含め、製品デモだけでは進まない。Security、Legal、人事、労務、現場を同時に納得させる日本語の導入設計が要る。",
+            sourceIds: ["ppc-recording", "gong-trust", "meti-ai"],
+          },
+          {
+            title: "既存スイートとの競争が強い",
+            body: "Salesforce、Microsoft、Web会議基盤、CRM付属AIも要約・Forecast・営業支援を拡張している。Gongが独立したRevenue AI OSとして追加予算を取るには、日本語精度と導入成果を、既存機能との差分とROIで示す必要がある。",
+            sourceIds: ["gong-platform", "gong-forecast"],
+          },
+        ],
+        readinessConditions: [
+          { title: "APACから日本の有償顧客とpipelineが見える", body: "Singapore管轄で複数の日本企業を獲得し、更新・拡張まで再現できれば、現地化投資の根拠ができる。顧客数だけでなくEnterpriseのACV、sales cycle、retentionが判断材料になる。" },
+          { title: "日本語製品が全社利用に耐える", body: "日本語UI、営業固有語を含む音声精度、Forecast・Assistant・Enablement等の機能同等性、日本語サポートが主要use caseで検証される必要がある。" },
+          { title: "国内導入の統制パッケージを用意する", body: "録音同意、利用目的、保存・削除、アクセス権、data region、AI学習方針を日本語で説明し、Security・Legal審査を短縮できる状態が必要。" },
+          { title: "最初から小さなGTM podを置ける", body: "Country/GTM leadやAE一人だけでなく、Solution Consulting、Customer Success、Marketing/BDR、Security支援をAPACまたは国内でcoverし、導入後まで責任を持てる体制が現実的。" },
+          { title: "国内referenceまたは強いpartnerを確保する", body: "最初の公開顧客、Salesforce/CRMに強いSI、コンサル、resellerのいずれかを得て、category educationと導入設計を同時に進められることが進出確度を上げる。" },
+        ],
+        watchSignals: [
+          "Japan・Tokyo・Country Managerを含む初回求人",
+          "日本語公式サイト、UI、ヘルプセンターの公開",
+          "日本企業の顧客事例または国内partner発表",
+          "Singapore所属でJapan territoryを持つAE・CS・SEの公開プロフィール",
+          "日本法人登記、Tokyo拠点、国内イベントの継続開催",
+          "APAC向けdata region・日本語サポート・日本語AI機能の拡張",
+        ],
+      },
+      sourceIds: ["gong-growth", "gong-about", "gong-careers", "gong-language", "gong-trust", "gong-linkedin-company", "gong-linkedin", "meti-ai", "ppc-recording"],
     },
     riskHypotheses: [
       { title: "日本語対応と製品ローカライズは別問題", body: "日本語音声の文字起こしには対応する一方、UIの日本語表示は未提供で、一部AI機能は英語のみ。国内営業組織が売り切るには、日本語UI・サポート・AI精度の実証が必要。", confidence: "高", evidence: ["日本語音声を対応言語に掲載", "UI言語は英語・フランス語中心", "一部機能は英語限定"], counterSignal: "AI翻訳と70以上の言語対応は、初期導入の技術障壁を下げる。", sourceIds: ["gong-language"] },
@@ -108,7 +171,7 @@ const gongIntelligence: CompanyPublicIntelligence = {
   },
   leadership: { name: "Amit Bendov", role: "CEO / Co-founder", read: "自身がCEOとして悪い四半期の原因をCRMから説明できなかった経験を起点にGongを創業。Revenue AIというcategoryを会話分析からOSへ広げている。", sourceId: "gong-about" },
   companyStats: {
-    globalHeadcount: { value: "非公開", detail: "最新の公式従業員数は本調査で確認できていない。" },
+    globalHeadcount: { value: "1,001〜5,000人規模", detail: "LinkedIn企業ページの会社規模レンジ。公式の厳密な在籍人数ではなく、グローバル規模をつかむための公開集計。", sourceId: "gong-linkedin-company" },
     japanHeadcount: { value: "確認できず", detail: "日本在籍メンバーを公式情報で確認できていない。", sourceId: "gong-careers" },
     japanOffice: { value: "未進出", detail: "公式拠点一覧にJapan・Tokyoの掲載なし。", sourceId: "gong-about" },
     japanSince: { value: "未設立", detail: "日本法人の設立発表を確認できていない。", sourceId: "gong-about" },

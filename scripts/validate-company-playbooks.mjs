@@ -11,6 +11,8 @@ const source = targets
   .map((target) => fs.readFileSync(target, "utf8"))
   .join("\n");
 const errors = [];
+const marketDataSource = fs.readFileSync(path.join(process.cwd(), "lib/market-data.ts"), "utf8");
+const directorySource = fs.readFileSync(path.join(process.cwd(), "lib/company-directory.ts"), "utf8");
 
 const expectedIssueLenses = [
   "既存顧客の導入目的から見る課題",
@@ -38,6 +40,19 @@ const salesSnapshots = Array.from(
   source.matchAll(/salesSnapshot:\s*"([^"]+)"/g),
   (match) => match[1],
 );
+
+const companySlugs = new Set(Array.from(
+  marketDataSource.matchAll(/\bslug:\s*"([a-z0-9-]+)"/g),
+  (match) => match[1],
+));
+const directorySlugs = new Set(Array.from(
+  directorySource.matchAll(/^\s{2}(?:"([a-z0-9-]+)"|([a-z][a-z0-9-]*)):\s*\{/gm),
+  (match) => match[1] ?? match[2],
+));
+
+for (const slug of companySlugs) {
+  if (!directorySlugs.has(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
+}
 
 function extractValues(block, key) {
   return Array.from(
@@ -98,3 +113,4 @@ if (errors.length) {
 console.log("企業ページの課題啓蒙フォーマット: OK");
 console.log(`- ${intelligenceCount}社すべてで3つの課題視点と4段階のnarrativeを確認`);
 console.log(`- ${salesSnapshots.length}社すべてで営業視点サマリーの標準構成を確認`);
+console.log(`- ${companySlugs.size}社すべてで公式トップページ導線を確認`);

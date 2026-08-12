@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
+import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
@@ -44,6 +45,11 @@ export default function CompanyIntelligenceProfile({
   const isPreEntry = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
+  const directoryEntry = getCompanyDirectoryEntry(company.slug);
+  const globalScale = resolveGlobalScale(company.slug, publicIntel?.companyStats.globalHeadcount);
+  const globalScaleDirectorySource = getGlobalScaleSource(globalScale);
+  const globalScaleResearchSource = publicIntel && globalScale?.sourceId ? getResearchSource(publicIntel, globalScale.sourceId) : undefined;
+  const globalScaleSource = globalScaleDirectorySource ?? (globalScaleResearchSource ? { url: globalScaleResearchSource.url, label: globalScaleResearchSource.label } : undefined);
   const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
   const sourceEntries = uniqueSources([
     {
@@ -166,8 +172,19 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  <div className="company-snapshot-strip company-snapshot-strip-5col">
-                    <div><span>本社</span><strong>{company.hq}</strong></div>
+                  <div className="company-snapshot-strip company-snapshot-strip-6col">
+                    {directoryEntry ? (
+                      <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
+                        <span>本社 / 公式サイト</span>
+                        <strong>{company.hq}</strong>
+                        <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
+                      </a>
+                    ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
+                    <div>
+                      <span>グローバル社員数</span>
+                      <strong>{globalScale?.value ?? "確認中"}</strong>
+                      {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
+                    </div>
                     <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
                     <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
                     <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
@@ -290,7 +307,7 @@ export default function CompanyIntelligenceProfile({
                       const maxRevenue = japan.fiscalData ? Math.max(...japan.fiscalData.map((d) => parseFloat(d.revenue))) : 0;
                       return (
                         <div className="japan-growth-panel">
-                          <p className="card-index">日本での成長性</p>
+                          <p className="card-index">{isPreEntry ? "日本進出の可能性" : "日本での成長性"}</p>
                           <h4 className="japan-growth-headline">{japan.headline}</h4>
                           <p className="japan-growth-narrative">{japan.narrative}</p>
                           {japan.fiscalData && (
@@ -323,6 +340,54 @@ export default function CompanyIntelligenceProfile({
                                   </article>
                                 );
                               })}
+                            </div>
+                          )}
+                          {japan.entryAssessment && (
+                            <div className="japan-entry-assessment">
+                              <div className="japan-entry-verdict">
+                                <span>GENBAの現時点評価</span>
+                                <strong>{japan.entryAssessment.verdict}</strong>
+                              </div>
+                              <section>
+                                <p className="japan-entry-section-label">進出を後押しする公開事実</p>
+                                <div className="japan-entry-card-grid">
+                                  {japan.entryAssessment.factSignals.map((item) => (
+                                    <article key={item.title}>
+                                      <h5>{item.title}</h5>
+                                      <p>{item.body}</p>
+                                      <footer>{item.sourceIds.map((sourceId) => {
+                                        const source = getResearchSource(publicIntel, sourceId);
+                                        return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                                      })}</footer>
+                                    </article>
+                                  ))}
+                                </div>
+                              </section>
+                              <section>
+                                <p className="japan-entry-section-label">進出ハードル</p>
+                                <div className="japan-entry-card-grid japan-entry-hurdle-grid">
+                                  {japan.entryAssessment.hurdles.map((item) => (
+                                    <article key={item.title}>
+                                      <h5>{item.title}</h5>
+                                      <p>{item.body}</p>
+                                      <footer>{item.sourceIds.map((sourceId) => {
+                                        const source = getResearchSource(publicIntel, sourceId);
+                                        return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                                      })}</footer>
+                                    </article>
+                                  ))}
+                                </div>
+                              </section>
+                              <section>
+                                <p className="japan-entry-section-label">日本進出が現実的になる条件</p>
+                                <ol className="japan-entry-conditions">
+                                  {japan.entryAssessment.readinessConditions.map((item) => <li key={item.title}><strong>{item.title}</strong><p>{item.body}</p></li>)}
+                                </ol>
+                              </section>
+                              <section className="japan-entry-watch">
+                                <p className="japan-entry-section-label">今後見るべきシグナル</p>
+                                <ul>{japan.entryAssessment.watchSignals.map((item) => <li key={item}>{item}</li>)}</ul>
+                              </section>
                             </div>
                           )}
                           <div className="japan-fiscal-sources">

@@ -93,6 +93,14 @@ export type JapanFiscalDataPoint = {
 
 export type JapanQualitativeSignal = { label: string; detail: string; sourceId: string };
 
+export type JapanEntryAssessment = {
+  verdict: string;
+  factSignals: Array<{ title: string; body: string; sourceIds: string[] }>;
+  hurdles: Array<{ title: string; body: string; sourceIds: string[] }>;
+  readinessConditions: Array<{ title: string; body: string }>;
+  watchSignals: string[];
+};
+
 export type JapanGrowthAnalysis = {
   headline: string;
   narrative: string;
@@ -100,6 +108,8 @@ export type JapanGrowthAnalysis = {
   fiscalData?: JapanFiscalDataPoint[];
   // 合同会社等、財務非公開の企業はqualitativeSignalsで代替する
   qualitativeSignals?: JapanQualitativeSignal[];
+  // 日本未進出企業は、事実・障壁・現実化条件・観測シグナルを分けて掲載する
+  entryAssessment?: JapanEntryAssessment;
   sourceIds: string[];
 };
 
