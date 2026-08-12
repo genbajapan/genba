@@ -89,14 +89,14 @@ export default function HomePage() {
 
       <section className="content-section">
         <Container>
-          <SectionHeader eyebrow="COMPANY TRACKER" title="「現場」でどの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel={`（${companies.length}件の企業を全て見る）`} />
+          <SectionHeader eyebrow="COMPANY TRACKER" title="「現場」でどの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel={`${companies.length}件の企業を全て見る`} />
           <RandomCompanyGrid companies={companiesWithOpenJobs} />
         </Container>
       </section>
 
       <section className="content-section">
         <Container>
-          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出」注目企業" description="海外で成長し、今後の日本進出が注目される企業を、進出の可能性と障壁の両面から追います。" href="/companies?entry=not-entered#company-results" linkLabel="日本未進出企業をすべて見る" />
+          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出」注目企業" description="海外で成長し、今後の日本進出が注目される企業を、進出の可能性と障壁の両面から追います。" href="/companies?entry=not-entered#company-results" linkLabel={`日本未進出企業${preEntryCompanies.length}社をすべて見る`} />
           <RandomCompanyGrid companies={preEntryCompanies} />
         </Container>
       </section>
