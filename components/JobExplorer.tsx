@@ -4,16 +4,39 @@ import { useMemo, useState } from "react";
 import { jobs, getCompany } from "@/lib/market-data";
 import JobCard from "./JobCard";
 
+const jobFunctions = [
+  "すべて",
+  "アカウント営業",
+  "インサイドセールス",
+  "営業マネジメント",
+  "パートナー・アライアンス",
+  "プリセールス・導入支援",
+  "カスタマーサクセス",
+] as const;
+
+type JobFunction = (typeof jobFunctions)[number];
+
+function getJobFunction(title: string): Exclude<JobFunction, "すべて"> {
+  const normalizedTitle = title.toLowerCase();
+
+  if (/customer success/.test(normalizedTitle)) return "カスタマーサクセス";
+  if (/solution|field engineering|forward deployed/.test(normalizedTitle)) return "プリセールス・導入支援";
+  if (/partner|partnership|alliance|channel|ecosystem/.test(normalizedTitle)) return "パートナー・アライアンス";
+  if (/sales development|business development representative|account development representative/.test(normalizedTitle)) return "インサイドセールス";
+  if (/vice president|head of .*sales|sales director|sales manager/.test(normalizedTitle)) return "営業マネジメント";
+
+  return "アカウント営業";
+}
+
 export default function JobExplorer() {
   const [query, setQuery] = useState("");
-  const [segment, setSegment] = useState("すべて");
-  const segments = ["すべて", ...Array.from(new Set(jobs.map((job) => job.segment)))];
+  const [jobFunction, setJobFunction] = useState<JobFunction>("すべて");
   const lastUpdated = [...jobs].sort((a, b) => b.lastChecked.localeCompare(a.lastChecked))[0]?.lastChecked ?? "—";
   const results = useMemo(() => jobs.filter((job) => {
     const company = getCompany(job.companySlug);
     const matchesQuery = `${job.title} ${company?.name ?? ""} ${job.location}`.toLowerCase().includes(query.toLowerCase());
-    return matchesQuery && (segment === "すべて" || job.segment === segment);
-  }), [query, segment]);
+    return matchesQuery && (jobFunction === "すべて" || getJobFunction(job.title) === jobFunction);
+  }), [query, jobFunction]);
 
   return (
     <>
@@ -23,9 +46,9 @@ export default function JobExplorer() {
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Enterprise、Datadog" />
         </label>
         <label className="select-field">
-          <span>セグメント</span>
-          <select value={segment} onChange={(event) => setSegment(event.target.value)}>
-            {segments.map((item) => <option key={item}>{item}</option>)}
+          <span>職種</span>
+          <select value={jobFunction} onChange={(event) => setJobFunction(event.target.value as JobFunction)}>
+            {jobFunctions.map((item) => <option key={item}>{item}</option>)}
           </select>
         </label>
       </div>
