@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/categories";
 
 const copy: Record<Locale, { tagline: string; nav: { href: string; label: string }[] }> = {
   en: {
-    tagline: "外資IT戦士と予備軍の作戦会議室",
+    tagline: "小中規模外資IT企業研究所",
     nav: [
       { href: "/companies", label: "企業" },
       { href: "/jobs", label: "求人" },
@@ -14,7 +14,7 @@ const copy: Record<Locale, { tagline: string; nav: { href: string; label: string
     ],
   },
   ja: {
-    tagline: "SaaS・IT企業の日本セールスを勝ちに導く。",
+    tagline: "小中規模外資IT企業研究所",
     nav: [
       { href: "/ja/blog", label: "インサイト" },
       { href: "/ja/services", label: "アドバイザリー" },
@@ -37,7 +37,7 @@ export default function Footer({ locale = "en", displayLanguage = "ja" }: { loca
   return (
     <footer className="site-footer">
       <Container className="footer-grid">
-        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">{displayLanguage === "en" ? "Independent media separating official facts, update dates and editorial analysis." : "公式情報・更新日・分析を分けて伝える、独立系メディアです。"}</p></div>
+        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">{displayLanguage === "en" ? "Independent media separating official facts, update dates and editorial analysis." : "現役AEによる外資ITセールスパーソンに向けた独立系メディア"}</p></div>
         <div className="footer-links">
           {footerNav.map((item) => (
             <Link key={item.href} href={item.href}>
