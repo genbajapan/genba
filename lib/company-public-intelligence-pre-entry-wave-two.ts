@@ -41,7 +41,7 @@ type PreEntryProfile = {
   comparisons: Array<{ arena: string; companies: string[]; why: string }>;
 };
 
-function buildPreEntryIntelligence(profile: PreEntryProfile): CompanyPublicIntelligence {
+export function buildPreEntryIntelligence(profile: PreEntryProfile): CompanyPublicIntelligence {
   const id = (suffix: string) => `${profile.slug}-${suffix}`;
   const sources: ResearchSource[] = [
     { id: id("company"), label: `${profile.name}公式サイト`, url: profile.homepage, kind: "企業公式", scope: "製品・会社概要・拠点", checkedAt },

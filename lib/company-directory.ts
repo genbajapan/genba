@@ -190,6 +190,29 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://writer.com/", locale: "global" },
     globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/getwriter/"),
   },
+  datadog: { officialWebsite: { url: "https://www.datadoghq.com/ja/", locale: "ja" } },
+  scandit: {
+    officialWebsite: { url: "https://www.scandit.com/jp/", locale: "ja" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/scandit/"),
+  },
+  docusign: {
+    officialWebsite: { url: "https://www.docusign.com/ja-jp/", locale: "ja" },
+    globalScaleFallback: linkedInScale("5,001〜10,000人規模", "https://www.linkedin.com/company/docusign/"),
+  },
+  hightouch: {
+    officialWebsite: { url: "https://hightouch.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/hightouchio/"),
+  },
+  schrodinger: { officialWebsite: { url: "https://www.schrodinger.com/schrodinger-kk/", locale: "ja" } },
+  rippling: { officialWebsite: { url: "https://www.rippling.com/", locale: "global" } },
+  pinecone: {
+    officialWebsite: { url: "https://www.pinecone.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/pinecone-io/"),
+  },
+  intercom: {
+    officialWebsite: { url: "https://www.intercom.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/intercom/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

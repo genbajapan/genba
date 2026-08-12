@@ -802,6 +802,38 @@ const companyRecords: Company[] = [
     slug: "writer", name: "Writer", category: "Enterprise Agentic AI Platform", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
     description: "SingaporeにAPJ hubを置くfull-stack Enterprise AI企業。日本語・国内顧客・partnerのシグナルを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://writer.com/company/careers/", tags: ["日本未進出", "Enterprise AI", "Agentic AI", "APJ", "Partner"], entryStatus: "not-entered",
   },
+  {
+    slug: "datadog", name: "Datadog", category: "Observability / Cloud Security", broadCategory: "セキュリティ・IT運用", hq: "New York, US", japanPresence: "Tokyo office / Japan GTM", hiringStatus: "積極採用", salesRoles: 1,
+    description: "CommercialからPublic SectorまでJapan salesを拡張。ObservabilityとCloud Securityを一つのplatformで提案。", lastChecked: "2026-08-12", careersUrl: "https://careers.datadoghq.com/ja/tokyo/", tags: ["Commercial", "Enterprise", "Observability", "Security", "Cloud", "Platform"],
+  },
+  {
+    slug: "scandit", name: "Scandit", category: "Smart Data Capture / Computer Vision", broadCategory: "コマース・業界特化", hq: "Zurich, Switzerland", japanPresence: "Tokyo office", hiringStatus: "採用中", salesRoles: 1,
+    description: "小売・物流の現場をsmartphoneとcomputer visionで変えるSmart Data Capture。TokyoのAccount Executiveを採用。", lastChecked: "2026-08-12", careersUrl: "https://www.scandit.com/jp/careers/", tags: ["Retail", "Logistics", "Computer Vision", "Enterprise", "Field Sales"],
+  },
+  {
+    slug: "docusign", name: "DocuSign", category: "Agreement Management / eSignature", broadCategory: "業務自動化・コラボレーション", hq: "San Francisco, US", japanPresence: "DocuSign Japan / Tokyo", hiringStatus: "採用中", salesRoles: 1,
+    description: "電子署名から契約の作成・締結・管理・AI分析へ拡張。TokyoでSMB Account Executiveを募集。", lastChecked: "2026-08-12", careersUrl: "https://careers.docusign.com/", tags: ["SMB", "Agreement", "Legal", "Workflow", "AI"],
+  },
+  {
+    slug: "hightouch", name: "Hightouch", category: "Composable CDP / Data Activation", broadCategory: "CRM・顧客体験", hq: "San Francisco, US", japanPresence: "Japan担当first AE / reseller motion", hiringStatus: "採用中", salesRoles: 1,
+    description: "warehouse dataを顧客接点へactivationするComposable CDP。日本を担当する最初のAccount Executiveを募集。", lastChecked: "2026-08-12", careersUrl: "https://job-boards.greenhouse.io/hightouch", tags: ["Founding AE", "Enterprise", "Data", "Marketing", "Composable CDP"],
+  },
+  {
+    slug: "schrodinger", name: "Schrödinger", category: "Computational Chemistry / R&D Software", broadCategory: "コマース・業界特化", hq: "New York, US", japanPresence: "Schrödinger K.K. / Tokyo", hiringStatus: "採用中", salesRoles: 1,
+    description: "物理simulationとAIで創薬・材料設計を支援。日本法人でSenior Account Managerを募集。", lastChecked: "2026-08-12", careersUrl: "https://www.schrodinger.com/company/careers/", tags: ["Life Science", "Materials", "Scientific Sales", "Enterprise", "R&D"],
+  },
+  {
+    slug: "rippling", name: "Rippling", category: "Workforce Platform / Global Payroll", broadCategory: "HR・人材育成", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "6,000人超、Sydney・SingaporeにAPAC拠点。Japan payrollとlocal GTMの動きを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.rippling.com/en-AU/careers/open-roles", tags: ["日本未進出", "HR Tech", "Payroll", "IT", "APAC"], entryStatus: "not-entered",
+  },
+  {
+    slug: "pinecone", name: "Pinecone", category: "Vector Database / AI Infrastructure", broadCategory: "AI・データ基盤", hq: "New York, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "9,000社超・80万人超が利用。SingaporeへAsia初regionを開設し、Japan GTMの動きを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.pinecone.io/careers/", tags: ["日本未進出", "AI Infrastructure", "Vector Database", "Developer", "APAC"], entryStatus: "not-entered",
+  },
+  {
+    slug: "intercom", name: "Intercom", category: "AI Customer Service / Helpdesk", broadCategory: "CRM・顧客体験", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "SydneyをAPAC拠点にFin AI Agentを展開。日本語品質・channel・国内referenceを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.intercom.com/careers", tags: ["日本未進出", "Customer Service", "AI Agent", "CX", "APAC"], entryStatus: "not-entered",
+  },
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -992,9 +1024,48 @@ const waveThreeJobs: Job[] = [
   }),
 ];
 
+const waveFourJobs: Job[] = [
+  makeWaveTwoJob({
+    id: "datadog-commercial-account-executive-japan", companySlug: "datadog", title: "Commercial Account Executive", segment: "Commercial", location: "東京", workStyle: "hybrid", language: "日本語 / 英語", source: { label: "Datadog Careers", url: "https://careers.datadoghq.com/ja/detail/6009777/?gh_jid=6009777" },
+    descriptionSummary: "Japan Commercial顧客のnew logoとexpansionを持ち、prospecting、technical discovery、business case、SE連携、negotiation、closeを担うAccount Executive。",
+    genbaTake: "monitoring toolの置換ではなく、cloud incident、developer時間、security、tool costを一つのplatform business caseへ束ねる。",
+    desiredProfile: "公式求人ではB2B technology sales、pipeline形成、複数stakeholderへのconsultative selling、EnglishとJapaneseでの連携を重視。",
+    fit: "high-volumeのCommercialでもtechnical depthを保ち、land-and-expandを作れるsellerに向く。", thingsToKnow: "territory account数、inbound比率、平均ACV、consumption credit、ramped attainmentは非公開。", marketValue: "Observability、Cloud Security、consumption platform、technical value sellingの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "scandit-account-executive-japan", companySlug: "scandit", title: "Account Executive, Japan", segment: "Enterprise / Retail & Logistics", location: "東京", workStyle: "公式careersで確認", language: "日本語 / 英語", source: { label: "Scandit Careers", url: "https://www.scandit.com/jp/careers/" },
+    descriptionSummary: "小売・物流・製造のJapan enterpriseへSmart Data Captureを提案し、現場discovery、pilot、partner、全社rolloutまで作るAccount Executive。",
+    genbaTake: "barcode SDKではなく、一scanの秒数、誤読、device保守、trainingを全拠点ROIへ変換するoperational sale。",
+    desiredProfile: "TokyoのAccount Executive採用を公式発信。詳細要件と個別求人URLは応募時点のcareersで再確認が必要。",
+    fit: "softwareと現場業務をつなぎ、pilotから数千人scaleのdeploymentを作りたい人に向く。", thingsToKnow: "Japanのvertical配分、既存account、partner比率、pilot-to-production率、quotaは非公開。", marketValue: "Computer Vision、Retail Tech、Logistics、現場ROI、enterprise rolloutの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "docusign-account-executive-smb-japan", companySlug: "docusign", title: "Account Executive, SMB", segment: "SMB", location: "東京", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "DocuSign Careers", url: "https://careers.docusign.com/jobs/29939?lang=en-us" },
+    descriptionSummary: "Japan SMB顧客のnew logoと既存拡張を持ち、prospecting、discovery、demo、commercial negotiation、closeをhigh-velocityで進めるAE。",
+    genbaTake: "電子署名のseatではなく、契約lead time、conversion、manual入力、更新管理からIAM platformへexpandする。",
+    desiredProfile: "公式求人ではquota-carrying sales、pipeline管理、顧客課題へのconsultative approach、cross-functional collaborationを求める。",
+    fit: "SMBの速度と量を回しながら、契約業務をplatform saleへ上げたいsellerに向く。", thingsToKnow: "担当社数、inbound比率、new/expansion split、平均ACV、ramped attainmentは非公開。", marketValue: "Velocity sales、Legal Tech、workflow、platform expansionの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "hightouch-enterprise-account-executive-japan", companySlug: "hightouch", title: "Enterprise Account Executive, APAC - Japan", segment: "Founding / Enterprise", location: "日本", workStyle: "remote / APAC", language: "日本語 / 英語", source: { label: "Hightouch Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/hightouch/jobs/5836057004?gh_src=c34e5ee54us" },
+    descriptionSummary: "日本を担当する最初のAEとしてenterprise pipelineを作り、resellerとData・Marketing stakeholderへComposable CDPを提案するgreenfield role。",
+    genbaTake: "CDP機能比較ではなく、warehouse投資、audience作成時間、channel activation、AI decisioningを一つのdata operating modelへ上げる。",
+    desiredProfile: "公式求人ではenterprise softwareのfull-cycle sales、日本市場でのnew business、executive relationship、partner/reseller活用を重視。",
+    fit: "完成したbrandではなく、日本のICP、message、reference、partnerを自ら作りたいfounding sellerに向く。", thingsToKnow: "法人・office、既存Japan顧客、reseller ownership、SE/CS coverage、quota、rampは非公開。", marketValue: "Modern Data Stack、MarTech、Founding AE、partner-led Japan buildの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "schrodinger-senior-account-manager-japan", companySlug: "schrodinger", title: "Senior Account Manager, Japan", segment: "Life Science / Enterprise", location: "東京", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Schrödinger Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/schrdinger/jobs/6663458003" },
+    descriptionSummary: "日本の製薬・biotech顧客でscientific課題を理解し、specialistとsoftware・serviceの採用、renewal、expansionを担うSenior Account Manager。",
+    genbaTake: "licenseではなく、合成候補数、design cycle、predictionと実験の相関をR&D productivityのbusiness caseへ変える。",
+    desiredProfile: "公式求人ではlife science software・scientific sales、complex account management、顧客研究workflowの理解、日本語・英語での連携を重視。",
+    fit: "深いdomain学習を厭わず、研究者と経営双方へ長期accountを作るsellerに向く。", thingsToKnow: "担当account数、software/service split、renewal ownership、scientific coverage、quota、cycleは非公開。", marketValue: "Scientific value selling、Drug Discovery、R&D software、long-cycle account managementの希少経験。",
+  }),
+];
+
 const jobRecords: Job[] = [
   ...waveTwoJobs,
   ...waveThreeJobs,
+  ...waveFourJobs,
   {
     id: "sf-data-cloud-ae",
     companySlug: "salesforce",

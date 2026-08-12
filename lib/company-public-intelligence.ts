@@ -3,6 +3,8 @@ import { waveTwoIntelligenceBySlug } from "@/lib/company-public-intelligence-wav
 import { preEntryIntelligenceBySlug } from "@/lib/company-public-intelligence-pre-entry";
 import { waveThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-wave-three";
 import { preEntryWaveTwoIntelligenceBySlug } from "@/lib/company-public-intelligence-pre-entry-wave-two";
+import { waveFourIntelligenceBySlug } from "@/lib/company-public-intelligence-wave-four";
+import { preEntryWaveThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-pre-entry-wave-three";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9335,6 +9337,8 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...preEntryIntelligenceBySlug,
   ...waveThreeIntelligenceBySlug,
   ...preEntryWaveTwoIntelligenceBySlug,
+  ...waveFourIntelligenceBySlug,
+  ...preEntryWaveThreeIntelligenceBySlug,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {
