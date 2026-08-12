@@ -38,8 +38,12 @@ export default function HomePage() {
           </div>
           <aside className="hero-panel" aria-label="Genbaデータの概要">
             <div className="terminal-head"><span>GENBA / MARKET WATCH</span><span className="terminal-live">更新中</span></div>
-            <div className="terminal-stat"><span>観測企業</span><strong>{companies.length}</strong><small>初期公開版</small></div>
-            <div className="terminal-stat"><span>確認中の営業求人</span><strong>{jobs.length}</strong><small>公式採用ページへ直結</small></div>
+            <Link href="/companies" className="terminal-stat" aria-label={`掲載企業 ${companies.length}社の企業研究まとめを見る`}>
+              <span>掲載企業</span><strong>{companies.length}</strong><small>企業研究まとめ</small>
+            </Link>
+            <Link href="/jobs" className="terminal-stat" aria-label={`現在の求人 ${jobs.length}件を見る`}>
+              <span>現在の求人</span><strong>{jobs.length}</strong>
+            </Link>
             <div className="terminal-foot">
               <span>サイト内更新日</span>
               <strong>{lastUpdated.replaceAll("-", ".")}</strong>

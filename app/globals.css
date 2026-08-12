@@ -64,7 +64,9 @@ button, input, select { font: inherit; }
 .terminal-head { display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; border-bottom: 1px solid #355363; color: #aebfc8; font-size: 10px; font-weight: 800; letter-spacing: .13em; }
 .terminal-live { color: #70d3c5; }
 .terminal-live::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: #70d3c5; box-shadow: 0 0 0 4px rgba(112,211,197,.12); }
-.terminal-stat { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; padding: 19px; border-bottom: 1px solid #284656; }
+.terminal-stat { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; padding: 19px; border-bottom: 1px solid #284656; color: inherit; text-decoration: none; transition: background-color 160ms ease; }
+.terminal-stat:hover { background: rgba(112, 211, 197, 0.08); }
+.terminal-stat:focus-visible { outline: 2px solid #70d3c5; outline-offset: -2px; }
 .terminal-stat span { color: #aebfc8; font-size: 12px; }
 .terminal-stat strong { grid-row: span 2; font-size: 26px; font-variant-numeric: tabular-nums; }
 .terminal-stat small { color: #70d3c5; font-size: 10px; }
