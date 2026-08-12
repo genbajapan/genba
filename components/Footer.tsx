@@ -23,23 +23,31 @@ const copy: Record<Locale, { tagline: string; nav: { href: string; label: string
   },
 };
 
-export default function Footer({ locale = "en" }: { locale?: Locale }) {
-  const { tagline, nav } = copy[locale];
+export default function Footer({ locale = "en", displayLanguage = "ja" }: { locale?: Locale; displayLanguage?: "ja" | "en" }) {
+  const base = copy[locale];
+  const tagline = displayLanguage === "en" ? "The briefing room for global IT sales professionals in Japan." : base.tagline;
+  const footerNav = displayLanguage === "en" ? [
+    { href: "/companies", label: "Companies (Japanese)" },
+    { href: "/jobs", label: "Jobs (Japanese)" },
+    { href: "/methodology", label: "Methodology (Japanese)" },
+    { href: "/en/advertise", label: "Partnership" },
+    { href: "/about", label: "About (Japanese)" },
+  ] : base.nav;
 
   return (
     <footer className="site-footer">
       <Container className="footer-grid">
-        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">公式情報・更新日・分析を分けて伝える、独立系メディアです。</p></div>
+        <div><Link href={locale === "ja" ? "/ja" : "/"} className="footer-brand">Genba</Link><p>{tagline}</p><p className="footer-note">{displayLanguage === "en" ? "Independent media separating official facts, update dates and editorial analysis." : "公式情報・更新日・分析を分けて伝える、独立系メディアです。"}</p></div>
         <div className="footer-links">
-          {nav.map((item) => (
+          {footerNav.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
-        <div className="footer-publisher"><span>運営・編集</span><a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a><p>外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。</p></div>
+        <div className="footer-publisher"><span>{displayLanguage === "en" ? "PUBLISHER / EDITOR" : "運営・編集"}</span><a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a><p>{displayLanguage === "en" ? "Edited by a working global SaaS account executive. No confidential employer information is used." : "外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。"}</p></div>
       </Container>
-      <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p><Link href="/privacy">プライバシーポリシー</Link><span>求人応募は各社の公式サイトで行われます。</span></p></Container>
+      <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p><Link href="/privacy">{displayLanguage === "en" ? "Privacy policy (Japanese)" : "プライバシーポリシー"}</Link><span>{displayLanguage === "en" ? "Applications are completed on each company’s official careers site." : "求人応募は各社の公式サイトで行われます。"}</span></p></Container>
     </footer>
   );
 }

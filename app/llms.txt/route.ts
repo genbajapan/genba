@@ -14,6 +14,7 @@ export async function GET() {
     `- [営業求人](${siteUrl}/jobs)`,
     `- [調査・編集方針](${siteUrl}/methodology)`,
     `- [掲載・スポンサー](${siteUrl}/advertise)`,
+    `- [Partnership (English)](${siteUrl}/en/advertise)`,
     "",
     "## Companies",
     ...companies.map((company) => `- [${company.name}](${siteUrl}/companies/${company.slug}) — ${company.category}, 最終更新日 ${company.lastChecked}`),

@@ -17,8 +17,14 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
   ],
 };
 
-export default function Header({ locale = "en" }: { locale?: Locale }) {
+export default function Header({ locale = "en", displayLanguage = "ja" }: { locale?: Locale; displayLanguage?: "ja" | "en" }) {
   const homeHref = locale === "ja" ? "/ja" : "/";
+  const activeNav = displayLanguage === "en" ? [
+    { href: "/companies", label: "Companies (JP)" },
+    { href: "/jobs", label: "Jobs (JP)" },
+    { href: "/insights", label: "Insights (JP)" },
+    { href: "/en/advertise", label: "Partnership" },
+  ] : nav[locale];
 
   return (
     <header className="site-header">
@@ -29,8 +35,8 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
           </strong></span>
         </Link>
         <div className="header-actions">
-          <nav className="primary-nav" aria-label="メインナビゲーション">
-            {nav[locale].map((item) => (
+          <nav className="primary-nav" aria-label={displayLanguage === "en" ? "Main navigation" : "メインナビゲーション"}>
+            {activeNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -40,10 +46,10 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
               </Link>
             ))}
           </nav>
-          {locale === "en" && <Link href="/newsletter" className="button button-primary header-cta">無料購読</Link>}
+          {locale === "en" && <Link href="/newsletter" className="button button-primary header-cta">{displayLanguage === "en" ? "Newsletter (JP)" : "無料購読"}</Link>}
         </div>
       </Container>
-      {locale === "en" && <Container className="mobile-nav"><nav>{nav.en.slice(0, 4).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav></Container>}
+      {locale === "en" && <Container className="mobile-nav"><nav>{activeNav.slice(0, 4).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav></Container>}
     </header>
   );
 }
