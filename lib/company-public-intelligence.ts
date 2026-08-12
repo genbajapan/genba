@@ -1,7 +1,8 @@
 import { expansionIntelligenceBySlug } from "@/lib/company-public-intelligence-expansion";
 import { waveTwoIntelligenceBySlug } from "@/lib/company-public-intelligence-wave-two";
+import { preEntryIntelligenceBySlug } from "@/lib/company-public-intelligence-pre-entry";
 
-export type ResearchSourceKind = "企業公式" | "法定開示" | "外部集計" | "コミュニティ";
+export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
 export type ResearchSource = {
   id: string;
@@ -9319,6 +9320,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   mirakl: miraklIntelligence,
   ...expansionIntelligenceBySlug,
   ...waveTwoIntelligenceBySlug,
+  ...preEntryIntelligenceBySlug,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {

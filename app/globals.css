@@ -118,7 +118,7 @@ button, input, select { font: inherit; }
 .market-tier-board { padding: 26px 38px 30px; border-bottom: 1px solid #294857; }
 .market-tier-heading { margin: 0; color: #7b96a3; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
 .market-tier-note { margin: 8px 0 18px; color: #91a8b2; font-size: 10px; line-height: 1.5; }
-.market-tier-list { display: flex; gap: 14px; }
+.market-tier-list { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
 .market-tier { flex: 1; min-width: 0; padding: 12px 13px 13px; border: 1px solid #244555; background: #0d2634; color: inherit; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
 .market-tier:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.2); }
 .market-tier:focus-visible { outline: 2px solid #70d3c5; outline-offset: 3px; }
@@ -136,6 +136,9 @@ button, input, select { font: inherit; }
 .market-tier-quiet { border-color: #3f7e5c; background: #0c2a1e; }
 .market-tier-quiet .market-tier-label { color: #70d39a; }
 .market-tier-quiet .market-tier-tag { border-color: rgba(112,211,154,.4); background: rgba(112,211,154,.1); }
+.market-tier-pre-entry { border-color: #c9a52a; background: #32280b; }
+.market-tier-pre-entry .market-tier-label { color: #ffd75a; }
+.market-tier-pre-entry .market-tier-tag { border-color: rgba(255,215,90,.48); background: rgba(255,215,90,.13); color: #fff0ad; }
 .market-disclaimer { margin: 0; padding: 0 38px 24px; color: #69838f; font-size: 8px; line-height: 1.7; }
 
 .content-section { padding: 82px 0; }
@@ -153,6 +156,12 @@ button, input, select { font: inherit; }
 .tier-filter-summary-active div > strong { color: #d9bd5f; }
 .tier-filter-summary-selective { border-color: #3f7e5c; background: #0c2a1e; }
 .tier-filter-summary-selective div > strong { color: #70d39a; }
+.entry-filter-summary { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-bottom: 18px; padding: 17px 20px; border: 1px solid #d0a72c; background: #fff7d6; color: var(--navy); }
+.entry-filter-summary div > span,.entry-filter-summary div > strong { display: block; }
+.entry-filter-summary div > span { color: #8b7527; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
+.entry-filter-summary div > strong { margin-top: 4px; color: #715b0b; font-size: 18px; }
+.entry-filter-summary p { margin: 0; color: #665d3b; font-size: 11px; }
+.entry-filter-summary button { padding: 8px 11px; border: 1px solid #b99722; background: transparent; color: #715b0b; font-size: 10px; font-weight: 750; cursor: pointer; }
 .content-section-tight { padding: 58px 0; }
 .surface-section { background: white; border-block: 1px solid var(--line); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 30px; }
@@ -244,7 +253,7 @@ button, input, select { font: inherit; }
 .page-summary strong { font-size: 24px; color: var(--navy); }
 .page-summary span { margin-top: 4px; color: var(--muted); font-size: 10px; }
 .filter-panel { display: grid; grid-template-columns: minmax(280px,1fr) auto; align-items: end; gap: 24px; padding: 20px; background: white; border: 1px solid var(--line); }
-.company-filter-panel { grid-template-columns: minmax(250px,1fr) 230px auto; }
+.company-filter-panel { grid-template-columns: minmax(250px,1fr) 230px auto auto; }
 .search-field,.select-field { display: flex; flex-direction: column; gap: 7px; }
 .search-field > span,.select-field > span { color: var(--muted); font-size: 10px; font-weight: 750; }
 .search-field input,.select-field select { width: 100%; height: 44px; padding: 0 13px; border: 1px solid var(--line); background: var(--canvas); color: var(--ink); outline: none; }
@@ -253,6 +262,11 @@ button, input, select { font: inherit; }
 .filter-chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .filter-chips button { height: 36px; padding: 0 12px; border: 1px solid var(--line); background: white; color: var(--muted); font-size: 11px; cursor: pointer; }
 .filter-chips button.active { background: var(--navy); border-color: var(--navy); color: white; }
+.filter-chips button.entry-active { border-color: #c7a026; background: #ffe58b; color: #5b4700; }
+.pre-entry-badge { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 5px 9px; border: 1px solid #d0aa31; background: #ffe58b; color: #5d4900; font-size: 9px; font-weight: 850; white-space: nowrap; }
+.pre-entry-badge i { width: 6px; height: 6px; border-radius: 50%; background: #b58400; }
+.pre-entry-badge-hero { margin-top: 8px; padding: 7px 10px; font-size: 10px; letter-spacing: .04em; }
+.decision-console-pre-entry { border-color: #a98922; box-shadow: inset 0 3px 0 #ffd75a; }
 .result-count,.results-heading { margin: 24px 0 16px; color: var(--muted); font-size: 11px; font-weight: 700; }
 .results-heading { display: flex; justify-content: space-between; }
 .results-heading p { margin: 0; color: var(--navy); }
@@ -835,6 +849,7 @@ button, input, select { font: inherit; }
   .hero-grid { grid-template-columns: 1.15fr .85fr; }
   .company-filter-panel { grid-template-columns: 1fr 220px; }
   .company-filter-panel .filter-chips { grid-column: 1 / -1; }
+  .market-tier-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .company-command-grid { grid-template-columns: minmax(0,1fr) 380px; gap: 40px; }
   .role-facts { grid-template-columns: repeat(3,1fr); }
   .role-facts div:nth-child(4) { border-left: 0; }
@@ -881,7 +896,7 @@ button, input, select { font: inherit; }
   .market-section { padding-block: 42px; }
   .market-heat-head { align-items: flex-start; flex-direction: column; padding: 28px 24px 22px; gap: 22px; }
   .market-tier-board { padding: 22px 24px 26px; }
-  .market-tier-list { flex-direction: column; }
+  .market-tier-list { grid-template-columns: 1fr; }
   .market-head-status { width: 100%; flex-direction: column; gap: 18px; }
   .market-head-metrics { width: 100%; grid-template-columns: repeat(3,1fr); }
   .market-head-metrics > div { min-width: 0; padding: 2px 10px; }
@@ -892,6 +907,8 @@ button, input, select { font: inherit; }
   .card-grid,.editorial-grid { grid-template-columns: 1fr; }
   .tier-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
   .tier-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
+  .entry-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
+  .entry-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
   .advertise-audience-grid,.advertise-plan-grid,.advertise-form-grid { grid-template-columns: 1fr; }
   .advertise-plan-grid { gap: 35px; }
   .advertise-form-wide { grid-column: auto; }

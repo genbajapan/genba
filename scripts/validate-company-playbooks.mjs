@@ -5,6 +5,7 @@ const targets = [
   "lib/company-public-intelligence.ts",
   "lib/company-public-intelligence-expansion.ts",
   "lib/company-public-intelligence-wave-two.ts",
+  "lib/company-public-intelligence-pre-entry.ts",
 ].map((target) => path.join(process.cwd(), target));
 const source = targets
   .map((target) => fs.readFileSync(target, "utf8"))

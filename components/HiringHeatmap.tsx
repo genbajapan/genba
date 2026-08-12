@@ -11,6 +11,7 @@ const hotTierAreas = rows.filter((row) => row.tier === "hot").map((row) => row.a
 const warmTierAreas = rows.filter((row) => row.tier === "active").map((row) => row.area);
 const quietTierAreas = rows.filter((row) => row.tier === "selective").map((row) => row.area);
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
+const preEntryCompanies = companies.filter((company) => company.entryStatus === "not-entered");
 
 function tierHref(tier: "hot" | "active" | "selective") {
   return `/companies?tier=${tier}#company-results`;
@@ -22,8 +23,8 @@ export default function HiringHeatmap() {
       <div className="market-heat-head">
         <div>
           <p className="eyebrow eyebrow-light">CATEGORY HIRING HEAT</p>
-          <h2 id="market-heat-title">7つの大分類で見る採用温度</h2>
-          <p>製品固有の細かな領域を、読者が企業を探しやすい7つの大分類へ統合。公式確認できた掲載中の営業求人を集計しています。</p>
+          <h2 id="market-heat-title">採用温度と、日本未進出の注目企業</h2>
+          <p>7つの大分類で国内の営業求人を比較しながら、今後日本へ進出する可能性を調査した海外企業も別枠で追えます。</p>
         </div>
         <div className="market-head-status">
           <div className="market-head-metrics" aria-label="現在の掲載状況">
@@ -39,8 +40,8 @@ export default function HiringHeatmap() {
       </div>
 
       <div className="market-tier-board">
-        <p className="market-tier-heading">採用温度で見る3つの層</p>
-        <p className="market-tier-note">最も熱い領域が、必ずしも狙い目とは限りません。</p>
+        <p className="market-tier-heading">採用温度の3つの層 + 日本未進出</p>
+        <p className="market-tier-note">現在の求人と、将来の進出可能性は分けて表示しています。</p>
         <div className="market-tier-list">
           <Link href={tierHref("hot")} className="market-tier market-tier-hot" aria-label="HOTに含まれる企業をすべて見る">
             <span className="market-tier-label">HOT</span>
@@ -63,10 +64,17 @@ export default function HiringHeatmap() {
             </div>
             <p>掲載求人が相対的に少ない大分類。募集状況と更新日を合わせて確認できます。</p>
           </Link>
+          <Link href="/companies?entry=not-entered#company-results" className="market-tier market-tier-pre-entry" aria-label="日本未進出の注目企業をすべて見る">
+            <span className="market-tier-label">日本未進出</span>
+            <div className="market-tier-tags">
+              <span className="market-tier-tag">注目企業 {preEntryCompanies.length}社</span>
+            </div>
+            <p>海外成長、APAC展開、日本対応を調査。進出時期は公式事実とGenba仮説を分けて掲載。</p>
+          </Link>
         </div>
       </div>
 
-      <p className="market-disclaimer">現在確認できている営業求人を大分類ごとに集計し、最大求人数に対する相対比でHOT・Active・Selectiveへ分類しています。募集終了・新規掲載は確認次第更新します。</p>
+      <p className="market-disclaimer">HOT・Active・Selectiveは現在確認できている営業求人の相対分類です。「日本未進出」は求人温度に含めず、日本法人・国内拠点・日本向け求人が未確認の企業を、海外公式情報と公開プロフィールから別枠で調査しています。</p>
     </section>
   );
 }

@@ -23,6 +23,7 @@ export type Company = {
   lastChecked: string;
   careersUrl: string;
   tags: string[];
+  entryStatus?: "not-entered";
   interviewFlow?: {
     steps: InterviewFlowStep[];
     note: string;
@@ -763,6 +764,11 @@ const companyRecords: Company[] = [
     slug: "planet", name: "Planet", category: "Earth Observation / Geospatial Intelligence", broadCategory: "コマース・業界特化", hq: "San Francisco, US", japanPresence: "Planet Labs Japan KK / Japan remote", hiringStatus: "採用中", salesRoles: 1,
     description: "高頻度の衛星画像と変化分析を、日本の防衛・情報機関へ展開するAccount Executiveを募集。",
     lastChecked: "2026-08-12", careersUrl: "https://www.planet.com/company/careers/", tags: ["Government", "Defense", "GEOINT", "Satellite Data", "Japan Remote"],
+  },
+  {
+    slug: "gong", name: "Gong", category: "Revenue AI / Revenue Intelligence", broadCategory: "CRM・顧客体験", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
+    description: "日本法人・日本向け求人は未確認。ARR 5億ドル超、5,000社超の顧客基盤とSingapore拠点から、日本進出の可能性を継続観測。",
+    lastChecked: "2026-08-12", careersUrl: "https://www.gong.io/careers", tags: ["日本未進出", "Revenue AI", "Enterprise", "APAC"], entryStatus: "not-entered",
   },
 ];
 
