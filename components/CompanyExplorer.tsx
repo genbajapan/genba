@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { companies, jobs } from "@/lib/market-data";
 import { broadCategories, buildHiringHeatRows } from "@/lib/solution-categories";
@@ -17,6 +17,13 @@ const tierAreas = {
 type TierFilter = "すべて" | keyof typeof tierAreas;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
 type EntryFilter = "すべて" | "not-entered";
+const returnPositionKey = "genba:company-explorer:return-position";
+
+type ReturnPosition = {
+  listKey: string;
+  slug: string;
+  cardOffset: number;
+};
 
 export default function CompanyExplorer() {
   const searchParams = useSearchParams();
@@ -25,9 +32,11 @@ export default function CompanyExplorer() {
   const initialSolutionArea = categoryParam && solutionAreas.includes(categoryParam) ? categoryParam : "すべて";
   const initialTier: TierFilter = initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const initialEntry: EntryFilter = searchParams.get("entry") === "not-entered" ? "not-entered" : "すべて";
+  const statusParam = searchParams.get("status");
+  const initialStatus = statusParam && statuses.includes(statusParam) ? statusParam : "すべて";
 
-  const [query, setQuery] = useState("");
-  const [status, setStatus] = useState("すべて");
+  const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  const [status, setStatus] = useState(initialStatus);
   const [solutionArea, setSolutionArea] = useState(initialSolutionArea);
   const [tier, setTier] = useState<TierFilter>(initialTier);
   const [entry, setEntry] = useState<EntryFilter>(initialEntry);
@@ -40,9 +49,114 @@ export default function CompanyExplorer() {
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry;
   }), [query, status, solutionArea, tier, entry]);
 
+  const clearReturnTarget = useCallback(() => {
+    window.sessionStorage.removeItem(returnPositionKey);
+    if (window.location.hash.startsWith("#company-")) {
+      const url = new URL(window.location.href);
+      url.hash = "company-results";
+      window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    }
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const setOptionalParam = (key: string, value: string, defaultValue: string) => {
+      if (value === defaultValue) url.searchParams.delete(key);
+      else url.searchParams.set(key, value);
+    };
+
+    setOptionalParam("q", query, "");
+    setOptionalParam("status", status, "すべて");
+    setOptionalParam("category", solutionArea, "すべて");
+    setOptionalParam("tier", tier, "すべて");
+    setOptionalParam("entry", entry, "すべて");
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  }, [query, status, solutionArea, tier, entry]);
+
+  useLayoutEffect(() => {
+    let timers: number[] = [];
+    let frame = 0;
+
+    const restorePosition = () => {
+      if (!window.location.hash.startsWith("#company-")) {
+        window.history.scrollRestoration = "auto";
+        return;
+      }
+
+      const slug = decodeURIComponent(window.location.hash.slice("#company-".length));
+      const target = document.getElementById(`company-${slug}`);
+      if (!target) return;
+
+      let saved: ReturnPosition | null = null;
+      try {
+        saved = JSON.parse(window.sessionStorage.getItem(returnPositionKey) ?? "null") as ReturnPosition | null;
+      } catch {
+        window.sessionStorage.removeItem(returnPositionKey);
+      }
+
+      const currentListKey = `${window.location.pathname}${window.location.search}`;
+      const cardOffset = saved?.listKey === currentListKey && saved.slug === slug ? saved.cardOffset : 130;
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      window.history.scrollRestoration = "manual";
+      root.style.scrollBehavior = "auto";
+
+      const alignCard = () => {
+        const top = window.scrollY + target.getBoundingClientRect().top - cardOffset;
+        window.scrollTo(0, Math.max(0, top));
+      };
+
+      alignCard();
+      timers.push(window.setTimeout(alignCard, 80));
+      timers.push(window.setTimeout(() => {
+        root.style.scrollBehavior = previousScrollBehavior;
+        window.history.scrollRestoration = "auto";
+      }, 140));
+    };
+
+    const scheduleRestore = () => {
+      window.history.scrollRestoration = "manual";
+      frame = window.requestAnimationFrame(() => window.requestAnimationFrame(restorePosition));
+    };
+
+    scheduleRestore();
+    window.addEventListener("pageshow", scheduleRestore);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      timers.forEach(window.clearTimeout);
+      window.removeEventListener("pageshow", scheduleRestore);
+    };
+  }, []);
+
+  const rememberCompanyPosition = useCallback((slug: string) => {
+    const card = document.getElementById(`company-${slug}`);
+    const url = new URL(window.location.href);
+    url.hash = `company-${slug}`;
+    window.history.scrollRestoration = "manual";
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    const position: ReturnPosition = {
+      listKey: `${url.pathname}${url.search}`,
+      slug,
+      cardOffset: card?.getBoundingClientRect().top ?? 130,
+    };
+    window.sessionStorage.setItem(returnPositionKey, JSON.stringify(position));
+  }, []);
+
   function changeSolutionArea(nextArea: string) {
+    clearReturnTarget();
     setSolutionArea(nextArea);
     setTier("すべて");
+  }
+
+  function changeStatus(nextStatus: string) {
+    clearReturnTarget();
+    setStatus(nextStatus);
+    if (nextStatus === "すべて") setEntry("すべて");
+  }
+
+  function changeEntry(nextEntry: EntryFilter) {
+    clearReturnTarget();
+    setEntry(nextEntry);
   }
 
   return (
@@ -51,20 +165,20 @@ export default function CompanyExplorer() {
         <div className={`tier-filter-summary tier-filter-summary-${tier}`}>
           <div><span>採用温度で絞り込み中</span><strong>{tierLabels[tier]}</strong></div>
           <p>{tierAreas[tier].size}つの大分類に含まれる企業を表示</p>
-          <button type="button" onClick={() => setTier("すべて")}>絞り込みを解除</button>
+          <button type="button" onClick={() => { clearReturnTarget(); setTier("すべて"); }}>絞り込みを解除</button>
         </div>
       )}
       {entry === "not-entered" && (
         <div className="entry-filter-summary">
           <div><span>進出状況で絞り込み中</span><strong>日本未進出</strong></div>
           <p>日本法人・国内拠点・日本向け求人が未確認で、将来の進出可能性を調査した企業を表示</p>
-          <button type="button" onClick={() => setEntry("すべて")}>絞り込みを解除</button>
+          <button type="button" onClick={() => changeEntry("すべて")}>絞り込みを解除</button>
         </div>
       )}
       <div className="filter-panel company-filter-panel">
         <label className="search-field">
           <span>企業・カテゴリを検索</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Data、Enterprise、Braze" />
+          <input value={query} onChange={(event) => { clearReturnTarget(); setQuery(event.target.value); }} placeholder="例：Data、Enterprise、Braze" />
         </label>
         <label className="select-field">
           <span>ソリューション大分類</span>
@@ -74,17 +188,16 @@ export default function CompanyExplorer() {
         </label>
         <div className="filter-chips" aria-label="採用状況で絞り込み">
           {statuses.map((item) => (
-            <button key={item} className={status === item ? "active" : ""} onClick={() => setStatus(item)}>{item}</button>
+            <button key={item} className={status === item ? "active" : ""} onClick={() => changeStatus(item)}>{item}</button>
           ))}
         </div>
         <div className="filter-chips entry-filter-chips" aria-label="日本進出状況で絞り込み">
-          <button className={entry === "すべて" ? "active" : ""} onClick={() => setEntry("すべて")}>進出状況すべて</button>
-          <button className={entry === "not-entered" ? "active entry-active" : ""} onClick={() => setEntry("not-entered")}>日本未進出</button>
+          <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
         </div>
       </div>
       <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : `${results.length}社を表示`}</p>
       <div className="card-grid">
-        {results.map((company) => <CompanyCard key={company.slug} company={company} />)}
+        {results.map((company) => <CompanyCard key={company.slug} company={company} onNavigate={rememberCompanyPosition} />)}
       </div>
     </>
   );

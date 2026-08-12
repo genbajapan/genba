@@ -142,7 +142,7 @@ button, input, select { font: inherit; }
 .market-disclaimer { margin: 0; padding: 0 38px 24px; color: #69838f; font-size: 8px; line-height: 1.7; }
 
 .content-section { padding: 82px 0; }
-.company-results-section { scroll-margin-top: 95px; }
+.company-results-section,.job-results-section { scroll-margin-top: 95px; }
 .tier-filter-summary { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-bottom: 18px; padding: 17px 20px; border: 1px solid #294957; background: var(--navy); color: white; }
 .tier-filter-summary div > span,.tier-filter-summary div > strong { display: block; }
 .tier-filter-summary div > span { color: #8da6b1; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
@@ -171,7 +171,7 @@ button, input, select { font: inherit; }
 .text-link:hover, .card-link:hover { text-decoration: underline; }
 
 .card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.data-card { display: flex; flex-direction: column; min-height: 310px; padding: 22px; background: white; border: 1px solid var(--line); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.data-card { display: flex; flex-direction: column; min-height: 310px; padding: 22px; scroll-margin-top: 125px; background: white; border: 1px solid var(--line); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .data-card:hover { transform: translateY(-3px); border-color: #91aaa9; box-shadow: 0 16px 40px rgba(10,38,56,.08); }
 .data-card-topline { min-height: 30px; display: flex; align-items: start; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .04em; }
 .data-card h3 { margin: 20px 0 9px; font-size: 23px; letter-spacing: -.03em; }
@@ -247,8 +247,11 @@ button, input, select { font: inherit; }
 .page-hero h1 { margin: 0; color: var(--navy); font-size: clamp(38px,5vw,58px); letter-spacing: -.05em; line-height: 1.12; }
 .page-hero p.page-lead { max-width: 720px; margin: 21px 0 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
 .page-summary { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
-.page-summary div { padding: 17px; background: var(--canvas); }
-.page-summary div + div { border-left: 1px solid var(--line); }
+.page-summary > :is(div,a) { padding: 17px; background: var(--canvas); color: inherit; text-decoration: none; }
+.page-summary > :is(div,a) + :is(div,a) { border-left: 1px solid var(--line); }
+.page-summary > a { transition: background-color .16s ease, box-shadow .16s ease; }
+.page-summary > a:hover { background: #e9f2f0; }
+.page-summary > a:focus-visible { position: relative; z-index: 1; outline: 2px solid var(--signal); outline-offset: -2px; }
 .page-summary strong,.page-summary span { display: block; }
 .page-summary strong { font-size: 24px; color: var(--navy); }
 .page-summary span { margin-top: 4px; color: var(--muted); font-size: 10px; }
@@ -263,6 +266,7 @@ button, input, select { font: inherit; }
 .filter-chips button { height: 36px; padding: 0 12px; border: 1px solid var(--line); background: white; color: var(--muted); font-size: 11px; cursor: pointer; }
 .filter-chips button.active { background: var(--navy); border-color: var(--navy); color: white; }
 .filter-chips button.entry-active { border-color: #c7a026; background: #ffe58b; color: #5b4700; }
+.entry-filter-chips button { min-width: 130px; }
 .pre-entry-badge { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 5px 9px; border: 1px solid #d0aa31; background: #ffe58b; color: #5d4900; font-size: 9px; font-weight: 850; white-space: nowrap; }
 .pre-entry-badge i { width: 6px; height: 6px; border-radius: 50%; background: #b58400; }
 .pre-entry-badge-hero { margin-top: 8px; padding: 7px 10px; font-size: 10px; letter-spacing: .04em; }
@@ -954,6 +958,7 @@ button, input, select { font: inherit; }
   .page-summary { max-width: 330px; }
   .filter-panel,.company-filter-panel { grid-template-columns: 1fr; }
   .company-filter-panel .filter-chips { grid-column: auto; }
+  .entry-filter-chips { grid-template-columns: 1fr; }
   .job-row { grid-template-columns: 38px minmax(0,1fr); }
   .job-row > .button { grid-column: 2; justify-self: start; }
   .footer-grid { grid-template-columns: 1fr; gap: 35px; }
