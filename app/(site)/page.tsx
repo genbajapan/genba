@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
-import CompanyCard from "@/components/CompanyCard";
 import JobCard from "@/components/JobCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import HiringHeatmap from "@/components/HiringHeatmap";
+import RandomCompanyGrid from "@/components/RandomCompanyGrid";
 import { companies, jobs } from "@/lib/market-data";
 
 export const metadata: Metadata = {
@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const lastUpdated = [...companies.map((company) => company.lastChecked), ...jobs.map((job) => job.lastChecked)].sort().at(-1) ?? "—";
+  const companySlugsWithOpenJobs = new Set(jobs.map((job) => job.companySlug));
+  const companiesWithOpenJobs = companies.filter((company) => companySlugsWithOpenJobs.has(company.slug));
+  const preEntryCompanies = companies.filter((company) => company.entryStatus === "not-entered");
 
   return (
     <>
@@ -87,7 +90,14 @@ export default function HomePage() {
       <section className="content-section">
         <Container>
           <SectionHeader eyebrow="COMPANY TRACKER" title="「現場」でどの企業が動いているか" description="日本市場における採用の広がりを企業単位で整理。単発の求人票では見えにくい変化を追います。" href="/companies" linkLabel={`（${companies.length}件の企業を全て見る）`} />
-          <div className="card-grid">{companies.slice(0, 4).map((company) => <CompanyCard key={company.slug} company={company} />)}</div>
+          <RandomCompanyGrid companies={companiesWithOpenJobs} />
+        </Container>
+      </section>
+
+      <section className="content-section">
+        <Container>
+          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出」注目企業" description="海外で成長し、今後の日本進出が注目される企業を、進出の可能性と障壁の両面から追います。" href="/companies?entry=not-entered#company-results" linkLabel="日本未進出企業をすべて見る" />
+          <RandomCompanyGrid companies={preEntryCompanies} />
         </Container>
       </section>
 
