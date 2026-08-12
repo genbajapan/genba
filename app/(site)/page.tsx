@@ -9,7 +9,7 @@ import RandomCompanyGrid from "@/components/RandomCompanyGrid";
 import { companies, jobs } from "@/lib/market-data";
 
 export const metadata: Metadata = {
-  title: { absolute: "小中規模外資IT企業研究所" },
+  title: { absolute: "Genba - 小中規模外資IT企業研究所" },
   description: "転職のたびにOTEを上げてきた現役外資SaaS AEが、日本の外資SaaS採用市場を毎日ウォッチ。情報収集・面接準備に役立つ知見を無料で届けます。",
   alternates: { canonical: "/" },
 };
