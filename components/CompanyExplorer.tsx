@@ -196,7 +196,7 @@ export default function CompanyExplorer() {
         </div>
       </div>
       <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : `${results.length}社を表示`}</p>
-      <div className="card-grid">
+      <div className="card-grid company-card-grid">
         {results.map((company) => <CompanyCard key={company.slug} company={company} onNavigate={rememberCompanyPosition} />)}
       </div>
     </>

@@ -1006,7 +1006,21 @@ button, input, select { font: inherit; }
   .market-date { width: 100%; padding: 15px 0 0; border-top: 1px solid #345261; border-left: 0; }
   .market-disclaimer { padding: 0 24px 20px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 13px; }
-  .card-grid,.editorial-grid { grid-template-columns: 1fr; }
+  .card-grid:not(.company-card-grid),.editorial-grid { grid-template-columns: 1fr; }
+  .company-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .company-card-grid .data-card { min-height: 180px; padding: 12px; }
+  .company-card-grid .data-card-topline { min-height: 24px; gap: 4px; font-size: 7px; letter-spacing: 0; }
+  .company-card-grid .data-card-topline > span:first-child { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 1.35; }
+  .company-card-grid .status-badge,.company-card-grid .pre-entry-badge { flex-shrink: 0; gap: 4px; padding: 4px 5px; font-size: 7px; }
+  .company-card-grid .status-dot,.company-card-grid .pre-entry-badge i { width: 5px; height: 5px; }
+  .company-card-grid .data-card h3 { margin: 10px 0 0; font-size: 16px; line-height: 1.2; }
+  .company-card-grid .data-card > p { display: none; }
+  .company-card-grid .metric-row { margin: 12px 0 10px; }
+  .company-card-grid .metric-row div { padding: 8px 0; }
+  .company-card-grid .metric-row div + div { padding-left: 8px; }
+  .company-card-grid .metric-row strong { font-size: 14px; }
+  .company-card-grid .metric-row span { font-size: 7px; }
+  .company-card-grid .card-link { margin-top: auto; font-size: 9px; white-space: normal; }
   .tier-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
   .tier-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
   .entry-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
@@ -1100,7 +1114,7 @@ button, input, select { font: inherit; }
 @media (max-width: 480px) {
   .hero h1 { font-size: 37px; }
   .hero-lead { font-size: 15px; }
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid:not(.company-card-grid) { grid-template-columns: 1fr; }
   .filter-chips { display: grid; grid-template-columns: 1fr 1fr; }
   .signal-row { grid-template-columns: 42px 18px 1fr; }
   .signal-content { padding-left: 10px; }
