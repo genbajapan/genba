@@ -121,7 +121,7 @@ export default function CompanyIntelligenceProfile({
                 <span className="decision-live">PUBLIC DATA</span>
               </div>
               <div className="decision-console-body">
-                <p className="decision-reason">{isPreEntry ? "日本法人・国内拠点・日本向け求人は未確認。ARR 5億ドル超、5,000社超の顧客基盤、SingaporeでのAPAC展開から、日本進出の可能性を継続観測する注目企業。" : profile.verdictReason}</p>
+                <p className="decision-reason">{isPreEntry ? company.description : profile.verdictReason}</p>
                 <div className="decision-fit-tags">
                   {(publicIntel?.fitTags ?? profile.fitSignals).map((tag) => <span key={tag}>#{tag}</span>)}
                 </div>
