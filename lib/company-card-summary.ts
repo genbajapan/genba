@@ -2,6 +2,9 @@ import type { Company } from "@/lib/market-data";
 import { getCompanyPublicIntelligence } from "@/lib/company-public-intelligence";
 
 const conciseOverrides: Record<string, string> = {
+  okta: "従業員・パートナー・顧客のIDとアクセス権を統合し、安全な認証と権限管理を支える基盤。",
+  deel: "海外人材の雇用契約、給与、労務管理を一つにまとめ、国をまたぐ組織運営を支えるHR基盤。",
+  deepl: "文書・会議・業務システムの翻訳を統合し、企業の多言語コミュニケーションを速めるLanguage AI基盤。",
   anaplan: "Anaplanは、財務・営業・人員など部門別の計画を一つにつなぎ、変化に応じた全社判断を速める計画基盤。",
   speak: "Speakは、AIとの会話練習と管理機能で、社員の実践的な英語スピーキング力を高める法人向け学習基盤。",
   sysdig: "Sysdigは、クラウドとコンテナの実行時リスクを可視化し、優先すべき脅威への対応を速めるセキュリティ基盤。",
@@ -31,13 +34,23 @@ const conciseOverrides: Record<string, string> = {
   "1password": "1Passwordは、パスワード、端末、SaaS、AIエージェントのアクセスを統合管理するIDセキュリティ基盤。",
 };
 
+function removeCompanyNameLead(summary: string, companyName: string): string {
+  const match = summary.match(/^(.+?)(?:とは|は)[、,:：\s]*/);
+  if (!match) return summary;
+
+  const lead = match[1].trim().toLocaleLowerCase();
+  const displayedName = companyName.trim().toLocaleLowerCase();
+  const isDisplayedName = lead === displayedName || displayedName.startsWith(`${lead} `);
+  return isDisplayedName ? summary.slice(match[0].length) : summary;
+}
+
 export function getCompanyCardSummary(company: Company): string {
   const override = conciseOverrides[company.slug];
-  if (override) return override;
+  if (override) return removeCompanyNameLead(override, company.name);
 
   const valueProp = getCompanyPublicIntelligence(company.slug)?.solutions[0]?.valueProp?.trim();
-  if (!valueProp) return `${company.name}は、${company.category}領域の業務課題を解決する企業向けIT基盤を提供。`;
+  if (!valueProp) return `${company.category}領域の業務課題を解決する企業向けIT基盤を提供。`;
 
   const firstSentence = valueProp.split("。")[0].trim();
-  return `${company.name}は、${firstSentence}。`;
+  return removeCompanyNameLead(`${firstSentence}。`, company.name);
 }

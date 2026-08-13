@@ -76,6 +76,11 @@ for (const company of companies) {
   if (/(求人|採用|募集|ポジション|営業職)/.test(cardSummary)) {
     errors.push(`${company.name}: 一覧用の価値説明に求人状況の文言が含まれています: ${cardSummary}`);
   }
+  const summaryLead = cardSummary.match(/^(.+?)(?:とは|は)[、,:：\s]*/)?.[1]?.trim().toLocaleLowerCase();
+  const displayedName = company.name.trim().toLocaleLowerCase();
+  if (summaryLead && (summaryLead === displayedName || displayedName.startsWith(`${summaryLead} `))) {
+    errors.push(`${company.name}: 一覧用の価値説明が社名と重複しています: ${cardSummary}`);
+  }
   if (getHeadquartersRegion(company.hq) === "other") {
     errors.push(`${company.name}: 本社所在地を地域へ分類できません: ${company.hq}`);
   }
