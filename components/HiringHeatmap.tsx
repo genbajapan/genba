@@ -23,8 +23,8 @@ export default function HiringHeatmap() {
       <div className="market-heat-head">
         <div>
           <p className="eyebrow eyebrow-light">CATEGORY HIRING HEAT</p>
-          <h2 id="market-heat-title">採用温度と、日本未進出の注目企業</h2>
-          <p>7つの大分類で国内の営業求人を比較しながら、今後日本へ進出する可能性を調査した海外企業も別枠で追えます。</p>
+          <h2 id="market-heat-title">求人状況と日本未進出の注目企業</h2>
+          <p>HOT・Active・Selective・3つの採用温度の分類で国内の営業求人を比較しながら、今後日本へ進出する可能性を調査した海外企業も別枠で追えます。</p>
         </div>
         <div className="market-head-status">
           <div className="market-head-metrics" aria-label="現在の掲載状況">
