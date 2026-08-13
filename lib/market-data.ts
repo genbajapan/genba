@@ -1,5 +1,6 @@
 import type { BroadCategory } from "@/lib/solution-categories";
 import { companies20260813, jobs20260813 } from "@/lib/company-additions-2026-08-13";
+import { companies20260813WaveTwo, jobs20260813WaveTwo } from "@/lib/company-additions-2026-08-13-wave-two";
 
 export type Source = {
   label: string;
@@ -852,6 +853,7 @@ const companyRecords: Company[] = [
     description: "9兆ドル超・1,500社超のinvestment data platform。Singapore APAC hubからJapan進出条件を継続観測。", lastChecked: "2026-08-13", careersUrl: "https://addepar.com/careers/", tags: ["日本未進出", "WealthTech", "FinTech", "Investment Data", "Family Office", "APAC"], entryStatus: "not-entered",
   },
   ...companies20260813,
+  ...companies20260813WaveTwo,
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1134,6 +1136,7 @@ const cursorJobs: Job[] = [
 
 const jobRecords: Job[] = [
   ...jobs20260813,
+  ...jobs20260813WaveTwo,
   ...waveTwoJobs,
   ...waveThreeJobs,
   ...waveFourJobs,

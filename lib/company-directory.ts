@@ -227,6 +227,42 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://addepar.com/", locale: "global" },
     globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/addepar/"),
   },
+  wiz: {
+    officialWebsite: { url: "https://www.wiz.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/wizsecurity/"),
+  },
+  "dbt-labs": {
+    officialWebsite: { url: "https://www.getdbt.com/jp", locale: "ja" },
+  },
+  gurobi: {
+    officialWebsite: { url: "https://www.gurobi.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/gurobi-optimization/"),
+  },
+  "neural-concept": {
+    officialWebsite: { url: "https://www.neuralconcept.com/", locale: "global" },
+  },
+  patch: {
+    officialWebsite: { url: "https://www.patch.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/patch-technology/"),
+  },
+  veeva: {
+    officialWebsite: { url: "https://www.veeva.com/jp/", locale: "ja" },
+  },
+  lakera: {
+    officialWebsite: { url: "https://www.lakera.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/lakeraai/"),
+  },
+  tines: {
+    officialWebsite: { url: "https://www.tines.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/tines-io/"),
+  },
+  attio: {
+    officialWebsite: { url: "https://attio.com/", locale: "global" },
+  },
+  retool: {
+    officialWebsite: { url: "https://retool.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/retool/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;
