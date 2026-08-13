@@ -3,6 +3,7 @@ import { companies20260813, jobs20260813 } from "@/lib/company-additions-2026-08
 import { companies20260813WaveTwo, jobs20260813WaveTwo } from "@/lib/company-additions-2026-08-13-wave-two";
 import { companies20260813WaveThree, jobs20260813WaveThree } from "@/lib/company-additions-2026-08-13-wave-three";
 import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08-14";
+import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-additions-2026-08-14-wave-two";
 
 export type Source = {
   label: string;
@@ -858,6 +859,7 @@ const companyRecords: Company[] = [
   ...companies20260813WaveTwo,
   ...companies20260813WaveThree,
   ...companies20260814,
+  ...companies20260814WaveTwo,
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1139,6 +1141,7 @@ const cursorJobs: Job[] = [
 ];
 
 const jobRecords: Job[] = [
+  ...jobs20260814WaveTwo,
   ...jobs20260814,
   ...jobs20260813,
   ...jobs20260813WaveTwo,
@@ -2502,6 +2505,36 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-shopify-japan-product-partnerships",
+    companySlug: "shopify",
+    date: "2026-08-14",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Shopifyが日本のProduct Partnerships Leadを募集",
+    summary: "日本を最優先の国際市場の一つと位置づけ、marketplace、payments、logistics、marketing、vertical SaaSのstrategic partnerを開拓するroleです。",
+    source: { label: "Shopify Careers", url: "https://www.shopify.com/careers/product-partnerships-lead_d9993b7d-d973-409c-9da3-0c8d48cff776" },
+  },
+  {
+    id: "signal-zilliz-japan-founding-team",
+    companySlug: "zilliz",
+    date: "2026-08-14",
+    type: "採用拡大",
+    confidence: "公式確認",
+    title: "Zillizが東京でJapan founding teamを採用",
+    summary: "Enterprise Account ExecutiveとFounding Field Engineerを東京hybridで同時募集。commercial開拓とPoC-to-productionのlocal体制を作る段階です。",
+    source: { label: "Zilliz Careers (Lever)", url: "https://jobs.lever.co/zilliz" },
+  },
+  {
+    id: "signal-airtable-japan-entry-watch",
+    companySlug: "airtable",
+    date: "2026-08-14",
+    type: "注目領域",
+    confidence: "公式確認",
+    title: "AirtableのSydney基盤からJapan進出条件を観測",
+    summary: "50万組織、700人超、Sydney拠点を確認。一方、公式Greenhouseの現行19求人にJapan・Tokyoはなく、日本語GUIと国内顧客事例も未確認です。",
+    source: { label: "Airtable About", url: "https://www.airtable.com/about" },
+  },
   {
     id: "signal-dialpad-mid-market-ae", companySlug: "dialpad", date: "2026-08-14", type: "新着求人", confidence: "公式確認", title: "東京でMid-Market Account Executiveを募集", summary: "Dialpad公式GreenhouseでJapanのMid-Market AEを確認。国内3,000社の利用基盤から、AI communicationsのnew logoを広げるfull-cycle roleです。", source: { label: "Dialpad Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/dialpad/jobs/8606879002" },
   },
