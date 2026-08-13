@@ -87,7 +87,7 @@ button, input, select { font: inherit; }
 .founder-note-summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; list-style: none; }
 .founder-note-summary::-webkit-details-marker { display: none; }
 .founder-note-summary .eyebrow { margin-bottom: 12px; }
-.founder-note-hook { margin: 0; max-width: 560px; color: var(--navy); font-size: 24px; font-weight: 780; letter-spacing: -.02em; line-height: 1.5; }
+.founder-note-hook { margin: 0; color: var(--navy); font-size: 24px; font-weight: 780; letter-spacing: -.02em; line-height: 1.5; white-space: nowrap; }
 .founder-note-toggle { display: flex; align-items: center; gap: 9px; flex-shrink: 0; color: var(--signal); font-size: 13px; font-weight: 800; white-space: nowrap; }
 .founder-note-toggle-icon { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--signal); border-radius: 50%; font-size: 16px; font-weight: 800; line-height: 1; transition: transform .2s ease; }
 .founder-note-card[open] .founder-note-toggle-icon { transform: rotate(45deg); }
@@ -995,7 +995,7 @@ button, input, select { font: inherit; }
   .hero-panel { margin-bottom: 40px; }
   .founder-note-card { padding: 24px 22px; }
   .founder-note-summary { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .founder-note-hook { font-size: 19px; }
+  .founder-note-hook { font-size: 19px; white-space: normal; }
   .trust-inner { align-items: flex-start; flex-direction: column; padding-block: 20px; }
   .trust-points { flex-wrap: wrap; gap: 11px 22px; }
   .content-section { padding: 58px 0; }
