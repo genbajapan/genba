@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     siteName: "Genba",
     title: "Japan Sales Hiring Pilot Partnership — Genba",
     description: "A measured 90-day hiring communication pilot for global IT and SaaS companies building sales teams in Japan.",
-    images: [{ url: "/og-genba-v2.png", width: 1200, height: 630, alt: "Genba partnership for Japan sales hiring" }],
+    images: [{ url: "/og-genba-v3.png", width: 1200, height: 630, alt: "Genba — research on small and midsize foreign IT companies" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Japan Sales Hiring Pilot Partnership — Genba",
     description: "A measured 90-day hiring communication pilot for global IT and SaaS companies building sales teams in Japan.",
-    images: ["/og-genba-v2.png"],
+    images: ["/og-genba-v3.png"],
   },
 };
 
