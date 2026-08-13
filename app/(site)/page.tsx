@@ -66,7 +66,7 @@ export default function HomePage() {
             <summary className="founder-note-summary">
               <div>
                 <p className="eyebrow">なぜGenbaを作ったか</p>
-                <h2 className="founder-note-hook">大手外資から小中規模の外資へ移って、初めてわかったことがありました。</h2>
+                <h2 className="founder-note-hook">大手外資から小中規模の外資へ転職して、実感しました。</h2>
               </div>
               <span className="founder-note-toggle">
                 <span className="founder-note-toggle-icon" aria-hidden="true">+</span>
