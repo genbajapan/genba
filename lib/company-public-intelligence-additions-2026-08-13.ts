@@ -2,7 +2,7 @@ import type { CompanyPublicIntelligence, JapanEntryAssessment } from "@/lib/comp
 import { buildIntelligence, type Profile } from "@/lib/company-public-intelligence-wave-two";
 import { buildPreEntryIntelligence } from "@/lib/company-public-intelligence-pre-entry-wave-two";
 
-type EnteredSeed = {
+export type EnteredSeed = {
   slug: string; name: string; founded: string; jobUrl: string; officialUrl: string; customersUrl: string; financeUrl: string;
   role: string; category: string; buyer: string; problems: [string, string, string]; origin: string; external: string;
   value: string; objection: string; reframe: string; headcount: string; japanPresence: string; japanSince: string;
@@ -13,9 +13,9 @@ type EnteredSeed = {
 const externalUrl = "https://www.meti.go.jp/policy/it_policy/investment/dx-chushokigyou.html";
 const checkedAt = "2026-08-13";
 
-function entered(seed: EnteredSeed): CompanyPublicIntelligence {
+export function entered(seed: EnteredSeed, researchDate = checkedAt): CompanyPublicIntelligence {
   const profile: Profile = {
-    checkedAt,
+    checkedAt: researchDate,
     slug: seed.slug,
     name: seed.name,
     jobUrl: seed.jobUrl,
@@ -88,12 +88,12 @@ const enteredSeeds: EnteredSeed[] = [
   { slug: "zadara", name: "Zadara", founded: "2011", jobUrl: "https://jobs.lever.co/Zadara?location=Tokyo", officialUrl: "https://www.zadara.com/ja/", customersUrl: "https://www.zadara.com/ja/customers/", financeUrl: "https://www.zadara.com/about/", role: "Senior Account Executiveとしてenterprise・service providerのnew logoとpartnerを開拓", category: "Sovereign Edge Cloud Platform", buyer: "CIO・Cloud・Infrastructure・Service Provider・Data Governance", problems: ["public cloudかon-premisesかの二択ではdata location・control・economicsを満たせない", "storage・compute・networkの運用とcapacity planningが重い", "AI・regulated workloadを現場近くで安全に動かす基盤が不足する"], origin: "enterprise storage-as-a-serviceから始まり、partner-operated locationでcompute、network、GPU、sovereign AIを提供するedge cloud platformへ拡張。", external: "data sovereignty、AI workload、edge latency、cloud costへの要求により、企業はpublic cloudの利便性とprivate controlを組み合わせるarchitectureを求める。", value: "capacity cost、deployment time、data movement、operation、recovery objectiveを改善", objection: "AWS・Azure・GCPか国内cloud、on-premで十分。", reframe: "instance単価ではなく、data location、ownership、managed operation、consumption、egress、resilienceをworkload単位で比較する。", headcount: "201〜500人規模", japanPresence: "日本語公式サイト / Japan customers / Tokyo sales coverage", japanSince: "日本市場で継続展開", facts: ["500超のcloud location", "sovereign edge cloudへ製品拡張", "KDDI・山鹿市等の国内proof", "Senior Account Executive"], customers: ["KDDI", "LG Electronics", "山鹿市"], solutions: ["zCompute", "zStorage", "Sovereign AI Edge Cloud"], competitors: "AWS、Azure、国内cloud・private cloud", fit: ["Cloud", "Storage", "Sovereign AI", "Edge", "Service Provider", "Partner"] },
 ];
 
-type PreSeed = {
+export type PreSeed = {
   slug: string; name: string; homepage: string; growthUrl: string; careers: string; customersUrl: string; trust: string; apac: string; linkedin: string;
   category: string; buyer: string; problem: string; growth: string; headcount: string; apacText: string; language: string; customers: [string, string, string]; solutions: [string, string, string]; competitors: string;
 };
 
-function preEntry(seed: PreSeed): CompanyPublicIntelligence {
+export function preEntry(seed: PreSeed, researchDate = checkedAt): CompanyPublicIntelligence {
   const assessment: JapanEntryAssessment = {
     verdict: "日本進出の可能性は中。global tractionは十分だが、日本固有のcommercial proofとlocal deliveryは未確認",
     factSignals: [
@@ -118,7 +118,7 @@ function preEntry(seed: PreSeed): CompanyPublicIntelligence {
     watchSignals: ["Japan・Tokyo求人", "日本語公式site・support", "国内顧客事例", "Japan country leader・法人", "国内partner発表", "APAC teamのJapan territory表記"],
   };
   return buildPreEntryIntelligence({
-    checkedAt, slug: seed.slug, name: seed.name, homepage: seed.homepage, growthUrl: seed.growthUrl, careersUrl: seed.careers, customersUrl: seed.customersUrl, trustUrl: seed.trust, apacUrl: seed.apac, externalUrl, linkedinUrl: seed.linkedin,
+    checkedAt: researchDate, slug: seed.slug, name: seed.name, homepage: seed.homepage, growthUrl: seed.growthUrl, careersUrl: seed.careers, customersUrl: seed.customersUrl, trustUrl: seed.trust, apacUrl: seed.apac, externalUrl, linkedinUrl: seed.linkedin,
     salesSnapshot: `${seed.name}は、${seed.buyer}が抱える「${seed.problem}」を${seed.category}で解く会社。日本法人・Tokyo拠点・Japan求人は確認できないが、海外の成長・customer proof・APAC動向から、日本進出の成立条件を追う価値がある。`,
     growthSummary: seed.growth,
     verdict: assessment.verdict,

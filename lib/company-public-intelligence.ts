@@ -10,6 +10,7 @@ import { daily20260813IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { additions20260813IntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-13";
 import { additions20260813WaveTwoIntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-13-wave-two";
 import { additions20260813WaveThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-13-wave-three";
+import { daily20260814IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-14";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9349,6 +9350,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...additions20260813IntelligenceBySlug,
   ...additions20260813WaveTwoIntelligenceBySlug,
   ...additions20260813WaveThreeIntelligenceBySlug,
+  ...daily20260814IntelligenceBySlug,
 };
 
 export function getCompanyPublicIntelligence(slug: string) {

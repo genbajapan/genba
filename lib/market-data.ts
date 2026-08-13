@@ -2,6 +2,7 @@ import type { BroadCategory } from "@/lib/solution-categories";
 import { companies20260813, jobs20260813 } from "@/lib/company-additions-2026-08-13";
 import { companies20260813WaveTwo, jobs20260813WaveTwo } from "@/lib/company-additions-2026-08-13-wave-two";
 import { companies20260813WaveThree, jobs20260813WaveThree } from "@/lib/company-additions-2026-08-13-wave-three";
+import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08-14";
 
 export type Source = {
   label: string;
@@ -856,6 +857,7 @@ const companyRecords: Company[] = [
   ...companies20260813,
   ...companies20260813WaveTwo,
   ...companies20260813WaveThree,
+  ...companies20260814,
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1137,6 +1139,7 @@ const cursorJobs: Job[] = [
 ];
 
 const jobRecords: Job[] = [
+  ...jobs20260814,
   ...jobs20260813,
   ...jobs20260813WaveTwo,
   ...jobs20260813WaveThree,
@@ -2455,7 +2458,30 @@ const jobRecords: Job[] = [
   },
 ];
 
-export const jobs = jobRecords.filter((job) => job.companySlug !== "salesforce");
+const closedJobIds = new Set([
+  "elastic-mid-market-ae-japan",
+  "fireblocks-bdr-japanese-speaking",
+  "fireblocks-sales-director-japan",
+  "wasabi-channel-account-manager-japan",
+  "zscaler-account-executive-japan",
+  "schrodinger-senior-account-manager-japan",
+  "okta-enterprise-ae-auth0",
+  "amplitude-enterprise-ae",
+  "glean-commercial-ae-japan",
+  "halcyon-commercial-account-executive-japan",
+  "postman-smb-account-executive-japan",
+  "patsnap-channel-manager",
+  "wiz-mid-market-account-executive-japan",
+]);
+
+const temporarilyUnverifiableJobIds = new Set([
+  "confluent-ae-digital-native",
+  "confluent-ae-msp-isv",
+]);
+
+export const jobs = jobRecords
+  .filter((job) => job.companySlug !== "salesforce" && !closedJobIds.has(job.id))
+  .map((job) => temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-14" });
 
 const publishedJobCounts = jobs.reduce((counts, job) => {
   counts.set(job.companySlug, (counts.get(job.companySlug) ?? 0) + 1);
@@ -2476,6 +2502,15 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-dialpad-mid-market-ae", companySlug: "dialpad", date: "2026-08-14", type: "新着求人", confidence: "公式確認", title: "東京でMid-Market Account Executiveを募集", summary: "Dialpad公式GreenhouseでJapanのMid-Market AEを確認。国内3,000社の利用基盤から、AI communicationsのnew logoを広げるfull-cycle roleです。", source: { label: "Dialpad Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/dialpad/jobs/8606879002" },
+  },
+  {
+    id: "signal-fivetran-partner-sales-manager", companySlug: "fivetran", date: "2026-08-14", type: "新着求人", confidence: "公式確認", title: "日本でPartner Sales Managerを募集", summary: "Fivetran公式GreenhouseでRemote JapanのPartner Sales Managerを確認。cloud・SI・technology partnerとjoint GTMを作る役割です。", source: { label: "Fivetran Careers (Greenhouse)", url: "https://www.fivetran.com/careers/job?gh_jid=7818344003" },
+  },
+  {
+    id: "signal-klaviyo-apac-watch", companySlug: "klaviyo", date: "2026-08-14", type: "注目領域", confidence: "公式確認", title: "KlaviyoのAPAC基盤からJapan進出条件を観測", summary: "FY2025売上12.34億ドル、顧客193,000社超とSydney・Singaporeの拠点を確認。Japan法人・Tokyo拠点・Japan求人は未確認です。", source: { label: "Klaviyo Investor Relations", url: "https://investors.klaviyo.com/financials/quarterly-results/default.aspx" },
+  },
   {
     id: "signal-sierra-tokyo-partnerships", companySlug: "sierra", date: "2026-08-13", type: "新着求人", confidence: "公式確認", title: "TokyoでPartnerships Salesを募集", summary: "Sierra公式採用ページで東京のPartnerships Salesを確認。東京office、OPERA TECH買収、SoftBank連携に続き、日本のpartner-led GTMを作る役割です。", source: { label: "Sierra Careers", url: "https://sierra.ai/jp/careers" },
   },
