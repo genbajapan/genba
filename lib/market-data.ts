@@ -859,7 +859,7 @@ const companyRecords: Company[] = [
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
-export const companies = companyRecords.filter((company) => company.slug !== "salesforce");
+const publishedCompanyRecords = companyRecords.filter((company) => company.slug !== "salesforce");
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
   firstSeen?: string;
@@ -2456,6 +2456,24 @@ const jobRecords: Job[] = [
 ];
 
 export const jobs = jobRecords.filter((job) => job.companySlug !== "salesforce");
+
+const publishedJobCounts = jobs.reduce((counts, job) => {
+  counts.set(job.companySlug, (counts.get(job.companySlug) ?? 0) + 1);
+  return counts;
+}, new Map<string, number>());
+
+// 採用状況と営業求人数は、公開中と確認できた求人レコードから自動算出する。
+// 日本未進出企業は求人温度へ含めず、必ず継続観測・0件として扱う。
+export const companies = publishedCompanyRecords.map((company): Company => {
+  const salesRoles = company.entryStatus === "not-entered" ? 0 : publishedJobCounts.get(company.slug) ?? 0;
+  const hiringStatus: Company["hiringStatus"] = salesRoles >= 3
+    ? "積極採用"
+    : salesRoles >= 1
+      ? "採用中"
+      : "継続観測";
+
+  return { ...company, salesRoles, hiringStatus };
+});
 
 const signalRecords: Signal[] = [
   {

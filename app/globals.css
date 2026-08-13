@@ -102,7 +102,17 @@ button, input, select { font: inherit; }
 .market-heat { overflow: hidden; background: #071f2e; color: white; border: 1px solid #244555; box-shadow: 0 22px 55px rgba(7,31,46,.13); }
 .market-heat-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 42px; padding: 34px 38px 28px; border-bottom: 1px solid #294857; }
 .market-heat-head h2 { margin: 0; font-size: clamp(28px,3.2vw,42px); letter-spacing: -.04em; line-height: 1.15; white-space: nowrap; }
-.market-heat-head > div:first-child > p:not(.eyebrow) { max-width: 680px; margin: 13px 0 0; color: #b7c9d1; font-size: 13px; line-height: 1.8; }
+.market-heat-description { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 4px; max-width: 760px; margin-top: 13px; color: #b7c9d1; font-size: 13px; line-height: 1.8; }
+.market-heat-description > p { flex: 0 1 auto; margin: 0; }
+.market-heat-criteria { flex: 0 0 auto; }
+.market-heat-criteria[open] { flex-basis: 100%; }
+.market-heat-criteria summary { display: inline-flex; align-items: center; padding: 2px 0; color: #70d3c5; font-size: 11px; font-weight: 800; cursor: pointer; list-style: none; text-decoration: underline; text-underline-offset: 3px; }
+.market-heat-criteria summary::-webkit-details-marker { display: none; }
+.market-heat-criteria summary::after { content: "+"; display: inline-grid; place-items: center; width: 16px; height: 16px; margin-left: 5px; border: 1px solid #528e8a; border-radius: 50%; font-size: 11px; line-height: 1; text-decoration: none; }
+.market-heat-criteria[open] summary::after { content: "−"; }
+.market-heat-criteria-panel { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 18px; max-width: 680px; margin-top: 9px; padding: 13px 15px; border: 1px solid #345765; background: #0c2938; }
+.market-heat-criteria-panel p { display: grid; grid-template-columns: 64px 1fr; gap: 8px; margin: 0; color: #a9bec7; font-size: 10px; line-height: 1.6; }
+.market-heat-criteria-panel strong { color: #eef8f6; font-size: 10px; }
 .market-head-status { display: flex; align-items: stretch; flex-shrink: 0; }
 .market-head-metrics { display: grid; grid-template-columns: repeat(3,auto); align-items: center; }
 .market-head-metrics > div { min-width: 112px; padding: 2px 20px; }
@@ -1002,6 +1012,8 @@ button, input, select { font: inherit; }
   .market-section { padding-block: 42px; }
   .market-heat-head { align-items: flex-start; flex-direction: column; padding: 28px 24px 22px; gap: 22px; }
   .market-heat-head h2 { white-space: normal; }
+  .market-heat-description { font-size: 12px; }
+  .market-heat-criteria-panel { grid-template-columns: 1fr; }
   .market-tier-board { padding: 22px 24px 26px; }
   .market-tier-list { grid-template-columns: 1fr; }
   .market-head-status { width: 100%; flex-direction: column; gap: 18px; }

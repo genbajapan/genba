@@ -10,10 +10,18 @@ export const broadCategories = [
 
 export type BroadCategory = (typeof broadCategories)[number];
 export type HiringHeatTier = "hot" | "active" | "selective";
+type HiringHeatRowTier = HiringHeatTier | "observing";
+
+export const hiringHeatCriteria = {
+  hot: { minimumJobs: 20, minimumCompanies: 10 },
+  active: { minimumJobs: 10, minimumCompanies: 5 },
+  selective: { minimumJobs: 1, minimumCompanies: 1 },
+} as const;
 
 type CategorizedCompany = {
   slug: string;
   broadCategory: BroadCategory;
+  entryStatus?: "not-entered";
 };
 
 type CompanyJob = {
@@ -24,37 +32,54 @@ export type HiringHeatRow = {
   area: BroadCategory;
   count: number;
   companies: number;
-  tier: HiringHeatTier;
+  tier: HiringHeatRowTier;
 };
 
 export function buildHiringHeatRows(companies: CategorizedCompany[], jobs: CompanyJob[]): HiringHeatRow[] {
-  const companyBySlug = new Map(companies.map((company) => [company.slug, company]));
+  const eligibleCompanies = companies.filter((company) => company.entryStatus !== "not-entered");
+  const companyBySlug = new Map(eligibleCompanies.map((company) => [company.slug, company]));
   const jobCounts = new Map<BroadCategory, number>();
+  const hiringCompanies = new Map<BroadCategory, Set<string>>();
 
   for (const job of jobs) {
-    const area = companyBySlug.get(job.companySlug)?.broadCategory;
-    if (area) jobCounts.set(area, (jobCounts.get(area) ?? 0) + 1);
+    const company = companyBySlug.get(job.companySlug);
+    if (!company) continue;
+    const area = company.broadCategory;
+    jobCounts.set(area, (jobCounts.get(area) ?? 0) + 1);
+    const companySlugs = hiringCompanies.get(area) ?? new Set<string>();
+    companySlugs.add(company.slug);
+    hiringCompanies.set(area, companySlugs);
   }
-
-  const maximum = Math.max(1, ...broadCategories.map((area) => jobCounts.get(area) ?? 0));
-  const hotThreshold = Math.max(1, Math.ceil(maximum * 0.67));
-  const activeThreshold = Math.max(1, Math.ceil(maximum * 0.34));
 
   return broadCategories
     .map((area) => {
       const count = jobCounts.get(area) ?? 0;
-      const tier: HiringHeatTier = count >= hotThreshold
+      const companyCount = hiringCompanies.get(area)?.size ?? 0;
+      const tier: HiringHeatRowTier = count >= hiringHeatCriteria.hot.minimumJobs && companyCount >= hiringHeatCriteria.hot.minimumCompanies
         ? "hot"
-        : count >= activeThreshold
+        : count >= hiringHeatCriteria.active.minimumJobs && companyCount >= hiringHeatCriteria.active.minimumCompanies
           ? "active"
-          : "selective";
+          : count >= hiringHeatCriteria.selective.minimumJobs
+            ? "selective"
+            : "observing";
 
       return {
         area,
         count,
-        companies: companies.filter((company) => company.broadCategory === area).length,
+        companies: companyCount,
         tier,
       };
     })
     .sort((a, b) => b.count - a.count || a.area.localeCompare(b.area, "ja"));
+}
+
+export function getHiringHeatCompanies<T extends CategorizedCompany>(companies: T[], jobs: CompanyJob[], tier: HiringHeatTier): T[] {
+  const tierAreas = new Set(buildHiringHeatRows(companies, jobs).filter((row) => row.tier === tier).map((row) => row.area));
+  const companiesWithJobs = new Set(jobs.map((job) => job.companySlug));
+
+  return companies.filter((company) => (
+    company.entryStatus !== "not-entered"
+    && companiesWithJobs.has(company.slug)
+    && tierAreas.has(company.broadCategory)
+  ));
 }

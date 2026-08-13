@@ -49,7 +49,8 @@
 - ATSの公開JSON APIが判明している企業は、それを直接叩いて現在の求人一覧(タイトル・URL・掲載日)を取得し、保存データと突き合わせる。WebFetchより大幅に低コストで新着・終了を検出できる
   - Greenhouse: `https://boards-api.greenhouse.io/v1/boards/<board-token>/jobs`
   - Workday: `https://<company>.wd#.myworkdayjobs.com/wday/cxs/<company>/<board>/jobs`(POSTで`searchText`指定可、`curl`で直接叩ける)
-- 404・リンク切れが確認できた求人は募集終了として取り下げ、`hiringStatus`・`salesRoles`もあわせて更新する
+- 404・リンク切れが確認できた求人は募集終了として取り下げる。`hiringStatus`・`salesRoles`は公開中の求人レコードから自動算出し、3件以上を`積極採用`、1〜2件を`採用中`、0件を`継続観測`とするため、手入力値を表示の根拠にしない
+- ソリューション領域の採用温度は`docs/10-website-renewal-spec.md`の固定基準に従う。日本未進出企業と求人0件の企業を`HOT`・`Active`・`Selective`の集計・遷移先へ含めない
 - API・ステータス確認で新しいタイトルが見つかった場合は、その求人に限り通常と同じ深さ(`descriptionSummary`・`genbaTake`・`compensationReality`・`desiredProfile`・`careerInsights`)の分析を書く。発見コストが下がっても、書く内容の深さは省略しない
 - ボット対策等でAPI・ステータス確認ができない企業は、この軽量チェックでは新着求人を検出できない前提を置き、2-2で補う
 

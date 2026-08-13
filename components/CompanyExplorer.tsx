@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { companies, jobs } from "@/lib/market-data";
-import { broadCategories, buildHiringHeatRows } from "@/lib/solution-categories";
+import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
 
 const statuses = ["すべて", "積極採用", "採用中", "継続観測"];
@@ -13,6 +13,11 @@ const tierAreas = {
   hot: new Set(heatRows.filter((row) => row.tier === "hot").map((row) => row.area)),
   active: new Set(heatRows.filter((row) => row.tier === "active").map((row) => row.area)),
   selective: new Set(heatRows.filter((row) => row.tier === "selective").map((row) => row.area)),
+};
+const tierCompanySlugs = {
+  hot: new Set(getHiringHeatCompanies(companies, jobs, "hot").map((company) => company.slug)),
+  active: new Set(getHiringHeatCompanies(companies, jobs, "active").map((company) => company.slug)),
+  selective: new Set(getHiringHeatCompanies(companies, jobs, "selective").map((company) => company.slug)),
 };
 type TierFilter = "すべて" | keyof typeof tierAreas;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
@@ -30,8 +35,8 @@ export default function CompanyExplorer() {
   const categoryParam = searchParams.get("category");
   const tierParam = searchParams.get("tier");
   const initialSolutionArea = categoryParam && solutionAreas.includes(categoryParam) ? categoryParam : "すべて";
-  const initialTier: TierFilter = initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const initialEntry: EntryFilter = searchParams.get("entry") === "not-entered" ? "not-entered" : "すべて";
+  const initialTier: TierFilter = initialEntry === "すべて" && initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const statusParam = searchParams.get("status");
   const initialStatus = statusParam && statuses.includes(statusParam) ? statusParam : "すべて";
 
@@ -44,7 +49,7 @@ export default function CompanyExplorer() {
     const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
     const matchesSolution = solutionArea === "すべて" || company.broadCategory === solutionArea;
-    const matchesTier = tier === "すべて" || tierAreas[tier].has(company.broadCategory);
+    const matchesTier = tier === "すべて" || tierCompanySlugs[tier].has(company.slug);
     const matchesEntry = entry === "すべて" || company.entryStatus === entry;
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry;
   }), [query, status, solutionArea, tier, entry]);
@@ -157,6 +162,10 @@ export default function CompanyExplorer() {
   function changeEntry(nextEntry: EntryFilter) {
     clearReturnTarget();
     setEntry(nextEntry);
+    if (nextEntry === "not-entered") {
+      setTier("すべて");
+      setStatus("すべて");
+    }
   }
 
   return (
@@ -164,7 +173,7 @@ export default function CompanyExplorer() {
       {tier !== "すべて" && (
         <div className={`tier-filter-summary tier-filter-summary-${tier}`}>
           <div><span>採用温度で絞り込み中</span><strong>{tierLabels[tier]}</strong></div>
-          <p>{tierAreas[tier].size}つの大分類に含まれる企業を表示</p>
+          <p>{tierAreas[tier].size}つの大分類に属し、現在日本向け営業求人を確認できる企業だけを表示</p>
           <button type="button" onClick={() => { clearReturnTarget(); setTier("すべて"); }}>絞り込みを解除</button>
         </div>
       )}

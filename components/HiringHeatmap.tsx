@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { companies, jobs } from "@/lib/market-data";
-import { buildHiringHeatRows } from "@/lib/solution-categories";
+import { buildHiringHeatRows, hiringHeatCriteria } from "@/lib/solution-categories";
 
 const rows = buildHiringHeatRows(companies, jobs);
 
@@ -24,7 +24,18 @@ export default function HiringHeatmap() {
         <div>
           <p className="eyebrow eyebrow-light">CATEGORY HIRING HEAT</p>
           <h2 id="market-heat-title">求人状況と日本未進出の注目企業</h2>
-          <p>HOT・Active・Selective・3つの採用温度の分類で国内の営業求人を比較しながら、今後日本へ進出する可能性を調査した海外企業も別枠で追えます。</p>
+          <div className="market-heat-description">
+            <p>プロダクト領域の求人状況温度感をHOT・Active・Selectiveに分類。国内の営業求人を比較しながら、今後日本へ進出する可能性を調査した海外企業も別枠で追えます。</p>
+            <details className="market-heat-criteria">
+              <summary>（分類基準）</summary>
+              <div className="market-heat-criteria-panel">
+                <p><strong>HOT</strong><span>国内営業求人{hiringHeatCriteria.hot.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.hot.minimumCompanies}社以上</span></p>
+                <p><strong>Active</strong><span>国内営業求人{hiringHeatCriteria.active.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.active.minimumCompanies}社以上</span></p>
+                <p><strong>Selective</strong><span>国内営業求人{hiringHeatCriteria.selective.minimumJobs}件以上</span></p>
+                <p><strong>対象外</strong><span>求人0件の領域と日本未進出企業。日本未進出企業は黄色の別枠で表示</span></p>
+              </div>
+            </details>
+          </div>
         </div>
         <div className="market-head-status">
           <div className="market-head-metrics" aria-label="現在の掲載状況">
@@ -48,21 +59,21 @@ export default function HiringHeatmap() {
             <div className="market-tier-tags">
               {hotTierAreas.length ? hotTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
-            <p>掲載求人が相対的に多い大分類。複数社を横断して比較できます。</p>
+            <p>国内営業求人{hiringHeatCriteria.hot.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.hot.minimumCompanies}社以上の大分類。</p>
           </Link>
           <Link href={tierHref("active")} className="market-tier market-tier-warm" aria-label="Activeに含まれる企業をすべて見る">
             <span className="market-tier-label">Active</span>
             <div className="market-tier-tags">
               {warmTierAreas.length ? warmTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
-            <p>複数社で採用を確認。専門性と顧客セグメントの相性を見極めたい大分類。</p>
+            <p>国内営業求人{hiringHeatCriteria.active.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.active.minimumCompanies}社以上の大分類。</p>
           </Link>
           <Link href={tierHref("selective")} className="market-tier market-tier-quiet" aria-label="Selectiveに含まれる企業をすべて見る">
             <span className="market-tier-label">Selective</span>
             <div className="market-tier-tags">
               {quietTierAreas.length ? quietTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
-            <p>掲載求人が相対的に少ない大分類。募集状況と更新日を合わせて確認できます。</p>
+            <p>国内営業求人を{hiringHeatCriteria.selective.minimumJobs}件以上確認している大分類。</p>
           </Link>
           <Link href="/companies?entry=not-entered#company-results" className="market-tier market-tier-pre-entry" aria-label="日本未進出の注目企業をすべて見る">
             <span className="market-tier-label">日本未進出</span>
@@ -74,7 +85,7 @@ export default function HiringHeatmap() {
         </div>
       </div>
 
-      <p className="market-disclaimer">HOT・Active・Selectiveは現在確認できている営業求人の相対分類です。「日本未進出」は求人温度に含めず、日本法人・国内拠点・日本向け求人が未確認の企業を、海外公式情報と公開プロフィールから別枠で調査しています。</p>
+      <p className="market-disclaimer">HOT・Active・Selectiveは、現在公開中と確認できた日本向け営業求人の件数と採用企業数による分類です。求人0件の企業と「日本未進出」は含めず、日本法人・国内拠点・日本向け求人が未確認の企業は、海外公式情報と公開プロフィールから別枠で調査しています。</p>
     </section>
   );
 }
