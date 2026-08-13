@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { build } from "esbuild";
 
 const targets = [
   "lib/company-public-intelligence.ts",
@@ -18,6 +19,25 @@ const source = targets
 const errors = [];
 const marketDataSource = fs.readFileSync(path.join(process.cwd(), "lib/market-data.ts"), "utf8");
 const directorySource = fs.readFileSync(path.join(process.cwd(), "lib/company-directory.ts"), "utf8");
+
+const runtimeBundle = await build({
+  stdin: {
+    contents: `
+      import { companies } from "./lib/market-data.ts";
+      import { getCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
+      export { companies, getCompanyPublicIntelligence };
+    `,
+    resolveDir: process.cwd(),
+    sourcefile: "company-playbook-validator-entry.ts",
+  },
+  bundle: true,
+  format: "cjs",
+  platform: "node",
+  write: false,
+});
+const runtimeModule = { exports: {} };
+new Function("module", "exports", runtimeBundle.outputFiles[0].text)(runtimeModule, runtimeModule.exports);
+const { companies: runtimeCompanies, getCompanyPublicIntelligence } = runtimeModule.exports;
 
 const expectedIssueLenses = [
   "既存顧客の導入目的から見る課題",
@@ -64,12 +84,13 @@ for (const slug of companySlugs) {
   if (!directorySlugs.has(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
 }
 
-const notEnteredCount = Array.from(
-  marketDataSource.matchAll(/\bentryStatus:\s*"not-entered"/g),
-).length;
-
-if (entryAssessmentBlocks.length !== notEnteredCount) {
-  errors.push(`日本未進出企業 ${notEnteredCount}件に対し、entryAssessmentは${entryAssessmentBlocks.length}件です。`);
+const notEnteredCompanies = runtimeCompanies.filter((company) => company.entryStatus === "not-entered");
+const notEnteredCount = notEnteredCompanies.length;
+const missingEntryAssessments = notEnteredCompanies.filter((company) => (
+  !getCompanyPublicIntelligence(company.slug)?.marketStatus?.japanGrowth?.entryAssessment
+));
+if (missingEntryAssessments.length) {
+  errors.push(`日本未進出企業のentryAssessmentがありません: ${missingEntryAssessments.map((company) => company.slug).join(", ")}`);
 }
 
 entryAssessmentBlocks.forEach((block, index) => {
