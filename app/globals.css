@@ -133,6 +133,7 @@ button, input, select { font: inherit; }
 .market-tier:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.2); }
 .market-tier:focus-visible { outline: 2px solid #70d3c5; outline-offset: 3px; }
 .market-tier-label { display: block; font-size: 9px; font-weight: 850; letter-spacing: .1em; color: #9db4bd; }
+.market-tier-label small { font-size: inherit; font-weight: 750; letter-spacing: 0; }
 .market-tier-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
 .market-tier-tag { display: inline-flex; padding: 4px 9px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #e5f3f0; font-size: 11px; font-weight: 650; letter-spacing: -.01em; }
 .market-tier-tag-empty { color: #7f97a2; font-weight: 500; border-style: dashed; background: transparent; }

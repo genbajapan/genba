@@ -134,6 +134,9 @@ if (!heatmapComponent.includes("プロダクト領域の求人状況温度感を
 if (!heatmapComponent.includes("<summary>（分類基準）</summary>")) {
   errors.push("画面遷移なしで開ける分類基準のsummaryがありません。");
 }
+if (!heatmapComponent.includes("tierStats.hot.companies") || !heatmapComponent.includes("tierStats.active.companies") || !heatmapComponent.includes("tierStats.selective.companies")) {
+  errors.push("HOT・Active・Selectiveの見出しに企業数と求人数の自動集計がありません。");
+}
 
 const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExplorer.tsx"), "utf8");
 if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {

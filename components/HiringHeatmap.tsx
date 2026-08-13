@@ -10,6 +10,15 @@ const hiringCompanies = new Set(jobs.map((job) => job.companySlug)).size;
 const hotTierAreas = rows.filter((row) => row.tier === "hot").map((row) => row.area);
 const warmTierAreas = rows.filter((row) => row.tier === "active").map((row) => row.area);
 const quietTierAreas = rows.filter((row) => row.tier === "selective").map((row) => row.area);
+const tierStats = Object.fromEntries(
+  (["hot", "active", "selective"] as const).map((tier) => [
+    tier,
+    rows.filter((row) => row.tier === tier).reduce(
+      (stats, row) => ({ companies: stats.companies + row.companies, jobs: stats.jobs + row.count }),
+      { companies: 0, jobs: 0 },
+    ),
+  ]),
+) as Record<"hot" | "active" | "selective", { companies: number; jobs: number }>;
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
 const preEntryCompanies = companies.filter((company) => company.entryStatus === "not-entered");
 
@@ -54,22 +63,22 @@ export default function HiringHeatmap() {
         <p className="market-tier-heading">採用温度の3つの層 + 日本未進出</p>
         <p className="market-tier-note">現在の求人と、将来の進出可能性は分けて表示しています。</p>
         <div className="market-tier-list">
-          <Link href={tierHref("hot")} className="market-tier market-tier-hot" aria-label="HOTに含まれる企業をすべて見る">
-            <span className="market-tier-label">HOT</span>
+          <Link href={tierHref("hot")} className="market-tier market-tier-hot" aria-label={`HOT（${tierStats.hot.companies}社／${tierStats.hot.jobs}求人）に含まれる企業をすべて見る`}>
+            <span className="market-tier-label">HOT <small>（{tierStats.hot.companies}社／{tierStats.hot.jobs}求人）</small></span>
             <div className="market-tier-tags">
               {hotTierAreas.length ? hotTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
             <p>国内営業求人{hiringHeatCriteria.hot.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.hot.minimumCompanies}社以上の大分類。</p>
           </Link>
-          <Link href={tierHref("active")} className="market-tier market-tier-warm" aria-label="Activeに含まれる企業をすべて見る">
-            <span className="market-tier-label">Active</span>
+          <Link href={tierHref("active")} className="market-tier market-tier-warm" aria-label={`Active（${tierStats.active.companies}社／${tierStats.active.jobs}求人）に含まれる企業をすべて見る`}>
+            <span className="market-tier-label">Active <small>（{tierStats.active.companies}社／{tierStats.active.jobs}求人）</small></span>
             <div className="market-tier-tags">
               {warmTierAreas.length ? warmTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
             <p>国内営業求人{hiringHeatCriteria.active.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.active.minimumCompanies}社以上の大分類。</p>
           </Link>
-          <Link href={tierHref("selective")} className="market-tier market-tier-quiet" aria-label="Selectiveに含まれる企業をすべて見る">
-            <span className="market-tier-label">Selective</span>
+          <Link href={tierHref("selective")} className="market-tier market-tier-quiet" aria-label={`Selective（${tierStats.selective.companies}社／${tierStats.selective.jobs}求人）に含まれる企業をすべて見る`}>
+            <span className="market-tier-label">Selective <small>（{tierStats.selective.companies}社／{tierStats.selective.jobs}求人）</small></span>
             <div className="market-tier-tags">
               {quietTierAreas.length ? quietTierAreas.map((area) => <span key={area} className="market-tier-tag">{area}</span>) : <span className="market-tier-tag market-tier-tag-empty">該当なし</span>}
             </div>
