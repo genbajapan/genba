@@ -30,8 +30,7 @@ export default function HomePage() {
             <p className="eyebrow eyebrow-light">現役外資ITセールスマンによる運営</p>
             <h1>小中規模外資IT<br />企業研究所</h1>
             <p className="hero-lead">
-              Genbaを知る現役外資AEが
-              公開情報をもとに、小中規模外資ITに特化した最新求人情報の掲載とセールスパーソンの目線から企業を徹底研究。
+              Genbaを知る現役外資AEの編集長が「日本で求人のある小中規模外資IT」と「日本未進出の注目外資IT」に特化して最新情報を届け続ける場所です。各社(本日時点{companies.length}社)、公開情報をベースに事実と仮説を交えた企業研究になってます。
               <br />
               「ここだ」と思える次のフィールドを見つけられるように。
             </p>
