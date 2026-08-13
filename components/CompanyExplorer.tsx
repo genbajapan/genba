@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { companies, jobs } from "@/lib/market-data";
+import { getHeadquartersRegion, headquartersRegions, type HeadquartersRegion } from "@/lib/company-headquarters";
 import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
 
@@ -30,7 +31,7 @@ type ReturnPosition = {
   cardOffset: number;
 };
 
-export default function CompanyExplorer() {
+export default function CompanyExplorer({ companyCardSummaries }: { companyCardSummaries: Record<string, string> }) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const tierParam = searchParams.get("tier");
@@ -39,20 +40,24 @@ export default function CompanyExplorer() {
   const initialTier: TierFilter = initialEntry === "すべて" && initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const statusParam = searchParams.get("status");
   const initialStatus = statusParam && statuses.includes(statusParam) ? statusParam : "すべて";
+  const headquartersParam = searchParams.get("hq");
+  const initialHeadquarters: HeadquartersRegion = headquartersRegions.some((region) => region.value === headquartersParam) ? headquartersParam as HeadquartersRegion : "すべて";
 
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [status, setStatus] = useState(initialStatus);
   const [solutionArea, setSolutionArea] = useState(initialSolutionArea);
   const [tier, setTier] = useState<TierFilter>(initialTier);
   const [entry, setEntry] = useState<EntryFilter>(initialEntry);
+  const [headquarters, setHeadquarters] = useState<HeadquartersRegion>(initialHeadquarters);
   const results = useMemo(() => companies.filter((company) => {
-    const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
+    const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.hq} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
     const matchesSolution = solutionArea === "すべて" || company.broadCategory === solutionArea;
     const matchesTier = tier === "すべて" || tierCompanySlugs[tier].has(company.slug);
     const matchesEntry = entry === "すべて" || company.entryStatus === entry;
-    return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry;
-  }), [query, status, solutionArea, tier, entry]);
+    const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
+    return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters;
+  }).sort((a, b) => headquarters === "すべて" ? 0 : a.hq.localeCompare(b.hq, "ja") || a.name.localeCompare(b.name, "ja")), [query, status, solutionArea, tier, entry, headquarters]);
 
   const clearReturnTarget = useCallback(() => {
     window.sessionStorage.removeItem(returnPositionKey);
@@ -75,8 +80,9 @@ export default function CompanyExplorer() {
     setOptionalParam("category", solutionArea, "すべて");
     setOptionalParam("tier", tier, "すべて");
     setOptionalParam("entry", entry, "すべて");
+    setOptionalParam("hq", headquarters, "すべて");
     window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
-  }, [query, status, solutionArea, tier, entry]);
+  }, [query, status, solutionArea, tier, entry, headquarters]);
 
   useLayoutEffect(() => {
     let timers: number[] = [];
@@ -195,7 +201,13 @@ export default function CompanyExplorer() {
             {solutionAreas.map((item) => <option key={item}>{item}</option>)}
           </select>
         </label>
-        <div className="filter-chips" aria-label="採用状況で絞り込み">
+        <label className="select-field headquarters-select-field">
+          <span>本社所在地</span>
+          <select value={headquarters} onChange={(event) => { clearReturnTarget(); setHeadquarters(event.target.value as HeadquartersRegion); }}>
+            {headquartersRegions.map((region) => <option key={region.value} value={region.value}>{region.label}</option>)}
+          </select>
+        </label>
+        <div className="filter-chips status-filter-chips" aria-label="採用状況で絞り込み">
           {statuses.map((item) => (
             <button key={item} className={status === item ? "active" : ""} onClick={() => changeStatus(item)}>{item}</button>
           ))}
@@ -206,7 +218,7 @@ export default function CompanyExplorer() {
       </div>
       <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : `${results.length}社を表示`}</p>
       <div className="card-grid company-card-grid">
-        {results.map((company) => <CompanyCard key={company.slug} company={company} onNavigate={rememberCompanyPosition} />)}
+        {results.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={companyCardSummaries[company.slug]} onNavigate={rememberCompanyPosition} />)}
       </div>
     </>
   );

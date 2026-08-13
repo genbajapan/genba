@@ -15,7 +15,7 @@ function pickRandomCompanies(companies: Company[], count: number) {
   return shuffled.slice(0, count);
 }
 
-export default function RandomCompanyGrid({ companies, count = 4 }: { companies: Company[]; count?: number }) {
+export default function RandomCompanyGrid({ companies, valueSummaries, count = 4 }: { companies: Company[]; valueSummaries: Record<string, string>; count?: number }) {
   const [displayedCompanies, setDisplayedCompanies] = useState(() => companies.slice(0, count));
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function RandomCompanyGrid({ companies, count = 4 }: { companies:
 
   return (
     <div className="card-grid">
-      {displayedCompanies.map((company) => <CompanyCard key={company.slug} company={company} />)}
+      {displayedCompanies.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={valueSummaries[company.slug]} />)}
     </div>
   );
 }

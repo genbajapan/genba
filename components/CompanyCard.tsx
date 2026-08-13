@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Company } from "@/lib/market-data";
 import StatusBadge from "./StatusBadge";
 
-export default function CompanyCard({ company, onNavigate }: { company: Company; onNavigate?: (slug: string) => void }) {
+export default function CompanyCard({ company, valueSummary, onNavigate }: { company: Company; valueSummary: string; onNavigate?: (slug: string) => void }) {
   const rememberPosition = () => onNavigate?.(company.slug);
 
   return (
@@ -15,7 +15,7 @@ export default function CompanyCard({ company, onNavigate }: { company: Company;
           {company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={company.hiringStatus} />}
         </div>
         <h3>{company.name}</h3>
-        <p>{company.description}</p>
+        <p className="company-card-value">{valueSummary}</p>
         <div className="metric-row">
           <div><strong>{company.salesRoles}</strong><span>現在の求人</span></div>
           <div><strong>{company.lastChecked.slice(5).replace("-", "/")}</strong><span>最終更新日</span></div>

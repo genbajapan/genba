@@ -9,8 +9,10 @@ const bundle = await build({
   stdin: {
     contents: `
       import { companies, jobs } from "./lib/market-data.ts";
+      import { getCompanyCardSummary } from "./lib/company-card-summary.ts";
+      import { getHeadquartersRegion } from "./lib/company-headquarters.ts";
       import { buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria } from "./lib/solution-categories.ts";
-      export { companies, jobs, buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria };
+      export { companies, jobs, getCompanyCardSummary, getHeadquartersRegion, buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria };
     `,
     resolveDir: root,
     sourcefile: "hiring-heat-validator-entry.ts",
@@ -28,6 +30,8 @@ const {
   jobs,
   buildHiringHeatRows,
   getHiringHeatCompanies,
+  getCompanyCardSummary,
+  getHeadquartersRegion,
   hiringHeatCriteria,
 } = bundledModule.exports;
 
@@ -63,6 +67,17 @@ for (const company of companies) {
   }
   if (company.hiringStatus !== expectedStatus) {
     errors.push(`${company.name}: hiringStatus=${company.hiringStatus}。求人レコードからの算出値は${expectedStatus}です。`);
+  }
+
+  const cardSummary = getCompanyCardSummary(company);
+  if (cardSummary.length < 20 || cardSummary.length > 130) {
+    errors.push(`${company.name}: 一覧用の価値説明は20〜130文字にしてください（現在${cardSummary.length}文字）。`);
+  }
+  if (/(求人|採用|募集|ポジション|営業職)/.test(cardSummary)) {
+    errors.push(`${company.name}: 一覧用の価値説明に求人状況の文言が含まれています: ${cardSummary}`);
+  }
+  if (getHeadquartersRegion(company.hq) === "other") {
+    errors.push(`${company.name}: 本社所在地を地域へ分類できません: ${company.hq}`);
   }
 }
 
@@ -120,6 +135,15 @@ if (!heatmapComponent.includes("<summary>（分類基準）</summary>")) {
   errors.push("画面遷移なしで開ける分類基準のsummaryがありません。");
 }
 
+const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExplorer.tsx"), "utf8");
+if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {
+  errors.push("企業一覧にURL同期する本社所在地フィルターがありません。");
+}
+const globalStyles = fs.readFileSync(path.join(root, "app/globals.css"), "utf8");
+if (/company-card-grid \.data-card > p\s*\{[^}]*display:\s*none/.test(globalStyles)) {
+  errors.push("スマホの企業カードで価値説明が非表示になっています。");
+}
+
 if (errors.length) {
   console.error("採用温度ルールの検証に失敗しました:\n");
   for (const error of errors) console.error(`- ${error}`);
@@ -131,3 +155,4 @@ console.log("採用温度ルール: OK");
 console.log(`- 固定基準: HOT ${expectedCriteria.hot.minimumJobs}件/${expectedCriteria.hot.minimumCompanies}社、Active ${expectedCriteria.active.minimumJobs}件/${expectedCriteria.active.minimumCompanies}社、Selective ${expectedCriteria.selective.minimumJobs}件以上`);
 console.log(`- 日本未進出 ${preEntryCount}社と求人0件企業の3分類からの除外を確認`);
 console.log("- 企業単位のsalesRoles・hiringStatus自動算出を確認");
+console.log(`- ${companies.length}社すべてで価値説明と本社所在地分類を確認`);
