@@ -125,9 +125,13 @@ export default function HomePage() {
                   <span className="audience-check" aria-hidden="true">✓</span>
                   <div><h3>SE・CS・Partner Salesとして、日本事業と一緒に成長したい</h3><p>AE求人だけでなく、製品力、国内導入、パートナー戦略から事業全体を見たい。</p></div>
                 </article>
-                <article className="audience-item audience-item-wide">
+                <article className="audience-item audience-item-featured">
                   <span className="audience-check" aria-hidden="true">✓</span>
                   <div><h3>まだ求人のない「日本未進出でアツそうな外資」に早めに目をつけておきたい。</h3><p>海外の成長、APAC展開、日本対応を観測し、将来の一人目AEや初期GTMの機会を先回りしたい。</p></div>
+                </article>
+                <article className="audience-item audience-item-featured">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>面接に向けて、手っ取り早く詳細に企業研究がしたい</h3><p>各企業研究ページの内容をおさえている候補者はほぼいません。</p></div>
                 </article>
               </div>
             </div>
