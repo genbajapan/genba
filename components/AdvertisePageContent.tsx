@@ -80,7 +80,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
             <aside className="advertise-price-card" aria-label={en ? "Pilot pricing and term" : "実証料金と期間"}>
               <span>{en ? "90-DAY PILOT" : "90日間の実証プラン"}</span>
               <div><strong>{en ? "¥80k" : "8万円"}</strong><small>{en ? "+ tax / month" : "（税別）/ 月"}</small></div>
-              <p>{en ? "Three-month minimum. ¥240,000 + tax total. Limited to the first three approved partners." : "最低3カ月。総額24万円（税別）。審査を通過した初期3社限定です。"}</p>
+              <p>{en ? "For our first few partners, sponsorship is available at the pilot rate of ¥80,000 + tax per month. Three-month minimum; ¥240,000 + tax total. Limited to the first three approved partners." : "初めの数社様限定で、月額8万円（税別）の「実証プラン」としてスポンサー枠をご提供します。最低3カ月、総額24万円（税別）。審査を通過した初期3社限定です。"}</p>
               <a href="#inquiry" className="button button-primary">{en ? "Discuss the pilot" : "実証プランを相談する"}</a>
             </aside>
           </div>
