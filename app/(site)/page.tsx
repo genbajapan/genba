@@ -136,6 +136,46 @@ export default function HomePage() {
               </div>
             </div>
           </details>
+
+          <details className="value-disclosure">
+            <summary className="value-summary">
+              <div className="value-summary-copy">
+                <p className="eyebrow">Genbaで得られる2つの価値</p>
+                <h2>知らなかった企業に出会い、挑戦すべき一社を見極める。</h2>
+              </div>
+              <span className="value-toggle">
+                <span className="value-toggle-icon" aria-hidden="true">+</span>
+                <span className="value-toggle-label-closed">詳しく見る</span>
+                <span className="value-toggle-label-open">閉じる</span>
+              </span>
+            </summary>
+
+            <div className="value-body">
+              <div className="value-grid">
+                <article className="value-card value-card-discovery">
+                  <div className="value-card-head"><span>01</span><p>選択肢を増やす</p></div>
+                  <h3>知らない会社は、選択肢にならない。</h3>
+                  <p>まだ日本語情報が少ない中小規模の外資IT企業や、日本進出前の注目企業を発掘。広く知られる前から、第一号AEやカントリーマネージャーを含む次のキャリア機会を見つけられます。</p>
+                </article>
+
+                <article className="value-card value-card-decision">
+                  <div className="value-card-head"><span>02</span><p>選択の解像度を上げる</p></div>
+                  <h3>「入れそうか」だけでなく、「ここで売りたいか」まで考える。</h3>
+                  <p>ソリューション、Buyer、国内導入事例、想定できる売り方、求人、組織、働いている人、企業文化まで1ページに集約。自分にフィットするか、ワクワクできるか、面接を受ける価値があるかを効率よく判断できます。</p>
+                </article>
+              </div>
+
+              <div className="value-proof">
+                <p className="value-proof-label">現役外資AEの事前調査を基準に</p>
+                <p>各社の情報は、現役外資AEの編集長が自身の転職活動で実際に行ってきた事前調査の粒度を基準に整理。公開事実だけでなく、そこから考えられる仮説、反証材料、面接で確認すべき質問まで掲載しています。</p>
+              </div>
+
+              <div className="value-footer">
+                <strong>企業を知るところから、応募判断と面接準備まで。この1ページで。</strong>
+                <Link href="/companies">実際の企業研究を見る →</Link>
+              </div>
+            </div>
+          </details>
         </Container>
       </section>
 
