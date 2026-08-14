@@ -19,16 +19,16 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
   const inclusions = en ? [
     ["Sponsored company page", "A permanent, clearly labelled home for the product, Japan hiring context and sales role story."],
     ["Company-provided facts", "Hiring background and sales organisation details are labelled separately from Genba editorial analysis."],
-    ["Newsletter: 2× per month", "Six sponsored newsletter placements across the 90-day pilot."],
-    ["X distribution: 1× per month", "Three clearly marked PR posts from @chosenshi08 across the pilot."],
+    ["Newsletter: 2× per month", "Two sponsored newsletter placements are included each month."],
+    ["X distribution: 1× per month", "One clearly marked PR post from @chosenshi08 is included each month."],
     ["Tracked official-job links", "Click measurement while every application still happens on the company’s official careers site."],
     ["Monthly report", "Page views, distribution activity and tracked job clicks in aggregate—never individual reader data."],
     ["One update per month", "Refresh one set of approved facts, priority roles or hiring context each month."],
   ] : [
     ["Sponsored企業ページ", "製品、日本採用の背景、営業職としての魅力を、広告表記付きで継続的に説明します。"],
     ["企業提供事実", "採用背景・営業組織の情報を、Genbaの編集分析とは別のラベルで掲載します。"],
-    ["ニュースレター月2回", "90日間で合計6回、関連性の高い読者へスポンサー情報を届けます。"],
-    ["PR表記付きX配信 月1回", "@chosenshi08から90日間で合計3回、PRであることを明示して配信します。"],
+    ["ニュースレター月2回", "毎月2回、関連性の高い読者へスポンサー情報を届けます。"],
+    ["PR表記付きX配信 月1回", "@chosenshi08から毎月1回、PRであることを明示して配信します。"],
     ["公式求人への計測リンク", "応募は企業公式サイトで行い、Genbaからのクリックを集計します。"],
     ["月次レポート", "企業ページ閲覧、配信実績、求人クリックを個人が特定されない集計値で報告します。"],
     ["月1回までの更新", "採用背景、注力職種、承認済みの企業提供事実を毎月1回更新できます。"],
@@ -48,12 +48,12 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
     ["Fit review", "We confirm the company, active roles and relevance to Genba readers."],
     ["Source intake", "You provide official URLs, approved facts, hiring context and priority roles."],
     ["Draft & fact check", "Genba creates the page. The company checks factual accuracy, not editorial conclusions."],
-    ["Start the pilot", "After payment, the 90-day measurement and distribution cycle begins."],
+    ["Start the pilot", "After payment, the first monthly measurement and distribution cycle begins."],
   ] : [
     ["適合性確認", "企業、募集中求人、Genba読者との関連性を確認します。"],
     ["情報提出", "公式URL、承認済み事実、採用背景、注力職種をご提出いただきます。"],
     ["制作・事実確認", "Genbaが原稿を制作。企業は事実を確認し、編集結論は変更しません。"],
-    ["実証開始", "支払い後、90日間の計測・配信サイクルを開始します。"],
+    ["実証開始", "支払い後、初月の計測・配信サイクルを開始します。"],
   ];
 
   return (
@@ -71,16 +71,16 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
             <div>
               <p className="eyebrow">{en ? "FOUNDING PILOT — THREE PARTNERS ONLY" : "初期3社限定・実証パートナー"}</p>
               <h1>{en ? "Make a lesser-known global company understandable before candidates apply." : "知名度の差を、\n企業理解で埋める。"}</h1>
-              <p className="page-lead">{en ? "Genba reaches people working in—or seriously considering—global IT and SaaS sales in Japan. We turn product, market-entry and sales-organisation context into a measured 90-day hiring narrative." : "Genbaは、外資IT・SaaS営業の現役層と予備軍が企業を深く比較するためのメディアです。求人票だけでは伝わらない製品、市場、営業組織の背景を、90日間の継続発信と計測へ変えます。"}</p>
+              <p className="page-lead">{en ? "Genba reaches people working in—or seriously considering—global IT and SaaS sales in Japan. We turn product, market-entry and sales-organisation context into a measurable hiring narrative, starting with one month." : "Genbaは、外資IT・SaaS営業の現役層と予備軍が企業を深く比較するためのメディアです。求人票だけでは伝わらない製品、市場、営業組織の背景を、まず1カ月の継続発信と計測へ変えます。"}</p>
               <div className="advertise-hero-proof">
                 <span>{en ? "Best for" : "最も価値が出る企業"}</span>
                 <strong>{en ? "1–4 Japan sales hires / Founding GTM / Specialist recruiters" : "営業採用1〜4名・日本進出直後・外資営業特化エージェント"}</strong>
               </div>
             </div>
             <aside className="advertise-price-card" aria-label={en ? "Pilot pricing and term" : "実証料金と期間"}>
-              <span>{en ? "90-DAY PILOT" : "90日間の実証プラン"}</span>
+              <span>{en ? "ONE-MONTH PILOT" : "まず1カ月の実証プラン"}</span>
               <div><strong>{en ? "¥80k" : "8万円"}</strong><small>{en ? "+ tax / month" : "（税別）/ 月"}</small></div>
-              <p>{en ? "For our first few partners, sponsorship is available at the pilot rate of ¥80,000 + tax per month. Three-month minimum; ¥240,000 + tax total. Limited to the first three approved partners." : "初めの数社様限定で、月額8万円（税別）の「実証プラン」としてスポンサー枠をご提供します。最低3カ月、総額24万円（税別）。審査を通過した初期3社限定です。"}</p>
+              <p>{en ? "For our first few partners, sponsorship starts at the pilot rate of ¥80,000 + tax for one month. Three months are recommended for meaningful measurement. Limited to the first three approved partners." : "初めの数社様限定で、まず1カ月・8万円（税別）の「実証プラン」としてスポンサー枠をご提供します。効果測定のため、3カ月の継続を推奨します。審査を通過した初期3社限定です。"}</p>
               <a href="#inquiry" className="button button-primary">{en ? "Discuss the pilot" : "実証プランを相談する"}</a>
             </aside>
           </div>
@@ -126,15 +126,15 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
       <section className="content-section advertise-economics-section">
         <Container>
           <div className="advertise-section-heading advertise-section-heading-wide">
-            <p className="eyebrow">{en ? "THE 90-DAY ECONOMICS" : "90日間の費用対効果"}</p>
-            <h2>{en ? "¥240,000 buys a measured test—not a vague logo placement." : "24万円を、曖昧な掲載費で終わらせない。"}</h2>
-            <p>{en ? "The total pilot investment and every included distribution unit are fixed in advance. The final report uses actual results; the figures below show how an internal team can evaluate those results." : "総額と提供回数を先に固定し、実績値は月次レポートで確認します。以下は成果予測ではなく、社内で採算を判断するための計算方法です。"}</p>
+            <p className="eyebrow">{en ? "THE RECOMMENDED THREE-MONTH ECONOMICS" : "推奨3カ月の費用対効果"}</p>
+            <h2>{en ? "Start at ¥80,000, then measure with enough time to learn." : "まず8万円から始め、十分な期間で効果を測る。"}</h2>
+            <p>{en ? "The first month is available on its own. Continuing for three months is recommended so monthly reports can show changes rather than a single snapshot. The figures below illustrate how to evaluate the recommended three-month total; they are not forecasts." : "初月だけでも開始できます。単月のスナップショットではなく変化を比較できるよう、月次レポートを3回蓄積する継続を推奨します。以下は推奨3カ月総額を社内で評価するための計算例であり、成果予測ではありません。"}</p>
           </div>
           <div className="advertise-economics-grid">
             <div className="advertise-investment-card">
-              <span>{en ? "FIXED PILOT INVESTMENT" : "実証プランの固定投資"}</span>
+              <span>{en ? "RECOMMENDED THREE-MONTH TOTAL" : "推奨3カ月の合計"}</span>
               <strong>¥240,000</strong>
-              <small>{en ? "+ tax / 90 days" : "税別 / 90日間"}</small>
+              <small>{en ? "+ tax / three months" : "税別 / 3カ月"}</small>
               <div><p><b>6</b>{en ? "newsletter placements" : "ニュースレター掲載"}</p><p><b>3</b>{en ? "PR posts on X" : "XでのPR配信"}</p><p><b>3</b>{en ? "monthly reports" : "月次レポート"}</p></div>
             </div>
             <div className="advertise-calculation-card">
@@ -148,7 +148,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
           <div className="advertise-decision-grid">
             <article><span>01</span><h3>{en ? "Set the baseline" : "既存チャネルの基準値を置く"}</h3><p>{en ? "Record your current cost per qualified job click, interview and hire for the same roles." : "同じ職種について、既存媒体の公式求人クリック単価、面接単価、採用単価を確認します。"}</p></article>
             <article><span>02</span><h3>{en ? "Use tracked outcomes" : "Genba経由を計測する"}</h3><p>{en ? "Use tracked links plus the company’s own source question at application or interview stage." : "計測リンクに加え、応募・面接時の流入元確認を企業側の運用に組み込みます。"}</p></article>
-            <article><span>03</span><h3>{en ? "Make the renewal decision" : "3カ月後に継続判断する"}</h3><p>{en ? "Compare unit economics, candidate relevance and the reusable value of the company narrative." : "単価だけでなく、候補者の関連性と、企業理解コンテンツが残る価値も含めて判断します。"}</p></article>
+            <article><span>03</span><h3>{en ? "Make the continuation decision" : "毎月、継続を判断する"}</h3><p>{en ? "Review results monthly, then compare unit economics, candidate relevance and the reusable value of the company narrative after the recommended three months." : "毎月結果を確認し、推奨3カ月後には単価、候補者の関連性、企業理解コンテンツが残る価値をまとめて比較します。"}</p></article>
           </div>
         </Container>
       </section>
@@ -160,7 +160,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
               <p className="eyebrow">{en ? "WHAT THE PILOT INCLUDES" : "実証プランに含まれるもの"}</p>
               <h2>{en ? "One plan. Seven concrete deliverables." : "提供内容を、7つに固定。"}</h2>
               <p>{en ? "The plan combines a durable company asset, repeated distribution and evidence for a renewal decision. There are no success fees and no access to individual reader data." : "企業理解の資産、継続配信、継続判断のための計測を一つにまとめます。成功報酬はなく、読者個人データは提供しません。"}</p>
-              <div className="advertise-plan-terms"><div><span>{en ? "PRICE" : "費用"}</span><strong>{en ? "¥80k / mo" : "月額8万円"}</strong><small>{en ? "+ tax" : "税別"}</small></div><div><span>{en ? "TERM" : "期間"}</span><strong>{en ? "3 months" : "最低3カ月"}</strong><small>{en ? "¥240k total" : "総額24万円"}</small></div></div>
+              <div className="advertise-plan-terms"><div><span>{en ? "PRICE" : "費用"}</span><strong>{en ? "¥80k / mo" : "月額8万円"}</strong><small>{en ? "+ tax" : "税別"}</small></div><div><span>{en ? "TERM" : "期間"}</span><strong>{en ? "Start with 1 month" : "まず1カ月"}</strong><small>{en ? "3 months recommended" : "効果測定は3カ月推奨"}</small></div></div>
             </div>
             <ol className="advertise-inclusion-list">
               {inclusions.map(([title, body], index) => <li key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{title}</strong><p>{body}</p></div></li>)}
@@ -171,7 +171,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
 
       <section className="content-section">
         <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "THE 90-DAY OPERATING RHYTHM" : "90日間の進め方"}</p><h2>{en ? "Build once, learn monthly, decide with evidence." : "作って終わらず、毎月学び、数字で判断する。"}</h2></div>
+          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "THE RECOMMENDED THREE-MONTH RHYTHM" : "推奨3カ月の進め方"}</p><h2>{en ? "Start for one month, learn monthly, decide with evidence." : "まず1カ月から始め、毎月学び、数字で判断する。"}</h2></div>
           <div className="advertise-timeline">{timeline.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
           <div className="advertise-policy-strip"><strong>{en ? "EDITORIAL BOUNDARY" : "編集上の境界"}</strong><span>{en ? "Sponsored and PR labels are explicit" : "Sponsored・PRを明示"}</span><span>{en ? "Company facts stay separate from Genba analysis" : "企業提供事実とGenba分析を分離"}</span><span>{en ? "No paid ranking or favourable conclusion" : "順位・分析結論は販売しない"}</span><span>{en ? "Aggregate reporting only" : "レポートは集計値のみ"}</span></div>
         </Container>
@@ -179,7 +179,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
 
       <section className="content-section surface-section">
         <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "HOW IT STARTS" : "掲載開始まで"}</p><h2>{en ? "Four steps to a 90-day pilot." : "4ステップで実証を開始。"}</h2></div>
+          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "HOW IT STARTS" : "掲載開始まで"}</p><h2>{en ? "Four steps to start the first month." : "4ステップで初月の実証を開始。"}</h2></div>
           <div className="advertise-process-grid">{process.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
         </Container>
       </section>
