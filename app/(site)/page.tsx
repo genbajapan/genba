@@ -39,7 +39,6 @@ export default function HomePage() {
             <div className="hero-actions">
               <Link href="/companies" className="button button-primary">企業一覧</Link>
               <Link href="/jobs" className="button button-secondary">営業求人を見る</Link>
-              <Link href="/insights" className="button button-secondary">外資ITのリアル記事</Link>
             </div>
           </div>
           <aside className="hero-panel" aria-label="Genbaデータの概要">
@@ -158,17 +157,6 @@ export default function HomePage() {
         <Container>
           <SectionHeader eyebrow="OPEN SALES ROLES" title="公式サイトで確認した営業求人" description="応募や個人情報の入力はGenba上では行いません。各社の公式採用ページへ直接つなぎます。" href="/jobs" linkLabel="すべての求人" />
           <div className="job-list">{jobs.slice(0, 5).map((job) => <JobCard key={job.id} job={job} />)}</div>
-        </Container>
-      </section>
-
-      <section className="content-section surface-section">
-        <Container>
-          <SectionHeader eyebrow="EDITORIAL" title="求人票の向こう側を読む" description="外資SaaSの現役AEの視点から、キャリア・営業組織・日本市場を解像度高く読み解きます。" href="/insights" linkLabel="役立ち記事一覧" />
-          <div className="editorial-grid">
-            <article className="editorial-card"><span>CAREER INTELLIGENCE</span><h3>求人票で見るべき「空白」とは</h3><p>OTEやタイトルだけでは分からない、組織フェーズと営業難易度を見抜く観点。</p><Link href="/insights">読む →</Link></article>
-            <article className="editorial-card"><span>FIELD NOTE</span><h3>Enterprise AEの仕事は会社ごとに違う</h3><p>担当社数、既存比率、SE体制。タイトルが同じでも役割が変わる理由。</p><Link href="/insights">読む →</Link></article>
-            <article className="editorial-card"><span>MARKET MAP</span><h3>外資SaaS日本法人の採用を定点観測する</h3><p>求人の増減から、日本市場への投資姿勢をどこまで読み取れるのか。</p><Link href="/methodology">調査方針を見る →</Link></article>
-          </div>
         </Container>
       </section>
 

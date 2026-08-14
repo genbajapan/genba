@@ -6,7 +6,6 @@ const nav: Record<Locale, { href: string; label: string }[]> = {
   en: [
     { href: "/companies", label: "企業を探す" },
     { href: "/jobs", label: "求人を探す" },
-    { href: "/insights", label: "外資ITのリアル記事" },
     { href: "/advertise", label: "掲載について" },
   ],
   ja: [
@@ -22,7 +21,6 @@ export default function Header({ locale = "en", displayLanguage = "ja" }: { loca
   const activeNav = displayLanguage === "en" ? [
     { href: "/companies", label: "Companies (JP)" },
     { href: "/jobs", label: "Jobs (JP)" },
-    { href: "/insights", label: "Insights (JP)" },
     { href: "/en/advertise", label: "Partnership" },
   ] : nav[locale];
 
