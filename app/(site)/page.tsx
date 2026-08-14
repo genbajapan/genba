@@ -101,7 +101,6 @@ export default function HomePage() {
             </summary>
 
             <div className="audience-body">
-              <p className="audience-body-intro">ひとつでも当てはまるなら Genbaが役に立つはずです。</p>
               <div className="audience-list">
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
