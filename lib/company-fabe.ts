@@ -10,6 +10,7 @@ export type SolutionFABE = {
 
 // 一覧で機械圧縮すると固有技術や比較軸が欠けやすい企業は、公開プロファイルの要点を明示的に編集する。
 const cardSummaryOverrides: Record<string, string> = {
+  mongodb: "データモデル変更や複数クラウド運用の複雑さを、柔軟なドキュメントDBとフルマネージド基盤で解決する、クラウド・AIアプリ向けのデータプラットフォーム企業。",
   okta: "課題「SaaSごとに認証・権限が分散する」。主力製品はSSO・MFA・IDライフサイクル管理を統合する。優位性は、18,000超のアプリ連携でマルチベンダー環境を横断できる点。",
   anaplan: "課題「部門別Excelで計画数値がつながらない」。主力製品はHyperblock上で財務・営業・人員等の計画を連動させる。優位性は、大規模で複雑な全社モデルの運用実績。",
   qualtrics: "課題「顧客・従業員の声が部門別アンケートに埋もれる」。主力製品は複数接点の体験データを統合・分析するXM基盤。優位性は、CX・EX・ブランドを同じ基盤で改善へつなげる点。",
@@ -224,6 +225,7 @@ export function getSolutionFABE(
 }
 
 export function getCompanyFABESalesSnapshot(intelligence: CompanyPublicIntelligence) {
+  if (intelligence.salesSnapshotFabe) return intelligence.salesSnapshotFabe;
   const snapshotSentences = sentences(intelligence.salesSnapshot);
   const issues = resolveCustomerIssues(intelligence);
   const explicitIssueSentence = snapshotSentences.find((item) => extractCustomerIssues(item).length >= 3);

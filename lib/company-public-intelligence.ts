@@ -190,6 +190,8 @@ export type CompanySolution = {
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
+  // 企業ごとに人手で検証したFABEサマリー。未設定時は共通ロジックで生成する。
+  salesSnapshotFabe?: string;
   marketStatus: MarketStatus;
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];
@@ -927,6 +929,46 @@ const salesforceIntelligence: CompanyPublicIntelligence = {
 
 const mongodbSources: ResearchSource[] = [
   {
+    id: "mdb-10q-fy27",
+    label: "MongoDB FY2027 Q1 Form 10-Q",
+    url: "https://investors.mongodb.com/static-files/490d8959-9448-4d2b-b2ed-aed7799fc56c",
+    kind: "法定開示",
+    scope: "Net ARR Expansion 121%(2026年4月30日時点)",
+    checkedAt: "2026-08-14",
+  },
+  {
+    id: "mdb-plaid-atlas",
+    label: "プレイド MongoDB Atlas導入事例",
+    url: "https://www.mongodb.com/ja-jp/solutions/customer-case-studies/plaid",
+    kind: "企業公式",
+    scope: "国内導入事例・マルチクラウド運用・SRE負荷・開発速度",
+    checkedAt: "2026-08-14",
+  },
+  {
+    id: "mdb-toyota-connected-atlas",
+    label: "Toyota Connected MongoDB Atlas導入事例",
+    url: "https://www.mongodb.com/solutions/customer-case-studies/toyota-connected",
+    kind: "企業公式",
+    scope: "可用性99.99%・最短3秒のデータ処理・運用効率",
+    checkedAt: "2026-08-14",
+  },
+  {
+    id: "mdb-atlas-10-years",
+    label: "MongoDB「10 Years of MongoDB Atlas」",
+    url: "https://www.mongodb.com/company/blog/news/10-years-mongodb-atlas-built-for-whats-next",
+    kind: "企業公式",
+    scope: "Atlas Vector Search・AIアプリケーション基盤の利用実態",
+    checkedAt: "2026-08-14",
+  },
+  {
+    id: "ipa-legacy-modernization-2025",
+    label: "レガシーシステムモダン化委員会総括レポート",
+    url: "https://www.ipa.go.jp/disc/committee/begoj90000002xuk-att/legacy-system-modernization-committee-20250528-report.pdf",
+    kind: "公的機関",
+    scope: "日本企業のレガシー刷新・生成AI連携・データ活用需要",
+    checkedAt: "2026-08-14",
+  },
+  {
     id: "mdb-q1fy27",
     label: "MongoDB 2027年度第1四半期決算",
     url: "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-first-quarter-fiscal-2027-financial",
@@ -1065,8 +1107,9 @@ const mongodbSources: ResearchSource[] = [
 ];
 
 const mongodbIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-11",
+  researchedAt: "2026-08-14",
   salesSnapshot: "MongoDBは、アプリケーション開発企業や大企業の開発・IT部門が、変化の速いデータを柔軟に扱いながらクラウドとAIサービスを構築するためのデータ基盤。「リレーショナルDBの変更に時間がかかる」「複数クラウドでデータ基盤の運用が複雑」「生成AI向け検索と業務データが分断している」といった課題を解決する。開発者起点の技術採用から、基幹システム移行や全社のAIアプリケーション基盤へ案件を広げられる点が、営業としての面白さ。",
+  salesSnapshotFabe: "アプリケーション開発企業や大企業の開発・IT部門に対し、「リレーショナルDBの変更に時間がかかる」「複数クラウドでデータ基盤の運用が複雑」「生成AI向け検索と業務データが分断している」などの課題を解決する。主力製品は、AWS・Azure・Google Cloudで利用できるフルマネージドのドキュメントデータベース「MongoDB Atlas」である。Atlas売上は2027年度第1四半期に前年同期比29%超で成長し、MongoDB全体のNet ARR Expansionは121%に達した。競合優位性は、スキーマ変更へ柔軟に対応できるドキュメントモデルと、オペレーショナルデータ・全文検索・ベクトル検索をマルチクラウド上の同一基盤で扱える点にある。顧客への一番のメリットは、DB運用や検索基盤の同期に時間を取られる状態を、開発者がデータモデルとAI機能を素早く変更できる状態へ変え、SRE負荷とインフラ管理コストの削減、開発速度・可用性・検索性能の向上につなげられることにある。成果は、導入前後のリリース期間、DB運用工数、インシデント件数、検索応答時間、可用性、インフラコストで測定できる。プレイドでは毎秒数万件の読み書きを支えながらSRE負荷を軽減し、Toyota Connectedでは99.99%の可用性と最短3秒のデータ処理を実現している。日本市場では、レガシーシステムをモダン化し、生成AIを既存データへ組み込む必要性が高まっており、クラウド移行とAIデータ基盤を同時に提案できる余地がある。",
   marketStatus: {
     isPublic: true,
     ticker: "MDB",
@@ -1127,12 +1170,14 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
       },
     ],
     japanGrowth: {
-      headline: "日本法人の実態は、公開情報からはほとんど見えてこない。",
-      narrative: "MongoDB Japan合同会社は合同会社(GK)のため決算公告の義務がなく、売上・利益・成長率を示す公開データが一切ない。現在の代表者名も主要な企業データベースでは非公開で、直近の採用拡大やオフィス移転等のニュースリリースも確認できなかった。公式に確認できる日本のカスタマーストーリーはスクウェア・エニックス(100以上のクラスター・570以上のノードで複数タイトルの非同期マルチプレイヤー機能を支える)がほぼ唯一で、この事例の存在自体が「日本でも大規模本番運用に耐える」ことの証明にはなっているが、他の外資SaaS競合と比べても情報開示の薄さが際立つ、というのがGenbaの読み。過去にMongoDB Japanの幹部だった有信慶三氏が数年前に転出した記録は確認できたが、現在の日本チームを率いる人物は特定できていない。",
+      headline: "日本では、レガシー刷新とAIデータ基盤が案件の入口になり得る。",
+      narrative: "MongoDB Japan合同会社は合同会社(GK)のため決算公告の義務がなく、日本の売上・利益・Atlas成長率は非公開。公開情報は限られる一方、プレイドはMongoDB Atlasで毎秒数万件の読み書きを処理し、DB運用負荷を減らして開発者を新機能開発へ振り向けている。スクウェア・エニックスでも100以上のクラスター・570以上のノードを使う大規模運用が確認できる。IPA・経済産業省のレガシーシステムモダン化委員会は、既存システムが生成AI等の最新技術の連携・組み込みを妨げていると指摘しており、レガシー刷新、クラウド移行、AI向け検索基盤を一続きで提案できる市場背景がある。ただし、日本固有の売上・継続率・競合勝率は未公開であり、成長性の定量評価には留保が必要。",
       qualitativeSignals: [
-        { label: "確認できる日本導入事例はスクウェア・エニックスのみ", detail: "100以上のクラスター・570以上のノードで複数タイトルの非同期マルチプレイヤー機能を支える大規模事例。他に公式に確認できる日本企業の事例は見当たらない。", sourceId: "mdb-squareexnix" },
+        { label: "プレイドのAtlas運用", detail: "毎秒数万件の読み書きを支え、DB管理・拡張・バックアップ等の運用負荷を軽減。開発速度、安定性、性能の改善を公式事例で確認。", sourceId: "mdb-plaid-atlas" },
+        { label: "スクウェア・エニックスの大規模運用", detail: "100以上のクラスター・570以上のノードで複数タイトルの非同期マルチプレイヤー機能を支える。", sourceId: "mdb-squareexnix" },
+        { label: "日本企業のモダナイゼーション需要", detail: "公的レポートは、レガシーシステムが生成AI等の最新技術との連携・組み込みを妨げる問題を指摘。", sourceId: "ipa-legacy-modernization-2025" },
       ],
-      sourceIds: ["mdb-squareexnix"],
+      sourceIds: ["mdb-plaid-atlas", "mdb-squareexnix", "ipa-legacy-modernization-2025"],
     },
   },
   sellingPlaybook: {
@@ -1306,6 +1351,20 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
   ],
   customerProof: [
     {
+      company: "プレイド",
+      products: "MongoDB Atlas",
+      outcome: "KARTEの基盤で毎秒数万件の読み書きを処理。DB管理・拡張・バージョンアップ・バックアップの運用負荷を軽減し、開発速度・安定性・性能を改善",
+      implication: "日本企業に対し、マルチクラウド対応だけでなく、SRE負荷を減らして開発者を顧客価値の創出へ戻す商談ストーリーを組み立てられる。",
+      sourceId: "mdb-plaid-atlas",
+    },
+    {
+      company: "Toyota Connected",
+      products: "MongoDB Atlas",
+      outcome: "20のAtlasデータベースで車両安全サービスを支え、99.99%の可用性と最短3秒のデータ処理を実現。専任DBチームを置かずに運用",
+      implication: "ミッションクリティカルなIoT・モビリティ用途で、可用性、処理速度、運用効率を同時に提案できる。",
+      sourceId: "mdb-toyota-connected-atlas",
+    },
+    {
       company: "スクウェア・エニックス",
       products: "MongoDB Atlas",
       outcome: "『トゥームレイダー』『ヒットマン アブソリューション』『デウスエクス』など複数タイトルの非同期マルチプレイヤー機能を運用。100以上のクラスター・570以上のノードを稼働し、最大クラスターは100TB超のデータを管理",
@@ -1411,11 +1470,11 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
   solutions: [
     {
       name: "MongoDB Atlas",
-      valueProp: "フルマネージドのクラウドデータベースサービス。AWS/Azure/GCPで動作し、Net ARR Expansion121%で成長を牽引する中核製品。",
+      valueProp: "AWS・Azure・Google Cloudで利用でき、構築・拡張・バックアップ・バージョン更新を自動化するフルマネージドのドキュメントデータベース。",
       url: "https://www.mongodb.com/atlas",
       competitors: "Azure Cosmos DB、Amazon DynamoDB、Google Cloud Firestoreが主要な競合。",
       differentiation: "Cosmos DBは5段階の一貫性レベルで柔軟な制御ができる一方、Atlasはインスタンス課金でワークロードが安定していればコストが読みやすい。ドキュメント指向のスキーマ柔軟性と、AWS/Azure/GCPいずれでも同等に使えるマルチクラウド対応が強み。",
-      retention: "Atlas売上は全体の75%(前年72%から上昇)、前年比+29%成長。Net ARR Expansionは121%。",
+      retention: "Atlas売上は2027年度第1四半期に前年同期比29%超で成長。MongoDB全体のNet ARR Expansionは121%。",
     },
     {
       name: "Atlas Vector Search",

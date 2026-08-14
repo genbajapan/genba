@@ -105,8 +105,22 @@ for (const company of runtimeCompanies) {
   }
 
   const fabeSnapshot = getCompanyFABESalesSnapshot(intelligence);
-  for (const required of ["主力製品", "機能は", "優位性は", "顧客メリットは", "根拠は"]) {
-    if (!fabeSnapshot.includes(required)) errors.push(`${company.slug}: FABEセールスサマリーに「${required}」がありません。`);
+  if (company.slug === "mongodb") {
+    for (const [label, pattern] of [
+      ["主力製品", /主力製品は/],
+      ["競合優位性", /競合優位性は/],
+      ["顧客メリット", /顧客への一番のメリットは/],
+      ["導入根拠", /プレイド.*Toyota Connected/],
+      ["日本市場背景", /日本市場では/],
+    ]) {
+      if (!pattern.test(fabeSnapshot)) errors.push(`mongodb: FABEセールスサマリーに${label}がありません。`);
+    }
+    if (/^MongoDBは/.test(fabeSnapshot)) errors.push("mongodb: FABEセールスサマリーを会社名から始めないでください。");
+    if (fabeSnapshot.includes("…") || !fabeSnapshot.endsWith("。")) errors.push("mongodb: FABEセールスサマリーを省略せず完結させてください。");
+  } else {
+    for (const required of ["主力製品", "機能は", "優位性は", "顧客メリットは", "根拠は"]) {
+      if (!fabeSnapshot.includes(required)) errors.push(`${company.slug}: FABEセールスサマリーに「${required}」がありません。`);
+    }
   }
   if (Array.from(fabeSnapshot.matchAll(/「/g)).length < 3) {
     errors.push(`${company.slug}: FABEセールスサマリーに顧客課題3点がありません。`);

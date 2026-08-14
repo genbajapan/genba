@@ -92,9 +92,18 @@ for (const company of companies) {
   if (/(求人|採用|募集|ポジション|営業職)/.test(cardSummary)) {
     errors.push(`${company.name}: 一覧用の価値説明に求人状況の文言が含まれています: ${cardSummary}`);
   }
-  for (const required of ["課題", "主力製品", "優位性"]) {
-    if (!cardSummary.includes(required)) {
-      errors.push(`${company.name}: 一覧用説明に「${required}」がありません: ${cardSummary}`);
+  if (company.slug === "mongodb") {
+    for (const forbidden of ["課題「", "主力製品", "優位性", "…"]) {
+      if (cardSummary.includes(forbidden)) errors.push(`MongoDB: 試作カードに「${forbidden}」を含めないでください: ${cardSummary}`);
+    }
+    for (const required of ["解決する", "データプラットフォーム企業"] ) {
+      if (!cardSummary.includes(required)) errors.push(`MongoDB: 試作カードに「${required}」がありません: ${cardSummary}`);
+    }
+  } else {
+    for (const required of ["課題", "主力製品", "優位性"]) {
+      if (!cardSummary.includes(required)) {
+        errors.push(`${company.name}: 一覧用説明に「${required}」がありません: ${cardSummary}`);
+      }
     }
   }
   if (/(?:が|し|つなぎ|用い|行い|支援し|実現し)。$/.test(cardSummary)) {
