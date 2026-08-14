@@ -92,15 +92,15 @@ for (const company of companies) {
   if (/(求人|採用|募集|ポジション|営業職)/.test(cardSummary)) {
     errors.push(`${company.name}: 一覧用の価値説明に求人状況の文言が含まれています: ${cardSummary}`);
   }
+  for (const forbidden of ["課題「", "主力製品は", "優位性は", "…"]) {
+    if (cardSummary.includes(forbidden)) errors.push(`${company.name}: 一覧カードに旧ラベルまたは省略記号「${forbidden}」を含めないでください: ${cardSummary}`);
+  }
   if (company.slug === "mongodb") {
-    for (const forbidden of ["課題「", "主力製品", "優位性", "…"]) {
-      if (cardSummary.includes(forbidden)) errors.push(`MongoDB: 試作カードに「${forbidden}」を含めないでください: ${cardSummary}`);
-    }
     for (const required of ["解決する", "データプラットフォーム企業"] ) {
-      if (!cardSummary.includes(required)) errors.push(`MongoDB: 試作カードに「${required}」がありません: ${cardSummary}`);
+      if (!cardSummary.includes(required)) errors.push(`MongoDB: 承認済みカードに「${required}」がありません: ${cardSummary}`);
     }
   } else {
-    for (const required of ["課題", "主力製品", "優位性"]) {
+    for (const required of ["という課題を", "で解決し", "競合と差別化"]) {
       if (!cardSummary.includes(required)) {
         errors.push(`${company.name}: 一覧用説明に「${required}」がありません: ${cardSummary}`);
       }
@@ -184,8 +184,11 @@ const globalStyles = fs.readFileSync(path.join(root, "app/globals.css"), "utf8")
 if (/company-card-grid \.data-card > p\s*\{[^}]*display:\s*none/.test(globalStyles)) {
   errors.push("スマホの企業カードで価値説明が非表示になっています。");
 }
-if (!globalStyles.includes("-webkit-line-clamp: 4")) {
-  errors.push("デスクトップの企業カードでFABE価値説明を4行確保できていません。");
+if (!/\.company-card-value\s*\{[^}]*display:\s*block;[^}]*overflow:\s*visible/.test(globalStyles)) {
+  errors.push("デスクトップの企業カードがFABE価値説明を途中で切らずに表示できていません。");
+}
+if (!/company-card-grid \.data-card > p\s*\{[^}]*overflow:\s*visible;[^}]*-webkit-line-clamp:\s*unset/.test(globalStyles)) {
+  errors.push("スマホの企業カードがFABE価値説明を途中で切らずに表示できていません。");
 }
 
 if (errors.length) {

@@ -199,7 +199,7 @@ button, input, select { font: inherit; }
 .data-card h3 { margin: 20px 0 9px; color: var(--navy); font-size: 23px; letter-spacing: -.03em; }
 .data-card h3 a { color: var(--navy); text-decoration: none; }
 .data-card > p { flex: 1; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
-.company-card-value { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.company-card-value { display: block; overflow: visible; }
 .metric-row { display: grid; grid-template-columns: 1fr 1fr; margin: 21px 0 19px; border-block: 1px solid var(--line); }
 .metric-row div { padding: 13px 0; }
 .metric-row div + div { border-left: 1px solid var(--line); padding-left: 14px; }
@@ -1095,7 +1095,7 @@ button, input, select { font: inherit; }
   .company-card-grid .status-badge,.company-card-grid .pre-entry-badge { flex-shrink: 0; gap: 4px; padding: 4px 5px; font-size: 7px; }
   .company-card-grid .status-dot,.company-card-grid .pre-entry-badge i { width: 5px; height: 5px; }
   .company-card-grid .data-card h3 { margin: 9px 0 6px; font-size: 16px; line-height: 1.2; }
-  .company-card-grid .data-card > p { display: -webkit-box; flex: 0 1 auto; min-height: 61px; font-size: 9px; line-height: 1.48; -webkit-line-clamp: 5; }
+  .company-card-grid .data-card > p { display: block; overflow: visible; flex: 0 1 auto; min-height: 61px; font-size: 9px; line-height: 1.48; -webkit-line-clamp: unset; }
   .company-card-grid .metric-row { margin: 10px 0 9px; }
   .company-card-grid .metric-row div { padding: 8px 0; }
   .company-card-grid .metric-row div + div { padding-left: 8px; }

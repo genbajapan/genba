@@ -8,6 +8,11 @@ export type SolutionFABE = {
   competitor: string;
 };
 
+export type CompanyFABESalesView = {
+  summary: string;
+  expanded: string;
+};
+
 // 一覧で機械圧縮すると固有技術や比較軸が欠けやすい企業は、公開プロファイルの要点を明示的に編集する。
 const cardSummaryOverrides: Record<string, string> = {
   mongodb: "データモデル変更や複数クラウド運用の複雑さを、柔軟なドキュメントDBとフルマネージド基盤で解決するクラウド・AIアプリ向けデータプラットフォーム企業。",
@@ -48,6 +53,36 @@ const cardSummaryOverrides: Record<string, string> = {
   nice: "課題「電話・デジタル対応・AI・品質管理が分断し、CXを改善できない」。主力製品はCXoneでチャネル・AI・要員・品質を統合する。優位性は、大規模な対話データと運用機能を同じ基盤で扱える点。",
   island: "課題「SaaS・Web上のデータ操作を端末やVDIだけでは細かく統制できない」。主力製品は業務ブラウザ自体へアクセス・DLP・監査を組み込む。優位性は、利用画面で統制しながら操作性を保てる点。",
   "1password": "課題「パスワード・端末・未統合SaaS・AIのアクセスが管理外になる」。主力製品は認証情報と拡張アクセス管理を統合する。優位性は、使いやすさを保ちながら人・端末・アプリを横断できる点。",
+};
+
+const cardDomainOverrides: Record<string, { issue?: string; capability: string; advantage: string }> = {
+  zendesk: { capability: "問い合わせ履歴・チャネル・AI対応の一元化", advantage: "AIと有人対応を同じ顧客文脈で運用できる" },
+  contentsquare: { capability: "行動データによる離脱要因・UXの可視化", advantage: "行動分析から売上影響まで一つの基盤で追える" },
+  qualtrics: { capability: "顧客・従業員の体験データ分析と改善実行", advantage: "CX・EX・ブランドを同じ基盤で改善できる" },
+  miro: { capability: "視覚的な共同作業と意思決定の一元化", advantage: "自由なキャンバスと企業統制を両立できる" },
+  glean: { capability: "権限を継承する企業内検索とAIエージェント", advantage: "元システムの権限を保ったまま横断検索できる" },
+  cambly: { capability: "ネイティブ講師とのオンライン英会話と法人管理", advantage: "実会話の量と受講の柔軟性を両立できる" },
+  censys: { issue: "インターネット公開資産と攻撃経路を継続把握できない", capability: "インターネット資産の継続スキャンとリスク可視化", advantage: "攻撃者視点の資産データを継続更新できる" },
+  "channel-talk": { capability: "チャット・電話・メール・CRMの一元化", advantage: "問い合わせ対応から顧客育成まで同じ文脈で運用できる" },
+  "extreme-networks": { issue: "拠点ごとに有線・無線・データセンター網の管理が分かれる", capability: "有線・無線・クラウドネットワークの一元管理", advantage: "複数環境を単一の運用画面で管理できる" },
+  gong: { capability: "商談会話の記録・分析と営業コーチング", advantage: "CRM入力だけでなく実際の顧客会話から判断できる" },
+  celonis: { capability: "実データによる業務プロセス分析と改善実行", advantage: "発見した詰まりを自動化・AI実行までつなげられる" },
+  mirakl: { capability: "出店者・商品・注文を統合するマーケットプレイス基盤", advantage: "大企業向けの運営機能と導入知見を持つ" },
+  airwallex: { capability: "多通貨口座・決済・送金・経費の統合", advantage: "国をまたぐ資金移動を一つの基盤で扱える" },
+  postman: { capability: "APIの設計・テスト・文書・共同作業の一元化", advantage: "APIライフサイクルを開発チーム横断で標準化できる" },
+  lighthouse: { capability: "宿泊需要の予測と料金・販売判断の自動化", advantage: "市場データから価格実行まで一つの基盤で扱える" },
+  datadog: { capability: "メトリクス・ログ・トレースの相関分析", advantage: "監視データを共通タグで横断できる" },
+  "dbt-labs": { issue: "分析SQLが属人化し品質・変更履歴・依存関係を追えない", capability: "データ変換のテスト・版管理・依存関係の標準化", advantage: "テスト・版管理の標準と大きなエコシステムを持つ" },
+  gurobi: { capability: "数理最適化による制約下の最良案探索", advantage: "計算性能と成熟したAPI・企業サポートを持つ" },
+  patch: { issue: "カーボンクレジットの供給・品質・取引を一貫管理できない", capability: "クレジットの調達・評価・取引・管理の一元化", advantage: "購入実務とポートフォリオ管理を同じ基盤で扱える" },
+  veeva: { issue: "製薬の臨床・品質・規制・営業データが工程ごとに分断する", capability: "ライフサイエンス専用クラウドによる工程統合", advantage: "業界固有のデータモデルと規制対応を備える" },
+  wiz: { capability: "クラウド資産・設定・攻撃経路の統合分析", advantage: "エージェントレスでリスクの優先順位を絞れる" },
+  patsnap: { issue: "特許・論文・企業・市場データが分断しR&D判断に時間がかかる", capability: "技術・市場データのAI検索と分析", advantage: "技術情報に特化したデータ網とオントロジーを持つ" },
+  mambu: { issue: "旧来の勘定系で金融商品の変更と外部連携に時間がかかる", capability: "API中心のコンポーザブルなクラウド勘定系", advantage: "必要機能を組み替えられるモジュール設計を持つ" },
+  nice: { issue: "電話・デジタル対応・AI・品質管理が分断している", capability: "コンタクトセンターのチャネル・AI・品質管理の統合", advantage: "大規模な対話データと運用機能を同じ基盤で扱える" },
+  dialpad: { issue: "電話・会議・コンタクトセンターの会話データが分断する", capability: "クラウド電話と会話AI・営業支援の統合", advantage: "会話データからコーチング・業務改善までつなげられる" },
+  zilliz: { capability: "大規模ベクトルデータの検索・運用", advantage: "MilvusのOSS基盤とマルチクラウド運用を両立できる" },
+  airtable: { capability: "業務データベース・アプリ・自動化のローコード統合", advantage: "現場の柔軟性と企業向け統制を両立できる" },
 };
 
 function clean(text: string) {
@@ -143,12 +178,33 @@ function resolveCustomerIssues(intelligence: CompanyPublicIntelligence) {
 
   const narrative = Object.fromEntries(intelligence.sellingPlaybook.narrative.map((stage) => [stage.label, stage.body]));
   const snapshotIssue = intelligence.salesSnapshot.match(/が抱える(.+?)(?:という|の)?課題を.+?で解く/)?.[1];
-  return [
-    explicit[0] ?? snapshotIssue ?? narrative["背景"] ?? intelligence.sellingPlaybook.issueLenses[0]?.body,
-    narrative["課題"] ?? intelligence.sellingPlaybook.issueLenses[1]?.body,
-    intelligence.sellingPlaybook.issueLenses.find((lens) => lens.title === "外部環境の要求から見る課題")?.body
-      ?? intelligence.sellingPlaybook.openingHook,
-  ].filter((item): item is string => Boolean(item)).map((item) => clip(item, 82)).slice(0, 3);
+  const backgroundIssue = clean(narrative["背景"] ?? "")
+    .replace(/^.+?により/, "")
+    .replace(/^.+?は、/, "");
+  const challengeParts = clean(narrative["課題"] ?? "")
+    .split(/うえ[、,]/)
+    .map((item) => item.replace(/ため[、,].*$/, "").replace(/ため$/, ""));
+  const externalIssue = intelligence.sellingPlaybook.issueLenses.find((lens) => lens.title === "外部環境の要求から見る課題")?.body;
+  const productIssue = intelligence.sellingPlaybook.issueLenses.find((lens) => lens.title === "製品の成り立ちから見る課題")?.body;
+  const customerIssue = intelligence.sellingPlaybook.issueLenses.find((lens) => lens.title === "既存顧客の導入目的から見る課題")?.body;
+  const candidates = [
+    ...explicit,
+    snapshotIssue,
+    backgroundIssue,
+    ...challengeParts,
+    externalIssue,
+    productIssue,
+    customerIssue,
+    intelligence.sellingPlaybook.openingHook,
+  ]
+    .filter((item): item is string => Boolean(item))
+    .map((item) => sentences(item)[0] ?? clean(item))
+    .filter((item) => item.length >= 8 && !item.includes("…"));
+  const unique = candidates.filter((item, index) => {
+    const normalized = item.replace(/[、,・\s]/g, "").slice(0, 32);
+    return candidates.findIndex((candidate) => candidate.replace(/[、,・\s]/g, "").slice(0, 32) === normalized) === index;
+  });
+  return unique.slice(0, 3);
 }
 
 function proofMatchesSolution(proof: CustomerProof, solution: CompanySolution) {
@@ -187,7 +243,7 @@ function resolveBenefit(intelligence: CompanyPublicIntelligence, solution: Compa
   const measurement = /(測る|baseline|導入前後|前後比較|比較する)/i.test(valueHypothesis)
     ? valueHypothesis
     : "導入前後の処理時間、品質、売上・継続率、運用コスト、リスクのうち、対象業務に直結するKPIで測る";
-  return `「${clip(issue, 72)}」という状態を改善できる。成果は、${clip(measurement, 132)}。`;
+  return `「${clean(issue)}」という状態を改善できる。成果は、${clean(measurement)}。`;
 }
 
 export function getSolutionFABE(
@@ -197,6 +253,8 @@ export function getSolutionFABE(
   const storedFeature = clean(solution.feature ?? solution.valueProp);
   const primaryIssue = clean(resolveCustomerIssues(intelligence)[0] ?? "");
   const isGeneratedFeature = /課題を.+で解消$/.test(storedFeature)
+    || /(できない|分断し|課題を)/.test(storedFeature)
+    || resolveCustomerIssues(intelligence).some((issue) => issue.length >= 16 && (storedFeature.includes(issue.slice(0, 24)) || issue.includes(storedFeature.slice(0, 24))))
     || (primaryIssue.length >= 16 && (storedFeature.includes(primaryIssue.slice(0, 24)) || primaryIssue.includes(storedFeature.slice(0, 24))));
   const featureBase = isGeneratedFeature
     ? sentences(solution.differentiation).find((item) => !/^という/.test(item)) ?? storedFeature
@@ -224,43 +282,272 @@ export function getSolutionFABE(
   };
 }
 
-export function getCompanyFABESalesSnapshot(intelligence: CompanyPublicIntelligence) {
-  if (intelligence.salesSnapshotFabe) return intelligence.salesSnapshotFabe;
-  const snapshotSentences = sentences(intelligence.salesSnapshot);
+function sentence(text: string) {
+  return `${clean(text)}。`;
+}
+
+function firstSentence(text: string) {
+  return sentences(text)[0] ?? clean(text);
+}
+
+function completeClause(text: string) {
+  const clause = clean(text)
+    .replaceAll("…", "")
+    .replace(/を(統合|拡張|構築|最適化|改善|削減)を/g, "の$1を")
+    .replace(/測り$/, "測る")
+    .replace(/評価し$/, "評価する")
+    .replace(/確認し$/, "確認する")
+    .replace(/説明し$/, "説明する")
+    .replace(/拡大$/, "拡大した")
+    .replace(/向上$/, "向上した")
+    .replace(/改善$/, "改善した")
+    .replace(/実現$/, "実現した")
+    .replace(/紹介$/, "紹介されている")
+    .replace(/高速化$/, "高速化した")
+    .replace(/短縮$/, "短縮した")
+    .replace(/削減$/, "削減した")
+    .replace(/継続利用$/, "継続利用している")
+    .replace(/支援$/, "支援している")
+    .replace(/をbaseline化$/, "をbaselineとして記録する")
+    .replace(/活用\(第三者事例\)$/, "活用している(第三者事例)");
+  if (/[るうすくむぶぐつぬた]$/.test(clause) || /(ない|高い|強い|低い|にある|である|ている|となる)$/.test(clause)) return clause;
+  if (clause.endsWith("へ")) return `${clause}進んでいる`;
+  if (/(非公開|未公開|未確認|必要|段階|局面|余地|可能性|見込み)$/.test(clause)) return `${clause}である`;
+  if (clause.endsWith("評価")) return `${clause}している`;
+  if (clause.endsWith("説明")) return `${clause}している`;
+  if (clause.endsWith("公開")) return `${clause}している`;
+  if (clause.endsWith("確認")) return `${clause}できる`;
+  if (clause.endsWith("導入")) return `${clause}している`;
+  if (/\(第三者事例\)$/.test(clause)) return clause;
+  return `${clause}である`;
+}
+
+function resolveBuyer(intelligence: CompanyPublicIntelligence) {
+  const snapshot = clean(intelligence.salesSnapshot);
+  const lead = firstSentence(snapshot).replace(/^[^、]{1,80}は、/, "");
+  const directBuyer = lead.match(/^(.{2,100}?)が、/)?.[1]
+    ?? lead.match(/^(.{2,60}?)が(?=[一-龯A-Za-z])/u)?.[1]
+    ?? lead.match(/^(.{2,100}?)(?:に対し|へ|に)[、,]/)?.[1];
+  if (directBuyer && !/[「」]/.test(directBuyer)) return directBuyer;
+
+  const corpus = `${snapshot} ${intelligence.sellingPlaybook.frameIntro} ${intelligence.solutions[0]?.valueProp ?? ""}`;
+  if (/(RPA|自動化|workflow|ワークフロー)/i.test(corpus)) return "業務自動化を進める業務改革・IT部門";
+  if (/(identity|認証|IGA|SSO|MFA|パスワード|security|セキュリティ|脆弱性|SASE|DLP)/i.test(corpus)) return "ID・クラウド・情報資産を守るIT・セキュリティ部門";
+  if (/(cloud|クラウド|storage|ストレージ|network|ネットワーク|infrastructure|インフラ|database|DB)/i.test(corpus)) return "クラウド・データ基盤を設計運用するIT・インフラ部門";
+  if (/(CRM|marketing|マーケティング|support|サポート|contact center)/i.test(corpus)) return "顧客獲得・継続支援を担う営業・マーケティング・顧客対応部門";
+  if (/(data|データ|AI|machine learning|機械学習|database|DB)/i.test(corpus)) return "データ・AI活用を担う事業・データ・IT部門";
+  if (/(財務|調達|経費|計画|予算|supply chain|サプライチェーン)/i.test(corpus)) return "計画・支出・業務改革を担う経営企画・財務・事業部門";
+  if (/(開発|application|アプリケーション|code|コード|障害|observability)/i.test(corpus)) return "デジタルサービスを開発・運用する開発・SRE・IT部門";
+  return "対象業務の変革を担う事業責任者・IT部門";
+}
+
+function featureStatement(productName: string, feature: string) {
+  const clause = firstSentence(feature)
+    .replace(new RegExp(`^${productName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:は|で)[、,]?`), "")
+    .replace(/^主力製品(?:は|「[^」]+」は)[、,]?/, "");
+  const completeFeature = clause
+    .replace(/を相関$/, "を相関分析する")
+    .replace(/を提供$/, "を提供する")
+    .replace(/で提供$/, "で提供する")
+    .replace(/を支援$/, "を支援する")
+    .replace(/支援$/, "支援する")
+    .replace(/へ発展$/, "へ発展している")
+    .replace(/構築・展開・govern$/, "構築・展開・統制する")
+    .replace(/統合$/, "統合する")
+    .replace(/拡張$/, "拡張する")
+    .replace(/最適化$/, "最適化する")
+    .replace(/構築$/, "構築する")
+    .replace(/解消$/, "解消する")
+    .replace(/自動化$/, "自動化する")
+    .replace(/管理$/, "管理する");
+  if (/(製品|基盤|サービス|プラットフォーム|platform|データベース|DB)$/i.test(completeFeature)) {
+    return `主力製品「${productName}」は、${completeFeature}である。`;
+  }
+  return `主力製品「${productName}」は、${/[るうすくむぶぐつぬ]$/.test(completeFeature) ? completeFeature : `${completeFeature}を提供する`}。`;
+}
+
+function advantageStatement(advantage: string) {
+  const clause = sentences(advantage)
+    .map((item) => ({
+      item,
+      score: (/(強み|優位|差別|点)/.test(item) ? 8 : 0)
+        + (/(一方|これに対し|自社|同一基盤|一つの基盤)/.test(item) ? 4 : 0)
+        - (/^[A-Za-z0-9 .-]{2,40}は/.test(item) && !/(強み|優位)/.test(item) ? 3 : 0),
+    }))
+    .sort((a, b) => b.score - a.score)[0]?.item
+    ?.replace(/^一方[、,]?/, "")
+    .replace(/^競合・代替手段との比較では、/, "")
+    .replace(/^競合に対する優位性は、/, "")
+    .replace(/^競合優位性は、/, "")
+    .replace(/^[^、]{1,60}?は(?=.+(?:強み|優位|差別|点))/, "")
+    .replace(/を統合$/, "を統合する")
+    .replace(/を一体化$/, "を一体化する")
+    .replace(/一体化$/, "一体化している")
+    .replace(/接続$/, "接続できる")
+    ?? "運用・統合・拡張を一つの基盤で扱える";
+  if (clause.endsWith("点")) return `競合優位性は、${clause}にある。`;
+  if (clause.endsWith("強み")) return `競合優位性は、${clause}である。`;
+  return `競合優位性は、${clause}${/[るうすくむぶぐつぬ]$/.test(clause) ? "点にある" : "にある"}。`;
+}
+
+function categoryBenefit(intelligence: CompanyPublicIntelligence, primary: CompanySolution) {
+  const corpus = `${primary.name} ${primary.valueProp} ${primary.feature ?? ""} ${primary.differentiation}`;
+  if (/(camera|カメラ|video|映像|barcode|scan|衛星|画像|3D|simulation)/i.test(corpus)) return "現場データの取得と判断を速め、作業時間・誤り・見落としを減らせることにある";
+  if (/(voice|音声|会話|speaking|語学|翻訳|language)/i.test(corpus)) return "制作・翻訳・会話対応にかかる時間と費用を減らし、品質と提供範囲を広げられることにある";
+  if (/(observability|APM|monitor|監視|incident|障害)/i.test(corpus)) return "障害の検知から原因特定・復旧までを短縮し、停止損失と調査工数を減らせることにある";
+  if (/(identity|認証|IGA|SSO|MFA|パスワード|アクセス管理)/i.test(corpus)) return "IDと権限の運用を標準化し、不正アクセス・監査リスクと管理工数を減らせることにある";
+  if (/(security|セキュリティ|脆弱性|threat|attack|SASE|DLP)/i.test(corpus)) return "リスクの発見と対応を早め、侵害・情報漏えい・監査対応の負担を減らせることにある";
+  if (/(CRM|marketing|マーケティング|campaign|キャンペーン|commerce|ecommerce|lifecycle|engagement|顧客エンゲージメント|experience|UX|行動分析)/i.test(corpus)) return "顧客データと施策をつなぎ、獲得効率・継続率・LTVの改善を同じ基盤で進められることにある";
+  if (/(collaboration|共同|文書|ナレッジ|project|プロジェクト|会議)/i.test(corpus)) return "情報探索と引き継ぎの時間を減らし、部門横断の意思決定と実行を速められることにある";
+  if (/(database|データベース|vector|ベクトル|Milvus|Zilliz|stream|Kafka|data platform|データ基盤|storage|ストレージ|edge cloud)/i.test(corpus)) return "データ変更と連携にかかる時間を減らし、開発速度・安定性・運用効率を高められることにある";
+  if (/(plan|計画|予算|調達|経費|supply chain|最適化|solver)/i.test(corpus)) return "部門別の数字と制約をつなぎ、計画更新・意思決定・コスト最適化を速められることにある";
+  if (/(RPA|automation|自動化|workflow|ワークフロー|iPaaS)/i.test(corpus)) return "手作業と部門間の待ち時間を減らし、処理時間・コスト・ミス率を改善できることにある";
+  return "対象業務の処理時間・コスト・品質・リスクを同じKPIで改善できることにある";
+}
+
+function benefitStatement(benefit: string, intelligence: CompanyPublicIntelligence, primary: CompanySolution) {
+  const clause = firstSentence(benefit)
+    .replace(/^顧客への一番のメリットは、/, "")
+    .replace(/^顧客メリットは、/, "");
+  if (/^「.+」という状態を改善できる$/.test(clause)) return `顧客への一番のメリットは、${categoryBenefit(intelligence, primary)}。`;
+  if (clause.endsWith("ことにある")) return `顧客への一番のメリットは、${clause}。`;
+  if (clause.endsWith("こと")) return `顧客への一番のメリットは、${clause}にある。`;
+  if (clause.endsWith("できる")) return `顧客への一番のメリットは、${clause}ことにある。`;
+  if (clause.endsWith("する")) return `顧客への一番のメリットは、${clause.slice(0, -2)}できることにある。`;
+  return `顧客への一番のメリットは、${clause}点にある。`;
+}
+
+function measurementStatement(intelligence: CompanyPublicIntelligence, benefit: string) {
+  const benefitMeasurement = sentences(benefit).find((item) => /^成果は/.test(item));
+  if (benefitMeasurement) return sentence(completeClause(benefitMeasurement));
+  const hypothesis = clean(intelligence.sellingPlaybook.valueHypothesis)
+    .replace(/^成果は[、,]?/, "")
+    .replace(/^顧客価値は[、,]?/, "")
+    .replace(/をbaseline比較$/, "をbaselineと比較する")
+    .replace(/を減らすを導入前後/g, "の削減を導入前後")
+    .replace(/を削減を導入前後/g, "の削減を導入前後")
+    .replace(/を(統合|拡張|構築|最適化|改善)を/g, "の$1を");
+  return `成果は、${completeClause(hypothesis)}。`;
+}
+
+function evidenceStatement(evidence: string) {
+  const normalized = clean(evidence)
+    .replace(/^根拠は[、,]?/, "")
+    .replace(/^公開根拠として[、,]?/, "")
+    .replace(/を導入\(公式事例ページで公開\)/g, "を導入したことが公式事例ページで公開されている");
+  const completeEvidence = sentences(normalized).map(completeClause).join("。");
+  return `公開根拠として、${sentence(completeEvidence)}`;
+}
+
+function japanMarketStatement(intelligence: CompanyPublicIntelligence) {
+  const headline = intelligence.marketStatus.japanGrowth?.headline;
+  if (!headline) {
+    return "日本市場では、製品別の導入社数・継続率・競合勝率が未公開であり、公式事例と市場・採用シグナルの継続確認が必要である。";
+  }
+  const normalized = clean(headline).replace(/^日本(?:市場)?では[、,]?/, "");
+  return `日本市場では、${completeClause(normalized)}。`;
+}
+
+export function getCompanyFABESalesView(intelligence: CompanyPublicIntelligence): CompanyFABESalesView {
+  if (intelligence.salesSnapshotFabe && intelligence.salesSnapshotFabeExpanded) {
+    return {
+      summary: intelligence.salesSnapshotFabe,
+      expanded: intelligence.salesSnapshotFabeExpanded,
+    };
+  }
+
   const issues = resolveCustomerIssues(intelligence);
-  const explicitIssueSentence = snapshotSentences.find((item) => extractCustomerIssues(item).length >= 3);
-  const issueSentence = explicitIssueSentence
-    ?? `${issues.map((issue) => `「${issue}」`).join("")}といった課題を解決する`;
-  const firstSentence = snapshotSentences[0] ?? intelligence.salesSnapshot;
-  const subject = firstSentence.match(/^(.+?)(?:は|とは)[、,]/)?.[1];
-  const buyer = firstSentence.match(/(?:は|とは)[、,](.+?)が抱える/)?.[1]
-    ?? firstSentence.match(/(?:は|とは)[、,](.+?)(?:が|に対し)[、,]?/)?.[1];
-  const conciseExplicitContext = `${subject ?? "この会社"}は、${buyer ? `${clip(buyer, 54)}に対し、` : ""}${issues.map((issue) => `「${clip(issue, 58)}」`).join("")}といった課題を解決する。`;
-  const context = subject ? conciseExplicitContext : `${firstSentence}。${issueSentence}。`;
   const primary = intelligence.solutions[0];
-  if (!primary) return intelligence.salesSnapshot;
+  if (!primary) {
+    return {
+      summary: intelligence.salesSnapshot,
+      expanded: japanMarketStatement(intelligence),
+    };
+  }
 
   const fabe = getSolutionFABE(intelligence, primary);
-  return `${context}主力製品「${primary.name}」の機能は、${clip(fabe.feature, 92)}。競合に対する優位性は、${compactDifferentiator(fabe.advantage, 92)}。顧客メリットは、${clip(fabe.benefit, 118)}。根拠は、${clip(fabe.evidence, 118)}。`;
+  const context = `${resolveBuyer(intelligence)}に対し、${issues.map((issue) => `「${clean(issue)}」`).join("")}などの課題を解決する。`;
+  return {
+    summary: `${context}${featureStatement(primary.name, fabe.feature)}${advantageStatement(fabe.advantage)}${benefitStatement(fabe.benefit, intelligence, primary)}`,
+    expanded: `${measurementStatement(intelligence, fabe.benefit)}${evidenceStatement(fabe.evidence)}${japanMarketStatement(intelligence)}`,
+  };
+}
+
+export function getCompanyFABESalesSnapshot(intelligence: CompanyPublicIntelligence) {
+  return getCompanyFABESalesView(intelligence).summary;
+}
+
+function cardCapability(intelligence: CompanyPublicIntelligence, primary: CompanySolution) {
+  const corpus = `${primary.name} ${primary.valueProp} ${primary.feature ?? ""} ${primary.differentiation}`;
+  if (/(camera|カメラ|video|映像|barcode|scan|衛星|画像|3D|simulation)/i.test(corpus)) return "画像・現場データの取得分析";
+  if (/(voice|音声|会話|speaking|語学|翻訳|language)/i.test(corpus)) return "音声・言語処理のAI自動化";
+  if (/(observability|APM|monitor|監視|incident|障害)/i.test(corpus)) return "運用データの相関分析・障害対応自動化";
+  if (/(identity|認証|IGA|SSO|MFA|パスワード|アクセス管理)/i.test(corpus)) return "ID・認証・権限の一元管理";
+  if (/(security|セキュリティ|脆弱性|threat|attack|SASE|DLP)/i.test(corpus)) return "リスクの検知・制御・対応自動化";
+  if (/(CRM|marketing|マーケティング|commerce|ecommerce|sales engagement|experience|UX|行動分析)/i.test(corpus)) return "顧客データと施策・業務の統合自動化";
+  if (/(collaboration|共同|文書|ナレッジ|project|プロジェクト|会議)/i.test(corpus)) return "情報・計画・共同作業の一元化";
+  if (/(database|データベース|vector|ベクトル|Milvus|Zilliz|stream|Kafka|data platform|データ基盤|storage|ストレージ|edge cloud)/i.test(corpus)) return "データの柔軟な管理・連携・検索";
+  if (/(plan|計画|予算|調達|経費|supply chain|最適化|solver)/i.test(corpus)) return "計画・意思決定プロセスの統合最適化";
+  if (/(RPA|automation|自動化|workflow|ワークフロー|iPaaS)/i.test(corpus)) return "業務ワークフローの統合自動化";
+  if (/AI/i.test(corpus)) return "AIによるデータ分析・業務実行";
+  return "業務データとワークフローの統合自動化";
+}
+
+function cardAdvantage(intelligence: CompanyPublicIntelligence, primary: CompanySolution) {
+  const corpus = `${primary.name} ${primary.valueProp} ${primary.differentiation}`;
+  if (/3D|simulation/i.test(corpus)) return "3D形状を直接学習し設計探索を高速化できる";
+  if (/(camera|カメラ|video|映像)/i.test(corpus)) return "映像・入退室・アラートを多拠点で一元管理できる";
+  if (/(barcode|scan|衛星|画像)/i.test(corpus)) return "専用機器に依存せず現場へ展開できる";
+  if (/(voice|音声|会話|speaking|語学|翻訳|language)/i.test(corpus)) return "多言語品質と業務組み込みを両立できる";
+  if (/(observability|APM|monitor|監視|incident|障害)/i.test(corpus)) return "監視データを同じ文脈で相関できる";
+  if (/(identity|認証|IGA|SSO|MFA|パスワード|アクセス管理)/i.test(corpus)) return "人・端末・アプリの権限を一つの統制面で扱える";
+  if (/(security|セキュリティ|脆弱性|threat|attack|SASE|DLP)/i.test(corpus)) return "リスク検知から対応までを同じ基盤で扱える";
+  if (/(CRM|marketing|マーケティング|commerce|ecommerce|sales engagement|experience|UX|行動分析)/i.test(corpus)) return "顧客データと施策を同じ基盤で扱える";
+  if (/(collaboration|共同|文書|ナレッジ|project|プロジェクト|会議)/i.test(corpus)) return "現場の柔軟性と企業統制を両立できる";
+  if (/(database|データベース|vector|ベクトル|Milvus|Zilliz|stream|Kafka|data platform|データ基盤|storage|ストレージ|edge cloud)/i.test(corpus)) return "既存データと運用を分けずに拡張できる";
+  if (/(plan|計画|予算|調達|経費|supply chain|最適化|solver)/i.test(corpus)) return "複雑な制約と部門計画を同時に扱える";
+  if (/(RPA|automation|自動化|workflow|ワークフロー|iPaaS)/i.test(corpus)) return "既存システムを横断して全社展開できる";
+  return "データから業務実行までを一貫させられる";
+}
+
+function cardIssue(issue: string, corpus: string) {
+  const normalized = clean(issue)
+    .replaceAll("海外採用", "海外雇用")
+    .replaceAll("採用", "増員")
+    .replace(/という(?:3つの)?課題$/, "")
+    .replace(/課題$/, "");
+  if (normalized.length <= 38) return normalized;
+  if (/3D|simulation/i.test(corpus)) return "3D設計のシミュレーション反復に時間と計算資源がかかる";
+  if (/(identity|認証|権限|security|セキュリティ|脆弱性|attack)/i.test(corpus)) return "高度化する攻撃や過剰権限を従来のルールだけでは制御できない";
+  if (/(CRM|marketing|マーケティング|campaign|キャンペーン|commerce|ecommerce|lifecycle|engagement|顧客エンゲージメント)/i.test(corpus)) return "顧客・商談データと施策・実行業務が分断している";
+  if (/(code|developer|開発|bug|vulnerability)/i.test(corpus)) return "開発速度の向上で品質・脆弱性リスクが増えている";
+  if (/(workflow|自動化|RPA|automation)/i.test(corpus)) return "部門をまたぐ業務が手作業と個別ツールに分断している";
+  if (/(cloud|クラウド|data|データ|storage|network|DB)/i.test(corpus)) return "クラウド・データ基盤の運用が分断・複雑化している";
+  return "対象業務のデータ・判断・実行が複数の仕組みに分断している";
+}
+
+function compactCardText(text: string, max: number) {
+  const normalized = text.replaceAll("…", "");
+  if (normalized.length <= max) return normalized;
+  const prefix = normalized.slice(0, max);
+  const breakAt = Math.max(prefix.lastIndexOf("、"), prefix.lastIndexOf("・"), prefix.lastIndexOf(" "));
+  return (breakAt >= Math.floor(max * 0.65) ? prefix.slice(0, breakAt) : prefix).replace(/[、・\s]+$/, "");
 }
 
 export function getFABECompanyCardSummary(intelligence: CompanyPublicIntelligence, slug?: string) {
-  if (slug && cardSummaryOverrides[slug]) return cardSummaryOverrides[slug];
+  if (slug && cardSummaryOverrides[slug] && !cardSummaryOverrides[slug].startsWith("課題「")) {
+    return cardSummaryOverrides[slug];
+  }
   const primary = intelligence.solutions[0];
-  if (!primary) return "顧客の業務課題を専門テクノロジーで解決し、運用・統合面に優位性を持つ。";
+  if (!primary) return "顧客の業務課題を専門テクノロジーで解決するソフトウェア企業。";
 
-  const fabe = getSolutionFABE(intelligence, primary);
-  const issue = (resolveCustomerIssues(intelligence)[0] ?? intelligence.sellingPlaybook.frameIntro)
-    .replaceAll("海外採用", "海外雇用")
-    .replaceAll("採用", "増員");
-  const feature = compactCardClause(fabe.feature, 43, "feature");
-  const advantage = compactCardClause(fabe.advantage, 43, "advantage")
-    .replace(/^([A-Za-z0-9][A-Za-z0-9 .-]{1,40})は/, "$1が");
-  const summary = `課題「${clip(issue, 38)}」。主力製品は${feature}。優位性は、${advantage}。`
-    .replaceAll("採用国", "雇用国")
-    .replaceAll("採用", "雇用");
-  if (summary.length <= 130) return summary;
-  return `課題「${clip(issue, 28)}」。主力製品は${compactCardClause(fabe.feature, 36, "feature")}。優位性は、${compactCardClause(fabe.advantage, 36, "advantage")}。`
+  const firstIssue = resolveCustomerIssues(intelligence)[0] ?? intelligence.sellingPlaybook.frameIntro;
+  const corpus = `${primary.name} ${primary.valueProp} ${primary.feature ?? ""} ${primary.differentiation} ${firstIssue}`;
+  const domain = slug ? cardDomainOverrides[slug] : undefined;
+  const issue = compactCardText(domain?.issue ?? cardIssue(firstIssue, corpus), 38);
+  const capability = domain?.capability ?? cardCapability(intelligence, primary);
+  const advantage = domain?.advantage ?? cardAdvantage(intelligence, primary);
+  return `${issue}という課題を、${capability}で解決し、${advantage}点で競合と差別化する企業。`
     .replaceAll("採用国", "雇用国")
     .replaceAll("採用", "雇用");
 }

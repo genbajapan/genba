@@ -6,7 +6,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
 import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
-import { getCompanyFABESalesSnapshot, getSolutionFABE } from "@/lib/company-fabe";
+import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
@@ -48,7 +48,8 @@ export default function CompanyIntelligenceProfile({
   const isPreEntry = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
-  const salesSnapshot = publicIntel ? getCompanyFABESalesSnapshot(publicIntel) : company.description;
+  const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
+  const salesSnapshot = salesView?.summary ?? company.description;
   const directoryEntry = getCompanyDirectoryEntry(company.slug);
   const globalScale = resolveGlobalScale(company.slug, publicIntel?.companyStats.globalHeadcount);
   const globalScaleDirectorySource = getGlobalScaleSource(globalScale);
@@ -133,14 +134,14 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
               <p className="company-description">{salesSnapshot}</p>
-              {publicIntel?.salesSnapshotFabeExpanded && (
+              {salesView?.expanded && (
                 <details className="company-sales-evidence">
                   <summary>
                     <span className="company-sales-evidence-label-closed">導入実績・成果指標・日本市場の見立てを見る</span>
                     <span className="company-sales-evidence-label-open">導入実績・成果指標・日本市場の見立てを閉じる</span>
                     <span className="company-sales-evidence-icon" aria-hidden="true">＋</span>
                   </summary>
-                  <p>{publicIntel.salesSnapshotFabeExpanded}</p>
+                  <p>{salesView.expanded}</p>
                 </details>
               )}
               <div className="company-tag-row">

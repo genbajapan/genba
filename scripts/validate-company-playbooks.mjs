@@ -17,6 +17,7 @@ const source = targets
   .map((target) => fs.readFileSync(target, "utf8"))
   .join("\n");
 const errors = [];
+const debugSlugs = new Set((process.env.FABE_DEBUG_SLUGS ?? "").split(",").filter(Boolean));
 const marketDataSource = fs.readFileSync(path.join(process.cwd(), "lib/market-data.ts"), "utf8");
 
 const runtimeBundle = await build({
@@ -25,8 +26,8 @@ const runtimeBundle = await build({
       import { companies } from "./lib/market-data.ts";
       import { getCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
       import { getCompanyDirectoryEntry } from "./lib/company-directory.ts";
-      import { getCompanyFABESalesSnapshot, getSolutionFABE } from "./lib/company-fabe.ts";
-      export { companies, getCompanyPublicIntelligence, getCompanyDirectoryEntry, getCompanyFABESalesSnapshot, getSolutionFABE };
+      import { getCompanyFABESalesView, getCompanyFABESalesSnapshot, getFABECompanyCardSummary, getSolutionFABE } from "./lib/company-fabe.ts";
+      export { companies, getCompanyPublicIntelligence, getCompanyDirectoryEntry, getCompanyFABESalesView, getCompanyFABESalesSnapshot, getFABECompanyCardSummary, getSolutionFABE };
     `,
     resolveDir: process.cwd(),
     sourcefile: "company-playbook-validator-entry.ts",
@@ -42,7 +43,9 @@ const {
   companies: runtimeCompanies,
   getCompanyPublicIntelligence,
   getCompanyDirectoryEntry,
+  getCompanyFABESalesView,
   getCompanyFABESalesSnapshot,
+  getFABECompanyCardSummary,
   getSolutionFABE,
 } = runtimeModule.exports;
 
@@ -104,30 +107,47 @@ for (const company of runtimeCompanies) {
     continue;
   }
 
-  const fabeSnapshot = getCompanyFABESalesSnapshot(intelligence);
-  if (company.slug === "mongodb") {
-    const expandedSnapshot = intelligence.salesSnapshotFabeExpanded ?? "";
-    const completeMongoSnapshot = `${fabeSnapshot}${expandedSnapshot}`;
-    for (const [label, pattern] of [
-      ["主力製品", /主力製品は/],
-      ["競合優位性", /競合優位性は/],
-      ["顧客メリット", /顧客への一番のメリットは/],
-      ["導入根拠", /プレイド.*Toyota Connected/],
-      ["日本市場背景", /日本市場では/],
-    ]) {
-      if (!pattern.test(completeMongoSnapshot)) errors.push(`mongodb: FABEセールスサマリーに${label}がありません。`);
-    }
-    if (/^MongoDBは/.test(fabeSnapshot)) errors.push("mongodb: FABEセールスサマリーを会社名から始めないでください。");
-    if (!expandedSnapshot) errors.push("mongodb: 成果指標・導入実績・日本市場の展開情報がありません。");
-    if (completeMongoSnapshot.includes("…") || !fabeSnapshot.endsWith("。") || !expandedSnapshot.endsWith("。")) errors.push("mongodb: FABEセールスサマリーを省略せず完結させてください。");
-  } else {
-    for (const required of ["主力製品", "機能は", "優位性は", "顧客メリットは", "根拠は"]) {
-      if (!fabeSnapshot.includes(required)) errors.push(`${company.slug}: FABEセールスサマリーに「${required}」がありません。`);
-    }
+  const salesView = getCompanyFABESalesView(intelligence);
+  const cardSummary = getFABECompanyCardSummary(intelligence, company.slug);
+  if (debugSlugs.has(company.slug)) {
+    console.log(`\n[${company.slug}]\nCARD: ${cardSummary}\n${salesView.summary}\n---\n${salesView.expanded}`);
   }
-  if (Array.from(fabeSnapshot.matchAll(/「/g)).length < 3) {
+  if (!cardSummary.includes("で解決") || !cardSummary.endsWith("企業。")) errors.push(`${company.slug}: 一覧カードは課題・テクノロジー・企業像が一文で完結していません。`);
+  if (cardSummary.includes("課題「") || cardSummary.includes("…")) errors.push(`${company.slug}: 一覧カードに旧ラベルまたは省略記号が残っています。`);
+  if ((cardSummary.match(/。/g) ?? []).length !== 1) errors.push(`${company.slug}: 一覧カードは一文で完結させてください。`);
+  if (cardSummary.length > 110) errors.push(`${company.slug}: 一覧カードが長すぎます(${cardSummary.length}文字)。`);
+  const fabeSnapshot = getCompanyFABESalesSnapshot(intelligence);
+  if (salesView.summary !== fabeSnapshot) errors.push(`${company.slug}: FABEサマリーの互換出力が標準viewと一致しません。`);
+  for (const [label, pattern] of [
+    ["主力製品", /主力製品/],
+    ["競合優位性", /競合優位性は/],
+    ["顧客メリット", /顧客への一番のメリットは/],
+  ]) {
+    if (!pattern.test(salesView.summary)) errors.push(`${company.slug}: 常時表示に${label}がありません。`);
+  }
+  for (const [label, pattern] of [
+    ["成果指標", /成果は/],
+    ["公開根拠", /(?:公開根拠|プレイド)/],
+    ["日本市場", /日本市場では/],
+  ]) {
+    if (!pattern.test(salesView.expanded)) errors.push(`${company.slug}: 展開表示に${label}がありません。`);
+  }
+  const summaryIssues = Array.from(salesView.summary.matchAll(/「([^」]+)」/g), (match) => match[1]);
+  if (summaryIssues.length < 3) {
     errors.push(`${company.slug}: FABEセールスサマリーに顧客課題3点がありません。`);
   }
+  if (new Set(summaryIssues.slice(0, 3)).size < 3) errors.push(`${company.slug}: 常時表示の顧客課題3点が重複しています。`);
+  if ((salesView.summary.match(/。/g) ?? []).length !== 4) errors.push(`${company.slug}: 常時表示は課題・主力製品・競合優位性・顧客メリットの4文にしてください。`);
+  if ((salesView.expanded.match(/。/g) ?? []).length < 3) errors.push(`${company.slug}: 展開表示に成果指標・公開根拠・日本市場の3文がありません。`);
+  if (salesView.summary.startsWith(`${company.name}は`)) errors.push(`${company.slug}: 常時表示を会社名から始めないでください。`);
+  if (salesView.summary.startsWith("対象業務の責任者・実務部門")) errors.push(`${company.slug}: 常時表示の対象顧客が具体化されていません。`);
+  if (salesView.summary.includes("根拠は") || salesView.summary.includes("公開根拠")) errors.push(`${company.slug}: Evidenceを常時表示へ混ぜないでください。`);
+  if (/を(?:統合|拡張|構築|最適化|改善)を/.test(`${salesView.summary}${salesView.expanded}`)) errors.push(`${company.slug}: FABE表示に助詞の重複があります。`);
+  for (const [layer, text] of [["常時表示", salesView.summary], ["展開表示", salesView.expanded]]) {
+    if (text.includes("…") || !text.endsWith("。")) errors.push(`${company.slug}: ${layer}を省略せず文として完結させてください: ${text}`);
+  }
+  if (salesView.summary.length > 900) errors.push(`${company.slug}: 常時表示が長すぎます(${salesView.summary.length}文字)。`);
+  if (salesView.expanded.length > 1000) errors.push(`${company.slug}: 展開表示が長すぎます(${salesView.expanded.length}文字)。`);
 
   if (!intelligence.solutions.length) errors.push(`${company.slug}: solutionsが空です。`);
   for (const solution of intelligence.solutions) {
@@ -165,7 +185,7 @@ for (const label of expectedFabeLabels) {
   if (labelIndex >= 0 && labelIndex < previousLabelIndex) errors.push(`ソリューション詳細の「${label}」の順序がFABE標準と異なります。`);
   previousLabelIndex = labelIndex;
 }
-for (const required of ["セールス観点から見たこの会社", "(FABE分析ベース)", "FABE分析とは", "<summary>(FABE分析ベース)</summary>"]) {
+for (const required of ["セールス観点から見たこの会社", "(FABE分析ベース)", "FABE分析とは", "<summary>(FABE分析ベース)</summary>", "導入実績・成果指標・日本市場の見立てを見る", "salesView.expanded"]) {
   if (!profileComponent.includes(required)) errors.push(`FABEセールスサマリーUIに「${required}」がありません。`);
 }
 
@@ -243,6 +263,8 @@ if (errors.length) {
 console.log("企業ページの課題啓蒙フォーマット: OK");
 console.log(`- ${intelligenceCount}社すべてで3つの課題視点と4段階のnarrativeを確認`);
 console.log(`- ${salesSnapshots.length}社すべてで営業視点サマリーの標準構成を確認`);
+console.log(`- 公開対象 ${runtimeCompanies.length}社すべてで一覧カードの課題・テクノロジー一文表示を確認`);
+console.log(`- 公開対象 ${runtimeCompanies.length}社すべてで結論常時表示とEvidence展開表示を確認`);
 console.log(`- 公開対象 ${runtimeCompanies.length}社・${runtimeSolutionCount}ソリューションのFABEと競合比較を確認`);
 console.log(`- 基礎登録 ${companySlugs.size}社の公式トップページ導線を確認`);
 console.log(`- 日本未進出企業 ${notEnteredCount}社すべてでGong基準のentryAssessmentを確認`);
