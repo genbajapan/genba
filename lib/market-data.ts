@@ -4,6 +4,7 @@ import { companies20260813WaveTwo, jobs20260813WaveTwo } from "@/lib/company-add
 import { companies20260813WaveThree, jobs20260813WaveThree } from "@/lib/company-additions-2026-08-13-wave-three";
 import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08-14";
 import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-additions-2026-08-14-wave-two";
+import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 
 export type Source = {
   label: string;
@@ -2482,9 +2483,15 @@ const temporarilyUnverifiableJobIds = new Set([
   "confluent-ae-msp-isv",
 ]);
 
+const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
+
 export const jobs = jobRecords
   .filter((job) => job.companySlug !== "salesforce" && !closedJobIds.has(job.id))
-  .map((job) => temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-14" });
+  .map((job) => {
+    const datedJob = temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-14" };
+    const company = publishedCompanyBySlug.get(job.companySlug);
+    return company ? strengthenCareerInsights(datedJob, company) : datedJob;
+  });
 
 const publishedJobCounts = jobs.reduce((counts, job) => {
   counts.set(job.companySlug, (counts.get(job.companySlug) ?? 0) + 1);

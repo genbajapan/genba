@@ -57,6 +57,22 @@ for (const job of jobs) {
     errors.push(`日本未進出企業 ${company.name} に求人 ${job.id} が紐づいています。`);
   }
   jobCounts.set(job.companySlug, (jobCounts.get(job.companySlug) ?? 0) + 1);
+
+  for (const [field, label] of [
+    ["tenureAndPromotion", "在籍年数・昇進"],
+    ["priorCompanies", "入社元"],
+    ["nextCompanies", "転職先"],
+  ]) {
+    const content = job.careerInsights[field];
+    if (content.length < 180) {
+      errors.push(`${job.id}: ${label}が薄すぎます（${content.length}文字）。実測傾向または構造化したGenba仮説を追加してください。`);
+    }
+    for (const requiredPart of ["【Genba仮説・確度:", "支持材料:", "反証・留保:", "面接で確認:"]) {
+      if (!content.includes(requiredPart)) {
+        errors.push(`${job.id}: ${label}に「${requiredPart}」がありません。`);
+      }
+    }
+  }
 }
 
 for (const company of companies) {
