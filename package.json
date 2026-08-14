@@ -10,7 +10,8 @@
     "validate:agents": "node scripts/validate-agent-rules.mjs",
     "validate:hiring-heat": "node scripts/validate-hiring-heat.mjs",
     "validate:playbooks": "node scripts/validate-company-playbooks.mjs",
-    "check": "npm run validate:agents && npm run validate:hiring-heat && npm run validate:playbooks && npm run build"
+    "validate:company-scale": "node scripts/validate-company-scale.mjs",
+    "check": "npm run validate:agents && npm run validate:hiring-heat && npm run validate:playbooks && npm run validate:company-scale && npm run build"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

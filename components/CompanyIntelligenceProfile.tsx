@@ -9,6 +9,7 @@ import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } fr
 import { getCompanyFABESalesSnapshot, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
+import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
 import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
 
@@ -54,6 +55,7 @@ export default function CompanyIntelligenceProfile({
   const globalScaleResearchSource = publicIntel && globalScale?.sourceId ? getResearchSource(publicIntel, globalScale.sourceId) : undefined;
   const globalScaleSource = globalScaleDirectorySource ?? (globalScaleResearchSource ? { url: globalScaleResearchSource.url, label: globalScaleResearchSource.label } : undefined);
   const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
+  const scaleComparisons = getCompanyScaleComparisons(company, allCompanies);
   const sourceEntries = uniqueSources([
     {
       label: `${company.name} 公式採用ページ`,
@@ -221,6 +223,59 @@ export default function CompanyIntelligenceProfile({
                       );
                     })}
                   </div>
+
+                  <details className="company-scale-comparison">
+                    <summary>
+                      <span>
+                        <small>売上・従業員数を身近な企業でつかむ</small>
+                        <strong>近しい規模感の外資IT企業</strong>
+                      </span>
+                      <span className="company-scale-comparison-action">
+                        <span className="company-scale-comparison-open-label">比較を見る</span>
+                        <span className="company-scale-comparison-close-label">閉じる</span>
+                        <i aria-hidden="true">＋</i>
+                      </span>
+                    </summary>
+                    <div className="company-scale-comparison-body">
+                      <p className="company-scale-comparison-note">売上は通期値を優先し、四半期値は年率換算して近さを判定。比較企業の表示値は元の開示期間をそのまま掲載しています。企業価値や成長性の優劣を示すものではありません。</p>
+                      <div className="company-scale-comparison-columns">
+                        <section>
+                          <div className="company-scale-comparison-heading">
+                            <span>REVENUE SCALE</span>
+                            <h3>売上規模が近い企業</h3>
+                            <p>{scaleComparisons.revenueBasis ? `${company.name}の比較基準: ${scaleComparisons.revenueBasis}` : "比較可能な売上の公開数値は確認できていません。"}</p>
+                          </div>
+                          {scaleComparisons.revenue.length > 0 ? (
+                            <div className="company-scale-comparison-list">
+                              {scaleComparisons.revenue.map((item) => (
+                                <Link href={`/companies/${item.slug}`} key={`revenue-${item.slug}`}>
+                                  <span><strong>{item.name}</strong><small>{item.label}</small></span>
+                                  <span><strong>{item.value}</strong><small>{item.distanceLabel}</small></span>
+                                </Link>
+                              ))}
+                            </div>
+                          ) : <p className="company-scale-comparison-empty">売上非公開のため、推測による比較は行っていません。</p>}
+                        </section>
+                        <section>
+                          <div className="company-scale-comparison-heading">
+                            <span>TEAM SCALE</span>
+                            <h3>従業員規模が近い企業</h3>
+                            <p>{scaleComparisons.headcountBasis ? `${company.name}の比較基準: ${scaleComparisons.headcountBasis}` : "比較可能なグローバル従業員数は確認できていません。"}</p>
+                          </div>
+                          {scaleComparisons.headcount.length > 0 ? (
+                            <div className="company-scale-comparison-list">
+                              {scaleComparisons.headcount.map((item) => (
+                                <Link href={`/companies/${item.slug}`} key={`headcount-${item.slug}`}>
+                                  <span><strong>{item.name}</strong><small>{item.label}</small></span>
+                                  <span><strong>{item.value}</strong><small>{item.distanceLabel}</small></span>
+                                </Link>
+                              ))}
+                            </div>
+                          ) : <p className="company-scale-comparison-empty">従業員数非公開のため、推測による比較は行っていません。</p>}
+                        </section>
+                      </div>
+                    </div>
+                  </details>
 
                   <div className="market-status-panel">
                     <div className="market-status-head">
