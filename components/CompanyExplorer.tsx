@@ -7,7 +7,12 @@ import { getHeadquartersRegion, headquartersRegions, type HeadquartersRegion } f
 import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
 
-const statuses = ["すべて", "積極採用", "採用中", "継続観測"];
+const statuses = [
+  { value: "すべて", label: "すべて" },
+  { value: "積極採用", label: "積極採用" },
+  { value: "採用中", label: "採用中" },
+  { value: "継続観測", label: "求人なし" },
+];
 const solutionAreas = ["すべて", ...broadCategories];
 const heatRows = buildHiringHeatRows(companies, jobs);
 const tierAreas = {
@@ -39,7 +44,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const initialEntry: EntryFilter = searchParams.get("entry") === "not-entered" ? "not-entered" : "すべて";
   const initialTier: TierFilter = initialEntry === "すべて" && initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const statusParam = searchParams.get("status");
-  const initialStatus = statusParam && statuses.includes(statusParam) ? statusParam : "すべて";
+  const initialStatus = statusParam && statuses.some((item) => item.value === statusParam) ? statusParam : "すべて";
   const headquartersParam = searchParams.get("hq");
   const initialHeadquarters: HeadquartersRegion = headquartersRegions.some((region) => region.value === headquartersParam) ? headquartersParam as HeadquartersRegion : "すべて";
   const openJobsOnly = searchParams.get("openJobs") === "1";
@@ -212,7 +217,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
         </label>
         <div className="filter-chips status-filter-chips" aria-label="採用状況で絞り込み">
           {statuses.map((item) => (
-            <button key={item} className={status === item ? "active" : ""} onClick={() => changeStatus(item)}>{item}</button>
+            <button key={item.value} className={status === item.value ? "active" : ""} onClick={() => changeStatus(item.value)}>{item.label}</button>
           ))}
         </div>
         <div className="filter-chips entry-filter-chips" aria-label="日本進出状況で絞り込み">
