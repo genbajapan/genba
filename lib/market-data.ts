@@ -4,6 +4,7 @@ import { companies20260813WaveTwo, jobs20260813WaveTwo } from "@/lib/company-add
 import { companies20260813WaveThree, jobs20260813WaveThree } from "@/lib/company-additions-2026-08-13-wave-three";
 import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08-14";
 import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-additions-2026-08-14-wave-two";
+import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08-15";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 
 export type Source = {
@@ -861,6 +862,7 @@ const companyRecords: Company[] = [
   ...companies20260813WaveThree,
   ...companies20260814,
   ...companies20260814WaveTwo,
+  ...companies20260815,
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1143,6 +1145,7 @@ const cursorJobs: Job[] = [
 
 const jobRecords: Job[] = [
   ...jobs20260814WaveTwo,
+  ...jobs20260815,
   ...jobs20260814,
   ...jobs20260813,
   ...jobs20260813WaveTwo,
