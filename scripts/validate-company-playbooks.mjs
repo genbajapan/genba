@@ -18,14 +18,15 @@ const source = targets
   .join("\n");
 const errors = [];
 const marketDataSource = fs.readFileSync(path.join(process.cwd(), "lib/market-data.ts"), "utf8");
-const directorySource = fs.readFileSync(path.join(process.cwd(), "lib/company-directory.ts"), "utf8");
 
 const runtimeBundle = await build({
   stdin: {
     contents: `
       import { companies } from "./lib/market-data.ts";
       import { getCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
-      export { companies, getCompanyPublicIntelligence };
+      import { getCompanyDirectoryEntry } from "./lib/company-directory.ts";
+      import { getCompanyFABESalesSnapshot, getSolutionFABE } from "./lib/company-fabe.ts";
+      export { companies, getCompanyPublicIntelligence, getCompanyDirectoryEntry, getCompanyFABESalesSnapshot, getSolutionFABE };
     `,
     resolveDir: process.cwd(),
     sourcefile: "company-playbook-validator-entry.ts",
@@ -37,7 +38,13 @@ const runtimeBundle = await build({
 });
 const runtimeModule = { exports: {} };
 new Function("module", "exports", runtimeBundle.outputFiles[0].text)(runtimeModule, runtimeModule.exports);
-const { companies: runtimeCompanies, getCompanyPublicIntelligence } = runtimeModule.exports;
+const {
+  companies: runtimeCompanies,
+  getCompanyPublicIntelligence,
+  getCompanyDirectoryEntry,
+  getCompanyFABESalesSnapshot,
+  getSolutionFABE,
+} = runtimeModule.exports;
 
 const expectedIssueLenses = [
   "既存顧客の導入目的から見る課題",
@@ -75,13 +82,9 @@ const companySlugs = new Set(Array.from(
   marketDataSource.matchAll(/\bslug:\s*"([a-z0-9-]+)"/g),
   (match) => match[1],
 ));
-const directorySlugs = new Set(Array.from(
-  directorySource.matchAll(/^\s{2}(?:"([a-z0-9-]+)"|([a-z][a-z0-9-]*)):\s*\{/gm),
-  (match) => match[1] ?? match[2],
-));
 
 for (const slug of companySlugs) {
-  if (!directorySlugs.has(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
+  if (!getCompanyDirectoryEntry(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
 }
 
 const notEnteredCompanies = runtimeCompanies.filter((company) => company.entryStatus === "not-entered");
@@ -91,6 +94,62 @@ const missingEntryAssessments = notEnteredCompanies.filter((company) => (
 ));
 if (missingEntryAssessments.length) {
   errors.push(`日本未進出企業のentryAssessmentがありません: ${missingEntryAssessments.map((company) => company.slug).join(", ")}`);
+}
+
+let runtimeSolutionCount = 0;
+for (const company of runtimeCompanies) {
+  const intelligence = getCompanyPublicIntelligence(company.slug);
+  if (!intelligence) {
+    errors.push(`${company.slug}: CompanyPublicIntelligenceがありません。`);
+    continue;
+  }
+
+  const fabeSnapshot = getCompanyFABESalesSnapshot(intelligence);
+  for (const required of ["主力製品", "機能は", "優位性は", "顧客メリットは", "根拠は"]) {
+    if (!fabeSnapshot.includes(required)) errors.push(`${company.slug}: FABEセールスサマリーに「${required}」がありません。`);
+  }
+  if (Array.from(fabeSnapshot.matchAll(/「/g)).length < 3) {
+    errors.push(`${company.slug}: FABEセールスサマリーに顧客課題3点がありません。`);
+  }
+
+  if (!intelligence.solutions.length) errors.push(`${company.slug}: solutionsが空です。`);
+  for (const solution of intelligence.solutions) {
+    runtimeSolutionCount += 1;
+    const fabe = getSolutionFABE(intelligence, solution);
+    for (const [field, label] of [
+      ["feature", "Feature"],
+      ["advantage", "Advantage"],
+      ["benefit", "Benefit"],
+      ["evidence", "Evidence"],
+      ["competitor", "Competitor"],
+    ]) {
+      if (!fabe[field] || fabe[field].length < 20) {
+        errors.push(`${company.slug}/${solution.name}: ${label}の説明が薄すぎます。`);
+      }
+    }
+    if (!/(競合|代替|比較)/.test(fabe.advantage)) {
+      errors.push(`${company.slug}/${solution.name}: Advantageに相対比較の視点がありません。`);
+    }
+    if (!/(公式|法定|公開|事例)/.test(fabe.evidence)) {
+      errors.push(`${company.slug}/${solution.name}: Evidenceに根拠の種類がありません。`);
+    }
+    if (!fabe.competitor.includes("比較時は")) {
+      errors.push(`${company.slug}/${solution.name}: Competitorに比較軸がありません。`);
+    }
+  }
+}
+
+const profileComponent = fs.readFileSync(path.join(process.cwd(), "components/CompanyIntelligenceProfile.tsx"), "utf8");
+const expectedFabeLabels = ["Feature(機能)", "Advantage(優位性)", "Benefit(メリット)", "Evidence(証拠)", "Competitor(競合)"];
+let previousLabelIndex = -1;
+for (const label of expectedFabeLabels) {
+  const labelIndex = profileComponent.indexOf(label);
+  if (labelIndex < 0) errors.push(`ソリューション詳細に「${label}」がありません。`);
+  if (labelIndex >= 0 && labelIndex < previousLabelIndex) errors.push(`ソリューション詳細の「${label}」の順序がFABE標準と異なります。`);
+  previousLabelIndex = labelIndex;
+}
+for (const required of ["セールス観点から見たこの会社", "(FABE分析ベース)", "FABE分析とは", "<summary>(FABE分析ベース)</summary>"]) {
+  if (!profileComponent.includes(required)) errors.push(`FABEセールスサマリーUIに「${required}」がありません。`);
 }
 
 entryAssessmentBlocks.forEach((block, index) => {
@@ -167,5 +226,6 @@ if (errors.length) {
 console.log("企業ページの課題啓蒙フォーマット: OK");
 console.log(`- ${intelligenceCount}社すべてで3つの課題視点と4段階のnarrativeを確認`);
 console.log(`- ${salesSnapshots.length}社すべてで営業視点サマリーの標準構成を確認`);
-console.log(`- ${companySlugs.size}社すべてで公式トップページ導線を確認`);
+console.log(`- 公開対象 ${runtimeCompanies.length}社・${runtimeSolutionCount}ソリューションのFABEと競合比較を確認`);
+console.log(`- 基礎登録 ${companySlugs.size}社の公式トップページ導線を確認`);
 console.log(`- 日本未進出企業 ${notEnteredCount}社すべてでGong基準のentryAssessmentを確認`);

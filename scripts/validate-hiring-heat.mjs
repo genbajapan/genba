@@ -92,6 +92,14 @@ for (const company of companies) {
   if (/(求人|採用|募集|ポジション|営業職)/.test(cardSummary)) {
     errors.push(`${company.name}: 一覧用の価値説明に求人状況の文言が含まれています: ${cardSummary}`);
   }
+  for (const required of ["課題", "主力製品", "優位性"]) {
+    if (!cardSummary.includes(required)) {
+      errors.push(`${company.name}: 一覧用説明に「${required}」がありません: ${cardSummary}`);
+    }
+  }
+  if (/(?:が|し|つなぎ|用い|行い|支援し|実現し)。$/.test(cardSummary)) {
+    errors.push(`${company.name}: 一覧用説明が接続助詞・連用形で途切れています: ${cardSummary}`);
+  }
   const summaryLead = cardSummary.match(/^(.+?)(?:とは|は)[、,:：\s]*/)?.[1]?.trim().toLocaleLowerCase();
   const displayedName = company.name.trim().toLocaleLowerCase();
   if (summaryLead && (summaryLead === displayedName || displayedName.startsWith(`${summaryLead} `))) {
@@ -166,6 +174,9 @@ if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComp
 const globalStyles = fs.readFileSync(path.join(root, "app/globals.css"), "utf8");
 if (/company-card-grid \.data-card > p\s*\{[^}]*display:\s*none/.test(globalStyles)) {
   errors.push("スマホの企業カードで価値説明が非表示になっています。");
+}
+if (!globalStyles.includes("-webkit-line-clamp: 4")) {
+  errors.push("デスクトップの企業カードでFABE価値説明を4行確保できていません。");
 }
 
 if (errors.length) {

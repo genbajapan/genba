@@ -5,6 +5,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
 import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
+import { getCompanyFABESalesSnapshot, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
@@ -45,6 +46,7 @@ export default function CompanyIntelligenceProfile({
   const isPreEntry = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
+  const salesSnapshot = publicIntel ? getCompanyFABESalesSnapshot(publicIntel) : company.description;
   const directoryEntry = getCompanyDirectoryEntry(company.slug);
   const globalScale = resolveGlobalScale(company.slug, publicIntel?.companyStats.globalHeadcount);
   const globalScaleDirectorySource = getGlobalScaleSource(globalScale);
@@ -108,8 +110,26 @@ export default function CompanyIntelligenceProfile({
               </div>
               <h1>{company.name}</h1>
               <p className="company-category">{company.category} <span>/</span> {company.hq}</p>
-              {publicIntel && <p className="company-sales-snapshot-label">営業観点から見たこの会社</p>}
-              <p className="company-description">{publicIntel?.salesSnapshot ?? company.description}</p>
+              {publicIntel && (
+                <div className="company-sales-snapshot-heading">
+                  <span>セールス観点から見たこの会社</span>
+                  <details className="fabe-help">
+                    <summary>(FABE分析ベース)</summary>
+                    <div className="fabe-help-card">
+                      <strong>FABE分析とは</strong>
+                      <p>製品の説明を「何ができるか」で終わらせず、顧客が選ぶ理由と事業成果まで一続きで整理するフレームワーク。</p>
+                      <dl>
+                        <div><dt>Feature</dt><dd>製品が持つ機能・技術・仕組み</dd></div>
+                        <div><dt>Advantage</dt><dd>競合・内製・現状維持と比べた優位性</dd></div>
+                        <div><dt>Benefit</dt><dd>顧客の業務・財務・リスクに起きる改善</dd></div>
+                        <div><dt>Evidence</dt><dd>公式事例・開示数値・製品情報などの根拠</dd></div>
+                      </dl>
+                      <small>Genbaでは、代替手段を比較できるよう「Competitor」も併記する。</small>
+                    </div>
+                  </details>
+                </div>
+              )}
+              <p className="company-description">{salesSnapshot}</p>
               <div className="company-tag-row">
                 {company.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
@@ -741,24 +761,28 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel && publicIntel.solutions.length > 0 && (
                 <div className="solution-catalog">
-                  <p className="card-index">具体的なソリューション(競合/差別化/継続実態)</p>
+                  <p className="card-index">具体的なソリューション(FABE分析/競合比較)</p>
                   <div className="solution-catalog-grid">
-                    {publicIntel.solutions.map((solution) => (
-                      <details className="solution-item" key={solution.name}>
-                        <summary>
-                          <span className="solution-item-icon" aria-hidden="true">+</span>
-                          <span className="solution-item-label">{solution.name}</span>
-                          <span className="solution-item-chevron" aria-hidden="true">▾</span>
-                        </summary>
-                        <div className="solution-item-body">
-                          <p>{solution.valueProp}</p>
-                          {solution.competitors && <p><span>主な競合</span>{solution.competitors}</p>}
-                          {solution.differentiation && <p><span>差別化ポイント</span>{solution.differentiation}</p>}
-                          {solution.retention && <p><span>継続・拡張の実態</span>{solution.retention}</p>}
-                          <a href={solution.url} target="_blank" rel="noreferrer">公式ソリューションページ ↗</a>
-                        </div>
-                      </details>
-                    ))}
+                    {publicIntel.solutions.map((solution) => {
+                      const fabe = getSolutionFABE(publicIntel, solution);
+                      return (
+                        <details className="solution-item" key={solution.name}>
+                          <summary>
+                            <span className="solution-item-icon" aria-hidden="true">+</span>
+                            <span className="solution-item-label">{solution.name}</span>
+                            <span className="solution-item-chevron" aria-hidden="true">▾</span>
+                          </summary>
+                          <div className="solution-item-body">
+                            <p><span>Feature(機能)</span>{fabe.feature}</p>
+                            <p><span>Advantage(優位性)</span>{fabe.advantage}</p>
+                            <p><span>Benefit(メリット)</span>{fabe.benefit}</p>
+                            <p><span>Evidence(証拠)</span>{fabe.evidence}</p>
+                            <p><span>Competitor(競合)</span>{fabe.competitor}</p>
+                            <a href={solution.url} target="_blank" rel="noreferrer">公式ソリューションページ ↗</a>
+                          </div>
+                        </details>
+                      );
+                    })}
                   </div>
                 </div>
               )}

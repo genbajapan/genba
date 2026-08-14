@@ -172,6 +172,21 @@ export type SellingPlaybook = {
   commonObjection: { objection: string; reframe: string };
 };
 
+export type CompanySolution = {
+  name: string;
+  valueProp: string;
+  url: string;
+  competitors: string;
+  differentiation: string;
+  retention: string;
+  // 公式情報で製品単位の根拠を確認できた場合は、自動生成よりこちらを優先する。
+  feature?: string;
+  advantage?: string;
+  benefit?: string;
+  evidence?: string;
+  competitor?: string;
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
@@ -208,14 +223,7 @@ export type CompanyPublicIntelligence = {
     intro: string;
     questions: InterviewPrepQuestion[];
   };
-  solutions: Array<{
-    name: string;
-    valueProp: string;
-    url: string;
-    competitors: string;
-    differentiation: string;
-    retention: string;
-  }>;
+  solutions: CompanySolution[];
   customerStoriesUrl: string;
   fitTags: string[];
   comparisonMap: Array<{
