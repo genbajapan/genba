@@ -152,13 +152,13 @@ export default function HomePage() {
 
             <div className="value-body">
               <div className="value-grid">
-                <article className="value-card value-card-discovery">
+                <article className="value-card">
                   <div className="value-card-head"><span>01</span><p>選択肢を増やす</p></div>
                   <h3>知らない会社は、選択肢にならない。</h3>
                   <p>まだ日本語情報が少ない中小規模の外資IT企業や、日本進出前の注目企業を発掘。広く知られる前から、第一号AEやカントリーマネージャーを含む次のキャリア機会を見つけられます。</p>
                 </article>
 
-                <article className="value-card value-card-decision">
+                <article className="value-card">
                   <div className="value-card-head"><span>02</span><p>選択の解像度を上げる</p></div>
                   <h3>「入れそうか」だけでなく、「ここで売りたいか」まで考える。</h3>
                   <p>ソリューション、Buyer、国内導入事例、想定できる売り方、求人、組織、働いている人、企業文化まで1ページに集約。自分にフィットするか、ワクワクできるか、面接を受ける価値があるかを効率よく判断できます。</p>
