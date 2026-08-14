@@ -104,7 +104,7 @@ export default function HomePage() {
               <div className="audience-list">
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>大手外資の次に、裁量の大きな小中規模外資も見てみたい</h3><p>テリトリー、OTE、昇進機会、日本事業の余白まで比較したい。</p></div>
+                  <div><h3>よく見る大手/外資以外をしっかりとみてみたい。</h3><p>テリトリー、OTE、昇進機会、日本事業の余白まで比較したい。</p></div>
                 </article>
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
