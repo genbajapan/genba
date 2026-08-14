@@ -48,7 +48,7 @@ export default function HiringHeatmap() {
         </div>
         <div className="market-head-status">
           <div className="market-head-metrics" aria-label="現在の掲載状況">
-            <div><strong>{hiringCompanies}<small>社</small></strong><span>求人掲載中の企業</span></div>
+            <div><strong>{hiringCompanies}<small>社</small></strong><span>現在求人ありの企業</span></div>
             <div><strong>{total}<small>件</small></strong><span>掲載中の営業求人</span></div>
             <div><strong>{activeAreas}<small>分類</small></strong><span>営業求人を確認</span></div>
           </div>

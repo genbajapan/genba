@@ -47,6 +47,9 @@ export default function HomePage() {
             <Link href="/companies" className="terminal-stat" aria-label={`掲載企業 ${companies.length}社の各企業研究ページを見る`}>
               <span>掲載企業</span><strong>{companies.length}</strong><small>各企業研究ページ直結</small>
             </Link>
+            <Link href="/companies?openJobs=1#company-results" className="terminal-stat" aria-label={`現在求人ありの企業 ${companiesWithOpenJobs.length}社の各企業研究ページを見る`}>
+              <span>現在求人ありの企業</span><strong>{companiesWithOpenJobs.length}</strong><small>各企業研究ページ直結</small>
+            </Link>
             <Link href="/jobs" className="terminal-stat" aria-label={`現在の求人 ${jobs.length}件の各社公式求人ページを見る`}>
               <span>現在の求人</span><strong>{jobs.length}</strong><small>各社公式求人ページ直結</small>
             </Link>

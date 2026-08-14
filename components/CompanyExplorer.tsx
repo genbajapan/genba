@@ -42,6 +42,8 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const initialStatus = statusParam && statuses.includes(statusParam) ? statusParam : "すべて";
   const headquartersParam = searchParams.get("hq");
   const initialHeadquarters: HeadquartersRegion = headquartersRegions.some((region) => region.value === headquartersParam) ? headquartersParam as HeadquartersRegion : "すべて";
+  const openJobsOnly = searchParams.get("openJobs") === "1";
+  const companySlugsWithOpenJobs = useMemo(() => new Set(jobs.map((job) => job.companySlug)), []);
 
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [status, setStatus] = useState(initialStatus);
@@ -56,8 +58,9 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
     const matchesTier = tier === "すべて" || tierCompanySlugs[tier].has(company.slug);
     const matchesEntry = entry === "すべて" || company.entryStatus === entry;
     const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
-    return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters;
-  }).sort((a, b) => headquarters === "すべて" ? 0 : a.hq.localeCompare(b.hq, "ja") || a.name.localeCompare(b.name, "ja")), [query, status, solutionArea, tier, entry, headquarters]);
+    const matchesOpenJobs = !openJobsOnly || companySlugsWithOpenJobs.has(company.slug);
+    return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters && matchesOpenJobs;
+  }).sort((a, b) => headquarters === "すべて" ? 0 : a.hq.localeCompare(b.hq, "ja") || a.name.localeCompare(b.name, "ja")), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, companySlugsWithOpenJobs]);
 
   const clearReturnTarget = useCallback(() => {
     window.sessionStorage.removeItem(returnPositionKey);
@@ -216,7 +219,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
           <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
         </div>
       </div>
-      <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : `${results.length}社を表示`}</p>
+      <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
       <div className="card-grid company-card-grid">
         {results.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={companyCardSummaries[company.slug]} onNavigate={rememberCompanyPosition} />)}
       </div>
