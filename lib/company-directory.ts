@@ -223,6 +223,18 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
   lucanet: {
     officialWebsite: { url: "https://www.lucanet.com/ja/", locale: "ja" },
   },
+  stripe: {
+    officialWebsite: { url: "https://stripe.com/jp", locale: "ja" },
+    globalScaleFallback: linkedInScale("5,001〜10,000人規模", "https://www.linkedin.com/company/stripe/"),
+  },
+  aghanim: {
+    officialWebsite: { url: "https://aghanim.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/aghanim/"),
+  },
+  primer: {
+    officialWebsite: { url: "https://primer.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/primerapi/"),
+  },
   addepar: {
     officialWebsite: { url: "https://addepar.com/", locale: "global" },
     globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/addepar/"),
