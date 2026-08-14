@@ -61,7 +61,7 @@ button, input, select { font: inherit; }
 .hero-lead-research { margin-top: 10px; }
 .hero-lead-closing { margin-top: 12px; }
 .hero-highlight { color: #f7fbfb; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: .34em; text-decoration-skip-ink: none; }
-.hero-highlight-hiring { text-decoration-color: #df6262; }
+.hero-highlight-hiring { padding-bottom: .34em; background: linear-gradient(90deg, #df6262 0 33.333%, #e68742 33.333% 66.666%, #64bd83 66.666% 100%) left bottom / 100% 2px no-repeat; text-decoration: none; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .hero-highlight-pre-entry { text-decoration-color: #e0b738; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .hero-actions .button { min-height: 48px; padding: 0 23px; }
