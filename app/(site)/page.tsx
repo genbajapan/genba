@@ -128,7 +128,7 @@ export default function HomePage() {
                 </article>
                 <article className="audience-item audience-item-wide">
                   <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>まだ求人のない「次の外資」を、日本で知られる前に見つけたい</h3><p>海外の成長、APAC展開、日本対応を観測し、将来の一人目AEや初期GTMの機会を先回りしたい。</p></div>
+                  <div><h3>まだ求人のない「日本未進出でアツそうな外資」に早めに目をつけておきたい。</h3><p>海外の成長、APAC展開、日本対応を観測し、将来の一人目AEや初期GTMの機会を先回りしたい。</p></div>
                 </article>
               </div>
             </div>
