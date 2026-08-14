@@ -33,7 +33,7 @@ export default function HomePage() {
               <span className="hero-lead-focus">
                 <span className="hero-highlight hero-highlight-hiring">「日本で求人のある小中規模外資IT」</span><span className="hero-highlight-separator">・</span><span className="hero-highlight hero-highlight-pre-entry">「日本未進出の注目外資IT」</span><span className="hero-highlight-suffix">に完全特化。</span>
               </span>
-              <span className="hero-lead-research">公開情報をベースに現役AE目線で情報整理、個人見解での仮説、示唆を含めた企業研究サイトです。</span>
+              <span className="hero-lead-research">公開情報をベースに現役AE目線から情報整理をし、仮説や示唆を含めた企業研究サイトです。</span>
               <span className="hero-lead-closing">「ここだ」と思える次のフィールドを見つけられるように。</span>
             </p>
             <div className="hero-actions">
@@ -72,7 +72,7 @@ export default function HomePage() {
             <summary className="founder-note-summary">
               <div>
                 <p className="eyebrow">なぜGenbaを作ったか</p>
-                <h2 className="founder-note-hook">大手外資から小中規模の外資へ転職して、実感しました。</h2>
+                <h2 className="founder-note-hook">Genba編集長は大手外資から小中規模の外資へ転職して、実感しました。</h2>
               </div>
               <span className="founder-note-toggle">
                 <span className="founder-note-toggle-icon" aria-hidden="true">+</span>
@@ -86,6 +86,65 @@ export default function HomePage() {
               <p className="founder-note-emphasis">「ここだ」と思える次のフィールドを見つけられるように。</p>
             </div>
           </details>
+
+          <section className="audience-section" aria-labelledby="audience-title">
+            <div className="audience-heading">
+              <p className="eyebrow">WHO GENBA IS FOR</p>
+              <h2 id="audience-title">こんな人のためのサイトです。</h2>
+              <p>有名企業の次にある選択肢を知り、求人票だけでは見えない「その会社で勝てるか」を自分で判断したい人へ。</p>
+            </div>
+
+            <div className="audience-grid">
+              <article className="audience-card audience-card-primary">
+                <span className="audience-number">01</span>
+                <p className="audience-kicker">NEXT CHALLENGE</p>
+                <h3>大手外資から、次のフィールドを探している</h3>
+                <p>ブランドよりも、テリトリー・OTE・裁量・昇進機会を重視。情報の少ない小中規模外資も、本気で次の候補に入れたい。</p>
+              </article>
+
+              <article className="audience-card">
+                <span className="audience-number">02</span>
+                <p className="audience-kicker">MARKET WATCH</p>
+                <h3>今すぐではないが、いい話があれば動きたい</h3>
+                <p>転職活動を始める前から、新規採用・組織拡大・日本参入の変化を定点観測しておきたい。</p>
+              </article>
+
+              <article className="audience-card">
+                <span className="audience-number">03</span>
+                <p className="audience-kicker">FIRST GLOBAL MOVE</p>
+                <h3>日系IT・SaaSから、外資SaaSに挑戦したい</h3>
+                <p>OTE、Quota、Territoryなどの仕組みを理解し、自分の経験がどの企業・ポジションで生きるかを知りたい。</p>
+              </article>
+
+              <article className="audience-card">
+                <span className="audience-number">04</span>
+                <p className="audience-kicker">NEXT AE ROLE</p>
+                <h3>SDR・BDRからAEへ、次のキャリアを描きたい</h3>
+                <p>社内昇進と他社への挑戦を比較し、若い組織の成長性やAEになれる機会を見極めたい。</p>
+              </article>
+
+              <article className="audience-card">
+                <span className="audience-number">05</span>
+                <p className="audience-kicker">SALES LEADERSHIP</p>
+                <h3>日本立ち上げや、次のマネジメント機会を探している</h3>
+                <p>日本市場のフェーズ、採用順序、組織体制から、会社の投資本気度と自分が担う役割を見極めたい。</p>
+              </article>
+
+              <article className="audience-card">
+                <span className="audience-number">06</span>
+                <p className="audience-kicker">GO-TO-MARKET CAREER</p>
+                <h3>SE・CS・Partner Salesとして、伸びる環境を選びたい</h3>
+                <p>製品の強さ、国内導入実績、パートナー戦略や周辺職種の採用から、日本事業全体の成長を判断したい。</p>
+              </article>
+
+              <article className="audience-card audience-card-forward">
+                <span className="audience-number">07</span>
+                <p className="audience-kicker">EARLY DISCOVERY</p>
+                <h3>まだ日本で知られていない、次の外資を早く見つけたい</h3>
+                <p>海外での成長、APAC展開、製品の日本対応を手がかりに、将来の一人目AEや初期GTMメンバーの機会を先回りしたい。</p>
+              </article>
+            </div>
+          </section>
         </Container>
       </section>
 
