@@ -87,64 +87,54 @@ export default function HomePage() {
             </div>
           </details>
 
-          <section className="audience-section" aria-labelledby="audience-title">
-            <div className="audience-heading">
-              <p className="eyebrow">WHO GENBA IS FOR</p>
-              <h2 id="audience-title">こんな人のためのサイトです。</h2>
-              <p>有名企業の次にある選択肢を知り、求人票だけでは見えない「その会社で勝てるか」を自分で判断したい人へ。</p>
+          <details className="audience-disclosure">
+            <summary className="audience-summary">
+              <div className="audience-summary-copy">
+                <p className="eyebrow">こんな人のためのサイトです。</p>
+                <h2>次の外資を、知名度だけで選びたくない人へ。</h2>
+                <p>「自分に近い」と感じたら、Genbaが役に立つはずです。</p>
+              </div>
+              <span className="audience-toggle">
+                <span className="audience-toggle-icon" aria-hidden="true">+</span>
+                <span className="audience-toggle-label-closed">当てはまるか見る</span>
+                <span className="audience-toggle-label-open">閉じる</span>
+              </span>
+            </summary>
+
+            <div className="audience-body">
+              <p className="audience-body-intro">ひとつでも当てはまるなら、ここはあなたのための作戦会議室です。</p>
+              <div className="audience-list">
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>大手外資の次に、裁量の大きな小中規模外資も見てみたい</h3><p>テリトリー、OTE、昇進機会、日本事業の余白まで比較したい。</p></div>
+                </article>
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>今すぐ転職しなくても、次に動く企業は普段から知っておきたい</h3><p>新規求人、採用拡大、日本参入の変化を、転職活動より前から追いたい。</p></div>
+                </article>
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>日系IT・SaaSで培った営業経験を、外資SaaSで試したい</h3><p>外資特有の報酬・評価・職種の仕組みと、自分の経験が生きる場所を知りたい。</p></div>
+                </article>
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>SDR・BDRからAEへ、次のステップを本気で考えている</h3><p>社内昇進と転職を比べ、AEとして挑戦できる組織とタイミングを見極めたい。</p></div>
+                </article>
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>日本立ち上げや、次の営業マネジャーの席を探している</h3><p>一人目なのか拡大フェーズなのか。採用順序から企業の投資本気度を読みたい。</p></div>
+                </article>
+                <article className="audience-item">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>SE・CS・Partner Salesとして、日本事業と一緒に成長したい</h3><p>AE求人だけでなく、製品力、国内導入、パートナー戦略から事業全体を見たい。</p></div>
+                </article>
+                <article className="audience-item audience-item-wide">
+                  <span className="audience-check" aria-hidden="true">✓</span>
+                  <div><h3>まだ求人のない「次の外資」を、日本で知られる前に見つけたい</h3><p>海外の成長、APAC展開、日本対応を観測し、将来の一人目AEや初期GTMの機会を先回りしたい。</p></div>
+                </article>
+              </div>
             </div>
-
-            <div className="audience-grid">
-              <article className="audience-card audience-card-primary">
-                <span className="audience-number">01</span>
-                <p className="audience-kicker">NEXT CHALLENGE</p>
-                <h3>大手外資から、次のフィールドを探している</h3>
-                <p>ブランドよりも、テリトリー・OTE・裁量・昇進機会を重視。情報の少ない小中規模外資も、本気で次の候補に入れたい。</p>
-              </article>
-
-              <article className="audience-card">
-                <span className="audience-number">02</span>
-                <p className="audience-kicker">MARKET WATCH</p>
-                <h3>今すぐではないが、いい話があれば動きたい</h3>
-                <p>転職活動を始める前から、新規採用・組織拡大・日本参入の変化を定点観測しておきたい。</p>
-              </article>
-
-              <article className="audience-card">
-                <span className="audience-number">03</span>
-                <p className="audience-kicker">FIRST GLOBAL MOVE</p>
-                <h3>日系IT・SaaSから、外資SaaSに挑戦したい</h3>
-                <p>OTE、Quota、Territoryなどの仕組みを理解し、自分の経験がどの企業・ポジションで生きるかを知りたい。</p>
-              </article>
-
-              <article className="audience-card">
-                <span className="audience-number">04</span>
-                <p className="audience-kicker">NEXT AE ROLE</p>
-                <h3>SDR・BDRからAEへ、次のキャリアを描きたい</h3>
-                <p>社内昇進と他社への挑戦を比較し、若い組織の成長性やAEになれる機会を見極めたい。</p>
-              </article>
-
-              <article className="audience-card">
-                <span className="audience-number">05</span>
-                <p className="audience-kicker">SALES LEADERSHIP</p>
-                <h3>日本立ち上げや、次のマネジメント機会を探している</h3>
-                <p>日本市場のフェーズ、採用順序、組織体制から、会社の投資本気度と自分が担う役割を見極めたい。</p>
-              </article>
-
-              <article className="audience-card">
-                <span className="audience-number">06</span>
-                <p className="audience-kicker">GO-TO-MARKET CAREER</p>
-                <h3>SE・CS・Partner Salesとして、伸びる環境を選びたい</h3>
-                <p>製品の強さ、国内導入実績、パートナー戦略や周辺職種の採用から、日本事業全体の成長を判断したい。</p>
-              </article>
-
-              <article className="audience-card audience-card-forward">
-                <span className="audience-number">07</span>
-                <p className="audience-kicker">EARLY DISCOVERY</p>
-                <h3>まだ日本で知られていない、次の外資を早く見つけたい</h3>
-                <p>海外での成長、APAC展開、製品の日本対応を手がかりに、将来の一人目AEや初期GTMメンバーの機会を先回りしたい。</p>
-              </article>
-            </div>
-          </section>
+          </details>
         </Container>
       </section>
 
