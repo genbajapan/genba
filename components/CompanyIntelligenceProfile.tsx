@@ -130,6 +130,16 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
               <p className="company-description">{salesSnapshot}</p>
+              {publicIntel?.salesSnapshotFabeExpanded && (
+                <details className="company-sales-evidence">
+                  <summary>
+                    <span className="company-sales-evidence-label-closed">導入実績・成果指標・日本市場の見立てを見る</span>
+                    <span className="company-sales-evidence-label-open">導入実績・成果指標・日本市場の見立てを閉じる</span>
+                    <span className="company-sales-evidence-icon" aria-hidden="true">＋</span>
+                  </summary>
+                  <p>{publicIntel.salesSnapshotFabeExpanded}</p>
+                </details>
+              )}
               <div className="company-tag-row">
                 {company.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>

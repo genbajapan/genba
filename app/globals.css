@@ -346,6 +346,16 @@ button, input, select { font: inherit; }
 .fabe-help-card dd { margin: 3px 0 0; color: #52676e; }
 .fabe-help-card small { display: block; margin-top: 11px; padding-top: 10px; border-top: 1px solid #d5e4e1; color: #6c7e83; font-size: 10px; }
 .company-description { max-width: 690px; margin: 8px 0 0; color: #c1d0d7; font-size: 14px; line-height: 1.85; }
+.company-sales-evidence { max-width: 690px; margin-top: 14px; border-block: 1px solid #2f5260; }
+.company-sales-evidence > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 0; cursor: pointer; list-style: none; color: #8eddd1; font-size: 12px; font-weight: 800; letter-spacing: .025em; }
+.company-sales-evidence > summary::-webkit-details-marker { display: none; }
+.company-sales-evidence > summary:hover,.company-sales-evidence > summary:focus-visible { color: white; }
+.company-sales-evidence-label-open { display: none; }
+.company-sales-evidence[open] .company-sales-evidence-label-closed { display: none; }
+.company-sales-evidence[open] .company-sales-evidence-label-open { display: inline; }
+.company-sales-evidence-icon { display: grid; flex: 0 0 auto; place-items: center; width: 22px; height: 22px; border: 1px solid #4f776f; border-radius: 50%; font-size: 14px; line-height: 1; transition: transform .18s ease; }
+.company-sales-evidence[open] .company-sales-evidence-icon { transform: rotate(45deg); }
+.company-sales-evidence > p { margin: 0; padding: 3px 0 16px; color: #a9bec7; font-size: 13px; line-height: 1.85; }
 .company-tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 25px; }
 .company-tag-row span { padding: 6px 9px; border: 1px solid #355462; color: #9eb4bd; font-size: 12px; font-weight: 750; }
 
