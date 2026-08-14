@@ -1232,9 +1232,9 @@ const mongodbIntelligence: CompanyPublicIntelligence = {
       sourceIds: ["mdb-q1fy27"],
     },
     {
-      label: "ARR10万ドル以上の顧客数",
+      label: "ARR10万ドル(約1,570万円)以上の顧客数",
       value: "2,895社",
-      detail: "前年の2,506社から増加(2026年4月期時点)。",
+      detail: "前年の2,506社から増加(2026年4月期時点)。1ドル=157円換算。",
       sourceIds: ["mdb-q1fy27"],
     },
     {
