@@ -60,9 +60,9 @@ button, input, select { font: inherit; }
 .hero-lead-focus { font-size: 1.08em; font-weight: 720; line-height: 2.05; }
 .hero-lead-research { margin-top: 10px; }
 .hero-lead-closing { margin-top: 12px; }
-.hero-highlight { padding: .1em .24em .14em; color: white; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-.hero-highlight-hiring { background: #9f3636; }
-.hero-highlight-pre-entry { background: #a47d08; }
+.hero-highlight { color: #f7fbfb; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: .34em; text-decoration-skip-ink: none; }
+.hero-highlight-hiring { text-decoration-color: #df6262; }
+.hero-highlight-pre-entry { text-decoration-color: #e0b738; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .hero-actions .button { min-height: 48px; padding: 0 23px; }
 .hero-actions .button-primary { background: #f8fbfa; color: var(--navy); }
@@ -1144,6 +1144,8 @@ button, input, select { font: inherit; }
 @media (max-width: 480px) {
   .hero h1 { font-size: 37px; }
   .hero-lead { font-size: 15px; }
+  .hero-lead-focus .hero-highlight,.hero-highlight-suffix { display: block; width: fit-content; }
+  .hero-highlight-separator { display: none; }
   .card-grid:not(.company-card-grid) { grid-template-columns: 1fr; }
   .filter-chips { display: grid; grid-template-columns: 1fr 1fr; }
   .signal-row { grid-template-columns: 42px 18px 1fr; }

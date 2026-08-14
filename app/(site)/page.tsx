@@ -31,7 +31,7 @@ export default function HomePage() {
             <h1>小中規模外資IT<br />企業研究所</h1>
             <p className="hero-lead">
               <span className="hero-lead-focus">
-                <span className="hero-highlight hero-highlight-hiring">「日本で求人のある小中規模外資IT」</span>・<span className="hero-highlight hero-highlight-pre-entry">「日本未進出の注目外資IT」</span>に完全特化。
+                <span className="hero-highlight hero-highlight-hiring">「日本で求人のある小中規模外資IT」</span><span className="hero-highlight-separator">・</span><span className="hero-highlight hero-highlight-pre-entry">「日本未進出の注目外資IT」</span><span className="hero-highlight-suffix">に完全特化。</span>
               </span>
               <span className="hero-lead-research">Genbaを知る現役外資AE編集長の目線で企業研究に必要な公開情報を整理しつつ、仮説や示唆も記載。</span>
               <span className="hero-lead-closing">「ここだ」と思える次のフィールドを見つけられるように。</span>
