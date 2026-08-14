@@ -90,9 +90,8 @@ export default function HomePage() {
           <details className="audience-disclosure">
             <summary className="audience-summary">
               <div className="audience-summary-copy">
-                <p className="eyebrow">こんな人のためのサイトです。</p>
-                <h2>次の外資を、知名度だけで選びたくない人へ。</h2>
-                <p>「自分に近い」と感じたら、Genbaが役に立つはずです。</p>
+                <p className="eyebrow">誰のためのサイトか</p>
+                <h2>Genbaはこんな人のためのサイトです</h2>
               </div>
               <span className="audience-toggle">
                 <span className="audience-toggle-icon" aria-hidden="true">+</span>
@@ -102,7 +101,7 @@ export default function HomePage() {
             </summary>
 
             <div className="audience-body">
-              <p className="audience-body-intro">ひとつでも当てはまるなら、ここはあなたのための作戦会議室です。</p>
+              <p className="audience-body-intro">ひとつでも当てはまるなら Genbaが役に立つはずです。</p>
               <div className="audience-list">
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
