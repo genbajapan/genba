@@ -41,7 +41,7 @@ export default function HiringHeatmap() {
                 <p><strong>HOT</strong><span>国内営業求人{hiringHeatCriteria.hot.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.hot.minimumCompanies}社以上</span></p>
                 <p><strong>Active</strong><span>国内営業求人{hiringHeatCriteria.active.minimumJobs}件以上、かつ採用企業{hiringHeatCriteria.active.minimumCompanies}社以上</span></p>
                 <p><strong>Selective</strong><span>国内営業求人{hiringHeatCriteria.selective.minimumJobs}件以上</span></p>
-                <p><strong>対象外</strong><span>求人0件の領域と日本未進出企業。日本未進出企業は黄色の別枠で表示</span></p>
+                <p><strong>日本未進出</strong><span>今後日本に進出する可能性のある海外で注目されている企業。第一号AEやカントリーマネージャー狙い目。</span></p>
               </div>
             </details>
           </div>
