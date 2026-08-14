@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import Container from "@/components/Container";
+import DossierNav from "@/components/DossierNav";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
@@ -173,21 +174,7 @@ export default function CompanyIntelligenceProfile({
 
       <div className="dossier-nav-wrap">
         <Container>
-          <div className="dossier-nav-bar">
-            <a className="dossier-company-marker" href="#company-top" title={`${company.name}のページ先頭へ戻る`}>
-              <span aria-hidden="true" />
-              <strong>{company.name}</strong>
-            </a>
-            <nav className="dossier-nav" aria-label="企業ページ内ナビゲーション">
-              <a href="#overview">会社概要</a>
-              <a href="#work-there">{isPreEntry ? "海外で働く人" : "働く人を見る"}</a>
-              <a href="#roles">{isPreEntry ? "進出時の論点" : "募集中ポジション"}</a>
-              <a href="#decision">5つの仮説</a>
-              <a href="#solution">ソリューション深掘り</a>
-              {publicIntel && <a href="#playbook">想定できる売り方</a>}
-              <a href="#compare">併願候補</a>
-            </nav>
-          </div>
+          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} />
         </Container>
       </div>
 
