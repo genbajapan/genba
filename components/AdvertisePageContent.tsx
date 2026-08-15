@@ -34,11 +34,11 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
   const values = en ? [
     ["Discovery", "Introduce companies readers would not have found through job boards or name recognition alone."],
     ["Understanding", "Explain the product, buyer, market and sales role using official public information and clearly separated Genba analysis."],
-    ["Relevant reach", "Connect useful sponsor information with a focused audience through the site and the Genba newsletter."],
+    ["Relevant reach", "Deliver only genuinely useful sponsor information through the site and Genba Discovery, our newsletter published three times a week."],
   ] : [
     ["発見", "求人媒体や知名度だけでは出会えなかった企業を、読者の新しい選択肢として届けます。"],
     ["理解", "公開情報をもとに、製品、Buyer、市場、営業職としての面白さを整理し、Genba分析と分けて伝えます。"],
-    ["適切な接点", "サイトと「Genba発掘」を通じて、読者に本当に関係するスポンサー情報だけを届けます。"],
+    ["適切な接点", "サイトと、Genba発掘（週3回のメルマガ）を通じて、読者にとって本当に価値のあるスポンサー情報だけを届けます。"],
   ];
 
   return (
