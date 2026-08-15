@@ -137,7 +137,7 @@ export default function HomePage() {
                 </article>
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>面接に向けて、手っ取り早く詳細に企業研究がしたい</h3><p>各企業研究ページの内容をおさえている候補者はほぼいません。</p></div>
+                  <div><h3>面接の準備を効率良く、解像度高くやりたい</h3><p>各企業研究ページの内容をおさえている候補者はほぼいません。</p></div>
                 </article>
                 <article className="audience-item">
                   <span className="audience-check" aria-hidden="true">✓</span>
