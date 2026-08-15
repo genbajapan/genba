@@ -43,7 +43,16 @@ export default function Footer({ locale = "en", displayLanguage = "ja" }: { loca
             </Link>
           ))}
         </div>
-        <div className="footer-publisher"><span>{displayLanguage === "en" ? "PUBLISHER / EDITOR" : "運営・編集"}</span><a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a><p>{displayLanguage === "en" ? "Edited by a working global SaaS account executive. No confidential employer information is used." : "外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。"}</p></div>
+        <div className="footer-publisher">
+          <span>{displayLanguage === "en" ? "PUBLISHER / EDITOR" : "運営・編集"}</span>
+          <a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 ↗</a>
+          <p>{displayLanguage === "en" ? "Edited by a working global SaaS account executive. No confidential employer information is used." : "外資SaaSの現役AEによる編集。所属企業の非公開情報は扱いません。"}</p>
+          <div className="footer-sponsor">
+            <span>{displayLanguage === "en" ? "SPONSORSHIP" : "スポンサーについて"}</span>
+            <p>{displayLanguage === "en" ? "We selectively work with sponsors that can create value for Genba readers." : "読者に価値を提供できる企業との協業を、限定的に受け付けています。"}</p>
+            <Link href={displayLanguage === "en" ? "/en/advertise" : "/advertise"}>{displayLanguage === "en" ? "Discuss a sponsorship →" : "スポンサー掲載について相談する →"}</Link>
+          </div>
+        </div>
       </Container>
       <Container className="footer-bottom"><p>&copy; {new Date().getFullYear()} Genba</p><p><Link href="/privacy">{displayLanguage === "en" ? "Privacy policy (Japanese)" : "プライバシーポリシー"}</Link><span>{displayLanguage === "en" ? "Applications are completed on each company’s official careers site." : "求人応募は各社の公式サイトで行われます。"}</span></p></Container>
     </footer>
