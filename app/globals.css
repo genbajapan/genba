@@ -1081,9 +1081,9 @@ button, input, select { font: inherit; }
 .advertise-simple-value-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border: 1px solid var(--line); background: white; }
 .advertise-simple-value-grid article { min-height: 235px; padding: 28px; }
 .advertise-simple-value-grid article + article { border-left: 1px solid var(--line); }
-.advertise-simple-value-grid span { color: var(--signal); font-size: 11px; font-weight: 850; }
-.advertise-simple-value-grid h3 { margin: 28px 0 0; color: var(--navy); font-size: 20px; }
-.advertise-simple-value-grid p { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.advertise-simple-value-grid span { color: var(--signal); font-size: 13px; font-weight: 850; }
+.advertise-simple-value-grid h3 { margin: 28px 0 0; color: var(--navy); font-size: clamp(23px,2vw,27px); }
+.advertise-simple-value-grid p { margin: 14px 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
 .advertise-inquiry-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(560px,1.2fr); gap: 64px; align-items: start; }
 .advertise-inquiry-layout .advertise-section-heading h2 { font-size: clamp(17px,5.4vw,30px); white-space: nowrap; }
 .advertise-inquiry-layout .advertise-inquiry-form { max-width: none; }
