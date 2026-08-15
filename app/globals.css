@@ -1073,6 +1073,19 @@ button, input, select { font: inherit; }
 .advertise-process-grid span { color: var(--signal); font-size: 11px; font-weight: 850; }
 .advertise-process-grid h3 { margin: 34px 0 0; color: var(--navy); font-size: 16px; }
 .advertise-process-grid p { margin: 11px 0 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.advertise-simple-hero { padding-bottom: 78px; }
+.advertise-simple-hero-copy { max-width: 860px; }
+.advertise-simple-hero-copy h1 { max-width: 780px; white-space: pre-line; }
+.advertise-simple-hero-copy .page-lead { max-width: 760px; }
+.advertise-simple-hero-copy .button { margin-top: 27px; }
+.advertise-simple-value-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border: 1px solid var(--line); background: white; }
+.advertise-simple-value-grid article { min-height: 235px; padding: 28px; }
+.advertise-simple-value-grid article + article { border-left: 1px solid var(--line); }
+.advertise-simple-value-grid span { color: var(--signal); font-size: 11px; font-weight: 850; }
+.advertise-simple-value-grid h3 { margin: 28px 0 0; color: var(--navy); font-size: 20px; }
+.advertise-simple-value-grid p { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.advertise-inquiry-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(560px,1.2fr); gap: 64px; align-items: start; }
+.advertise-inquiry-layout .advertise-inquiry-form { max-width: none; }
 
 .prose-genba { max-width: 760px; }
 .prose-genba p,.prose-genba li { color: #40535e; line-height: 1.9; }
@@ -1206,7 +1219,10 @@ button, input, select { font: inherit; }
   .tier-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
   .entry-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
   .entry-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
-  .advertise-audience-grid,.advertise-plan-grid,.advertise-form-grid { grid-template-columns: 1fr; }
+  .advertise-audience-grid,.advertise-plan-grid,.advertise-form-grid,.advertise-simple-value-grid,.advertise-inquiry-layout { grid-template-columns: 1fr; }
+  .advertise-inquiry-layout { gap: 28px; }
+  .advertise-simple-value-grid article { min-height: 0; }
+  .advertise-simple-value-grid article + article { border-top: 1px solid var(--line); border-left: 0; }
   .advertise-plan-grid { gap: 35px; }
   .advertise-form-wide { grid-column: auto; }
   .advertise-form-submit { align-items: flex-start; flex-direction: column; }

@@ -3,8 +3,8 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = {
   ...pageMetadata({
-    title: "初期3社限定・実証パートナー",
-    description: "外資IT営業人材へ企業理解を届けるGenba実証パートナー。まず1カ月8万円、効果測定には3カ月を推奨。企業ページ、ニュースレター、X配信、計測、月次レポートを提供します。",
+    title: "スポンサー掲載について",
+    description: "外資IT・SaaSの現役層と予備軍へ価値を届けたい企業のための、Genbaスポンサー掲載お問い合わせページです。",
     path: "/advertise",
   }),
   alternates: { canonical: "/advertise", languages: { ja: "/advertise", en: "/en/advertise" } },

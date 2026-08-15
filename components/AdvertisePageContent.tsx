@@ -6,187 +6,111 @@ type Language = "ja" | "en";
 
 export default function AdvertisePageContent({ language = "ja" }: { language?: Language }) {
   const en = language === "en";
-  const bestFits = en ? [
-    { number: "1–4", label: "open sales roles in Japan", title: "Small and mid-sized global companies hiring sales in Japan", body: "The role is real, but the employer is not yet familiar to strong candidates. Genba explains the product, market, sales motion and role context that a job description alone cannot carry.", signal: "Best when low awareness—not lack of role quality—is suppressing consideration." },
-    { number: "0→1", label: "Japan market entry", title: "Companies hiring a Country Manager or Founding AE", body: "Early hires are evaluating market risk, team support and career upside at the same time. A structured company page turns a globally known product into a credible Japan employment story.", signal: "Especially valuable when the first sales hire must understand the business before applying." },
-    { number: "Niche", label: "specialist audience", title: "Recruitment firms focused on global IT and SaaS sales", body: "General brand messaging is rarely enough. Genba gives specialist firms room to define the roles, segments and market context where their expertise is genuinely useful.", signal: "Works when the firm can prove a clear specialty and wants qualified, relevant traffic." },
+
+  const audiences = en ? [
+    {
+      label: "CURRENT PROFESSIONALS",
+      title: "People already working in global IT and SaaS",
+      body: "Sales professionals who compare products, markets, sales motions and the reality of Japan teams—not company names alone.",
+    },
+    {
+      label: "FUTURE CANDIDATES",
+      title: "People seriously considering their next global IT role",
+      body: "Readers looking beyond famous employers to discover smaller global companies and promising companies that have not yet entered Japan.",
+    },
   ] : [
-    { number: "1〜4", label: "日本の営業採用枠", title: "営業職を1〜4名採用中の小中規模外資", body: "求人はあるのに、企業名だけでは優秀な候補者の比較対象に入らない。Genbaが製品、市場、営業モーション、役割の背景を一つの企業理解へまとめます。", signal: "求人の質ではなく、知名度不足が検討を止めている企業に最適です。" },
-    { number: "0→1", label: "日本市場の立ち上げ", title: "Country Manager・Founding AEを採用中の進出直後企業", body: "初期採用では、候補者は市場性、支援体制、キャリアの上振れを同時に見ています。グローバル製品の魅力を、日本で働く理由へ翻訳します。", signal: "最初の営業人材に、応募前から事業を深く理解してほしい企業ほど価値が出ます。" },
-    { number: "特化", label: "専門読者への到達", title: "外資IT・SaaS営業に特化した採用支援会社", body: "一般的な会社紹介では専門性が伝わりません。得意な職種、セグメント、企業フェーズを明確にし、関係する読者へ継続的に届けます。", signal: "専門領域を証明でき、関連性の高い送客を増やしたい会社に向いています。" },
+    {
+      label: "CURRENT PROFESSIONALS",
+      title: "外資IT・SaaSで働く現役層",
+      body: "企業名だけでなく、製品、市場、営業モーション、日本組織の実態まで比較して次のキャリアを考える人たちです。",
+    },
+    {
+      label: "FUTURE CANDIDATES",
+      title: "外資ITへの転職を本気で考える予備軍",
+      body: "有名企業だけでなく、まだ知られていない小中規模外資や、日本進出前の注目企業まで選択肢を広げたい人たちです。",
+    },
   ];
 
-  const inclusions = en ? [
-    ["Sponsored company page", "A permanent, clearly labelled home for the product, Japan hiring context and sales role story."],
-    ["Company-provided facts", "Hiring background and sales organisation details are labelled separately from Genba editorial analysis."],
-    ["Newsletter: 2× per month", "Two sponsored newsletter placements are included each month."],
-    ["X distribution: 1× per month", "One clearly marked PR post from @chosenshi08 is included each month."],
-    ["Tracked official-job links", "Click measurement while every application still happens on the company’s official careers site."],
-    ["Monthly report", "Page views, distribution activity and tracked job clicks in aggregate—never individual reader data."],
-    ["One update per month", "Refresh one set of approved facts, priority roles or hiring context each month."],
+  const values = en ? [
+    ["Discovery", "Introduce companies readers would not have found through job boards or name recognition alone."],
+    ["Understanding", "Explain the product, buyer, market and sales role using official public information and clearly separated Genba analysis."],
+    ["Relevant reach", "Connect useful sponsor information with a focused audience through the site and the Genba newsletter."],
   ] : [
-    ["Sponsored企業ページ", "製品、日本採用の背景、営業職としての魅力を、広告表記付きで継続的に説明します。"],
-    ["企業提供事実", "採用背景・営業組織の情報を、Genbaの編集分析とは別のラベルで掲載します。"],
-    ["ニュースレター月2回", "毎月2回、関連性の高い読者へスポンサー情報を届けます。"],
-    ["PR表記付きX配信 月1回", "@chosenshi08から毎月1回、PRであることを明示して配信します。"],
-    ["公式求人への計測リンク", "応募は企業公式サイトで行い、Genbaからのクリックを集計します。"],
-    ["月次レポート", "企業ページ閲覧、配信実績、求人クリックを個人が特定されない集計値で報告します。"],
-    ["月1回までの更新", "採用背景、注力職種、承認済みの企業提供事実を毎月1回更新できます。"],
-  ];
-
-  const timeline = en ? [
-    ["Month 1", "Build the sponsored page, define the hiring story, add tracked links, run two newsletters and one PR post, then establish the baseline report."],
-    ["Month 2", "Use the first month’s reading and click data to sharpen the priority role and message. Run two newsletters, one PR post and one content update."],
-    ["Month 3", "Repeat distribution, deliver the third report and compare tracked outcomes with the company’s existing recruitment channels."],
-  ] : [
-    ["1カ月目", "企業ページを制作し、採用ストーリーと計測リンクを設定。ニュースレター2回、X配信1回を実施し、基準値をレポートします。"],
-    ["2カ月目", "初月の閲覧・クリックを踏まえて注力職種と訴求を更新。ニュースレター2回、X配信1回、情報更新1回を実施します。"],
-    ["3カ月目", "同じ配信頻度を継続し、3回目のレポートで既存採用チャネルと比較できる判断材料をまとめます。"],
-  ];
-
-  const process = en ? [
-    ["Fit review", "We confirm the company, active roles and relevance to Genba readers."],
-    ["Source intake", "You provide official URLs, approved facts, hiring context and priority roles."],
-    ["Draft & fact check", "Genba creates the page. The company checks factual accuracy, not editorial conclusions."],
-    ["Start the pilot", "After payment, the first monthly measurement and distribution cycle begins."],
-  ] : [
-    ["適合性確認", "企業、募集中求人、Genba読者との関連性を確認します。"],
-    ["情報提出", "公式URL、承認済み事実、採用背景、注力職種をご提出いただきます。"],
-    ["制作・事実確認", "Genbaが原稿を制作。企業は事実を確認し、編集結論は変更しません。"],
-    ["実証開始", "支払い後、初月の計測・配信サイクルを開始します。"],
+    ["発見", "求人媒体や知名度だけでは出会えなかった企業を、読者の新しい選択肢として届けます。"],
+    ["理解", "公開情報をもとに、製品、Buyer、市場、営業職としての面白さを整理し、Genba分析と分けて伝えます。"],
+    ["適切な接点", "サイトと「Genba発掘」を通じて、読者に本当に関係するスポンサー情報だけを届けます。"],
   ];
 
   return (
     <>
-      <section className="page-hero advertise-hero advertise-hero-v2">
+      <section className="page-hero advertise-hero advertise-simple-hero">
         <Container>
           <div className="advertise-language-row">
-            <span>{en ? "PARTNERSHIP / JAPAN" : "GENBA PARTNERSHIP"}</span>
+            <span>{en ? "SPONSORSHIP INQUIRY" : "SPONSORSHIP / PARTNERSHIP"}</span>
             <div aria-label={en ? "Language" : "言語切り替え"}>
               <Link href="/advertise" className={!en ? "is-active" : ""}>日本語</Link>
               <Link href="/en/advertise" className={en ? "is-active" : ""}>English</Link>
             </div>
           </div>
-          <div className="page-hero-grid">
-            <div>
-              <p className="eyebrow">{en ? "FOUNDING PILOT — THREE PARTNERS ONLY" : "初期3社限定・実証パートナー"}</p>
-              <h1>{en ? "Make a lesser-known global company understandable before candidates apply." : "知名度の差を、\n企業理解で埋める。"}</h1>
-              <p className="page-lead">{en ? "Genba reaches people working in—or seriously considering—global IT and SaaS sales in Japan. We turn product, market-entry and sales-organisation context into a measurable hiring narrative, starting with one month." : "Genbaは、外資IT・SaaS営業の現役層と予備軍が企業を深く比較するためのメディアです。求人票だけでは伝わらない製品、市場、営業組織の背景を、まず1カ月の継続発信と計測へ変えます。"}</p>
-              <div className="advertise-hero-proof">
-                <span>{en ? "Best for" : "最も価値が出る企業"}</span>
-                <strong>{en ? "1–4 Japan sales hires / Founding GTM / Specialist recruiters" : "営業採用1〜4名・日本進出直後・外資営業特化エージェント"}</strong>
-              </div>
-            </div>
-            <aside className="advertise-price-card" aria-label={en ? "Pilot pricing and term" : "実証料金と期間"}>
-              <span>{en ? "ONE-MONTH PILOT" : "まず1カ月の実証プラン"}</span>
-              <div><strong>{en ? "¥80k" : "8万円"}</strong><small>{en ? "+ tax / month" : "（税別）/ 月"}</small></div>
-              <p>{en ? "For our first few partners, sponsorship starts at the pilot rate of ¥80,000 + tax for one month. Three months are recommended for meaningful measurement. Limited to the first three approved partners." : "初めの数社様限定で、まず1カ月・8万円（税別）の「実証プラン」としてスポンサー枠をご提供します。効果測定のため、3カ月の継続を推奨します。審査を通過した初期3社限定です。"}</p>
-              <a href="#inquiry" className="button button-primary">{en ? "Discuss the pilot" : "実証プランを相談する"}</a>
-            </aside>
+          <div className="advertise-simple-hero-copy">
+            <p className="eyebrow">{en ? "FOR COMPANIES THAT CAN CREATE READER VALUE" : "読者に価値を届けたい企業へ"}</p>
+            <h1>{en ? "Reach people who want to understand global IT companies—not just see another ad." : "広告ではなく、\n新しい企業との出会いを。"}</h1>
+            <p className="page-lead">{en ? "Genba is an independent Japanese media publication for people working in, or seriously considering, global IT and SaaS careers. We selectively welcome sponsorship inquiries that help readers discover and understand relevant companies, roles and services." : "Genbaは、外資IT・SaaSで働く人と、次のキャリアを本気で考える人のための独立系メディアです。読者が新しい企業や選択肢を発見し、深く理解する助けになるスポンサーのご相談を、限定的に受け付けています。"}</p>
+            <a href="#inquiry" className="button button-primary">{en ? "Contact Genba" : "スポンサー掲載について相談する"}</a>
           </div>
         </Container>
       </section>
 
       <section className="content-section">
         <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide">
-            <p className="eyebrow">{en ? "WHERE GENBA CREATES THE MOST VALUE" : "最も費用対効果が出やすい企業"}</p>
-            <h2>{en ? "The role is attractive. The missing piece is context." : "求人の魅力ではなく、理解不足で候補から外れている。"}</h2>
-            <p>{en ? "Genba is not a replacement for every recruitment channel. It is most useful when qualified candidates need a credible reason to understand an unfamiliar company before they are ready to apply." : "Genbaはあらゆる採用媒体の代替ではありません。優秀な候補者が、まだ知らない企業を応募候補として理解するまでの情報不足を埋めるとき、最も価値が出ます。"}</p>
+          <div className="advertise-section-heading">
+            <p className="eyebrow">{en ? "WHO READS GENBA" : "想定読者"}</p>
+            <h2>{en ? "A focused audience making career decisions in global IT." : "外資ITの次の選択肢を、真剣に探している人たち。"}</h2>
           </div>
-          <div className="advertise-fit-grid">
-            {bestFits.map((item, index) => <article key={item.title}>
-              <div className="advertise-fit-stat"><strong>{item.number}</strong><span>{item.label}</span></div>
-              <span className="advertise-fit-index">0{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-              <small>{item.signal}</small>
-            </article>)}
-          </div>
-        </Container>
-      </section>
-
-      <section className="content-section surface-section">
-        <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide">
-            <p className="eyebrow">{en ? "FROM HIRING PROBLEM TO MEASURABLE SIGNAL" : "採用課題から、測れる判断材料まで"}</p>
-            <h2>{en ? "A three-step hiring communication system." : "認知、理解、公式求人への行動をつなぐ。"}</h2>
-            <p>{en ? "The pilot is designed to create an explainable path from an unfamiliar employer name to measurable interest—not to promise applications or hires." : "応募数や採用を保証する商品ではありません。知られていない企業が比較対象に入り、理解され、公式求人へ進むまでを計測できる形にします。"}</p>
-          </div>
-          <div className="advertise-value-flow" role="list">
-            <article role="listitem"><span>01</span><small>{en ? "HIRING FRICTION" : "採用上の摩擦"}</small><h3>{en ? "Candidates cannot judge an unfamiliar employer." : "知らない企業は、検討する前に候補から外れる。"}</h3><p>{en ? "A title and compensation range do not explain Japan-stage risk, the buyer, sales motion or support system." : "職種名と条件だけでは、日本事業の段階、Buyer、営業モーション、支援体制まで判断できません。"}</p></article>
-            <b aria-hidden="true">→</b>
-            <article role="listitem"><span>02</span><small>{en ? "GENBA INTERVENTION" : "Genbaの介在"}</small><h3>{en ? "Give the company a credible, persistent narrative." : "応募前に、企業と仕事を深く理解できる状態を作る。"}</h3><p>{en ? "A sponsored page, six newsletters and three PR posts repeat the story without changing Genba’s independent analysis." : "企業ページ、ニュースレター6回、X配信3回で、編集の独立性を守りながら採用背景を継続発信します。"}</p></article>
-            <b aria-hidden="true">→</b>
-            <article role="listitem"><span>03</span><small>{en ? "DECISION EVIDENCE" : "社内判断の証拠"}</small><h3>{en ? "Measure attention and official-job intent." : "閲覧と公式求人クリックを、月次で比較する。"}</h3><p>{en ? "Tracked links and monthly reports let the hiring team compare Genba with its existing channels using the same internal definitions." : "計測リンクと月次レポートにより、既存チャネルと同じ社内基準で費用対効果を比較できます。"}</p></article>
-          </div>
-        </Container>
-      </section>
-
-      <section className="content-section advertise-economics-section">
-        <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide">
-            <p className="eyebrow">{en ? "THE RECOMMENDED THREE-MONTH ECONOMICS" : "推奨3カ月の費用対効果"}</p>
-            <h2>{en ? "Start at ¥80,000, then measure with enough time to learn." : "まず8万円から始め、十分な期間で効果を測る。"}</h2>
-            <p>{en ? "The first month is available on its own. Continuing for three months is recommended so monthly reports can show changes rather than a single snapshot. The figures below illustrate how to evaluate the recommended three-month total; they are not forecasts." : "初月だけでも開始できます。単月のスナップショットではなく変化を比較できるよう、月次レポートを3回蓄積する継続を推奨します。以下は推奨3カ月総額を社内で評価するための計算例であり、成果予測ではありません。"}</p>
-          </div>
-          <div className="advertise-economics-grid">
-            <div className="advertise-investment-card">
-              <span>{en ? "RECOMMENDED THREE-MONTH TOTAL" : "推奨3カ月の合計"}</span>
-              <strong>¥240,000</strong>
-              <small>{en ? "+ tax / three months" : "税別 / 3カ月"}</small>
-              <div><p><b>6</b>{en ? "newsletter placements" : "ニュースレター掲載"}</p><p><b>3</b>{en ? "PR posts on X" : "XでのPR配信"}</p><p><b>3</b>{en ? "monthly reports" : "月次レポート"}</p></div>
-            </div>
-            <div className="advertise-calculation-card">
-              <span>{en ? "ILLUSTRATIVE UNIT ECONOMICS" : "単価計算の例"}</span>
-              <div><p>{en ? "If Genba drives" : "Genba経由で"}<strong>30</strong>{en ? "tracked job clicks" : "件の公式求人クリック"}</p><b>=</b><p><strong>¥8,000</strong>{en ? "per click" : "/ クリック"}</p></div>
-              <div><p>{en ? "If Genba is attributed to" : "Genba経由と確認できる"}<strong>3</strong>{en ? "interviews" : "件の面接"}</p><b>=</b><p><strong>¥80,000</strong>{en ? "per interview" : "/ 面接"}</p></div>
-              <div><p>{en ? "If Genba is attributed to" : "Genba経由と確認できる"}<strong>1</strong>{en ? "hire" : "名の採用"}</p><b>=</b><p><strong>¥240,000</strong>{en ? "per hire" : "/ 採用"}</p></div>
-              <small>{en ? "Calculation examples only. They are not traffic, interview or hiring forecasts." : "上記は計算例であり、クリック数・面接数・採用数を予測または保証するものではありません。"}</small>
-            </div>
-          </div>
-          <div className="advertise-decision-grid">
-            <article><span>01</span><h3>{en ? "Set the baseline" : "既存チャネルの基準値を置く"}</h3><p>{en ? "Record your current cost per qualified job click, interview and hire for the same roles." : "同じ職種について、既存媒体の公式求人クリック単価、面接単価、採用単価を確認します。"}</p></article>
-            <article><span>02</span><h3>{en ? "Use tracked outcomes" : "Genba経由を計測する"}</h3><p>{en ? "Use tracked links plus the company’s own source question at application or interview stage." : "計測リンクに加え、応募・面接時の流入元確認を企業側の運用に組み込みます。"}</p></article>
-            <article><span>03</span><h3>{en ? "Make the continuation decision" : "毎月、継続を判断する"}</h3><p>{en ? "Review results monthly, then compare unit economics, candidate relevance and the reusable value of the company narrative after the recommended three months." : "毎月結果を確認し、推奨3カ月後には単価、候補者の関連性、企業理解コンテンツが残る価値をまとめて比較します。"}</p></article>
+          <div className="advertise-audience-grid">
+            {audiences.map((item) => (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
 
       <section className="content-section surface-section">
         <Container>
-          <div className="advertise-plan-grid">
-            <div className="advertise-plan-copy">
-              <p className="eyebrow">{en ? "WHAT THE PILOT INCLUDES" : "実証プランに含まれるもの"}</p>
-              <h2>{en ? "One plan. Seven concrete deliverables." : "提供内容を、7つに固定。"}</h2>
-              <p>{en ? "The plan combines a durable company asset, repeated distribution and evidence for a renewal decision. There are no success fees and no access to individual reader data." : "企業理解の資産、継続配信、継続判断のための計測を一つにまとめます。成功報酬はなく、読者個人データは提供しません。"}</p>
-              <div className="advertise-plan-terms"><div><span>{en ? "PRICE" : "費用"}</span><strong>{en ? "¥80k / mo" : "月額8万円"}</strong><small>{en ? "+ tax" : "税別"}</small></div><div><span>{en ? "TERM" : "期間"}</span><strong>{en ? "Start with 1 month" : "まず1カ月"}</strong><small>{en ? "3 months recommended" : "効果測定は3カ月推奨"}</small></div></div>
-            </div>
-            <ol className="advertise-inclusion-list">
-              {inclusions.map(([title, body], index) => <li key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{title}</strong><p>{body}</p></div></li>)}
-            </ol>
+          <div className="advertise-section-heading">
+            <p className="eyebrow">{en ? "THE VALUE OF GENBA" : "このメディアの価値"}</p>
+            <h2>{en ? "Turn unfamiliar names into informed consideration." : "知らなかった会社を、検討できる会社へ。"}</h2>
+            <p>{en ? "Genba does not sell rankings or favourable conclusions. We create a credible path from discovery to understanding, then to the company’s official information." : "Genbaが売るのは、順位や好意的な評価ではありません。企業との発見をつくり、仕事として判断できる理解へつなぎ、公式情報へ届けます。"}</p>
           </div>
-        </Container>
-      </section>
-
-      <section className="content-section">
-        <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "THE RECOMMENDED THREE-MONTH RHYTHM" : "推奨3カ月の進め方"}</p><h2>{en ? "Start for one month, learn monthly, decide with evidence." : "まず1カ月から始め、毎月学び、数字で判断する。"}</h2></div>
-          <div className="advertise-timeline">{timeline.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
-          <div className="advertise-policy-strip"><strong>{en ? "EDITORIAL BOUNDARY" : "編集上の境界"}</strong><span>{en ? "Sponsored and PR labels are explicit" : "Sponsored・PRを明示"}</span><span>{en ? "Company facts stay separate from Genba analysis" : "企業提供事実とGenba分析を分離"}</span><span>{en ? "No paid ranking or favourable conclusion" : "順位・分析結論は販売しない"}</span><span>{en ? "Aggregate reporting only" : "レポートは集計値のみ"}</span></div>
-        </Container>
-      </section>
-
-      <section className="content-section surface-section">
-        <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "HOW IT STARTS" : "掲載開始まで"}</p><h2>{en ? "Four steps to start the first month." : "4ステップで初月の実証を開始。"}</h2></div>
-          <div className="advertise-process-grid">{process.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
+          <div className="advertise-simple-value-grid">
+            {values.map(([title, body], index) => (
+              <article key={title}>
+                <span>0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
+          <div className="advertise-policy-strip">
+            <strong>{en ? "EDITORIAL POLICY" : "編集方針"}</strong>
+            <span>{en ? "Sponsored content is clearly labelled" : "広告・スポンサー表記を明示"}</span>
+            <span>{en ? "Editorial analysis remains independent" : "対価で評価・分析を変更しない"}</span>
+            <span>{en ? "No individual reader data is shared" : "読者の個人データを提供しない"}</span>
+          </div>
         </Container>
       </section>
 
       <section id="inquiry" className="content-section advertise-inquiry-section">
-        <Container>
-          <div className="advertise-section-heading advertise-section-heading-wide"><p className="eyebrow">{en ? "PILOT INQUIRY" : "実証パートナーの相談"}</p><h2>{en ? "See whether Genba fits your Japan hiring challenge." : "自社の採用課題に合うか、まず確認する。"}</h2><p>{en ? "We review audience fit, official hiring activity and conflicts before accepting a partner. Paid activity begins only after the required legal and employment-policy checks are complete." : "読者との適合性、公式求人、利益相反を確認した上で掲載可否をご連絡します。有料契約の開始は、必要な法務・勤務先規定の確認完了後です。"}</p></div>
+        <Container className="advertise-inquiry-layout">
+          <div className="advertise-section-heading">
+            <p className="eyebrow">{en ? "INQUIRY" : "お問い合わせ"}</p>
+            <h2>{en ? "Tell us what you would like readers to discover." : "まずは、届けたい価値を教えてください。"}</h2>
+            <p>{en ? "We review audience relevance and editorial fit before discussing any placement. Pricing and details are shared individually after we understand the inquiry." : "読者との関連性と編集方針への適合を確認したうえで、掲載方法をご相談します。料金や詳細は、お問い合わせ内容を確認後に個別にご案内します。"}</p>
+          </div>
           <AdvertiseInquiryForm language={language} />
         </Container>
       </section>
