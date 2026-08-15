@@ -13,6 +13,20 @@ export const metadata: Metadata = {
   title: { absolute: "Genba - 小中規模外資IT企業研究所" },
   description: "転職のたびにOTEを上げてきた現役外資SaaS AEが、日本の外資SaaS採用市場を毎日ウォッチ。情報収集・面接準備に役立つ知見を無料で届けます。",
   alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Genba",
+    title: "Genba - 小中規模外資IT企業研究所",
+    description: "転職のたびにOTEを上げてきた現役外資SaaS AEが、日本の外資SaaS採用市場を毎日ウォッチ。情報収集・面接準備に役立つ知見を無料で届けます。",
+    images: [{ url: "/og-genba-v3.png", width: 1200, height: 630, alt: "Genba - 小中規模外資IT企業研究所" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Genba - 小中規模外資IT企業研究所",
+    description: "転職のたびにOTEを上げてきた現役外資SaaS AEが、日本の外資SaaS採用市場を毎日ウォッチ。情報収集・面接準備に役立つ知見を無料で届けます。",
+    images: ["/og-genba-v3.png"],
+  },
 };
 
 export default function HomePage() {
