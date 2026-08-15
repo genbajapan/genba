@@ -3,7 +3,16 @@ import { getAllPostsMeta } from "@/lib/posts";
 import { companies, jobs } from "@/lib/market-data";
 
 const siteUrl = "https://genbajapan.com";
-const staticInfoPaths = ["/newsletter", "/advertise", "/en/advertise", "/methodology", "/about", "/contact", "/privacy"];
+const staticInfoPaths = [
+  "/newsletter",
+  "/newsletter/issues/001",
+  "/advertise",
+  "/en/advertise",
+  "/methodology",
+  "/about",
+  "/contact",
+  "/privacy",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestCompanyUpdate = companies.reduce(

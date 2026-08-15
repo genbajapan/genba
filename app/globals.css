@@ -309,6 +309,37 @@ button, input, select { font: inherit; }
 .newsletter-status-card h1 { max-width: 590px; margin: 13px 0 20px; color: var(--navy); font-size: clamp(34px,5vw,50px); letter-spacing: -.045em; line-height: 1.15; }
 .newsletter-status-card > p:not(.eyebrow) { max-width: 610px; color: var(--muted); font-size: 14px; line-height: 1.85; }
 .newsletter-status-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.newsletter-issue-page { background: var(--canvas); }
+.newsletter-issue-hero { padding: 58px 0 50px; background: var(--navy); color: white; }
+.newsletter-issue-hero .eyebrow { color: #70d3c5; }
+.newsletter-issue-hero h1 { margin: 14px 0 0; font-size: clamp(42px,6vw,68px); letter-spacing: -.055em; line-height: 1.02; }
+.newsletter-issue-hero > div > p:not(.eyebrow) { margin: 20px 0 0; color: #c4d3d9; font-size: 18px; }
+.newsletter-issue-meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 32px; padding-top: 22px; border-top: 1px solid #315061; color: #91a9b3; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.newsletter-issue-shell { max-width: 860px; padding-top: 55px; padding-bottom: 78px; }
+.newsletter-issue-intro { padding: 38px 42px; border: 1px solid var(--line); background: white; }
+.newsletter-issue-intro p { margin: 0; color: var(--ink); font-size: 14px; line-height: 1.9; }
+.newsletter-issue-intro p + p { margin-top: 14px; }
+.newsletter-issue-list { margin-top: 42px; border-top: 1px solid var(--line); }
+.newsletter-company { display: grid; grid-template-columns: 108px minmax(0,1fr); gap: 35px; padding: 42px 0; border-bottom: 1px solid var(--line); }
+.newsletter-company-index strong,.newsletter-company-index span { display: block; }
+.newsletter-company-index strong { color: var(--signal); font-size: 30px; letter-spacing: -.04em; line-height: 1; }
+.newsletter-company-index span { margin-top: 8px; color: var(--muted); font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.newsletter-company-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.newsletter-company-title h2 { margin: 0; color: var(--navy); font-size: 31px; letter-spacing: -.04em; line-height: 1.05; }
+.newsletter-company-title p { margin: 8px 0 0; color: var(--muted); font-size: 11px; font-weight: 700; }
+.newsletter-company-status { flex-shrink: 0; padding: 6px 9px; font-size: 9px; font-weight: 850; }
+.newsletter-company-status.active { background: #dff2e8; color: #176a48; }
+.newsletter-company-status.hiring { background: #e2edf7; color: #2d5f86; }
+.newsletter-company-status.preentry { background: #eee8f8; color: #655184; }
+.newsletter-company-body > p { margin: 23px 0 0; color: var(--ink); font-size: 14px; line-height: 1.9; }
+.newsletter-company-perspective { padding: 20px 22px; border-left: 3px solid var(--signal); background: white; }
+.newsletter-company-perspective strong { display: block; margin-bottom: 5px; color: var(--navy); }
+.newsletter-company-body > a { display: inline-block; margin-top: 22px; padding-bottom: 4px; border-bottom: 1px solid var(--signal); color: var(--signal); font-size: 12px; font-weight: 850; text-decoration: none; }
+.newsletter-issue-cta { margin-top: 52px; padding: 42px; background: white; border: 1px solid var(--line); }
+.newsletter-issue-cta h2 { margin: 10px 0 0; color: var(--navy); font-size: clamp(28px,4vw,38px); letter-spacing: -.04em; }
+.newsletter-issue-cta > p:not(.eyebrow) { max-width: 650px; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.newsletter-issue-cta .button { margin-top: 25px; }
+.newsletter-issue-note { margin: 25px 0 0; color: var(--muted); font-size: 10px; line-height: 1.75; }
 .privacy-policy { max-width: 820px; }
 
 .page-hero { padding: 68px 0 45px; border-bottom: 1px solid var(--line); background: white; }
@@ -1191,6 +1222,20 @@ button, input, select { font: inherit; }
   .newsletter-status-card { padding: 32px 24px; }
   .newsletter-status-actions { align-items: stretch; flex-direction: column; }
   .newsletter-status-actions .button { width: 100%; }
+  .newsletter-issue-hero { padding: 45px 0 38px; }
+  .newsletter-issue-hero > div > p:not(.eyebrow) { font-size: 15px; }
+  .newsletter-issue-shell { padding-top: 28px; padding-bottom: 55px; }
+  .newsletter-issue-intro { padding: 27px 23px; }
+  .newsletter-company { grid-template-columns: 1fr; gap: 17px; padding: 34px 0; }
+  .newsletter-company-index { display: flex; align-items: baseline; gap: 10px; }
+  .newsletter-company-index strong { font-size: 24px; }
+  .newsletter-company-index span { margin-top: 0; }
+  .newsletter-company-title { align-items: flex-start; }
+  .newsletter-company-title h2 { font-size: 27px; }
+  .newsletter-company-body > p { font-size: 13px; }
+  .newsletter-company-perspective { padding: 17px 18px; }
+  .newsletter-issue-cta { padding: 30px 23px; }
+  .newsletter-issue-cta .button { width: 100%; text-align: center; }
   .page-hero { padding: 50px 0 36px; }
   .advertise-language-row { margin-bottom: 30px; }
   .advertise-hero-proof { align-items: flex-start; flex-direction: column; }
