@@ -62,7 +62,7 @@ export default function HomePage() {
       </section>
 
       <div className="trust-bar">
-        <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>更新日を明記</span><span>事実と分析を分離</span><span>広告は明示</span></div></Container>
+        <Container className="trust-inner"><span className="trust-label">編集原則</span><div className="trust-points"><span>公式情報を優先</span><span>更新日を明記</span><span>事実と分析を分離</span></div></Container>
       </div>
 
       <section className="content-section founder-note-section">
