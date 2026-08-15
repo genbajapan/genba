@@ -78,6 +78,7 @@
 
 - `ops/x-content-strategy.md`のトピック・トーン・優先基準に従う
 - 直近の下書き・投稿履歴と重複しないトピックを選ぶ
+- Genbaへのリンクには`ops/x-content-strategy.md`のUTMを付け、プレースホルダーではなく最終URLを保存する
 - `content/x/drafts/`へ保存し、明示依頼がなければ投稿しない
 
 ## 4. SEO/AEOの最適化状況を点検する

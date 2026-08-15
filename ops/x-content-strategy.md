@@ -1,6 +1,6 @@
 # Genba X(@chosenshi08)投稿戦略
 
-最終更新: 2026-08-07
+最終更新: 2026-08-15
 
 `ops/daily-workflow.md`のステップ4(コンテンツ候補を作る)から参照される、X投稿下書きの詳細方針。ここに書く内容は`ops/guardrails.md`・`ops/job-publication-and-sponsor-policy.md`の上位ルールに従う前提とする。
 
@@ -51,3 +51,22 @@ X上の外資IT界隈のリアルタイムトレンドには直接アクセス�
 ## 5. 運用
 
 `/genba-daily`実行時に、この戦略に沿ってX下書きを1〜2本作成する。トピックは前回までの投稿と重複しないよう、直近の下書き・投稿履歴を確認してからローテーションする。
+
+### 5-1. Genbaへのリンク計測
+
+X投稿から`genbajapan.com`へ遷移させるリンクには、公開前に以下のUTMパラメータを必ず付ける。外部の公式サイトや採用ページへ直接リンクする場合は付けない。
+
+- `utm_source=x`
+- `utm_medium=organic_social`
+- `utm_campaign=YYYYMMDD_<topic>`（投稿日と投稿テーマ。半角英小文字・数字・アンダースコアのみ）
+- `utm_content=post_<NN>`（同じキャンペーン内の投稿・クリエイティブ識別子）
+
+例:
+
+`https://genbajapan.com/companies/elastic?utm_source=x&utm_medium=organic_social&utm_campaign=20260815_elastic&utm_content=post_01`
+
+- 投稿本文にGenbaへのリンクを置く場合、下書きの時点でプレースホルダーではなく最終URLを記載する
+- 既存のクエリパラメータがあるURLでは、`?`を重ねず`&`でUTMを追加する
+- 同じ投稿内の同じ遷移先には同じUTMを使い、A/B案や返信欄の別導線は`utm_content`を変えて識別する
+- UTM値へ氏名、メールアドレス、企業の非公開情報などを入れない
+- 公開前にリンク先が200で表示されることと、4つのUTMが保持されることを確認する
