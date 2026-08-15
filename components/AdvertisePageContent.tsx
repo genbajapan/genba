@@ -54,7 +54,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
           </div>
           <div className="advertise-simple-hero-copy">
             <p className="eyebrow">{en ? "FOR COMPANIES SERIOUS ABOUT WINNING IN JAPAN" : "日本市場を本気で取りにいく企業へ"}</p>
-            <h1>{en ? "Build the Japan team that can win the market." : "日本市場を勝ちにいく会社と、\n本気でキャリアを選ぶ人材をつなぐ。"}</h1>
+            <h1>{en ? "For global IT companies serious about winning in Japan.\nGlobal IT professionals looking for their next challenge are gathering at Genba." : "日本市場を本気で勝ちにいく外資IT企業へ。\n次の挑戦を探す外資戦士たちが、Genbaに集まっています。"}</h1>
             <p className="page-lead">{en ? "Genba delivers useful, decision-grade intelligence every day to ambitious professionals working in, or seriously considering, global IT and SaaS careers in Japan. We welcome sponsors prepared to invest in exceptional talent and build a genuinely strong Japan organisation—not simply fill an advertising slot." : "Genbaは、外資IT・SaaSで成果を出す現役層と、次の挑戦を真剣に選ぶ人へ、企業とキャリアを判断するための価値ある情報を日々届けます。スポンサーとして迎えたいのは、広告枠を埋めたい会社ではなく、日本市場を取りにいくために、優秀な人材と強い組織づくりへ本気で投資する会社です。"}</p>
             <a href="#inquiry" className="button button-primary">{en ? "Contact Genba" : "スポンサー掲載について相談する"}</a>
           </div>
