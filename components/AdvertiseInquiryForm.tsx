@@ -71,13 +71,13 @@ export default function AdvertiseInquiryForm({ language = "ja" }: { language?: "
           <input name="website" type="url" inputMode="url" placeholder="https://" autoComplete="url" />
         </label>
         <label className="advertise-form-wide">
-          <span>{isEnglish ? "Your Japan market and team-building ambition *" : "日本市場・組織づくりについて *"}</span>
-          <textarea name="message" required rows={5} placeholder={isEnglish ? "Tell us about the Japan market you want to create, the team you need and why the opportunity matters to exceptional candidates." : "日本で実現したいこと、採用したい人材、候補者に伝えたい挑戦の価値を簡単にご記載ください。"} />
+          <span>{isEnglish ? "Message *" : "ご相談内容 *"}</span>
+          <textarea name="message" required rows={5} placeholder={isEnglish ? "Briefly tell us what you would like to discuss." : "掲載を検討している企業・求人・サービスや、ご質問を簡単にご記載ください。"} />
         </label>
       </div>
       <div className="advertise-form-submit">
         <div>
-          <strong>{isEnglish ? "We will review relevance before replying" : "読者との関連性を確認してご返信します"}</strong>
+          <strong>{isEnglish ? "We will reply after reviewing your message" : "内容を確認のうえご返信します"}</strong>
           <p>{isEnglish ? "Your entries are not stored on Genba. The button opens a prepared message in your email app." : "入力内容はGenba上に保存されません。ボタンを押すと、お使いのメールアプリで相談メールが開きます。"}</p>
         </div>
         <button type="submit" className="button button-primary">{isEnglish ? "Open inquiry email" : "相談メールを開く"}</button>

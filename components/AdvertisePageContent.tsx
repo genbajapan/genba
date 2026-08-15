@@ -108,8 +108,8 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
         <Container className="advertise-inquiry-layout">
           <div className="advertise-section-heading">
             <p className="eyebrow">{en ? "INQUIRY" : "お問い合わせ"}</p>
-            <h2>{en ? "Tell us how seriously you intend to build in Japan." : "日本市場と組織づくりへの本気を、聞かせてください。"}</h2>
-            <p>{en ? "Tell us about the market you want to create, the team you need to build and why the opportunity matters to exceptional candidates. We review audience relevance and editorial fit before discussing placement or pricing." : "日本でどの市場をつくり、どんな組織を築き、なぜ優秀な人材にとって挑戦する価値があるのかを教えてください。読者との関連性と編集方針への適合を確認したうえで、掲載方法や料金を個別にご案内します。"}</p>
+            <h2>{en ? "Contact us about sponsorship." : "スポンサー掲載について相談する。"}</h2>
+            <p>{en ? "Send us a short introduction to your company or service and what you would like to discuss. We will reply after reviewing your message, and share placement options and pricing individually." : "会社・サービスの概要と、ご相談内容を簡単にお送りください。内容を確認のうえ返信し、掲載方法や料金を個別にご案内します。"}</p>
           </div>
           <AdvertiseInquiryForm language={language} />
         </Container>
