@@ -1,35 +1,12 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import AdvertiseInquiryForm from "@/components/AdvertiseInquiryForm";
+import AudienceList from "@/components/AudienceList";
 
 type Language = "ja" | "en";
 
 export default function AdvertisePageContent({ language = "ja" }: { language?: Language }) {
   const en = language === "en";
-
-  const audiences = en ? [
-    {
-      label: "CURRENT PROFESSIONALS",
-      title: "People already working in global IT and SaaS",
-      body: "Sales professionals who compare products, markets, sales motions and the reality of Japan teams—not company names alone.",
-    },
-    {
-      label: "FUTURE CANDIDATES",
-      title: "Skilled, confident professionals from Japanese IT companies",
-      body: "Readers seriously exploring a global IT career and looking beyond famous employers to discover smaller global companies and promising companies that have not yet entered Japan.",
-    },
-  ] : [
-    {
-      label: "CURRENT PROFESSIONALS",
-      title: "外資IT・SaaSで働く現役層",
-      body: "企業名だけでなく、製品、市場、営業モーション、日本組織の実態まで比較して次のキャリアを考える人たちです。",
-    },
-    {
-      label: "FUTURE CANDIDATES",
-      title: "実力と自信を備える日系IT層",
-      body: "有名企業だけでなく、まだ知られていない小中規模外資や、日本進出前の注目企業まで選択肢を広げたい人たちです。",
-    },
-  ];
 
   const values = en ? [
     ["Discovery", "Introduce companies readers would not have found through job boards or name recognition alone."],
@@ -67,15 +44,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
             <p className="eyebrow">{en ? "WHO READS GENBA" : "想定読者"}</p>
             <h2>{en ? "Professionals ready to take on a serious challenge at small and mid-sized global companies." : "小中規模の外資で本気で挑戦をしたい戦士達"}</h2>
           </div>
-          <div className="advertise-audience-grid">
-            {audiences.map((item) => (
-              <article key={item.label}>
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
+          <AudienceList language={language} />
         </Container>
       </section>
 

@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import JobCard from "@/components/JobCard";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import AudienceList from "@/components/AudienceList";
 import HiringHeatmap from "@/components/HiringHeatmap";
 import RandomCompanyGrid from "@/components/RandomCompanyGrid";
 import { getCompanyCardSummary } from "@/lib/company-card-summary";
@@ -114,40 +115,7 @@ export default function HomePage() {
             </summary>
 
             <div className="audience-body">
-              <div className="audience-list">
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>よく見る大手/外資以外をしっかりとみてみたい。</h3><p>テリトリー、OTE、昇進機会、日本事業の余白まで比較したい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>今すぐ転職しなくても、次に動く企業は普段から知っておきたい</h3><p>新規求人、採用拡大、日本参入の変化を、転職活動より前から追いたい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>日系IT・SaaSで培った営業経験を、外資SaaSで試したい</h3><p>外資特有の報酬・評価・職種の仕組みと、自分の経験が生きる場所を知りたい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>SDR・BDRからAEへ、次のステップを本気で考えている</h3><p>社内昇進と転職を比べ、AEとして挑戦できる組織とタイミングを見極めたい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>日本立ち上げや、次の営業マネジャーの席を探している</h3><p>一人目なのか拡大フェーズなのか。採用順序から企業の投資本気度を読みたい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>面接の準備を効率良く、解像度高くやりたい</h3><p>各企業研究ページの内容をおさえている候補者はほぼいません。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>日本未進出でアツそうな外資に早めに目をつけたい</h3><p>海外の成長、APAC展開、日本対応を観測し、将来の一人目AEや初期GTMの機会を先回りしたい。</p></div>
-                </article>
-                <article className="audience-item">
-                  <span className="audience-check" aria-hidden="true">✓</span>
-                  <div><h3>SE・CS・Partner Salesとして、日本事業と一緒に成長したい</h3><p>AE求人だけでなく、製品力、国内導入、パートナー戦略から事業全体を見たい。</p></div>
-                </article>
-              </div>
+              <AudienceList />
             </div>
           </details>
 
