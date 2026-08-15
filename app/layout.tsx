@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import GenbaChatWidget from "@/components/GenbaChatWidget";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const siteUrl = "https://genbajapan.com";
 const description =
@@ -56,6 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         {children}
+        <GoogleAnalytics />
         <GenbaChatWidget />
       </body>
     </html>
