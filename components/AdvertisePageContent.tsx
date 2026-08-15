@@ -15,8 +15,8 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
     },
     {
       label: "FUTURE CANDIDATES",
-      title: "People seriously considering their next global IT role",
-      body: "Readers looking beyond famous employers to discover smaller global companies and promising companies that have not yet entered Japan.",
+      title: "Strong professionals from Japanese IT companies considering a move into global IT",
+      body: "Readers seriously exploring a global IT career and looking beyond famous employers to discover smaller global companies and promising companies that have not yet entered Japan.",
     },
   ] : [
     {
@@ -26,7 +26,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
     },
     {
       label: "FUTURE CANDIDATES",
-      title: "外資ITへの転職を本気で考える予備軍",
+      title: "外資ITへの転職を本気で考えている、実力ある日系IT出身層",
       body: "有名企業だけでなく、まだ知られていない小中規模外資や、日本進出前の注目企業まで選択肢を広げたい人たちです。",
     },
   ];
