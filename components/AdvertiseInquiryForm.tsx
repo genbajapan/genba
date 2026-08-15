@@ -71,8 +71,8 @@ export default function AdvertiseInquiryForm({ language = "ja" }: { language?: "
           <input name="website" type="url" inputMode="url" placeholder="https://" autoComplete="url" />
         </label>
         <label className="advertise-form-wide">
-          <span>{isEnglish ? "What would you like Genba readers to discover? *" : "読者に届けたい内容・ご相談内容 *"}</span>
-          <textarea name="message" required rows={5} placeholder={isEnglish ? "Briefly tell us about your company, role, service or proposed partnership." : "会社・求人・サービスの概要や、ご希望の取り組みを簡単にご記載ください。"} />
+          <span>{isEnglish ? "Your Japan market and team-building ambition *" : "日本市場・組織づくりについて *"}</span>
+          <textarea name="message" required rows={5} placeholder={isEnglish ? "Tell us about the Japan market you want to create, the team you need and why the opportunity matters to exceptional candidates." : "日本で実現したいこと、採用したい人材、候補者に伝えたい挑戦の価値を簡単にご記載ください。"} />
         </label>
       </div>
       <div className="advertise-form-submit">

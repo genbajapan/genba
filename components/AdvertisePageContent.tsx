@@ -53,9 +53,9 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
             </div>
           </div>
           <div className="advertise-simple-hero-copy">
-            <p className="eyebrow">{en ? "FOR COMPANIES THAT CAN CREATE READER VALUE" : "読者に価値を届けたい企業へ"}</p>
-            <h1>{en ? "Reach people who want to understand global IT companies—not just see another ad." : "広告ではなく、\n新しい企業との出会いを。"}</h1>
-            <p className="page-lead">{en ? "Genba is an independent Japanese media publication for people working in, or seriously considering, global IT and SaaS careers. We selectively welcome sponsorship inquiries that help readers discover and understand relevant companies, roles and services." : "Genbaは、外資IT・SaaSで働く人と、次のキャリアを本気で考える人のための独立系メディアです。読者が新しい企業や選択肢を発見し、深く理解する助けになるスポンサーのご相談を、限定的に受け付けています。"}</p>
+            <p className="eyebrow">{en ? "FOR COMPANIES SERIOUS ABOUT WINNING IN JAPAN" : "日本市場を本気で取りにいく企業へ"}</p>
+            <h1>{en ? "Build the Japan team that can win the market." : "日本市場を勝ちにいく会社と、\n本気でキャリアを選ぶ人材をつなぐ。"}</h1>
+            <p className="page-lead">{en ? "Genba delivers useful, decision-grade intelligence every day to ambitious professionals working in, or seriously considering, global IT and SaaS careers in Japan. We welcome sponsors prepared to invest in exceptional talent and build a genuinely strong Japan organisation—not simply fill an advertising slot." : "Genbaは、外資IT・SaaSで成果を出す現役層と、次の挑戦を真剣に選ぶ人へ、企業とキャリアを判断するための価値ある情報を日々届けます。スポンサーとして迎えたいのは、広告枠を埋めたい会社ではなく、日本市場を取りにいくために、優秀な人材と強い組織づくりへ本気で投資する会社です。"}</p>
             <a href="#inquiry" className="button button-primary">{en ? "Contact Genba" : "スポンサー掲載について相談する"}</a>
           </div>
         </Container>
@@ -108,8 +108,8 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
         <Container className="advertise-inquiry-layout">
           <div className="advertise-section-heading">
             <p className="eyebrow">{en ? "INQUIRY" : "お問い合わせ"}</p>
-            <h2>{en ? "Tell us what you would like readers to discover." : "まずは、届けたい価値を教えてください。"}</h2>
-            <p>{en ? "We review audience relevance and editorial fit before discussing any placement. Pricing and details are shared individually after we understand the inquiry." : "読者との関連性と編集方針への適合を確認したうえで、掲載方法をご相談します。料金や詳細は、お問い合わせ内容を確認後に個別にご案内します。"}</p>
+            <h2>{en ? "Tell us how seriously you intend to build in Japan." : "日本市場と組織づくりへの本気を、聞かせてください。"}</h2>
+            <p>{en ? "Tell us about the market you want to create, the team you need to build and why the opportunity matters to exceptional candidates. We review audience relevance and editorial fit before discussing placement or pricing." : "日本でどの市場をつくり、どんな組織を築き、なぜ優秀な人材にとって挑戦する価値があるのかを教えてください。読者との関連性と編集方針への適合を確認したうえで、掲載方法や料金を個別にご案内します。"}</p>
           </div>
           <AdvertiseInquiryForm language={language} />
         </Container>
