@@ -65,7 +65,7 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
         <Container>
           <div className="advertise-section-heading">
             <p className="eyebrow">{en ? "WHO READS GENBA" : "想定読者"}</p>
-            <h2>{en ? "A focused audience making career decisions in global IT." : "外資ITの次の選択肢を、真剣に探している人たち。"}</h2>
+            <h2>{en ? "Professionals ready to take on a serious challenge at small and mid-sized global companies." : "小中規模の外資で本気で挑戦をしたい戦士達"}</h2>
           </div>
           <div className="advertise-audience-grid">
             {audiences.map((item) => (
