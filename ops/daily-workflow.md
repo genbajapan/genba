@@ -122,18 +122,27 @@ X投稿、メール配信、スポンサー連絡はこの自動公開に含め�
 
 ### 7-1. スケジュール実行(自動トリガー)時の例外
 
-`/genba-daily`をスケジュール実行(人が都度依頼せず自動起動)する場合に限り、以下の「軽微な変更」だけは実行ごとの承認を得ずに`npm run check`成功を条件に自動でpush・公開してよい(2026-08-10、Jio承認。`PROJECT_RULES.md`7章参照)。
+`/genba-daily`をスケジュール実行(人が都度依頼せず自動起動)する場合に限り、以下の「軽微な変更」と「標準フォーマットによる新規企業追加」は、実行ごとの承認を得ずに`npm run check`成功を条件に自動でpush・公開してよい(2026-08-10、2026-08-16 Jio承認。`PROJECT_RULES.md`7章参照)。
 
 **軽微な変更に該当する(自動公開してよい)**
 
 - 公式ページ・ATSで404/掲載終了を確認できた求人を、募集終了として`hiringStatus`等へ反映する
 - 内容に変更がなかった企業・求人の`lastChecked`(最終確認日)だけを更新する
 
+**新規企業追加として自動公開してよい**
+
+- `ops/daily-task-workflow.md`の選定配分・調査基準を満たす新規企業
+- 共通の`CompanyIntelligenceProfile`・`CompanyPublicIntelligence`型と`ops/company-selling-playbook-standard.md`に従う標準企業ページ
+- その新規企業と同時に公式Career・公式ATSで確認した公式求人、採用シグナル
+- 上記に必要な一覧・sitemap・`llms.txt`等の既存標準導線への登録
+
+企業固有UI、新しいデータ構造、標準外セクション、確認不能な情報、法務・利益相反上の懸念がある内容は自動公開に含めない。
+
 **軽微な変更に該当しない(スケジュール実行でも従来通り承認が必要)**
 
-- 新規求人の追加(`descriptionSummary`・`genbaTake`・`compensationReality`・`desiredProfile`・`careerInsights`等の分析を伴うもの)
+- 既存企業への新規求人の追加(`descriptionSummary`・`genbaTake`・`compensationReality`・`desiredProfile`・`careerInsights`等の分析を伴うもの)
 - 既存求人のタイトル・要件・セグメントなど内容面の変更
-- 新規企業の追加、企業ページ(`company-public-intelligence.ts`)の内容変更
+- 既存企業ページ(`company-public-intelligence.ts`)の分析結論・構成・内容変更
 - X下書きの投稿、ニュースレター配信、その他編集コンテンツの公開
 
 この区分に迷う変更は「軽微」に含めず、通常フロー(下書きまで作成して停止・報告)に従う。自動公開した場合も8章の報告内容を作成し、次にJioが確認できる形で残す。
