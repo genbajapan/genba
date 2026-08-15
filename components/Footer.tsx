@@ -9,7 +9,6 @@ const copy: Record<Locale, { tagline: string; nav: { href: string; label: string
       { href: "/companies", label: "企業" },
       { href: "/jobs", label: "求人" },
       { href: "/methodology", label: "調査方針" },
-      { href: "/advertise", label: "掲載・広告" },
       { href: "/about", label: "運営情報" },
     ],
   },
@@ -30,7 +29,6 @@ export default function Footer({ locale = "en", displayLanguage = "ja" }: { loca
     { href: "/companies", label: "Companies (Japanese)" },
     { href: "/jobs", label: "Jobs (Japanese)" },
     { href: "/methodology", label: "Methodology (Japanese)" },
-    { href: "/en/advertise", label: "Partnership" },
     { href: "/about", label: "About (Japanese)" },
   ] : base.nav;
 
