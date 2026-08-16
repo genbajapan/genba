@@ -9,7 +9,7 @@ const profiles: Profile[] = [
   {
     checkedAt, slug: "adyen", name: "Adyen", jobUrl: "https://careers.adyen.com/vacancies/7601353-team-lead-sales", officialUrl: "https://www.adyen.com/ja_JP/", customersUrl: "https://www.adyen.com/ja_JP/press-and-media/hoshino-resorts-rolls-out-adyen-payment-platform", externalUrl: "https://www.meti.go.jp/policy/mono_info_service/cashless/index.html", financeUrl: "https://investors.adyen.com/financials/2025", publicInfo: { ticker: "ADYEN", exchange: "Euronext Amsterdam", listedSince: "2018年" },
     salesSnapshot: "Adyenは、Digital・Finance・Retail・Operationsが抱えるonline・店頭・platform決済の分断、承認率、不正、reconciliation、越境展開の課題をsingle platformで解く会社。TokyoのTeam Lead, Salesは日本のEnterprise sellerを率い、coaching、pipeline、forecast、executive relationshipを持つ。PSP置換ではなく、顧客体験と収益基盤の再設計をteamで再現する営業が面白い。",
-    growthSummary: "Adyenは2025年通期のnet revenueを€2.36B、processed volumeを€1.47T、EBITDA marginを55%と公表。日本単体の売上・顧客数・営業達成率は非公開。",
+    growthSummary: "Adyenは2025年通期の純収益を23.64億ユーロ、決済取扱高を1.394兆ユーロ、EBITDAマージンを53%と公表。日本単体の売上・顧客数・営業達成率は非公開。",
     milestones: [
       { year: "2006", label: "創業", detail: "legacy payment stackを置き換えるsingle platformとして開始。", source: "company" },
       { year: "2018", label: "上場", detail: "Euronext Amsterdamへ上場。", source: "finance" },
@@ -30,9 +30,9 @@ const profiles: Profile[] = [
     ],
     openingHook: "同じ顧客がonlineと店舗を行き来した時、決済成功率、fraud、購買履歴、返金を一つのjourneyとして見られますか。", valueHypothesis: "authorization、conversion、payment success、fraud loss、refund、reconciliation time、new-market launch time、payment TCOを測る。", objection: "国内PSPと既存POS・gatewayで十分。", reframe: "現在の手数料だけでなく、channel追加、海外展開、障害、不正、data統合、経理運用まで含む収益機会とTCOで比較する。",
     facts: [
-      { label: "2025年純収益", value: "€23.6億（約4,366億円）", detail: "2025年の年次報告書。1ユーロ=185円で概算。", source: "finance" },
-      { label: "2025年取扱高", value: "€1.47兆（約272兆円）", detail: "会社公表値。1ユーロ=185円で概算。", source: "finance" },
-      { label: "2025年EBITDAマージン", value: "55%", detail: "会社公表値。", source: "finance" },
+      { label: "2025年純収益", value: "23.64億ユーロ（約4,374億円）", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年取扱高", value: "1.394兆ユーロ（約258兆円）", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年EBITDAマージン", value: "53%", detail: "2025年通期の会社公表値。", source: "finance" },
     ],
     customers: [
       { company: "星野リゾート", products: "Adyen payment platform", outcome: "予約・対面・KIOSKにまたがる決済を一つのplatformへ統合し、国内外全施設へ展開予定。", implication: "hospitalityの複雑なjourneyとglobal expansionを同時に扱う国内proof。" },
@@ -122,9 +122,17 @@ built.adyen.sources.push(
   { id: "adyen-wolt-japan", label: "Adyen 日本の3Dセキュア動向・Wolt事例", url: "https://www.adyen.com/ja_JP/knowledge-hub/post-3ds-mandate-in-japan", kind: "企業公式", scope: "本人認証・不正対策・購入完了率", checkedAt },
   { id: "adyen-global-leadership", label: "Adyen 公式経営陣", url: "https://www.adyen.com/about/team", kind: "企業公式", scope: "Co-CEO・日本カントリーマネージャー", checkedAt: adyenCheckedAt },
   { id: "adyen-gbiz-japan", label: "Gビズインフォ Adyen Japan株式会社", url: "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6010401141832", kind: "公的機関", scope: "本店所在地・社会保険適用事業所の被保険者数", checkedAt: adyenCheckedAt },
+  { id: "adyen-annual-report-2025", label: "Adyen 2025年年次報告書", url: "https://investors.adyen.com/financials/2025", kind: "法定開示", scope: "通期業績・地域別業績・リスク・日本への投資", checkedAt: adyenCheckedAt },
+  { id: "adyen-q1-2026", label: "Adyen 2026年第1四半期事業アップデート", url: "https://investors.adyen.com/financials/q1-2026-4jxrap", kind: "企業公式", scope: "直近の事業進捗・Talon.One買収方針", checkedAt: adyenCheckedAt },
+  { id: "adyen-talon-one", label: "AdyenによるTalon.One買収発表", url: "https://investors.adyen.com/events/7cvesgb8bvr5", kind: "企業公式", scope: "ロイヤルティ・販促領域への製品拡張", checkedAt: adyenCheckedAt },
+  { id: "adyen-orb", label: "AdyenによるOrb買収発表", url: "https://investors.adyen.com/events/qxmuuiwffoz2", kind: "企業公式", scope: "請求・決済基盤への製品拡張", checkedAt: adyenCheckedAt },
+  { id: "adyen-tap-to-pay-japan", label: "Adyen 日本でTap to Pay on iPhoneを提供", url: "https://www.adyen.com/press-and-media/adyen-now-offers-tap-to-pay-on-iphone-for-merchants-in-japan", kind: "企業公式", scope: "日本の対面決済機能への追加投資", checkedAt: adyenCheckedAt },
 );
 const adyenFoundedMilestone = built.adyen.marketStatus.milestones.find((milestone) => milestone.label === "創業");
 if (adyenFoundedMilestone) adyenFoundedMilestone.sourceId = "adyen-about";
+if (built.adyen.marketStatus.isPublic) {
+  built.adyen.marketStatus.stockLinkUrl = "https://live.euronext.com/en/product/equities/NL0012969182-XAMS";
+}
 
 built.adyen.overviewLeadership = [
   {
@@ -189,6 +197,136 @@ built.adyen.salesMarketOutlook = {
     { company: "Wolt", need: "3Dセキュアとリスクベース認証を両立し、不正対策による購入離脱を抑える。公式事例ではリピーターの購入完了率が5％超向上。", sourceId: "adyen-wolt-japan" },
   ],
   sourceIds: ["adyen-cashless-2025", "adyen-acquiring-japan", "adyen-unified-commerce-japan", "adyen-country-manager-japan", "adyen-job"],
+};
+
+built.adyen.marketStatus.genbaVerdict = {
+  headline: "日本は『参入済み』から、決済手段・規制対応・国内大手導入を積み上げる拡張局面",
+  body: "Adyenは2025年に純収益を前年比18%伸ばし、APACの純収益も14%増加した。日本では東京のFTEが40人から49人へ増え、PayPay対応、3Dセキュア義務化への対応、国内データセンター運用の試験、星野リゾートへの展開を進めている。日本への継続投資は確認できる一方、日本単体の純収益、顧客数、市場シェアは非開示であり、国内事業の規模や採算までは断定できない。",
+};
+
+built.adyen.marketStatus.capitalMarketRead = {
+  asOf: "2026年8月17日",
+  metrics: [
+    {
+      label: "2025年純収益",
+      value: "23.64億ユーロ（約4,374億円）",
+      change: "前年比 +18%（為替一定 +21%）",
+      interpretation: "既存顧客の利用拡大に加え、大企業とプラットフォーム企業の新規獲得が成長を支えた。",
+      sourceId: "adyen-annual-report-2025",
+    },
+    {
+      label: "EBITDAマージン",
+      value: "53%",
+      change: "前年から +3ポイント",
+      interpretation: "人員・製品・データセンターへ投資しながら利益率を高めており、単一基盤の規模の効果が表れている。",
+      sourceId: "adyen-annual-report-2025",
+    },
+    {
+      label: "APAC純収益",
+      value: "2.365億ユーロ（約438億円）",
+      change: "前年比 +14% / 全社の10%",
+      interpretation: "APACは成長を続けるが、全社に占める割合はまだ1割。日本を含む地域別の伸びしろと実行余地が残る。",
+      sourceId: "adyen-annual-report-2025",
+    },
+    {
+      label: "東京拠点のFTE",
+      value: "49人",
+      change: "40人から +23%",
+      interpretation: "売上だけでは見えない日本への投入量を示す材料。年次報告書上は営業・サポート拠点として開示されている。",
+      sourceId: "adyen-annual-report-2025",
+    },
+  ],
+  growthDrivers: [
+    {
+      title: "店舗とオンラインをつなぐユニファイドコマース",
+      evidence: "2025年のユニファイドコマース純収益は前年比30%増。対面決済は全決済取扱高の18%から22%へ上昇した。",
+      japanMeaning: "小売、旅行・ホテル、D2Cで、EC・店舗・KIOSK・訪日客対応を同じ決済データで扱う需要と重なる。",
+      sourceIds: ["adyen-annual-report-2025", "adyen-customers"],
+    },
+    {
+      title: "プラットフォームと周辺機能への拡張",
+      evidence: "2025年のプラットフォーム純収益は前年比50%増。2026年にはTalon.OneとOrbの買収を進め、販促・ロイヤルティ、請求まで製品範囲を広げている。",
+      japanMeaning: "決済だけでなく、SaaS・マーケットプレイスの請求、販促、加盟店管理まで商談を広げられる一方、買収製品の日本対応時期は未開示。",
+      sourceIds: ["adyen-annual-report-2025", "adyen-q1-2026", "adyen-talon-one", "adyen-orb"],
+    },
+    {
+      title: "日本固有の決済・規制・運用へのローカライズ",
+      evidence: "年次報告書は、PayPay追加、3Dセキュア義務化への対応、主要都市でのデータセンター運用試験を日本での進捗として明記した。",
+      japanMeaning: "グローバル製品を持ち込む段階から、国内大手が選定できる機能・認証・可用性を整える段階へ進んでいる。",
+      sourceIds: ["adyen-annual-report-2025", "adyen-wolt-japan"],
+    },
+  ],
+  risks: [
+    {
+      title: "景気・決済量",
+      disclosedRisk: "関税や通商政策が、特にAPACに本社を置く大手オンライン小売の成長を抑えた。消費や顧客投資の減速は決済量へ波及する。",
+      companyResponse: "業種・地域・顧客の分散、手数料型モデル、外部環境の監視と顧客支援で影響を抑える。",
+      genbaRead: "日本は地域分散に寄与するが、国内消費や訪日需要が弱まれば小売・旅行の案件拡大は遅れる。",
+      sourceIds: ["adyen-annual-report-2025"],
+    },
+    {
+      title: "競争・価格",
+      disclosedRisk: "銀行、決済代行、業界特化ソフトウェア、決済オーケストレーション、新規参入との競争があり、一部競合は価格を攻められる。",
+      companyResponse: "持続不可能な価格競争を避け、単一基盤、機能、グローバルなライセンスとデータで差別化する。2025年の解約率は特定1社を除き1%未満。",
+      genbaRead: "日本では国内PSPの関係性と移行負荷が強い。手数料ではなく、承認率・運用費・海外展開を含む総効果を証明できるかが鍵。",
+      sourceIds: ["adyen-annual-report-2025"],
+    },
+    {
+      title: "サイバー・可用性",
+      disclosedRisk: "情報セキュリティと停止リスクは高い。2025年にはDDoS攻撃で一時的なサービス影響が1件発生した。",
+      companyResponse: "単一障害点を避ける設計、十分な処理能力、情報セキュリティ指標、脅威監視、原因分析と基盤強化を実施した。",
+      genbaRead: "決済停止の影響が大きい国内大手ほど、国内データセンター、障害対応、復旧目標を営業が具体的に説明できる必要がある。",
+      sourceIds: ["adyen-annual-report-2025"],
+    },
+    {
+      title: "規制・ローカライズ実行",
+      disclosedRisk: "国ごとの規制対応とグローバル展開は複雑で、限られた人員を配分するため、すべての市場で同じ速度の現地化はできない。",
+      companyResponse: "自社ライセンス、現地のコンプライアンス体制、重点市場への選択投資で対応。日本では3Dセキュア、PayPay、データセンター試験を進めた。",
+      genbaRead: "日本の優先度は投資実績から確認できるが、国内機能の同等性、開発優先順位、拠点の拡張速度は面接で確かめたい。",
+      sourceIds: ["adyen-annual-report-2025"],
+    },
+  ],
+  japanCommitment: {
+    verdict: "継続投資を確認。ただし日本単体の事業規模は非開示",
+    summary: "人員増、責任者の任命、現地アクワイアリング、対面決済、国内決済手段、認証、データセンター試験、大手顧客の展開が一方向に積み上がっているため、短期的な実験ではなく重点市場として運営していると読める。ただし、日本の純収益や市場シェアを伴う開示はない。",
+    signals: [
+      { year: "2021", title: "国内アクワイアリング開始", detail: "日本の取引を現地で処理する体制を投入し、国内決済の基盤を作った。", sourceIds: ["adyen-acquiring-japan"] },
+      { year: "2022", title: "対面決済・ユニファイドコマース開始", detail: "オンラインに加えて店舗決済へ範囲を広げ、日本でのオムニチャネル提案を可能にした。", sourceIds: ["adyen-unified-commerce-japan"] },
+      { year: "2024", title: "日本責任者と対面決済機能を強化", detail: "日本カントリーマネージャーを任命し、Tap to Pay on iPhoneの国内提供を開始した。", sourceIds: ["adyen-country-manager-japan", "adyen-tap-to-pay-japan"] },
+      { year: "2025", title: "人員・決済手段・基盤・国内大手を同時に拡張", detail: "東京FTEは40人から49人へ増加。PayPay、3Dセキュア対応、データセンター試験に加え、星野リゾートで国内外施設への展開を進めた。", sourceIds: ["adyen-annual-report-2025", "adyen-customers"] },
+    ],
+    unknowns: [
+      "日本単体の純収益、成長率、顧客数、市場シェア",
+      "営業人員の目標達成率、採用後に再現すべき生産性",
+      "国内データセンターの本番運用時期と対象範囲",
+      "買収したTalon.One・Orbの日本語・国内決済対応ロードマップ",
+    ],
+  },
+  scenarios: [
+    {
+      scenario: "基本",
+      title: "大手小売・旅行・デジタル企業で段階的に拡大",
+      body: "オムニチャネル、訪日客、国内決済手段、認証・不正対策を入口に、既存の国内大手事例を横展開する。市場は伸びるが、移行期間が長いため成長は段階的になる。",
+    },
+    {
+      scenario: "上振れ",
+      title: "国内基盤と製品拡張が大型案件を加速",
+      body: "国内データセンターの本番運用、追加の国内決済手段、星野リゾート級の全社展開、Adyen Upliftや買収製品の日本投入が重なると、決済以外も含む案件単価と導入範囲が広がる。",
+    },
+    {
+      scenario: "下振れ",
+      title: "移行負荷と国内競争で投資回収が遅れる",
+      body: "国内PSP・Stripeとの価格や関係性、基幹・POS移行の長期化、規制・セキュリティ事故、グローバル製品の日本対応遅れが重なると、人員投資に対して売上の立ち上がりが遅れる。",
+    },
+  ],
+  sourceIds: [
+    "adyen-annual-report-2025",
+    "adyen-q1-2026",
+    "adyen-acquiring-japan",
+    "adyen-unified-commerce-japan",
+    "adyen-country-manager-japan",
+    "adyen-customers",
+  ],
 };
 
 built["mistral-ai"] = buildPreEntryIntelligence({

@@ -9,7 +9,7 @@ import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } fr
 import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
-import type { SalesFabeOverview } from "@/lib/company-public-intelligence";
+import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
 import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
@@ -81,6 +81,129 @@ function SalesFabeDetails({
         </div>
       </div>
     </details>
+  );
+}
+
+function CapitalMarketReadPanel({ intelligence }: { intelligence: CompanyPublicIntelligence }) {
+  const analysis = intelligence.marketStatus.capitalMarketRead;
+  if (!analysis) return null;
+
+  const sourceLinks = (sourceIds: string[]) => (
+    <span className="capital-read-source-links">
+      {sourceIds.map((sourceId) => {
+        const source = getResearchSource(intelligence, sourceId);
+        return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+      })}
+    </span>
+  );
+
+  return (
+    <div className="capital-read">
+      <section className="capital-read-section">
+        <div className="capital-read-heading">
+          <span>01 / FINANCIALS</span>
+          <h4>決算の数字をどう読むか</h4>
+          <p>{analysis.asOf}時点。会社公表値とGenbaの読みを分けて記載しています。</p>
+        </div>
+        <div className="capital-read-metrics">
+          {analysis.metrics.map((metric) => (
+            <article key={metric.label}>
+              <span>{metric.label}</span>
+              <strong>{metric.value}</strong>
+              <b>{metric.change}</b>
+              <p>{metric.interpretation}</p>
+              {sourceLinks([metric.sourceId])}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="capital-read-section">
+        <div className="capital-read-heading">
+          <span>02 / GROWTH</span>
+          <h4>成長性を支える根拠</h4>
+        </div>
+        <div className="capital-read-growth-grid">
+          {analysis.growthDrivers.map((driver, index) => (
+            <article key={driver.title}>
+              <span>0{index + 1}</span>
+              <h5>{driver.title}</h5>
+              <p>{driver.evidence}</p>
+              <div><strong>日本への意味</strong><p>{driver.japanMeaning}</p></div>
+              {sourceLinks(driver.sourceIds)}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="capital-read-section">
+        <div className="capital-read-heading">
+          <span>03 / RISK &amp; RESPONSE</span>
+          <h4>リスクと会社の対応</h4>
+          <p>会社が開示したリスク、その対応、採用候補者として確認すべき点を横並びで整理しています。</p>
+        </div>
+        <div className="capital-read-risk-table-wrap">
+          <table className="capital-read-risk-table">
+            <thead><tr><th>論点</th><th>開示されたリスク</th><th>会社の対応</th><th>Genbaの読み</th></tr></thead>
+            <tbody>
+              {analysis.risks.map((risk) => (
+                <tr key={risk.title}>
+                  <th scope="row">{risk.title}{sourceLinks(risk.sourceIds)}</th>
+                  <td>{risk.disclosedRisk}</td>
+                  <td>{risk.companyResponse}</td>
+                  <td>{risk.genbaRead}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="capital-read-section capital-read-japan">
+        <div className="capital-read-heading">
+          <span>04 / JAPAN COMMITMENT</span>
+          <h4>決算資料から見える日本への注力度</h4>
+        </div>
+        <div className="capital-read-japan-verdict">
+          <span>GENBAの評価</span>
+          <strong>{analysis.japanCommitment.verdict}</strong>
+          <p>{analysis.japanCommitment.summary}</p>
+        </div>
+        <div className="capital-read-signal-list">
+          {analysis.japanCommitment.signals.map((signal) => (
+            <article key={`${signal.year}-${signal.title}`}>
+              <span>{signal.year}</span>
+              <div><h5>{signal.title}</h5><p>{signal.detail}</p>{sourceLinks(signal.sourceIds)}</div>
+            </article>
+          ))}
+        </div>
+        <div className="capital-read-unknowns">
+          <strong>公開情報だけでは分からないこと</strong>
+          <ul>{analysis.japanCommitment.unknowns.map((item) => <li key={item}>{item}</li>)}</ul>
+        </div>
+      </section>
+
+      <section className="capital-read-section">
+        <div className="capital-read-heading">
+          <span>05 / 3–5 YEAR OUTLOOK</span>
+          <h4>日本での3〜5年の見立て</h4>
+        </div>
+        <div className="capital-read-scenarios">
+          {analysis.scenarios.map((item) => (
+            <article key={item.scenario} className={`capital-read-scenario-${item.scenario}`}>
+              <span>{item.scenario}シナリオ</span>
+              <h5>{item.title}</h5>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <footer className="capital-read-sources">
+        <span>主な参照資料</span>
+        {sourceLinks(analysis.sourceIds)}
+      </footer>
+    </div>
   );
 }
 
@@ -415,11 +538,11 @@ export default function CompanyIntelligenceProfile({
                   <details className="market-status-panel">
                     <summary className="market-status-toggle">
                       <div>
-                        <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
-                        <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
+                        <p className="card-index">{publicIntel.marketStatus.isPublic ? `上場企業 / ${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "上場前 / 株式非公開"}</p>
+                        <h3>{publicIntel.marketStatus.isPublic ? "決算資料から読み解く日本での成長性とリスク" : "IPOの兆しと海外公開情報から読み解く日本での成長性とリスク"}</h3>
                       </div>
                       <span className="market-status-toggle-action">
-                        <span className="market-status-open-label">会社の変遷・成長性を見る</span>
+                        <span className="market-status-open-label">分析を見る</span>
                         <span className="market-status-close-label">閉じる</span>
                         <i aria-hidden="true">＋</i>
                       </span>
@@ -440,6 +563,10 @@ export default function CompanyIntelligenceProfile({
                         </div>
                       )}
 
+                    {publicIntel.marketStatus.capitalMarketRead ? (
+                      <CapitalMarketReadPanel intelligence={publicIntel} />
+                    ) : (
+                      <>
                     {!publicIntel.marketStatus.genbaVerdict && (
                       <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
                     )}
@@ -615,9 +742,11 @@ export default function CompanyIntelligenceProfile({
                         </div>
                       );
                     })()}
+                      </>
+                    )}
 
                       {(publicIntel.marketStatus.isPublic || publicIntel.marketStatus.genbaVerdict) && (
-                        <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。{publicIntel.marketStatus.isPublic ? "株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。" : ""}</p>
+                        <p className="market-status-disclaimer">上記は公開情報に基づくGenba分析です。{publicIntel.marketStatus.isPublic ? "株価はリンク先で最新値をご確認ください。投資判断を目的とした情報ではありません。" : ""}</p>
                       )}
                     </div>
                   </details>

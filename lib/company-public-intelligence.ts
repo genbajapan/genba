@@ -136,8 +136,50 @@ export type RiskHypothesis = {
   sourceIds: string[];
 };
 
+export type CapitalMarketGrowthRead = {
+  asOf: string;
+  metrics: Array<{
+    label: string;
+    value: string;
+    change: string;
+    interpretation: string;
+    sourceId: string;
+  }>;
+  growthDrivers: Array<{
+    title: string;
+    evidence: string;
+    japanMeaning: string;
+    sourceIds: string[];
+  }>;
+  risks: Array<{
+    title: string;
+    disclosedRisk: string;
+    companyResponse: string;
+    genbaRead: string;
+    sourceIds: string[];
+  }>;
+  japanCommitment: {
+    verdict: string;
+    summary: string;
+    signals: Array<{
+      year: string;
+      title: string;
+      detail: string;
+      sourceIds: string[];
+    }>;
+    unknowns: string[];
+  };
+  scenarios: Array<{
+    scenario: "基本" | "上振れ" | "下振れ";
+    title: string;
+    body: string;
+  }>;
+  sourceIds: string[];
+};
+
 // 深掘り分析(調査が完了した企業のみpopulate。未設定の企業は従来通りの簡易表示になる)
 type MarketStatusDeepDive = {
+  capitalMarketRead?: CapitalMarketGrowthRead;
   genbaVerdict?: GenbaVerdict;
   growthDrivers?: GrowthDriver[];
   japanGrowth?: JapanGrowthAnalysis;
