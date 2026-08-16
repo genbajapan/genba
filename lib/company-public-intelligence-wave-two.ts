@@ -23,7 +23,7 @@ export type Profile = {
   valueHypothesis: string;
   objection: string;
   reframe: string;
-  facts: Array<{ label: string; value: string; detail: string; source?: "company" | "customers" | "external" | "finance" | "job" }>;
+  facts: Array<{ label: string; value: string; secondaryValue?: string; detail: string; source?: "company" | "customers" | "external" | "finance" | "job" }>;
   customers: Array<{ company: string; products: string; outcome: string; implication: string }>;
   externalSignals: Array<{ label: string; value: string; detail: string; caveat: string }>;
   role: string;

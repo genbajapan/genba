@@ -30,6 +30,7 @@ export type ResearchSource = {
 export type PublicFact = {
   label: string;
   value: string;
+  secondaryValue?: string;
   detail: string;
   sourceIds: string[];
 };

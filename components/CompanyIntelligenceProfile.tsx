@@ -685,6 +685,7 @@ export default function CompanyIntelligenceProfile({
                           <article key={fact.label}>
                             <span>{fact.label}</span>
                             <strong>{fact.value}</strong>
+                            {fact.secondaryValue && <small className="public-fact-secondary-value">{fact.secondaryValue}</small>}
                             <p>{fact.detail}</p>
                             {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
                           </article>

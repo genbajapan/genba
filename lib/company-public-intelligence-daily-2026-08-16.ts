@@ -30,8 +30,8 @@ const profiles: Profile[] = [
     ],
     openingHook: "同じ顧客がonlineと店舗を行き来した時、決済成功率、fraud、購買履歴、返金を一つのjourneyとして見られますか。", valueHypothesis: "authorization、conversion、payment success、fraud loss、refund、reconciliation time、new-market launch time、payment TCOを測る。", objection: "国内PSPと既存POS・gatewayで十分。", reframe: "現在の手数料だけでなく、channel追加、海外展開、障害、不正、data統合、経理運用まで含む収益機会とTCOで比較する。",
     facts: [
-      { label: "2025年純収益", value: "23.64億ユーロ（約4,374億円）", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
-      { label: "2025年取扱高", value: "1.394兆ユーロ（約258兆円）", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年純収益", value: "23.64億ユーロ", secondaryValue: "約4,374億円", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年取扱高", value: "1.394兆ユーロ", secondaryValue: "約258兆円", detail: "2025年年次報告書。1ユーロ=185円で概算。", source: "finance" },
       { label: "2025年EBITDAマージン", value: "53%", detail: "2025年通期の会社公表値。", source: "finance" },
     ],
     customers: [

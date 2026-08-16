@@ -613,11 +613,13 @@ button, input, select { font: inherit; }
 .public-fact-grid article:hover { transform: translateY(-3px); border-color: #8fc9bd; box-shadow: 0 14px 32px rgba(11,38,56,.08); }
 .public-fact-grid article > span { color: #64777f; font-size: 11px; font-weight: 800; }
 .public-fact-grid strong { display: block; margin-top: 15px; background: linear-gradient(135deg, var(--navy), #0a6d63); background-clip: text; -webkit-background-clip: text; color: transparent; font-size: 25px; letter-spacing: -.035em; }
+.public-fact-secondary-value { display: block; margin-top: 3px; color: #567176; font-size: 13px; font-weight: 800; line-height: 1.35; }
 .public-fact-grid p { min-height: 36px; margin: 9px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .public-fact-grid a { display: inline-block; margin-top: 12px; color: var(--signal); font-size: 11px; font-weight: 750; text-decoration: none; }
 .public-fact-grid-compact { gap: 6px; margin-top: 8px; }
 .public-fact-grid-compact article { min-height: 132px; padding: 15px 14px 13px; }
 .public-fact-grid-compact strong { margin-top: 9px; font-size: 20px; line-height: 1.25; }
+.public-fact-grid-compact .public-fact-secondary-value { margin-top: 2px; font-size: 12px; }
 .public-fact-grid-compact p { min-height: 0; margin-top: 6px; font-size: 10px; line-height: 1.45; }
 .public-fact-grid-compact a { margin-top: 7px; font-size: 10px; }
 .public-fact-grid-merged { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; margin-top: 0; border-top: 1px solid #d3e1de; background: #f1f8f6; }
