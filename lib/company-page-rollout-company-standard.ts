@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  aghanim: {
+    category: "モバイルゲームD2C・決済・LiveOps",
+    hq: "ロサンゼルス（米国）／リスボン（ポルトガル）",
+    japanPresence: "日本向けRemote team（日本法人・officeは確認不能）",
+    description: "mobile game向けGame Hub、Merchant of Record、LiveOpsを提供。日本でHead of BDとCustomer Success Producerを公式募集する一方、国内顧客・売上は非公開。",
+    lastChecked: "2026-08-17",
+  },
+  airwallex: {
+    category: "グローバル決済・金融インフラ",
+    hq: "サンフランシスコ（米国）／シンガポール",
+    japanPresence: "Airwallex Japan株式会社・東京都港区（2023年電子決済等代行業、2025年第二種資金移動業登録）",
+    description: "payments、FX、account、card、treasury、embedded financeをglobal展開。日本はonline決済を提供し、営業・partner・operationsの対象6求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  amplitude: {
+    category: "プロダクトアナリティクス・実験基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Amplitude Analytics GK・東京（現住所・設立年月・人数は非公開）",
+    description: "product analytics、session replay、experimentation、feature management、AIを提供。2026年8月17日時点で日本の現行公式求人は0件。",
+    lastChecked: "2026-08-17",
+  },
+  anthropic: {
+    category: "フロンティアAI・Enterprise AI基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Anthropic Japan GK・東京（2025年10月開設）",
+    description: "Claude、API、Code、Enterprise、MCPを提供。東京の現行12求人のうち、Sales、Channel、Applied AI、CS、Supportの対象9件を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  asana: {
+    category: "ワークマネジメント・AI協働基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "アサナジャパン株式会社・東京都千代田区丸の内（2019年に日本語版・東京office）",
+    description: "Goal、Portfolio、Project、Task、workflow、AI TeammatesをWork Graphで接続。東京でCorporate Account Executiveを公式募集。",
+    lastChecked: "2026-08-17",
+  },
   okta: {
     category: "アイデンティティ・アクセス管理・セキュリティ",
     hq: "カリフォルニア州サンフランシスコ（米国）",

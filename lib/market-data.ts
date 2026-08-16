@@ -5,6 +5,7 @@ import { companies20260813WaveThree, jobs20260813WaveThree } from "@/lib/company
 import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08-14";
 import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-additions-2026-08-14-wave-two";
 import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08-15";
+import { jobs20260817BatchSix } from "@/lib/company-additions-2026-08-17-batch-06";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1055,7 +1056,7 @@ const waveTwoJobs: Job[] = [
     fit: "country buildと社会infra missionの両方に強く動機づけられるsenior sellerに向く。", thingsToKnow: "Japan install base、local SE/IR、distributor責任、POC、ACV、達成率は非公開。", marketValue: "OT security、critical infrastructure、channelとcountry ownershipの希少性。",
   }),
   makeWaveTwoJob({
-    id: "anthropic-enterprise-ae-transportation-utilities-japan", companySlug: "anthropic", title: "Enterprise Account Executive, Transportation & Utilities", segment: "Enterprise / Industry", location: "東京", workStyle: "Tokyo based", language: "日本語 / 英語", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5104755008" },
+    id: "anthropic-enterprise-ae-transportation-utilities-japan", companySlug: "anthropic", title: "Enterprise Account Executive, Transportation & Utilities", segment: "Enterprise / Industry", location: "東京", workStyle: "office 25%以上", language: "日本語・英語（excellent）", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5104755008" },
     descriptionSummary: "鉄道、航空、物流、電力・gas・waterの大手へClaudeを提案し、new logoと既存拡張のfull sales cycleを持つvertical AE。",
     genbaTake: "AI seatを売るより、critical operationでhuman oversight、安全、reliability、cost、業務成果を同じevaluationへ載せる。",
     desiredProfile: "公式求人はenterprise sales、transport/utilitiesのdomain、C-level engagement、complex deal、AIへのtechnical curiosityを重視。",
@@ -1305,6 +1306,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchSix,
   ...jobs20260816,
   ...jobs20260814WaveTwo,
   ...jobs20260815,
@@ -2803,8 +2805,8 @@ const jobRecords: Job[] = [
     careerInsights: { fit: "business designとAPI/integrationをつなぎ、顧客のlaunchを最後まで動かしたい人に向く。demoだけのSCを望む人にはdelivery責任が重い。", thingsToKnow: "同時担当数、平均導入期間、partner分担、travel、go-live KPI、support handoff、夜間global連携は非公開。", marketValue: "Enterprise marketplaceのarchitectureとrolloutを主導した実績は、Commerce Architect、Professional Services、Value Consultingで評価されやすい。", tenureAndPromotion: "Japan consulting teamの在籍・離職・promotion dataは未公開。ICからlead/managerへのpathを確認したい。", priorCompanies: "求人要件から、EC導入、SI、solution architecture、project management経験者が中心と考えられる(仮説)。", nextCompanies: "公開傾向は未確認。隣接性からSolution Architect、Professional Services Lead、Commerce Transformationが候補になる(仮説)。" },
   },
   {
-    id: "airwallex-account-executive-japan", companySlug: "airwallex", title: "Account Executive, Japan", segment: "SME & Growth / Full-cycle", location: "東京", workStyle: "公式求人で確認", language: "日本語ネイティブ / 英語ビジネス", firstSeen: "2026-08-12", lastChecked: "2026-08-13",
-    source: { label: "Airwallex Careers", url: "https://careers.airwallex.com/job/da172780-d69c-4685-8112-239fe1a04616/account-executive-japan/" },
+    id: "airwallex-account-executive-japan", companySlug: "airwallex", title: "Account Executive, Japan", segment: "SME & Growth / Full-cycle", location: "東京", workStyle: "オンサイト / フルタイム", language: "日本語ネイティブ / 英語ビジネス", firstSeen: "2026-08-12", lastChecked: "2026-08-17",
+    source: { label: "Airwallex Careers", url: "https://jobs.ashbyhq.com/airwallex/da172780-d69c-4685-8112-239fe1a04616" },
     descriptionSummary: "日本のSME・Growth企業と日本企業の海外展開を対象に、prospecting、discovery、demo、negotiation、closeまでを担当。Finance ManagerからCEOへpaymentsとglobal financial infrastructureを提案する。",
     genbaTake: "決済手数料の比較ではなく、海外売上のconversion、入金、FX、reconciliation、cash flowを経営数値へ変えるrole。日本で現在使える機能を正確に扱う必要がある。",
     compensationReality: "日本の給与、OTE、Pay Mix、equity、quotaは非公開。transaction volume、product別売上、new logo、cross-sellのcreditを確認したい。",
@@ -2903,6 +2905,7 @@ const closedJobIds = new Set([
   "schrodinger-senior-account-manager-japan",
   "okta-enterprise-ae-auth0",
   "amplitude-enterprise-ae",
+  "amplitude-commercial-ae",
   "glean-commercial-ae-japan",
   "qualtrics-commercial-ae",
   "qualtrics-enterprise-ae",

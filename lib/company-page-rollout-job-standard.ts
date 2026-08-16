@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -108,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  aghanim: {
+    name: "Aghanim", domain: "Mobile Gaming D2C・Payments・LiveOps", officialUrl: "https://jobs.ashbyhq.com/aghanim/0b7e0d14-4741-4439-bdba-67dca40af857",
+    positive: ["Head of BD Japanがmarket strategyからstudio・partner開拓、revenue、retention・expansionまでをend-to-endで持つfounding scope。", "Game Hub、Merchant of Record、LiveOpsをまとめ、決済手数料だけでなくplayer relationship、margin、LTVを事業caseにできる。"],
+    negative: ["日本法人、office、team、顧客、売上、導入KPIは非公開。公式product claimを顧客成果へ一般化できない。", "給与、bonus、quota、equity、雇用主体、delivery体制が非公開で、territoryの成立条件を面接で検証する必要がある。"],
+    next: ["Gaming Commerce・PaymentsのBusiness Development", "Japan Country Build・Partnerships", "Mobile Game LiveOps・Platform GTM"],
+  },
+  airwallex: {
+    name: "Airwallex", domain: "Global Payments・FinTech Infrastructure", officialUrl: "https://careers.airwallex.com/",
+    positive: ["日本でSales、Account、Partner、Operationsを同時採用し、online paymentsの販売とlocal operationsを作る体制が見える。", "globalではannualized revenue 13億米ドル、transaction volume 2,870億米ドル、90%超multi-product revenueを公表。"],
+    negative: ["日本で提供中と安全に確認できる中心はonline payments。Business Account等は準備中で、global portfolioをそのまま売れるとは限らない。", "日本売上・顧客・quota・給与は非公開。AUSTRACの外部監査命令も商談riskとして確認が必要。"],
+    next: ["Payments・FinTechのEnterprise／SME Sales", "Treasury・Spend・Embedded Finance GTM", "FinTech Operations・Partnerships Leadership"],
+  },
+  amplitude: {
+    name: "Amplitude", domain: "Product Analytics・Experimentation", officialUrl: "https://job-boards.greenhouse.io/amplitude",
+    positive: ["Q2 2026は売上+21%、ARR+22%、RPO+35%、FCFプラスで、analyticsからexperimentation・AIへproduct scopeを広げる。", "NTTドコモとLIFULLの国内事例はconversion、分析時間、実験速度の定量成果を持つ。"],
+    negative: ["現行日本求人は0件で、終了求人の給与・勤務・roleを現在へ転用できない。", "Q2はGAAP営業赤字。日本売上・人数・現住所・quotaは非公開で、旧日本法人情報には別会社混同riskがある。"],
+    next: ["Product Analytics・Growth Platform GTM", "Experimentation・Feature Management Sales", "Product Operations・Customer Data Platform"],
+  },
+  anthropic: {
+    name: "Anthropic", domain: "Frontier AI・Enterprise AI", officialUrl: "https://job-boards.greenhouse.io/anthropic?offices%5B%5D=4035213008",
+    positive: ["東京でindustry AE、Channel、Applied AI、CS、Supportを同時採用し、model saleからproduction・partner・expansionまで体制を広げる。", "Rakuten、NRI、NECの国内成果と、3大cloud経由を含むdeployment optionを持つ。"],
+    negative: ["470億米ドル超はrun-rate revenueで監査済み年間売上・ARRではない。利益・FCF、日本売上は非公開。", "model・price・提供条件の変化が速く、critical workloadでは供給継続、fallback、eval、安全性を競合と同条件で検証する必要がある。"],
+    next: ["Enterprise AIのStrategic／Industry AE", "AI Solutions Architecture・Customer Success", "Cloud・SI Ecosystem・AI Partnerships"],
+  },
+  asana: {
+    name: "Asana", domain: "Work Management・Human／AI Collaboration", officialUrl: "https://asana.com/ja/jobs/tokyo",
+    positive: ["Corporate AEがnew logoからstrategic upsellまでfull-cycleを持ち、SE・Marketing・CSとWork Graph・AI Teammatesを企業標準へ広げる。", "国内事例は会議時間、残業、report作成、paperless等の定量成果を持ち、workflow単位のbusiness caseを作れる。"],
+    negative: ["Q1 FY2027はGAAP赤字で、overall・Core・10万米ドル超DBNRRが96〜97%と100%未満。既存cohortはupsell込みで縮小。", "日本売上、顧客数、quota、達成率、給与・OTE、current日本責任者は非公開。新3 appsはcoming soonでGAと混同できない。"],
+    next: ["Work Management・CollaborationのCorporate／Enterprise AE", "AI Productivity・Agentic Workflow GTM", "PMO・Transformation・Business Operations Platform"],
+  },
   okta: {
     name: "Okta", domain: "Identity Security・Workforce／Customer Identity", officialUrl: "https://job-boards.greenhouse.io/oktajp",
     positive: ["OktaとAuth0のAE、Marketing、TAMを同時に採用し、workforce identityとcustomer identityを日本で広げる体制が見える。", "Q1 FY2027はGAAP営業黒字とFCFを確保し、大口顧客とRPOも増加。国内の運用時間短縮事例を持つ。"],
