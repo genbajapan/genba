@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  deepl: {
+    category: "言語AI・翻訳・文章支援",
+    hq: "ケルン（ドイツ）",
+    japanPresence: "DeepL Japan・東京（日本向け法人サービスと営業体制を展開）",
+    description: "翻訳、文章作成、音声通訳、APIを企業向けに提供するLanguage AI企業。東京で営業、CS、Solutions、Enablement、Product GTMの対象7職種を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  elevenlabs: {
+    category: "音声AI・会話型AI・コンテンツ制作",
+    hq: "ロンドン（英国）／ニューヨーク（米国）",
+    japanPresence: "ElevenLabs Japan合同会社・東京（2025年4月設立）",
+    description: "音声生成、音声認識、dubbing、会話型AI AgentとAPIを提供。日本で新規開拓のAccount Executiveと拡張を担うAccount Managerを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  mirakl: {
+    category: "企業向けマーケットプレイス・コマース基盤",
+    hq: "パリ（フランス）／ボストン（米国）",
+    japanPresence: "Mirakl株式会社・東京（2022年設立）",
+    description: "Marketplace、Dropship、seller・catalog管理、決済、広告を企業向けに提供。日本でSenior Account ExecutiveとSolution Consultantを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  "new-relic": {
+    category: "オブザーバビリティ・DevOps・クラウド運用",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "New Relic株式会社・東京（2018年8月設立）",
+    description: "metrics、logs、traces、errors、digital experienceを統合するobservability基盤。日本でEnterprise sales、SDR、Technical Success、Solutionsの7 requisitionsを公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  notion: {
+    category: "AIワークスペース・ナレッジ・協働",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Notion Japan・東京（2020年に日本GTMを開始、2021年に日本語版提供）",
+    description: "文書、Wiki、project、enterprise search、meeting notes、AI Agentを一つのworkspaceで提供。東京で営業、Solutions、Outcomes、導入技術の対象12職種を公式確認。",
+    lastChecked: "2026-08-17",
+  },
   verkada: {
     category: "クラウド型物理セキュリティ・IoT",
     hq: "カリフォルニア州サンマテオ（米国）",

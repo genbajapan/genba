@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -108,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  deepl: {
+    name: "DeepL", domain: "Language AI・翻訳・文章支援", officialUrl: "https://jobs.ashbyhq.com/DeepL",
+    positive: ["日本でCorporateとEnterpriseのAEを配置し、翻訳だけでなくWrite・Voice・APIを企業workflowへ広げるsales motionが見える。", "日本企業の公開事例とenterprise向けsecurity・glossary・管理機能を持ち、言語業務の時間・品質・統制を同じ商談で扱える。"],
+    negative: ["日本のquota達成率、平均ACV、昇進、離職、匿名reviewを十分な母数で確認できない。", "無料翻訳・汎用LLM・Microsoft／Googleとの競争に加え、言語pairや業務ごとの品質差を顧客環境で検証する必要がある。"],
+    next: ["Language AI・Productivity SaaSのEnterprise AE", "AI Application・Developer PlatformのGTM", "Localization・Global Operationsの事業開発"],
+  },
+  elevenlabs: {
+    name: "ElevenLabs", domain: "Voice AI・Conversational AI", officialUrl: "https://jobs.ashbyhq.com/elevenlabs",
+    positive: ["日本でnew-logo AEとtechnical expansionを担うAccount Managerを同時に配置し、音声生成から本番Agent・API利用へ広げる体制が見える。", "国内content利用とvoice権利・consentの協業を公開し、品質・速度だけでなく安全性をEnterprise提案へ組み込める。"],
+    negative: ["日本のARR、production顧客数、quota達成率、給与・OTE、昇進・離職は非公開。", "demo需要が本番利用へ移るにはlatency、誤応答、integration、権利、human handoffを越える必要があり、役割境界と支援体制の確認が必要。"],
+    next: ["Voice・Conversational AIのEnterprise AE／AM", "AI Agent・Developer PlatformのGTM", "Contact Center AI・Media Technologyの事業開発"],
+  },
+  mirakl: {
+    name: "Mirakl", domain: "Enterprise Marketplace・Commerce Platform", officialUrl: "https://job-boards.greenhouse.io/japan",
+    positive: ["日本でSenior AEとSolution Consultantを配置し、経営層へのmarketplace P&L提案からarchitecture・launchまでをつなぐ体制が見える。", "国内大手の公開事例とglobal ARR・GMVの成長を持ち、品揃え、在庫、seller、物流、広告を事業modelとして提案できる。"],
+    negative: ["日本のARR、live marketplace数、GMV、quota達成率、給与・OTE、昇進・離職は非公開。", "契約後もseller獲得、catalog、物流、payment、governanceが必要で、顧客の専任体制とdelivery capacityが成果を制約しうる。"],
+    next: ["Commerce SaaSのStrategic AE／Sales Leadership", "Marketplace・Platform事業開発", "Commerce Transformation・Solution Consulting"],
+  },
+  "new-relic": {
+    name: "New Relic", domain: "Observability・DevOps・Cloud Operations", officialUrl: "https://newrelic.com/about/careers",
+    positive: ["日本のEnterprise salesとSDR採用、東京regionへの投資から、開発・運用dataを国内Enterpriseへ広げるGTM機会が見える。", "国内のEC・media等の公開事例を持ち、MTTR、digital experience、developer productivity、cloud costをbusiness caseへつなげられる。"],
+    negative: ["非公開化後の最新売上・利益、日本ARR、quota達成率、給与・OTE、昇進・離職は確認できない。", "Datadog、Dynatrace、Splunk、cloud-nativeとの競争とtelemetry costの管理が商談を難しくし、旧求人・第三者給与情報を現行条件へ転用できない。"],
+    next: ["Observability・Cloud InfrastructureのEnterprise AE", "DevOps・SRE PlatformのGTM", "Sales Development・Technical Sales Leadership"],
+  },
+  notion: {
+    name: "Notion", domain: "AI Workspace・Knowledge・Collaboration", officialUrl: "https://www.notion.com/careers",
+    positive: ["日本でBDRとCommercial Sales Managerを配置し、強いPLG利用を企業workflow・AI・全社標準へ変えるupmarket機会が見える。", "トヨタ、ユーザベース、JR西日本の公開事例と日本data residencyを持ち、検索・承認・onboarding・AI contextを一つの提案へまとめられる。"],
+    negative: ["日本のARR、有料顧客数、quota達成率、給与・OTE、昇進・離職は非公開。", "Microsoft、Google、Atlassian、Glean等との重複に加え、既存のfree利用がsecurity review・migration・全社定着を越えるかを検証する必要がある。"],
+    next: ["AI Workspace・Collaboration SaaSのAE／Sales Leadership", "PLG・Product-led Enterprise GTM", "Knowledge Management・AI Transformation"],
+  },
   verkada: {
     name: "Verkada", domain: "Physical Security・IoT・Cloud", officialUrl: "https://www.verkada.com/jp/careers/",
     positive: ["現行求人はdirect AE、Enterprise AE、Channelを並行募集し、日本で直販とpartner deliveryの両方を作る投資を示す。", "cloud software、camera・sensor等のdevice、現地導入を一体で扱うため、securityとbusiness operationを横断する経験を得られる可能性がある。"],

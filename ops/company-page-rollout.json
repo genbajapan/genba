@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 96,
+      "未着手": 91,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 16
     },
     "byPriority": {
-      "HOT": 13,
-      "Active": 10,
+      "HOT": 17,
+      "Active": 6,
       "Selective": 57,
       "求人なし": 32
     },
-    "standardReady": 16
+    "standardReady": 21
   },
   "companies": [
     {
@@ -98,6 +98,24 @@
       "missingFields": []
     },
     {
+      "slug": "deepl",
+      "company": "DeepL",
+      "priority": "HOT",
+      "salesRoles": 7,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "elevenlabs",
+      "company": "ElevenLabs",
+      "priority": "HOT",
+      "salesRoles": 10,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "glean",
       "company": "Glean",
       "priority": "HOT",
@@ -112,6 +130,24 @@
       "priority": "HOT",
       "salesRoles": 7,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "new-relic",
+      "company": "New Relic",
+      "priority": "HOT",
+      "salesRoles": 7,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "notion",
+      "company": "Notion",
+      "priority": "HOT",
+      "salesRoles": 12,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -152,111 +188,13 @@
       "missingFields": []
     },
     {
-      "slug": "deepl",
-      "company": "DeepL",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive - Corporate (Japan):ポジティブ・ネガティブ評判",
-        "求人:Account Executive - Corporate (Japan):市場価値",
-        "求人:Account Executive - Enterprise (Japan):ポジティブ・ネガティブ評判",
-        "求人:Account Executive - Enterprise (Japan):市場価値"
-      ]
-    },
-    {
-      "slug": "elevenlabs",
-      "company": "ElevenLabs",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Japan:市場価値",
-        "求人:Account Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Manager, Japan:市場価値"
-      ]
-    },
-    {
       "slug": "mirakl",
       "company": "Mirakl",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Senior Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Senior Account Executive:市場価値",
-        "求人:Solution Consultant:ポジティブ・ネガティブ評判",
-        "求人:Solution Consultant:市場価値"
-      ]
-    },
-    {
-      "slug": "new-relic",
-      "company": "New Relic",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive / Senior Account Executive - Enterprise Sales(Japan):ポジティブ・ネガティブ評判",
-        "求人:Account Executive / Senior Account Executive - Enterprise Sales(Japan):市場価値",
-        "求人:Sales Development Representative:ポジティブ・ネガティブ評判",
-        "求人:Sales Development Representative:市場価値"
-      ]
-    },
-    {
-      "slug": "notion",
-      "company": "Notion",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Business Development Representative, Japan:ポジティブ・ネガティブ評判",
-        "求人:Business Development Representative, Japan:市場価値",
-        "求人:Commercial Sales Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Commercial Sales Manager, Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "okta",
