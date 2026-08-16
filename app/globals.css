@@ -635,7 +635,7 @@ button, input, select { font: inherit; }
 .company-scale-comparison > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 19px 22px; cursor: pointer; list-style: none; }
 .company-scale-comparison > summary::-webkit-details-marker { display: none; }
 .company-scale-comparison > summary > span:first-child small { display: block; color: var(--signal); font-size: 9px; font-weight: 850; letter-spacing: .1em; }
-.company-scale-comparison > summary > span:first-child strong { display: block; margin-top: 4px; color: var(--navy); font-size: 17px; }
+.company-scale-comparison > summary > span:first-child strong { display: block; margin-top: 4px; color: var(--navy); font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
 .company-scale-comparison-action { display: flex; align-items: center; gap: 9px; color: var(--signal); font-size: 11px; font-weight: 800; }
 .company-scale-comparison-action i { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid #a7d2ca; border-radius: 50%; font-size: 15px; font-style: normal; transition: transform .18s ease; }
 .company-scale-comparison-close-label { display: none; }
@@ -668,7 +668,7 @@ button, input, select { font: inherit; }
 .market-status-toggle:hover { background: #edf7f4; }
 .market-status-toggle:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
 .market-status-toggle .card-index { margin: 0 0 4px; }
-.market-status-toggle h3 { margin: 0; color: var(--navy); font-size: 18px; font-weight: 850; letter-spacing: -.01em; }
+.market-status-toggle h3 { margin: 0; color: var(--navy); font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
 .market-status-toggle-action { display: flex; align-items: center; gap: 10px; flex-shrink: 0; color: var(--signal); font-size: 11px; font-weight: 800; }
 .market-status-toggle-action i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #9dcac2; border-radius: 50%; font-size: 15px; font-style: normal; transition: transform .18s ease, background .18s ease; }
 .market-status-toggle:hover .market-status-toggle-action i { background: white; }
@@ -1734,7 +1734,7 @@ button, input, select { font: inherit; }
   .public-fact-grid-merged article { min-height: 0; }
   .public-fact-grid-merged article:last-child { border-top: 1px solid #d3e1de; border-left: 0; }
   .market-status-toggle { padding: 16px; }
-  .market-status-toggle h3 { font-size: 15px; }
+  .market-status-toggle h3 { font-size: clamp(11px, 3.35vw, 13px); white-space: nowrap; }
   .market-status-toggle-action .market-status-open-label,.market-status-toggle-action .market-status-close-label { display: none; }
   .market-status-body { padding: 0 12px 12px; }
   .market-status-stock-row { justify-content: flex-start; padding-top: 12px; }
@@ -1754,7 +1754,7 @@ button, input, select { font: inherit; }
   .capital-read-sources { flex-direction: column; gap: 4px; padding: 14px 16px; }
   .company-scale-comparison > summary { padding: 16px; }
   .company-scale-comparison-body { padding: 0 12px 12px; }
-  .company-scale-comparison > summary > span:first-child strong { font-size: 14px; }
+  .company-scale-comparison > summary > span:first-child strong { font-size: clamp(11px, 3.35vw, 13px); white-space: nowrap; }
   .company-scale-comparison-action > span { display: none; }
   .hypothesis-card > summary { grid-template-columns: 43px 1fr auto; }
   .hypothesis-card > summary .confidence { grid-column: 2; justify-self: start; }
