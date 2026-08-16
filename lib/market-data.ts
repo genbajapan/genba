@@ -8,6 +8,7 @@ import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08
 import { jobs20260817BatchSix } from "@/lib/company-additions-2026-08-17-batch-06";
 import { jobs20260817BatchSeven } from "@/lib/company-additions-2026-08-17-batch-07";
 import { jobs20260817BatchEight } from "@/lib/company-additions-2026-08-17-batch-08";
+import { jobs20260817BatchNine } from "@/lib/company-additions-2026-08-17-batch-09";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1309,6 +1310,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 
 const jobRecords: Job[] = [
   ...jobs20260817BatchEight,
+  ...jobs20260817BatchNine,
   ...jobs20260817BatchSeven,
   ...jobs20260817BatchSix,
   ...jobs20260816,
@@ -2901,6 +2903,11 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "dialpad-account-executive-mid-market-japan",
+  "docusign-account-executive-smb-japan",
+  "dragos-senior-enterprise-ae-japan",
+  "elastic-enterprise-account-executive-retail-japan",
+  "extreme-networks-sr-services-sales-account-executive",
   "elastic-mid-market-ae-japan",
   "fireblocks-bdr-japanese-speaking",
   "fireblocks-sales-director-japan",

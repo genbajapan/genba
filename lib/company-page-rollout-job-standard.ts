@@ -36,13 +36,33 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks"]);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "dragos-advisory-solutions-architect-japan-current": {
+    headline: "公式求人にOTE最大3,000万円を掲載",
+    summary: "OTE上限は確認できるが、base・variableの内訳、quota、equity、ramp、達成率は公開されていない。",
+    breakdown: [{ label: "OTE", value: "最大3,000万円", status: "公式掲載", detail: "base・variable内訳は非公開。" }],
+  },
+  "dragos-senior-enterprise-account-executive-japan-current": {
+    headline: "公式求人にOTE最大3,184万円を掲載",
+    summary: "求人内でSalaryとOTEの表記が混在するため固定給額とは解釈しない。base・variable、quota、equity、達成率は非公開。",
+    breakdown: [{ label: "OTE", value: "最大3,184万円", status: "公式掲載", detail: "固定給額ではなくOTE上限として扱う。" }],
+  },
+  "extreme-networks-senior-systems-engineer-tokyo-current": {
+    headline: "公式求人にOTE年1,600万〜1,900万円、70:30を掲載",
+    summary: "OTEとpay mixは確認できるが、quota、equity、bonus、ramp、達成率は非公開。",
+    breakdown: [{ label: "OTE", value: "1,600万〜1,900万円", status: "公式掲載", detail: "年額。資格・経験で変動。" }, { label: "Pay mix", value: "70 / 30", status: "公式掲載", detail: "base 70%、variable 30%。" }],
+  },
+  "extreme-networks-systems-engineer-tokyo-current": {
+    headline: "公式求人にOTE年1,000万〜1,400万円、70:30を掲載",
+    summary: "OTEとpay mixは確認できるが、quota、equity、bonus、ramp、達成率は非公開。",
+    breakdown: [{ label: "OTE", value: "1,000万〜1,400万円", status: "公式掲載", detail: "年額。資格・経験で変動。" }, { label: "Pay mix", value: "70 / 30", status: "公式掲載", detail: "base 70%、variable 30%。" }],
+  },
   "verkada-sales-strategy-operations-manager-japan": {
     headline: "公式求人に推定年額1,515万〜2,139万円を掲載",
     summary: "求人は適用時にbase salaryとsales commissionsを含むOTE rangeと説明。base/variableの内訳、bonus、RSU、quota、equity条件は公開されていない。",
@@ -108,6 +128,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  dialpad: {
+    name: "Dialpad", domain: "AI Communications・UCaaS・CCaaS", officialUrl: "https://job-boards.greenhouse.io/dialpad",
+    positive: ["東京でMid-Market AEとSales Engineerを同時募集し、full-cycle saleとtechnical validationをlocalでつなぐ。", "SoftBank提携、国内3,000社、Proto・USENの導入例があり、日本語AIとUC・CC一体のbusiness caseを作れる。"],
+    negative: ["監査済み売上・利益・FCF、日本売上・headcount・quota・達成率は非公開。", "録音・AI monitoringのprivacy、音声品質、番号移行、uptime、Teams・Zoom等bundleとのTCOを顧客環境で検証する必要がある。"],
+    next: ["UCaaS・CCaaSのEnterprise／Mid-Market GTM", "Conversational AI・Revenue Intelligence Sales", "Customer Experience・Sales Engineering"],
+  },
+  docusign: {
+    name: "Docusign", domain: "Agreement Management・eSignature・CLM", officialUrl: "https://careers.docusign.com/",
+    positive: ["SMB・Enterprise AE、SAP・Salesforce Partner、Field Marketing、MDRの対象7求人を持ち、eSignatureからIAMへのcategory expansionを日本で進める。", "JAL、JERA、Olympus等の国内定量事例とGAAP・FCF黒字を持ち、Legal・Sales・Procurement・ITを横断できる。"],
+    negative: ["日本の給与・OTE、quota、達成率、担当社数、IAM adoption、日本売上・headcountは非公開。", "basic e-signatureのbundle・低価格競争、CLM・AI・内製との比較で、migration、data governance、3年TCOを示す必要がある。"],
+    next: ["LegalTech・CLMのEnterprise AE／Sales Leadership", "Workflow・Document・AI Platform GTM", "SAP・Salesforce Ecosystem Partnerships"],
+  },
+  dragos: {
+    name: "Dragos", domain: "OT・ICS Cybersecurity", officialUrl: "https://job-boards.greenhouse.io/dragos",
+    positive: ["Japan Country Manager、Enterprise AE、日本初のtechnical hireを配置し、Macnicaとsales・technical deliveryを同時に作る段階。", "OT practitioner由来のthreat intelligenceとIR知見を、工場・重要インフラの停止riskへ翻訳する希少な専門性を得られる。"],
+    negative: ["単体売上・ARR・利益、日本法人・office・named customer・国内ROIは非公開。Accenture取引も確認日時点で未完了。", "passive coverage、air-gap、partner delivery、既存SOC、false positive、multi-site TCOをPoCで反証する必要がある。"],
+    next: ["OT・IoT SecurityのEnterprise GTM", "Critical Infrastructure Cybersecurity", "Industrial Security Solutions Architecture・Country Build"],
+  },
+  elastic: {
+    name: "Elastic", domain: "Search AI・Observability・Security", officialUrl: "https://jobs.elastic.co/",
+    positive: ["Retail Sales 2求人とSolutions Architecture leadershipを採用し、search、observability、securityを日本のenterpriseへ広げる。", "FY2026は売上+17%、RPO+28%、positive FCFで、Nikkei・ぐるなび・リコーの国内scale proofを持つ。"],
+    negative: ["FY2026はGAAP営業赤字で、2026年6月に約7% workforce削減。日本売上・人数・削減影響・quota・達成率は非公開。", "hyperscaler、open source、specialistとの競争とingest・storage・retention cost、migrationを同一workloadで比較する必要がある。"],
+    next: ["Search・Data PlatformのEnterprise GTM", "Observability・Security Platform Sales", "Solutions Architecture・Technical Sales Leadership"],
+  },
+  "extreme-networks": {
+    name: "Extreme Networks", domain: "Cloud Networking・Fabric・Network Security", officialUrl: "https://jobs.lever.co/extremenetworks?location=Tokyo%2C+Japan",
+    positive: ["東京でSE 2、Services Sales、Premier Deliveryを採用し、technical winからmigration・lifecycle valueまでをlocalでつなぐ。", "SaaS ARR成長、国内multi-site事例、日本法人・partner ecosystemがあり、network、security、AI、servicesを横断できる。"],
+    negative: ["FY2025はGAAP純損失で、FCFもquarterごとの変動がある。日本売上・ARR・headcount・quota・達成率は非公開。", "single-vendor simplicityはlock-inにもなり、Cisco・HPE-Juniper等とのinstalled-base競争、partner quality、rollback、5年TCOを検証する必要がある。"],
+    next: ["Cloud Networking・SASEのEnterprise GTM", "Network Sales Engineering・Architecture", "Services・Channel Sales Leadership"],
+  },
   cohere: {
     name: "Cohere", domain: "Enterprise AI・Private AI", officialUrl: "https://jobs.ashbyhq.com/cohere",
     positive: ["東京RemoteでAE、Partner Development、FDEを同時採用し、direct、ecosystem、private deploymentを日本で構築する。", "富士通とのTakaneは日本語enterprise AIとprivate deploymentのlocal proofになる。"],

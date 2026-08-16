@@ -1,6 +1,42 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  dialpad: {
+    category: "AIコミュニケーション・クラウド電話・Contact Center",
+    hq: "カリフォルニア州サンラモン（米国）",
+    japanPresence: "東京office・渋谷（2016年SoftBank提携で日本提供開始）",
+    description: "voice、meeting、contact center、sales coachingを会話AIで統合。東京でMid-Market AEとSales Engineerの対象2求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  docusign: {
+    category: "契約ライフサイクル・電子署名・Agreement AI",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Docusign Japan K.K.・東京都港区虎ノ門（2015年設立）",
+    description: "eSignatureから契約作成・締結・管理・AI分析を担うIAMへ拡張。東京でAE、Partner、Marketing、MDRの対象7求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  dragos: {
+    category: "OT・ICSサイバーセキュリティ",
+    hq: "メリーランド州ハノーバー（米国）",
+    japanPresence: "日本Remote team・Macnica partner（2023年参入、日本法人・officeは確認不能）",
+    description: "工場・重要インフラのasset可視化、脆弱性優先度、脅威検知・対応を提供。日本でEnterprise AEとAdvisory Solutions Architectを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  elastic: {
+    category: "Search AI・Observability・Security基盤",
+    hq: "アムステルダム（オランダ）・distributed company",
+    japanPresence: "Elasticsearch株式会社・東京都千代田区（2014年9月設立）",
+    description: "Elasticsearchを共通engineにSearch AI、Observability、Securityを提供。東京でRetail Sales 2件とSolutions Architecture leadershipの3求人を公式確認。",
+    tags: ["Search AI", "Observability", "Security", "Retail", "Solutions Architecture", "Platform Sale"],
+    lastChecked: "2026-08-17",
+  },
+  "extreme-networks": {
+    category: "クラウドネットワーク・Fabric・Network Security",
+    hq: "ノースカロライナ州モリスビル（米国）",
+    japanPresence: "Extreme Networks株式会社・東京都千代田区霞が関（法人設立1993年）",
+    description: "wired、wireless、fabric、SD-WAN、NAC・ZTNAをPlatform ONEで統合。東京でSE、Services Sales、Premier Deliveryの対象4求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
   cohere: {
     category: "企業向け生成AI・Private AI基盤",
     hq: "トロント（カナダ）",
