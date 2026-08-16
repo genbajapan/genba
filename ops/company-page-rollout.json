@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 106,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 1
+      "検証済み": 0,
+      "公開済み": 6
     },
     "byPriority": {
       "HOT": 12,
@@ -39,7 +39,7 @@
       "company": "Anaplan",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -48,7 +48,7 @@
       "company": "Braze",
       "priority": "HOT",
       "salesRoles": 6,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -57,7 +57,7 @@
       "company": "Channel Talk",
       "priority": "HOT",
       "salesRoles": 11,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -66,7 +66,7 @@
       "company": "Coupa",
       "priority": "HOT",
       "salesRoles": 6,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -75,7 +75,7 @@
       "company": "Cursor",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
