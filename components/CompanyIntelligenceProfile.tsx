@@ -87,6 +87,32 @@ function CompensationResearchBlock({ research }: { research: NonNullable<Job["co
   );
 }
 
+function ReputationResearchBlock({ research }: { research: NonNullable<Job["reputationResearch"]> }) {
+  return (
+    <div className="reputation-research">
+      <p>{research.summary}</p>
+      <div className="reputation-research-topics">
+        <span>匿名レビューで見られる論点</span>
+        <ul>
+          {research.topics.map((topic) => <li key={topic}>{topic}</li>)}
+        </ul>
+      </div>
+      <div className="reputation-research-sources">
+        <span>公開ソース</span>
+        <ul>
+          {research.sources.map((source) => (
+            <li key={source.url}>
+              <a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>
+              <p>{source.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="reputation-research-caveat">{research.caveat}</p>
+    </div>
+  );
+}
+
 function SalesFabeDetails({
   overview,
   intelligence,
@@ -414,6 +440,13 @@ export default function CompanyIntelligenceProfile({
       context: "給与事情の推定根拠",
       kind: "分析根拠" as const,
       checkedAt: job.compensationResearch?.researchedAt,
+    })) ?? []),
+    ...companyJobs.flatMap((job) => job.reputationResearch?.sources.map((source) => ({
+      label: source.label,
+      url: source.url,
+      context: "ネガティブ評判・噢の参照情報",
+      kind: "分析根拠" as const,
+      checkedAt: job.reputationResearch?.researchedAt,
     })) ?? []),
     ...companySignals.map((signal) => ({
       ...signal.source,
@@ -1099,6 +1132,18 @@ export default function CompanyIntelligenceProfile({
                               </div>
                             </details>
                           )}
+                          {job.reputationResearch && (
+                            <details className="role-description">
+                              <summary>
+                                <span className="role-description-icon" aria-hidden="true">+</span>
+                                <span className="role-description-label">ネガティブ評判、噢</span>
+                                <span className="role-description-chevron" aria-hidden="true">▾</span>
+                              </summary>
+                              <div className="role-description-body">
+                                <ReputationResearchBlock research={job.reputationResearch} />
+                              </div>
+                            </details>
+                          )}
                           {job.careerInsights && [
                             { label: "向き不向き", content: job.careerInsights.fit },
                             { label: "先に知っておくべきこと", content: job.careerInsights.thingsToKnow },
@@ -1106,7 +1151,7 @@ export default function CompanyIntelligenceProfile({
                             { label: "在籍年数・社内プロモか転職が多いか", content: job.careerInsights.tenureAndPromotion },
                             { label: "どんな会社からの転職が多いか", content: job.careerInsights.priorCompanies },
                             { label: "どんな会社への転職が多いか", content: job.careerInsights.nextCompanies },
-                          ].filter((item) => !isAdyen || item.label !== "向き不向き").map((item) => (
+                          ].filter((item) => (!isAdyen || item.label !== "向き不向き") && (!job.reputationResearch || item.label !== "先に知っておくべきこと")).map((item) => (
                             <details className="role-description" key={item.label}>
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>

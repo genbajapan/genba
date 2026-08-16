@@ -72,6 +72,20 @@ export const jobs20260816: Job[] = [
         { label: "OpenMoney企業検索", url: "https://openmoney.jp/corporations/list", detail: "Adyen Japan固有の公開給与データは検索で確認できず。日本法人の直接値としては採用しない。" },
       ],
     },
+    reputationResearch: {
+      researchedAt: "2026-08-17",
+      summary: "Adyenの東京営業チームに限定した検証可能なネガティブ情報は確認できない。以下は、グローバルの匯名レビューで散見される声を、応募判断の確認ポイントとして紹介する。",
+      topics: [
+        "評価・昇進：実績だけでなく、上司や配属チームとの相性の影響が大きい、基準が見えにくいという声。",
+        "マネジメント・チーム差：上司の経験、フィードバックの質、意思決定の透明性にはチーム間の差があるという声。",
+        "成長局面の負荷：変化の速い環境で自律的な役割が求められ、プロセスの変更や仕事量を負担に感じるという声。",
+      ],
+      caveat: "上記は匯名投稿であり、事実認定や日本拠点・本求人への当てはめには使えない。あくまで匿名の評判・噢なので、面接などで聞いてみましょう。",
+      sources: [
+        { label: "Glassdoor Adyenカルチャーレビュー", url: "https://www.glassdoor.com/Reviews/Adyen-Reviews-E684495.htm?filter.searchCategory=CULTURE", detail: "匿名レビューには、チームや管理職による体験差、フィードバック、キャリア機会への意見がある。全社・グローバル集計であり、日本限定ではない。" },
+        { label: "Glassdoor AdyenカルチャーQ&A", url: "https://www.glassdoor.co.uk/FAQ/Adyen-Question-FAQ200088-E684495.htm", detail: "匿名レビューには、中途採用の管理職増加と昼進機会、評価・フィードバックへの意見がある。個人の体験談であり、事実認定の根拠にはしない。" },
+      ],
+    },
     desiredProfile: "3年以上のformal people management、8年以上のmultinational enterpriseへのdirect hunting sales、日英両言語、C-level relationship、20%以上の出張を求める。",
     careerInsights: careerInsights("Payments / Unified Commerce"),
   },

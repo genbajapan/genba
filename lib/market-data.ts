@@ -66,6 +66,13 @@ export type Job = {
     readerTake: string;
     sources: Array<Source & { detail: string }>;
   };
+  reputationResearch?: {
+    researchedAt: string;
+    summary: string;
+    topics: string[];
+    caveat: string;
+    sources: Array<Source & { detail: string }>;
+  };
   desiredProfile: string;
   careerInsights: {
     fit: string;
