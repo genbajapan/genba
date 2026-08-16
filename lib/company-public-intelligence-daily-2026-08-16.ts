@@ -127,6 +127,11 @@ built.adyen.sources.push(
   { id: "adyen-talon-one", label: "AdyenによるTalon.One買収発表", url: "https://investors.adyen.com/events/7cvesgb8bvr5", kind: "企業公式", scope: "ロイヤルティ・販促領域への製品拡張", checkedAt: adyenCheckedAt },
   { id: "adyen-orb", label: "AdyenによるOrb買収発表", url: "https://investors.adyen.com/events/qxmuuiwffoz2", kind: "企業公式", scope: "請求・決済基盤への製品拡張", checkedAt: adyenCheckedAt },
   { id: "adyen-tap-to-pay-japan", label: "Adyen 日本でTap to Pay on iPhoneを提供", url: "https://www.adyen.com/press-and-media/adyen-now-offers-tap-to-pay-on-iphone-for-merchants-in-japan", kind: "企業公式", scope: "日本の対面決済機能への追加投資", checkedAt: adyenCheckedAt },
+  { id: "adyen-formula", label: "The Adyen Formula", url: "https://careers.adyen.com/formula", kind: "企業公式", scope: "8つの価値観・意思決定・コミュニケーション", checkedAt: adyenCheckedAt },
+  { id: "adyen-tokyo-culture", label: "Adyen 東京オフィス・福利厚生", url: "https://careers.adyen.com/locations/tokyo", kind: "企業公式", scope: "東京の勤務形態・職場環境・国際機会", checkedAt: adyenCheckedAt },
+  { id: "adyen-sales-culture", label: "Adyen 営業組織の働き方", url: "https://www.adyen.com/knowledge-hub/five-facts-about-the-adyen-sales-team", kind: "企業公式", scope: "ペアセリング・グローバル連携・評価の考え方", checkedAt: adyenCheckedAt },
+  { id: "adyen-hiring-process", label: "Adyen 選考プロセス", url: "https://careers.adyen.com/faqs", kind: "企業公式", scope: "Formulaを重視した面接・最終面接", checkedAt: adyenCheckedAt },
+  { id: "adyen-glassdoor", label: "Glassdoor Adyen社員レビュー", url: "https://www.glassdoor.com/Reviews/Adyen-Reviews-E684495.htm", kind: "コミュニティ", scope: "匿名社員レビューの全社集計・肯定と注意の傾向", checkedAt: adyenCheckedAt },
 );
 const adyenFoundedMilestone = built.adyen.marketStatus.milestones.find((milestone) => milestone.label === "創業");
 if (adyenFoundedMilestone) adyenFoundedMilestone.sourceId = "adyen-about";
@@ -197,6 +202,119 @@ built.adyen.salesMarketOutlook = {
     { company: "Wolt", need: "3Dセキュアとリスクベース認証を両立し、不正対策による購入離脱を抑える。公式事例ではリピーターの購入完了率が5％超向上。", sourceId: "adyen-wolt-japan" },
   ],
   sourceIds: ["adyen-cashless-2025", "adyen-acquiring-japan", "adyen-unified-commerce-japan", "adyen-country-manager-japan", "adyen-job"],
+};
+
+built.adyen.cultureDeepDive = {
+  researchedAt: "2026.08.17",
+  headline: "東京はハイブリッド。ただし会社としては出社での協働を重視するオフィスファースト。直接対話、高い自律性、個人よりチームで勝つ姿勢が文化の中心にある。",
+  workStyle: {
+    classification: "ハイブリッド",
+    displayLabel: "ハイブリッド（出社中心）",
+    remoteOnly: "不可",
+    officeDays: "公開情報では未特定",
+    flexibility: "必要時の柔軟性あり",
+    summary: "東京オフィスの公式ページはハイブリッド勤務を明記。一方、東京の現行求人はオフィスファーストで、リモート専任のポジションは提供しないとしている。東京で週何日の出社が必要かは公開されていないため、選考時の確認が必要。",
+    sourceIds: ["adyen-tokyo-culture", "adyen-job"],
+  },
+  principles: [
+    {
+      label: "顧客と長期",
+      title: "一社向けの特注より、全顧客に効く仕組みを作る",
+      companySays: "すべての顧客に利益をもたらす製品を作り、短期的な都合だけでなく顧客・Adyen・社会への長期的な効果で判断する。",
+      readerMeaning: "大口顧客の要望でも個別対応が通るとは限らない。営業には、要望を共通製品のロードマップへ翻訳する力が求められる。",
+      sourceIds: ["adyen-formula"],
+    },
+    {
+      label: "速度と学習",
+      title: "完璧を待たず、早く出して改善する",
+      companySays: "速度を重視し、立ち上げ後の学習と反復で品質を高めることを公式の原則にしている。",
+      readerMeaning: "指示と完成形を待つより、仮説を置いて動き、顧客やチームから得た材料で修正できる人が合いやすい。",
+      sourceIds: ["adyen-formula", "adyen-tokyo-culture"],
+    },
+    {
+      label: "直接対話",
+      title: "メールに隠れず、率直に話す",
+      companySays: "不明点があれば電話や会話を選び、失礼にならない範囲で必要なことを率直に伝える。",
+      readerMeaning: "遠回しな合意形成より、論点を言語化して相手の意見へ反論できることが重要。フィードバックの密度は高くなりやすい。",
+      sourceIds: ["adyen-formula"],
+    },
+    {
+      label: "チームと自律",
+      title: "個人の手柄より勝利。成長の道筋は自分で作る",
+      companySays: "時差や文化を越えて協働し、エゴよりチームの成功を優先する。同時に、個人が自分の成長経路を作ることを求める。",
+      readerMeaning: "周囲へ助けを求め、他者を案件へ巻き込む力と、自分の課題・成長機会を自分で取りに行く力の両方が必要。",
+      sourceIds: ["adyen-formula", "adyen-sales-culture"],
+    },
+  ],
+  tokyoExperience: [
+    { label: "働き方", value: "ハイブリッド", detail: "柔軟な働き方を掲げる一方、オフィスでの対面協働を前提とする。", sourceId: "adyen-tokyo-culture" },
+    { label: "日々の環境", value: "昼食・カジュアル", detail: "オフィスでの昼食、カジュアルな服装、通勤手当を公式に掲載。", sourceId: "adyen-tokyo-culture" },
+    { label: "休暇", value: "年次休暇20日", detail: "東京拠点向けの福利厚生として公式ページに記載。", sourceId: "adyen-tokyo-culture" },
+    { label: "オンボーディング", value: "シンガポール", detail: "東京採用者のオンボーディング旅行先としてAPAC拠点を明記。", sourceId: "adyen-tokyo-culture" },
+    { label: "グローバル接点", value: "年次アムステルダム", detail: "本社への年次旅行とGlobal Exchange Programを掲載。", sourceId: "adyen-tokyo-culture" },
+    { label: "成長機会", value: "自律・国際連携", detail: "マイクロマネジメントを減らし、24以上の海外拠点やグローバル顧客と連携する環境を掲げる。", sourceId: "adyen-tokyo-culture" },
+  ],
+  salesCulture: [
+    {
+      title: "一人で抱えず、ペアで案件を動かす",
+      evidence: "公式の営業インタビューは、営業同士がペアを組み、地域・オフィスを越えて専門家を案件へ入れる働き方を繰り返し紹介している。",
+      readerMeaning: "個人完結型の営業より、案件の途中で助けを求め、知識と顧客接点を共有できる人が合う。自分の数字だけを守る動きとは相性が悪い。",
+      sourceIds: ["adyen-sales-culture"],
+    },
+    {
+      title: "インセンティブまでチーム協働を促す",
+      evidence: "公式記事は、グローバルチームで働く行動を報酬設計でも後押ししていると説明している。",
+      readerMeaning: "案件貢献や成果配分の仕組みは一般的な個人コミッションと異なる可能性がある。日本の具体的なcreditルールは面接で確認したい。",
+      sourceIds: ["adyen-sales-culture", "adyen-job"],
+    },
+    {
+      title: "相談型営業と日本GTMづくりを同時に担う",
+      evidence: "東京のTeam Lead求人は、売上管理だけでなくcoaching、forecast、C-level関係、社内連携、営業手法の改善を責任範囲に置く。",
+      readerMeaning: "完成済みの台本を管理する役割ではない。顧客の事業を理解しながら、日本のチームと再現可能な営業プロセスを作るリーダーが求められる。",
+      sourceIds: ["adyen-job", "adyen-sales-culture"],
+    },
+  ],
+  communitySnapshot: {
+    label: "Glassdoor 全社集計",
+    rating: "3.6 / 5",
+    recommend: "70%が友人へ推奨",
+    metrics: [
+      { label: "ワークライフバランス", value: "4.0" },
+      { label: "カルチャー・価値観", value: "3.7" },
+      { label: "キャリア機会", value: "3.2" },
+      { label: "シニア経営陣", value: "3.2" },
+    ],
+    positiveRead: "国際的な協働、フラットに意見を言える環境、自律性、ワークライフバランスを肯定する投稿が確認できる。公式が掲げるチームワークと率直さを支持する材料にはなる。",
+    cautionRead: "チームによる文化差、昇進・キャリアパス、マネジメントの透明性や人間関係を課題に挙げる投稿もある。全社文化と配属先の実態は分けて確認したい。",
+    caveat: "匿名・自己申告のグローバル集計であり、東京拠点や営業組織だけの評価ではありません。個別投稿は事実認定せず、複数レビューに見られる傾向として扱っています。",
+    sourceId: "adyen-glassdoor",
+  },
+  fit: {
+    goodFor: [
+      "対面で相談しながら、複雑な案件をチームで前へ進めたい",
+      "率直なフィードバックを受け、自分の考えも直接伝えられる",
+      "完成した正解がなくても、自分で仮説と成長機会を作れる",
+      "海外拠点・多職種・時差をまたぐ協働をキャリアにしたい",
+    ],
+    cautionFor: [
+      "フルリモートを必須条件にしている",
+      "一人で営業数字を完結させ、案件への介入を避けたい",
+      "明確な手順・昇進経路を会社側から細かく示してほしい",
+      "率直な反論や高頻度のフィードバックに強い負荷を感じる",
+    ],
+    interviewQuestions: [
+      "東京チームの標準出社日数と、家庭事情などへの柔軟性は？",
+      "直属マネージャーの1on1、フィードバック、評価はどの頻度・形式か？",
+      "直近の日本営業チームで、昇進した人の共通点と評価基準は？",
+      "ペアセリング時の役割分担と、quota・commission creditの決め方は？",
+      "シンガポール・アムステルダムとの会議時間、出張頻度、英語利用は？",
+    ],
+  },
+  careerValue: {
+    title: "決済の専門性だけでなく、グローバルなチームセリングを実績にできる",
+    body: "Enterprise決済、ユニファイドコマース、C-level提案、複数職種・海外拠点との共同販売、日本GTMとpeople managementを一つの役割で経験できる。次のFinTechやEnterprise Platform営業でも説明しやすい複合経験になる。",
+  },
+  sourceIds: ["adyen-tokyo-culture", "adyen-job", "adyen-formula", "adyen-sales-culture", "adyen-hiring-process", "adyen-glassdoor"],
 };
 
 built.adyen.marketStatus.genbaVerdict = {

@@ -207,6 +207,123 @@ function CapitalMarketReadPanel({ intelligence }: { intelligence: CompanyPublicI
   );
 }
 
+function CultureDossier({ intelligence, companyName }: { intelligence: CompanyPublicIntelligence; companyName: string }) {
+  const culture = intelligence.cultureDeepDive;
+  if (!culture) return null;
+
+  const sourceLinks = (sourceIds: string[]) => (
+    <span className="culture-source-links">
+      {sourceIds.map((sourceId) => {
+        const source = getResearchSource(intelligence, sourceId);
+        return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+      })}
+    </span>
+  );
+
+  return (
+    <article className="culture-dossier">
+      <header className="culture-dossier-header">
+        <div><p className="card-index">WORKING CULTURE</p><h3>{companyName}での働き方とカルチャー</h3></div>
+        <p>{culture.headline}</p>
+        <span>調査日 {culture.researchedAt}</span>
+      </header>
+
+      <section className="culture-workstyle">
+        <div className="culture-workstyle-verdict">
+          <span>働き方の結論</span>
+          <strong>{culture.workStyle.displayLabel}</strong>
+          <p>{culture.workStyle.summary}</p>
+          {sourceLinks(culture.workStyle.sourceIds)}
+        </div>
+        <dl className="culture-workstyle-facts">
+          <div><dt>勤務形態</dt><dd>{culture.workStyle.classification}</dd></div>
+          <div><dt>フルリモート</dt><dd>{culture.workStyle.remoteOnly}</dd></div>
+          <div><dt>東京の出社日数</dt><dd>{culture.workStyle.officeDays}</dd></div>
+          <div><dt>柔軟性</dt><dd>{culture.workStyle.flexibility}</dd></div>
+        </dl>
+      </section>
+
+      <section className="culture-dossier-section">
+        <div className="culture-section-heading"><span>01</span><div><p>THE ADYEN FORMULA</p><h4>公式の価値観を、日々の行動に翻訳すると</h4></div></div>
+        <div className="culture-principle-grid">
+          {culture.principles.map((principle) => (
+            <article key={principle.label}>
+              <span>{principle.label}</span>
+              <h5>{principle.title}</h5>
+              <p>{principle.companySays}</p>
+              <div><strong>働く人への意味</strong><p>{principle.readerMeaning}</p></div>
+              {sourceLinks(principle.sourceIds)}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="culture-dossier-section culture-tokyo-section">
+        <div className="culture-section-heading"><span>02</span><div><p>TOKYO OFFICE</p><h4>東京拠点で実際に得られる環境</h4></div></div>
+        <div className="culture-tokyo-grid">
+          {culture.tokyoExperience.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+              <p>{item.detail}</p>
+              {sourceLinks([item.sourceId])}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="culture-dossier-section">
+        <div className="culture-section-heading"><span>03</span><div><p>SALES CULTURE</p><h4>営業組織では、何が日常になりそうか</h4></div></div>
+        <div className="culture-sales-grid">
+          {culture.salesCulture.map((item, index) => (
+            <article key={item.title}>
+              <span>0{index + 1}</span>
+              <h5>{item.title}</h5>
+              <p>{item.evidence}</p>
+              <div><strong>応募判断への意味</strong><p>{item.readerMeaning}</p></div>
+              {sourceLinks(item.sourceIds)}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="culture-dossier-section culture-community-section">
+        <div className="culture-section-heading"><span>04</span><div><p>EMPLOYEE REVIEWS</p><h4>社員レビューで、公式説明を反証する</h4></div></div>
+        <div className="culture-community-card">
+          <div className="culture-community-score">
+            <span>{culture.communitySnapshot.label}</span>
+            <strong>{culture.communitySnapshot.rating}</strong>
+            <p>{culture.communitySnapshot.recommend}</p>
+            {sourceLinks([culture.communitySnapshot.sourceId])}
+          </div>
+          <div className="culture-community-body">
+            <div className="culture-community-metrics">
+              {culture.communitySnapshot.metrics.map((metric) => <div key={metric.label}><span>{metric.label}</span><strong>{metric.value}</strong></div>)}
+            </div>
+            <div className="culture-community-reads">
+              <div><strong>肯定的な傾向</strong><p>{culture.communitySnapshot.positiveRead}</p></div>
+              <div><strong>注意したい傾向</strong><p>{culture.communitySnapshot.cautionRead}</p></div>
+            </div>
+            <small>{culture.communitySnapshot.caveat}</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="culture-dossier-section">
+        <div className="culture-section-heading"><span>05</span><div><p>YOUR FIT</p><h4>自分に合うかを、ここで見極める</h4></div></div>
+        <div className="culture-fit-grid">
+          <article className="culture-fit-good"><span>合いやすい人</span><ul>{culture.fit.goodFor.map((item) => <li key={item}>{item}</li>)}</ul></article>
+          <article className="culture-fit-caution"><span>慎重に見たい人</span><ul>{culture.fit.cautionFor.map((item) => <li key={item}>{item}</li>)}</ul></article>
+          <article className="culture-fit-questions"><span>面接で必ず聞くこと</span><ol>{culture.fit.interviewQuestions.map((item) => <li key={item}>{item}</li>)}</ol></article>
+        </div>
+        <div className="culture-career-value"><span>この環境で得られるキャリア価値</span><div><strong>{culture.careerValue.title}</strong><p>{culture.careerValue.body}</p></div></div>
+      </section>
+
+      <footer className="culture-dossier-sources"><span>主な参照情報</span>{sourceLinks(culture.sourceIds)}</footer>
+    </article>
+  );
+}
+
 export default function CompanyIntelligenceProfile({
   company,
   companyJobs,
@@ -769,33 +886,39 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
 
-              {publicIntel ? (
-                <article className="organization-read-card">
-                  <div><p className="card-index">ORGANIZATION READ</p><h3>{publicIntel.cultureNotes.organizationReadTitle}</h3></div>
-                  <p>{publicIntel.leadership.read}</p>
-                  {(() => { const source = getResearchSource(publicIntel, publicIntel.leadership.sourceId); return source ? <a href={source.url} target="_blank" rel="noreferrer">役員人事を見る ↗</a> : null; })()}
-                </article>
+              {publicIntel?.cultureDeepDive ? (
+                <CultureDossier intelligence={publicIntel} companyName={company.name} />
               ) : (
-                <div className="career-flow-board">
-                  <div className="career-node"><span>BEFORE</span><strong>主な入社元</strong><p>集計データ準備中</p></div>
-                  <div className="career-track" aria-hidden="true"><i /><b>{company.name.slice(0, 1)}</b><i /></div>
-                  <div className="career-node"><span>AFTER</span><strong>主な転職先</strong><p>集計データ準備中</p></div>
-                </div>
-              )}
+                <>
+                  {publicIntel ? (
+                    <article className="organization-read-card">
+                      <div><p className="card-index">ORGANIZATION READ</p><h3>{publicIntel.cultureNotes.organizationReadTitle}</h3></div>
+                      <p>{publicIntel.leadership.read}</p>
+                      {(() => { const source = getResearchSource(publicIntel, publicIntel.leadership.sourceId); return source ? <a href={source.url} target="_blank" rel="noreferrer">役員人事を見る ↗</a> : null; })()}
+                    </article>
+                  ) : (
+                    <div className="career-flow-board">
+                      <div className="career-node"><span>BEFORE</span><strong>主な入社元</strong><p>集計データ準備中</p></div>
+                      <div className="career-track" aria-hidden="true"><i /><b>{company.name.slice(0, 1)}</b><i /></div>
+                      <div className="career-node"><span>AFTER</span><strong>主な転職先</strong><p>集計データ準備中</p></div>
+                    </div>
+                  )}
 
-              <div className="culture-grid">
-                {publicIntel ? (
-                  <>
-                    <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>{publicIntel.cultureNotes.hypothesis.title}</h3><p>{publicIntel.cultureNotes.hypothesis.body}</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                    <article><p className="card-index">CAREER VALUE</p><h3>{publicIntel.cultureNotes.careerValue.title}</h3><p>{publicIntel.cultureNotes.careerValue.body}</p><span className="hypothesis-pill">GENBA仮説 / 確度 {publicIntel.cultureNotes.careerValue.confidence}</span></article>
-                  </>
-                ) : (
-                  <>
-                    <article><p className="card-index">CULTURE LENS</p><h3>社風・マネジメント</h3><p>働き方、意思決定、Forecastの厳しさ、英語利用、社内昇進を、複数の公開情報から確認します。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                    <article><p className="card-index">LEADERSHIP</p><h3>日本責任者・営業リーダー</h3><p>公式プロフィール、就任リリース、公開インタビューがある場合のみ掲載します。人物評や未確認情報は扱いません。</p><span className="pending-pill">参照記事を確認中</span></article>
-                  </>
-                )}
-              </div>
+                  <div className="culture-grid">
+                    {publicIntel ? (
+                      <>
+                        <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>{publicIntel.cultureNotes.hypothesis.title}</h3><p>{publicIntel.cultureNotes.hypothesis.body}</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
+                        <article><p className="card-index">CAREER VALUE</p><h3>{publicIntel.cultureNotes.careerValue.title}</h3><p>{publicIntel.cultureNotes.careerValue.body}</p><span className="hypothesis-pill">GENBA仮説 / 確度 {publicIntel.cultureNotes.careerValue.confidence}</span></article>
+                      </>
+                    ) : (
+                      <>
+                        <article><p className="card-index">CULTURE LENS</p><h3>社風・マネジメント</h3><p>働き方、意思決定、Forecastの厳しさ、英語利用、社内昇進を、複数の公開情報から確認します。</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
+                        <article><p className="card-index">LEADERSHIP</p><h3>日本責任者・営業リーダー</h3><p>公式プロフィール、就任リリース、公開インタビューがある場合のみ掲載します。人物評や未確認情報は扱いません。</p><span className="pending-pill">参照記事を確認中</span></article>
+                      </>
+                    )}
+                  </div>
+                </>
+              )}
 
               {companySignals.length > 0 && <div className="company-signal-block"><h3>組織・採用の変化</h3><div className="signal-feed">{companySignals.map((signal) => <SignalCard key={signal.id} signal={signal} />)}</div></div>}
             </section>

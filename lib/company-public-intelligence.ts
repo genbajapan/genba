@@ -85,6 +85,59 @@ export type CultureNotes = {
   careerValue: { title: string; body: string; confidence: "高" | "中" | "探索中" };
 };
 
+export type CultureDeepDive = {
+  researchedAt: string;
+  headline: string;
+  workStyle: {
+    classification: "フルリモート" | "ハイブリッド" | "出社中心";
+    displayLabel: string;
+    remoteOnly: string;
+    officeDays: string;
+    flexibility: string;
+    summary: string;
+    sourceIds: string[];
+  };
+  principles: Array<{
+    label: string;
+    title: string;
+    companySays: string;
+    readerMeaning: string;
+    sourceIds: string[];
+  }>;
+  tokyoExperience: Array<{
+    label: string;
+    value: string;
+    detail: string;
+    sourceId: string;
+  }>;
+  salesCulture: Array<{
+    title: string;
+    evidence: string;
+    readerMeaning: string;
+    sourceIds: string[];
+  }>;
+  communitySnapshot: {
+    label: string;
+    rating: string;
+    recommend: string;
+    metrics: Array<{ label: string; value: string }>;
+    positiveRead: string;
+    cautionRead: string;
+    caveat: string;
+    sourceId: string;
+  };
+  fit: {
+    goodFor: string[];
+    cautionFor: string[];
+    interviewQuestions: string[];
+  };
+  careerValue: {
+    title: string;
+    body: string;
+  };
+  sourceIds: string[];
+};
+
 export type GrowthMilestone = {
   year: string;
   label: string;
@@ -276,6 +329,8 @@ export type CompanyPublicIntelligence = {
   salesMarketOutlook?: SalesMarketOutlook;
   // 対象領域と、FABE・競合比較を開閉表示する任意のセールスサマリー。
   salesFabeOverview?: SalesFabeOverview;
+  // 公式情報と外部レビューを分離して、働き方・価値観・向き不向きを示す任意のカルチャー深掘り。
+  cultureDeepDive?: CultureDeepDive;
   marketStatus: MarketStatus;
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];
