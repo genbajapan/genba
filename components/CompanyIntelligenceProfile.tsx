@@ -165,7 +165,7 @@ function AeInterviewHypothesesPanel({ intelligence }: { intelligence: CompanyPub
   if (!analysis) return null;
 
   return (
-    <details className="ae-hypothesis-panel">
+    <details className="ae-hypothesis-panel" data-section-disclosure>
       <summary>
         <span>
           <small>AEとして面接で検証する</small>
@@ -496,6 +496,64 @@ function CultureDossier({ intelligence, companyName }: { intelligence: CompanyPu
   );
 }
 
+function SellingPlaybookContent({ intelligence }: { intelligence: CompanyPublicIntelligence }) {
+  return (
+    <>
+      <p className="playbook-frame-intro">{intelligence.sellingPlaybook.frameIntro}</p>
+
+      <div className="playbook-lens-grid">
+        <p className="card-index">課題を見つける3つのレンズ</p>
+        <div className="playbook-lens-row">
+          {intelligence.sellingPlaybook.issueLenses.map((lens, index) => (
+            <article key={lens.title}>
+              <span>0{index + 1}</span>
+              <strong>{lens.title}</strong>
+              <p>{lens.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="playbook-narrative">
+        <p className="card-index">課題仮説から選定理由までのストーリー</p>
+        <div className="playbook-narrative-track">
+          {intelligence.sellingPlaybook.narrative.flatMap((stage, index, stages) => {
+            const nodes = [
+              <div className="playbook-narrative-step" key={`step-${stage.label}`}>
+                <span className="playbook-narrative-number">{index + 1}</span>
+                <div className="playbook-narrative-body">
+                  <strong>{stage.label}</strong>
+                  <p>{stage.body}</p>
+                </div>
+              </div>,
+            ];
+            if (index < stages.length - 1) {
+              nodes.push(<div className="playbook-narrative-connector" key={`connector-${stage.label}`} aria-hidden="true">→</div>);
+            }
+            return nodes;
+          })}
+        </div>
+      </div>
+
+      <div className="playbook-support-grid">
+        <article className="playbook-hook-card">
+          <p className="card-index">オープニングの問いかけ</p>
+          <p className="playbook-hook-quote">「{intelligence.sellingPlaybook.openingHook}」</p>
+        </article>
+        <article className="playbook-value-card">
+          <p className="card-index">価値仮説</p>
+          <p>{intelligence.sellingPlaybook.valueHypothesis}</p>
+        </article>
+        <article className="playbook-objection-card">
+          <p className="card-index">よくある反論への返し</p>
+          <p><span>反論</span>{intelligence.sellingPlaybook.commonObjection.objection}</p>
+          <p><span>切り返し</span>{intelligence.sellingPlaybook.commonObjection.reframe}</p>
+        </article>
+      </div>
+    </>
+  );
+}
+
 export default function CompanyIntelligenceProfile({
   company,
   companyJobs,
@@ -560,6 +618,21 @@ export default function CompanyIntelligenceProfile({
       checkedAt: source.checkedAt,
     })) ?? []),
   ]);
+  const sourceLastUpdated = sourceEntries.reduce(
+    (latest, source) => source.checkedAt && source.checkedAt > latest ? source.checkedAt : latest,
+    company.lastChecked,
+  );
+  const sourceLedger = (
+    <div className="source-ledger">
+      {sourceEntries.map((source, index) => (
+        <article key={source.url}>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <div><small>{source.kind} / {source.context}</small><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></div>
+          <time dateTime={source.checkedAt ?? company.lastChecked}>{shortDate(source.checkedAt ?? company.lastChecked)}</time>
+        </article>
+      ))}
+    </div>
+  );
 
   const evidenceTopics = [
     { label: "採用状況", value: company.hiringStatus, confirmed: true },
@@ -707,7 +780,7 @@ export default function CompanyIntelligenceProfile({
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
             <section className="intel-section" id="overview">
-              <details className={`company-overview-disclosure${isAdyen ? " company-overview-disclosure-adyen" : ""}`} open={!isAdyen}>
+              <details className={`company-overview-disclosure${isAdyen ? " company-overview-disclosure-adyen" : ""}`} open data-section-disclosure>
                 <summary className="company-overview-toggle">
                   <div className="intel-heading">
                     <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}{company.slug === "adyen" ? "" : "社"}概要</h2></div>
@@ -1559,62 +1632,26 @@ export default function CompanyIntelligenceProfile({
 
             {publicIntel && (
               <section className="intel-section" id="playbook">
-                <div className="intel-heading">
-                  <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
-                  <p>「何が課題で、なぜこの解決策で、なぜこの会社なのか」を、公開情報から組み立てたGenba仮説です。実際の商談設計は個社事情に合わせて調整してください。</p>
-                </div>
-
-                <p className="playbook-frame-intro">{publicIntel.sellingPlaybook.frameIntro}</p>
-
-                <div className="playbook-lens-grid">
-                  <p className="card-index">課題を見つける3つのレンズ</p>
-                  <div className="playbook-lens-row">
-                    {publicIntel.sellingPlaybook.issueLenses.map((lens, index) => (
-                      <article key={lens.title}>
-                        <span>0{index + 1}</span>
-                        <strong>{lens.title}</strong>
-                        <p>{lens.body}</p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="playbook-narrative">
-                  <p className="card-index">課題仮説から選定理由までのストーリー</p>
-                  <div className="playbook-narrative-track">
-                    {publicIntel.sellingPlaybook.narrative.flatMap((stage, index, stages) => {
-                      const nodes = [
-                        <div className="playbook-narrative-step" key={`step-${stage.label}`}>
-                          <span className="playbook-narrative-number">{index + 1}</span>
-                          <div className="playbook-narrative-body">
-                            <strong>{stage.label}</strong>
-                            <p>{stage.body}</p>
-                          </div>
-                        </div>,
-                      ];
-                      if (index < stages.length - 1) {
-                        nodes.push(<div className="playbook-narrative-connector" key={`connector-${stage.label}`} aria-hidden="true">→</div>);
-                      }
-                      return nodes;
-                    })}
-                  </div>
-                </div>
-
-                <div className="playbook-support-grid">
-                  <article className="playbook-hook-card">
-                    <p className="card-index">オープニングの問いかけ</p>
-                    <p className="playbook-hook-quote">「{publicIntel.sellingPlaybook.openingHook}」</p>
-                  </article>
-                  <article className="playbook-value-card">
-                    <p className="card-index">価値仮説</p>
-                    <p>{publicIntel.sellingPlaybook.valueHypothesis}</p>
-                  </article>
-                  <article className="playbook-objection-card">
-                    <p className="card-index">よくある反論への返し</p>
-                    <p><span>反論</span>{publicIntel.sellingPlaybook.commonObjection.objection}</p>
-                    <p><span>切り返し</span>{publicIntel.sellingPlaybook.commonObjection.reframe}</p>
-                  </article>
-                </div>
+                {isAdyen ? (
+                  <details className="intel-section-disclosure" data-section-disclosure>
+                    <summary>
+                      <div className="intel-heading">
+                        <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
+                        <p>既存顧客・製品の成り立ち・外部環境から、商談の組み立てを読み解きます。</p>
+                      </div>
+                      <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
+                    </summary>
+                    <div className="intel-section-disclosure-body"><SellingPlaybookContent intelligence={publicIntel} /></div>
+                  </details>
+                ) : (
+                  <>
+                    <div className="intel-heading">
+                      <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
+                      <p>「何が課題で、なぜこの解決策で、なぜこの会社なのか」を、公開情報から組み立てたGenba仮説です。実際の商談設計は個社事情に合わせて調整してください。</p>
+                    </div>
+                    <SellingPlaybookContent intelligence={publicIntel} />
+                  </>
+                )}
               </section>
             )}
 
@@ -1660,19 +1697,26 @@ export default function CompanyIntelligenceProfile({
             </section>
 
             <section className="intel-section" id="sources">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
-                <p>数字・判断材料の出所と更新日を追える状態にします。</p>
-              </div>
-              <div className="source-ledger">
-                {sourceEntries.map((source, index) => (
-                  <article key={source.url}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <div><small>{source.kind} / {source.context}</small><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></div>
-                    <time dateTime={source.checkedAt ?? company.lastChecked}>{shortDate(source.checkedAt ?? company.lastChecked)}</time>
-                  </article>
-                ))}
-              </div>
+              {isAdyen ? (
+                <details className="intel-section-disclosure intel-section-disclosure-sources" data-section-disclosure>
+                  <summary>
+                    <div className="intel-heading">
+                      <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                      <p>参照元{sourceEntries.length}件・最終更新日 {shortDate(sourceLastUpdated)}</p>
+                    </div>
+                    <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
+                  </summary>
+                  <div className="intel-section-disclosure-body">{sourceLedger}</div>
+                </details>
+              ) : (
+                <>
+                  <div className="intel-heading">
+                    <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
+                    <p>数字・判断材料の出所と更新日を追える状態にします。</p>
+                  </div>
+                  {sourceLedger}
+                </>
+              )}
             </section>
           </main>
         </Container>

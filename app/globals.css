@@ -588,6 +588,22 @@ button, input, select { font: inherit; }
 .company-overview-disclosure-adyen .intel-heading > p { max-width: none; font-size: 11px; }
 .company-overview-disclosure-adyen .company-overview-toggle-action { margin-bottom: 0; }
 .company-overview-disclosure-adyen[open] .company-overview-toggle { border-bottom: 1px solid var(--line); }
+.intel-section-disclosure { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
+.intel-section-disclosure > summary { display: flex; align-items: center; gap: 18px; padding: 18px 22px; cursor: pointer; list-style: none; transition: background .18s ease; }
+.intel-section-disclosure > summary::-webkit-details-marker { display: none; }
+.intel-section-disclosure > summary:hover { background: #edf7f4; }
+.intel-section-disclosure > summary:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
+.intel-section-disclosure > summary .intel-heading { flex: 1; align-items: center; gap: 20px; margin: 0; }
+.intel-section-disclosure > summary .intel-kicker { margin-bottom: 4px; font-size: 9px; }
+.intel-section-disclosure > summary .intel-heading h2 { font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
+.intel-section-disclosure > summary .intel-heading > p { max-width: 420px; font-size: 11px; line-height: 1.55; }
+.intel-section-disclosure-action { display: grid; place-items: center; flex: 0 0 auto; width: 27px; height: 27px; border: 1px solid #9dcac2; border-radius: 50%; color: var(--signal); font-size: 16px; line-height: 1; transition: transform .18s ease, background .18s ease; }
+.intel-section-disclosure[open] > summary { border-bottom: 1px solid var(--line); }
+.intel-section-disclosure[open] .intel-section-disclosure-action { transform: rotate(45deg); background: white; }
+.intel-section-disclosure-body { padding: 24px 22px 22px; }
+.intel-section-disclosure-body > .playbook-frame-intro { margin-top: 0; }
+.intel-section-disclosure-sources .intel-section-disclosure-body { padding-top: 0; }
+.intel-section-disclosure-sources .source-ledger { border-top: 0; }
 .analysis-label { flex-shrink: 0; padding: 6px 8px; border: 1px solid #9ac4bd; background: var(--signal-soft); color: #0a6d63; font-size: 11px; font-weight: 800; }
 
 .decision-board { display: grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
@@ -1720,6 +1736,11 @@ button, input, select { font: inherit; }
   .company-overview-disclosure-adyen .company-overview-toggle { align-items: flex-start; padding: 16px; }
   .company-overview-disclosure-adyen .intel-heading { gap: 8px; }
   .company-overview-disclosure-adyen .intel-heading h2 { font-size: 15px; }
+  .intel-section-disclosure > summary { align-items: flex-start; padding: 16px; }
+  .intel-section-disclosure > summary .intel-heading { align-items: flex-start; gap: 8px; }
+  .intel-section-disclosure > summary .intel-heading h2 { font-size: 15px; }
+  .intel-section-disclosure > summary .intel-heading > p { max-width: none; font-size: 10px; }
+  .intel-section-disclosure-body { padding: 20px 16px 16px; }
   .decision-board { grid-template-columns: 1fr; }
   .evidence-grid { grid-template-columns: repeat(2,1fr); }
   .external-signal-grid { grid-template-columns: 1fr; }
@@ -1855,6 +1876,10 @@ button, input, select { font: inherit; }
   .company-scale-comparison-body { padding: 0 12px 12px; }
   .company-scale-comparison > summary > span:first-child strong { font-size: clamp(11px, 3.35vw, 13px); white-space: nowrap; }
   .company-scale-comparison-action > span { display: none; }
+  .intel-section-disclosure > summary .intel-heading h2 { font-size: clamp(13px,4vw,15px); white-space: nowrap; }
+  .intel-section-disclosure > summary .intel-heading > p { line-height: 1.45; }
+  .intel-section-disclosure-action { width: 26px; height: 26px; }
+  .intel-section-disclosure-sources .intel-section-disclosure-body { padding-inline: 12px; }
   .hypothesis-card > summary { grid-template-columns: 43px 1fr auto; }
   .hypothesis-card > summary .confidence { grid-column: 2; justify-self: start; }
   .hypothesis-chevron { grid-column: 3; grid-row: 1; }

@@ -12,11 +12,27 @@ export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAe
     setShowMoreHint(nav.scrollLeft < 4 && nav.scrollWidth > nav.clientWidth + 4);
   }, []);
 
+  const openTargetDisclosure = useCallback((sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    const disclosure = section?.querySelector<HTMLDetailsElement>(":scope > details[data-section-disclosure]");
+    if (disclosure) disclosure.open = true;
+  }, []);
+
   useEffect(() => {
     updateOverflow();
     window.addEventListener("resize", updateOverflow);
     return () => window.removeEventListener("resize", updateOverflow);
   }, [updateOverflow]);
+
+  useEffect(() => {
+    const openFromHash = () => {
+      const sectionId = window.location.hash.slice(1);
+      if (sectionId) openTargetDisclosure(sectionId);
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, [openTargetDisclosure]);
 
   function revealMore() {
     const nav = navRef.current;
@@ -32,13 +48,13 @@ export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAe
         <strong>{companyName}</strong>
       </a>
       <nav ref={navRef} className="dossier-nav" aria-label="企業ページ内ナビゲーション" onScroll={updateOverflow}>
-        <a href="#overview">会社概要</a>
-        <a href="#work-there">{isPreEntry ? "海外で働く人" : "働く人を見る"}</a>
-        <a href="#roles">{isPreEntry ? "進出時の論点" : "募集中ポジション"}</a>
-        <a href="#decision">{hasAeInterviewHypotheses ? "面接の仮説" : "5つの仮説"}</a>
-        <a href="#solution">ソリューション深掘り</a>
-        {hasPlaybook && <a href="#playbook">想定できる売り方</a>}
-        <a href="#compare">併願候補</a>
+        <a href="#overview" onClick={() => openTargetDisclosure("overview")}>会社概要</a>
+        <a href="#work-there" onClick={() => openTargetDisclosure("work-there")}>{isPreEntry ? "海外で働く人" : "働く人を見る"}</a>
+        <a href="#roles" onClick={() => openTargetDisclosure("roles")}>{isPreEntry ? "進出時の論点" : "募集中ポジション"}</a>
+        <a href="#decision" onClick={() => openTargetDisclosure("decision")}>{hasAeInterviewHypotheses ? "面接の仮説" : "5つの仮説"}</a>
+        <a href="#solution" onClick={() => openTargetDisclosure("solution")}>ソリューション深掘り</a>
+        {hasPlaybook && <a href="#playbook" onClick={() => openTargetDisclosure("playbook")}>想定できる売り方</a>}
+        <a href="#compare" onClick={() => openTargetDisclosure("compare")}>併願候補</a>
       </nav>
       <button type="button" className={`dossier-nav-more${showMoreHint ? " is-visible" : ""}`} onClick={revealMore} aria-label="続きの企業研究メニューを見る">
         <span>続きの企業研究を見る</span><strong aria-hidden="true">→</strong>
