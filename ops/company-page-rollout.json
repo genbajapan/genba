@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 101,
+      "未着手": 96,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 11
     },
     "byPriority": {
-      "HOT": 11,
-      "Active": 13,
+      "HOT": 13,
+      "Active": 10,
       "Selective": 57,
-      "求人なし": 31
+      "求人なし": 32
     },
-    "standardReady": 11
+    "standardReady": 16
   },
   "companies": [
     {
@@ -49,6 +49,15 @@
       "priority": "HOT",
       "salesRoles": 6,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "celonis",
+      "company": "Celonis",
+      "priority": "HOT",
+      "salesRoles": 5,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -76,6 +85,15 @@
       "priority": "HOT",
       "salesRoles": 5,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "dataiku",
+      "company": "Dataiku",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -119,119 +137,19 @@
       "slug": "verkada",
       "company": "Verkada",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Tokyo:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Tokyo:市場価値",
-        "求人:Enterprise Account Executive, Tokyo:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive, Tokyo:市場価値",
-        "求人:Channel Sales Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Channel Sales Manager, Japan:市場価値"
-      ]
+      "salesRoles": 7,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "walkme",
       "company": "WalkMe",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Partner Sales Manager:勤務地・言語の日本語表記",
-        "求人:Partner Sales Manager:ポジティブ・ネガティブ評判",
-        "求人:Partner Sales Manager:市場価値",
-        "求人:Director, Alliances and Channels Japan:勤務地・言語の日本語表記",
-        "求人:Director, Alliances and Channels Japan:ポジティブ・ネガティブ評判",
-        "求人:Director, Alliances and Channels Japan:市場価値",
-        "求人:Solution Advisor:勤務地・言語の日本語表記",
-        "求人:Solution Advisor:ポジティブ・ネガティブ評判",
-        "求人:Solution Advisor:市場価値"
-      ]
-    },
-    {
-      "slug": "celonis",
-      "company": "Celonis",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Portfolio (Scale) Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Portfolio (Scale) Account Executive:市場価値",
-        "求人:Head of Ecosystem:ポジティブ・ネガティブ評判",
-        "求人:Head of Ecosystem:市場価値"
-      ]
-    },
-    {
-      "slug": "confluent",
-      "company": "Confluent",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive (Digital Native):給与調査または非公開確認",
-        "求人:Account Executive (Digital Native):ポジティブ・ネガティブ評判",
-        "求人:Account Executive (Digital Native):市場価値",
-        "求人:Japan MSP/ISV Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Japan MSP/ISV Account Executive:市場価値"
-      ]
-    },
-    {
-      "slug": "dataiku",
-      "company": "Dataiku",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Enterprise Account Executive, Japan | FSI:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive, Japan | FSI:市場価値",
-        "求人:Enterprise Account Executive – Japan | Retail & Telco:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive – Japan | Retail & Telco:市場価値"
-      ]
+      "salesRoles": 7,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "deepl",
@@ -1768,6 +1686,15 @@
         "働き方・カルチャー",
         "AEとして検証すべき5つの未解決論点"
       ]
+    },
+    {
+      "slug": "confluent",
+      "company": "Confluent",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "cribl",

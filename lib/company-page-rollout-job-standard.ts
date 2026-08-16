@@ -36,13 +36,18 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku"]);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "verkada-sales-strategy-operations-manager-japan": {
+    headline: "公式求人に推定年額1,515万〜2,139万円を掲載",
+    summary: "求人は適用時にbase salaryとsales commissionsを含むOTE rangeと説明。base/variableの内訳、bonus、RSU、quota、equity条件は公開されていない。",
+    breakdown: [{ label: "推定年額", value: "1,515万〜2,139万円", status: "公式掲載", detail: "適用時はbaseとcommissionを含むOTE。内訳は非公開。" }],
+  },
   "stripe-account-executive-commercial-hunter-japan": {
     headline: "公式求人にOTE年額1,720万〜2,580万円を掲載",
     summary: "基本給とcommissionまたはbonus targetを含むOTE。pay mix、quota、accelerator、equity、ramp保証は公開されていない。",
@@ -103,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  verkada: {
+    name: "Verkada", domain: "Physical Security・IoT・Cloud", officialUrl: "https://www.verkada.com/jp/careers/",
+    positive: ["現行求人はdirect AE、Enterprise AE、Channelを並行募集し、日本で直販とpartner deliveryの両方を作る投資を示す。", "cloud software、camera・sensor等のdevice、現地導入を一体で扱うため、securityとbusiness operationを横断する経験を得られる可能性がある。"],
+    negative: ["日本営業だけのquota達成率、昇進、離職、匿名reviewを十分な母数で確認できない。", "出社・出張・site対応の負荷、hardware supply、partner施工、privacy reviewがsales cycleへ与える影響は配属先で確認が必要。"],
+    next: ["Physical・Cyber SecurityのEnterprise AE／Sales Leadership", "IoT・Cloud NetworkingのGTM", "Channel・Integrator Ecosystem Leadership"],
+  },
+  walkme: {
+    name: "WalkMe", domain: "Digital Adoption・Change Management", officialUrl: "https://jobs.lever.co/walkme?location=Tokyo",
+    positive: ["現行の日本求人はCS、Professional Services、Solution、Alliance、Partnerを配置し、大規模system投資の定着をecosystemで支える構造を示す。", "複数applicationの利用dataと業務完了を結ぶため、software salesにchange managementとvalue engineeringを加えられる可能性がある。"],
+    negative: ["SAP傘下での日本組織、territory、製品統合、quota creditが今後も変わる可能性があり、公開情報だけで配属先の実態を確定できない。", "日本職種別の給与・OTE、達成率、昇進、離職、出社頻度は公開情報で確認できない。"],
+    next: ["Digital Adoption・Employee ExperienceのGTM", "SAP・業務ApplicationのAlliance／Value Engineering", "Change Management・Transformation Consulting"],
+  },
+  celonis: {
+    name: "Celonis", domain: "Process Intelligence・Enterprise Transformation", officialUrl: "https://careers.celonis.com/join-us/offices/tokyo",
+    positive: ["Enterprise accountとEcosystem leadershipを同時に採用し、直販と国内SIerによるprocess transformationの両方を重視している。", "業務dataからvalueを発見し実行へつなぐため、C-level business case、process、data、partner deliveryを横断する経験を得られる可能性がある。"],
+    negative: ["日本営業だけのquota達成率、昇進、離職、平均在籍、配属先managementを判断できる十分な公開集計はない。", "category education、data接続、業務owner合意、partner deliveryが必要で、PoCから本番・拡張への転換負荷を面接で確認する必要がある。"],
+    next: ["Process Mining・AutomationのEnterprise AE／Sales Leadership", "Value Engineering・Transformation Consulting", "SIer・Technology Ecosystem Leadership"],
+  },
+  confluent: {
+    name: "Confluent", domain: "Data Streaming・Cloud Data Infrastructure", officialUrl: "https://careers.confluent.io/jobs",
+    positive: ["data in motionをapplication、analytics、AIへつなぐ製品は、developer・data・platform・business buyerを横断する技術営業の学習機会になり得る。", "ただし現行日本求人は公式Careerで再現確認できず、特定roleの機会としては断定できない。"],
+    negative: ["2026年8月17日時点でJapan filter・job detailを再現確認できず、過去のDigital Native・MSP/ISV求人は現行扱いにできない。", "買収後の組織・製品・territory・報酬制度も未確認で、日本のquota達成率、昇進、離職、給与・OTEの公開根拠はない。"],
+    next: ["Data・Cloud InfrastructureのEnterprise AE", "Kafka・Developer PlatformのGTM", "MSP・ISV・Cloud Ecosystem Leadership"],
+  },
+  dataiku: {
+    name: "Dataiku", domain: "Enterprise AI・Data Science Platform", officialUrl: "https://www.dataiku.com/company/join-us/",
+    positive: ["日本のEnterprise AEをFSIとRetail/Telcoに分け、業界課題・governance・C-level valueを重視する専門coverageが見える。", "data preparationからAI agent、governance、business applicationまでを扱い、technical PoCを経営成果と本番運用へつなぐ経験を得られる可能性がある。"],
+    negative: ["日本のquota達成率、territory quality、昇進、離職、配属先managementを判断できる十分な公開集計はない。", "AI platform競争、既存cloud・data stackとの重複、PoC停滞を越えるには業界data・governance・delivery体制の検証が必要。"],
+    next: ["AI・Data PlatformのStrategic AE／Sales Leadership", "Industry GTM・AI Transformation", "Data Science・AI GovernanceのValue Consulting"],
+  },
   glean: {
     name: "Glean", domain: "Enterprise AI・Enterprise Search", officialUrl: "https://www.glean.com/careers",
     positive: ["公式求人は日本在住remote、AI-first mindset、ROI付きPoC、greenfield territoryを明記する。", "ARR 3億ドル超と国内大企業の導入事例から、categoryの成長と日本投資を確認できる。"],
@@ -167,6 +202,10 @@ const companyResearch: Record<string, {
 
 function roleFamily(job: JobLike) {
   const value = `${job.title} ${job.segment}`.toLowerCase();
+  if (/(marketing|demand generation|field marketing)/.test(value)) return "marketing";
+  if (/(sales strategy|sales operations|revenue operations|revops)/.test(value)) return "operations";
+  if (/(customer success|customer experience|account management)/.test(value)) return "customer";
+  if (/(professional services|project manager|implementation|delivery)/.test(value)) return "delivery";
   if (/(director|vice president|manager|leader|head)/.test(value)) return "leadership";
   if (/(partner|alliance|channel)/.test(value)) return "partner";
   if (/(solution|engineer|architect|technical|data scientist|consult)/.test(value)) return "technical";
@@ -175,6 +214,26 @@ function roleFamily(job: JobLike) {
 }
 
 function roleSkills(family: string, domain: string) {
+  if (family === "marketing") return [
+    { title: "Category demand creation", detail: `${domain}の外部変化と顧客課題をmessage・content・eventへ変え、qualified pipelineまで追跡する。` },
+    { title: "Salesとのrevenue連携", detail: "lead数で終わらず、ICP、account、stage、conversion、sourced／influenced pipelineをSalesと共通管理する。" },
+    { title: "市場学習の仕組み化", detail: "campaign・event・content別の反応とwin/lossを分析し、日本のpositioningとGTMへ反映する。" },
+  ];
+  if (family === "operations") return [
+    { title: "GTM operating model", detail: `${domain}のterritory、capacity、pipeline、forecast、processをdataで設計し、意思決定速度を高める。` },
+    { title: "Revenue analytics", detail: "activityでなくconversion、cycle、coverage、attainment、unit economicsを一貫した定義で可視化する。" },
+    { title: "Cross-functional execution", detail: "Sales、Marketing、Finance、Product、Partnerの責任とcadenceを揃え、戦略を現場の運用へ落とす。" },
+  ];
+  if (family === "customer") return [
+    { title: "Value realization", detail: `${domain}の利用を顧客KPIへ結び、導入後の成果、risk、次の改善をQBRで合意する。` },
+    { title: "Renewal・expansion設計", detail: "health、stakeholder、adoption、outcomeを先行指標に、更新riskと拡張機会を再現可能に管理する。" },
+    { title: "顧客組織のchange management", detail: "championだけに依存せず、executive sponsor、現場、IT、partnerと定着責任を分担する。" },
+  ];
+  if (family === "delivery") return [
+    { title: "Outcome-led delivery", detail: `${domain}のscope、baseline、success criteria、timeline、riskを定め、導入を業務成果まで進める。` },
+    { title: "Program・partner orchestration", detail: "顧客、社内専門家、SI partnerの責任・依存関係・escalationを管理し、複雑projectを完了する。" },
+    { title: "再利用可能な実装標準", detail: "個社対応をtemplate、governance、enablementへ変え、品質とdelivery capacityをscaleさせる。" },
+  ];
   if (family === "leadership") return [
     { title: "営業組織の再現性", detail: `個人受注でなく、${domain}のpipeline、forecast、採用、coaching、達成者比率を改善する。` },
     { title: "経営・地域間の資源配分", detail: "Japan、APAC、本社の意思決定をつなぎ、担当、価格、専門人材、partner投資を優先順位付けする。" },

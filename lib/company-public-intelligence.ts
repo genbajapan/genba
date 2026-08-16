@@ -17,6 +17,7 @@ import { daily20260816IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
+import { applyCompanyPageRolloutBatchThree } from "@/lib/company-page-rollout-batch-03";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9589,6 +9590,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwo(intelligenceBySlug);
+applyCompanyPageRolloutBatchThree(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];
