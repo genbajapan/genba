@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 76,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 31
+      "検証済み": 0,
+      "公開済み": 36
     },
     "byPriority": {
       "HOT": 25,
@@ -75,7 +75,7 @@
       "company": "Cato Networks",
       "priority": "HOT",
       "salesRoles": 10,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -102,7 +102,7 @@
       "company": "Cloudflare",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -111,7 +111,7 @@
       "company": "Cognition",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -273,7 +273,7 @@
       "company": "Censys",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -327,7 +327,7 @@
       "company": "Cambly",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },

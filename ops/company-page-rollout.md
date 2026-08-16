@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-17 / 正本: [Adyen](/companies/adyen) / 基準コミット: `66ca2e2`
 
-全112社（未着手 76 / 調査中 0 / 検証済み 5 / 公開済み 31）
+全112社（未着手 76 / 調査中 0 / 検証済み 0 / 公開済み 36）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -10,11 +10,11 @@
 |HOT|Anaplan|3|公開済み|はい|なし|
 |HOT|Anthropic|9|公開済み|はい|なし|
 |HOT|Braze|6|公開済み|はい|なし|
-|HOT|Cato Networks|10|検証済み|はい|なし|
+|HOT|Cato Networks|10|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
 |HOT|Channel Talk|11|公開済み|はい|なし|
-|HOT|Cloudflare|5|検証済み|はい|なし|
-|HOT|Cognition|7|検証済み|はい|なし|
+|HOT|Cloudflare|5|公開済み|はい|なし|
+|HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Coupa|6|公開済み|はい|なし|
 |HOT|Cursor|5|公開済み|はい|なし|
 |HOT|Dataiku|3|公開済み|はい|なし|
@@ -32,13 +32,13 @@
 |HOT|WalkMe|7|公開済み|はい|なし|
 |HOT|Zendesk|3|公開済み|はい|なし|
 |Active|Aghanim|2|公開済み|はい|なし|
-|Active|Censys|2|検証済み|はい|なし|
+|Active|Censys|2|公開済み|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
 |Active|Sonar|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Adyen|1|公開済み|はい|なし|
 |Selective|Asana|1|公開済み|はい|なし|
-|Selective|Cambly|1|検証済み|はい|なし|
+|Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Cohere|1|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本進出年、日本市場の需要・3〜5年の見立てほか6件|
 |Selective|Contentsquare|1|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本進出年、日本市場の需要・3〜5年の見立てほか6件|
 |Selective|Datadog|1|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本進出年、日本市場の需要・3〜5年の見立てほか7件|
