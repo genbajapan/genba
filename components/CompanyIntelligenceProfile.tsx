@@ -113,6 +113,49 @@ function ReputationResearchBlock({ research }: { research: NonNullable<Job["repu
   );
 }
 
+function MarketValueResearchBlock({ research }: { research: NonNullable<Job["marketValueResearch"]> }) {
+  return (
+    <div className="market-value-research">
+      <div className="market-value-verdict">
+        <span>【Genba仮説】</span>
+        <strong>{research.headline}</strong>
+        <p>{research.summary.replace("【Genba仮説】", "")}</p>
+      </div>
+
+      <section className="market-value-section">
+        <div className="market-value-heading"><span>01</span><strong>具体的に身につくスキル</strong></div>
+        <div className="market-value-skill-grid">
+          {research.skills.map((skill) => <article key={skill.title}><strong>{skill.title}</strong><p>{skill.detail}</p></article>)}
+        </div>
+      </section>
+
+      <section className="market-value-section">
+        <div className="market-value-heading"><span>02</span><strong>その先に狙えるポジション・領域</strong></div>
+        <div className="market-value-next-grid">
+          {research.nextRoles.map((role) => <article key={role.title}><strong>{role.title}</strong><p>{role.detail}</p></article>)}
+        </div>
+      </section>
+
+      <section className="market-value-section">
+        <div className="market-value-heading"><span>03</span><strong>市場価値を報酬で見ると</strong></div>
+        <div className="market-value-band-list">
+          {research.marketBands.map((band) => (
+            <article key={band.level}>
+              <span>{band.level}</span><strong>{band.range}</strong><p>{band.condition}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <div className="market-value-proof">
+        <strong>次の転職で市場価値を証明する数字</strong>
+        <ul>{research.proofPoints.map((point) => <li key={point}>{point}</li>)}</ul>
+      </div>
+      <p className="market-value-caveat">{research.caveat}</p>
+    </div>
+  );
+}
+
 function SalesFabeDetails({
   overview,
   intelligence,
@@ -1185,7 +1228,9 @@ export default function CompanyIntelligenceProfile({
                                 <span className="role-description-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <div className="role-description-body">
-                                <p>{item.content}</p>
+                                {item.label === "入って活躍できた場合の市場価値" && job.marketValueResearch
+                                  ? <MarketValueResearchBlock research={job.marketValueResearch} />
+                                  : <p>{item.content}</p>}
                               </div>
                             </details>
                           ))}

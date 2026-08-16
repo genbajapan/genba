@@ -73,6 +73,15 @@ export type Job = {
     caveat: string;
     sources: Array<Source & { detail: string }>;
   };
+  marketValueResearch?: {
+    headline: string;
+    summary: string;
+    skills: Array<{ title: string; detail: string }>;
+    nextRoles: Array<{ title: string; detail: string }>;
+    marketBands: Array<{ level: string; range: string; condition: string }>;
+    proofPoints: string[];
+    caveat: string;
+  };
   desiredProfile: string;
   careerInsights: {
     fit: string;

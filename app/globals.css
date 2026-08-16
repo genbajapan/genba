@@ -1073,6 +1073,31 @@ button, input, select { font: inherit; }
 .reputation-research-sources a:hover { text-decoration: underline; }
 .reputation-research-sources li p { margin-top: 4px; color: #718489; font-size: 9px; line-height: 1.6; }
 .reputation-research-caveat { padding-top: 11px; border-top: 1px dashed #b9d4d0; color: #6e6260 !important; font-size: 11px !important; }
+.market-value-research { display: grid; gap: 18px; padding-top: 4px; }
+.market-value-verdict { padding: 20px 22px; background: var(--navy); }
+.market-value-verdict > span { color: #7de0d2; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.market-value-verdict > strong { display: block; margin-top: 9px; color: white; font-size: 19px; line-height: 1.5; }
+.market-value-verdict > p { margin-top: 9px; color: #bed0d6; font-size: 11px; line-height: 1.85; }
+.market-value-section { display: grid; gap: 9px; }
+.market-value-heading { display: flex; align-items: center; gap: 9px; }
+.market-value-heading > span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--signal); color: white; font-size: 9px; font-weight: 850; }
+.market-value-heading > strong { color: var(--navy); font-size: 13px; }
+.market-value-skill-grid,.market-value-next-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+.market-value-skill-grid article,.market-value-next-grid article { min-width: 0; padding: 14px 15px; border: 1px solid #cbdedb; background: white; }
+.market-value-skill-grid article > strong,.market-value-next-grid article > strong { color: var(--navy); font-size: 11px; line-height: 1.55; }
+.market-value-skill-grid article > p,.market-value-next-grid article > p { margin-top: 6px; color: #61757b; font-size: 10px; line-height: 1.75; }
+.market-value-next-grid article { border-left: 3px solid #67aa9f; }
+.market-value-band-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border: 1px solid #cbdedb; background: white; }
+.market-value-band-list article { min-width: 0; padding: 15px; }
+.market-value-band-list article + article { border-left: 1px solid #d7e3e0; }
+.market-value-band-list span { display: block; color: #63787d; font-size: 9px; font-weight: 800; }
+.market-value-band-list strong { display: block; margin-top: 7px; color: var(--navy); font-size: 14px; line-height: 1.4; }
+.market-value-band-list p { margin-top: 7px; color: #718287; font-size: 9.5px; line-height: 1.65; }
+.market-value-proof { padding: 15px 17px; border-left: 3px solid var(--signal); background: #e5f2ef; }
+.market-value-proof > strong { color: #0a6d63; font-size: 11px; }
+.market-value-proof ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px 20px; margin: 10px 0 0; padding-left: 17px; }
+.market-value-proof li { color: #355650; font-size: 10px; line-height: 1.65; }
+.market-value-caveat { padding-top: 12px; border-top: 1px dashed #b9d4d0; color: #738487 !important; font-size: 9.5px !important; line-height: 1.7 !important; }
 .compensation-research { display: grid; gap: 12px; padding-top: 4px; }
 .compensation-research-verdict { padding: 18px 20px; background: var(--navy); color: white; }
 .compensation-research-verdict > div { display: flex; align-items: center; gap: 8px; }
@@ -1727,6 +1752,10 @@ button, input, select { font: inherit; }
   .compensation-research-verdict { padding: 16px; }
   .compensation-research-verdict strong { font-size: 19px; }
   .compensation-research-grid,.compensation-research-sources ol { grid-template-columns: 1fr; }
+  .market-value-skill-grid,.market-value-next-grid,.market-value-band-list,.market-value-proof ul { grid-template-columns: 1fr; }
+  .market-value-band-list article + article { border-top: 1px solid #d7e3e0; border-left: 0; }
+  .market-value-verdict { padding: 17px; }
+  .market-value-verdict > strong { font-size: 17px; }
   .compensation-research-sources-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
   .compensation-research-sources-heading p { text-align: left; }
   .company-identity-topline { align-items: flex-start; }
