@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 76,
+      "未着手": 71,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 36
     },
     "byPriority": {
-      "HOT": 25,
+      "HOT": 29,
       "Active": 5,
-      "Selective": 49,
-      "求人なし": 33
+      "Selective": 44,
+      "求人なし": 34
     },
-    "standardReady": 36
+    "standardReady": 41
   },
   "companies": [
     {
@@ -116,6 +116,15 @@
       "missingFields": []
     },
     {
+      "slug": "cohere",
+      "company": "Cohere",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "coupa",
       "company": "Coupa",
       "priority": "HOT",
@@ -134,11 +143,38 @@
       "missingFields": []
     },
     {
+      "slug": "datadog",
+      "company": "Datadog",
+      "priority": "HOT",
+      "salesRoles": 22,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "dataiku",
       "company": "Dataiku",
       "priority": "HOT",
       "salesRoles": 3,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "dbt-labs",
+      "company": "dbt Labs",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "deel",
+      "company": "Deel",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -330,108 +366,6 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
-    },
-    {
-      "slug": "cohere",
-      "company": "Cohere",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "contentsquare",
-      "company": "Contentsquare",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Sales Development Representative:ポジティブ・ネガティブ評判",
-        "求人:Sales Development Representative:市場価値"
-      ]
-    },
-    {
-      "slug": "datadog",
-      "company": "Datadog",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Commercial Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Commercial Account Executive:市場価値"
-      ]
-    },
-    {
-      "slug": "dbt-labs",
-      "company": "dbt Labs",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Business Development Representative, Commercial:勤務地・言語の日本語表記",
-        "求人:Business Development Representative, Commercial:ポジティブ・ネガティブ評判",
-        "求人:Business Development Representative, Commercial:市場価値"
-      ]
-    },
-    {
-      "slug": "deel",
-      "company": "Deel",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Sales Development Representative | Japan:ポジティブ・ネガティブ評判",
-        "求人:Sales Development Representative | Japan:市場価値"
-      ]
     },
     {
       "slug": "dialpad",
@@ -1442,6 +1376,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "contentsquare",
+      "company": "Contentsquare",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },

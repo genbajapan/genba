@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -108,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  cohere: {
+    name: "Cohere", domain: "Enterprise AI・Private AI", officialUrl: "https://jobs.ashbyhq.com/cohere",
+    positive: ["東京RemoteでAE、Partner Development、FDEを同時採用し、direct、ecosystem、private deploymentを日本で構築する。", "富士通とのTakaneは日本語enterprise AIとprivate deploymentのlocal proofになる。"],
+    negative: ["監査済み売上・利益、日本法人・office・責任者・日本売上は非公開。ARRは二次報道。", "GPU・on-prem運用、data boundary、model quality、TCOを顧客環境で競合と比較する必要がある。"],
+    next: ["Enterprise AIのStrategic Sales", "AI Infrastructure・Forward Deployed Engineering", "Cloud・SI Partner Development"],
+  },
+  contentsquare: {
+    name: "Contentsquare", domain: "Digital Experience Analytics", officialUrl: "https://jobs.lever.co/contentsquare",
+    positive: ["日本法人・東京office・Country Managerと複数の国内定量事例を確認できる。", "journey、session、product、error、VoCを横断し、CXを売上・support・engineering成果へ接続できる。"],
+    negative: ["2026年8月17日時点で現行日本求人は0件。過去SDRの条件・team人数を現在へ転用できない。", "最新のexact revenue・ARR・利益・日本売上は非公開。customer outcomeはvendor-selected。"],
+    next: ["Digital Analytics・CRO GTM", "Product Analytics・Customer Experience", "Digital Transformation・Value Consulting"],
+  },
+  datadog: {
+    name: "Datadog", domain: "Observability・Cloud Security・FinOps", officialUrl: "https://careers.datadoghq.com/all-jobs/?search=&location=Tokyo",
+    positive: ["東京の対象22求人はSales、SE、CS、Support、Partner、Public Sector、Country leadershipまで広く、日本の拡張範囲が大きい。", "売上成長、FCF、国内のTOPPAN・一休・東芝等の定量成果を確認できる。"],
+    negative: ["FY2025はGAAP営業赤字で、SBCとnon-GAAP・FCFを分けて見る必要がある。", "日本のquota、達成率、給与・OTE、product credit、出社日数は非公開。data volumeとpricingの複雑性も選定risk。"],
+    next: ["Observability・Cloud PlatformのEnterprise Sales", "Sales Engineering・Customer Success Leadership", "Cloud Security・FinOps GTM"],
+  },
+  "dbt-labs": {
+    name: "dbt Labs", domain: "Analytics Engineering・Trusted Data", officialUrl: "https://www.getdbt.com/about-us/careers",
+    positive: ["日本RemoteでPartner Sales、BDR、Customer Solutions、Sales Directorを同時採用し、pipelineからadoption・ecosystemまでを広げる。", "Fivetran統合でingestionからtransformation・lineage・semanticまでを一つのtrusted data storyにできる。"],
+    negative: ["合併後のrecognized revenue、利益、日本法人・office・責任者・Japan tractionは非公開。ARRは売上高ではない。", "warehouse標準機能、dbt Core内製との重複と、統合後のroadmap・pricing・organizationを確認する必要がある。"],
+    next: ["Data InfrastructureのEnterprise Sales", "Analytics Engineering・Customer Solutions", "Data・AI Ecosystem Partnerships"],
+  },
+  deel: {
+    name: "Deel", domain: "Global Employment・Payroll・HR", officialUrl: "https://www.deel.com/careers/",
+    positive: ["Deel Japan法人・Country Managerに加え、SDR、Onboarding、Payroll Operationsの現行roleを確認できる。", "ARR 15億米ドル、4万顧客、月200万payroll runを会社発表し、EORからPayroll・HR・ITへ広げる。"],
+    negative: ["監査済みannual revenue、EBITDA額・margin、FCF、日本売上・顧客・給与・quotaは非公開。", "work-from-anywhereでもhigh volume・high accountability・high speedを明記し、係争中の競合との主張も未確定。"],
+    next: ["HR Tech・Global Payroll Sales", "Customer Onboarding・Payroll Operations Leadership", "Global Mobility・People Operations Platform"],
+  },
   cambly: {
     name: "Cambly", domain: "Corporate Learning・English Training", officialUrl: "https://jobs.ashbyhq.com/Cambly",
     positive: ["現行APAC Sales Directorは日本・中国・韓国の売上計画とSales・Marketing組織を担う広いleadership scope。", "10,000超tutor、human lesson、AI練習、CEFR、法人dashboardを一つの研修programで扱える。"],

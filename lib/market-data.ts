@@ -7,6 +7,7 @@ import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-add
 import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08-15";
 import { jobs20260817BatchSix } from "@/lib/company-additions-2026-08-17-batch-06";
 import { jobs20260817BatchSeven } from "@/lib/company-additions-2026-08-17-batch-07";
+import { jobs20260817BatchEight } from "@/lib/company-additions-2026-08-17-batch-08";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -452,12 +453,12 @@ const companyRecords: Company[] = [
     broadCategory: "CRM・顧客体験",
     hq: "Paris, France / New York, US",
     japanPresence: "Contentsquare Japan合同会社・東京都千代田区(2022年4月設立)",
-    hiringStatus: "積極採用",
-    salesRoles: 1,
-    description: "東京拠点でSales Development Representativeを募集中。公式採用ページ経由で確認できる日本向け求人はこの1件のみ。",
-    lastChecked: "2026-08-11",
-    careersUrl: "https://contentsquare.com/careers/",
-    tags: ["SDR", "APAC"],
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    description: "日本法人と国内顧客事例は確認できるが、2026年8月17日の公式Lever boardで日本・東京求人は0件。募集再開を継続観測する。",
+    lastChecked: "2026-08-17",
+    careersUrl: "https://jobs.lever.co/contentsquare",
+    tags: ["Experience Analytics", "Product Analytics", "求人0件"],
   },
   {
     slug: "anaplan",
@@ -1307,6 +1308,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchEight,
   ...jobs20260817BatchSeven,
   ...jobs20260817BatchSix,
   ...jobs20260816,
@@ -2922,6 +2924,11 @@ const closedJobIds = new Set([
   "confluent-ae-digital-native",
   "confluent-ae-msp-isv",
   "cambly-account-executive-japan",
+  "csq-sdr-tokyo",
+  "deel-sales-development-representative-japan",
+  "dbt-labs-bdr-commercial",
+  "dbt-labs-business-development-representative-commercial",
+  "datadog-commercial-account-executive-japan",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([]);

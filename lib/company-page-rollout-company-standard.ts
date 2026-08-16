@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  cohere: {
+    category: "企業向け生成AI・Private AI基盤",
+    hq: "トロント（カナダ）",
+    japanPresence: "東京Remote team・富士通との日本語AI提携（日本法人・office・責任者は確認不能）",
+    description: "enterprise LLM、retrieval、agent applicationをprivate deploymentを含め提供。東京RemoteでAE、Partner Development、FDEの現行3求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  contentsquare: {
+    category: "デジタル体験分析・プロダクトアナリティクス",
+    hq: "パリ（フランス）",
+    japanPresence: "Contentsquare Japan合同会社・東京都千代田区丸の内（2022年4月設立）",
+    description: "journey、session、heatmap、error、product analytics、VoCを統合。国内定量事例はあるが、2026年8月17日時点の現行日本求人は0件。",
+    lastChecked: "2026-08-17",
+  },
+  datadog: {
+    category: "オブザーバビリティ・クラウドセキュリティ",
+    hq: "ニューヨーク（米国）",
+    japanPresence: "Datadog Japan合同会社・東京都千代田区丸の内（2018年進出、2023年東京data center）",
+    description: "metrics、traces、logs、experience、security、FinOps、AI Observabilityを統合。東京でSales、SE、CS、Support、Partner等の対象22求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  "dbt-labs": {
+    category: "Analytics Engineering・Trusted Data基盤",
+    hq: "米国（Fivetranとの統合会社）",
+    japanPresence: "日本・APAC Remote team（日本法人・office・責任者は確認不能）",
+    description: "dbtのtransformation、test、lineage、semanticとFivetran ingestionを統合。日本RemoteでPartner Sales、BDR、Customer Solutions、Sales Directorの4求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  deel: {
+    category: "グローバル雇用・Payroll・HR基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Deel Japan株式会社・東京都（2022年2月設立）",
+    description: "EOR、contractor、Global Payroll、HR、IT、Mobilityを提供。日本でSDR、Onboarding、Payroll Operationsの掲載対象4職種を公式確認。",
+    lastChecked: "2026-08-17",
+  },
   cambly: {
     category: "法人英語研修・AI学習",
     hq: "カリフォルニア州サンフランシスコ（米国）",
