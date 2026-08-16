@@ -12,9 +12,9 @@ const careerInsights = (category: string): Job["careerInsights"] => ({
   fit: `${category}で複雑なbuyerとpartnerを束ね、市場を作るfull-cycle sellerに向く。`,
   thingsToKnow: "Japan ARR、顧客数、平均ACV、sales cycle、担当社数、quota達成率は非公開。",
   marketValue: `${category}、Enterprise sales、partner orchestration、executive discoveryを横断する経験。`,
-  tenureAndPromotion: `【Genba仮説・確度: 中】市場・製品・buyerの複雑さから、初期は昇進より担当scopeの拡大が先になる。支持材料: 求人はnew logoだけでなく複数部門・partnerとの実行を求め、productとmarketの学習蓄積が担当拡張の価値になる。反証・留保: Japan非ユニーク営業職の公開profileを4件以上集計できず、実際の平均在籍年数、離職率、昇進率、内部異動率は不明。面接で確認: 直近24カ月の担当拡張・昇進・退職の件数と、次levelに必要な成果は。`,
-  priorCompanies: `【Genba仮説・確度: 中】入社元は社名より、${category}に近いcomplex sale、経営層提案、partner経由のexecution、技術・business buyer間の翻訳が共通項になる。支持材料: 公式求人が求めるfull-cycle ownership、multi-stakeholderの合意形成、pipeline構築、partnerとの実行。反証・留保: LinkedIn公開profileの対象地域・職種で実測母数を確保できておらず、特定company categoryの採用優位を事実としては言えない。面接で確認: 直近の採用者の前職category上位3つ、共通するsales motion、ramp期間は。`,
-  nextCompanies: `【Genba仮説・確度: 中】pipeline、受注、expansion、partner寄与を定量化できれば、${category}のEnterprise AE・Sales Lead・Country roleへ接続しやすい。支持材料: 求人が市場構築とend-to-end revenueを求める。反証・留保: 転職先の公開集計ではない。面接で確認: 卒業者の次role categoryと社内のAPAC scope拡張例は。`,
+  tenureAndPromotion: `【Genba仮説】市場・製品・buyerの複雑さから、初期は昇進より担当scopeの拡大が先になる。支持材料: 求人はnew logoだけでなく複数部門・partnerとの実行を求め、productとmarketの学習蓄積が担当拡張の価値になる。反証・留保: Japan非ユニーク営業職の公開profileを4件以上集計できず、実際の平均在籍年数、離職率、昇進率、内部異動率は不明。面接で確認: 直近24カ月の担当拡張・昇進・退職の件数と、次levelに必要な成果は。`,
+  priorCompanies: `【Genba仮説】入社元は社名より、${category}に近いcomplex sale、経営層提案、partner経由のexecution、技術・business buyer間の翻訳が共通項になる。支持材料: 公式求人が求めるfull-cycle ownership、multi-stakeholderの合意形成、pipeline構築、partnerとの実行。反証・留保: LinkedIn公開profileの対象地域・職種で実測母数を確保できておらず、特定company categoryの採用優位を事実としては言えない。面接で確認: 直近の採用者の前職category上位3つ、共通するsales motion、ramp期間は。`,
+  nextCompanies: `【Genba仮説】pipeline、受注、expansion、partner寄与を定量化できれば、${category}のEnterprise AE・Sales Lead・Country roleへ接続しやすい。支持材料: 求人が市場構築とend-to-end revenueを求める。反証・留保: 転職先の公開集計ではない。面接で確認: 卒業者の次role categoryと社内のAPAC scope拡張例は。`,
 });
 
 export const jobs20260815: Job[] = [

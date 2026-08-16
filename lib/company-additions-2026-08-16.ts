@@ -21,9 +21,9 @@ const careerInsights = (category: string): Job["careerInsights"] => ({
   fit: `${category}で、複数部門の意思決定を束ねながら顧客の業務変化を売りたい人に向く。`,
   thingsToKnow: "日本のquota、達成率、平均ACV、sales cycle、担当社数、pipeline source、離職率は公開情報で確認できない。",
   marketValue: `${category}のcategory expertise、value selling、multi-stakeholder deal、forecastを横断する経験。`,
-  tenureAndPromotion: `【Genba仮説・確度: 中】初期の評価は肩書より、pipelineの再現性と受注後の顧客成果を作れるかに置かれ、昇進前にsegment・account・team scopeが広がる可能性がある。支持材料: 公式求人が自律的なpipeline形成、discovery、複数部門の合意形成、forecastのownershipを重視する。反証・留保: 日本組織の昇進・退職実績とrole別平均在籍年数は公開集計できておらず、scope拡大が昇進へ直結するとは言えない。面接で確認: 直近24カ月の昇進・退職件数、同roleの在籍期間、次levelに必要な定量成果は。`,
-  priorCompanies: `【Genba仮説・確度: 中】特定社名より、${category}に近いSaaS営業、technical buyerとのvalue selling、複数stakeholderの短中期deal経験が隣接する。支持材料: 公式求人の必須・歓迎要件。反証・留保: 日本在籍者の前職を十分な母数で集計していない。面接で確認: 直近採用者の前職categoryとramp期間は。`,
-  nextCompanies: `【Genba仮説・確度: 中】pipeline、受注、adoption・expansionを定量化できれば、${category}のCommercial・Enterprise AEやSales Leadへ接続しやすい。支持材料: roleがfull-cycle ownershipとbusiness outcomeを求める。反証・留保: 転職先の公開集計ではない。面接で確認: 社内のsegment移動と卒業者の次roleは。`,
+  tenureAndPromotion: `【Genba仮説】初期の評価は肩書より、pipelineの再現性と受注後の顧客成果を作れるかに置かれ、昇進前にsegment・account・team scopeが広がる可能性がある。支持材料: 公式求人が自律的なpipeline形成、discovery、複数部門の合意形成、forecastのownershipを重視する。反証・留保: 日本組織の昇進・退職実績とrole別平均在籍年数は公開集計できておらず、scope拡大が昇進へ直結するとは言えない。面接で確認: 直近24カ月の昇進・退職件数、同roleの在籍期間、次levelに必要な定量成果は。`,
+  priorCompanies: `【Genba仮説】特定社名より、${category}に近いSaaS営業、technical buyerとのvalue selling、複数stakeholderの短中期deal経験が隣接する。支持材料: 公式求人の必須・歓迎要件。反証・留保: 日本在籍者の前職を十分な母数で集計していない。面接で確認: 直近採用者の前職categoryとramp期間は。`,
+  nextCompanies: `【Genba仮説】pipeline、受注、adoption・expansionを定量化できれば、${category}のCommercial・Enterprise AEやSales Leadへ接続しやすい。支持材料: roleがfull-cycle ownershipとbusiness outcomeを求める。反証・留保: 転職先の公開集計ではない。面接で確認: 社内のsegment移動と卒業者の次roleは。`,
 });
 
 export const jobs20260816: Job[] = [
@@ -38,9 +38,9 @@ export const jobs20260816: Job[] = [
       fit: "R&D・IPの専門buyerと長期関係を作り、renewalとexpansionを定量化したいaccount sellerに向く。",
       thingsToKnow: "勤務地はTokyoだが本文はSingapore・Southeast Asiaのaccountを記載する。実際のterritory、日本顧客比率、担当社数、renewal ownership、quota、sales supportを確認したい。",
       marketValue: "Innovation Intelligence、IP・R&D workflow、strategic account management、consultative expansionを横断する経験。",
-      tenureAndPromotion: "【Genba仮説・確度: 探索中】入社後は既存accountのretentionとexpansionを再現し、より大きなportfolioまたはteam scopeへ広がる可能性がある。支持材料: 公式求人はaccount performance、forecast、upsell・cross-sell、GTM feedbackを一貫して求める。反証・留保: Japan commercial teamの平均在籍年数、昇進、離職、次level要件は公開情報で確認できず、scope拡大が実際の昇進経路かは不明。面接で確認: 直近24カ月のteam変化、昇進例、promotion criteria、次levelの定量成果は。",
-      priorCompanies: "【Genba仮説・確度: 中】Enterprise SaaS、IP service、R&D toolでcomplex accountを管理し、technical dataをbusiness decisionへ翻訳した人材が隣接する。支持材料: 公式求人が5年以上のB2B sales、strategic account、R&D・IP・Legal stakeholder、consultative sellingを要件化。反証・留保: 日本在籍者の前職を十分な公開母数で集計しておらず、特定業界・社名の採用優位は断定できない。面接で確認: 直近採用者の前職category、domain未経験者のramp期間、採用時に最も重視した再現可能な経験は。",
-      nextCompanies: "【Genba仮説・確度: 中】renewal、upsell、cross-sell、customer outcomeを定量化できれば、Data SaaS・Vertical SaaSのStrategic AM、Enterprise AE、Customer Growth leadershipへ接続しやすい。支持材料: roleがportfolio ownership、senior stakeholder、full-cycle expansion、forecastを求める。反証・留保: Patsnap Japan退職者の転職先を十分な件数で公開集計した結果ではなく、隣接職務からの仮説。面接で確認: 卒業者の次role category、社内のteam lead・new businessへの異動例、評価される成果指標は。",
+      tenureAndPromotion: "【Genba仮説】入社後は既存accountのretentionとexpansionを再現し、より大きなportfolioまたはteam scopeへ広がる可能性がある。支持材料: 公式求人はaccount performance、forecast、upsell・cross-sell、GTM feedbackを一貫して求める。反証・留保: Japan commercial teamの平均在籍年数、昇進、離職、次level要件は公開情報で確認できず、scope拡大が実際の昇進経路かは不明。面接で確認: 直近24カ月のteam変化、昇進例、promotion criteria、次levelの定量成果は。",
+      priorCompanies: "【Genba仮説】Enterprise SaaS、IP service、R&D toolでcomplex accountを管理し、technical dataをbusiness decisionへ翻訳した人材が隣接する。支持材料: 公式求人が5年以上のB2B sales、strategic account、R&D・IP・Legal stakeholder、consultative sellingを要件化。反証・留保: 日本在籍者の前職を十分な公開母数で集計しておらず、特定業界・社名の採用優位は断定できない。面接で確認: 直近採用者の前職category、domain未経験者のramp期間、採用時に最も重視した再現可能な経験は。",
+      nextCompanies: "【Genba仮説】renewal、upsell、cross-sell、customer outcomeを定量化できれば、Data SaaS・Vertical SaaSのStrategic AM、Enterprise AE、Customer Growth leadershipへ接続しやすい。支持材料: roleがportfolio ownership、senior stakeholder、full-cycle expansion、forecastを求める。反証・留保: Patsnap Japan退職者の転職先を十分な件数で公開集計した結果ではなく、隣接職務からの仮説。面接で確認: 卒業者の次role category、社内のteam lead・new businessへの異動例、評価される成果指標は。",
     },
   },
   {

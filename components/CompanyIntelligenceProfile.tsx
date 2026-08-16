@@ -849,7 +849,7 @@ export default function CompanyIntelligenceProfile({
                             <details key={risk.title} className="risk-hypothesis-card">
                               <summary>
                                 <h5>{risk.title}</h5>
-                                <span className={`confidence confidence-${risk.confidence}`}>確度: {risk.confidence}</span>
+                                <span className="confidence">【Genba仮説】</span>
                                 <span className="risk-hypothesis-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <p className="risk-body">{risk.body}</p>
@@ -1019,7 +1019,7 @@ export default function CompanyIntelligenceProfile({
                     {publicIntel ? (
                       <>
                         <article><p className="card-index">CULTURE HYPOTHESIS</p><h3>{publicIntel.cultureNotes.hypothesis.title}</h3><p>{publicIntel.cultureNotes.hypothesis.body}</p><a href={company.careersUrl} target="_blank" rel="noreferrer">公式カルチャー・採用情報 ↗</a></article>
-                        <article><p className="card-index">CAREER VALUE</p><h3>{publicIntel.cultureNotes.careerValue.title}</h3><p>{publicIntel.cultureNotes.careerValue.body}</p><span className="hypothesis-pill">GENBA仮説 / 確度 {publicIntel.cultureNotes.careerValue.confidence}</span></article>
+                        <article><p className="card-index">CAREER VALUE</p><h3>{publicIntel.cultureNotes.careerValue.title}</h3><p>{publicIntel.cultureNotes.careerValue.body}</p><span className="hypothesis-pill">【Genba仮説】</span></article>
                       </>
                     ) : (
                       <>
@@ -1246,7 +1246,7 @@ export default function CompanyIntelligenceProfile({
                         <summary>
                           <span className="hypothesis-number">H{String(index + 1).padStart(2, "0")}</span>
                           <div><p>{hypothesis.topic}</p><h3>{hypothesis.title}</h3></div>
-                          <span className={`confidence confidence-${hypothesis.confidence}`}>確度 {hypothesis.confidence}</span>
+                          <span className="confidence">【Genba仮説】</span>
                           <span className="hypothesis-chevron" aria-hidden="true">▾</span>
                         </summary>
                         <p className="hypothesis-conclusion">{hypothesis.conclusion}</p>

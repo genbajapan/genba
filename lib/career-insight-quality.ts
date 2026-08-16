@@ -27,7 +27,7 @@ type CareerCompany = {
 
 type RoleFamily = "partnerships" | "sdr" | "technical" | "customer" | "leadership" | "ae";
 
-const structuredHypothesisMarker = "【Genba仮説・確度:";
+const structuredHypothesisMarker = "【Genba仮説】";
 
 function roleFamily(job: CareerJob): RoleFamily {
   const role = `${job.title} ${job.segment}`.toLocaleLowerCase();
@@ -138,9 +138,9 @@ function roleHypotheses(family: RoleFamily, segment: string, company: CareerComp
   return hypotheses[family];
 }
 
-function withHypothesis(existing: string, hypothesis: string, support: string, caveat: string, question: string, confidence = "中"): string {
+function withHypothesis(existing: string, hypothesis: string, support: string, caveat: string, question: string): string {
   if (existing.includes(structuredHypothesisMarker)) return existing;
-  return `${existing} ${structuredHypothesisMarker} ${confidence}】${hypothesis} 支持材料: ${support} 反証・留保: ${caveat} 面接で確認: ${question}`;
+  return `${existing} ${structuredHypothesisMarker}${hypothesis} 支持材料: ${support} 反証・留保: ${caveat} 面接で確認: ${question}`;
 }
 
 export function strengthenCareerInsights<T extends CareerJob>(job: T, company: CareerCompany): T {

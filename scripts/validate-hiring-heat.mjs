@@ -67,7 +67,7 @@ for (const job of jobs) {
     if (content.length < 180) {
       errors.push(`${job.id}: ${label}が薄すぎます（${content.length}文字）。実測傾向または構造化したGenba仮説を追加してください。`);
     }
-    for (const requiredPart of ["【Genba仮説・確度:", "支持材料:", "反証・留保:", "面接で確認:"]) {
+    for (const requiredPart of ["【Genba仮説】", "支持材料:", "反証・留保:", "面接で確認:"]) {
       if (!content.includes(requiredPart)) {
         errors.push(`${job.id}: ${label}に「${requiredPart}」がありません。`);
       }
