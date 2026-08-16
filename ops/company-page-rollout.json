@@ -21,9 +21,9 @@
     "total": 112,
     "byStatus": {
       "未着手": 81,
-      "調査中": 5,
+      "調査中": 0,
       "検証済み": 0,
-      "公開済み": 26
+      "公開済み": 31
     },
     "byPriority": {
       "HOT": 22,
@@ -39,7 +39,7 @@
       "company": "Airwallex",
       "priority": "HOT",
       "salesRoles": 6,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -57,7 +57,7 @@
       "company": "Anthropic",
       "priority": "HOT",
       "salesRoles": 9,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -237,7 +237,7 @@
       "company": "Aghanim",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -282,7 +282,7 @@
       "company": "Asana",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1436,7 +1436,7 @@
       "company": "Amplitude",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
