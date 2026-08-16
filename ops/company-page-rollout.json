@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 61,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 46
+      "検証済み": 0,
+      "公開済み": 51
     },
     "byPriority": {
       "HOT": 34,
@@ -228,7 +228,7 @@
       "company": "Figma",
       "priority": "HOT",
       "salesRoles": 8,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -237,7 +237,7 @@
       "company": "Fivetran",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -381,7 +381,7 @@
       "company": "Grafana Labs",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -444,7 +444,7 @@
       "company": "Hightouch",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1316,7 +1316,7 @@
       "company": "Gurobi Optimization",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
