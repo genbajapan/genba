@@ -1240,19 +1240,21 @@ export default function CompanyIntelligenceProfile({
                     ))}
                   </div>
 
-                  <div className="external-signal-grid">
-                    {publicIntel.externalSignals.map((signal) => {
-                      const source = getResearchSource(publicIntel, signal.sourceId);
-                      return (
-                        <article key={signal.label}>
-                          <p className="card-index">EXTERNAL SIGNAL</p>
-                          <span>{signal.label}</span><strong>{signal.value}</strong>
-                          <p>{signal.detail}</p><small>{signal.caveat}</small>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">元データを見る ↗</a>}
-                        </article>
-                      );
-                    })}
-                  </div>
+                  {!isAdyen && (
+                    <div className="external-signal-grid">
+                      {publicIntel.externalSignals.map((signal) => {
+                        const source = getResearchSource(publicIntel, signal.sourceId);
+                        return (
+                          <article key={signal.label}>
+                            <p className="card-index">EXTERNAL SIGNAL</p>
+                            <span>{signal.label}</span><strong>{signal.value}</strong>
+                            <p>{signal.detail}</p><small>{signal.caveat}</small>
+                            {source && <a href={source.url} target="_blank" rel="noreferrer">元データを見る ↗</a>}
+                          </article>
+                        );
+                      })}
+                    </div>
+                  )}
                 </>
               ) : (
                 <>
