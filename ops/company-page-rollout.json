@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 91,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 16
+      "検証済み": 0,
+      "公開済み": 21
     },
     "byPriority": {
       "HOT": 17,
@@ -102,7 +102,7 @@
       "company": "DeepL",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -111,7 +111,7 @@
       "company": "ElevenLabs",
       "priority": "HOT",
       "salesRoles": 10,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -138,7 +138,7 @@
       "company": "New Relic",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -147,7 +147,7 @@
       "company": "Notion",
       "priority": "HOT",
       "salesRoles": 12,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -192,7 +192,7 @@
       "company": "Mirakl",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
