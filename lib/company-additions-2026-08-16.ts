@@ -4,7 +4,7 @@ const checkedAt = "2026-08-16";
 
 export const companies20260816: Company[] = [
   {
-    slug: "adyen", name: "Adyen", category: "Unified Commerce / Global Payments Platform", broadCategory: "経営管理・FinTech", hq: "Amsterdam, Netherlands", japanPresence: "Adyen Japan / Shibuya, Tokyo", hiringStatus: "採用中", salesRoles: 1,
+    slug: "adyen", name: "Adyen", category: "ユニファイドコマース／グローバル決済プラットフォーム", broadCategory: "経営管理・FinTech", hq: "オランダ・アムステルダム", japanPresence: "Adyen Japan / Shibuya, Tokyo", hiringStatus: "採用中", salesRoles: 1,
     description: "online・店頭・platform決済を一つの基盤で扱う上場FinTech。東京でTeam Lead, Salesを公式募集し、日本のEnterprise sales teamを率いる人材を採用。", lastChecked: checkedAt, careersUrl: "https://careers.adyen.com/vacancies/7601353-team-lead-sales", tags: ["アンカー企業", "Payments", "FinTech", "Unified Commerce", "Enterprise", "Sales Leadership", "Japan"],
   },
   {
