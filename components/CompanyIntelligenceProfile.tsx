@@ -295,12 +295,15 @@ function CultureDossier({ intelligence, companyName }: { intelligence: CompanyPu
   );
 
   return (
-    <article className="culture-dossier">
-      <header className="culture-dossier-header">
+    <details className="culture-dossier">
+      <summary className="culture-dossier-header">
         <div><p className="card-index">WORKING CULTURE</p><h3>{companyName}での働き方とカルチャー</h3></div>
-        <p>{culture.headline}</p>
         <span>調査日 {culture.researchedAt}</span>
-      </header>
+        <i aria-hidden="true">＋</i>
+      </summary>
+
+      <div className="culture-dossier-body">
+      <p className="culture-dossier-intro">{culture.headline}</p>
 
       <section className="culture-workstyle">
         <div className="culture-workstyle-verdict">
@@ -394,7 +397,8 @@ function CultureDossier({ intelligence, companyName }: { intelligence: CompanyPu
       </section>
 
       <footer className="culture-dossier-sources"><span>主な参照情報</span>{sourceLinks(culture.sourceIds)}</footer>
-    </article>
+      </div>
+    </details>
   );
 }
 
