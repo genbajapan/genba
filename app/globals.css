@@ -991,6 +991,13 @@ button, input, select { font: inherit; }
 .interview-flow-body strong { display: block; color: var(--navy); font-size: 12px; line-height: 1.4; }
 .interview-flow-body p { margin: 6px 0 0; color: #52646c; font-size: 10px; line-height: 1.6; }
 .interview-flow-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px dashed #c7d3d5; color: #7b898e; font-size: 10px; line-height: 1.6; }
+.role-hypothesis-wrap { margin-bottom: 12px; }
+.role-hypothesis-wrap .card-index { margin: 0 0 9px; }
+.role-hypothesis-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.role-hypothesis-grid article { padding: 18px; border: 1px solid #294957; background: #0b2a3b; }
+.role-hypothesis-grid span { color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .1em; }
+.role-hypothesis-grid p { margin: 10px 0 0; color: #a8bbc3; font-size: 11px; line-height: 1.65; }
+.role-benchmark-note { max-width: 720px; margin: -4px 0 14px; color: #6a7d84; font-size: 11px; line-height: 1.7; }
 .role-facts .analysis { background: #f0f7f5; }
 .role-facts .analysis span { color: #478078; }
 .role-facts .analysis strong { color: #174f4a; }
@@ -1362,6 +1369,7 @@ button, input, select { font: inherit; }
   .role-facts { grid-template-columns: repeat(3,1fr); }
   .role-facts div:nth-child(4) { border-left: 0; }
   .role-facts div:nth-child(n+4) { border-top: 1px solid var(--line); }
+  .role-hypothesis-grid { grid-template-columns: repeat(2,1fr); }
   .comparison-map-grid { grid-template-columns: repeat(2,1fr); }
   .organization-read-card { grid-template-columns: 1fr 1fr; }
   .organization-read-card > a { grid-column: 2; }
@@ -1703,6 +1711,7 @@ button, input, select { font: inherit; }
   .work-there-card { flex-direction: column; align-items: flex-start; padding: 26px 24px; }
   .work-there-card h3 { font-size: 21px; }
   .work-there-card-cta { width: 100%; justify-content: center; }
+  .role-hypothesis-grid { grid-template-columns: 1fr; }
   .comparison-map-grid { grid-template-columns: 1fr; }
   .evidence-card { grid-template-columns: 88px 1fr; gap: 18px; }
   .evidence-meter { width: 86px; height: 86px; }
