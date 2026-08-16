@@ -29,12 +29,9 @@ const profiles: Profile[] = [
     ],
     openingHook: "同じ顧客がonlineと店舗を行き来した時、決済成功率、fraud、購買履歴、返金を一つのjourneyとして見られますか。", valueHypothesis: "authorization、conversion、payment success、fraud loss、refund、reconciliation time、new-market launch time、payment TCOを測る。", objection: "国内PSPと既存POS・gatewayで十分。", reframe: "現在の手数料だけでなく、channel追加、海外展開、障害、不正、data統合、経理運用まで含む収益機会とTCOで比較する。",
     facts: [
-      { label: "2025 net revenue", value: "€2.36B", detail: "Adyen 2025 annual report。", source: "finance" },
-      { label: "2025 processed volume", value: "€1.47T", detail: "会社公表値。", source: "finance" },
-      { label: "2025 EBITDA margin", value: "55%", detail: "会社公表値。", source: "finance" },
-      { label: "日本拠点", value: "Shibuya, Tokyo", detail: "Tokyo officeとJapan Country Managerを確認。", source: "company" },
-      { label: "国内顧客事例", value: "星野リゾート", detail: "2025年7月から界で先行導入。", source: "customers" },
-      { label: "現行営業求人", value: "1件", detail: "Team Lead, Sales。", source: "job" },
+      { label: "2025年純収益", value: "€23.6億（約4,366億円）", detail: "2025年の年次報告書。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年取扱高", value: "€1.47兆（約272兆円）", detail: "会社公表値。1ユーロ=185円で概算。", source: "finance" },
+      { label: "2025年EBITDAマージン", value: "55%", detail: "会社公表値。", source: "finance" },
     ],
     customers: [
       { company: "星野リゾート", products: "Adyen payment platform", outcome: "予約・対面・KIOSKにまたがる決済を一つのplatformへ統合し、国内外全施設へ展開予定。", implication: "hospitalityの複雑なjourneyとglobal expansionを同時に扱う国内proof。" },

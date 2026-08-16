@@ -297,7 +297,7 @@ export default function CompanyIntelligenceProfile({
                     <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
                   </div>
 
-                  <div className="public-fact-grid">
+                  <div className={`public-fact-grid${company.slug === "adyen" ? " public-fact-grid-compact" : ""}`}>
                     {publicIntel.facts.map((fact) => {
                       const source = getResearchSource(publicIntel, fact.sourceIds[0]);
                       return (

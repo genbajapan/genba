@@ -589,6 +589,11 @@ button, input, select { font: inherit; }
 .public-fact-grid strong { display: block; margin-top: 15px; background: linear-gradient(135deg, var(--navy), #0a6d63); background-clip: text; -webkit-background-clip: text; color: transparent; font-size: 25px; letter-spacing: -.035em; }
 .public-fact-grid p { min-height: 36px; margin: 9px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .public-fact-grid a { display: inline-block; margin-top: 12px; color: var(--signal); font-size: 11px; font-weight: 750; text-decoration: none; }
+.public-fact-grid-compact { gap: 6px; margin-top: 8px; }
+.public-fact-grid-compact article { min-height: 132px; padding: 15px 14px 13px; }
+.public-fact-grid-compact strong { margin-top: 9px; font-size: 20px; line-height: 1.25; }
+.public-fact-grid-compact p { min-height: 0; margin-top: 6px; font-size: 10px; line-height: 1.45; }
+.public-fact-grid-compact a { margin-top: 7px; font-size: 10px; }
 .company-scale-comparison { margin-top: 10px; border: 1px solid var(--line); background: #f7faf9; }
 .company-scale-comparison > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 19px 22px; cursor: pointer; list-style: none; }
 .company-scale-comparison > summary::-webkit-details-marker { display: none; }
@@ -1433,6 +1438,9 @@ button, input, select { font: inherit; }
   .fit-card,.evidence-card { padding: 22px; }
   .public-fact-grid { grid-template-columns: 1fr; }
   .public-fact-grid article { min-height: 145px; }
+  .public-fact-grid-compact { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .public-fact-grid-compact article { min-height: 118px; }
+  .public-fact-grid-compact article:last-child { grid-column: 1 / -1; }
   .company-scale-comparison > summary { padding: 16px; }
   .company-scale-comparison-body { padding: 0 12px 12px; }
   .company-scale-comparison > summary > span:first-child strong { font-size: 14px; }
