@@ -11,7 +11,6 @@ import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
-import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
 
 type ProfileProps = {
@@ -40,13 +39,28 @@ function shortDate(date: string) {
   return date.replaceAll("-", ".");
 }
 
+function japaneseRoleSegment(segment: string) {
+  const labels = [];
+  if (/strategic|enterprise|large|named|大手/i.test(segment)) labels.push("大手企業向け営業");
+  else if (/mid.?market|commercial|中堅/i.test(segment)) labels.push("中堅企業向け営業");
+  else if (/smb|small|中小/i.test(segment)) labels.push("中小企業向け営業");
+  else if (/partner|channel|alliance/i.test(segment)) labels.push("パートナー営業");
+  if (/manager|director|lead|head|vp/i.test(segment)) labels.push("営業リーダー");
+  return labels.length ? labels.join("／") : "法人営業";
+}
+
+function compensationOutlook(job: Job) {
+  if (job.compensationResearch?.headline) return job.compensationResearch.headline;
+  if (/非公開|確認でき|記載はない|未確認/.test(job.compensationReality)) return "公式求人で報酬額は非公開";
+  return "公開情報を確認（詳細は給与事情へ）";
+}
+
 function CompensationResearchBlock({ research }: { research: NonNullable<Job["compensationResearch"]> }) {
   return (
     <div className="compensation-research">
       <div className="compensation-research-verdict">
         <div>
-          <span>GENBA推定</span>
-          <b>確度：{research.confidence}</b>
+          <span>【Genba仮説】</span>
         </div>
         <strong>{research.headline}</strong>
         <p>公式の提示額ではなく、公開情報から求めた市場レンジです。</p>
@@ -224,7 +238,7 @@ function SalesFabeDetails({
       <div className="company-sales-fabe-panel">
         <div className="company-sales-table-scroll">
           <table className="company-sales-table company-fabe-table" aria-label="FABE分析と競合比較">
-            <thead><tr><th>観点</th><th>Adyenの分析</th><th>顧客にとっての意味</th></tr></thead>
+            <thead><tr><th>観点</th><th>企業の分析</th><th>顧客にとっての意味</th></tr></thead>
             <tbody>
               {overview.fabeRows.map((row) => (
                 <tr key={row.key} className={`company-fabe-row-${row.key}`}>
@@ -415,7 +429,7 @@ function CultureDossier({ intelligence, companyName }: { intelligence: CompanyPu
       </section>
 
       <section className="culture-dossier-section">
-        <div className="culture-section-heading"><span>01</span><div><p>THE ADYEN FORMULA</p><h4>公式の価値観を、日々の行動に翻訳すると</h4></div></div>
+        <div className="culture-section-heading"><span>01</span><div><p>公式の価値観</p><h4>会社が掲げる原則を、日々の行動に翻訳すると</h4></div></div>
         <div className="culture-principle-grid">
           {culture.principles.map((principle) => (
             <article key={principle.label}>
@@ -561,7 +575,6 @@ export default function CompanyIntelligenceProfile({
   allCompanies,
 }: ProfileProps) {
   const isPreEntry = company.entryStatus === "not-entered";
-  const isAdyen = company.slug === "adyen";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
@@ -780,11 +793,11 @@ export default function CompanyIntelligenceProfile({
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
             <section className="intel-section" id="overview">
-              <details className={`company-overview-disclosure${isAdyen ? " company-overview-disclosure-adyen" : ""}`} open data-section-disclosure>
+              <details className="company-overview-disclosure company-overview-disclosure-standard" open data-section-disclosure>
                 <summary className="company-overview-toggle">
                   <div className="intel-heading">
-                    <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}{company.slug === "adyen" ? "" : "社"}概要</h2></div>
-                    <p>{company.slug === "adyen" ? "※公開情報を参照" : "公開されている企業情報・実績を、応募判断の前提としてまとめます。"}</p>
+                    <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}概要</h2></div>
+                    <p>※公開情報を参照</p>
                   </div>
                   <span className="company-overview-toggle-action" aria-hidden="true">＋</span>
                 </summary>
@@ -854,7 +867,7 @@ export default function CompanyIntelligenceProfile({
                       </div>
                     )}
 
-                    <div className={`public-fact-grid${company.slug === "adyen" ? " public-fact-grid-compact" : ""}${publicIntel.overviewLeadership ? " public-fact-grid-merged" : ""}`}>
+                    <div className={`public-fact-grid public-fact-grid-compact${publicIntel.overviewLeadership ? " public-fact-grid-merged" : ""}`}>
                       {publicIntel.facts.map((fact) => {
                         const source = getResearchSource(publicIntel, fact.sourceIds[0]);
                         return (
@@ -1235,56 +1248,29 @@ export default function CompanyIntelligenceProfile({
                 <p>{isPreEntry ? "日本向け求人は未確認。海外の営業モデルから、進出求人が出たときに確認すべき条件を整理しています。" : companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
-              {publicIntel && company.slug !== "adyen" && (
-                <div className="role-hypothesis-wrap">
-                  <p className="card-index">ざっくりまとめ</p>
-                  <div className="role-hypothesis-grid">
-                    <article><span>セールスモーション</span><p>{publicIntel.roleLens.salesMotion}</p></article>
-                    <article><span>給与関連</span><p>{publicIntel.roleLens.compensation}</p></article>
-                    <article><span>Quota</span><p>{publicIntel.roleLens.quota}</p></article>
-                    <article><span>チーム連携</span><p>{publicIntel.roleLens.collaboration}</p></article>
-                  </div>
-                </div>
-              )}
-
               {companyJobs.length ? (
                 <>
-                  {publicIntel && company.slug !== "adyen" && (
-                    <p className="role-benchmark-note">
-                      「報酬の見立て」は担当セグメント別のOTE目安({compBenchmarkSource.label})にどれだけ近いかを示すGenba仮説で、{company.name}固有の確認値ではありません。「英語の実務利用」も個社の確認事実ではなく、外資営業組織で一般的に見られる傾向としてのGenba分析です。
-                    </p>
-                  )}
                   <div className="role-dossier-list">
                     {companyJobs.map((job, index) => {
-                      const tier = getCompTierForSegment(job.segment);
                       return (
                         <article className="role-dossier" key={job.id}>
                           <header>
                             <span className="role-number">{String(index + 1).padStart(2, "0")}</span>
                             <div>
-                              <p>{isAdyen ? "大手企業向け営業／営業リーダー" : job.segment}</p>
+                              <p>{japaneseRoleSegment(job.segment)}</p>
                               <h3>{job.title}</h3>
-                              {isAdyen && <time className="role-last-updated">最終更新日 {shortDate(job.lastChecked)}</time>}
+                              <time className="role-last-updated">最終更新日 {shortDate(job.lastChecked)}</time>
                             </div>
                             <a href={job.source.url} target="_blank" rel="noreferrer">公式求人 ↗</a>
                           </header>
-                          <div className={`role-facts${isAdyen ? " role-facts-adyen" : ""}`}>
+                          <div className="role-facts role-facts-standard">
                             <div className="known"><span>勤務地</span><strong>{job.location}</strong></div>
                             <div className="known"><span>言語(募集要項)</span><strong>{job.language}</strong></div>
                             {publicIntel ? (
-                              <>
-                                <div className="analysis"><span>報酬の見立て</span><strong>{isAdyen ? "現金OTE 2,200万〜3,200万円（Genba推定）" : `${tier.label}帯 ${tier.oteRange}が目安`}</strong></div>
-                                {!isAdyen && <div className="analysis"><span>英語の実務利用</span><strong>{/英語|English/i.test(job.language) && !/明記なし|不問/.test(job.language) ? "募集要項で英語要件あり。使用場面と頻度は要確認" : "募集要項では要件を確認できず。使用場面と頻度は要確認"}</strong></div>}
-                                {!isAdyen && <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>}
-                              </>
+                              <div className="analysis"><span>報酬の見立て</span><strong>{compensationOutlook(job)}</strong></div>
                             ) : (
-                              <>
-                                <div><span>OTE</span><strong>未確認</strong></div>
-                                <div><span>Pay Mix</span><strong>未確認</strong></div>
-                                <div><span>新規 / 既存</span><strong>未確認</strong></div>
-                              </>
+                              <div><span>報酬</span><strong>未確認</strong></div>
                             )}
-                            {!isAdyen && <div><span>初回確認</span><strong>{shortDate(job.firstSeen)}</strong></div>}
                           </div>
                           {job.descriptionSummary && (
                             <details className="role-description">
@@ -1296,7 +1282,7 @@ export default function CompanyIntelligenceProfile({
                               <div className="role-description-body">
                                 <p><span>公式ディスクリプションの要約</span>{job.descriptionSummary}</p>
                                 {job.genbaTake && <p className="role-description-take"><span>Genbaからの示唆</span>{job.genbaTake}</p>}
-                                {isAdyen && job.desiredProfile && <p><span>求める人物や経験</span>{job.desiredProfile}</p>}
+                                {job.desiredProfile && <p><span>求める人物や経験</span>{job.desiredProfile}</p>}
                               </div>
                             </details>
                           )}
@@ -1314,18 +1300,6 @@ export default function CompanyIntelligenceProfile({
                               </div>
                             </details>
                           )}
-                          {job.desiredProfile && !isAdyen && (
-                            <details className="role-description">
-                              <summary>
-                                <span className="role-description-icon" aria-hidden="true">+</span>
-                                <span className="role-description-label">求める人物や経験</span>
-                                <span className="role-description-chevron" aria-hidden="true">▾</span>
-                              </summary>
-                              <div className="role-description-body">
-                                <p>{job.desiredProfile}</p>
-                              </div>
-                            </details>
-                          )}
                           {job.reputationResearch && (
                             <details className="role-description">
                               <summary>
@@ -1339,16 +1313,9 @@ export default function CompanyIntelligenceProfile({
                             </details>
                           )}
                           {job.careerInsights && [
-                            { label: "向き不向き", content: job.careerInsights.fit },
-                            { label: "先に知っておくべきこと", content: job.careerInsights.thingsToKnow },
+                            ...(!job.reputationResearch ? [{ label: "先に知っておくべきこと", content: job.careerInsights.thingsToKnow }] : []),
                             { label: "入って活躍できた場合の市場価値", content: job.careerInsights.marketValue },
-                            { label: "在籍年数・社内プロモか転職が多いか", content: job.careerInsights.tenureAndPromotion },
-                            { label: "どんな会社からの転職が多いか", content: job.careerInsights.priorCompanies },
-                            { label: "どんな会社への転職が多いか", content: job.careerInsights.nextCompanies },
-                          ].filter((item) => {
-                            const hiddenForAdyen = ["向き不向き", "在籍年数・社内プロモか転職が多いか", "どんな会社からの転職が多いか", "どんな会社への転職が多いか"];
-                            return (!isAdyen || !hiddenForAdyen.includes(item.label)) && (!job.reputationResearch || item.label !== "先に知っておくべきこと");
-                          }).map((item) => (
+                          ].map((item) => (
                             <details className="role-description" key={item.label}>
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
@@ -1442,21 +1409,6 @@ export default function CompanyIntelligenceProfile({
                     ))}
                   </div>
 
-                  {!isAdyen && (
-                    <div className="external-signal-grid">
-                      {publicIntel.externalSignals.map((signal) => {
-                        const source = getResearchSource(publicIntel, signal.sourceId);
-                        return (
-                          <article key={signal.label}>
-                            <p className="card-index">EXTERNAL SIGNAL</p>
-                            <span>{signal.label}</span><strong>{signal.value}</strong>
-                            <p>{signal.detail}</p><small>{signal.caveat}</small>
-                            {source && <a href={source.url} target="_blank" rel="noreferrer">元データを見る ↗</a>}
-                          </article>
-                        );
-                      })}
-                    </div>
-                  )}
                 </>
                 )
               ) : (
@@ -1530,11 +1482,11 @@ export default function CompanyIntelligenceProfile({
                             <span className="solution-item-chevron" aria-hidden="true">▾</span>
                           </summary>
                           <div className="solution-item-body">
-                            <p><span>Feature(機能)</span>{fabe.feature}</p>
-                            <p><span>Advantage(優位性)</span>{fabe.advantage}</p>
-                            <p><span>Benefit(メリット)</span>{fabe.benefit}</p>
-                            <p><span>Evidence(証拠)</span>{fabe.evidence}</p>
-                            <p><span>Competitor(競合)</span>{fabe.competitor}</p>
+                            <p><span>機能</span>{fabe.feature}</p>
+                            <p><span>優位性</span>{fabe.advantage}</p>
+                            <p><span>提供価値</span>{fabe.benefit}</p>
+                            <p><span>根拠</span>{fabe.evidence}</p>
+                            <p><span>競合・代替手段</span>{fabe.competitor}</p>
                             <a href={solution.url} target="_blank" rel="noreferrer">公式ソリューションページ ↗</a>
                           </div>
                         </details>
@@ -1632,26 +1584,16 @@ export default function CompanyIntelligenceProfile({
 
             {publicIntel && (
               <section className="intel-section" id="playbook">
-                {isAdyen ? (
-                  <details className="intel-section-disclosure" data-section-disclosure>
-                    <summary>
-                      <div className="intel-heading">
-                        <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
-                        <p>既存顧客・製品の成り立ち・外部環境から、商談の組み立てを読み解きます。</p>
-                      </div>
-                      <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
-                    </summary>
-                    <div className="intel-section-disclosure-body"><SellingPlaybookContent intelligence={publicIntel} /></div>
-                  </details>
-                ) : (
-                  <>
+                <details className="intel-section-disclosure" data-section-disclosure>
+                  <summary>
                     <div className="intel-heading">
                       <div><p className="intel-kicker">06 / SELLING PLAYBOOK</p><h2>想定できる売り方。</h2></div>
-                      <p>「何が課題で、なぜこの解決策で、なぜこの会社なのか」を、公開情報から組み立てたGenba仮説です。実際の商談設計は個社事情に合わせて調整してください。</p>
+                      <p>既存顧客・製品の成り立ち・外部環境から、商談の組み立てを読み解きます。</p>
                     </div>
-                    <SellingPlaybookContent intelligence={publicIntel} />
-                  </>
-                )}
+                    <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
+                  </summary>
+                  <div className="intel-section-disclosure-body"><SellingPlaybookContent intelligence={publicIntel} /></div>
+                </details>
               </section>
             )}
 
@@ -1697,26 +1639,16 @@ export default function CompanyIntelligenceProfile({
             </section>
 
             <section className="intel-section" id="sources">
-              {isAdyen ? (
-                <details className="intel-section-disclosure intel-section-disclosure-sources" data-section-disclosure>
-                  <summary>
-                    <div className="intel-heading">
-                      <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
-                      <p>参照元{sourceEntries.length}件・最終更新日 {shortDate(sourceLastUpdated)}</p>
-                    </div>
-                    <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
-                  </summary>
-                  <div className="intel-section-disclosure-body">{sourceLedger}</div>
-                </details>
-              ) : (
-                <>
+              <details className="intel-section-disclosure intel-section-disclosure-sources" data-section-disclosure>
+                <summary>
                   <div className="intel-heading">
                     <div><p className="intel-kicker">08 / SOURCE LEDGER</p><h2>このページの根拠。</h2></div>
-                    <p>数字・判断材料の出所と更新日を追える状態にします。</p>
+                    <p>参照元{sourceEntries.length}件・最終更新日 {shortDate(sourceLastUpdated)}</p>
                   </div>
-                  {sourceLedger}
-                </>
-              )}
+                  <span className="intel-section-disclosure-action" aria-hidden="true">＋</span>
+                </summary>
+                <div className="intel-section-disclosure-body">{sourceLedger}</div>
+              </details>
             </section>
           </main>
         </Container>

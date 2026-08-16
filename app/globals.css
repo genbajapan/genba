@@ -581,13 +581,13 @@ button, input, select { font: inherit; }
 .company-overview-toggle .intel-heading { flex: 1; margin-bottom: 0; }
 .company-overview-toggle-action { display: grid; place-items: center; flex: 0 0 auto; width: 29px; height: 29px; margin-bottom: 4px; border: 1px solid #9dcac2; border-radius: 50%; color: var(--signal); font-size: 17px; font-weight: 500; line-height: 1; transition: transform .18s ease, background .18s ease; }
 .company-overview-disclosure[open] .company-overview-toggle-action { transform: rotate(45deg); background: #edf7f4; }
-.company-overview-disclosure-adyen { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
-.company-overview-disclosure-adyen .company-overview-toggle { align-items: center; padding: 18px 22px; }
-.company-overview-disclosure-adyen .intel-heading { gap: 20px; }
-.company-overview-disclosure-adyen .intel-heading h2 { font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
-.company-overview-disclosure-adyen .intel-heading > p { max-width: none; font-size: 11px; }
-.company-overview-disclosure-adyen .company-overview-toggle-action { margin-bottom: 0; }
-.company-overview-disclosure-adyen[open] .company-overview-toggle { border-bottom: 1px solid var(--line); }
+.company-overview-disclosure-standard { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
+.company-overview-disclosure-standard .company-overview-toggle { align-items: center; padding: 18px 22px; }
+.company-overview-disclosure-standard .intel-heading { gap: 20px; }
+.company-overview-disclosure-standard .intel-heading h2 { font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
+.company-overview-disclosure-standard .intel-heading > p { max-width: none; font-size: 11px; }
+.company-overview-disclosure-standard .company-overview-toggle-action { margin-bottom: 0; }
+.company-overview-disclosure-standard[open] .company-overview-toggle { border-bottom: 1px solid var(--line); }
 .intel-section-disclosure { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
 .intel-section-disclosure > summary { display: flex; align-items: center; gap: 18px; padding: 18px 22px; cursor: pointer; list-style: none; transition: background .18s ease; }
 .intel-section-disclosure > summary::-webkit-details-marker { display: none; }
@@ -1083,7 +1083,7 @@ button, input, select { font: inherit; }
 .role-dossier header a { color: var(--signal); font-size: 13px; font-weight: 750; text-decoration: none; }
 .role-dossier header a:hover { text-decoration: underline; }
 .role-facts { display: grid; grid-template-columns: repeat(6,1fr); border-block: 1px solid var(--line); background: #f7f9f8; }
-.role-facts-adyen { grid-template-columns: repeat(3,1fr); }
+.role-facts-standard { grid-template-columns: repeat(3,1fr); }
 .role-facts div { min-width: 0; min-height: 73px; padding: 13px 12px; }
 .role-facts div + div { border-left: 1px solid var(--line); }
 .role-facts span,.role-facts strong { display: block; }
@@ -1707,7 +1707,7 @@ button, input, select { font: inherit; }
   .company-sales-table tbody th { padding: 11px 13px; background: rgba(112,211,197,.08); }
   .company-sales-table tbody td { padding: 12px 13px; }
   .company-sales-table tbody td::before { display: block; margin-bottom: 5px; color: #72bdb3; font-size: 9px; font-weight: 850; letter-spacing: .06em; }
-  .company-fabe-table td:first-of-type::before { content: "Adyenの分析"; }
+  .company-fabe-table td:first-of-type::before { content: "企業の分析"; }
   .company-fabe-table td:nth-of-type(2)::before { content: "顧客にとっての意味"; }
   .company-sales-evidence { max-width: none; margin-top: 18px; }
   .company-sales-evidence > summary { align-items: flex-start; gap: 12px; padding: 14px 0; font-size: 11px; line-height: 1.45; }
@@ -1733,9 +1733,9 @@ button, input, select { font: inherit; }
   .company-overview-toggle { align-items: flex-start; }
   .company-overview-toggle .intel-heading { padding-right: 0; }
   .company-overview-toggle-action { margin-top: 4px; margin-bottom: 0; }
-  .company-overview-disclosure-adyen .company-overview-toggle { align-items: flex-start; padding: 16px; }
-  .company-overview-disclosure-adyen .intel-heading { gap: 8px; }
-  .company-overview-disclosure-adyen .intel-heading h2 { font-size: 15px; }
+  .company-overview-disclosure-standard .company-overview-toggle { align-items: flex-start; padding: 16px; }
+  .company-overview-disclosure-standard .intel-heading { gap: 8px; }
+  .company-overview-disclosure-standard .intel-heading h2 { font-size: 15px; }
   .intel-section-disclosure > summary { align-items: flex-start; padding: 16px; }
   .intel-section-disclosure > summary .intel-heading { align-items: flex-start; gap: 8px; }
   .intel-section-disclosure > summary .intel-heading h2 { font-size: 15px; }

@@ -1,6 +1,6 @@
 # Genba共通AI運用ルール
 
-最終更新: 2026-08-16
+最終更新: 2026-08-17
 
 このファイルは、CodexとClaude Codeが共有するプロジェクト指示の唯一の正本である。ルートの`AGENTS.md`と`CLAUDE.md`は、どちらもこのファイルへのシンボリックリンクとする。
 
@@ -40,6 +40,7 @@ Genbaは「外資戦士と予備軍の作戦会議室。」を掲げる、無料
 - 日次更新: `ops/daily-workflow.md`
 - 拡張運用(企業追加・全社更新・X下書き・SEO/AEO点検): `ops/daily-task-workflow.md`
 - 日本未進出企業の標準: `ops/pre-entry-company-standard.md`
+- 企業ページ標準: `ops/company-page-standard.md`
 - 企業ページの課題啓蒙・売り方: `ops/company-selling-playbook-standard.md`
 
 旧資料と新資料が矛盾する場合は、日付が新しいという理由だけで決めず、上記の正本を優先する。それでも矛盾する場合は、公開や収益化を止めてJioへ確認する。
@@ -48,7 +49,7 @@ Jioから「デイリータスク」という指示を受けた場合(Claude Cod
 
 ## 4. 求人・企業データの非交渉ルール
 
-- Codex・Claude Codeが新規企業を追加する場合は、共通の`CompanyIntelligenceProfile`、`CompanyPublicIntelligence`型、`ops/daily-task-workflow.md`、`ops/company-selling-playbook-standard.md`を標準フォーマットの正本とし、同じセクション順・見出し・カード構成に合わせる。Salesforce個別ページは2026-08-11に編集対象から削除したが、同ページを起点に改善してきた粒度、調査密度、仮説・反証・面接質問まで含む品質基準はこれらの共通仕様へ引き継ぐ。企業ごとに利用可能な公開情報を徹底調査し、標準より深い中身を目指す一方、情報量を増やす目的で企業固有のUI、データ項目、追加セクションを作らない。標準から外れる必要がある場合は、実装・公開前にJioの明示承認を得る
+- Codex・Claude Codeが企業を追加・更新する場合は、`ops/company-page-standard.md`、共通の`CompanyIntelligenceProfile`、`CompanyPublicIntelligence`型、`ops/daily-task-workflow.md`、`ops/company-selling-playbook-standard.md`を正本とし、Adyen v1と同じセクション順・見出し・開閉状態・データ構造に合わせる。Salesforce個別ページは2026-08-11に編集対象から削除し、2026-08-17以降はAdyenページ（基準コミット`66ca2e2`）を唯一の公開見本とする。企業ごとに利用可能な公開情報を徹底調査し、同じ判断価値を目指す一方、情報量を増やす目的で企業固有のUI、データ項目、追加セクションを作らない。標準から外れる必要がある場合は、実装・公開前にJioの明示承認を得る
 - `想定できる売り方`は`ops/company-selling-playbook-standard.md`を必ず参照する。課題視点は「既存顧客の導入目的」「製品の成り立ち」「外部環境の要求」、提案の流れは「背景」「課題」「解決策」「選定の理由」の固定順とする。特に外部環境は企業内部の施策や製品機能で代用せず、企業の外側の変化からBuyerの要求・事業課題・投資理由まで因果で記述する
 - 企業公式Career、公式ATS、公式ニュースルーム、日本公式サイトを優先する
 - 公式求人の存在を実際に確認してから追加・更新する

@@ -177,10 +177,11 @@ for (const company of runtimeCompanies) {
 }
 
 const profileComponent = fs.readFileSync(path.join(process.cwd(), "components/CompanyIntelligenceProfile.tsx"), "utf8");
-const expectedFabeLabels = ["Feature(機能)", "Advantage(優位性)", "Benefit(メリット)", "Evidence(証拠)", "Competitor(競合)"];
+const expectedFabeLabels = ["<span>機能</span>", "<span>優位性</span>", "<span>提供価値</span>", "<span>根拠</span>", "<span>競合・代替手段</span>"];
+const solutionFabeUiStart = profileComponent.indexOf('<div className="solution-item-body">');
 let previousLabelIndex = -1;
 for (const label of expectedFabeLabels) {
-  const labelIndex = profileComponent.indexOf(label);
+  const labelIndex = profileComponent.indexOf(label, solutionFabeUiStart);
   if (labelIndex < 0) errors.push(`ソリューション詳細に「${label}」がありません。`);
   if (labelIndex >= 0 && labelIndex < previousLabelIndex) errors.push(`ソリューション詳細の「${label}」の順序がFABE標準と異なります。`);
   previousLabelIndex = labelIndex;
@@ -268,3 +269,5 @@ console.log(`- 公開対象 ${runtimeCompanies.length}社すべてで結論常�
 console.log(`- 公開対象 ${runtimeCompanies.length}社・${runtimeSolutionCount}ソリューションのFABEと競合比較を確認`);
 console.log(`- 基礎登録 ${companySlugs.size}社の公式トップページ導線を確認`);
 console.log(`- 日本未進出企業 ${notEnteredCount}社すべてでGong基準のentryAssessmentを確認`);
+
+await import("./validate-company-page-standard.mjs");

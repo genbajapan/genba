@@ -9,7 +9,7 @@ const profiles: Profile[] = [
   {
     checkedAt, slug: "adyen", name: "Adyen", jobUrl: "https://careers.adyen.com/vacancies/7601353-team-lead-sales", officialUrl: "https://www.adyen.com/ja_JP/", customersUrl: "https://www.adyen.com/ja_JP/press-and-media/hoshino-resorts-rolls-out-adyen-payment-platform", externalUrl: "https://www.meti.go.jp/policy/mono_info_service/cashless/index.html", financeUrl: "https://investors.adyen.com/financials/2025", publicInfo: { ticker: "ADYEN", exchange: "Euronext Amsterdam", listedSince: "2018年" },
     salesSnapshot: "Adyenは、Digital・Finance・Retail・Operationsが抱えるonline・店頭・platform決済の分断、承認率、不正、reconciliation、越境展開の課題をsingle platformで解く会社。TokyoのTeam Lead, Salesは日本のEnterprise sellerを率い、coaching、pipeline、forecast、executive relationshipを持つ。PSP置換ではなく、顧客体験と収益基盤の再設計をteamで再現する営業が面白い。",
-    growthSummary: "Adyenは2025年通期の純収益を23.64億ユーロ、決済取扱高を1.394兆ユーロ、EBITDAマージンを53%と公表。日本単体の売上・顧客数・営業達成率は非公開。",
+    growthSummary: "Adyenは2025年通期の純収益を23.64億ユーロ（約4,374億円）、決済取扱高を1.394兆ユーロ（約258兆円）、EBITDAマージンを53%と公表。1ユーロ=185円で概算。日本単体の売上・顧客数・営業達成率は非公開。",
     milestones: [
       { year: "2006", label: "創業", detail: "legacy payment stackを置き換えるsingle platformとして開始。", source: "company" },
       { year: "2018", label: "上場", detail: "Euronext Amsterdamへ上場。", source: "finance" },

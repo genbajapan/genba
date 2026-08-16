@@ -389,6 +389,13 @@ export type CompanyPublicIntelligence = {
   sources: ResearchSource[];
 };
 
+// Adyen v1への移行完了時に満たす共通データ型。移行期間中は元の型を読み込み、
+// 自動バリデーターがこの必須フィールド群の充足を判定する。
+export type StandardCompanyPublicIntelligence = CompanyPublicIntelligence & Required<Pick<
+  CompanyPublicIntelligence,
+  "overviewLeadership" | "salesMarketOutlook" | "salesFabeOverview" | "cultureDeepDive" | "aeInterviewHypotheses"
+>>;
+
 const salesforceSources: ResearchSource[] = [
   {
     id: "sf-fy26",
