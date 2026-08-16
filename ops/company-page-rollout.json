@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 106,
+      "未着手": 101,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 6
     },
     "byPriority": {
-      "HOT": 12,
+      "HOT": 11,
       "Active": 13,
       "Selective": 57,
-      "求人なし": 30
+      "求人なし": 31
     },
-    "standardReady": 6
+    "standardReady": 11
   },
   "companies": [
     {
@@ -84,126 +84,36 @@
       "company": "Glean",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Strategic Account Executive, Japan:勤務地・言語の日本語表記",
-        "求人:Strategic Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Strategic Account Executive, Japan:市場価値",
-        "求人:Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive, Japan:市場価値",
-        "求人:Sales Development Representative, Japan:ポジティブ・ネガティブ評判",
-        "求人:Sales Development Representative, Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "hubspot",
       "company": "HubSpot",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Small Business(直販営業 〜100名規模企業担当):ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Small Business(直販営業 〜100名規模企業担当):市場価値",
-        "求人:Senior Account Executive, Mid Market(直販営業 101名〜500名規模企業担当):ポジティブ・ネガティブ評判",
-        "求人:Senior Account Executive, Mid Market(直販営業 101名〜500名規模企業担当):市場価値",
-        "求人:Lead Account Executive, Corporate(直販営業 500名〜規模企業担当):ポジティブ・ネガティブ評判",
-        "求人:Lead Account Executive, Corporate(直販営業 500名〜規模企業担当):市場価値"
-      ]
-    },
-    {
-      "slug": "qualtrics",
-      "company": "Qualtrics",
-      "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Commercial Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Commercial Account Executive, Japan:市場価値",
-        "求人:Enterprise Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive:市場価値",
-        "求人:Commercial Sales Manager - Japan:給与調査または非公開確認",
-        "求人:Commercial Sales Manager - Japan:ポジティブ・ネガティブ評判",
-        "求人:Commercial Sales Manager - Japan:市場価値"
-      ]
+      "salesRoles": 7,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "speak",
       "company": "Speak",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive - Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive - Japan:市場価値",
-        "求人:Head of APAC Sales:ポジティブ・ネガティブ評判",
-        "求人:Head of APAC Sales:市場価値",
-        "求人:Customer Success Manager - Japan:ポジティブ・ネガティブ評判",
-        "求人:Customer Success Manager - Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "stripe",
       "company": "Stripe",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Commercial Hunter (Japanese Fluency):勤務地・言語の日本語表記",
-        "求人:Account Executive, Commercial Hunter (Japanese Fluency):ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Commercial Hunter (Japanese Fluency):市場価値",
-        "求人:Account Executive, Enterprise Hunter (Japanese Fluency):勤務地・言語の日本語表記",
-        "求人:Account Executive, Enterprise Hunter (Japanese Fluency):ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Enterprise Hunter (Japanese Fluency):市場価値",
-        "求人:Account Executive, Commercial Grower (Japanese Fluency):勤務地・言語の日本語表記",
-        "求人:Account Executive, Commercial Grower (Japanese Fluency):ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Commercial Grower (Japanese Fluency):市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "verkada",
@@ -2141,6 +2051,15 @@
         "出典参照:primer-primer-trust",
         "外貨の円換算:customerProof[0].outcome=取引量47%増、1カ月で€3.4Mを回収、承認率を2ポイント改善。,solutions[1].evidence=Ferryhopperは承認率+2ポイント・1カ月€3.4M回収、Dabbleは承認率96%を公開。"
       ]
+    },
+    {
+      "slug": "qualtrics",
+      "company": "Qualtrics",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "retool",

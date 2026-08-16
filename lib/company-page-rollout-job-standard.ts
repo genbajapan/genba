@@ -36,13 +36,28 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe"]);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "stripe-account-executive-commercial-hunter-japan": {
+    headline: "公式求人にOTE年額1,720万〜2,580万円を掲載",
+    summary: "基本給とcommissionまたはbonus targetを含むOTE。pay mix、quota、accelerator、equity、ramp保証は公開されていない。",
+    breakdown: [{ label: "OTE", value: "1,720万〜2,580万円", status: "公式掲載", detail: "基本給とcommissionまたはbonus targetを含む年額。" }],
+  },
+  "stripe-account-executive-enterprise-hunter-japan": {
+    headline: "公式求人にOTE年額1,720万〜2,580万円を掲載",
+    summary: "基本給とcommissionまたはbonus targetを含むOTE。pay mix、quota、accelerator、equity、ramp保証は公開されていない。",
+    breakdown: [{ label: "OTE", value: "1,720万〜2,580万円", status: "公式掲載", detail: "基本給とcommissionまたはbonus targetを含む年額。" }],
+  },
+  "stripe-account-executive-commercial-grower-japan": {
+    headline: "公式求人にOTE年額1,720万〜2,580万円を掲載",
+    summary: "基本給とcommissionまたはbonus targetを含むOTE。pay mix、quota、accelerator、equity、ramp保証は公開されていない。",
+    breakdown: [{ label: "OTE", value: "1,720万〜2,580万円", status: "公式掲載", detail: "基本給とcommissionまたはbonus targetを含む年額。" }],
+  },
   "channel-talk-ax-sales": {
     headline: "公式求人に年収800万〜1,400万円を掲載",
     summary: "年収レンジは確認できるが、基本給・変動給・賞与・equity・quota・acceleratorの内訳は公開されていない。",
@@ -88,6 +103,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  glean: {
+    name: "Glean", domain: "Enterprise AI・Enterprise Search", officialUrl: "https://www.glean.com/careers",
+    positive: ["公式求人は日本在住remote、AI-first mindset、ROI付きPoC、greenfield territoryを明記する。", "ARR 3億ドル超と国内大企業の導入事例から、categoryの成長と日本投資を確認できる。"],
+    negative: ["日本営業だけの信頼できる匿名review集計、昇進、離職、quota達成率は確認できない。", "日本法人・office・人数・売上は非公開で、globalの週4 office方針と日本remoteの運用差も確認が必要。"],
+    next: ["Enterprise AI・SearchのStrategic AE", "AI Platform・Data・SecurityのGTM", "Japan GTM・Partner・Sales Leadership"],
+  },
+  hubspot: {
+    name: "HubSpot", domain: "CRM・Customer Platform・AI", officialUrl: "https://www.hubspot.com/careers/jobs/all", communityUrl: "https://www.repvue.com/companies/Hubspot", communityLabel: "RepVue HubSpot",
+    positive: ["HEART、柔軟な勤務、透明性を公式に掲げ、SMBからCorporateまでのsegmentと隣接GTM職を公開している。", "国内顧客事例と日本法人の拡大から、CRM・AIを中小・中堅企業へ広げる経験を得られる可能性がある。"],
+    negative: ["グローバル匿名集計のquota評価には異議もあり、日本の対象segmentへ一般化できない。", "全社の売上成長鈍化とAI収益化、日本のsegment別quota・達成率・昇進実績を面接で分けて確認する必要がある。"],
+    next: ["CRM・MarTech・CXのAE／Sales Leadership", "RevOps・Customer PlatformのGTM", "SMB・Mid-MarketのSales Enablement・Management"],
+  },
+  qualtrics: {
+    name: "Qualtrics", domain: "Experience Management・CX・EX", officialUrl: "https://www.qualtrics.com/careers/us/en/japan",
+    positive: ["TACOS、柔軟なschedule、学習・wellbeing支援を公式Japan Careerで説明する。", "国内大手のCX・EX事例と日本投資方針から、experience dataを経営actionへ変える専門性が得られる可能性がある。"],
+    negative: ["2026年8月17日時点で日本の現行求人を確認できず、終了求人の条件を現在へ転用できない。", "非公開化後の財務、買収統合、新CEO体制、日本の昇進・離職は非公開。"],
+    next: ["CX・EX・Research SaaSのEnterprise GTM", "MarTech・HR TechのConsulting／Success", "Experience Strategy・People Analytics"],
+  },
+  speak: {
+    name: "Speak", domain: "AI EdTech・Corporate Learning", officialUrl: "https://jobs.ashbyhq.com/speak/",
+    positive: ["東京求人はhybridとglobal collaborationを明記し、小規模teamでB2Bの獲得・定着・marketingを作る機会がある。", "consumerで磨いたvoice-first体験と国内先行導入を、法人の利用data・業務scenarioへ広げる経験を得られる可能性がある。"],
+    negative: ["日本営業のquota・達成率・昇進・離職・給与を判断できる公開集計はない。", "B2B ARRの基準日・範囲、日本の定量成果、consumer/B2Bの優先順位は非公開。"],
+    next: ["HR Tech・EdTechのEnterprise AE／CS", "AI ApplicationのJapan GTM", "Learning・People Developmentの事業開発"],
+  },
+  stripe: {
+    name: "Stripe", domain: "Payments・Financial Infrastructure", officialUrl: "https://stripe.com/careers/search",
+    positive: ["Users first、speed and craft、evidence、ownershipを公式Careerで説明する。", "大規模なglobal利用と日本の定量事例、Payments以外の製品拡張から、事業・技術・財務を横断する経験を得られる可能性がある。"],
+    negative: ["Tokyo営業のquota、達成率、担当社数、昇進・離職を示す信頼できる公開集計はない。", "TPV成長は売上・利益額を示さず、月50%以上の対面勤務と高い速度・精度の実態は配属先で確認が必要。"],
+    next: ["Payments・FinTechのEnterprise AE／Sales Leadership", "API Platform・Commerce InfrastructureのGTM", "Product・Revenue・Platform Partnerships"],
+  },
   anaplan: {
     name: "Anaplan", domain: "コネクテッドプランニング・経営管理", officialUrl: "https://www.anaplan.com/careers/", communityUrl: "https://www.g2.com/sellers/anaplan", communityLabel: "G2 Anaplan製品レビュー",
     positive: ["顧客事例では、財務・供給・人員など複数部門の計画をつなぎ、意思決定時間を短縮する価値が確認できる。", "公式CareerはOne Connected Team、学習、柔軟性を掲げ、部門・地域を越えた協働を重視する。"],
@@ -176,7 +221,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   ];
   if (company.communityUrl && company.communityLabel) sourceList.push({ label: company.communityLabel, url: company.communityUrl, detail: "匿名・自己申告または製品利用者の公開集計。日本の対象職種へ一般化しない。" });
   const compensation = officialCompensation[job.id];
-  const language = job.companySlug === "channel-talk"
+  const language = job.companySlug === "glean"
+    ? "公式求人では明記なし"
+    : job.companySlug === "channel-talk"
     ? "公式求人で必須言語の明記なし"
     : job.companySlug === "coupa" && ["coupa-account-director", "coupa-adr", "coupa-alliances-director"].includes(job.id)
       ? "公式求人で明記なし"

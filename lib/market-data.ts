@@ -8,6 +8,7 @@ import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
+import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
 
 export type Source = {
   label: string;
@@ -1257,6 +1258,17 @@ const cursorJobs: Job[] = [
   }),
 ];
 
+function rolloutCareerInsights(domain: string): Job["careerInsights"] {
+  return {
+    fit: `${domain}の顧客課題を調べ、複数部門と社内専門家を束ねて成果を作りたい人に向く。`,
+    thingsToKnow: "給与、quota、担当社数、達成率、昇進、離職は公開情報で確認できない。配属先の数字と具体例を面接で確認したい。",
+    marketValue: `${domain}の役割成果をpipeline、受注、導入、利用、顧客KPIで定量化できれば、隣接するEnterprise SaaSの同職種・上位職へ再現性を説明しやすい。`,
+    tenureAndPromotion: `【Genba仮説】${domain}では、在籍年数だけでなく担当scope、個人・team成果、再現可能なprocess作りが次のlevelを決める。支持材料: 公式求人は顧客成果、部門横断の実行、継続的な学習を求める。反証・留保: 日本の対象職種だけを十分な件数で集計した在籍年数・昇進率は確認できない。面接で確認: 直近24カ月の昇進・異動・退職件数と、次levelに必要な定量成果は。`,
+    priorCompanies: `【Genba仮説】入社元は社名より、${domain}に近い顧客課題、複数stakeholder、目標責任、部門横断の実行が共通項になる。支持材料: 公式求人がrole固有の経験と成果を明記する。反証・留保: 日本の公開プロフィールを4件以上の同一条件で集計できず、特定企業からの採用傾向は断定できない。面接で確認: 直近採用者の前職category上位3つ、共通skill、ramp期間は。`,
+    nextCompanies: `【Genba仮説】pipeline、受注、導入、利用、顧客KPIを定量化できれば、${domain}の専門職、上位segment、Lead、managementへ接続しやすい。支持材料: 公式求人が成果責任とcross-functional ownershipを求める。反証・留保: 公開された日本の転職先分布ではなく、隣接する職務構造からの仮説で、実際の選択肢は担当規模・成果・英語・採用市場で変わる。面接で確認: 退職者の次role categoryと、社内でscopeを広げた実例は。`,
+  };
+}
+
 const jobRecords: Job[] = [
   ...jobs20260816,
   ...jobs20260814WaveTwo,
@@ -1467,6 +1479,74 @@ const jobRecords: Job[] = [
       marketValue: "Corporate AEとしての経験の市場価値は、①報酬面では外資SaaSのEnterprise・Strategic AE帯(目安1,500万〜3,000万円)に近い位置づけになると考えられるが、日本固有の具体的水準は非公開。②評価される実績は、大企業への複雑な商談を非対面中心で完結させた実績で、効率的な営業手法の証明として評価されやすい。③キャリアの選択肢は、他社のEnterprise/Strategic AE、またはセールスマネジメント職への転職。④フィールドセールス経験を重視する企業への転職では、インサイドセールス型の経験をどう位置づけるかの説明が必要になる場合がある。",
       ...hubspotCorporateCareerFlow,
     },
+  },
+  {
+    id: "hs-bdr-japan",
+    companySlug: "hubspot",
+    title: "Business Development Representative（インサイドセールス）",
+    segment: "Business Development",
+    location: "東京",
+    workStyle: "公式求人では勤務分類の明記なし",
+    language: "日本語（ネイティブ）／英語は応募画面と本文で記載不整合",
+    firstSeen: "2026-08-17",
+    lastChecked: "2026-08-17",
+    source: { label: "HubSpot Careers", url: "https://www.hubspot.com/careers/jobs/7083778" },
+    descriptionSummary: "1日40〜60件の接触を通じて見込み顧客の課題を確認し、qualified leadをAEへつなぐ。未経験応募可で、類似経験は歓迎条件。",
+    genbaTake: "活動量だけでなく、CRM・AI・marketing課題を短時間で仮説化し、AEが進められる商談へ変えるentry role。英語要件は本文と応募画面で不整合があるため選考で確認する。",
+    compensationReality: "給与、変動給、OTE、quota、equityは公式求人で確認できない。",
+    desiredProfile: "公式求人は日本語ネイティブ、顧客志向、学習力、resilience、協働を求める。類似するsales・customer-facing経験は歓迎。",
+    careerInsights: rolloutCareerInsights("CRM・Business Development"),
+  },
+  {
+    id: "hs-field-marketer-japan",
+    companySlug: "hubspot",
+    title: "Field Marketer, Japan",
+    segment: "Marketing / Pipeline",
+    location: "東京",
+    workStyle: "公式求人では勤務分類の明記なし",
+    language: "日本語（ネイティブ）／英語（ビジネスレベル）",
+    firstSeen: "2026-08-17",
+    lastChecked: "2026-08-17",
+    source: { label: "HubSpot Careers", url: "https://www.hubspot.com/careers/jobs/7453017" },
+    descriptionSummary: "日本のSMB・Mid-Market向けfield・event marketingを企画実行し、pipeline、revenue、MRRへの貢献を担う。東京・大阪等のonsite eventにも対応する。",
+    genbaTake: "event実施数でなく、target accountのengagement、商談化、pipeline、MRRへつなげるrevenue marketing role。Salesとのaccount planとattribution設計が成果を左右する。",
+    compensationReality: "給与、bonus、変動給、pipeline target、equityは公式求人で確認できない。",
+    desiredProfile: "公式求人はB2B field・event marketing 3〜5年、日本語ネイティブ、business English、Salesと連携したpipeline・revenue成果を求める。",
+    careerInsights: rolloutCareerInsights("B2B Field Marketing・Revenue Marketing"),
+  },
+  {
+    id: "hs-lead-solutions-engineer-japan",
+    companySlug: "hubspot",
+    title: "Lead Solutions Engineer（Individual Contributor）, Japan",
+    segment: "Pre-Sales / Technical",
+    location: "東京",
+    workStyle: "公式求人では勤務分類の明記なし",
+    language: "日本語（流暢）／英語（読み書きに強い運用力）",
+    firstSeen: "2026-08-17",
+    lastChecked: "2026-08-17",
+    source: { label: "HubSpot Careers", url: "https://www.hubspot.com/careers/jobs/7953436" },
+    descriptionSummary: "複雑商談のtechnical discovery、solution design、demo、risk解消を担い、営業・顧客・partnerを支援するLead IC。mentoringも担当する。",
+    genbaTake: "機能demoではなく、CRM data、integration、security、workflow、AI governanceを顧客の購入条件へ翻訳するsenior pre-sales role。",
+    compensationReality: "給与、bonus、variable pay、equityは公式求人で確認できない。",
+    desiredProfile: "公式求人はpre-sales、Solutions Engineeringまたはtechnical consulting 6年以上、流暢な日本語、英語の読み書き、複雑案件とmentoring経験を求める。",
+    careerInsights: rolloutCareerInsights("CRM・Solutions Engineering"),
+  },
+  {
+    id: "hs-mid-market-sales-manager-japan",
+    companySlug: "hubspot",
+    title: "Manager, Mid Market Sales - Japan",
+    segment: "Mid-Market / Sales Management",
+    location: "東京（日本全国からリモート可）",
+    workStyle: "リモート／柔軟な勤務",
+    language: "日本語（日本でのビジネス経験）／英語（主に読み書き）",
+    firstSeen: "2026-08-17",
+    lastChecked: "2026-08-17",
+    source: { label: "HubSpot Careers", url: "https://www.hubspot.com/careers/jobs/6207751" },
+    descriptionSummary: "Mid-Market営業teamの月次quota、coaching、hiring、forecast、pipeline、performance managementを担うmanager。",
+    genbaTake: "個人の大型受注より、sellerのramp、達成者比率、forecast、採用・定着を再現可能なprocessへ変えるrole。",
+    compensationReality: "給与、OTE、team bonus、quota、equityは公式求人で確認できない。",
+    desiredProfile: "公式求人はSaaS・Web・IT営業5年以上、management 2年以上、日本でのbusiness経験、英語の読み書き、quota teamのcoaching・hiring経験を求める。",
+    careerInsights: rolloutCareerInsights("CRM・Mid-Market Sales Management"),
   },
   {
     id: "okta-ae-sme",
@@ -2357,6 +2437,23 @@ const jobRecords: Job[] = [
     },
   },
   {
+    id: "speak-b2b-marketing-manager-japan",
+    companySlug: "speak",
+    title: "B2B Marketing Manager - Japan",
+    segment: "B2B Marketing / Pipeline",
+    location: "東京",
+    workStyle: "ハイブリッド",
+    language: "日本語（高い口頭・文書力）／英語（ビジネスレベル）",
+    firstSeen: "2026-08-17",
+    lastChecked: "2026-08-17",
+    source: { label: "Speak Careers（Ashby）", url: "https://jobs.ashbyhq.com/speak/6c787a64-2e33-4d2a-a919-23ebb0ccd270" },
+    descriptionSummary: "日本の法人事業でcategory awareness、demand generation、field・content・campaign、Sales連携、pipeline貢献を担うB2B Marketing Manager。",
+    genbaTake: "consumer appの認知を法人のHR・L&D課題へ翻訳し、lead数ではなくqualified pipelineと利用成果の証拠を作るfounding marketing role。",
+    compensationReality: "給与、bonus、pipeline target、equity、出社日数は公式求人で確認できない。",
+    desiredProfile: "公式求人はB2B marketing 7〜10年、強い日本語、business English、複数channelのcampaign、Salesと連携したpipeline成果を求める。",
+    careerInsights: rolloutCareerInsights("AI EdTech・B2B Marketing"),
+  },
+  {
     id: "dataiku-enterprise-ae-fsi-japan",
     companySlug: "dataiku",
     title: "Enterprise Account Executive, Japan | FSI",
@@ -2591,6 +2688,10 @@ const closedJobIds = new Set([
   "okta-enterprise-ae-auth0",
   "amplitude-enterprise-ae",
   "glean-commercial-ae-japan",
+  "qualtrics-commercial-ae",
+  "qualtrics-enterprise-ae",
+  "qualtrics-commercial-sales-manager",
+  "speak-head-apac-sales",
   "halcyon-commercial-account-executive-japan",
   "postman-smb-account-executive-japan",
   "patsnap-channel-manager",
@@ -2630,7 +2731,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
       ? "採用中"
       : "継続観測";
 
-  return { ...company, salesRoles, hiringStatus };
+  return standardizeRolloutCompany({ ...company, salesRoles, hiringStatus });
 });
 
 const signalRecords: Signal[] = [
