@@ -612,28 +612,29 @@ export default function CompanyIntelligenceProfile({
                       </span>
                     </summary>
                     <div className="company-scale-comparison-body">
-                      <p className="company-scale-comparison-note">売上は通期値を優先し、四半期値は年率換算して近さを判定。比較企業の表示値は元の開示期間をそのまま掲載しています。企業価値や成長性の優劣を示すものではありません。</p>
+                      <p className="company-scale-comparison-note">公開された通期の売上・純収益を優先し、四半期値は年率換算して比較します。非公開企業は、公開売上と従業員数から算出した同カテゴリの水準を使い、幅を持たせた推定値として明示します。企業価値や成長性の優劣を示すものではありません。</p>
                       <div className="company-scale-comparison-columns">
                         <section>
                           <div className="company-scale-comparison-heading">
-                            <span>REVENUE SCALE</span>
+                            <span>売上規模</span>
                             <h3>売上規模が近い企業</h3>
-                            <p>{scaleComparisons.revenueBasis ? `${company.name}の比較基準: ${scaleComparisons.revenueBasis}` : "比較可能な売上の公開数値は確認できていません。"}</p>
+                            <p>{scaleComparisons.revenueBasis ? <>{company.name}の比較基準：{scaleComparisons.revenueBasis} <b>{scaleComparisons.revenueBasisDisclosure}</b></> : "推定に必要な公開情報を確認できていません。"}</p>
+                            {scaleComparisons.revenueMethodology && <small className="company-scale-comparison-method">推定方法：{scaleComparisons.revenueMethodology}</small>}
                           </div>
                           {scaleComparisons.revenue.length > 0 ? (
                             <div className="company-scale-comparison-list">
                               {scaleComparisons.revenue.map((item) => (
                                 <Link href={`/companies/${item.slug}`} key={`revenue-${item.slug}`}>
-                                  <span><strong>{item.name}</strong><small>{item.label}</small></span>
+                                  <span><strong>{item.name}</strong><small>{item.label} <b>{item.disclosure}</b></small></span>
                                   <span><strong>{item.value}</strong><small>{item.distanceLabel}</small></span>
                                 </Link>
                               ))}
                             </div>
-                          ) : <p className="company-scale-comparison-empty">売上非公開のため、推測による比較は行っていません。</p>}
+                          ) : <p className="company-scale-comparison-empty">公開情報だけでは妥当な推定レンジを算出できませんでした。</p>}
                         </section>
                         <section>
                           <div className="company-scale-comparison-heading">
-                            <span>TEAM SCALE</span>
+                            <span>従業員規模</span>
                             <h3>従業員規模が近い企業</h3>
                             <p>{scaleComparisons.headcountBasis ? `${company.name}の比較基準: ${scaleComparisons.headcountBasis}` : "比較可能なグローバル従業員数は確認できていません。"}</p>
                           </div>

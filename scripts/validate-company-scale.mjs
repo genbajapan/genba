@@ -55,9 +55,15 @@ for (const company of companies) {
   }
   inspectCurrency(intelligence, company.slug);
   const comparison = getCompanyScaleComparisons(company, companies);
-  if (comparison.revenueBasis && comparison.revenue.length < 3) errors.push(`${company.slug}: 売上比較企業が3社未満です。`);
+  if (!comparison.revenueBasis) errors.push(`${company.slug}: 公開値または推定による売上規模を表示できません。`);
+  if (comparison.revenue.length < 3) errors.push(`${company.slug}: 売上比較企業が3社未満です。`);
   if (comparison.headcountBasis && comparison.headcount.length < 3) errors.push(`${company.slug}: 従業員数比較企業が3社未満です(${comparison.headcountBasis} / ${comparison.headcount.length}社)。`);
 }
+
+const adyen = companies.find((company) => company.slug === "adyen");
+const adyenComparison = adyen ? getCompanyScaleComparisons(adyen, companies) : undefined;
+if (!adyenComparison?.revenueBasis?.includes("23.64億ユーロ")) errors.push("adyen: 公表済みの2025年純収益を比較基準として認識できていません。");
+if (adyenComparison?.revenueBasisDisclosure !== "公開値") errors.push("adyen: 公表済み純収益が推定値として扱われています。");
 
 if (errors.length) {
   console.error(errors.join("\n"));
@@ -66,5 +72,5 @@ if (errors.length) {
 
 console.log("企業規模比較・ドル円換算: OK");
 console.log(`- 公開対象 ${companies.length}社すべてに共通の規模比較データを適用`);
-console.log("- 売上・従業員数が確認できる企業は、近い企業を3社以上表示");
+console.log("- 全社に公開値または明示した推定レンジで、近い売上規模の企業を3社以上表示");
 console.log("- 公開インテリジェンス内のドル金額に1ドル=157円の概算を併記");

@@ -245,6 +245,7 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
   },
   "dbt-labs": {
     officialWebsite: { url: "https://www.getdbt.com/jp", locale: "ja" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/dbtlabs/"),
   },
   gurobi: {
     officialWebsite: { url: "https://www.gurobi.com/", locale: "global" },

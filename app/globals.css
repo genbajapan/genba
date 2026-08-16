@@ -643,6 +643,8 @@ button, input, select { font: inherit; }
 .company-scale-comparison-heading > span { color: var(--signal); font-size: 9px; font-weight: 850; letter-spacing: .11em; }
 .company-scale-comparison-heading h3 { margin: 4px 0 0; color: var(--navy); font-size: 15px; }
 .company-scale-comparison-heading p { min-height: 32px; margin: 7px 0 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.company-scale-comparison-heading p b,.company-scale-comparison-list small b { display: inline-block; margin-left: 4px; padding: 1px 5px; border: 1px solid #a7d2ca; border-radius: 999px; color: var(--signal); font-size: 8px; font-weight: 850; line-height: 1.4; vertical-align: 1px; }
+.company-scale-comparison-method { display: block; margin-top: 7px; color: var(--muted); font-size: 9px; line-height: 1.6; }
 .company-scale-comparison-list { display: grid; gap: 5px; margin-top: 13px; }
 .company-scale-comparison-list a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 11px; border: 1px solid #e2eae7; background: #fbfdfc; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
 .company-scale-comparison-list a:hover { transform: translateX(2px); border-color: #8fc9bd; }
