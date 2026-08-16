@@ -1319,6 +1319,7 @@ button, input, select { font: inherit; }
   .company-breadcrumbs { margin-bottom: 28px; }
   .company-command-grid { grid-template-columns: 1fr; gap: 35px; }
   .company-identity h1 { margin-top: 24px; font-size: 48px; }
+  .company-sales-overview { max-width: 100%; }
   .company-sales-overview-tables { margin-top: 28px; }
   .company-sales-table-scroll { overflow: visible; border: 0; background: transparent; }
   .company-sales-table,.company-sales-table tbody,.company-sales-table tr,.company-sales-table th,.company-sales-table td { display: block; width: 100%; }
@@ -1336,6 +1337,15 @@ button, input, select { font: inherit; }
   .company-industry-table td:nth-of-type(2)::before { content: "Adyenが提供する価値"; }
   .company-fabe-table td:first-of-type::before { content: "Adyenの分析"; }
   .company-fabe-table td:nth-of-type(2)::before { content: "顧客にとっての意味"; }
+  .company-sales-evidence { max-width: none; margin-top: 18px; }
+  .company-sales-evidence > summary { align-items: flex-start; gap: 12px; padding: 14px 0; font-size: 11px; line-height: 1.45; }
+  .company-sales-evidence-label-closed,.company-sales-evidence-label-open { min-width: 0; padding-top: 2px; }
+  .company-market-outlook { font-size: 12px; line-height: 1.8; }
+  .company-market-outlook > p { margin-bottom: 16px; }
+  .company-market-outlook-verdict { padding-left: 10px; }
+  .company-market-outlook-cases { margin-top: 20px; padding: 14px 13px; }
+  .company-market-outlook-cases ul { gap: 11px; padding-left: 16px; }
+  .company-market-outlook-sources { display: grid; gap: 7px; padding-right: 76px; }
   .decision-console { max-width: none; }
   .dossier-nav-wrap { top: 99px; }
   .dossier-company-marker { max-width: 150px; }
