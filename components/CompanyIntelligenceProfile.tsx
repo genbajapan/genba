@@ -272,8 +272,8 @@ export default function CompanyIntelligenceProfile({
           <main className="company-intelligence-main">
             <section className="intel-section" id="overview">
               <div className="intel-heading">
-                <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}社概要</h2></div>
-                <p>公開されている企業情報・実績を、応募判断の前提としてまとめます。</p>
+                <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}{company.slug === "adyen" ? "" : "社"}概要</h2></div>
+                <p>{company.slug === "adyen" ? "※公開情報を参照" : "公開されている企業情報・実績を、応募判断の前提としてまとめます。"}</p>
               </div>
 
               {publicIntel ? (
