@@ -532,31 +532,36 @@ export default function CompanyIntelligenceProfile({
                     <span className="company-sales-evidence-icon" aria-hidden="true">＋</span>
                   </summary>
                   {salesMarketOutlook ? (
-                    <div className="company-market-outlook">
-                      <p className="company-market-outlook-verdict">{salesMarketOutlook.verdict}</p>
-                      {salesMarketOutlook.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                      <div className="company-market-outlook-cases">
-                        <strong>国内で確認できる主な事例</strong>
-                        <ul>
-                          {salesMarketOutlook.cases.map((item) => {
-                            const source = publicIntel && getResearchSource(publicIntel, item.sourceId);
-                            return (
-                              <li key={item.company}>
-                                <b>{item.company}：</b>{item.need}
-                                {source && <a href={source.url} target="_blank" rel="noreferrer" aria-label={`${item.company}の公式事例を見る`}> ↗</a>}
-                              </li>
-                            );
-                          })}
-                        </ul>
+                    <>
+                      <div className="company-market-outlook-resizable">
+                        <div className="company-market-outlook">
+                          <p className="company-market-outlook-verdict">{salesMarketOutlook.verdict}</p>
+                          {salesMarketOutlook.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                          <div className="company-market-outlook-cases">
+                            <strong>国内で確認できる主な事例</strong>
+                            <ul>
+                              {salesMarketOutlook.cases.map((item) => {
+                                const source = publicIntel && getResearchSource(publicIntel, item.sourceId);
+                                return (
+                                  <li key={item.company}>
+                                    <b>{item.company}：</b>{item.need}
+                                    {source && <a href={source.url} target="_blank" rel="noreferrer" aria-label={`${item.company}の公式事例を見る`}> ↗</a>}
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                          <div className="company-market-outlook-sources">
+                            <span>主な根拠</span>
+                            {salesMarketOutlook.sourceIds.map((sourceId) => {
+                              const source = publicIntel && getResearchSource(publicIntel, sourceId);
+                              return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                            })}
+                          </div>
+                        </div>
                       </div>
-                      <div className="company-market-outlook-sources">
-                        <span>主な根拠</span>
-                        {salesMarketOutlook.sourceIds.map((sourceId) => {
-                          const source = publicIntel && getResearchSource(publicIntel, sourceId);
-                          return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
-                        })}
-                      </div>
-                    </div>
+                      <p className="company-sales-content-resize-note">右下をドラッグして、表示幅を調整できます。</p>
+                    </>
                   ) : (
                     <p>{salesView && salesView.expanded}</p>
                   )}
