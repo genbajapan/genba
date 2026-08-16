@@ -1015,10 +1015,11 @@ button, input, select { font: inherit; }
 .role-number { display: grid; place-items: center; width: 42px; height: 42px; background: var(--navy); color: #70d3c5; font-size: 14px; font-weight: 850; }
 .role-dossier header p { margin: 0; color: var(--signal); font-size: 11px; font-weight: 850; letter-spacing: .1em; }
 .role-dossier header h3 { margin: 6px 0 0; color: var(--navy); font-size: 16px; }
+.role-last-updated { display: block; margin-top: 5px; color: #879499; font-size: 9px; font-variant-numeric: tabular-nums; }
 .role-dossier header a { color: var(--signal); font-size: 13px; font-weight: 750; text-decoration: none; }
 .role-dossier header a:hover { text-decoration: underline; }
 .role-facts { display: grid; grid-template-columns: repeat(6,1fr); border-block: 1px solid var(--line); background: #f7f9f8; }
-.role-facts-five { grid-template-columns: repeat(5,1fr); }
+.role-facts-adyen { grid-template-columns: repeat(3,1fr); }
 .role-facts div { min-width: 0; min-height: 73px; padding: 13px 12px; }
 .role-facts div + div { border-left: 1px solid var(--line); }
 .role-facts span,.role-facts strong { display: block; }
