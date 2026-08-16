@@ -278,7 +278,7 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  <div className="company-snapshot-strip company-snapshot-strip-6col">
+                  <div className={`company-snapshot-strip company-snapshot-strip-6col${company.slug === "adyen" ? " company-snapshot-strip-compact" : ""}`}>
                     {directoryEntry ? (
                       <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
                         <span>本社 / 公式サイト</span>
