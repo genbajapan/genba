@@ -1060,11 +1060,20 @@ button, input, select { font: inherit; }
 .role-description-take { padding-top: 14px; border-top: 1px dashed #b9d4d0; }
 .reputation-research { display: grid; gap: 13px; }
 .reputation-research > p { color: #2f4a44; }
-.reputation-research-topics { padding: 14px 16px; border-left: 3px solid #b26a52; background: #fbf2ee; }
-.reputation-research-topics > span,.reputation-research-sources > span { display: block; color: #91523e; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
-.reputation-research-topics ul { display: grid; gap: 7px; margin: 9px 0 0; padding: 0; list-style: none; }
-.reputation-research-topics li { position: relative; padding-left: 12px; color: #5a4238; font-size: 11px; line-height: 1.7; }
-.reputation-research-topics li::before { position: absolute; left: 0; content: "•"; color: #b26a52; }
+.reputation-research-balance { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.reputation-research-balance section { padding: 15px 16px; border-left: 3px solid; }
+.reputation-research-positive { border-left-color: #2a9586 !important; background: #e9f5f2; }
+.reputation-research-negative { border-left-color: #b26a52 !important; background: #fbf2ee; }
+.reputation-research-balance section > span,.reputation-research-sources > span { display: block; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.reputation-research-positive > span { color: #167568; }
+.reputation-research-negative > span { color: #91523e; }
+.reputation-research-balance ul { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.reputation-research-balance li { position: relative; padding-left: 12px; font-size: 10.5px; line-height: 1.72; }
+.reputation-research-positive li { color: #355d57; }
+.reputation-research-negative li { color: #5a4238; }
+.reputation-research-balance li::before { position: absolute; left: 0; content: "•"; }
+.reputation-research-positive li::before { color: #2a9586; }
+.reputation-research-negative li::before { color: #b26a52; }
 .reputation-research-sources { padding-top: 2px; }
 .reputation-research-sources > span { color: #0a6d63; }
 .reputation-research-sources ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 18px; margin: 7px 0 0; padding: 0; list-style: none; }
@@ -1752,6 +1761,7 @@ button, input, select { font: inherit; }
   .compensation-research-verdict { padding: 16px; }
   .compensation-research-verdict strong { font-size: 19px; }
   .compensation-research-grid,.compensation-research-sources ol { grid-template-columns: 1fr; }
+  .reputation-research-balance { grid-template-columns: 1fr; }
   .market-value-skill-grid,.market-value-next-grid,.market-value-band-list,.market-value-proof ul { grid-template-columns: 1fr; }
   .market-value-band-list article + article { border-top: 1px solid #d7e3e0; border-left: 0; }
   .market-value-verdict { padding: 17px; }

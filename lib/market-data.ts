@@ -69,7 +69,8 @@ export type Job = {
   reputationResearch?: {
     researchedAt: string;
     summary: string;
-    topics: string[];
+    positiveTopics: string[];
+    negativeTopics: string[];
     caveat: string;
     sources: Array<Source & { detail: string }>;
   };

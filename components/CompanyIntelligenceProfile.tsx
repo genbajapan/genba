@@ -91,11 +91,15 @@ function ReputationResearchBlock({ research }: { research: NonNullable<Job["repu
   return (
     <div className="reputation-research">
       <p>{research.summary}</p>
-      <div className="reputation-research-topics">
-        <span>匿名レビューで見られる論点</span>
-        <ul>
-          {research.topics.map((topic) => <li key={topic}>{topic}</li>)}
-        </ul>
+      <div className="reputation-research-balance">
+        <section className="reputation-research-positive">
+          <span>ポジティブな評判・噂</span>
+          <ul>{research.positiveTopics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+        </section>
+        <section className="reputation-research-negative">
+          <span>ネガティブな評判・噂</span>
+          <ul>{research.negativeTopics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+        </section>
       </div>
       <div className="reputation-research-sources">
         <span>公開ソース</span>
@@ -1172,6 +1176,7 @@ export default function CompanyIntelligenceProfile({
                               <div className="role-description-body">
                                 <p><span>公式ディスクリプションの要約</span>{job.descriptionSummary}</p>
                                 {job.genbaTake && <p className="role-description-take"><span>Genbaからの示唆</span>{job.genbaTake}</p>}
+                                {isAdyen && job.desiredProfile && <p><span>求める人物や経験</span>{job.desiredProfile}</p>}
                               </div>
                             </details>
                           )}
@@ -1189,7 +1194,7 @@ export default function CompanyIntelligenceProfile({
                               </div>
                             </details>
                           )}
-                          {job.desiredProfile && (
+                          {job.desiredProfile && !isAdyen && (
                             <details className="role-description">
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
@@ -1205,7 +1210,7 @@ export default function CompanyIntelligenceProfile({
                             <details className="role-description">
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
-                                <span className="role-description-label">ネガティブ評判、噢</span>
+                                <span className="role-description-label">ネガ、ポジ評判や噂</span>
                                 <span className="role-description-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <div className="role-description-body">
@@ -1220,7 +1225,10 @@ export default function CompanyIntelligenceProfile({
                             { label: "在籍年数・社内プロモか転職が多いか", content: job.careerInsights.tenureAndPromotion },
                             { label: "どんな会社からの転職が多いか", content: job.careerInsights.priorCompanies },
                             { label: "どんな会社への転職が多いか", content: job.careerInsights.nextCompanies },
-                          ].filter((item) => (!isAdyen || item.label !== "向き不向き") && (!job.reputationResearch || item.label !== "先に知っておくべきこと")).map((item) => (
+                          ].filter((item) => {
+                            const hiddenForAdyen = ["向き不向き", "在籍年数・社内プロモか転職が多いか", "どんな会社からの転職が多いか", "どんな会社への転職が多いか"];
+                            return (!isAdyen || !hiddenForAdyen.includes(item.label)) && (!job.reputationResearch || item.label !== "先に知っておくべきこと");
+                          }).map((item) => (
                             <details className="role-description" key={item.label}>
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
