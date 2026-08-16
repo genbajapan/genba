@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 71,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 36
+      "検証済み": 0,
+      "公開済み": 41
     },
     "byPriority": {
       "HOT": 29,
@@ -120,7 +120,7 @@
       "company": "Cohere",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -147,7 +147,7 @@
       "company": "Datadog",
       "priority": "HOT",
       "salesRoles": 22,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -165,7 +165,7 @@
       "company": "dbt Labs",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -174,7 +174,7 @@
       "company": "Deel",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1384,7 +1384,7 @@
       "company": "Contentsquare",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
