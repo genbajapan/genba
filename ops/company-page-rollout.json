@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 101,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 6
+      "検証済み": 0,
+      "公開済み": 11
     },
     "byPriority": {
       "HOT": 11,
@@ -84,7 +84,7 @@
       "company": "Glean",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -93,7 +93,7 @@
       "company": "HubSpot",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -102,7 +102,7 @@
       "company": "Speak",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -111,7 +111,7 @@
       "company": "Stripe",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2057,7 +2057,7 @@
       "company": "Qualtrics",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
