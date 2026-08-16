@@ -331,6 +331,7 @@ export default function CompanyIntelligenceProfile({
   allCompanies,
 }: ProfileProps) {
   const isPreEntry = company.entryStatus === "not-entered";
+  const isAdyen = company.slug === "adyen";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
@@ -984,17 +985,17 @@ export default function CompanyIntelligenceProfile({
                         <article className="role-dossier" key={job.id}>
                           <header>
                             <span className="role-number">{String(index + 1).padStart(2, "0")}</span>
-                            <div><p>{job.segment}</p><h3>{job.title}</h3></div>
+                            <div><p>{isAdyen ? "大手企業向け営業／営業リーダー" : job.segment}</p><h3>{job.title}</h3></div>
                             <a href={job.source.url} target="_blank" rel="noreferrer">公式求人 ↗</a>
                           </header>
-                          <div className="role-facts">
+                          <div className={`role-facts${isAdyen ? " role-facts-five" : ""}`}>
                             <div className="known"><span>勤務地</span><strong>{job.location}</strong></div>
                             <div className="known"><span>言語(募集要項)</span><strong>{job.language}</strong></div>
                             {publicIntel ? (
                               <>
-                                <div className="analysis"><span>報酬の見立て</span><strong>{tier.label}帯 {tier.oteRange}が目安</strong></div>
+                                <div className="analysis"><span>報酬の見立て</span><strong>{isAdyen ? `大手企業・戦略アカウント営業帯 ${tier.oteRange}が目安` : `${tier.label}帯 ${tier.oteRange}が目安`}</strong></div>
                                 <div className="analysis"><span>英語の実務利用</span><strong>{/英語|English/i.test(job.language) && !/明記なし|不問/.test(job.language) ? "募集要項で英語要件あり。使用場面と頻度は要確認" : "募集要項では要件を確認できず。使用場面と頻度は要確認"}</strong></div>
-                                <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>
+                                {!isAdyen && <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>}
                               </>
                             ) : (
                               <>

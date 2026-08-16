@@ -44,7 +44,7 @@ export const jobs20260816: Job[] = [
     },
   },
   {
-    id: "adyen-team-lead-sales-japan", companySlug: "adyen", title: "Team Lead, Sales", segment: "Enterprise / Sales Leadership", location: "Tokyo", workStyle: "office-first / full-time / 20%以上の出張", language: "native-level Japanese / business-level English", firstSeen: checkedAt, lastChecked: checkedAt,
+    id: "adyen-team-lead-sales-japan", companySlug: "adyen", title: "Team Lead, Sales", segment: "Enterprise / Sales Leadership", location: "東京", workStyle: "出社中心／正社員／20%以上の出張", language: "日本語：ネイティブレベル／英語：ビジネスレベル", firstSeen: checkedAt, lastChecked: checkedAt,
     source: { label: "Adyen Careers", url: "https://careers.adyen.com/vacancies/7601353-team-lead-sales" },
     descriptionSummary: "日本のEnterprise sales managerを率い、coaching、pipeline、forecast、executive relationship、new business growthを担う。Head of Sales Japanへreportする。",
     genbaTake: "決済機能の販売管理ではなく、online・店頭・platformをまたぐ顧客のcommercial設計を、sellerの育成とdeal reviewの両方から再現可能にするleadership role。",

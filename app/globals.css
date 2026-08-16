@@ -1012,6 +1012,7 @@ button, input, select { font: inherit; }
 .role-dossier header a { color: var(--signal); font-size: 13px; font-weight: 750; text-decoration: none; }
 .role-dossier header a:hover { text-decoration: underline; }
 .role-facts { display: grid; grid-template-columns: repeat(6,1fr); border-block: 1px solid var(--line); background: #f7f9f8; }
+.role-facts-five { grid-template-columns: repeat(5,1fr); }
 .role-facts div { min-width: 0; min-height: 73px; padding: 13px 12px; }
 .role-facts div + div { border-left: 1px solid var(--line); }
 .role-facts span,.role-facts strong { display: block; }
