@@ -412,24 +412,33 @@ export default function CompanyIntelligenceProfile({
                     </div>
                   </details>
 
-                  <div className="market-status-panel">
-                    <div className="market-status-head">
+                  <details className="market-status-panel">
+                    <summary className="market-status-toggle">
                       <div>
                         <p className="card-index">{publicIntel.marketStatus.isPublic ? "上場企業" : "非上場企業"}</p>
                         <h3>{publicIntel.marketStatus.isPublic ? `${publicIntel.marketStatus.exchange}: ${publicIntel.marketStatus.ticker}` : "株式は非公開"}</h3>
                       </div>
-                      {publicIntel.marketStatus.isPublic && (
-                        <a className="market-status-stock-link" href={publicIntel.marketStatus.stockLinkUrl} target="_blank" rel="noreferrer">最新の株価を見る ↗</a>
-                      )}
-                    </div>
+                      <span className="market-status-toggle-action">
+                        <span className="market-status-open-label">会社の変遷・成長性を見る</span>
+                        <span className="market-status-close-label">閉じる</span>
+                        <i aria-hidden="true">＋</i>
+                      </span>
+                    </summary>
 
-                    {publicIntel.marketStatus.genbaVerdict && (
-                      <div className="genba-verdict">
-                        <span>GENBAの結論</span>
-                        <h4>{publicIntel.marketStatus.genbaVerdict.headline}</h4>
-                        <p>{publicIntel.marketStatus.genbaVerdict.body}</p>
-                      </div>
-                    )}
+                    <div className="market-status-body">
+                      {publicIntel.marketStatus.isPublic && (
+                        <div className="market-status-stock-row">
+                          <a className="market-status-stock-link" href={publicIntel.marketStatus.stockLinkUrl} target="_blank" rel="noreferrer">最新の株価を見る ↗</a>
+                        </div>
+                      )}
+
+                      {publicIntel.marketStatus.genbaVerdict && (
+                        <div className="genba-verdict">
+                          <span>GENBAの結論</span>
+                          <h4>{publicIntel.marketStatus.genbaVerdict.headline}</h4>
+                          <p>{publicIntel.marketStatus.genbaVerdict.body}</p>
+                        </div>
+                      )}
 
                     {!publicIntel.marketStatus.genbaVerdict && (
                       <p className="market-status-summary">{publicIntel.marketStatus.growthSummary}</p>
@@ -607,10 +616,11 @@ export default function CompanyIntelligenceProfile({
                       );
                     })()}
 
-                    {(publicIntel.marketStatus.isPublic || publicIntel.marketStatus.genbaVerdict) && (
-                      <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。{publicIntel.marketStatus.isPublic ? "株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。" : ""}</p>
-                    )}
-                  </div>
+                      {(publicIntel.marketStatus.isPublic || publicIntel.marketStatus.genbaVerdict) && (
+                        <p className="market-status-disclaimer">上記は変遷・成長性についてのGenba分析です。{publicIntel.marketStatus.isPublic ? "株価はリンク先で最新値をご確認ください。投資判断はご自身の責任でお願いします。" : ""}</p>
+                      )}
+                    </div>
+                  </details>
                 </>
               ) : (
                 <div className="company-snapshot-strip">

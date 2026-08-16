@@ -654,9 +654,22 @@ button, input, select { font: inherit; }
 .company-scale-comparison-list a > span:last-child small { color: var(--signal); font-weight: 750; }
 .company-scale-comparison-empty { margin: 13px 0 0; padding: 12px; background: #f5f7f6; color: var(--muted); font-size: 10.5px; line-height: 1.6; }
 
-.market-status-panel { margin-top: 9px; padding: 24px 26px; border: 1px solid var(--line); background: #f7f9f8; }
-.market-status-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.market-status-head h3 { margin: 5px 0 0; color: var(--navy); font-size: 19px; font-weight: 850; letter-spacing: -.01em; }
+.market-status-panel { overflow: hidden; margin-top: 9px; border: 1px solid var(--line); background: #f7f9f8; }
+.market-status-toggle { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; cursor: pointer; list-style: none; transition: background .18s ease; }
+.market-status-toggle::-webkit-details-marker { display: none; }
+.market-status-toggle:hover { background: #edf7f4; }
+.market-status-toggle:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
+.market-status-toggle .card-index { margin: 0 0 4px; }
+.market-status-toggle h3 { margin: 0; color: var(--navy); font-size: 18px; font-weight: 850; letter-spacing: -.01em; }
+.market-status-toggle-action { display: flex; align-items: center; gap: 10px; flex-shrink: 0; color: var(--signal); font-size: 11px; font-weight: 800; }
+.market-status-toggle-action i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #9dcac2; border-radius: 50%; font-size: 15px; font-style: normal; transition: transform .18s ease, background .18s ease; }
+.market-status-toggle:hover .market-status-toggle-action i { background: white; }
+.market-status-close-label { display: none; }
+.market-status-panel[open] .market-status-open-label { display: none; }
+.market-status-panel[open] .market-status-close-label { display: inline; }
+.market-status-panel[open] .market-status-toggle-action i { transform: rotate(45deg); }
+.market-status-body { padding: 0 22px 22px; border-top: 1px solid var(--line); }
+.market-status-stock-row { display: flex; justify-content: flex-end; padding-top: 16px; }
 .market-status-stock-link { display: inline-flex; flex-shrink: 0; align-items: center; gap: 7px; padding: 11px 18px; background: var(--signal); color: white; font-size: 12px; font-weight: 800; text-decoration: none; box-shadow: 0 1px 2px rgba(10,109,99,.25); }
 .market-status-stock-link:hover { background: #085a52; }
 .market-status-summary { margin: 16px 0 0; color: #435760; font-size: 13px; line-height: 1.85; }
@@ -1475,6 +1488,11 @@ button, input, select { font: inherit; }
   .public-fact-grid-compact article:last-child { grid-column: 1 / -1; }
   .public-fact-grid-merged article { min-height: 0; }
   .public-fact-grid-merged article:last-child { border-top: 1px solid #d3e1de; border-left: 0; }
+  .market-status-toggle { padding: 16px; }
+  .market-status-toggle h3 { font-size: 15px; }
+  .market-status-toggle-action .market-status-open-label,.market-status-toggle-action .market-status-close-label { display: none; }
+  .market-status-body { padding: 0 12px 12px; }
+  .market-status-stock-row { justify-content: flex-start; padding-top: 12px; }
   .company-scale-comparison > summary { padding: 16px; }
   .company-scale-comparison-body { padding: 0 12px 12px; }
   .company-scale-comparison > summary > span:first-child strong { font-size: 14px; }
