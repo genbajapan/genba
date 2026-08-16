@@ -202,6 +202,23 @@ export type SalesMarketOutlook = {
   sourceIds: string[];
 };
 
+export type SalesFabeOverview = {
+  targetSegments: string[];
+  summary: string;
+  industryRows: Array<{
+    segment: string;
+    issue: string;
+    value: string;
+  }>;
+  fabeRows: Array<{
+    key: "feature" | "advantage" | "benefit" | "evidence" | "competitor";
+    label: string;
+    analysis: string;
+    customerMeaning: string;
+    sourceIds?: string[];
+  }>;
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
@@ -211,6 +228,8 @@ export type CompanyPublicIntelligence = {
   salesSnapshotFabeExpanded?: string;
   // 日本市場の需要と3〜5年の成長性を、根拠・国内事例とともに示す任意の深掘り枠。
   salesMarketOutlook?: SalesMarketOutlook;
+  // 対象領域、業界別課題、FABEと競合比較を表で示す任意のセールスサマリー。
+  salesFabeOverview?: SalesFabeOverview;
   marketStatus: MarketStatus;
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];

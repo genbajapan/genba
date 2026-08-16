@@ -123,6 +123,25 @@ built.adyen.sources.push(
   { id: "adyen-wolt-japan", label: "Adyen 日本の3Dセキュア動向・Wolt事例", url: "https://www.adyen.com/ja_JP/knowledge-hub/post-3ds-mandate-in-japan", kind: "企業公式", scope: "本人認証・不正対策・購入完了率", checkedAt },
 );
 
+built.adyen.salesFabeOverview = {
+  targetSegments: ["デジタルサービス（SaaS・マーケットプレイス）", "金融・FinTech", "小売", "旅行・ホテル", "D2C"],
+  summary: "オンライン、アプリ、店舗など販売チャネルが増えるほど、決済、不正対策、入金照合、顧客データが別々の仕組みに分かれ、決済成功率の改善や海外展開が難しくなる。Adyenは、決済受付、不正対策、決済処理、アクワイアリングを一つの基盤に統合し、決済成功率、不正損失、照合作業、海外展開を同じデータで改善する決済プラットフォームである。",
+  industryRows: [
+    { segment: "デジタルサービス", issue: "国やサービスごとに決済、本人確認、入金処理が分かれる。", value: "決済から入金までを共通基盤で管理し、地域展開を速める。" },
+    { segment: "金融・FinTech", issue: "承認率、不正、本人認証を別々に管理している。", value: "決済データを使い、決済成功率と不正対策を同時に改善する。" },
+    { segment: "小売", issue: "EC、アプリ、店舗で顧客と決済データが分断する。", value: "オンラインと店舗を横断して購買行動を把握する。" },
+    { segment: "旅行・ホテル", issue: "予約、現地決済、KIOSK、返金、海外決済が分かれる。", value: "予約前から滞在中までの決済を一元管理する。" },
+    { segment: "D2C", issue: "販売国・決済手段の追加とともに、不正対策や経理運用が複雑化する。", value: "購入完了率と不正損失を見ながら、販売地域と決済手段を拡張する。" },
+  ],
+  fabeRows: [
+    { key: "feature", label: "Feature（機能）", analysis: "オンライン、アプリ、店舗、KIOSKの決済受付、不正対策、決済処理、アクワイアリングを一つの基盤で提供する。", customerMeaning: "複数の決済事業者や管理画面をまたぐ運用を減らせる。" },
+    { key: "advantage", label: "Advantage（優位性）", analysis: "国やチャネルごとに決済システムを継ぎ足す構成ではなく、グローバルで共通する基盤と決済データを持つ。", customerMeaning: "店舗とEC、国内と海外を同じ考え方で展開・改善できる。" },
+    { key: "benefit", label: "Benefit（メリット）", analysis: "決済成功率の向上、不正損失の抑制、照合作業の削減、海外展開の迅速化を同じデータで追える。", customerMeaning: "売上の取りこぼしと決済運用コストを同じ商談で扱える。" },
+    { key: "evidence", label: "Evidence（根拠）", analysis: "星野リゾートは予約・現地・KIOSKの決済統合を進め、On Japanは店舗とオンラインを接続している。Woltの公式事例ではリピーターの購入完了率が5％超向上した。", customerMeaning: "日本でも旅行・小売・デジタルサービスに近い導入根拠を確認できる。", sourceIds: ["adyen-customers", "adyen-on-japan", "adyen-wolt-japan"] },
+    { key: "competitor", label: "Competitor（競合）", analysis: "Stripe、Worldpay、PayPal/Braintree、国内PSP、POSと決済代行の組み合わせ、内製が主な代替手段となる。", customerMeaning: "手数料だけでなく、承認率、オンライン・店舗統合、海外対応、照合作業、移行負荷で比較する。" },
+  ],
+};
+
 built.adyen.salesMarketOutlook = {
   title: "日本市場でのニーズと3-5年の成長性の見立て",
   verdict: "結論：日本での需要は、今後3〜5年で拡大する可能性が高い。",

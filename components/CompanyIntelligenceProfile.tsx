@@ -9,6 +9,7 @@ import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } fr
 import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
+import type { SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
 import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
@@ -39,6 +40,59 @@ function shortDate(date: string) {
   return date.replaceAll("-", ".");
 }
 
+function SalesFabeTables({
+  overview,
+  intelligence,
+}: {
+  overview: SalesFabeOverview;
+  intelligence: ReturnType<typeof getCompanyPublicIntelligence>;
+}) {
+  return (
+    <div className="company-sales-overview-tables">
+      <section className="company-sales-table-section" aria-labelledby="company-industry-fit-title">
+        <h2 id="company-industry-fit-title">領域別に見る、よくある課題と提供価値</h2>
+        <div className="company-sales-table-scroll">
+          <table className="company-sales-table company-industry-table">
+            <thead><tr><th>対象領域</th><th>よくある課題</th><th>Adyenが提供する価値</th></tr></thead>
+            <tbody>
+              {overview.industryRows.map((row) => (
+                <tr key={row.segment}><th scope="row">{row.segment}</th><td>{row.issue}</td><td>{row.value}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section className="company-sales-table-section" aria-labelledby="company-fabe-table-title">
+        <h2 id="company-fabe-table-title">FABEと競合比較</h2>
+        <div className="company-sales-table-scroll">
+          <table className="company-sales-table company-fabe-table">
+            <thead><tr><th>観点</th><th>Adyenの分析</th><th>顧客にとっての意味</th></tr></thead>
+            <tbody>
+              {overview.fabeRows.map((row) => (
+                <tr key={row.key} className={`company-fabe-row-${row.key}`}>
+                  <th scope="row">{row.label}</th>
+                  <td>
+                    {row.analysis}
+                    {row.sourceIds && (
+                      <span className="company-fabe-sources">
+                        {row.sourceIds.map((sourceId) => {
+                          const source = intelligence && getResearchSource(intelligence, sourceId);
+                          return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                        })}
+                      </span>
+                    )}
+                  </td>
+                  <td>{row.customerMeaning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export default function CompanyIntelligenceProfile({
   company,
   companyJobs,
@@ -50,14 +104,15 @@ export default function CompanyIntelligenceProfile({
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
   const salesSnapshot = salesView?.summary ?? company.description;
+  const salesFabeOverview = publicIntel?.salesFabeOverview;
   const salesMarketOutlook = publicIntel?.salesMarketOutlook;
   const directoryEntry = getCompanyDirectoryEntry(company.slug);
   const globalScale = resolveGlobalScale(company.slug, publicIntel?.companyStats.globalHeadcount);
   const globalScaleDirectorySource = getGlobalScaleSource(globalScale);
   const globalScaleResearchSource = publicIntel && globalScale?.sourceId ? getResearchSource(publicIntel, globalScale.sourceId) : undefined;
   const globalScaleSource = globalScaleDirectorySource ?? (globalScaleResearchSource ? { url: globalScaleResearchSource.url, label: globalScaleResearchSource.label } : undefined);
-  const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
   const scaleComparisons = getCompanyScaleComparisons(company, allCompanies);
+  const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
   const sourceEntries = uniqueSources([
     {
       label: `${company.name} 公式採用ページ`,
@@ -134,7 +189,17 @@ export default function CompanyIntelligenceProfile({
                   </details>
                 </div>
               )}
-              <p className="company-description">{salesSnapshot}</p>
+              {salesFabeOverview ? (
+                <div className="company-sales-overview">
+                  <div className="company-sales-segments" aria-label="主な対象領域">
+                    <strong>主な対象領域</strong>
+                    <div>{salesFabeOverview.targetSegments.map((segment) => <span key={segment}>{segment}</span>)}</div>
+                  </div>
+                  <p className="company-description">{salesFabeOverview.summary}</p>
+                </div>
+              ) : (
+                <p className="company-description">{salesSnapshot}</p>
+              )}
               {(salesMarketOutlook || salesView?.expanded) && (
                 <details className="company-sales-evidence">
                   <summary>
@@ -201,6 +266,7 @@ export default function CompanyIntelligenceProfile({
               </div>
             </aside>
           </div>
+          {salesFabeOverview && <SalesFabeTables overview={salesFabeOverview} intelligence={publicIntel} />}
         </Container>
       </section>
 
