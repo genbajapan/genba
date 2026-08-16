@@ -6,6 +6,7 @@ import { companies20260814, jobs20260814 } from "@/lib/company-additions-2026-08
 import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-additions-2026-08-14-wave-two";
 import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08-15";
 import { jobs20260817BatchSix } from "@/lib/company-additions-2026-08-17-batch-06";
+import { jobs20260817BatchSeven } from "@/lib/company-additions-2026-08-17-batch-07";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -688,12 +689,12 @@ const companyRecords: Company[] = [
     lastChecked: "2026-08-12", careersUrl: "https://careers.airwallex.com/", tags: ["Account Executive", "SME / Growth", "FinTech", "Payments", "Full-cycle"],
   },
   {
-    slug: "cambly", name: "Cambly", category: "AI EdTech / Corporate Learning", broadCategory: "HR・人材育成", hq: "San Francisco, US", japanPresence: "日本法人向けteam・東京 / remote", hiringStatus: "採用中", salesRoles: 1,
-    description: "HR・L&Dへ法人英語研修を提案し、trialから契約、利用定着までをつなぐJapan Account Executiveを募集。",
-    lastChecked: "2026-08-12", careersUrl: "https://jobs.ashbyhq.com/Cambly", tags: ["Account Executive", "HR Tech", "EdTech", "B2B", "Remote"],
+    slug: "cambly", name: "Cambly", category: "AI EdTech / Corporate Learning", broadCategory: "HR・人材育成", hq: "San Francisco, US", japanPresence: "APAC team / Tokyoは現行求人のsecondary location", hiringStatus: "採用中", salesRoles: 1,
+    description: "法人英語研修を提供し、上海・東京を勤務地とするAPAC Sales Directorを募集。日本法人・officeは確認不能。",
+    lastChecked: "2026-08-17", careersUrl: "https://jobs.ashbyhq.com/Cambly", tags: ["Sales Director", "APAC", "EdTech", "B2B", "Hybrid"],
   },
   {
-    slug: "censys", name: "Censys", category: "Attack Surface / Internet Intelligence", broadCategory: "セキュリティ・IT運用", hq: "Ann Arbor, US", japanPresence: "日本市場team・remote", hiringStatus: "採用中", salesRoles: 1,
+    slug: "censys", name: "Censys", category: "Attack Surface / Internet Intelligence", broadCategory: "セキュリティ・IT運用", hq: "Ann Arbor, US", japanPresence: "日本市場team・remote（日本法人・officeは確認不能）", hiringStatus: "採用中", salesRoles: 2,
     description: "500人以上の企業へinternet intelligenceとattack surface managementを直販・channelで開拓するJapan AEを募集。",
     lastChecked: "2026-08-12", careersUrl: "https://censys.com/careers/", tags: ["Enterprise AE", "Cybersecurity", "Data", "Channel", "Remote"],
   },
@@ -798,7 +799,7 @@ const companyRecords: Company[] = [
     lastChecked: "2026-08-12", careersUrl: "https://www.zscaler.com/careers/search", tags: ["Enterprise", "Zero Trust", "SSE", "CIO", "CISO"],
   },
   {
-    slug: "cloudflare", name: "Cloudflare", category: "Connectivity Cloud / Edge Security", broadCategory: "セキュリティ・IT運用", hq: "San Francisco, US", japanPresence: "東京オフィス", hiringStatus: "採用中", salesRoles: 1,
+    slug: "cloudflare", name: "Cloudflare", category: "Connectivity Cloud / Edge Security", broadCategory: "セキュリティ・IT運用", hq: "San Francisco, US", japanPresence: "Cloudflare Japan株式会社・東京", hiringStatus: "採用中", salesRoles: 5,
     description: "application security、SASE、network、developer platformをNamed enterpriseへ売るSenior AEを募集。",
     lastChecked: "2026-08-12", careersUrl: "https://www.cloudflare.com/careers/jobs/", tags: ["Named Accounts", "Security", "Network", "Developer Platform", "Partner"],
   },
@@ -821,7 +822,7 @@ const companyRecords: Company[] = [
     description: "Siemens傘下のlow-code platform。TokyoでEnterprise Account Executiveを募集し、channelと日本pipelineを拡張。", lastChecked: "2026-08-12", careersUrl: "https://jobs.lever.co/mendix?location=Tokyo", tags: ["Enterprise", "Low-code", "Application Modernization", "Partner", "Siemens"],
   },
   {
-    slug: "cognition", name: "Cognition", category: "AI Software Engineering / Developer Tools", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "Cognition Japan / Tokyo local team", hiringStatus: "積極採用", salesRoles: 3,
+    slug: "cognition", name: "Cognition", category: "AI Software Engineering / Developer Tools", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本市場team / Tokyo on-site（法人商号・office住所は非公開）", hiringStatus: "積極採用", salesRoles: 7,
     description: "2026年4月にAsia初の市場としてJapanを正式launch。Account Director・partnership等のGTM人材を採用。", lastChecked: "2026-08-12", careersUrl: "https://cognition.com/careers", tags: ["Enterprise AI", "Developer Tools", "Account Director", "Japan launch", "Partner"],
   },
   {
@@ -1091,7 +1092,7 @@ const waveTwoJobs: Job[] = [
     fit: "長期のenterprise accountを組織横断で動かすsellerに向く。", thingsToKnow: "account数、install base、partner ownership、product split、quota、attainmentは非公開。", marketValue: "Zero Trust、SSE、network transformationの大型案件経験。",
   }),
   makeWaveTwoJob({
-    id: "cloudflare-senior-named-ae-japan", companySlug: "cloudflare", title: "Senior Named Account Executive, Japan", segment: "Named Enterprise", location: "東京", workStyle: "公式求人で確認", language: "日本語流暢 / 英語", source: { label: "Cloudflare Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/cloudflare/jobs/7421718" },
+    id: "cloudflare-senior-named-ae-japan", companySlug: "cloudflare", title: "Senior Named Account Executive, Japan", segment: "Named Enterprise", location: "東京", workStyle: "ハイブリッド / フルタイム／出張60%未満", language: "日本語（fluent）／英語要件は明記なし", source: { label: "Cloudflare Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/cloudflare/jobs/7421718" },
     descriptionSummary: "named enterpriseでJapan sales plan、pipeline、technical value、contract negotiation、partner development、customer satisfactionを持つSenior AE。",
     genbaTake: "CDN単体でなく、application security、SASE、network、developer platformのどこから入りaccount-wideに広げるかが核心。",
     desiredProfile: "公式求人はJapan enterprise network、technical sales背景、partner開拓、日本語流暢、最大60%未満の出張対応を求める。",
@@ -1125,10 +1126,10 @@ const waveThreeJobs: Job[] = [
     fit: "businessとIT、SI partner、Siemens ecosystemを束ね、long-cycleのapplication transformationを作りたい人に向く。", thingsToKnow: "Japanのsegment、territory、partner-sourced比率、ACV、cycle、quota達成率、MendixとSiemensのcredit ruleは非公開。", marketValue: "enterprise low-code、application modernization、partner-led sale、business/IT fusionの経験になる。",
   }),
   makeWaveTwoJob({
-    id: "cognition-account-director-apac-tokyo", companySlug: "cognition", title: "Account Director - APAC", segment: "Enterprise / Strategic", location: "東京", workStyle: "公式求人で確認", language: "日本語 / 英語", source: { label: "Cognition Careers (Ashby)", url: "https://jobs.ashbyhq.com/cognition/0aabb166-3e97-437b-ab84-b04fe20dd426" },
-    descriptionSummary: "Japan launch後のenterprise顧客へDevin・Windsurfを提案し、engineering leaderとのbusiness case、technical evaluation、partner、close、expansionを進めるAccount Director。",
+    id: "cognition-account-director-apac-tokyo", companySlug: "cognition", title: "Account Director - APAC", segment: "Enterprise / Strategic", location: "東京", workStyle: "オンサイト / フルタイム", language: "公式求人で明記なし", source: { label: "Cognition Careers (Ashby)", url: "https://jobs.ashbyhq.com/cognition/0aabb166-3e97-437b-ab84-b04fe20dd426" },
+    descriptionSummary: "Japan launch後のenterprise顧客へDevin・Devin Desktopを提案し、engineering leaderとのbusiness case、technical evaluation、close、activation、expansionを進めるAccount Director。",
     genbaTake: "AI coding seatではなく、完了task、review工数、release、legacy modernizationへ成果を変換し、frontier productの変化をlarge enterpriseへ安全に導入する役割。",
-    desiredProfile: "公式求人とJapan launch方針から、complex enterprise sales、executive/technical stakeholder、AI・developer tool理解、自律的なmarket build、日本語・英語が中核。",
+    desiredProfile: "公式求人はcomplex enterprise sales、executive・technical stakeholder、AI・developer tool理解、自律的なmarket buildを重視。言語要件は明記されていない。",
     fit: "product変化が速い環境でCTO・VP Engineeringへ定量的なproductivity caseを作り、Japan playbookを発明したい人に向く。", thingsToKnow: "Japan quota、既存pipeline、customer ownership、Devin/Windsurfのcredit、SE/deployed engineer coverage、rampは非公開。", marketValue: "frontier AI、developer tool、Japan country build、partner、enterprise transformationを横断する希少な経験。",
   }),
 ];
@@ -1306,6 +1307,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchSeven,
   ...jobs20260817BatchSix,
   ...jobs20260816,
   ...jobs20260814WaveTwo,
@@ -2823,7 +2825,7 @@ const jobRecords: Job[] = [
     careerInsights: { fit: "EdTech product engagementと法人salesを同時に扱いたい人に向く。", thingsToKnow: "paid customer、平均seat、renewal、activation、AE/CS境界は非公開。", marketValue: "HR Tech、Learning Techで利用定着まで売る経験になる。", tenureAndPromotion: "Japan B2B teamの在籍・昇進dataは未公開。", priorCompanies: "公開集計はない。求人要件からSaaS、EdTech、HR solution sales経験者が中心(仮説)。", nextCompanies: "公開傾向は未確認。隣接性からHR Tech、EdTech、PLG B2BのAEが候補(仮説)。" },
   },
   {
-    id: "censys-account-executive-japan", companySlug: "censys", title: "Account Executive, Japan", segment: "Enterprise / Upper Mid-Market", location: "日本", workStyle: "remote / autonomous", language: "日本語 / 英語（公式求人要件）", firstSeen: "2026-08-12", lastChecked: "2026-08-13",
+    id: "censys-account-executive-japan", companySlug: "censys", title: "Account Executive, Japan", segment: "Enterprise / Upper Mid-Market", location: "日本", workStyle: "リモート / フルタイム", language: "公式求人で明記なし", firstSeen: "2026-08-12", lastChecked: "2026-08-17",
     source: { label: "Censys Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/censys/jobs/8558569002" },
     descriptionSummary: "500人以上のEnterprise・upper midmarketでnew logoとexpansionを担い、direct saleとdistributor/resellerとのchannel motionを構築する。",
     genbaTake: "internet scanのspecではなく、unknown asset、threat investigation、remediation ownershipをCISOとanalyst双方へ売るcategory creation role。",
@@ -2919,6 +2921,7 @@ const closedJobIds = new Set([
   "anaplan-solution-consulting-manager",
   "confluent-ae-digital-native",
   "confluent-ae-msp-isv",
+  "cambly-account-executive-japan",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([]);

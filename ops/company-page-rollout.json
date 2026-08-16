@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 81,
+      "未着手": 76,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 31
     },
     "byPriority": {
-      "HOT": 22,
-      "Active": 4,
-      "Selective": 53,
+      "HOT": 25,
+      "Active": 5,
+      "Selective": 49,
       "求人なし": 33
     },
-    "standardReady": 31
+    "standardReady": 36
   },
   "companies": [
     {
@@ -71,6 +71,15 @@
       "missingFields": []
     },
     {
+      "slug": "cato-networks",
+      "company": "Cato Networks",
+      "priority": "HOT",
+      "salesRoles": 10,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "celonis",
       "company": "Celonis",
       "priority": "HOT",
@@ -85,6 +94,24 @@
       "priority": "HOT",
       "salesRoles": 11,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "cloudflare",
+      "company": "Cloudflare",
+      "priority": "HOT",
+      "salesRoles": 5,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "cognition",
+      "company": "Cognition",
+      "priority": "HOT",
+      "salesRoles": 7,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -242,6 +269,15 @@
       "missingFields": []
     },
     {
+      "slug": "censys",
+      "company": "Censys",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "mirakl",
       "company": "Mirakl",
       "priority": "Active",
@@ -291,102 +327,9 @@
       "company": "Cambly",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "cato-networks",
-      "company": "Cato Networks",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Regional Sales Director - Japan:勤務地・言語の日本語表記",
-        "求人:Regional Sales Director - Japan:ポジティブ・ネガティブ評判",
-        "求人:Regional Sales Director - Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "censys",
-      "company": "Censys",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "cloudflare",
-      "company": "Cloudflare",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Senior Named Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Senior Named Account Executive, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "cognition",
-      "company": "Cognition",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Director - APAC:ポジティブ・ネガティブ評判",
-        "求人:Account Director - APAC:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "cohere",

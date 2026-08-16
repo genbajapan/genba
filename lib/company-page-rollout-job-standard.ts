@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -108,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  cambly: {
+    name: "Cambly", domain: "Corporate Learning・English Training", officialUrl: "https://jobs.ashbyhq.com/Cambly",
+    positive: ["現行APAC Sales Directorは日本・中国・韓国の売上計画とSales・Marketing組織を担う広いleadership scope。", "10,000超tutor、human lesson、AI練習、CEFR、法人dashboardを一つの研修programで扱える。"],
+    negative: ["日本法人・office・current team・国内売上・利益は非公開。東京はsecondary locationで日本専任roleではない。", "2,000超導入等はcompany claimで、active paid customer・成果・renewalを示さない。"],
+    next: ["EdTech・Corporate LearningのAPAC Sales Leadership", "HR Tech・L&D Platform GTM", "Global Talent・Learning Business Development"],
+  },
+  "cato-networks": {
+    name: "Cato Networks", domain: "SASE・Network Security", officialUrl: "https://www.catonetworks.com/careers/",
+    positive: ["日本でSales、Presales、CS、Supportの10求人があり、pipelineからproduction supportまでlocal capacityを拡張している。", "current ARR 4.15億米ドル超、4,000超enterprise customerと国内大手事例を公表。"],
+    negative: ["recognized revenue、利益、日本ARR、quota、給与・OTE、勤務形態は非公開。ARRを売上高と扱えない。", "single architectureは運用簡素化の反面、vendor concentration・lock-in・migration riskを伴う。"],
+    next: ["SASE・CybersecurityのEnterprise Sales", "Network・Security Solutions Engineering", "Customer Success・Support・SASE Leadership"],
+  },
+  censys: {
+    name: "Censys", domain: "Internet Intelligence・Attack Surface Management", officialUrl: "https://job-boards.greenhouse.io/censys",
+    positive: ["Japan RemoteでAEとSenior Solutions Engineerを同時採用し、direct・channelとtechnical winを構築する。", "継続的なinternet観測とExposure・Investigations・APIを同じdata基盤で提供。"],
+    negative: ["売上・ARR・利益、日本顧客・法人・officeは非公開。APAC成長率は絶対規模を示さない。", "観測coverage、asset attribution、false positive、remediation ownerを顧客環境で検証する必要がある。"],
+    next: ["Attack Surface・CTIのEnterprise AE", "Cybersecurity Solutions Engineering", "Internet Data・Security Platform GTM"],
+  },
+  cloudflare: {
+    name: "Cloudflare", domain: "Connectivity Cloud・Network・Security", officialUrl: "https://job-boards.greenhouse.io/cloudflare",
+    positive: ["日本でEnterprise Sales、Partner leadership・management、Premium Supportの現行5求人がありcoverageを拡張。", "Q1 2026は売上成長とFCFを確保し、Application・Network・SASE・Developerをglobal networkで横断できる。"],
+    negative: ["GAAP営業赤字が続き、2026年には約1,100人の人員削減も発表。成長と組織riskを両方見る必要がある。", "日本売上・quota・達成率・給与・OTEは非公開。製品範囲が広くrole・territoryの境界確認が重要。"],
+    next: ["Cloud Security・NetworkのEnterprise Sales", "Partner・Channel Sales Leadership", "Connectivity・Developer Platform GTM"],
+  },
+  cognition: {
+    name: "Cognition", domain: "AI Software Engineering・Developer Productivity", officialUrl: "https://cognition.com/careers",
+    positive: ["東京でAccount、Partnerships、Deployed、Support、GTM Opsの7求人を全てOn-siteで募集し、日本buildの範囲が広い。", "DeNA・ちばぎんの国内成果と、run-rate revenue 5億米ドル超の急成長signalがある。"],
+    negative: ["run-rateは監査済み売上・ARRではなく、利益・FCF・retention・日本売上は非公開。", "AI生成codeはsecurity、review、defect、IP、長期保守を同一taskで競合と比較する必要がある。"],
+    next: ["AI Developer ToolsのEnterprise GTM", "Deployed・Customer Engineering", "AI Platform Partnerships・GTM Operations"],
+  },
   aghanim: {
     name: "Aghanim", domain: "Mobile Gaming D2C・Payments・LiveOps", officialUrl: "https://jobs.ashbyhq.com/aghanim/0b7e0d14-4741-4439-bdba-67dca40af857",
     positive: ["Head of BD Japanがmarket strategyからstudio・partner開拓、revenue、retention・expansionまでをend-to-endで持つfounding scope。", "Game Hub、Merchant of Record、LiveOpsをまとめ、決済手数料だけでなくplayer relationship、margin、LTVを事業caseにできる。"],

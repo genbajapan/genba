@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  cambly: {
+    category: "法人英語研修・AI学習",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "APAC team・東京は現行求人のsecondary location（日本法人・officeは確認不能）",
+    description: "native tutorとの会話、AI練習、CEFR、法人管理を提供。上海・東京を勤務地とするAPAC Sales Directorを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  "cato-networks": {
+    category: "SASE・クラウドネットワークセキュリティ",
+    hq: "テルアビブ（イスラエル）",
+    japanPresence: "Cato Networks株式会社・東京都千代田区大手町（2020年10月設立）",
+    description: "networkとsecurityをsingle cloud platformへ統合。日本でSales、Presales、Customer Success、Supportの現行10求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  censys: {
+    category: "インターネットインテリジェンス・攻撃対象領域管理",
+    hq: "ミシガン州アナーバー（米国）",
+    japanPresence: "日本市場team・Remote（日本法人・office・責任者は確認不能）",
+    description: "internet assetの継続観測、Exposure Management、脅威調査、APIを提供。日本でAEとSenior Solutions Engineerを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  cloudflare: {
+    category: "Connectivity Cloud・ネットワーク・セキュリティ",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Cloudflare Japan株式会社・東京都千代田区丸の内（2020年日本法人設立）",
+    description: "Application、Network、SASE、Developer Platformをglobal networkで提供。日本関連のSales、Partner、Supportの現行5求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  cognition: {
+    category: "AIソフトウェアエンジニアリング",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Cognition Japan team・東京（2026年4月launch、法人商号・office住所は確認不能）",
+    description: "Devin Cloud・Desktop・Review・Securityでsoftware taskをagent実行。東京でSales、Partnerships、Deployed、Support、GTM Opsの現行7求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
   aghanim: {
     category: "モバイルゲームD2C・決済・LiveOps",
     hq: "ロサンゼルス（米国）／リスボン（ポルトガル）",
