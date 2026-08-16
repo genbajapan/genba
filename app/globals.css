@@ -531,6 +531,7 @@ button, input, select { font: inherit; }
 .company-snapshot-official:hover { background: #edf7f4; }
 .company-snapshot-official:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
 .company-snapshot-official small,.company-snapshot-source { display: inline-block; margin-top: 6px; color: var(--signal); font-size: 9px; font-weight: 800; line-height: 1.4; text-decoration: none; }
+.company-snapshot-milestone { display: block; margin-top: 5px; color: #57717a; font-size: 10px; font-weight: 700; line-height: 1.35; }
 .company-snapshot-source:hover { text-decoration: underline; }
 .company-snapshot-strip-compact { margin-top: 10px; }
 .company-snapshot-strip-compact > * { padding: 9px 11px; }
@@ -554,6 +555,7 @@ button, input, select { font: inherit; }
 .company-overview-card .company-snapshot-strip > :nth-child(even) { border-left-color: #dbe5e3; }
 .company-overview-card .company-snapshot-strip span { color: #71828a; font-size: 9px; letter-spacing: .015em; }
 .company-overview-card .company-snapshot-strip strong { color: #102f40; font-size: 12.5px; font-weight: 760; }
+.company-overview-card .company-snapshot-milestone { margin-top: 5px; color: #4f6e76; font-size: 9.5px; }
 .company-overview-card .company-snapshot-people { gap: 4px; }
 .company-overview-card .company-snapshot-people a { border-radius: 4px; }
 .company-overview-card .company-snapshot-people a:hover { background: rgba(10,109,99,.05); }

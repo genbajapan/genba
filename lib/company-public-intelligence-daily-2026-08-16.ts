@@ -113,6 +113,7 @@ const built = Object.fromEntries(profiles.map((profile) => [profile.slug, buildI
 
 // Adyenで先行検証する、日本市場の需要・成長性を読むための深掘り枠。
 built.adyen.sources.push(
+  { id: "adyen-about", label: "Adyen 会社概要・沿革", url: "https://www.adyen.com/ja_JP/about", kind: "企業公式", scope: "2006年の創業地・グローバル沿革", checkedAt: adyenCheckedAt },
   { id: "adyen-cashless-2025", label: "経済産業省 2025年キャッシュレス決済比率", url: "https://www.meti.go.jp/press/2025/03/20260331006/20260331006.html", kind: "公的機関", scope: "2025年実績・2030年目標・長期目標", checkedAt },
   { id: "adyen-acquiring-japan", label: "Adyen 日本でのアクワイアリング開始", url: "https://www.adyen.com/ja_JP/press-and-media/adyen-expands-acquiring-capabilities-to-japan", kind: "企業公式", scope: "日本市場への製品投資・現地決済処理", checkedAt },
   { id: "adyen-unified-commerce-japan", label: "Adyen 日本でのユニファイドコマース開始", url: "https://www.adyen.com/press-and-media/adyen-brings-unified-commerce-to-japan", kind: "企業公式", scope: "日本の対面決済・チャネル統合", checkedAt },
@@ -122,6 +123,8 @@ built.adyen.sources.push(
   { id: "adyen-global-leadership", label: "Adyen 公式経営陣", url: "https://www.adyen.com/about/team", kind: "企業公式", scope: "Co-CEO・日本カントリーマネージャー", checkedAt: adyenCheckedAt },
   { id: "adyen-gbiz-japan", label: "Gビズインフォ Adyen Japan株式会社", url: "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6010401141832", kind: "公的機関", scope: "本店所在地・社会保険適用事業所の被保険者数", checkedAt: adyenCheckedAt },
 );
+const adyenFoundedMilestone = built.adyen.marketStatus.milestones.find((milestone) => milestone.label === "創業");
+if (adyenFoundedMilestone) adyenFoundedMilestone.sourceId = "adyen-about";
 
 built.adyen.overviewLeadership = [
   {
@@ -148,6 +151,11 @@ built.adyen.companyStats.japanOffice = {
   value: "〒150-6139 東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア39階",
   detail: "法人番号公表情報とAdyen公式オフィス一覧で確認。",
   sourceId: "adyen-gbiz-japan",
+};
+built.adyen.companyStats.japanSince = {
+  value: "2021年に日本でアクワイアリングを開始",
+  detail: "Adyen公式が2021年5月に日本でのアクワイアリング機能の提供開始を発表。",
+  sourceId: "adyen-acquiring-japan",
 };
 built.adyen.companyStats.japanHeadcount = {
   value: "53人",

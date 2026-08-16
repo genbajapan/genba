@@ -104,6 +104,8 @@ export default function CompanyIntelligenceProfile({
   const globalScaleSource = globalScaleDirectorySource ?? (globalScaleResearchSource ? { url: globalScaleResearchSource.url, label: globalScaleResearchSource.label } : undefined);
   const japanOfficeSource = publicIntel?.companyStats.japanOffice.sourceId ? getResearchSource(publicIntel, publicIntel.companyStats.japanOffice.sourceId) : undefined;
   const japanHeadcountSource = publicIntel?.companyStats.japanHeadcount.sourceId ? getResearchSource(publicIntel, publicIntel.companyStats.japanHeadcount.sourceId) : undefined;
+  const foundedYear = publicIntel?.marketStatus.milestones.find((milestone) => milestone.label.includes("創業"))?.year;
+  const japanEntryYear = publicIntel?.marketStatus.milestones.find((milestone) => milestone.label.includes("日本") && (milestone.label.includes("進出") || milestone.label.includes("開始")))?.year;
   const scaleComparisons = getCompanyScaleComparisons(company, allCompanies);
   const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
   const sourceEntries = uniqueSources([
@@ -300,12 +302,14 @@ export default function CompanyIntelligenceProfile({
                           <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
                             <span>本社</span>
                             <strong>{company.hq}</strong>
+                            {foundedYear && <small className="company-snapshot-milestone">創業：{foundedYear}年</small>}
                             <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
                           </a>
-                        ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
+                        ) : <div><span>本社</span><strong>{company.hq}</strong>{foundedYear && <small className="company-snapshot-milestone">創業：{foundedYear}年</small>}</div>}
                         <div>
                           <span>日本オフィス</span>
                           <strong>{publicIntel.companyStats.japanOffice.value}</strong>
+                          {japanEntryYear && <small className="company-snapshot-milestone">日本進出：{japanEntryYear}年</small>}
                           {japanOfficeSource && <a className="company-snapshot-source" href={japanOfficeSource.url} target="_blank" rel="noreferrer">{japanOfficeSource.kind} ↗</a>}
                         </div>
                         <div>
