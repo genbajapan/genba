@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 91,
+      "未着手": 86,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 21
+      "公開済み": 26
     },
     "byPriority": {
-      "HOT": 17,
-      "Active": 6,
+      "HOT": 20,
+      "Active": 3,
       "Selective": 57,
       "求人なし": 32
     },
-    "standardReady": 21
+    "standardReady": 26
   },
   "companies": [
     {
@@ -152,6 +152,24 @@
       "missingFields": []
     },
     {
+      "slug": "okta",
+      "company": "Okta",
+      "priority": "HOT",
+      "salesRoles": 5,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "pagerduty",
+      "company": "PagerDuty",
+      "priority": "HOT",
+      "salesRoles": 6,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "speak",
       "company": "Speak",
       "priority": "HOT",
@@ -188,6 +206,15 @@
       "missingFields": []
     },
     {
+      "slug": "zendesk",
+      "company": "Zendesk",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "mirakl",
       "company": "Mirakl",
       "priority": "Active",
@@ -197,122 +224,22 @@
       "missingFields": []
     },
     {
-      "slug": "okta",
-      "company": "Okta",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Okta(Associate):ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Okta(Associate):市場価値",
-        "求人:Account Executive, Auth0:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Auth0:市場価値"
-      ]
-    },
-    {
-      "slug": "pagerduty",
-      "company": "PagerDuty",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Enterprise Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive:市場価値",
-        "求人:Sr. Sales Manager:ポジティブ・ネガティブ評判",
-        "求人:Sr. Sales Manager:市場価値"
-      ]
-    },
-    {
       "slug": "sonar",
       "company": "Sonar",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Enterprise Territory Manager, Japan:勤務地・言語の日本語表記",
-        "求人:Enterprise Territory Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Territory Manager, Japan:市場価値",
-        "求人:Partner Business Manager, Japan:勤務地・言語の日本語表記",
-        "求人:Partner Business Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Partner Business Manager, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "zendesk",
-      "company": "Zendesk",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:SMB Account Executive:ポジティブ・ネガティブ評判",
-        "求人:SMB Account Executive:市場価値",
-        "求人:Senior Commercial Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Senior Commercial Account Executive:市場価値"
-      ]
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "zilliz",
       "company": "Zilliz",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Enterprise Account Executive - Japan:勤務地・言語の日本語表記",
-        "求人:Enterprise Account Executive - Japan:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive - Japan:市場価値",
-        "求人:Founding Field Engineer, Japan:勤務地・言語の日本語表記",
-        "求人:Founding Field Engineer, Japan:ポジティブ・ネガティブ評判",
-        "求人:Founding Field Engineer, Japan:市場価値"
-      ]
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "adyen",
