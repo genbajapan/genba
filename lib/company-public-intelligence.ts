@@ -15,6 +15,7 @@ import { daily20260814WaveTwoIntelligenceBySlug } from "@/lib/company-public-int
 import { daily20260815IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-15";
 import { daily20260816IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-16";
 import { addYenConversionsDeep } from "@/lib/currency-display";
+import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -99,7 +100,7 @@ export type CultureDeepDive = {
   researchedAt: string;
   headline: string;
   workStyle: {
-    classification: "フルリモート" | "ハイブリッド" | "出社中心";
+    classification: "フルリモート" | "ハイブリッド" | "出社中心" | "未確認";
     displayLabel: string;
     remoteOnly: string;
     officeDays: string;
@@ -9584,6 +9585,8 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260815IntelligenceBySlug,
   ...daily20260816IntelligenceBySlug,
 };
+
+applyCompanyPageRolloutBatchOne(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];

@@ -56,14 +56,15 @@ function compensationOutlook(job: Job) {
 }
 
 function CompensationResearchBlock({ research }: { research: NonNullable<Job["compensationResearch"]> }) {
+  const isOfficialRange = research.breakdown.length > 0 && research.breakdown.every((item) => item.status.includes("公式"));
   return (
     <div className="compensation-research">
       <div className="compensation-research-verdict">
         <div>
-          <span>【Genba仮説】</span>
+          <span>{isOfficialRange ? "【公式求人】" : "【Genba仮説】"}</span>
         </div>
         <strong>{research.headline}</strong>
-        <p>公式の提示額ではなく、公開情報から求めた市場レンジです。</p>
+        <p>{isOfficialRange ? "公式求人に掲載された日本向けの報酬レンジです。未開示の条件は補完していません。" : "公式の提示額ではなく、公開情報から求めた市場レンジです。"}</p>
       </div>
 
       <p className="compensation-research-summary">{research.summary}</p>
@@ -86,7 +87,7 @@ function CompensationResearchBlock({ research }: { research: NonNullable<Job["co
       <div className="compensation-research-sources">
         <div className="compensation-research-sources-heading">
           <span>根拠データ</span>
-          <p>日本向けの直接値ではないものは、海外参考として限界も明記しています。</p>
+          <p>{isOfficialRange ? "公式求人の掲載値と、未開示条件の限界を明記しています。" : "日本向けの直接値ではないものは、海外参考として限界も明記しています。"}</p>
         </div>
         <ol>
           {research.sources.map((source) => (

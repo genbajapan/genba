@@ -7,6 +7,7 @@ import { companies20260814WaveTwo, jobs20260814WaveTwo } from "@/lib/company-add
 import { companies20260815, jobs20260815 } from "@/lib/company-additions-2026-08-15";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
+import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 
 export type Source = {
   label: string;
@@ -312,14 +313,14 @@ const companyRecords: Company[] = [
   {
     slug: "braze",
     name: "Braze",
-    category: "Customer Engagement",
+    category: "顧客エンゲージメント基盤",
     broadCategory: "CRM・顧客体験",
-    hq: "New York, US",
+    hq: "ニューヨーク（米国）",
     japanPresence: "東京オフィス(Japan Cloud経由で運営)",
     hiringStatus: "積極採用",
-    salesRoles: 3,
-    description: "Sales Director、Account Executive(Commercial/Enterprise)など日本向け営業職を複数掲載。",
-    lastChecked: "2026-08-11",
+    salesRoles: 6,
+    description: "Sales Director、Account Executive（Commercial/Enterprise）、Business Development Manager、Forward-Deployed Data Scientist、AI Decisioning Technical Leadの日本向け6職種を掲載。",
+    lastChecked: "2026-08-17",
     careersUrl: "https://japancloud.jp/career/companies/braze/",
     tags: ["Enterprise", "Commercial", "Marketing"],
     interviewFlow: {
@@ -460,12 +461,12 @@ const companyRecords: Company[] = [
     name: "Anaplan",
     category: "コネクテッドプランニング(FP&A/経営管理)",
     broadCategory: "経営管理・FinTech",
-    hq: "San Francisco, US",
+    hq: "マイアミ（米国）",
     japanPresence: "Ａｎａｐｌａｎ　Ｊａｐａｎ株式会社・東京都千代田区丸の内(2016年設立)",
     hiringStatus: "積極採用",
-    salesRoles: 7,
-    description: "東京拠点で業種特化型のEnterprise AE(金融/製造/自動車)、RVP(FSI担当)、Solution Consulting Manager、Professional Services Sales、サポートアナリストなど7職種を同時募集中。",
-    lastChecked: "2026-08-11",
+    salesRoles: 3,
+    description: "東京拠点でRegional Vice President（Finance team）、Customer Success Specialist、Professional Services Salesの3職種を掲載。旧Enterprise AE・Solution Consulting Manager求人は終了を確認。",
+    lastChecked: "2026-08-17",
     careersUrl: "https://job-boards.greenhouse.io/anaplan",
     tags: ["Enterprise", "業界特化", "マネジメント"],
   },
@@ -558,12 +559,12 @@ const companyRecords: Company[] = [
     name: "Coupa",
     category: "調達購買 / 支出管理(BSM)",
     broadCategory: "経営管理・FinTech",
-    hq: "San Mateo, US",
+    hq: "フォスターシティ（米国）",
     japanPresence: "Coupa株式会社・東京(2021年4月設立、代表取締役社長 反町浩一郎)",
     hiringStatus: "積極採用",
-    salesRoles: 3,
-    description: "東京拠点でAccount Director、Sr. Account Development Representative、Sr. Alliances Directorを募集中。",
-    lastChecked: "2026-08-11",
+    salesRoles: 6,
+    description: "東京拠点の現行求人9件から、Account Director、Account Development、Alliances、Services Salesなど営業・GTM関連6職種を掲載。勤務形態は職種別に異なる。",
+    lastChecked: "2026-08-17",
     careersUrl: "https://jobs.lever.co/coupa",
     tags: ["AE", "SDR", "パートナーセールス"],
   },
@@ -874,8 +875,8 @@ const companyRecords: Company[] = [
     description: "SydneyをAPAC拠点にFin AI Agentを展開。日本語品質・channel・国内referenceを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.intercom.com/careers", tags: ["日本未進出", "Customer Service", "AI Agent", "CX", "APAC"], entryStatus: "not-entered",
   },
   {
-    slug: "cursor", name: "Cursor", category: "AI Coding Agent / Developer Platform", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本語公式サイト / Japan向け初期GTM採用", hiringStatus: "積極採用", salesRoles: 5,
-    description: "Strategic AE、Channel責任者、Field Engineering、FDE、Solutions Architectを同時募集。Money Forwardの国内導入を起点に日本Enterprise GTMを立ち上げる段階。", lastChecked: "2026-08-12", careersUrl: "https://cursor.com/careers", tags: ["日本進出直後", "AI Coding", "Developer Tools", "Enterprise", "Founding Team", "PLG", "Partner"],
+    slug: "cursor", name: "Cursor", category: "AIコーディングエージェント・開発者基盤", broadCategory: "AI・データ基盤", hq: "サンフランシスコ（米国）", japanPresence: "日本語公式サイト / Japan向け初期GTM採用", hiringStatus: "積極採用", salesRoles: 5,
+    description: "Strategic AE、Channel責任者、Field Engineering、FDE、Solutions Architectを同時募集。Money Forwardの国内導入を起点に日本Enterprise GTMを立ち上げる段階。", lastChecked: "2026-08-17", careersUrl: "https://cursor.com/careers", tags: ["日本進出直後", "AI Coding", "Developer Tools", "Enterprise", "Founding Team", "PLG", "Partner"],
   },
   {
     slug: "sierra", name: "Sierra", category: "Enterprise AI Agent / Customer Experience", broadCategory: "CRM・顧客体験", hq: "San Francisco, US", japanPresence: "Tokyo office / OPERA TECH買収", hiringStatus: "採用中", salesRoles: 1,
@@ -1133,6 +1134,86 @@ const waveFourJobs: Job[] = [
   }),
 ];
 
+const rolloutBatchOneCurrentJobs: Job[] = [
+  makeWaveTwoJob({
+    id: "anaplan-customer-success-specialist", companySlug: "anaplan", title: "Customer Success Specialist", segment: "Customer Success / Enterprise Planning", location: "東京", workStyle: "Hybrid（公式Career。東京の出社日数は非公開）", language: "公式求人で明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Anaplan Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anaplan/jobs/8118921002" },
+    descriptionSummary: "日本のEnterprise顧客でAnaplanの利用定着と価値実現を支援し、planning・multidimensional systemの知識を使って顧客課題、導入、活用をつなぐCustomer Success職。",
+    genbaTake: "契約更新の管理だけでなく、顧客の計画プロセスへ入り、モデルと業務の両面で成果を作る役割。導入担当、営業、partnerとの責任境界を確認したい。",
+    desiredProfile: "公式求人は3年以上のconsultingまたはsystem implementation、Enterprise Japan顧客、planning・multidimensional systemの経験を求める。言語要件、給与、OTE、出社日数は公開情報で確認できない。",
+    fit: "計画業務と顧客変革を長期で支援したい人に向く。", thingsToKnow: "担当社数、renewal・expansion ownership、利用定着KPI、AE・PSとの境界は非公開。", marketValue: "EPM、Customer Success、planning transformationの複合経験。",
+  }),
+  makeWaveTwoJob({
+    id: "anaplan-business-development-director-ps", companySlug: "anaplan", title: "Business Development Director (Professional Services Sales)", segment: "Professional Services Sales", location: "東京", workStyle: "Hybrid（公式Career。東京の出社日数は非公開）", language: "日本語 / 英語", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Anaplan Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anaplan/jobs/8617335002" },
+    descriptionSummary: "日本の顧客へProfessional Servicesの提案、SOW、commercial条件を設計し、bookings、attach rate、expansion、margin、NNACV、win rate、deal velocity、pipelineを持つServices Sales責任者。",
+    genbaTake: "software受注と導入capacityを別々にせず、価値実現に必要なservice scopeと採算を商談初期から設計する。売上だけでなくmarginとattach rateを持つ点が特徴。",
+    desiredProfile: "公式求人はServices Sales、proposal・SOW、複数stakeholderとのcommercial交渉、日本語・英語双方のfluencyを求める。給与・OTE・出社日数は非公開。",
+    fit: "licenseとdeliveryを一つのbusiness caseへまとめたい人に向く。", thingsToKnow: "PS/partnerのcapacity、margin基準、software AEとのcredit、signed-to-live期間は非公開。", marketValue: "Enterprise Services Sales、SOW economics、EPM transformationの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "braze-manager-business-development", companySlug: "braze", title: "Manager, Business Development", segment: "Business Development / Leadership", location: "日本", workStyle: "ハイブリッド（日数は会社・職種別）", language: "日本語 / 英語", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Braze (Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8123/" },
+    descriptionSummary: "日本のBusiness Development teamを率い、pipeline創出、coaching、process、Sales・Marketing連携を改善するインサイドセールスマネージャー。",
+    genbaTake: "meeting数の管理ではなく、segment別message、qualification、AE handoff、rampを再現可能なpipeline engineへ変える役割。",
+    desiredProfile: "公式求人はFluent Japanese、business English、4年以上のB2B sales、1年以上のleadership経験を求める。給与・OTE・正確な出社日数は非公開。",
+    fit: "MarTechのcategory educationとBDR組織づくりを両立したい人に向く。", thingsToKnow: "meeting・pipeline quota、AE acceptance、昇進実績、達成率は非公開。", marketValue: "Revenue Development leadership、MarTech、Japan scaleの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "braze-forward-deployed-data-scientist", companySlug: "braze", title: "Forward-Deployed Data Scientist", segment: "Customer-facing Data Science", location: "日本", workStyle: "ハイブリッド（日数は会社・職種別）", language: "公式求人で明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Braze (Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8117/" },
+    descriptionSummary: "顧客のデータ・ML課題へ入り、BrazeのAI・Decisioningを実データと業務へ実装し、pre/post-salesをまたいで価値を証明する技術職。",
+    genbaTake: "genericなAI demoではなく、顧客データ上でtarget、decision、measurementを設計し、モデル利用をbusiness outcomeへ変えるFDE型の役割。",
+    desiredProfile: "公式求人は3〜5年以上のData ScientistまたはML Engineer、Python・SQL、customer-facing経験を求める。言語、給与、出社日数は非公開。",
+    fit: "モデル開発と顧客成果の間を埋めたいdata professionalに向く。", thingsToKnow: "同時担当社数、custom work、production ownership、sales creditは非公開。", marketValue: "AI Decisioning、MarTech data、Forward Deployedの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "braze-ai-decisioning-technical-lead", companySlug: "braze", title: "AI Decisioning Technical Lead", segment: "Technical Pre/Post-Sales", location: "日本", workStyle: "ハイブリッド（日数は会社・職種別）", language: "日本語 / 英語", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Braze (Japan Cloud Careers)", url: "https://japancloud.jp/career/jobs/8110/" },
+    descriptionSummary: "Enterprise顧客へAI Decisioningのtechnical discovery、solution design、data・ML検証、導入・活用をpre/post-sales横断で率いるTechnical Lead。",
+    genbaTake: "AI機能を売るだけでなく、CDP・DWH・CRM・ML運用へ接続し、意思決定の品質と顧客KPIを同時に検証する。",
+    desiredProfile: "公式求人はNative/Fluent Japanese、business English、5年以上のtechnical customer-facing、SQL、Python/R、ML・CDP・DWH・CRM経験を求める。給与と出社日数は非公開。",
+    fit: "AI、データ基盤、顧客エンゲージメントを横断したいtechnical leaderに向く。", thingsToKnow: "pre/post-sales比率、production責任、FDE/CSとの境界、商談creditは非公開。", marketValue: "AI Decisioning、MarTech architecture、technical leadershipの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "channel-talk-ax-sales", companySlug: "channel-talk", title: "AX Sales", segment: "AI Transformation / Sales", location: "東京・半蔵門", workStyle: "ハイブリッド", language: "公式求人で必須言語の明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/321f0cae-b7e3-4459-bbb8-ff0f34d8fa20" },
+    descriptionSummary: "顧客業務へAIを組み込み、問い合わせ対応・業務process・意思決定を変えるAX提案をfull-cycleで進める営業職。",
+    genbaTake: "chat seatの販売ではなく、AIが担当するtask、人へのhandoff、data、品質、business KPIを顧客業務単位で設計する。",
+    desiredProfile: "公式求人の職務・要件を確認。掲載言語から必須言語は推定しない。年収800万〜1,400万円を公式掲載。",
+    fit: "AIを業務変革へ落とすconsultative saleに向く。", thingsToKnow: "AXのICP、delivery、pricing、quota、達成率は非公開。", marketValue: "AI Transformation、CX、workflow consultingの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "channel-talk-sales-engineer", companySlug: "channel-talk", title: "Sales Engineer", segment: "Technical Pre-Sales", location: "東京・半蔵門", workStyle: "出社", language: "公式求人で必須言語の明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/77c14a2c-e3c5-402f-8360-db2a312fd43d" },
+    descriptionSummary: "Enterprise・複雑案件でintegration、security、data、AI要件を整理し、demo・technical validationから導入条件までを営業と設計するSales Engineer。",
+    genbaTake: "All-in-oneの広さを説明するより、既存CRM・電話・EC・identityとの責任分界とAIの安全な運用を具体化する役割。",
+    desiredProfile: "公式求人で東京・半蔵門のOn-siteを確認。必須言語、給与は公開情報で確認できない。",
+    fit: "CX業務とsystem architectureを同時に扱いたい人に向く。", thingsToKnow: "AE比率、PoC期間、integration ownership、導入後handoffは非公開。", marketValue: "AI CX、CRM integration、technical value sellingの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "channel-talk-forward-deployed-engineer", companySlug: "channel-talk", title: "Forward Deployed Engineer", segment: "Customer Engineering / AI", location: "東京・半蔵門", workStyle: "ハイブリッド", language: "公式求人で必須言語の明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/a03b9000-8b07-466b-b65b-b6853ed5f25b" },
+    descriptionSummary: "顧客業務へ深く入り、AI・integration・workflowを実装して、PoCをproduction成果へ変えるForward Deployed Engineer。",
+    genbaTake: "個社対応と再利用可能なproduct feedbackの境界を設計し、AI解決率だけでなく有人handoffと顧客KPIまで測る。",
+    desiredProfile: "公式求人で東京・半蔵門のHybridを確認。必須言語、給与は公開情報で確認できない。",
+    fit: "顧客現場で実装しながらAI adoptionを作りたいengineerに向く。", thingsToKnow: "同時担当社数、出張、custom work比率、on-call、success metricは非公開。", marketValue: "AI FDE、Customer Engineering、CX workflowの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "coupa-account-director-invoice-to-pay", companySlug: "coupa", title: "Account Director, Invoice to Pay", segment: "Enterprise / AP Automation", location: "東京", workStyle: "出社", language: "公式求人で明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Coupa Careers (Tokyo list)", url: "https://jobs.lever.co/coupa/?location=Tokyo%2C%20Japan" },
+    descriptionSummary: "Invoice-to-Pay領域で日本のEnterprise顧客へ新規・拡張提案を行い、AP、Finance、Procurement、ITを束ねて請求・支払processの変革を進めるAccount Director。",
+    genbaTake: "支出管理platform全体ではなく、請求・支払という明確な入口から紙・manual、内部統制、支払cycleを改善し、source-to-payへ広げる役割。",
+    desiredProfile: "公式東京求人一覧でOn-siteの職種を確認。個別求人本文を安定取得できず、給与・言語・詳細要件は補完しない。",
+    fit: "CFO・APのprocess transformationからplatform expansionを作りたい人に向く。", thingsToKnow: "territory、Invoice-to-Pay単体とplatformのcredit、平均cycleは非公開。", marketValue: "AP Automation、CFO SaaS、Enterprise expansionの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "coupa-alliances-director-11382", companySlug: "coupa", title: "Alliances Director", segment: "Partners / Japan", location: "東京", workStyle: "ハイブリッド", language: "公式求人で明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Coupa Careers (Tokyo list)", url: "https://jobs.lever.co/coupa/?location=Tokyo%2C%20Japan" },
+    descriptionSummary: "日本のSI・consulting・technology partnerとのjoint GTM、enablement、pipeline、co-sellを設計するAlliances Director。",
+    genbaTake: "partner数ではなく、sourced・influenced pipeline、共同提案、delivery capacity、顧客成果を同じoperating modelで管理する。",
+    desiredProfile: "公式東京求人一覧でHybridの職種を確認。個別求人本文を安定取得できず、給与・言語・詳細要件は補完しない。",
+    fit: "調達・CFO ecosystemのjoint businessを作りたい人に向く。", thingsToKnow: "担当partner、MDF、案件登録、credit、delivery責任は非公開。", marketValue: "Enterprise SaaS Alliance、CFO/Procurement ecosystemの経験。",
+  }),
+  makeWaveTwoJob({
+    id: "coupa-customer-solution-partner-services-sales", companySlug: "coupa", title: "Customer Solution Partner - Services Sales", segment: "Professional Services Sales", location: "東京", workStyle: "リモート（東京）", language: "公式求人で明記なし", firstSeen: "2026-08-17", lastChecked: "2026-08-17", source: { label: "Coupa Careers (Lever)", url: "https://jobs.lever.co/coupa/75df9f66-6d18-4c18-9fe9-1d2aafcd9711" },
+    descriptionSummary: "Coupa導入・変革に必要なProfessional Servicesを顧客へ提案し、scope、SOW、commercial条件、delivery handoffを設計するServices Sales職。",
+    genbaTake: "license close後のimplementationを別問題にせず、顧客の変革範囲、delivery capacity、採算、稼働条件を商談中に明確化する。",
+    desiredProfile: "公式求人でRemote—Tokyoを確認。給与、言語の明示は確認できず補完しない。",
+    fit: "softwareとconsulting deliveryを一つの価値提案へまとめたい人に向く。", thingsToKnow: "software AEとのcredit、PS margin、partnerとの分担、signed-to-live期間は非公開。", marketValue: "Enterprise Services Sales、SOW・delivery economicsの経験。",
+  }),
+];
+
 const cursorJobs: Job[] = [
   makeWaveTwoJob({
     id: "cursor-strategic-enterprise-account-executive-japan", companySlug: "cursor", title: "Strategic Enterprise Account Executive - Japan", segment: "Strategic Enterprise / New & Expansion", location: "日本", workStyle: "公式求人で確認", language: "公式求人で明記なし", source: { label: "Cursor Careers", url: "https://cursor.com/careers/strategic-enterprise-account-executive-japan" },
@@ -1187,6 +1268,7 @@ const jobRecords: Job[] = [
   ...waveTwoJobs,
   ...waveThreeJobs,
   ...waveFourJobs,
+  ...rolloutBatchOneCurrentJobs,
   ...cursorJobs,
   {
     id: "sf-data-cloud-ae",
@@ -2513,6 +2595,8 @@ const closedJobIds = new Set([
   "postman-smb-account-executive-japan",
   "patsnap-channel-manager",
   "wiz-mid-market-account-executive-japan",
+  "anaplan-ae-finance",
+  "anaplan-solution-consulting-manager",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set([
@@ -2527,7 +2611,8 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-16" };
     const company = publishedCompanyBySlug.get(job.companySlug);
-    return company ? strengthenCareerInsights(datedJob, company) : datedJob;
+    const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
+    return strengthenRolloutBatchOneJob(strengthened);
   });
 
 const publishedJobCounts = jobs.reduce((counts, job) => {

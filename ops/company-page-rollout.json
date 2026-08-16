@@ -20,9 +20,9 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 111,
+      "未着手": 106,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 1
     },
     "byPriority": {
@@ -31,7 +31,7 @@
       "Selective": 57,
       "求人なし": 30
     },
-    "standardReady": 1
+    "standardReady": 6
   },
   "companies": [
     {
@@ -39,143 +39,45 @@
       "company": "Anaplan",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:大手直販営業 (Enterprise Account Executive) - Finance:ポジティブ・ネガティブ評判",
-        "求人:大手直販営業 (Enterprise Account Executive) - Finance:市場価値",
-        "求人:Regional Vice President - FSI team:ポジティブ・ネガティブ評判",
-        "求人:Regional Vice President - FSI team:市場価値",
-        "求人:Solution Consulting Manager:ポジティブ・ネガティブ評判",
-        "求人:Solution Consulting Manager:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "braze",
       "company": "Braze",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Sales Director, Enterprise:ポジティブ・ネガティブ評判",
-        "求人:Sales Director, Enterprise:市場価値",
-        "求人:Account Executive, Commercial:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Commercial:市場価値",
-        "求人:Account Executive, Enterprise:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Enterprise:市場価値"
-      ]
+      "salesRoles": 6,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "channel-talk",
       "company": "Channel Talk",
       "priority": "HOT",
-      "salesRoles": 8,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Enterprise Sales:勤務地・言語の日本語表記",
-        "求人:Enterprise Sales:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Sales:市場価値",
-        "求人:SMB Sales:勤務地・言語の日本語表記",
-        "求人:SMB Sales:ポジティブ・ネガティブ評判",
-        "求人:SMB Sales:市場価値",
-        "求人:Inside Sales:勤務地・言語の日本語表記",
-        "求人:Inside Sales:ポジティブ・ネガティブ評判",
-        "求人:Inside Sales:市場価値",
-        "求人:Inside Sales Leader:勤務地・言語の日本語表記",
-        "求人:Inside Sales Leader:ポジティブ・ネガティブ評判",
-        "求人:Inside Sales Leader:市場価値",
-        "求人:Partner Sales:勤務地・言語の日本語表記",
-        "求人:Partner Sales:ポジティブ・ネガティブ評判",
-        "求人:Partner Sales:市場価値",
-        "求人:Field Sales:勤務地・言語の日本語表記",
-        "求人:Field Sales:ポジティブ・ネガティブ評判",
-        "求人:Field Sales:市場価値",
-        "求人:Field Sales Leader:勤務地・言語の日本語表記",
-        "求人:Field Sales Leader:ポジティブ・ネガティブ評判",
-        "求人:Field Sales Leader:市場価値",
-        "求人:Enterprise BDR:勤務地・言語の日本語表記",
-        "求人:Enterprise BDR:ポジティブ・ネガティブ評判",
-        "求人:Enterprise BDR:市場価値"
-      ]
+      "salesRoles": 11,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "coupa",
       "company": "Coupa",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Director(Enterprise):ポジティブ・ネガティブ評判",
-        "求人:Account Director(Enterprise):市場価値",
-        "求人:Sr. Account Development Representative:ポジティブ・ネガティブ評判",
-        "求人:Sr. Account Development Representative:市場価値",
-        "求人:Sr. Alliances Director:ポジティブ・ネガティブ評判",
-        "求人:Sr. Alliances Director:市場価値"
-      ]
+      "salesRoles": 6,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "cursor",
       "company": "Cursor",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Strategic Enterprise Account Executive - Japan:ポジティブ・ネガティブ評判",
-        "求人:Strategic Enterprise Account Executive - Japan:市場価値",
-        "求人:Director, Channel & Partners:ポジティブ・ネガティブ評判",
-        "求人:Director, Channel & Partners:市場価値",
-        "求人:Field Engineering - Japan:ポジティブ・ネガティブ評判",
-        "求人:Field Engineering - Japan:市場価値",
-        "求人:Forward Deployed Engineer - Japan:ポジティブ・ネガティブ評判",
-        "求人:Forward Deployed Engineer - Japan:市場価値",
-        "求人:Solutions Architect - Japan:ポジティブ・ネガティブ評判",
-        "求人:Solutions Architect - Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "glean",
