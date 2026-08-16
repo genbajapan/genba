@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 96,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 11
+      "検証済み": 0,
+      "公開済み": 16
     },
     "byPriority": {
       "HOT": 13,
@@ -57,7 +57,7 @@
       "company": "Celonis",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -93,7 +93,7 @@
       "company": "Dataiku",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -138,7 +138,7 @@
       "company": "Verkada",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -147,7 +147,7 @@
       "company": "WalkMe",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1692,7 +1692,7 @@
       "company": "Confluent",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
