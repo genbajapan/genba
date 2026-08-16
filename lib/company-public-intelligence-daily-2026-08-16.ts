@@ -3,6 +3,7 @@ import { buildPreEntryIntelligence } from "@/lib/company-public-intelligence-pre
 import { buildIntelligence, type Profile } from "@/lib/company-public-intelligence-wave-two";
 
 const checkedAt = "2026-08-16";
+const adyenCheckedAt = "2026-08-17";
 
 const profiles: Profile[] = [
   {
@@ -42,7 +43,7 @@ const profiles: Profile[] = [
       { label: "日本のcashless", value: "継続拡大", detail: "経産省はcashless推進と決済環境整備を政策テーマとして継続している。", caveat: "市場拡大はAdyenの個別採用や成果を保証しない。" },
       { label: "omnichannel", value: "data統合要求", detail: "online・店舗・appが増えるほど、決済dataと顧客journeyの横断管理が経営課題になる。", caveat: "必要なarchitectureと契約は企業ごとに異なる。" },
     ],
-    role: "Team Lead, SalesがEnterprise sales managerをcoachingし、pipeline、forecast、deal execution、C-level relationship、日本のnew business growthを担う。Head of Sales Japanへreportする。", organization: "office-firstのTokyo teamでSales、Account Management、Solution Engineering、Implementation、Risk、Product等をdealごとに束ねるmatrix型GTM。", careerValue: "Payments、Unified Commerce、FinTech、Enterprise transformation、people managementを横断する経験。", globalHeadcount: "4,000人超", japanPresence: "Adyen Japan（渋谷スクランブルスクエア）／国内アクワイアリング／国内導入事例／日本営業リーダーを採用", japanSince: "2021年に日本でアクワイアリングを開始",
+    role: "Team Lead, SalesがEnterprise sales managerをcoachingし、pipeline、forecast、deal execution、C-level relationship、日本のnew business growthを担う。Head of Sales Japanへreportする。", organization: "office-firstのTokyo teamでSales、Account Management、Solution Engineering、Implementation、Risk、Product等をdealごとに束ねるmatrix型GTM。", careerValue: "Payments、Unified Commerce、FinTech、Enterprise transformation、people managementを横断する経験。", globalHeadcount: "4,000人超", japanPresence: "〒150-6139 東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア39階", japanSince: "2021年に日本でアクワイアリングを開始",
     solutions: [
       { name: "Adyen Payments", valueProp: "online・app・店舗の決済受付、processing、acquiringを統合。", url: "https://www.adyen.com/ja_JP/online-payments", competitors: "Stripe、Worldpay、PayPal/Braintree、国内PSP。", differentiation: "global acquiring、single platform、payments dataの連続性。" },
       { name: "Unified Commerce", valueProp: "店舗とdigitalのpayment dataを接続し、cross-channel journeyを運用。", url: "https://www.adyen.com/ja_JP/unified-commerce", competitors: "Stripe Terminal、Worldpay、POS・PSP組合せ。", differentiation: "online・POS・acquiringを同一platformで扱う。" },
@@ -118,7 +119,41 @@ built.adyen.sources.push(
   { id: "adyen-country-manager-japan", label: "Adyen 日本カントリーマネージャー就任", url: "https://www.adyen.com/ja_JP/press-and-media/adyen-names-adam-brownstein-as-country-manager-in-japan", kind: "企業公式", scope: "日本GTMへの継続投資", checkedAt },
   { id: "adyen-on-japan", label: "Adyen × On Japan", url: "https://www.adyen.com/ja_JP/knowledge-hub/on-running-multi-channel", kind: "企業公式", scope: "東京店舗とオンライン決済の統合", checkedAt },
   { id: "adyen-wolt-japan", label: "Adyen 日本の3Dセキュア動向・Wolt事例", url: "https://www.adyen.com/ja_JP/knowledge-hub/post-3ds-mandate-in-japan", kind: "企業公式", scope: "本人認証・不正対策・購入完了率", checkedAt },
+  { id: "adyen-global-leadership", label: "Adyen 公式経営陣", url: "https://www.adyen.com/about/team", kind: "企業公式", scope: "Co-CEO・日本カントリーマネージャー", checkedAt: adyenCheckedAt },
+  { id: "adyen-gbiz-japan", label: "Gビズインフォ Adyen Japan株式会社", url: "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6010401141832", kind: "公的機関", scope: "本店所在地・社会保険適用事業所の被保険者数", checkedAt: adyenCheckedAt },
 );
+
+built.adyen.overviewLeadership = [
+  {
+    label: "グローバルCo-CEO",
+    people: [
+      { name: "Pieter van der Does", url: "https://www.adyen.com/about/team", linkLabel: "公式経営陣" },
+      { name: "Ingo Uytdehaage", url: "https://nl.linkedin.com/in/ingo-uytdehaage-559a9133", linkLabel: "LinkedIn" },
+    ],
+  },
+  {
+    label: "日本カントリーマネージャー",
+    people: [
+      { name: "Adam Brownstein", url: "https://jp.linkedin.com/in/abrownstein", linkLabel: "LinkedIn" },
+    ],
+  },
+];
+built.adyen.leadership = {
+  name: "Adam Brownstein",
+  role: "Adyen Japan 日本カントリーマネージャー",
+  read: "2024年8月に就任。Adyen公式経営陣ページでも現任の日本カントリーマネージャーとして確認。",
+  sourceId: "adyen-country-manager-japan",
+};
+built.adyen.companyStats.japanOffice = {
+  value: "〒150-6139 東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア39階",
+  detail: "法人番号公表情報とAdyen公式オフィス一覧で確認。",
+  sourceId: "adyen-gbiz-japan",
+};
+built.adyen.companyStats.japanHeadcount = {
+  value: "53人",
+  detail: "Gビズインフォ掲載の厚生年金・健康保険適用事業所における被保険者数。雇用者総数と完全一致しない可能性がある。",
+  sourceId: "adyen-gbiz-japan",
+};
 
 built.adyen.salesFabeOverview = {
   targetSegments: ["デジタルサービス（SaaS・マーケットプレイス）", "金融・FinTech", "小売", "旅行・ホテル", "D2C"],

@@ -217,6 +217,15 @@ export type SalesFabeOverview = {
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
+  // 会社概要の上段に表示する、公開確認済みの経営責任者。未設定時は従来レイアウトを使う。
+  overviewLeadership?: Array<{
+    label: string;
+    people: Array<{
+      name: string;
+      url: string;
+      linkLabel: string;
+    }>;
+  }>;
   // 企業ごとに人手で検証したFABEサマリー。未設定時は共通ロジックで生成する。
   salesSnapshotFabe?: string;
   // 結論の後に任意で展開する、成果指標・導入実績・市場背景。

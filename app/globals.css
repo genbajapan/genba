@@ -537,6 +537,15 @@ button, input, select { font: inherit; }
 .company-snapshot-strip-compact span { font-size: 9px; }
 .company-snapshot-strip-compact strong { margin-top: 3px; font-size: 12px; line-height: 1.35; }
 .company-snapshot-strip-compact .company-snapshot-official small,.company-snapshot-strip-compact .company-snapshot-source { margin-top: 4px; font-size: 8px; }
+.company-snapshot-strip-leadership { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.company-snapshot-strip-leadership > :nth-child(odd) { border-left: 0; }
+.company-snapshot-strip-leadership > :nth-child(even) { border-left: 1px solid var(--line); }
+.company-snapshot-strip-leadership > :nth-child(n+3) { border-top: 1px solid var(--line); }
+.company-snapshot-people { display: grid; gap: 5px; margin-top: 4px; }
+.company-snapshot-people a { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; color: inherit; text-decoration: none; }
+.company-snapshot-people a:hover strong { color: var(--signal); }
+.company-snapshot-people strong { margin-top: 0; }
+.company-snapshot-people small { flex-shrink: 0; color: var(--signal); font-size: 8px; font-weight: 800; }
 
 .company-intelligence-section { background: #edf1f0; }
 .company-intelligence-layout { display: block; }
