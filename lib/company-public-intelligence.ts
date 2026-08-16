@@ -46,6 +46,15 @@ export type GenbaHypothesis = {
   sourceIds: string[];
 };
 
+export type AeInterviewHypothesis = {
+  issue: string;
+  hypothesis: string;
+  question: string;
+  goodSignal: string;
+  cautionSignal: string;
+  sourceIds: string[];
+};
+
 export type CustomerProof = {
   company: string;
   products: string;
@@ -336,6 +345,10 @@ export type CompanyPublicIntelligence = {
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];
   hypotheses: GenbaHypothesis[];
+  aeInterviewHypotheses?: {
+    intro: string;
+    items: AeInterviewHypothesis[];
+  };
   cultureNotes: CultureNotes;
   customerProof: CustomerProof[];
   externalSignals: ExternalSignal[];

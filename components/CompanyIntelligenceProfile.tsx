@@ -160,6 +160,53 @@ function MarketValueResearchBlock({ research }: { research: NonNullable<Job["mar
   );
 }
 
+function AeInterviewHypothesesPanel({ intelligence }: { intelligence: CompanyPublicIntelligence }) {
+  const analysis = intelligence.aeInterviewHypotheses;
+  if (!analysis) return null;
+
+  return (
+    <details className="ae-hypothesis-panel">
+      <summary>
+        <span>
+          <small>AEとして面接で検証する</small>
+          <strong>5つの重要仮説を見る</strong>
+        </span>
+        <i aria-hidden="true">＋</i>
+      </summary>
+      <div className="ae-hypothesis-body">
+        <p className="ae-hypothesis-intro">{analysis.intro}</p>
+        <div className="ae-hypothesis-table-scroll">
+          <table className="ae-hypothesis-table">
+            <thead><tr><th>未解決の論点</th><th>【Genba仮説】</th><th>面接での鋭い質問</th><th>回答から見極めること</th></tr></thead>
+            <tbody>
+              {analysis.items.map((item, index) => (
+                <tr key={item.issue}>
+                  <th scope="row">
+                    <span>H{String(index + 1).padStart(2, "0")}</span>
+                    <strong>{item.issue}</strong>
+                    <div>
+                      {item.sourceIds.map((sourceId) => {
+                        const source = getResearchSource(intelligence, sourceId);
+                        return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">根拠 ↗</a> : null;
+                      })}
+                    </div>
+                  </th>
+                  <td>{item.hypothesis}</td>
+                  <td><strong>{item.question}</strong></td>
+                  <td>
+                    <div className="ae-hypothesis-signal ae-hypothesis-signal-good"><span>良い兆候</span><p>{item.goodSignal}</p></div>
+                    <div className="ae-hypothesis-signal ae-hypothesis-signal-caution"><span>注意したい兆候</span><p>{item.cautionSignal}</p></div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+  );
+}
+
 function SalesFabeDetails({
   overview,
   intelligence,
@@ -652,7 +699,7 @@ export default function CompanyIntelligenceProfile({
 
       <div className="dossier-nav-wrap">
         <Container>
-          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} />
+          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} />
         </Container>
       </div>
 
@@ -1284,14 +1331,17 @@ export default function CompanyIntelligenceProfile({
             <section className="intel-section" id="decision">
               <div className="intel-heading">
                 {publicIntel ? (
-                  <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>公開情報から読み解く、5つの仮説。</h2></div>
+                  <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>{publicIntel.aeInterviewHypotheses ? "AEとして見抜くべき、5つの未解決論点。" : "公開情報から読み解く、5つの仮説。"}</h2></div>
                 ) : (
                   <div><p className="intel-kicker">04 / DECISION BRIEF</p><h2>自分が見るべき会社か。</h2></div>
                 )}
-                <p>{publicIntel ? "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。" : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
+                <p>{publicIntel ? (publicIntel.aeInterviewHypotheses ? "求人票や決算資料では分からない、入社後の達成難度を左右する論点です。仮説を持って質問し、回答の具体性まで見極めます。" : "事実ではない読み解きは「仮説」と明記。タップして詳細(支持材料・反証材料・面接での検証質問)を開けます。") : "現時点の公開情報から、まず確認すべき判断材料を整理します。"}</p>
               </div>
 
               {publicIntel ? (
+                publicIntel.aeInterviewHypotheses ? (
+                  <AeInterviewHypothesesPanel intelligence={publicIntel} />
+                ) : (
                 <>
                   <div className="hypothesis-stack">
                     {publicIntel.hypotheses.map((hypothesis, index) => (
@@ -1335,6 +1385,7 @@ export default function CompanyIntelligenceProfile({
                     </div>
                   )}
                 </>
+                )
               ) : (
                 <>
                   <div className="decision-board">

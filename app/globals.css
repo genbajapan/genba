@@ -904,6 +904,40 @@ button, input, select { font: inherit; }
 .hypothesis-card > footer span { color: #879499; font-size: 10px; font-weight: 850; }
 .hypothesis-card > footer a { color: #486c77; font-size: 10px; font-weight: 700; text-decoration: none; }
 .hypothesis-card > footer a:hover { color: var(--signal); text-decoration: underline; }
+.ae-hypothesis-panel { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
+.ae-hypothesis-panel > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 19px 22px; cursor: pointer; list-style: none; }
+.ae-hypothesis-panel > summary::-webkit-details-marker { display: none; }
+.ae-hypothesis-panel > summary small { display: block; color: var(--signal); font-size: 9px; font-weight: 850; letter-spacing: .1em; }
+.ae-hypothesis-panel > summary strong { display: block; margin-top: 5px; color: var(--navy); font-size: 17px; }
+.ae-hypothesis-panel > summary i { display: grid; place-items: center; flex: 0 0 auto; width: 27px; height: 27px; border: 1px solid #9dcac2; border-radius: 50%; color: var(--signal); font-size: 16px; font-style: normal; transition: transform .18s ease, background .18s ease; }
+.ae-hypothesis-panel[open] > summary { border-bottom: 1px solid var(--line); }
+.ae-hypothesis-panel[open] > summary i { transform: rotate(45deg); background: white; }
+.ae-hypothesis-body { padding: 18px 20px 20px; }
+.ae-hypothesis-intro { max-width: 900px; margin: 0 0 15px; color: #50656d; font-size: 11px; line-height: 1.8; }
+.ae-hypothesis-table-scroll { overflow-x: auto; border: 1px solid #bfd4d0; background: white; }
+.ae-hypothesis-table { width: 100%; min-width: 1060px; border-collapse: collapse; table-layout: fixed; }
+.ae-hypothesis-table th,.ae-hypothesis-table td { padding: 15px 16px; border-right: 1px solid #d8e4e1; border-bottom: 1px solid #d8e4e1; text-align: left; vertical-align: top; }
+.ae-hypothesis-table tr:last-child > * { border-bottom: 0; }
+.ae-hypothesis-table tr > *:last-child { border-right: 0; }
+.ae-hypothesis-table thead th { background: #0b2a3b; color: #c7dbdf; font-size: 10px; font-weight: 850; letter-spacing: .04em; }
+.ae-hypothesis-table thead th:nth-child(1) { width: 15%; }
+.ae-hypothesis-table thead th:nth-child(2) { width: 27%; }
+.ae-hypothesis-table thead th:nth-child(3) { width: 29%; }
+.ae-hypothesis-table thead th:nth-child(4) { width: 29%; }
+.ae-hypothesis-table tbody th { background: #f1f8f6; }
+.ae-hypothesis-table tbody th > span { display: block; color: var(--signal); font-size: 9px; font-weight: 900; }
+.ae-hypothesis-table tbody th > strong { display: block; margin-top: 6px; color: var(--navy); font-size: 12px; line-height: 1.5; }
+.ae-hypothesis-table tbody th > div { display: flex; flex-wrap: wrap; gap: 4px 7px; margin-top: 10px; }
+.ae-hypothesis-table tbody th a { color: #58747a; font-size: 8px; font-weight: 750; text-decoration: none; }
+.ae-hypothesis-table tbody td { color: #4f6269; font-size: 10.5px; line-height: 1.72; }
+.ae-hypothesis-table tbody td:nth-child(3) > strong { color: var(--navy); font-size: 11px; line-height: 1.75; }
+.ae-hypothesis-signal + .ae-hypothesis-signal { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ccdcd8; }
+.ae-hypothesis-signal span { display: block; font-size: 9px; font-weight: 850; }
+.ae-hypothesis-signal p { margin: 4px 0 0; font-size: 10px; line-height: 1.65; }
+.ae-hypothesis-signal-good span { color: #177568; }
+.ae-hypothesis-signal-good p { color: #3f625c; }
+.ae-hypothesis-signal-caution span { color: #a15e43; }
+.ae-hypothesis-signal-caution p { color: #685047; }
 .external-signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
 .external-signal-grid article { padding: 23px; border: 1px solid #b7c6cb; background: #edf4f5; }
 .external-signal-grid article > span,.external-signal-grid article > strong { display: block; }
@@ -1825,6 +1859,9 @@ button, input, select { font: inherit; }
   .hypothesis-card > summary .confidence { grid-column: 2; justify-self: start; }
   .hypothesis-chevron { grid-column: 3; grid-row: 1; }
   .hypothesis-conclusion { padding-left: 25px; }
+  .ae-hypothesis-panel > summary { padding: 16px; }
+  .ae-hypothesis-panel > summary strong { font-size: 14px; }
+  .ae-hypothesis-body { padding: 14px; }
   .customer-proof-wrap { padding: 22px; }
   .solution-orbit::after { width: 220px; height: 220px; }
   .orbit-label-b { right: 22px; }

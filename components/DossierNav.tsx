@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function DossierNav({ companyName, isPreEntry, hasPlaybook }: { companyName: string; isPreEntry: boolean; hasPlaybook: boolean }) {
+export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAeInterviewHypotheses = false }: { companyName: string; isPreEntry: boolean; hasPlaybook: boolean; hasAeInterviewHypotheses?: boolean }) {
   const navRef = useRef<HTMLElement>(null);
   const [showMoreHint, setShowMoreHint] = useState(false);
 
@@ -35,7 +35,7 @@ export default function DossierNav({ companyName, isPreEntry, hasPlaybook }: { c
         <a href="#overview">会社概要</a>
         <a href="#work-there">{isPreEntry ? "海外で働く人" : "働く人を見る"}</a>
         <a href="#roles">{isPreEntry ? "進出時の論点" : "募集中ポジション"}</a>
-        <a href="#decision">5つの仮説</a>
+        <a href="#decision">{hasAeInterviewHypotheses ? "面接の仮説" : "5つの仮説"}</a>
         <a href="#solution">ソリューション深掘り</a>
         {hasPlaybook && <a href="#playbook">想定できる売り方</a>}
         <a href="#compare">併願候補</a>
