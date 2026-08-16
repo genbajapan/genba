@@ -204,6 +204,9 @@ built.adyen.marketStatus.genbaVerdict = {
   body: "Adyenは2025年に純収益を前年比18%伸ばし、APACの純収益も14%増加した。日本では東京のFTEが40人から49人へ増え、PayPay対応、3Dセキュア義務化への対応、国内データセンター運用の試験、星野リゾートへの展開を進めている。日本への継続投資は確認できる一方、日本単体の純収益、顧客数、市場シェアは非開示であり、国内事業の規模や採算までは断定できない。",
 };
 
+// 冒頭の市場見立てと重複するため、旧「日本での成長性」パネルはAdyenでは表示しない。
+built.adyen.marketStatus.japanGrowth = undefined;
+
 built.adyen.marketStatus.capitalMarketRead = {
   asOf: "2026年8月17日",
   metrics: [
