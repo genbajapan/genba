@@ -113,6 +113,32 @@ const profiles: Profile[] = [
 
 const built = Object.fromEntries(profiles.map((profile) => [profile.slug, buildIntelligence(profile)])) as Record<string, CompanyPublicIntelligence>;
 
+// Adyenで先行検証する、日本市場の需要・成長性を読むための深掘り枠。
+built.adyen.sources.push(
+  { id: "adyen-cashless-2025", label: "経済産業省 2025年キャッシュレス決済比率", url: "https://www.meti.go.jp/press/2025/03/20260331006/20260331006.html", kind: "公的機関", scope: "2025年実績・2030年目標・長期目標", checkedAt },
+  { id: "adyen-acquiring-japan", label: "Adyen 日本でのアクワイアリング開始", url: "https://www.adyen.com/ja_JP/press-and-media/adyen-expands-acquiring-capabilities-to-japan", kind: "企業公式", scope: "日本市場への製品投資・現地決済処理", checkedAt },
+  { id: "adyen-unified-commerce-japan", label: "Adyen 日本でのユニファイドコマース開始", url: "https://www.adyen.com/press-and-media/adyen-brings-unified-commerce-to-japan", kind: "企業公式", scope: "日本の対面決済・チャネル統合", checkedAt },
+  { id: "adyen-country-manager-japan", label: "Adyen 日本カントリーマネージャー就任", url: "https://www.adyen.com/ja_JP/press-and-media/adyen-names-adam-brownstein-as-country-manager-in-japan", kind: "企業公式", scope: "日本GTMへの継続投資", checkedAt },
+  { id: "adyen-on-japan", label: "Adyen × On Japan", url: "https://www.adyen.com/ja_JP/knowledge-hub/on-running-multi-channel", kind: "企業公式", scope: "東京店舗とオンライン決済の統合", checkedAt },
+  { id: "adyen-wolt-japan", label: "Adyen 日本の3Dセキュア動向・Wolt事例", url: "https://www.adyen.com/ja_JP/knowledge-hub/post-3ds-mandate-in-japan", kind: "企業公式", scope: "本人認証・不正対策・購入完了率", checkedAt },
+);
+
+built.adyen.salesMarketOutlook = {
+  title: "日本市場でのニーズと3-5年の成長性の見立て",
+  verdict: "結論：日本での需要は、今後3〜5年で拡大する可能性が高い。",
+  paragraphs: [
+    "日本のキャッシュレス決済比率は2025年に58.0％まで上昇し、政府は2030年に65％、将来的に80％を目標としている。普及が進むほど、小売、旅行・宿泊、EC、プラットフォームでは、店舗・EC・アプリ・KIOSKごとに分かれた決済、不正対策、3Dセキュア、返金・照合、訪日客向け決済を一体で管理する必要が強まる。Adyenは決済受付、リスク管理、処理、アクワイアリングを単一基盤へまとめ、承認率、購入完了率、不正損失、照合作業を同じデータで改善できる点に価値がある。",
+    "Adyenは2021年に日本で現地アクワイアリング、2022年に対面決済とユニファイドコマースを開始し、2024年には日本カントリーマネージャーを任命した。現在も東京で日本営業チームを率いる責任者を募集し、日本を成長市場の一つと位置付けている。継続投資は確認できる一方、日本単体の売上、顧客数、市場シェアは非公開である。",
+    "Genba分析：市場ニーズは縮小より拡大を見込む。ただし、キャッシュレス市場の成長がそのままAdyenの成長を保証するわけではない。国内PSPやStripeなどとの競争、既存システムからの移行負荷があるため、勝ち筋は大規模企業のオムニチャネル化、インバウンド対応、海外展開、認証・不正対策の高度化にある。",
+  ],
+  cases: [
+    { company: "星野リゾート", need: "予約・現地・KIOSKで分かれていた決済を統合し、訪日客対応と国内外施設への展開に備える。", sourceId: "adyen-customers" },
+    { company: "On Japan", need: "東京店舗とオンライン決済を接続し、チャネル横断の顧客体験と決済データ活用を進める。", sourceId: "adyen-on-japan" },
+    { company: "Wolt", need: "3Dセキュアとリスクベース認証を両立し、不正対策による購入離脱を抑える。公式事例ではリピーターの購入完了率が5％超向上。", sourceId: "adyen-wolt-japan" },
+  ],
+  sourceIds: ["adyen-cashless-2025", "adyen-acquiring-japan", "adyen-unified-commerce-japan", "adyen-country-manager-japan", "adyen-job"],
+};
+
 built["mistral-ai"] = buildPreEntryIntelligence({
   checkedAt, slug: "mistral-ai", name: "Mistral AI", homepage: "https://mistral.ai/", growthUrl: "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/", careersUrl: "https://jobs.ashbyhq.com/mistral.ai", customersUrl: "https://mistral.ai/news/", trustUrl: "https://trust.mistral.ai/", apacUrl: "https://jobs.ashbyhq.com/mistral.ai/d6dc75fc-714b-437c-8ff4-b43505151bd9", externalUrl: "https://www.meti.go.jp/policy/it_policy/ai-governance/index.html", linkedinUrl: "https://www.linkedin.com/company/mistralai/",
   salesSnapshot: "Mistral AIは、CIO・CTO・AI leader・Security・business部門が抱えるmodel選定、data control、production化、cost、sovereigntyの課題をfrontier model、Studio、agent、private deployment、Mistral Computeで解く会社。SingaporeでAPAC初のtechnical supportやPeople Opsを採用しているが、Japan専任GTMは未確認。global momentumと日本でのdelivery readinessを分けて観測する。",

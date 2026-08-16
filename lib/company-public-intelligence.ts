@@ -190,6 +190,18 @@ export type CompanySolution = {
   competitor?: string;
 };
 
+export type SalesMarketOutlook = {
+  title: string;
+  verdict: string;
+  paragraphs: string[];
+  cases: Array<{
+    company: string;
+    need: string;
+    sourceId: string;
+  }>;
+  sourceIds: string[];
+};
+
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
@@ -197,6 +209,8 @@ export type CompanyPublicIntelligence = {
   salesSnapshotFabe?: string;
   // 結論の後に任意で展開する、成果指標・導入実績・市場背景。
   salesSnapshotFabeExpanded?: string;
+  // 日本市場の需要と3〜5年の成長性を、根拠・国内事例とともに示す任意の深掘り枠。
+  salesMarketOutlook?: SalesMarketOutlook;
   marketStatus: MarketStatus;
   sellingPlaybook: SellingPlaybook;
   facts: PublicFact[];

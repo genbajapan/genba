@@ -50,6 +50,7 @@ export default function CompanyIntelligenceProfile({
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
   const salesSnapshot = salesView?.summary ?? company.description;
+  const salesMarketOutlook = publicIntel?.salesMarketOutlook;
   const directoryEntry = getCompanyDirectoryEntry(company.slug);
   const globalScale = resolveGlobalScale(company.slug, publicIntel?.companyStats.globalHeadcount);
   const globalScaleDirectorySource = getGlobalScaleSource(globalScale);
@@ -134,14 +135,42 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
               <p className="company-description">{salesSnapshot}</p>
-              {salesView?.expanded && (
+              {(salesMarketOutlook || salesView?.expanded) && (
                 <details className="company-sales-evidence">
                   <summary>
-                    <span className="company-sales-evidence-label-closed">導入実績・成果指標・日本市場の見立てを見る</span>
-                    <span className="company-sales-evidence-label-open">導入実績・成果指標・日本市場の見立てを閉じる</span>
+                    <span className="company-sales-evidence-label-closed">{salesMarketOutlook?.title ?? "導入実績・成果指標・日本市場の見立てを見る"}</span>
+                    <span className="company-sales-evidence-label-open">{salesMarketOutlook ? `${salesMarketOutlook.title}を閉じる` : "導入実績・成果指標・日本市場の見立てを閉じる"}</span>
                     <span className="company-sales-evidence-icon" aria-hidden="true">＋</span>
                   </summary>
-                  <p>{salesView.expanded}</p>
+                  {salesMarketOutlook ? (
+                    <div className="company-market-outlook">
+                      <p className="company-market-outlook-verdict">{salesMarketOutlook.verdict}</p>
+                      {salesMarketOutlook.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                      <div className="company-market-outlook-cases">
+                        <strong>国内で確認できる主な事例</strong>
+                        <ul>
+                          {salesMarketOutlook.cases.map((item) => {
+                            const source = publicIntel && getResearchSource(publicIntel, item.sourceId);
+                            return (
+                              <li key={item.company}>
+                                <b>{item.company}：</b>{item.need}
+                                {source && <a href={source.url} target="_blank" rel="noreferrer" aria-label={`${item.company}の公式事例を見る`}> ↗</a>}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                      <div className="company-market-outlook-sources">
+                        <span>主な根拠</span>
+                        {salesMarketOutlook.sourceIds.map((sourceId) => {
+                          const source = publicIntel && getResearchSource(publicIntel, sourceId);
+                          return source ? <a key={sourceId} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : null;
+                        })}
+                      </div>
+                    </div>
+                  ) : (
+                    <p>{salesView && salesView.expanded}</p>
+                  )}
                 </details>
               )}
               <div className="company-tag-row">
