@@ -581,6 +581,13 @@ button, input, select { font: inherit; }
 .company-overview-toggle .intel-heading { flex: 1; margin-bottom: 0; }
 .company-overview-toggle-action { display: grid; place-items: center; flex: 0 0 auto; width: 29px; height: 29px; margin-bottom: 4px; border: 1px solid #9dcac2; border-radius: 50%; color: var(--signal); font-size: 17px; font-weight: 500; line-height: 1; transition: transform .18s ease, background .18s ease; }
 .company-overview-disclosure[open] .company-overview-toggle-action { transform: rotate(45deg); background: #edf7f4; }
+.company-overview-disclosure-adyen { overflow: hidden; border: 1px solid var(--line); background: #f7f9f8; }
+.company-overview-disclosure-adyen .company-overview-toggle { align-items: center; padding: 18px 22px; }
+.company-overview-disclosure-adyen .intel-heading { gap: 20px; }
+.company-overview-disclosure-adyen .intel-heading h2 { font-size: 17px; font-weight: 850; letter-spacing: -.01em; }
+.company-overview-disclosure-adyen .intel-heading > p { max-width: none; font-size: 11px; }
+.company-overview-disclosure-adyen .company-overview-toggle-action { margin-bottom: 0; }
+.company-overview-disclosure-adyen[open] .company-overview-toggle { border-bottom: 1px solid var(--line); }
 .analysis-label { flex-shrink: 0; padding: 6px 8px; border: 1px solid #9ac4bd; background: var(--signal-soft); color: #0a6d63; font-size: 11px; font-weight: 800; }
 
 .decision-board { display: grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
@@ -1642,6 +1649,9 @@ button, input, select { font: inherit; }
   .company-overview-toggle { align-items: flex-start; }
   .company-overview-toggle .intel-heading { padding-right: 0; }
   .company-overview-toggle-action { margin-top: 4px; margin-bottom: 0; }
+  .company-overview-disclosure-adyen .company-overview-toggle { align-items: flex-start; padding: 16px; }
+  .company-overview-disclosure-adyen .intel-heading { gap: 8px; }
+  .company-overview-disclosure-adyen .intel-heading h2 { font-size: 15px; }
   .decision-board { grid-template-columns: 1fr; }
   .evidence-grid { grid-template-columns: repeat(2,1fr); }
   .external-signal-grid { grid-template-columns: 1fr; }
