@@ -456,7 +456,7 @@ button, input, select { font: inherit; }
 .company-sales-evidence-icon { display: grid; flex: 0 0 auto; place-items: center; width: 22px; height: 22px; border: 1px solid #4f776f; border-radius: 50%; font-size: 14px; line-height: 1; transition: transform .18s ease; }
 .company-sales-evidence[open] .company-sales-evidence-icon { transform: rotate(45deg); }
 .company-sales-evidence > p { margin: 0; padding: 3px 0 16px; color: #a9bec7; font-size: 13px; line-height: 1.85; }
-.company-sales-fabe-details { margin-top: 10px; padding: 0 14px; border: 1px solid #315563; background: rgba(4,23,34,.42); }
+.company-sales-fabe-details { margin-top: 14px; padding: 0; border-inline: 0; background: transparent; }
 .company-sales-fabe-panel { padding: 2px 0 14px; }
 .company-sales-fabe-details .company-sales-table { min-width: 660px; font-size: 11px; line-height: 1.6; }
 .company-sales-fabe-details .company-sales-table th,.company-sales-fabe-details .company-sales-table td { padding: 11px 12px; }
