@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 66,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 41
+      "検証済み": 0,
+      "公開済み": 46
     },
     "byPriority": {
       "HOT": 32,
@@ -192,7 +192,7 @@
       "company": "DocuSign",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -201,7 +201,7 @@
       "company": "Elastic",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -219,7 +219,7 @@
       "company": "Extreme Networks",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -345,7 +345,7 @@
       "company": "Dialpad",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -354,7 +354,7 @@
       "company": "Dragos",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },

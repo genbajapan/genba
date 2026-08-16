@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-17 / 正本: [Adyen](/companies/adyen) / 基準コミット: `66ca2e2`
 
-全112社（未着手 66 / 調査中 0 / 検証済み 5 / 公開済み 41）
+全112社（未着手 66 / 調査中 0 / 検証済み 0 / 公開済み 46）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -23,10 +23,10 @@
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|Deel|4|公開済み|はい|なし|
 |HOT|DeepL|7|公開済み|はい|なし|
-|HOT|DocuSign|7|検証済み|はい|なし|
-|HOT|Elastic|3|検証済み|はい|なし|
+|HOT|DocuSign|7|公開済み|はい|なし|
+|HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
-|HOT|Extreme Networks|4|検証済み|はい|なし|
+|HOT|Extreme Networks|4|公開済み|はい|なし|
 |HOT|Glean|3|公開済み|はい|なし|
 |HOT|HubSpot|7|公開済み|はい|なし|
 |HOT|New Relic|7|公開済み|はい|なし|
@@ -40,8 +40,8 @@
 |HOT|Zendesk|3|公開済み|はい|なし|
 |Active|Aghanim|2|公開済み|はい|なし|
 |Active|Censys|2|公開済み|はい|なし|
-|Active|Dialpad|2|検証済み|はい|なし|
-|Active|Dragos|2|検証済み|はい|なし|
+|Active|Dialpad|2|公開済み|はい|なし|
+|Active|Dragos|2|公開済み|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
 |Active|Sonar|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
