@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  okta: {
+    category: "アイデンティティ・アクセス管理・セキュリティ",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Okta Japan株式会社・東京／大阪（2020年9月設立）",
+    description: "Workforce IdentityとAuth0 Customer Identityを提供。日本でOkta・Auth0のAE、Marketing、Auth0 TAMの現行実求人5件を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  pagerduty: {
+    category: "インシデント管理・オペレーショナルレジリエンス",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "PagerDuty株式会社・東京都港区（2022年にJapan Cloudとの提携で設立）",
+    description: "incident response、on-call、AIOps、runbook automationを提供。日本でSales、BDR、Solutions、Professional Servicesの現行6求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  sonar: {
+    category: "コード品質・アプリケーションセキュリティ",
+    hq: "ジュネーブ（スイス）／オースティン（米国）",
+    japanPresence: "東京GTM・日本語公式サイト（日本法人・責任者・進出年は非公開）",
+    description: "IDE・PR・CIでcode qualityとsecurityを継続検証するSonarQubeを提供。東京でEnterprise Territory ManagerとPartner Business Managerを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  zendesk: {
+    category: "AIカスタマーサービス・コンタクトセンター",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "株式会社Zendesk・東京都中央区（2013年参入）",
+    description: "ticket、messaging、voice、knowledge、AI Agent、CopilotをResolution Platformで提供。東京でCommercial AE、Senior Sales Engineer、BDRの現行3求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  zilliz: {
+    category: "ベクトルデータベース・AIデータ基盤",
+    hq: "カリフォルニア州レッドウッドシティ（米国）",
+    japanPresence: "東京Hybridのfounding team・Tokyo cloud region（日本法人・責任者・officeは非公開）",
+    description: "Milvusを起点にmanaged vector databaseとBYOCを提供。東京でEnterprise Account ExecutiveとFounding Field Engineerを公式募集。",
+    lastChecked: "2026-08-17",
+  },
   deepl: {
     category: "言語AI・翻訳・文章支援",
     hq: "ケルン（ドイツ）",

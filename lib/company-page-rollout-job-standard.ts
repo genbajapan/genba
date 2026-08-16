@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -108,6 +108,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  okta: {
+    name: "Okta", domain: "Identity Security・Workforce／Customer Identity", officialUrl: "https://job-boards.greenhouse.io/oktajp",
+    positive: ["OktaとAuth0のAE、Marketing、TAMを同時に採用し、workforce identityとcustomer identityを日本で広げる体制が見える。", "Q1 FY2027はGAAP営業黒字とFCFを確保し、大口顧客とRPOも増加。国内の運用時間短縮事例を持つ。"],
+    negative: ["売上成長は11%、FY27 guideは9〜10%で鈍化。Microsoft Entraとのbundle競争とOkta自身のsecurity incidentを説明する必要がある。", "日本売上、quota、達成率、給与・OTE、role別office日数は非公開。Talent Communityを実求人と混同できない。"],
+    next: ["Identity・CybersecurityのEnterprise／Commercial AE", "Customer Identity・Developer Platform GTM", "Security Customer Success・Technical Account Management"],
+  },
+  pagerduty: {
+    name: "PagerDuty", domain: "Incident Management・Operational Resilience", officialUrl: "https://japancloud.jp/career/companies/pagerduty/",
+    positive: ["Sales、BDR、Solutions、Professional Servicesの現行6求人があり、new logoからPoV・implementationまで日本で横断できる。", "国内のNTTドコモ、NTTデータ、アイレット事例はMTTA・MTTR・automation・工数の具体的成果を示す。"],
+    negative: ["Q1売上は1%増、ARRほぼ横ばい、DBNRR 97%でexisting baseはnet contraction。", "日本売上、quota、達成率、給与・OTE、勤務地・workstyleは非公開。PSC 2求人の別headcountかも未確認。"],
+    next: ["Incident Management・ObservabilityのEnterprise AE", "SRE・DevOps PlatformのSolutions Consulting", "Professional Services・Operational Resilience Leadership"],
+  },
+  sonar: {
+    name: "Sonar", domain: "Code Quality・Application Security", officialUrl: "https://jobs.lever.co/sonarsource",
+    positive: ["Enterprise directとPartnerの2職を日本で採用し、AI code・AppSec・developer productivityを経営とtechnical buyerへ売る機会がある。", "4億米ドル超revenue、profitable、700万developer・2.1万enterprise customerという会社公表scaleがある。"],
+    negative: ["売上の期間・会計基準、利益額・margin、ARRは非公開。国内named customer成果、日本法人・責任者も確認できない。", "GitHub・GitLab等のbundleとpoint security競争に対し、precision、build time、adoption、TCOの検証が必要。"],
+    next: ["Developer Tools・AppSecのEnterprise AE", "DevSecOps・Platform Engineering GTM", "Security・Cloud ecosystemのPartner Management"],
+  },
+  zendesk: {
+    name: "Zendesk", domain: "AI Customer Service・Contact Center", officialUrl: "https://zendesk.wd1.myworkdayjobs.com/en-US/zendesk",
+    positive: ["Commercial AE、Senior Sales Engineer、BDRの現行3件があり、pipelineからAI technical validation・expansionまで日本で横断できる。", "国内の複数定量事例、国内DC、ISMAP対象service、AI・voice・employee serviceのproduct expansionがある。"],
+    negative: ["2022非公開化後のcurrent全社売上・利益・total ARRは非公開。2億米ドルはprojected AI ARR subset。", "給与・OTE、quota、達成率、office日、Commercial AEの言語要件は非公開・矛盾あり。"],
+    next: ["AI CX・CRMのCommercial／Enterprise AE", "Contact Center・AI Solutions Engineering", "Customer Service PlatformのBusiness Development"],
+  },
+  zilliz: {
+    name: "Zilliz", domain: "Vector Database・AI Data Infrastructure", officialUrl: "https://jobs.lever.co/zilliz",
+    positive: ["Enterprise AEとFounding Field Engineerを日本で同時採用し、Milvus developer起点からproduction Cloudへ広げるfounding motionが見える。", "10,000超の利用組織、45,000超GitHub stars、Tokyo region・BYOCはproduction AIのtechnical credibilityになる。"],
+    negative: ["売上、ARR、利益、日本法人・責任者・顧客成果は非公開。累計調達やOSS scaleをrevenue・paid conversionと混同できない。", "pgvector、Elastic、cloud-native、自社運用Milvusで足りる顧客には増分platformとTCOが問われる。"],
+    next: ["AI Data InfrastructureのEnterprise AE", "Database・RAG PlatformのField Engineering", "Open-source commercialisation・Founding GTM"],
+  },
   deepl: {
     name: "DeepL", domain: "Language AI・翻訳・文章支援", officialUrl: "https://jobs.ashbyhq.com/DeepL",
     positive: ["日本でCorporateとEnterpriseのAEを配置し、翻訳だけでなくWrite・Voice・APIを企業workflowへ広げるsales motionが見える。", "日本企業の公開事例とenterprise向けsecurity・glossary・管理機能を持ち、言語業務の時間・品質・統制を同じ商談で扱える。"],
