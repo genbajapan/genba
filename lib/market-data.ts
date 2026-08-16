@@ -9,6 +9,7 @@ import { jobs20260817BatchSix } from "@/lib/company-additions-2026-08-17-batch-0
 import { jobs20260817BatchSeven } from "@/lib/company-additions-2026-08-17-batch-07";
 import { jobs20260817BatchEight } from "@/lib/company-additions-2026-08-17-batch-08";
 import { jobs20260817BatchNine } from "@/lib/company-additions-2026-08-17-batch-09";
+import { jobs20260817BatchTen } from "@/lib/company-additions-2026-08-17-batch-10";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1309,6 +1310,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchTen,
   ...jobs20260817BatchEight,
   ...jobs20260817BatchNine,
   ...jobs20260817BatchSeven,
@@ -2903,6 +2905,11 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "figma-account-executive-smb-tokyo",
+  "fivetran-partner-sales-manager-japan",
+  "grafana-labs-senior-enterprise-ae-japan",
+  "gurobi-regional-sales-director-japan",
+  "hightouch-enterprise-account-executive-japan",
   "dialpad-account-executive-mid-market-japan",
   "docusign-account-executive-smb-japan",
   "dragos-senior-enterprise-ae-japan",

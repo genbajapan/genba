@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  figma: {
+    category: "プロダクトDesign・Developer Workflow・AI協働",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "日本法人・Tokyo Hub（2022年3月開設、street addressは確認不能）",
+    description: "design、Dev Mode、FigJam、Sites、Make、MCP・agentを統合。東京でSales、SC、Onboarding、Enablement、TAMの対象8求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  fivetran: {
+    category: "Data Movement・ELT・Analytics Engineering基盤",
+    hq: "カリフォルニア州オークランド（米国）",
+    japanPresence: "Fivetran Japan株式会社・Remote Japan（登記住所はlaw office、実officeは確認不能）",
+    description: "ELT・CDC、Hybrid、dbt transformation、activationを統合。日本RemoteでBDR、Customer Solutions、Partner Sales、Sales Directorの4求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  "grafana-labs": {
+    category: "Open Observability・Telemetry・障害対応",
+    hq: "ニューヨーク（米国）・distributed company",
+    japanPresence: "グラファナラボ日本合同会社・東京（2025年11月設立、住所・EBC稼働は確認不能）",
+    description: "Grafana Cloud、LGTM、k6、IRM・SLO、AIをOpenTelemetry-nativeで提供。日本RemoteでEnterprise AEとSenior Solutions Engineerを公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  gurobi: {
+    category: "数理最適化・Decision Intelligence",
+    hq: "オレゴン州ビーバートン（米国）",
+    japanPresence: "株式会社Gurobi Japan・東京都府中市（2010年設立、2025年社名変更）",
+    description: "Optimizer、Compute Server、Instant Cloud、Intelligence Hubを提供。国内定量事例はあるが、2026年8月17日時点の現行日本求人は0件。",
+    lastChecked: "2026-08-17",
+  },
+  hightouch: {
+    category: "Composable CDP・Reverse ETL・AIマーケティング",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Japan partner・reseller motion（日本法人・office・責任者は確認不能）",
+    description: "warehouse-native CDP、activation、AI Decisioning、Agentic Marketingを提供。Australia・SingaporeからJapan市場を担当するEnterprise AEを公式募集。",
+    lastChecked: "2026-08-17",
+  },
   dialpad: {
     category: "AIコミュニケーション・クラウド電話・Contact Center",
     hq: "カリフォルニア州サンラモン（米国）",

@@ -36,13 +36,18 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch"]);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "grafana-labs-senior-solutions-engineer-japan-current": {
+    headline: "公式求人にOTE年1,400万〜1,850万円を掲載",
+    summary: "OTE rangeとRSUの存在は確認できるが、base・variable内訳、quota、ramp、達成率、RSU額は非公開。",
+    breakdown: [{ label: "OTE", value: "1,400万〜1,850万円", status: "公式掲載", detail: "年額。base・variable内訳は非公開。" }],
+  },
   "dragos-advisory-solutions-architect-japan-current": {
     headline: "公式求人にOTE最大3,000万円を掲載",
     summary: "OTE上限は確認できるが、base・variableの内訳、quota、equity、ramp、達成率は公開されていない。",
@@ -397,6 +402,36 @@ const companyResearch: Record<string, {
     positive: ["公式Careerはsmall、talent-dense、flat、truth-seekingを掲げ、製品・顧客へ近い高い自律性を示す。", "Money Forward、NVIDIA、Stripeの公式事例から、大規模な開発組織でAI利用を定着させる経験を得られる可能性がある。"],
     negative: ["日本の勤務形態、出社日数、組織人数、昇進、離職、managementを判断できる公開集計はない。", "製品と市場の変化が速く、初期Japan teamでは役割境界、支援人数、優先順位が短期間で変わる可能性を面接で確認する必要がある。"],
     next: ["AI・Developer ToolsのStrategic AE／Solutions Leadership", "Developer Platform・Cloud・SecurityのGTM", "Japan Country Lead・Partner Ecosystem・AI Transformation"],
+  },
+  figma: {
+    name: "Figma", domain: "Product Design・Developer Workflow・AI Collaboration", officialUrl: "https://job-boards.greenhouse.io/figma",
+    positive: ["Sales 4role、SC、Onboarding、Enablement、TAMの対象8求人を持ち、日本でnew logoからadoption・governanceまでをlocalに強化している。", "三菱電機、みずほ銀行、カプコンの国内定量事例とNDR 136%から、PLGをenterprise workflowへ広げる経験を得られる可能性がある。"],
+    negative: ["Q2 2026はGAAP営業赤字でSBCも大きい。日本売上・headcount・quota・達成率・数値報酬は非公開。", "AI credit、code・design IP、security、accessibility、suite・point tool、seat・credit TCOを顧客環境で検証する必要がある。"],
+    next: ["Product・Design PlatformのEnterprise GTM", "Developer Experience・AI Collaboration Sales", "Solutions Consulting・Customer Experience Leadership"],
+  },
+  fivetran: {
+    name: "Fivetran", domain: "Data Movement・Analytics Engineering", officialUrl: "https://www.fivetran.com/careers",
+    positive: ["Remote JapanでBDR、Sales Director、Partner Sales、Customer Solutionsを採用し、pipeline、direct、ecosystem、post-salesを統合後の日本GTMで強化している。", "LionのSAP→BigQuery 1週間のproofと750超source、200超destinationから、legacy・cloud・AI dataを横断する経験を得られる可能性がある。"],
+    negative: ["売上・利益・FCF、日本売上・headcount・leader・quota・達成率は非公開。combined ARR約6億米ドルも契約時の見込み。", "merger integration、consumption・warehouse cost、connector fit、data residency、open-source・cloud nativeとのTCOをPoCで検証する必要がある。"],
+    next: ["Data Infrastructure・ELTのEnterprise GTM", "Analytics Engineering・AI Data Platform Sales", "Cloud・SI Partner Sales／Customer Solutions"],
+  },
+  "grafana-labs": {
+    name: "Grafana Labs", domain: "Open Observability・Telemetry・Incident Management", officialUrl: "https://job-boards.greenhouse.io/grafanalabs?keyword=japan",
+    positive: ["日本法人、GTM leader、RemoteのAE・SEを確認でき、OSS adoptionからmanaged Cloudのnew logo・technical validationを日本で作る段階。", "OpenTelemetry、LGTM、k6、IRMを横断し、MTTRとtelemetry economicsを同じbusiness caseへまとめる専門性が得られる可能性がある。"],
+    negative: ["ARR以外の売上・profit・FCF、日本売上・customer・headcount・quota・attainmentは非公開。", "2025年のpartial outage、ingest・retention cost、data residency、hyperscaler・full-stack競合との3年TCOを検証する必要がある。"],
+    next: ["Observability・SRE PlatformのEnterprise GTM", "Open Source・Cloud Infrastructure Sales", "Solutions Engineering・Developer Platform"],
+  },
+  gurobi: {
+    name: "Gurobi", domain: "Mathematical Optimization・Decision Intelligence", officialUrl: "https://jobs.lever.co/GurobiOptimization",
+    positive: ["YOKU MOKU CREAと豊田自動織機の国内事例は、計画時間を600時間、2〜3週→1日、63%削減と具体化している。", "solver performanceだけでなく、modeling、deployment、support、SIを製造・物流・経営成果へつなぐ希少な専門性がある。"],
+    negative: ["2026年8月17日時点で現行日本求人は0件。旧Regional Sales DirectorのRemote・言語条件を現在へ転用できない。", "売上・ARR・profit・FCF、日本売上・headcount・責任者は非公開で、model保守・教育・目的関数の属人化も国内事例が示す。"],
+    next: ["Optimization・Decision Intelligence GTM", "Supply Chain・Manufacturing Solution Sales", "Operations Research・Planning Consulting"],
+  },
+  hightouch: {
+    name: "Hightouch", domain: "Composable CDP・Agentic Marketing", officialUrl: "https://job-boards.greenhouse.io/hightouch",
+    positive: ["Japan first AEとしてpipeline、message、design partner、case study、resellerを作るgreenfield roleで、dataとmarketingを横断する市場開発経験になり得る。", "ARR 1億米ドル、803 paying customers、Series Dからcategory growthを確認でき、国内partner・resellerの足場もある。"],
+    negative: ["Japan担当AEの勤務地はAustralia・Singaporeで、日本法人・office・local team・雇用主体は未確認。給与・OTE・言語・勤務形態も非公開。", "ティラド成果はmulti-product全体。usage・warehouse cost、AI lift、real-time・AI cache、privacy・越境data、partner deliveryをPoCで切り分ける必要がある。"],
+    next: ["CDP・MarTechのEnterprise AE", "Data Platform・Reverse ETL GTM", "Japan Market Development・Partner Ecosystem"],
   },
 };
 
