@@ -280,77 +280,79 @@ export default function CompanyIntelligenceProfile({
 
               {publicIntel ? (
                 <>
-                  {publicIntel.overviewLeadership ? (
-                    <div className="company-snapshot-strip company-snapshot-strip-compact company-snapshot-strip-leadership">
-                      {publicIntel.overviewLeadership.map((group) => (
-                        <div className="company-snapshot-leadership-card" key={group.label}>
-                          <span>{group.label}</span>
-                          <div className="company-snapshot-people">
-                            {group.people.map((person) => (
-                              <a href={person.url} target="_blank" rel="noreferrer" key={person.name}>
-                                <strong>{person.name}</strong>
-                                <small>{person.linkLabel} ↗</small>
-                              </a>
-                            ))}
+                  <div className={publicIntel.overviewLeadership ? "company-overview-card" : undefined}>
+                    {publicIntel.overviewLeadership ? (
+                      <div className="company-snapshot-strip company-snapshot-strip-compact company-snapshot-strip-leadership">
+                        {publicIntel.overviewLeadership.map((group) => (
+                          <div className="company-snapshot-leadership-card" key={group.label}>
+                            <span>{group.label}</span>
+                            <div className="company-snapshot-people">
+                              {group.people.map((person) => (
+                                <a href={person.url} target="_blank" rel="noreferrer" key={person.name}>
+                                  <strong>{person.name}</strong>
+                                  <small>{person.linkLabel} ↗</small>
+                                </a>
+                              ))}
+                            </div>
                           </div>
+                        ))}
+                        {directoryEntry ? (
+                          <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
+                            <span>本社</span>
+                            <strong>{company.hq}</strong>
+                            <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
+                          </a>
+                        ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
+                        <div>
+                          <span>日本オフィス</span>
+                          <strong>{publicIntel.companyStats.japanOffice.value}</strong>
+                          {japanOfficeSource && <a className="company-snapshot-source" href={japanOfficeSource.url} target="_blank" rel="noreferrer">{japanOfficeSource.kind} ↗</a>}
                         </div>
-                      ))}
-                      {directoryEntry ? (
-                        <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
-                          <span>本社</span>
-                          <strong>{company.hq}</strong>
-                          <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
-                        </a>
-                      ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
-                      <div>
-                        <span>日本オフィス</span>
-                        <strong>{publicIntel.companyStats.japanOffice.value}</strong>
-                        {japanOfficeSource && <a className="company-snapshot-source" href={japanOfficeSource.url} target="_blank" rel="noreferrer">{japanOfficeSource.kind} ↗</a>}
+                        <div>
+                          <span>グローバル社員数</span>
+                          <strong>{globalScale?.value ?? "確認中"}</strong>
+                          {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
+                        </div>
+                        <div>
+                          <span>日本の社員数</span>
+                          <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
+                          {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
+                        </div>
                       </div>
-                      <div>
-                        <span>グローバル社員数</span>
-                        <strong>{globalScale?.value ?? "確認中"}</strong>
-                        {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
+                    ) : (
+                      <div className="company-snapshot-strip company-snapshot-strip-6col">
+                        {directoryEntry ? (
+                          <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
+                            <span>本社 / 公式サイト</span>
+                            <strong>{company.hq}</strong>
+                            <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
+                          </a>
+                        ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
+                        <div>
+                          <span>グローバル社員数</span>
+                          <strong>{globalScale?.value ?? "確認中"}</strong>
+                          {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
+                        </div>
+                        <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
+                        <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
+                        <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
+                        <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
                       </div>
-                      <div>
-                        <span>日本の社員数</span>
-                        <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
-                        {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="company-snapshot-strip company-snapshot-strip-6col">
-                      {directoryEntry ? (
-                        <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
-                          <span>本社 / 公式サイト</span>
-                          <strong>{company.hq}</strong>
-                          <small>{directoryEntry.officialWebsite.locale === "ja" ? "日本語公式サイトへ" : "本国公式サイトへ"} ↗</small>
-                        </a>
-                      ) : <div><span>本社</span><strong>{company.hq}</strong></div>}
-                      <div>
-                        <span>グローバル社員数</span>
-                        <strong>{globalScale?.value ?? "確認中"}</strong>
-                        {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
-                      </div>
-                      <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
-                      <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
-                      <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
-                      <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
-                    </div>
-                  )}
+                    )}
 
-                  <div className={`public-fact-grid${company.slug === "adyen" ? " public-fact-grid-compact" : ""}`}>
-                    {publicIntel.facts.map((fact) => {
-                      const source = getResearchSource(publicIntel, fact.sourceIds[0]);
-                      return (
-                        <article key={fact.label}>
-                          <span>{fact.label}</span>
-                          <strong>{fact.value}</strong>
-                          <p>{fact.detail}</p>
-                          {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
-                        </article>
-                      );
-                    })}
+                    <div className={`public-fact-grid${company.slug === "adyen" ? " public-fact-grid-compact" : ""}${publicIntel.overviewLeadership ? " public-fact-grid-merged" : ""}`}>
+                      {publicIntel.facts.map((fact) => {
+                        const source = getResearchSource(publicIntel, fact.sourceIds[0]);
+                        return (
+                          <article key={fact.label}>
+                            <span>{fact.label}</span>
+                            <strong>{fact.value}</strong>
+                            <p>{fact.detail}</p>
+                            {source && <a href={source.url} target="_blank" rel="noreferrer">{source.kind} ↗</a>}
+                          </article>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   <details className="company-scale-comparison">
