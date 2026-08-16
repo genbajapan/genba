@@ -152,6 +152,7 @@ function SalesFabeDetails({
             </tbody>
           </table>
         </div>
+        <p className="company-sales-table-resize-note">右下をドラッグして、表の横幅を調整できます。</p>
       </div>
     </details>
   );

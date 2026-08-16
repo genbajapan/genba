@@ -459,8 +459,10 @@ button, input, select { font: inherit; }
 .company-sales-evidence > p { margin: 0; padding: 3px 0 16px; color: #a9bec7; font-size: 13px; line-height: 1.85; }
 .company-sales-fabe-details { margin-top: 14px; padding: 0; border-inline: 0; background: transparent; }
 .company-sales-fabe-panel { padding: 2px 0 14px; }
+.company-sales-fabe-details .company-sales-table-scroll { width: min(760px, calc(100vw - 80px)); min-width: 660px; max-width: calc(100vw - 48px); resize: horizontal; overflow: auto; }
 .company-sales-fabe-details .company-sales-table { min-width: 660px; font-size: 11px; line-height: 1.6; }
 .company-sales-fabe-details .company-sales-table th,.company-sales-fabe-details .company-sales-table td { padding: 11px 12px; }
+.company-sales-table-resize-note { margin: 7px 0 0; color: #76909a; font-size: 9px; line-height: 1.5; }
 .company-market-outlook { padding: 3px 0 18px; color: #a9bec7; font-size: 13px; line-height: 1.75; }
 .company-market-outlook > p { margin: 0 0 12px; }
 .company-market-outlook-verdict { padding-left: 12px; border-left: 2px solid #70d3c5; color: #e2f2ef; font-weight: 800; }
@@ -1584,6 +1586,7 @@ button, input, select { font: inherit; }
   .company-identity h1 { margin-top: 24px; font-size: 48px; }
   .company-sales-overview { max-width: 100%; }
   .company-sales-table-scroll { overflow: visible; border: 0; background: transparent; }
+  .company-sales-fabe-details .company-sales-table-scroll { width: auto; min-width: 0; max-width: none; resize: none; }
   .company-sales-table,.company-sales-table tbody,.company-sales-table tr,.company-sales-table th,.company-sales-table td { display: block; width: 100%; }
   .company-sales-table { min-width: 0; table-layout: auto; }
   .company-sales-fabe-details .company-sales-table { min-width: 0; }
@@ -1601,6 +1604,7 @@ button, input, select { font: inherit; }
   .company-sales-evidence { max-width: none; margin-top: 18px; }
   .company-sales-evidence > summary { align-items: flex-start; gap: 12px; padding: 14px 0; font-size: 11px; line-height: 1.45; }
   .company-sales-evidence-label-closed,.company-sales-evidence-label-open { min-width: 0; padding-top: 2px; }
+  .company-sales-table-resize-note { display: none; }
   .company-market-outlook { font-size: 12px; line-height: 1.8; }
   .company-market-outlook > p { margin-bottom: 16px; }
   .company-market-outlook-verdict { padding-left: 10px; }
