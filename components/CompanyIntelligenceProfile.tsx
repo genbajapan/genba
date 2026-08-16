@@ -613,10 +613,15 @@ export default function CompanyIntelligenceProfile({
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
             <section className="intel-section" id="overview">
-              <div className="intel-heading">
-                <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}{company.slug === "adyen" ? "" : "社"}概要</h2></div>
-                <p>{company.slug === "adyen" ? "※公開情報を参照" : "公開されている企業情報・実績を、応募判断の前提としてまとめます。"}</p>
-              </div>
+              <details className={`company-overview-disclosure${isAdyen ? " company-overview-disclosure-adyen" : ""}`} open={!isAdyen}>
+                <summary className="company-overview-toggle">
+                  <div className="intel-heading">
+                    <div><p className="intel-kicker">01 / COMPANY OVERVIEW</p><h2>{company.name}{company.slug === "adyen" ? "" : "社"}概要</h2></div>
+                    <p>{company.slug === "adyen" ? "※公開情報を参照" : "公開されている企業情報・実績を、応募判断の前提としてまとめます。"}</p>
+                  </div>
+                  <span className="company-overview-toggle-action" aria-hidden="true">＋</span>
+                </summary>
+                <div className="company-overview-disclosure-body">
 
               {publicIntel ? (
                 <>
@@ -697,7 +702,13 @@ export default function CompanyIntelligenceProfile({
                       })}
                     </div>
                   </div>
+                </>
+              ) : null}
+                </div>
+              </details>
 
+              {publicIntel ? (
+                <>
                   <details className="company-scale-comparison">
                     <summary>
                       <span>
