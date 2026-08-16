@@ -52,6 +52,20 @@ export type Job = {
   descriptionSummary: string;
   genbaTake: string;
   compensationReality: string;
+  compensationResearch?: {
+    researchedAt: string;
+    confidence: "高" | "中" | "探索中";
+    headline: string;
+    summary: string;
+    breakdown: Array<{
+      label: string;
+      value: string;
+      status: string;
+      detail: string;
+    }>;
+    readerTake: string;
+    sources: Array<Source & { detail: string }>;
+  };
   desiredProfile: string;
   careerInsights: {
     fit: string;

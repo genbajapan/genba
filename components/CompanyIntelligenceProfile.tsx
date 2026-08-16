@@ -40,6 +40,53 @@ function shortDate(date: string) {
   return date.replaceAll("-", ".");
 }
 
+function CompensationResearchBlock({ research }: { research: NonNullable<Job["compensationResearch"]> }) {
+  return (
+    <div className="compensation-research">
+      <div className="compensation-research-verdict">
+        <div>
+          <span>GENBA推定</span>
+          <b>確度：{research.confidence}</b>
+        </div>
+        <strong>{research.headline}</strong>
+        <p>公式の提示額ではなく、公開情報から求めた市場レンジです。</p>
+      </div>
+
+      <p className="compensation-research-summary">{research.summary}</p>
+
+      <div className="compensation-research-grid">
+        {research.breakdown.map((item) => (
+          <article key={item.label}>
+            <div><span>{item.label}</span><em>{item.status}</em></div>
+            <strong>{item.value}</strong>
+            <p>{item.detail}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="compensation-research-take">
+        <span>オファー比較で見るべきこと</span>
+        <p>{research.readerTake}</p>
+      </div>
+
+      <div className="compensation-research-sources">
+        <div className="compensation-research-sources-heading">
+          <span>根拠データ</span>
+          <p>日本向けの直接値ではないものは、海外参考として限界も明記しています。</p>
+        </div>
+        <ol>
+          {research.sources.map((source) => (
+            <li key={source.url}>
+              <a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>
+              <p>{source.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  );
+}
+
 function SalesFabeDetails({
   overview,
   intelligence,
@@ -361,6 +408,13 @@ export default function CompanyIntelligenceProfile({
       context: job.title,
       kind: "公式" as const,
     })),
+    ...companyJobs.flatMap((job) => job.compensationResearch?.sources.map((source) => ({
+      label: source.label,
+      url: source.url,
+      context: "給与事情の推定根拠",
+      kind: "分析根拠" as const,
+      checkedAt: job.compensationResearch?.researchedAt,
+    })) ?? []),
     ...companySignals.map((signal) => ({
       ...signal.source,
       context: signal.title,
@@ -993,7 +1047,7 @@ export default function CompanyIntelligenceProfile({
                             <div className="known"><span>言語(募集要項)</span><strong>{job.language}</strong></div>
                             {publicIntel ? (
                               <>
-                                <div className="analysis"><span>報酬の見立て</span><strong>{isAdyen ? `大手企業・戦略アカウント営業帯 ${tier.oteRange}が目安` : `${tier.label}帯 ${tier.oteRange}が目安`}</strong></div>
+                                <div className="analysis"><span>報酬の見立て</span><strong>{isAdyen ? "現金OTE 2,200万〜3,200万円（Genba推定）" : `${tier.label}帯 ${tier.oteRange}が目安`}</strong></div>
                                 <div className="analysis"><span>英語の実務利用</span><strong>{/英語|English/i.test(job.language) && !/明記なし|不問/.test(job.language) ? "募集要項で英語要件あり。使用場面と頻度は要確認" : "募集要項では要件を確認できず。使用場面と頻度は要確認"}</strong></div>
                                 {!isAdyen && <div className="analysis"><span>面接で確認すべきこと</span><strong>担当テリトリーの質とcredit(成果配分)の決まり方</strong></div>}
                               </>
@@ -1027,7 +1081,9 @@ export default function CompanyIntelligenceProfile({
                                 <span className="role-description-chevron" aria-hidden="true">▾</span>
                               </summary>
                               <div className="role-description-body">
-                                <p>{job.compensationReality}</p>
+                                {job.compensationResearch
+                                  ? <CompensationResearchBlock research={job.compensationResearch} />
+                                  : <p>{job.compensationReality}</p>}
                               </div>
                             </details>
                           )}
