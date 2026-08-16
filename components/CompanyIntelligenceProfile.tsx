@@ -40,7 +40,7 @@ function shortDate(date: string) {
   return date.replaceAll("-", ".");
 }
 
-function SalesFabeTables({
+function SalesFabeDetails({
   overview,
   intelligence,
 }: {
@@ -48,24 +48,15 @@ function SalesFabeTables({
   intelligence: ReturnType<typeof getCompanyPublicIntelligence>;
 }) {
   return (
-    <div className="company-sales-overview-tables">
-      <section className="company-sales-table-section" aria-labelledby="company-industry-fit-title">
-        <h2 id="company-industry-fit-title">領域別に見る、よくある課題と提供価値</h2>
+    <details className="company-sales-evidence company-sales-fabe-details">
+      <summary>
+        <span className="company-sales-evidence-label-closed">FABE分析と競合比較</span>
+        <span className="company-sales-evidence-label-open">FABE分析と競合比較を閉じる</span>
+        <span className="company-sales-evidence-icon" aria-hidden="true">＋</span>
+      </summary>
+      <div className="company-sales-fabe-panel">
         <div className="company-sales-table-scroll">
-          <table className="company-sales-table company-industry-table">
-            <thead><tr><th>対象領域</th><th>よくある課題</th><th>Adyenが提供する価値</th></tr></thead>
-            <tbody>
-              {overview.industryRows.map((row) => (
-                <tr key={row.segment}><th scope="row">{row.segment}</th><td>{row.issue}</td><td>{row.value}</td></tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section className="company-sales-table-section" aria-labelledby="company-fabe-table-title">
-        <h2 id="company-fabe-table-title">FABEと競合比較</h2>
-        <div className="company-sales-table-scroll">
-          <table className="company-sales-table company-fabe-table">
+          <table className="company-sales-table company-fabe-table" aria-label="FABE分析と競合比較">
             <thead><tr><th>観点</th><th>Adyenの分析</th><th>顧客にとっての意味</th></tr></thead>
             <tbody>
               {overview.fabeRows.map((row) => (
@@ -88,8 +79,8 @@ function SalesFabeTables({
             </tbody>
           </table>
         </div>
-      </section>
-    </div>
+      </div>
+    </details>
   );
 }
 
@@ -238,6 +229,7 @@ export default function CompanyIntelligenceProfile({
                   )}
                 </details>
               )}
+              {salesFabeOverview && <SalesFabeDetails overview={salesFabeOverview} intelligence={publicIntel} />}
               <div className="company-tag-row">
                 {company.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
@@ -266,7 +258,6 @@ export default function CompanyIntelligenceProfile({
               </div>
             </aside>
           </div>
-          {salesFabeOverview && <SalesFabeTables overview={salesFabeOverview} intelligence={publicIntel} />}
         </Container>
       </section>
 

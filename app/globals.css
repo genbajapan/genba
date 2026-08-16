@@ -425,12 +425,9 @@ button, input, select { font: inherit; }
 .company-description { max-width: 690px; margin: 8px 0 0; color: #c1d0d7; font-size: 14px; line-height: 1.85; }
 .company-sales-overview { max-width: 760px; margin-top: 11px; }
 .company-sales-overview .company-description { max-width: none; margin-top: 14px; }
-.company-sales-overview-tables { margin-top: 34px; }
 .company-sales-segments > strong { display: block; margin-bottom: 8px; color: #839ca7; font-size: 10px; font-weight: 850; letter-spacing: .1em; }
 .company-sales-segments > div { display: flex; flex-wrap: wrap; gap: 6px; }
 .company-sales-segments span { padding: 5px 8px; border: 1px solid #41656c; background: rgba(112,211,197,.07); color: #bce7e0; font-size: 10px; font-weight: 750; line-height: 1.35; }
-.company-sales-table-section + .company-sales-table-section { margin-top: 24px; }
-.company-sales-table-section > h2 { margin: 0 0 9px; color: #d9e8ea; font-size: 12px; font-weight: 850; letter-spacing: .025em; }
 .company-sales-table-scroll { overflow-x: auto; border: 1px solid #315563; background: rgba(4,23,34,.42); scrollbar-color: #4f776f transparent; }
 .company-sales-table { width: 100%; min-width: 760px; border-collapse: collapse; table-layout: fixed; color: #aebfc6; font-size: 12px; line-height: 1.65; }
 .company-sales-table th,.company-sales-table td { padding: 13px 15px; border-right: 1px solid #294957; border-bottom: 1px solid #294957; vertical-align: top; text-align: left; }
@@ -438,9 +435,6 @@ button, input, select { font: inherit; }
 .company-sales-table tbody tr:last-child > * { border-bottom: 0; }
 .company-sales-table thead th { background: rgba(112,211,197,.09); color: #9cded4; font-size: 10px; font-weight: 850; letter-spacing: .04em; }
 .company-sales-table tbody th { color: #d6e7e8; font-weight: 800; }
-.company-industry-table th:first-child { width: 23%; }
-.company-industry-table th:nth-child(2) { width: 37%; }
-.company-industry-table th:nth-child(3) { width: 40%; }
 .company-fabe-table th:first-child { width: 22%; }
 .company-fabe-table th:nth-child(2) { width: 42%; }
 .company-fabe-table th:nth-child(3) { width: 36%; }
@@ -462,6 +456,10 @@ button, input, select { font: inherit; }
 .company-sales-evidence-icon { display: grid; flex: 0 0 auto; place-items: center; width: 22px; height: 22px; border: 1px solid #4f776f; border-radius: 50%; font-size: 14px; line-height: 1; transition: transform .18s ease; }
 .company-sales-evidence[open] .company-sales-evidence-icon { transform: rotate(45deg); }
 .company-sales-evidence > p { margin: 0; padding: 3px 0 16px; color: #a9bec7; font-size: 13px; line-height: 1.85; }
+.company-sales-fabe-details { margin-top: 10px; padding: 0 14px; border: 1px solid #315563; background: rgba(4,23,34,.42); }
+.company-sales-fabe-panel { padding: 2px 0 14px; }
+.company-sales-fabe-details .company-sales-table { min-width: 660px; font-size: 11px; line-height: 1.6; }
+.company-sales-fabe-details .company-sales-table th,.company-sales-fabe-details .company-sales-table td { padding: 11px 12px; }
 .company-market-outlook { padding: 3px 0 18px; color: #a9bec7; font-size: 13px; line-height: 1.75; }
 .company-market-outlook > p { margin: 0 0 12px; }
 .company-market-outlook-verdict { padding-left: 12px; border-left: 2px solid #70d3c5; color: #e2f2ef; font-weight: 800; }
@@ -1320,10 +1318,10 @@ button, input, select { font: inherit; }
   .company-command-grid { grid-template-columns: 1fr; gap: 35px; }
   .company-identity h1 { margin-top: 24px; font-size: 48px; }
   .company-sales-overview { max-width: 100%; }
-  .company-sales-overview-tables { margin-top: 28px; }
   .company-sales-table-scroll { overflow: visible; border: 0; background: transparent; }
   .company-sales-table,.company-sales-table tbody,.company-sales-table tr,.company-sales-table th,.company-sales-table td { display: block; width: 100%; }
   .company-sales-table { min-width: 0; table-layout: auto; }
+  .company-sales-fabe-details .company-sales-table { min-width: 0; }
   .company-sales-table thead { display: none; }
   .company-sales-table tbody { display: grid; gap: 10px; }
   .company-sales-table tbody tr { border: 1px solid #315563; background: rgba(4,23,34,.42); }
@@ -1333,8 +1331,6 @@ button, input, select { font: inherit; }
   .company-sales-table tbody th { padding: 11px 13px; background: rgba(112,211,197,.08); }
   .company-sales-table tbody td { padding: 12px 13px; }
   .company-sales-table tbody td::before { display: block; margin-bottom: 5px; color: #72bdb3; font-size: 9px; font-weight: 850; letter-spacing: .06em; }
-  .company-industry-table td:first-of-type::before { content: "よくある課題"; }
-  .company-industry-table td:nth-of-type(2)::before { content: "Adyenが提供する価値"; }
   .company-fabe-table td:first-of-type::before { content: "Adyenの分析"; }
   .company-fabe-table td:nth-of-type(2)::before { content: "顧客にとっての意味"; }
   .company-sales-evidence { max-width: none; margin-top: 18px; }
