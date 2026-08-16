@@ -11,7 +11,7 @@ import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
-import { compBenchmarkSource, getCompTierForSegment } from "@/lib/comp-benchmark";
+import { getCompTierForSegment } from "@/lib/comp-benchmark";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
 
 type ProfileProps = {
@@ -958,25 +958,8 @@ export default function CompanyIntelligenceProfile({
                 <p>{isPreEntry ? "日本向け求人は未確認。海外の営業モデルから、進出求人が出たときに確認すべき条件を整理しています。" : companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
-              {publicIntel && (
-                <div className="role-hypothesis-wrap">
-                  <p className="card-index">ざっくりまとめ</p>
-                  <div className="role-hypothesis-grid">
-                    <article><span>セールスモーション</span><p>{publicIntel.roleLens.salesMotion}</p></article>
-                    <article><span>給与関連</span><p>{publicIntel.roleLens.compensation}</p></article>
-                    <article><span>Quota</span><p>{publicIntel.roleLens.quota}</p></article>
-                    <article><span>チーム連携</span><p>{publicIntel.roleLens.collaboration}</p></article>
-                  </div>
-                </div>
-              )}
-
               {companyJobs.length ? (
                 <>
-                  {publicIntel && (
-                    <p className="role-benchmark-note">
-                      「報酬の見立て」は担当セグメント別のOTE目安({compBenchmarkSource.label})にどれだけ近いかを示すGenba仮説で、{company.name}固有の確認値ではありません。「英語の実務利用」も個社の確認事実ではなく、外資営業組織で一般的に見られる傾向としてのGenba分析です。
-                    </p>
-                  )}
                   <div className="role-dossier-list">
                     {companyJobs.map((job, index) => {
                       const tier = getCompTierForSegment(job.segment);
