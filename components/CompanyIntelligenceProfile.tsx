@@ -1106,7 +1106,7 @@ export default function CompanyIntelligenceProfile({
                             { label: "在籍年数・社内プロモか転職が多いか", content: job.careerInsights.tenureAndPromotion },
                             { label: "どんな会社からの転職が多いか", content: job.careerInsights.priorCompanies },
                             { label: "どんな会社への転職が多いか", content: job.careerInsights.nextCompanies },
-                          ].map((item) => (
+                          ].filter((item) => !isAdyen || item.label !== "向き不向き").map((item) => (
                             <details className="role-description" key={item.label}>
                               <summary>
                                 <span className="role-description-icon" aria-hidden="true">+</span>
