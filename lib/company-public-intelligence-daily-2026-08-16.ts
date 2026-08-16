@@ -127,11 +127,11 @@ built.adyen.salesFabeOverview = {
   targetSegments: ["デジタルサービス（SaaS・マーケットプレイス）", "金融・FinTech", "小売", "旅行・ホテル", "D2C"],
   summary: "オンライン、アプリ、店舗など販売チャネルが増えるほど、決済、不正対策、入金照合、顧客データが別々の仕組みに分かれ、決済成功率の改善や海外展開が難しくなる。Adyenは、決済受付、不正対策、決済処理、アクワイアリングを一つの基盤に統合し、決済成功率、不正損失、照合作業、海外展開を同じデータで改善する決済プラットフォームである。",
   fabeRows: [
-    { key: "feature", label: "Feature（機能）", analysis: "オンライン、アプリ、店舗、KIOSKの決済受付、不正対策、決済処理、アクワイアリングを一つの基盤で提供する。", customerMeaning: "複数の決済事業者や管理画面をまたぐ運用を減らせる。" },
-    { key: "advantage", label: "Advantage（優位性）", analysis: "国やチャネルごとに決済システムを継ぎ足す構成ではなく、グローバルで共通する基盤と決済データを持つ。", customerMeaning: "店舗とEC、国内と海外を同じ考え方で展開・改善できる。" },
-    { key: "benefit", label: "Benefit（メリット）", analysis: "決済成功率の向上、不正損失の抑制、照合作業の削減、海外展開の迅速化を同じデータで追える。", customerMeaning: "売上の取りこぼしと決済運用コストを同じ商談で扱える。" },
-    { key: "evidence", label: "Evidence（根拠）", analysis: "星野リゾートは予約・現地・KIOSKの決済統合を進め、On Japanは店舗とオンラインを接続している。Woltの公式事例ではリピーターの購入完了率が5％超向上した。", customerMeaning: "日本でも旅行・小売・デジタルサービスに近い導入根拠を確認できる。", sourceIds: ["adyen-customers", "adyen-on-japan", "adyen-wolt-japan"] },
-    { key: "competitor", label: "Competitor（競合）", analysis: "Stripe、Worldpay、PayPal/Braintree、国内PSP、POSと決済代行の組み合わせ、内製が主な代替手段となる。", customerMeaning: "手数料だけでなく、承認率、オンライン・店舗統合、海外対応、照合作業、移行負荷で比較する。" },
+    { key: "feature", label: "Feature", analysis: "オンライン、アプリ、店舗、KIOSKの決済受付、不正対策、決済処理、アクワイアリングを一つの基盤で提供する。", customerMeaning: "複数の決済事業者や管理画面をまたぐ運用を減らせる。" },
+    { key: "advantage", label: "Advantage", analysis: "国やチャネルごとに決済システムを継ぎ足す構成ではなく、グローバルで共通する基盤と決済データを持つ。", customerMeaning: "店舗とEC、国内と海外を同じ考え方で展開・改善できる。" },
+    { key: "benefit", label: "Benefit", analysis: "決済成功率の向上、不正損失の抑制、照合作業の削減、海外展開の迅速化を同じデータで追える。", customerMeaning: "売上の取りこぼしと決済運用コストを同じ商談で扱える。" },
+    { key: "evidence", label: "Evidence", analysis: "星野リゾートは予約・現地・KIOSKの決済統合を進め、On Japanは店舗とオンラインを接続している。Woltの公式事例ではリピーターの購入完了率が5％超向上した。", customerMeaning: "日本でも旅行・小売・デジタルサービスに近い導入根拠を確認できる。", sourceIds: ["adyen-customers", "adyen-on-japan", "adyen-wolt-japan"] },
+    { key: "competitor", label: "Competitor", analysis: "Stripe、Worldpay、PayPal/Braintree、国内PSP、POSと決済代行の組み合わせ、内製が主な代替手段となる。", customerMeaning: "手数料だけでなく、承認率、オンライン・店舗統合、海外対応、照合作業、移行負荷で比較する。" },
   ],
 };
 

@@ -435,9 +435,10 @@ button, input, select { font: inherit; }
 .company-sales-table tbody tr:last-child > * { border-bottom: 0; }
 .company-sales-table thead th { background: rgba(112,211,197,.09); color: #9cded4; font-size: 10px; font-weight: 850; letter-spacing: .04em; }
 .company-sales-table tbody th { color: #d6e7e8; font-weight: 800; }
-.company-fabe-table th:first-child { width: 22%; }
-.company-fabe-table th:nth-child(2) { width: 42%; }
-.company-fabe-table th:nth-child(3) { width: 36%; }
+.company-fabe-table th:first-child { width: 18%; }
+.company-fabe-table th:nth-child(2) { width: 45%; }
+.company-fabe-table th:nth-child(3) { width: 37%; }
+.company-fabe-table tbody th { vertical-align: middle; white-space: nowrap; }
 .company-fabe-row-feature > th { box-shadow: inset 3px 0 #6bc7bc; }
 .company-fabe-row-advantage > th { box-shadow: inset 3px 0 #74a9d2; }
 .company-fabe-row-benefit > th { box-shadow: inset 3px 0 #dbb761; }
