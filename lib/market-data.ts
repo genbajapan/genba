@@ -20,6 +20,7 @@ import { jobs20260817BatchSeventeen } from "@/lib/company-additions-2026-08-17-b
 import { jobs20260817BatchEighteen } from "@/lib/company-additions-2026-08-17-batch-18";
 import { jobs20260817BatchNineteen } from "@/lib/company-additions-2026-08-17-batch-19";
 import { jobs20260817BatchTwentyTwo } from "@/lib/company-additions-2026-08-17-batch-22";
+import { companies20260817BatchTwentyThree, jobs20260817BatchTwentyThree } from "@/lib/company-additions-2026-08-17-batch-23";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additions-2026-08-17-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -915,6 +916,7 @@ const companyRecords: Company[] = [
   ...companies20260815,
   ...companies20260816,
   ...companies20260817Daily,
+  ...companies20260817BatchTwentyThree,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1339,6 +1341,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchTwentyThree,
   ...jobs20260817BatchTwentyTwo,
   ...jobs20260817BatchNineteen,
   ...jobs20260817BatchEighteen,
@@ -3020,7 +3023,9 @@ const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => 
 export const jobs = jobRecords
   .filter((job) => !publiclyExcludedCompanySlugs.has(job.companySlug) && !closedJobIds.has(job.id))
   .map((job) => {
-    const datedJob = temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-16" };
+    const datedJob = temporarilyUnverifiableJobIds.has(job.id) || job.firstSeen === "2026-08-17"
+      ? job
+      : { ...job, lastChecked: "2026-08-16" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);

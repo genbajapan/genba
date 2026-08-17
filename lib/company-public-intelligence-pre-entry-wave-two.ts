@@ -29,7 +29,7 @@ type PreEntryProfile = {
   valueHypothesis: string;
   objection: string;
   reframe: string;
-  facts: Array<{ label: string; value: string; detail: string; source: "company" | "growth" | "apac" | "careers" }>;
+  facts: Array<{ label: string; value: string; detail: string; source: "company" | "growth" | "apac" | "careers" | "customers" }>;
   customers: Array<{ company: string; products: string; outcome: string; implication: string }>;
   externalSignals: Array<{ label: string; value: string; detail: string; caveat: string }>;
   entryAssessment: JapanEntryAssessment;

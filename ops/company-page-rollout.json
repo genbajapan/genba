@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-17",
+  "auditedAt": "2026-08-18",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 106,
+    "total": 116,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 10,
       "公開済み": 106
     },
     "byPriority": {
       "HOT": 44,
       "Active": 13,
-      "Selective": 14,
-      "求人なし": 35
+      "Selective": 22,
+      "求人なし": 37
     },
-    "standardReady": 106
+    "standardReady": 116
   },
   "companies": [
     {
@@ -557,6 +557,15 @@
       "missingFields": []
     },
     {
+      "slug": "appsflyer",
+      "company": "AppsFlyer",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "asana",
       "company": "Asana",
       "priority": "Selective",
@@ -566,11 +575,38 @@
       "missingFields": []
     },
     {
+      "slug": "black-duck",
+      "company": "Black Duck",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "bluematrix",
+      "company": "BlueMatrix",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "cambly",
       "company": "Cambly",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "doubleverify",
+      "company": "DoubleVerify",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -589,6 +625,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ivanti",
+      "company": "Ivanti",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -638,11 +683,38 @@
       "missingFields": []
     },
     {
+      "slug": "sayari",
+      "company": "Sayari",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "shopify",
       "company": "Shopify",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "similarweb",
+      "company": "Similarweb",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "tanium",
+      "company": "Tanium",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -809,6 +881,15 @@
       "missingFields": []
     },
     {
+      "slug": "ironclad",
+      "company": "Ironclad",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "island",
       "company": "Island",
       "priority": "求人なし",
@@ -877,6 +958,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "pigment",
+      "company": "Pigment",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },

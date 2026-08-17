@@ -47,6 +47,7 @@ for (const slug of ["airtable", "apollo-io", "attio", "clay", "cribl"]) batchSlu
 for (const slug of ["fireblocks", "gong", "halcyon", "harvey", "intercom"]) batchSlugs.add(slug);
 for (const slug of ["uipath", "wiz"]) batchSlugs.add(slug);
 for (const slug of ["servicenow"]) batchSlugs.add(slug);
+for (const slug of ["tanium", "sayari", "doubleverify", "similarweb", "appsflyer", "bluematrix", "black-duck", "ivanti"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -691,6 +692,62 @@ const companyResearch: Record<string, {
     negative: ["Japan担当AEの勤務地はAustralia・Singaporeで、日本法人・office・local team・雇用主体は未確認。給与・OTE・言語・勤務形態も非公開。", "ティラド成果はmulti-product全体。usage・warehouse cost、AI lift、real-time・AI cache、privacy・越境data、partner deliveryをPoCで切り分ける必要がある。"],
     next: ["CDP・MarTechのEnterprise AE", "Data Platform・Reverse ETL GTM", "Japan Market Development・Partner Ecosystem"],
   },
+  tanium: {
+    name: "Tanium", domain: "自律型IT・Endpoint Management・Security", officialUrl: "https://job-boards.greenhouse.io/tanium",
+    communityUrl: "https://www.comparably.com/companies/tanium", communityLabel: "Comparably Tanium employee reviews",
+    positive: ["日本のStrategic Accountsに加え、Customer Success、Value Engineering、Supportの採用を公式ATSで確認。", "real-time endpoint dataをasset、patch、exposure、threat responseへ広げ、大企業のIT・Security成果を横断できる。"],
+    negative: ["日本売上・顧客数・headcount・quota・attainment・数値報酬は非公開。", "Microsoft等の既存stackとの重複、未管理資産、data freshness、復旧性能、3年TCOを顧客環境と面接で検証する必要がある。"],
+    next: ["Endpoint・Cybersecurity Strategic Sales", "Autonomous IT・Value Engineering", "Enterprise Security Sales Leadership"],
+  },
+  sayari: {
+    name: "Sayari", domain: "経済安全保障・Supply Chain Risk Intelligence", officialUrl: "https://job-boards.greenhouse.io/sayari",
+    communityUrl: "https://www.comparably.com/companies/sayari", communityLabel: "Comparably Sayari employee reviews",
+    positive: ["東京でEnterprise AE、Client Director、Forward Deployed Engineerを採用し、commercialとtechnical deliveryを同時に構築。", "117億件超・250超法域のprimary-source recordsをownership・trade graphへ変え、経済安全保障の意思決定を支える。"],
+    negative: ["日本売上・顧客数・headcount・quota・attainment・報酬内訳は非公開。求人の海外向けドルrangeをJapan報酬へ転用しない。", "国内named case、source coverage、entity resolution、false positive、規制・供給網riskの成果を実案件で検証する必要がある。"],
+    next: ["Risk Intelligence Enterprise Sales", "Economic Security・Supply Chain GTM", "Compliance Data Sales Leadership"],
+  },
+  doubleverify: {
+    name: "DoubleVerify", domain: "デジタル広告計測・Ad Verification", officialUrl: "https://job-boards.greenhouse.io/doubleverify",
+    communityUrl: "https://www.comparably.com/companies/doubleverify", communityLabel: "Comparably DoubleVerify employee reviews",
+    positive: ["東京でadvertiser・agency向けSalesとAccount Managementを採用し、new、renewal、expansionをlocalで担う。", "Social、CTV、Attention、Performanceへ計測範囲を広げ、media qualityを投資成果へ接続できる。"],
+    negative: ["日本売上・顧客数・quota・attainment・数値報酬は非公開。", "platform native measurementとの差、incrementality、privacy、MFA・AI content、Nielsenとの買収契約後の組織・roadmapを検証する必要がある。"],
+    next: ["AdTech・Measurement Enterprise Sales", "Media Analytics・Customer Growth", "Japan・APAC Revenue Leadership"],
+  },
+  similarweb: {
+    name: "Similarweb", domain: "Digital Intelligence・Market and Sales Data", officialUrl: "https://job-boards.greenhouse.io/similarweb",
+    communityUrl: "https://www.comparably.com/companies/similarweb", communityLabel: "Comparably Similarweb employee reviews",
+    positive: ["東京のHead of SalesがJapan・Koreaのstrategy、team、pipeline、forecast、大口dealを統括する。", "web・app・search・market・sales dataを外部市場の意思決定へつなぐ領域横断のGTM経験になる。"],
+    negative: ["日本売上・ARR・headcount・team quota・attainment・報酬は非公開。", "推計dataのcoverage・accuracy・freshness、platform仕様変更、AI answer経由のtraffic変化、競合とのTCOを検証する必要がある。"],
+    next: ["Digital Intelligence Sales Leadership", "Data・Market Intelligence GTM", "Japan・Korea Country Leadership"],
+  },
+  appsflyer: {
+    name: "AppsFlyer", domain: "モバイル計測・Modern Marketing Cloud", officialUrl: "https://careers.appsflyer.com/tokyo/",
+    communityUrl: "https://www.comparably.com/companies/appsflyer", communityLabel: "Comparably AppsFlyer employee reviews",
+    positive: ["東京のGrowth Account Managerがnew businessからrenewal、cross-sell、retentionまで一貫して担う。", "mobile・web・CTVのattribution、incrementality、privacy-preserving data collaborationを横断できる。"],
+    negative: ["日本売上・顧客数・quota・attainment・pay mix・数値報酬は非公開。", "privacy制約、SKAN・platform変化、attributionとincrementalityの差、data clean room・既存MarTechとのTCOを検証する必要がある。"],
+    next: ["MarTech・Mobile Measurement Sales", "Customer Growth・Account Management", "Marketing Data Platform Leadership"],
+  },
+  bluematrix: {
+    name: "BlueMatrix", domain: "投資調査制作・配信・読者分析", officialUrl: "https://jobs.lever.co/BlueMatrix?location=Tokyo",
+    communityUrl: "https://www.comparably.com/companies/bluematrix", communityLabel: "Comparably BlueMatrix employee reviews",
+    positive: ["東京のClient Successが投資銀行顧客のadoption、retention、churn risk、organic expansionを持つ。", "research authoring、compliance、distribution、readership dataをcapital marketsのworkflow成果へつなげられる。"],
+    negative: ["求人表示の報酬rangeは単位を確定できず転載しない。日本売上・quota・担当社数・attainmentも非公開。", "confidential research、AI consumption、email・distribution、compliance、既存CMSとの責任境界とROIを検証する必要がある。"],
+    next: ["Capital Markets Client Success", "Research Workflow Enterprise SaaS", "Financial Data Customer Leadership"],
+  },
+  "black-duck": {
+    name: "Black Duck", domain: "Application Security・Software Supply Chain", officialUrl: "https://job-boards.greenhouse.io/blackduck",
+    communityUrl: "https://www.comparably.com/companies/black-duck-software", communityLabel: "Comparably Black Duck employee reviews",
+    positive: ["東京でSales、Sales Engineer、Implementation、Supportを採用し、commercialからdeliveryまでlocal coverageを持つ。", "SCA、SAST、DASTとservicesを通じ、open source・proprietary code・runtime riskを横断できる。"],
+    negative: ["公式求人のJPY 7M〜11MはbaseかOTEかを本文で確定できないため、incentive内訳とともに要確認。", "false positive、fix time、developer friction、license risk、AI-generated code、既存DevSecOps stackとのTCOを検証する必要がある。"],
+    next: ["AppSec Enterprise Sales", "Software Supply Chain Security GTM", "Cybersecurity Sales Leadership"],
+  },
+  ivanti: {
+    name: "Ivanti", domain: "Endpoint Management・ITSM・Exposure Management", officialUrl: "https://careers.ivanti.com/",
+    communityUrl: "https://www.comparably.com/companies/ivanti", communityLabel: "Comparably Ivanti employee reviews",
+    positive: ["東京のSales Engineerがdiscovery、demo、technical validation、solution designをAccount Managerと担う。", "ライフネット生命、東映アニメーション、ブラザー工業等の国内事例を持ち、UEM・ITSM・Exposureを横断できる。"],
+    negative: ["日本売上・headcount・quota・attainment・数値報酬は非公開。", "Microsoft・ServiceNow等との重複、patch・exposureの実効性、security incidentへの対応、tool consolidationと3年TCOを検証する必要がある。"],
+    next: ["Endpoint・ITSM Solutions Engineering", "Cybersecurity Presales", "Enterprise IT Platform Architecture"],
+  },
 };
 
 type RoleArchetype =
@@ -1149,11 +1206,13 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
       positiveTopics: [
         ...company.positive.map((topic) => "【公開事実】" + topic),
         ...(review ? ["【海外レビュー参考】" + review.positive + "。"] : []),
+        ...(!review && company.communityUrl ? ["【海外レビュー参考】海外の公開employee review集計は国・職種・時期が混在するため、個別評価ではなく面接論点を作る参考に限定する。"] : []),
         reputationHypothesis.positive,
       ],
       negativeTopics: [
         ...company.negative.map((topic) => "【公開事実】" + topic),
         ...(review ? ["【海外レビュー参考】" + review.caution + "。"] : []),
+        ...(!review && company.communityUrl ? ["【海外レビュー参考】日本の対象職種だけの十分な母数は確認できず、海外集計の評点や個別投稿を配属先へ一般化しない。"] : []),
         reputationHypothesis.caution,
       ],
       caveat: "匿名・自己申告のreviewはself-selection biasがあり、国、時期、職種、managerの違いを分離できない。" + (review?.scope ?? "外部employee reviewの十分な母数は未確認") + "。ここでの結論は配属先の事実ではなく、面接で数字と実例を引き出すための仮説として使う。",

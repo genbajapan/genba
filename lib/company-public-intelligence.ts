@@ -15,6 +15,7 @@ import { daily20260814WaveTwoIntelligenceBySlug } from "@/lib/company-public-int
 import { daily20260815IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-15";
 import { daily20260816IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-16";
 import { daily20260817IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-17";
+import { additions20260817BatchTwentyThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-17-batch-23";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -39,6 +40,7 @@ import { applyCompanyPageRolloutBatchTwenty } from "@/lib/company-page-rollout-b
 import { applyCompanyPageRolloutBatchTwentyOne } from "@/lib/company-page-rollout-batch-21";
 import { applyCompanyPageRolloutBatchTwentyTwo } from "@/lib/company-page-rollout-batch-22";
 import { applyCompanyPageRolloutBatchTwentyThree } from "@/lib/company-page-rollout-batch-23";
+import { applyCompanyPageRolloutBatchTwentyFour } from "@/lib/company-page-rollout-batch-24";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9608,6 +9610,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260815IntelligenceBySlug,
   ...daily20260816IntelligenceBySlug,
   ...daily20260817IntelligenceBySlug,
+  ...additions20260817BatchTwentyThreeIntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9633,6 +9636,7 @@ applyCompanyPageRolloutBatchTwenty(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyOne(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyTwo(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyThree(intelligenceBySlug);
+applyCompanyPageRolloutBatchTwentyFour(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];
