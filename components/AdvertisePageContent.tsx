@@ -44,6 +44,14 @@ export default function AdvertisePageContent({ language = "ja" }: { language?: L
             <p className="eyebrow">{en ? "WHO READS GENBA" : "想定読者"}</p>
             <h2>{en ? "Professionals ready to take on a serious challenge at small and mid-sized global companies." : "小中規模の外資で本気で挑戦をしたい戦士達"}</h2>
           </div>
+          <div className="advertise-x-audience-note">
+            <span>{en ? "WHY X MATTERS IN JAPAN" : "日本市場の場合"}</span>
+            <div>
+              <h3>{en ? "Japan’s strongest global IT professionals gather on X." : "超優秀な外資IT戦士たちは、Xに集中的に生息しています。"}</h3>
+              <p>{en ? "Many Genba readers first discovered the publication through its editor, @chosenshi08, and are part of that account’s follower community. The audience does not number in the tens of thousands. What matters is its concentration: most followers are highly capable professionals working in global IT." : "Genbaを見てくださっている皆さんの多くは、Genba編集長である@chosenshi08のフォロワーです。決してフォロワーが数万人いるわけではありません。ただ、フォロワーの皆さんは、優秀な外資IT戦士たちがほとんどです。"}</p>
+              <a href="https://x.com/chosenshi08" target="_blank" rel="noreferrer">@chosenshi08 on X ↗</a>
+            </div>
+          </div>
           <AudienceList language={language} />
         </Container>
       </section>

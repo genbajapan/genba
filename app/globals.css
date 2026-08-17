@@ -1480,6 +1480,11 @@ button, input, select { font: inherit; }
 .advertise-simple-value-grid span { color: var(--signal); font-size: 13px; font-weight: 850; }
 .advertise-simple-value-grid h3 { margin: 28px 0 0; color: var(--navy); font-size: clamp(23px,2vw,27px); }
 .advertise-simple-value-grid p { margin: 14px 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+.advertise-x-audience-note { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 34px; margin-bottom: 18px; padding: 28px 30px; border-left: 4px solid var(--signal); background: var(--navy); color: white; }
+.advertise-x-audience-note > span { padding-top: 4px; color: #70d3c5; font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.advertise-x-audience-note h3 { margin: 0; font-size: clamp(20px,2.4vw,29px); letter-spacing: -.025em; line-height: 1.45; }
+.advertise-x-audience-note p { max-width: 790px; margin: 13px 0 0; color: #c6d5db; font-size: 13px; line-height: 1.9; }
+.advertise-x-audience-note a { display: inline-block; margin-top: 16px; color: #70d3c5; font-size: 11px; font-weight: 800; text-decoration: none; }
 .advertise-inquiry-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(560px,1.2fr); gap: 64px; align-items: start; }
 .advertise-inquiry-layout .advertise-section-heading h2 { font-size: clamp(17px,5.4vw,30px); white-space: nowrap; }
 .advertise-inquiry-layout .advertise-inquiry-form { max-width: none; }
@@ -1635,7 +1640,8 @@ button, input, select { font: inherit; }
   .tier-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
   .entry-filter-summary { grid-template-columns: 1fr auto; gap: 10px 18px; }
   .entry-filter-summary p { grid-column: 1 / -1; grid-row: 2; }
-  .advertise-audience-grid,.advertise-plan-grid,.advertise-form-grid,.advertise-simple-value-grid,.advertise-inquiry-layout { grid-template-columns: 1fr; }
+  .advertise-audience-grid,.advertise-plan-grid,.advertise-form-grid,.advertise-simple-value-grid,.advertise-inquiry-layout,.advertise-x-audience-note { grid-template-columns: 1fr; }
+  .advertise-x-audience-note { gap: 12px; padding: 24px 22px; }
   .advertise-inquiry-layout { gap: 28px; }
   .advertise-simple-value-grid article { min-height: 0; }
   .advertise-simple-value-grid article + article { border-top: 1px solid var(--line); border-left: 0; }
