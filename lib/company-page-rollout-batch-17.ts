@@ -157,6 +157,7 @@ function patchAbnormal(intelligence: CompanyPublicIntelligence) {
     goodFor: ["Japan security marketを0→1で作りたい", "CISOへAI-native categoryを売りたい", "emailからidentity・AIへexpandしたい"], cautionFor: ["成熟した日本組織を必須にする", "日本語要件・supportを求人から推測したくない", "完成したplaybookだけで動きたい"],
     unresolved: [["Territory", "foundational Japan AEが3,000 mailbox超企業を担当。", "named account、installed base、new・expand、partner、territory sizeは？"], ["Compensation", "数値報酬は非公開。", "base、OTE、pay mix、quota、equity、ramp、attainmentは？"], ["Japan support", "法人・office・leader・国内caseは未確認。", "employment entity、SE・CS・IR、language、support hours、data regionは？"], ["Product proof", "platformをemailからidentity・AIへ急拡張。", "Japan languageのcatch・false positive、cross-product attach、autonomous action、rollbackは？"], ["Microsoft motion", "API-native・behavioral approachを訴求。", "Defenderとのcoexistence、replacement、pricing、PoV、partner motionは？"]],
   }));
+  intelligence.fitTags = ["Japan Entry", "AI-Native Human Behavior Security Platform", "APAC", "Enterprise", "Category Creation"];
   intelligence.marketStatus.growthSummary = "2024年Series D時点でARR 2億米ドル（約315.1億円）、2.5億米ドル（約393.9億円）を評価額51億米ドル（約8,035.6億円）で調達。2026年7月時点4,500 customers・Fortune 500の25%超。recognized revenue・profit・FCFは非公開。";
   intelligence.facts = [
     { label: "売上規模", value: "recognized revenue非公開", detail: "2024年時点ARR 2億米ドル（約315.1億円）。ARRは売上ではない。", sourceIds: ["rollout-abnormal-series-d", "rollout-b17-fx"] },
