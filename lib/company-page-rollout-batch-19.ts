@@ -143,7 +143,28 @@ function patchFireblocks(intelligence: CompanyPublicIntelligence) {
       fsa, fx,
     ],
   });
+  intelligence.marketStatus.milestones = intelligence.marketStatus.milestones.filter((item) => item.label !== "Japan sales採用");
   milestone(intelligence, "2024", "日本進出・東京office開設", "2024年12月に東京officeを開設。2026年はbilingual Project Managerを公式募集。", "rollout-fireblocks-jobs");
+  intelligence.companyStats.japanOffice = { value: "東京office", detail: "2024年12月に日本でのregional office開設を公式発表。", sourceId: "rollout-fireblocks-company" };
+  intelligence.companyStats.japanSince = { value: "2024年", detail: "東京officeを開設し、国内顧客・partner supportを強化。", sourceId: "rollout-fireblocks-company" };
+  intelligence.salesAppeal = {
+    intro: "digital assetの新規事業を、security・規制・顧客deliveryまで本番運用へ落とす経験を積める。",
+    points: [
+      { title: "顧客導入を本番成果へ変える", detail: "scope、schedule、risk、API・cloud、顧客・社内stakeholderを束ね、複雑な導入を稼働まで進める。", sourceIds: ["rollout-fireblocks-jobs"] },
+      { title: "東京officeの拡張局面に入る", detail: "2024年に東京officeを開設し、現行求人はProject Manager。旧BDR・Sales Directorを現行職として扱わない。", sourceIds: ["rollout-fireblocks-company", "rollout-fireblocks-jobs"] },
+      { title: "金融・security・規制を横断する", detail: "stablecoin、tokenization、paymentsの成長機会と、key、approval、custody、AML、incident responsibilityを同時に扱う。", sourceIds: [fsa.id, "rollout-fireblocks-company"] },
+    ],
+  };
+  intelligence.interviewPrep = {
+    intro: "global scaleと、自分が担当する日本projectのscope・support・評価条件を分けて確認する。",
+    questions: [
+      { question: "日本のProject Managerが担当する顧客数、project期間・規模、稼働・価値実現KPIは。", why: "delivery負荷と成功条件を見る。", sourceIds: ["rollout-fireblocks-jobs"] },
+      { question: "Sales、SE、Product、Engineering、Support、Customer SuccessとのRACIとescalationは。", why: "複雑案件の責任境界を見る。", sourceIds: ["rollout-fireblocks-jobs"] },
+      { question: "直近の日本導入で、security reviewからproductionまで何が最長のbottleneckだったか。", why: "local product-market fitと実装難度を見る。", sourceIds: ["rollout-fireblocks-mitsui", fsa.id] },
+      { question: "給与、bonus、equity、評価、昇進、標準時間外・travelの実績は。", why: "求人で非公開の雇用条件を確認する。", sourceIds: ["rollout-fireblocks-jobs"] },
+    ],
+  };
+  intelligence.fitTags = ["Project Management", "Customer Delivery", "Digital Assets", "FinTech", "API・Cloud", "Regulated", "Hybrid", "Tokyo"];
 }
 
 function patchGong(intelligence: CompanyPublicIntelligence) {
