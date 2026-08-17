@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 41,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 66
+      "検証済み": 0,
+      "公開済み": 71
     },
     "byPriority": {
       "HOT": 43,
@@ -372,7 +372,7 @@
       "company": "Saviynt",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -498,7 +498,7 @@
       "company": "Rubrik",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -597,7 +597,7 @@
       "company": "Planet",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -606,7 +606,7 @@
       "company": "Replit",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1359,7 +1359,7 @@
       "company": "Scandit",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
