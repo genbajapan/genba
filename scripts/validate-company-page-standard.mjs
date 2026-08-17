@@ -237,6 +237,13 @@ if (!writeManifest) {
 const profileSource = fs.readFileSync(path.join(projectRoot, "components/CompanyIntelligenceProfile.tsx"), "utf8");
 const profileStyleSource = fs.readFileSync(path.join(projectRoot, "app/globals.css"), "utf8");
 if (/adyen/i.test(`${profileSource}\n${profileStyleSource}`)) errors.push("共通UI/CSSにAdyen固有の名称または分岐が残っています。");
+if (!COMPANY_PAGE_STANDARD.layout?.heroDisclosureBoundedToContentColumn) errors.push("ヒーロー展開パネルを本文カラム内に収める標準が未定義です。");
+if (COMPANY_PAGE_STANDARD.layout?.allowHorizontalResize !== false) errors.push("ヒーロー展開パネルの横方向リサイズは禁止してください。");
+if (COMPANY_PAGE_STANDARD.layout?.wideTableOverflow !== "horizontal-scroll") errors.push("幅の広い表はパネル内横スクロールを標準にしてください。");
+if (/company-sales-(?:table|content)-resize-note/.test(profileSource)) errors.push("共通UIに横方向リサイズの案内が残っています。");
+if (/\.company-(?:sales-fabe-details[^\{]*\.company-sales-table-scroll|market-outlook-resizable)\s*\{[^}]*resize\s*:\s*horizontal/s.test(profileStyleSource)) errors.push("ヒーロー展開パネルに横方向リサイズが残っています。");
+if (!/\.company-identity\s*\{[^}]*min-width\s*:\s*0/s.test(profileStyleSource)) errors.push("ヒーロー本文カラムの縮小許可がありません。");
+if (!/\.company-market-outlook-resizable\s*\{[^}]*width\s*:\s*100%[^}]*max-width\s*:\s*100%/s.test(profileStyleSource)) errors.push("市場見立てパネルが本文カラム幅に制限されていません。");
 for (const forbidden of [
   /isAdyen/,
   /company\.slug\s*[!=]==?\s*["']adyen["']/,

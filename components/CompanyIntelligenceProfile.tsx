@@ -261,7 +261,6 @@ function SalesFabeDetails({
             </tbody>
           </table>
         </div>
-        <p className="company-sales-table-resize-note">右下をドラッグして、表の横幅を調整できます。</p>
       </div>
     </details>
   );
@@ -745,7 +744,6 @@ export default function CompanyIntelligenceProfile({
                           </div>
                         </div>
                       </div>
-                      <p className="company-sales-content-resize-note">右下をドラッグして、表示幅を調整できます。</p>
                     </>
                   ) : (
                     <p>{salesView && salesView.expanded}</p>

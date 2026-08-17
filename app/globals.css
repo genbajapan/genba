@@ -402,6 +402,7 @@ button, input, select { font: inherit; }
 .company-breadcrumbs a { color: #9bb0ba; text-decoration: none; }
 .company-breadcrumbs a:hover { color: #70d3c5; }
 .company-command-grid { display: grid; grid-template-columns: minmax(0,1fr) 430px; align-items: start; gap: 70px; }
+.company-identity { min-width: 0; }
 .company-identity-topline { display: flex; align-items: center; gap: 16px; }
 .company-identity-topline .eyebrow { margin-bottom: 9px; }
 .company-monogram { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #4c6b78; background: rgba(255,255,255,.055); color: #dff8f3; font-size: 22px; font-weight: 850; box-shadow: inset 0 0 0 5px rgba(255,255,255,.025); }
@@ -447,7 +448,7 @@ button, input, select { font: inherit; }
 .company-fabe-sources { display: flex; flex-wrap: wrap; gap: 4px 9px; margin-top: 8px; }
 .company-fabe-sources a { color: #80d6cb; font-size: 9px; font-weight: 750; text-decoration: none; }
 .company-fabe-sources a:hover { color: white; text-decoration: underline; }
-.company-sales-evidence { max-width: 690px; margin-top: 14px; border-block: 1px solid #2f5260; }
+.company-sales-evidence { width: 100%; min-width: 0; max-width: 690px; margin-top: 14px; border-block: 1px solid #2f5260; }
 .company-sales-evidence > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 0; cursor: pointer; list-style: none; color: #8eddd1; font-size: 12px; font-weight: 800; letter-spacing: .025em; }
 .company-sales-evidence > summary::-webkit-details-marker { display: none; }
 .company-sales-evidence > summary:hover,.company-sales-evidence > summary:focus-visible { color: white; }
@@ -459,12 +460,10 @@ button, input, select { font: inherit; }
 .company-sales-evidence > p { margin: 0; padding: 3px 0 16px; color: #a9bec7; font-size: 13px; line-height: 1.85; }
 .company-sales-fabe-details { margin-top: 14px; padding: 0; border-inline: 0; background: transparent; }
 .company-sales-fabe-panel { padding: 2px 0 14px; }
-.company-sales-fabe-details .company-sales-table-scroll { width: min(760px, calc(100vw - 80px)); min-width: 660px; max-width: calc(100vw - 48px); resize: horizontal; overflow: auto; }
+.company-sales-fabe-details .company-sales-table-scroll { width: 100%; min-width: 0; max-width: 100%; overflow: auto; }
 .company-sales-fabe-details .company-sales-table { min-width: 660px; font-size: 11px; line-height: 1.6; }
 .company-sales-fabe-details .company-sales-table th,.company-sales-fabe-details .company-sales-table td { padding: 11px 12px; }
-.company-sales-table-resize-note { margin: 7px 0 0; color: #76909a; font-size: 9px; line-height: 1.5; }
-.company-market-outlook-resizable { width: min(760px, calc(100vw - 80px)); min-width: 660px; max-width: calc(100vw - 48px); resize: horizontal; overflow: auto; }
-.company-sales-content-resize-note { margin: 7px 0 0; color: #76909a; font-size: 9px; line-height: 1.5; }
+.company-market-outlook-resizable { width: 100%; min-width: 0; max-width: 100%; overflow: auto; }
 .company-market-outlook { padding: 3px 0 18px; color: #a9bec7; font-size: 13px; line-height: 1.75; }
 .company-market-outlook > p { margin: 0 0 12px; }
 .company-market-outlook-verdict { padding-left: 12px; border-left: 2px solid #70d3c5; color: #e2f2ef; font-weight: 800; }
@@ -1693,8 +1692,8 @@ button, input, select { font: inherit; }
   .company-identity h1 { margin-top: 24px; font-size: 48px; }
   .company-sales-overview { max-width: 100%; }
   .company-sales-table-scroll { overflow: visible; border: 0; background: transparent; }
-  .company-sales-fabe-details .company-sales-table-scroll { width: auto; min-width: 0; max-width: none; resize: none; }
-  .company-market-outlook-resizable { width: auto; min-width: 0; max-width: none; resize: none; overflow: visible; }
+  .company-sales-fabe-details .company-sales-table-scroll { width: auto; min-width: 0; max-width: none; }
+  .company-market-outlook-resizable { width: auto; min-width: 0; max-width: none; overflow: visible; }
   .company-sales-table,.company-sales-table tbody,.company-sales-table tr,.company-sales-table th,.company-sales-table td { display: block; width: 100%; }
   .company-sales-table { min-width: 0; table-layout: auto; }
   .company-sales-fabe-details .company-sales-table { min-width: 0; }
@@ -1712,7 +1711,6 @@ button, input, select { font: inherit; }
   .company-sales-evidence { max-width: none; margin-top: 18px; }
   .company-sales-evidence > summary { align-items: flex-start; gap: 12px; padding: 14px 0; font-size: 11px; line-height: 1.45; }
   .company-sales-evidence-label-closed,.company-sales-evidence-label-open { min-width: 0; padding-top: 2px; }
-  .company-sales-table-resize-note,.company-sales-content-resize-note { display: none; }
   .company-market-outlook { font-size: 12px; line-height: 1.8; }
   .company-market-outlook > p { margin-bottom: 16px; }
   .company-market-outlook-verdict { padding-left: 10px; }

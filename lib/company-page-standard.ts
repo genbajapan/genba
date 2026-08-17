@@ -17,6 +17,11 @@ export const COMPANY_PAGE_STANDARD = {
     { id: "sources", label: "このページの根拠", defaultOpen: false },
   ],
   fabeLabels: ["機能", "優位性", "提供価値", "根拠", "競合・代替手段"],
+  layout: {
+    heroDisclosureBoundedToContentColumn: true,
+    allowHorizontalResize: false,
+    wideTableOverflow: "horizontal-scroll",
+  },
   hypothesisLabel: "【Genba仮説】",
   staleJobDays: 30,
 } as const;
