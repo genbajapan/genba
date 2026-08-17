@@ -417,7 +417,7 @@
       "company": "UiPath",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -453,7 +453,7 @@
       "company": "Wiz",
       "priority": "HOT",
       "salesRoles": 8,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -984,7 +984,7 @@
       "company": "Rippling",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1020,7 +1020,7 @@
       "company": "Tines",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1029,7 +1029,7 @@
       "company": "Vanta",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1038,7 +1038,7 @@
       "company": "Writer",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     }
