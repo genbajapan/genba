@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 56,
+      "未着手": 51,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 56
     },
     "byPriority": {
-      "HOT": 36,
+      "HOT": 41,
       "Active": 8,
-      "Selective": 32,
+      "Selective": 27,
       "求人なし": 36
     },
-    "standardReady": 56
+    "standardReady": 61
   },
   "companies": [
     {
@@ -278,6 +278,51 @@
       "missingFields": []
     },
     {
+      "slug": "marqvision",
+      "company": "MarqVision",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "mendix",
+      "company": "Mendix",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "miro",
+      "company": "Miro",
+      "priority": "HOT",
+      "salesRoles": 8,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "netskope",
+      "company": "Netskope",
+      "priority": "HOT",
+      "salesRoles": 12,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "neural-concept",
+      "company": "Neural Concept",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "new-relic",
       "company": "New Relic",
       "priority": "HOT",
@@ -483,107 +528,6 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
-    },
-    {
-      "slug": "marqvision",
-      "company": "MarqVision",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "mendix",
-      "company": "Mendix",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Specialized Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Specialized Account Executive:市場価値"
-      ]
-    },
-    {
-      "slug": "miro",
-      "company": "Miro",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Strategic Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Strategic Account Executive:市場価値"
-      ]
-    },
-    {
-      "slug": "netskope",
-      "company": "Netskope",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Regional Sales Manager, Japan:勤務地・言語の日本語表記",
-        "求人:Regional Sales Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Regional Sales Manager, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "neural-concept",
-      "company": "Neural Concept",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Regional Sales Director (Japan):勤務地・言語の日本語表記",
-        "求人:Regional Sales Director (Japan):ポジティブ・ネガティブ評判",
-        "求人:Regional Sales Director (Japan):市場価値"
-      ]
     },
     {
       "slug": "nexthink",

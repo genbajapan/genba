@@ -1,6 +1,41 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  marqvision: {
+    category: "ブランド保護・知財インテリジェンス",
+    hq: "ロサンゼルス（米国）",
+    japanPresence: "東京・渋谷スクランブルスクエア（2025年本格展開）",
+    description: "AIと法務運用で偽造品、なりすまし、海賊版の検知・執行を支援。東京でAccount Executive、Brand Protection、Customer Successの3求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  mendix: {
+    category: "エンタープライズLow-code・Agentic App開発",
+    hq: "ロッテルダム（オランダ）／ボストン（米国）・Siemens傘下",
+    japanPresence: "東京・小田急サザンタワー（法人設立年・現責任者は確認不能）",
+    description: "low-code、AI agent、orchestration、governanceを統合。東京でPartner Sales、Presales Solution Consultant、Specialized Account Executiveの3求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  miro: {
+    category: "AIイノベーション・ビジュアル協働基盤",
+    hq: "アムステルダム（オランダ）／サンフランシスコ（米国）",
+    japanPresence: "ミロ・ジャパン合同会社・東京（2021年設立）",
+    description: "strategy、discovery、design、planning、deliveryをvisual canvasとAI workflowで接続。東京でSales、BDR、SE、SA、TAMの現行8求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  netskope: {
+    category: "SSE・SASE・データ・AIセキュリティ",
+    hq: "カリフォルニア州サンタクララ（米国）",
+    japanPresence: "Netskope Japan株式会社・東京（2017年設立）",
+    description: "network、cloud、app、data、AIのsecurityをNetskope OneとNewEdgeで統合。日本でSales、Channel、SE、SA、TAMの現行12求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  "neural-concept": {
+    category: "設計AI・CAE・デザインCopilot",
+    hq: "ローザンヌ（スイス）",
+    japanPresence: "2021年販売開始・東京office開設準備（法人・住所は確認不能）",
+    description: "simulation dataとphysics-aware AIで設計・CAE iterationを高速化。東京でSales、SE、TAM、Application Engineerの現行4求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
   ideals: {
     category: "仮想データルーム・M&A案件管理",
     hq: "グローバル分散（契約主体例はルツェルン、スイス）",

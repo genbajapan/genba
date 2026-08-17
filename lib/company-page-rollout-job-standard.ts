@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -133,6 +133,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  marqvision: {
+    name: "MarqVision", domain: "Brand Protection・IP Intelligence", officialUrl: "https://job-boards.greenhouse.io/marqvision",
+    positive: ["東京でSales、Brand Protection、Customer Successを同時採用し、new logoから執行・renewalまで日本の顧客journeyを作る段階。", "Panasonic、Nissan、SEGA、Mizunoの採用を公式求人で確認でき、AI・法務・ecommerceを横断する専門性を得られる。"],
+    negative: ["売上・利益・FCF、日本法人登記、国内顧客別の定量成果、給与・OTE・勤務頻度は非公開。", "vendor測定のaccuracy・takedown speed・recovered revenueは、日本語dataでfalse positive、再出現、単独寄与を検証する必要がある。"],
+    next: ["Brand Protection・Digital RiskのEnterprise GTM", "IP・Trust & Safety Operations", "Customer Success・LegalTech Leadership"],
+  },
+  mendix: {
+    name: "Mendix", domain: "Enterprise Low-code・Agentic App Development", officialUrl: "https://jobs.lever.co/mendix?location=Tokyo",
+    positive: ["東京でdirect sales、partner sales、presalesを同時募集し、enterprise pipeline、ecosystem、technical validationをlocalでつなぐ。", "花王・江崎グリコ等の国内定量事例があり、legacy modernization、内製化、AI governanceをbusiness outcomeへ翻訳できる。"],
+    negative: ["Mendix単体のcurrent revenue・profit・FCF、日本法人設立・現Country Manager、給与・OTE・言語は非公開。", "OutSystems、Power Apps、Appian、custom developmentとのlicense・lock-in・performance・日本語skill・3年TCO比較が必要。"],
+    next: ["Low-code・Application PlatformのEnterprise GTM", "AI・Automation Solution Consulting", "Partner Ecosystem・Digital Transformation Leadership"],
+  },
+  miro: {
+    name: "Miro", domain: "AI Innovation Workspace・Visual Collaboration", officialUrl: "https://miro.com/careers/open-positions/?location=tokyo-jp",
+    positive: ["東京でCommercial・Strategic Sales、BDR、SE、SA、TAMの8求人を持ち、new logoからworkflow設計・adoptionまでlocal teamを拡張している。", "日本法人、現代表、東京office、日本data residency、富士通等の国内利用例を一次情報で確認できる。"],
+    negative: ["current revenue・ARR・profit・FCF、日本売上・headcount・quota・達成率・数値報酬は非公開。", "Microsoft・Figma・Atlassian等のbundleやpoint toolと、meeting・cycle time・rework・adoption・governanceの増分価値を比較する必要がある。"],
+    next: ["Collaboration・Productivity Platform Sales", "Product・DX Workflow Solution Architecture", "Enterprise Customer Success・GTM Leadership"],
+  },
+  netskope: {
+    name: "Netskope", domain: "SSE・SASE・Data・AI Security", officialUrl: "https://www.netskope.com/company/careers/open-positions/",
+    positive: ["日本でSales、Channel、SE、SA、TAMの12求人を持ち、territory creationからarchitecture、partner delivery、adoptionまで厚いlocal GTMを構築している。", "上場後も売上・ARRが約30%成長し、PERSOL約3万人など国内enterprise deploymentを確認できる。"],
+    negative: ["FY2026 GAAP営業marginは-92%、Q1 FY2027も赤字・FCF negative。日本売上・headcount・quota・達成率・workstyle・給与は非公開。", "inline decryption、latency、privacy、migration、single-vendor concentration、Zscaler・Palo Alto等とのTCOを実trafficで検証する必要がある。"],
+    next: ["SASE・Cloud SecurityのEnterprise GTM", "Security Solutions Architecture・Engineering", "Channel・Customer Success・Regional Leadership"],
+  },
+  "neural-concept": {
+    name: "Neural Concept", domain: "Engineering AI・CAE・Design Copilot", officialUrl: "https://jobs.ashbyhq.com/neuralconcept",
+    positive: ["東京でSales、SE、TAM、Application Engineerを同時採用し、market creation、technical win、delivery、renewalを直接体制へ広げる段階。", "SUBARUの限定PoCで3時間から2分という国内proofがあり、AI、CAD・CAE、manufacturingを横断する希少性がある。"],
+    negative: ["売上・ARR・profit・FCF、日本法人・office住所・責任者・給与・OTEは非公開。Japan SE求人には韓国語要件との重大な不整合がある。", "surrogate modelのaccuracy・OOD・IP・validation・final CAEとの責任分界を同一dataで競合・内製と比較する必要がある。"],
+    next: ["Engineering AI・Simulation Software GTM", "CAE・Digital Engineering Solutions", "Technical Account・Application Engineering Leadership"],
+  },
   dialpad: {
     name: "Dialpad", domain: "AI Communications・UCaaS・CCaaS", officialUrl: "https://job-boards.greenhouse.io/dialpad",
     positive: ["東京でMid-Market AEとSales Engineerを同時募集し、full-cycle saleとtechnical validationをlocalでつなぐ。", "SoftBank提携、国内3,000社、Proto・USENの導入例があり、日本語AIとUC・CC一体のbusiness caseを作れる。"],

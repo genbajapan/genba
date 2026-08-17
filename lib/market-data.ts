@@ -11,6 +11,7 @@ import { jobs20260817BatchEight } from "@/lib/company-additions-2026-08-17-batch
 import { jobs20260817BatchNine } from "@/lib/company-additions-2026-08-17-batch-09";
 import { jobs20260817BatchTen } from "@/lib/company-additions-2026-08-17-batch-10";
 import { jobs20260817BatchEleven } from "@/lib/company-additions-2026-08-17-batch-11";
+import { jobs20260817BatchTwelve } from "@/lib/company-additions-2026-08-17-batch-12";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1311,6 +1312,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchTwelve,
   ...jobs20260817BatchEleven,
   ...jobs20260817BatchTen,
   ...jobs20260817BatchEight,
@@ -2907,6 +2909,11 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "marqvision-account-executive-japan",
+  "mendix-specialized-account-executive-japan",
+  "miro-strategic-ae",
+  "netskope-regional-sales-manager-japan",
+  "neural-concept-regional-sales-director-japan",
   "ideals-key-account-manager-japan",
   "knowbe4-regional-ae-enterprise-japan",
   "mambu-senior-account-executive-channel",
