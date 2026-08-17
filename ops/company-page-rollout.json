@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 10,
-      "公開済み": 106
+      "検証済み": 0,
+      "公開済み": 116
     },
     "byPriority": {
       "HOT": 44,
@@ -561,7 +561,7 @@
       "company": "AppsFlyer",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -579,7 +579,7 @@
       "company": "Black Duck",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -588,7 +588,7 @@
       "company": "BlueMatrix",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -606,7 +606,7 @@
       "company": "DoubleVerify",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -633,7 +633,7 @@
       "company": "Ivanti",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -687,7 +687,7 @@
       "company": "Sayari",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -705,7 +705,7 @@
       "company": "Similarweb",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -714,7 +714,7 @@
       "company": "Tanium",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -885,7 +885,7 @@
       "company": "Ironclad",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -966,7 +966,7 @@
       "company": "Pigment",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },

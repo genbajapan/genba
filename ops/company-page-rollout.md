@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全116社（未着手 0 / 調査中 0 / 検証済み 10 / 公開済み 106）
+全116社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 116）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -64,24 +64,24 @@
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
-|Selective|AppsFlyer|1|検証済み|はい|なし|
+|Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Asana|1|公開済み|はい|なし|
-|Selective|Black Duck|1|検証済み|はい|なし|
-|Selective|BlueMatrix|1|検証済み|はい|なし|
+|Selective|Black Duck|1|公開済み|はい|なし|
+|Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
-|Selective|DoubleVerify|1|検証済み|はい|なし|
+|Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
-|Selective|Ivanti|1|検証済み|はい|なし|
+|Selective|Ivanti|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Pendo|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
-|Selective|Sayari|1|検証済み|はい|なし|
+|Selective|Sayari|1|公開済み|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
-|Selective|Similarweb|1|検証済み|はい|なし|
-|Selective|Tanium|1|検証済み|はい|なし|
+|Selective|Similarweb|1|公開済み|はい|なし|
+|Selective|Tanium|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
@@ -100,7 +100,7 @@
 |求人なし|Halcyon|0|公開済み|はい|なし|
 |求人なし|Harvey|0|公開済み|はい|なし|
 |求人なし|Intercom / Fin|0|公開済み|はい|なし|
-|求人なし|Ironclad|0|検証済み|はい|なし|
+|求人なし|Ironclad|0|公開済み|はい|なし|
 |求人なし|Island|0|公開済み|はい|なし|
 |求人なし|Klaviyo|0|公開済み|はい|なし|
 |求人なし|Lakera|0|公開済み|はい|なし|
@@ -109,7 +109,7 @@
 |求人なし|Mistral AI|0|公開済み|はい|なし|
 |求人なし|monday.com|0|公開済み|はい|なし|
 |求人なし|MongoDB|0|公開済み|はい|なし|
-|求人なし|Pigment|0|検証済み|はい|なし|
+|求人なし|Pigment|0|公開済み|はい|なし|
 |求人なし|Pinecone|0|公開済み|はい|なし|
 |求人なし|Postman|0|公開済み|はい|なし|
 |求人なし|Qualtrics|0|公開済み|はい|なし|
