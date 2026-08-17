@@ -151,8 +151,8 @@ export function applyJapanInsuredHeadcountAudit(intelligenceBySlug: Record<strin
       };
     } else if (NOT_ENTERED_SLUGS.has(slug)) {
       intelligence.companyStats.japanHeadcount = {
-        value: "対象外",
-        detail: `公式情報で日本法人・国内拠点を確認できないため、国内法人を対象とするgBizINFOの被保険者数は対象外。${CHECKED_AT}確認。`,
+        value: "0人",
+        detail: `Genbaの日本未進出区分に基づき0人と表示。公式情報で日本法人・国内拠点を確認できず、gBizINFOで紐づく国内法人の被保険者数もない。国内RemoteまたはEOR雇用者が存在しないことまで保証するものではない。${CHECKED_AT}確認。`,
         sourceId: source.id,
       };
     } else {
