@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 51,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 56
+      "検証済み": 0,
+      "公開済み": 61
     },
     "byPriority": {
       "HOT": 41,
@@ -282,7 +282,7 @@
       "company": "MarqVision",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -291,7 +291,7 @@
       "company": "Mendix",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -300,7 +300,7 @@
       "company": "Miro",
       "priority": "HOT",
       "salesRoles": 8,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -309,7 +309,7 @@
       "company": "Netskope",
       "priority": "HOT",
       "salesRoles": 12,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -318,7 +318,7 @@
       "company": "Neural Concept",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
