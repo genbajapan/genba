@@ -133,6 +133,7 @@
 - 本文の書き出しは`Genba編集長です！`、続けて`皆さん、いつもありがとうございます。`とする
 - 1段落を短くし、話題・事実・`Genba分析`・CTAの間に十分な改行を置く。長文を詰め込まず、スマートフォンでも読者が流れを追える構成にする
 - 本文中へURLをそのまま表示しない。`3つのAE求人とOTEを比較する`、`日本組織と求人の実態を見る`など、遷移先で得られる答えが分かる文字列へリンクを埋め込む
+- Genba内の各社CTAには`utm_source=newsletter&utm_medium=email&utm_campaign=genba_hakkutsu_<号数3桁>&utm_content=company_<掲載順2桁>_<企業slug>`を必ず付ける。末尾CTAは遷移先に応じて`footer_companies`、`footer_jobs`、`footer_preentry`を使う。既存queryとfragmentを壊さず、配信前のテストメールで実URLを確認する
 - メール最下部へ`docs/11-newsletter-kit-setup.md`所定のスポンサー相談導線を置き、号数に対応するUTMを付ける。通常コンテンツより目立たせず、スポンサー掲載がない号でも相談窓口として表示する
 - 事実と`Genba分析`を分離し、数字・日付・企業名・求人リンクを送信前チェックできる状態にする
 - 下書きは`content/newsletter/drafts/YYYY-MM-DD.md`へ保存する

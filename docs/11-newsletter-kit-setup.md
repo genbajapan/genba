@@ -57,6 +57,9 @@ NEXT_PUBLIC_KIT_FORM_URL=<FormのShare URL>
 - 読了時間は3分を標準とする。各社は`その会社ならではの魅力`と、太字の`仕事として見ると：`を2つの短い段落で伝える。日本未進出企業は後段を`日本進出を先回りすると：`へ置き換える
 - 短い段落と十分な改行を使い、事実、Genba分析、次の話題、CTAの境界が一目で分かるようにする
 - URLを本文へ直接貼らず、リンク先で得られる答えが分かる文字列へリンクを設定する
+- メール本文からGenbaへ戻す全リンクにはUTMを付ける。各社CTAは`utm_source=newsletter`、`utm_medium=email`、`utm_campaign=genba_hakkutsu_<号数3桁>`、`utm_content=company_<掲載順2桁>_<企業slug>`の固定形式とする（例: `https://genbajapan.com/companies/stripe?utm_source=newsletter&utm_medium=email&utm_campaign=genba_hakkutsu_001&utm_content=company_01_stripe`）
+- 末尾の企業一覧は`utm_content=footer_companies`、求人一覧は`footer_jobs`、日本未進出一覧は`footer_preentry`、スポンサー相談は`footer_sponsor`とする。既存queryがあるURLではUTMを`&`で追加し、`#`がある場合はUTMをfragmentより前に置く
+- Kitのclick trackingだけに依存しない。配信前のテストメールで、5社すべてと末尾CTAの遷移先URLに上記UTMが残ることを確認する
 - 配信曜日は日本時間の月曜日・木曜日・土曜日に固定する。配信時刻は別途決定する
 - 週3回を超える臨時配信は原則行わない
 - 公式情報とGenba分析を分ける
