@@ -14,7 +14,8 @@ const bundle = await build({
       import { companies, jobs } from "./lib/market-data.ts";
       import { getAllCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
       import { COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority } from "./lib/company-page-standard.ts";
-      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority };
+      import { getJobRoleMarketArchetype } from "./lib/company-page-rollout-job-standard.ts";
+      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority, getJobRoleMarketArchetype };
     `,
     resolveDir: projectRoot,
     sourcefile: "company-page-standard-validator-entry.ts",
@@ -34,6 +35,7 @@ const {
   COMPANY_PAGE_STANDARD,
   COMPANY_PAGE_PRIORITY_ORDER,
   getCompanyPagePriority,
+  getJobRoleMarketArchetype,
 } = runtimeModule.exports;
 const intelligenceBySlug = getAllCompanyPublicIntelligence();
 const jobsBySlug = new Map();
@@ -138,9 +140,35 @@ function assess(company) {
     addMissing(missing, isRecent(job.lastChecked), `${prefix}:30日以内の最終更新`);
     addMissing(missing, containsJapanese(job.location) && containsJapanese(job.language), `${prefix}:勤務地・言語の日本語表記`);
     addMissing(missing, job.descriptionSummary && job.desiredProfile, `${prefix}:概要・求める人物`);
-    addMissing(missing, job.compensationResearch || /非公開|確認でき|記載はない|未確認/.test(job.compensationReality), `${prefix}:給与調査または非公開確認`);
+    addMissing(missing, job.compensationResearch, `${prefix}:職種別の報酬調査`);
+    if (job.compensationResearch) {
+      const breakdown = job.compensationResearch.breakdown ?? [];
+      const isOfficial = breakdown.length > 0 && breakdown.every((item) => /公式/.test(item.status));
+      if (!isOfficial) {
+        addMissing(missing, breakdown.length >= 3 && breakdown.some((item) => /Genba(?:仮説|推定)/.test(item.status)), `${prefix}:報酬仮説の算定内訳`);
+        addMissing(missing, job.compensationResearch.sources?.some((source) => /salary guide/i.test(`${source.label} ${source.url}`)) || job.compensationResearch.sources?.length >= 3, `${prefix}:報酬仮説の市場benchmark`);
+      }
+      addMissing(missing, !/確認不能|非公開$/.test(job.compensationResearch.headline), `${prefix}:確認不能で止めない報酬仮説`);
+    }
     addMissing(missing, job.reputationResearch?.positiveTopics?.length && job.reputationResearch?.negativeTopics?.length, `${prefix}:ポジティブ・ネガティブ評判`);
     addMissing(missing, job.marketValueResearch?.skills?.length && job.marketValueResearch?.nextRoles?.length && job.marketValueResearch?.marketBands?.length, `${prefix}:市場価値`);
+    if (job.marketValueResearch) {
+      addMissing(missing, job.marketValueResearch.marketBands.every((band) => /\d/.test(band.range) && !/確認不能|非公開/.test(band.range)), `${prefix}:数値ありの職種別報酬帯`);
+      addMissing(missing, job.marketValueResearch.nextRoles.every((role) => role.title.trim().toLowerCase() !== job.title.trim().toLowerCase()), `${prefix}:現職と異なる次の役割`);
+    }
+  }
+
+  const marketOutputBySignature = new Map();
+  for (const job of companyJobs) {
+    if (!job.marketValueResearch) continue;
+    const signature = JSON.stringify({ nextRoles: job.marketValueResearch.nextRoles, marketBands: job.marketValueResearch.marketBands });
+    const archetype = getJobRoleMarketArchetype(job);
+    const previous = marketOutputBySignature.get(signature);
+    if (previous && previous.archetype !== archetype) {
+      missing.push(`異なる職種で市場価値が同一:${previous.title}≠${job.title}`);
+    } else if (!previous) {
+      marketOutputBySignature.set(signature, { archetype, title: job.title });
+    }
   }
 
   const sources = new Map((intelligence.sources ?? []).map((source) => [source.id, source]));

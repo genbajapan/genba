@@ -683,65 +683,338 @@ const companyResearch: Record<string, {
   },
 };
 
-function roleFamily(job: JobLike) {
-  const value = `${job.title} ${job.segment}`.toLowerCase();
-  if (/(marketing|demand generation|field marketing)/.test(value)) return "marketing";
-  if (/(sales strategy|sales operations|revenue operations|revops)/.test(value)) return "operations";
-  if (/(customer success|customer experience|account management)/.test(value)) return "customer";
-  if (/(professional services|project manager|implementation|delivery)/.test(value)) return "delivery";
-  if (/(director|vice president|manager|leader|head)/.test(value)) return "leadership";
-  if (/(partner|alliance|channel)/.test(value)) return "partner";
-  if (/(solution|engineer|architect|technical|data scientist|consult)/.test(value)) return "technical";
-  if (/(development representative|\bsdr\b|\bbdr\b|inside sales)/.test(value)) return "development";
-  return "seller";
+type RoleArchetype =
+  | "country-leadership" | "sales-leadership" | "development-leadership" | "partner-leadership" | "presales-leadership" | "customer-leadership"
+  | "strategic-seller" | "enterprise-seller" | "commercial-seller" | "smb-seller" | "account-manager" | "development"
+  | "partner" | "presales" | "customer" | "delivery" | "delivery-leadership" | "support" | "support-leadership"
+  | "marketing" | "marketing-leadership" | "operations" | "operations-leadership" | "technical-advisor" | "technical-specialist";
+
+type RoleMarketProfile = {
+  key: RoleArchetype;
+  label: string;
+  benchmarkLabel: string;
+  benchmarkRange: string;
+  baseRange: string;
+  totalRange: string;
+  payModel: string;
+  skills: Array<{ title: string; detail: string }>;
+  nextRoles: Array<{ title: string; detail: string }>;
+  marketBands: Array<{ level: string; range: string; condition: string }>;
+  proofPoints: string[];
+};
+
+const compensationBenchmarkUrl = "https://www.morganmckinley.com/jp/salary-guide/sales-marketing/permanent-salaries";
+const technologyBenchmarkUrl = "https://www.morganmckinley.com/jp/salary-guide/technology/permanent-salaries";
+
+function hasLeadershipScope(value: string) {
+  return /(director|vice president|\bvp\b|head of|country manager|general manager|regional sales director|sales director|team lead|team manager|leader|senior .{0,30} manager|(?:^|\s)manager\s*(?:i|ii|1|2)\b|manager, (?:enterprise sales|solutions|solution|sales)|director of sales|営業部長|責任者)/i.test(value);
 }
 
-function roleSkills(family: string, domain: string) {
-  if (family === "marketing") return [
-    { title: "Category demand creation", detail: `${domain}の外部変化と顧客課題をmessage・content・eventへ変え、qualified pipelineまで追跡する。` },
-    { title: "Salesとのrevenue連携", detail: "lead数で終わらず、ICP、account、stage、conversion、sourced／influenced pipelineをSalesと共通管理する。" },
-    { title: "市場学習の仕組み化", detail: "campaign・event・content別の反応とwin/lossを分析し、日本のpositioningとGTMへ反映する。" },
-  ];
-  if (family === "operations") return [
-    { title: "GTM operating model", detail: `${domain}のterritory、capacity、pipeline、forecast、processをdataで設計し、意思決定速度を高める。` },
-    { title: "Revenue analytics", detail: "activityでなくconversion、cycle、coverage、attainment、unit economicsを一貫した定義で可視化する。" },
-    { title: "Cross-functional execution", detail: "Sales、Marketing、Finance、Product、Partnerの責任とcadenceを揃え、戦略を現場の運用へ落とす。" },
-  ];
-  if (family === "customer") return [
-    { title: "Value realization", detail: `${domain}の利用を顧客KPIへ結び、導入後の成果、risk、次の改善をQBRで合意する。` },
-    { title: "Renewal・expansion設計", detail: "health、stakeholder、adoption、outcomeを先行指標に、更新riskと拡張機会を再現可能に管理する。" },
-    { title: "顧客組織のchange management", detail: "championだけに依存せず、executive sponsor、現場、IT、partnerと定着責任を分担する。" },
-  ];
-  if (family === "delivery") return [
-    { title: "Outcome-led delivery", detail: `${domain}のscope、baseline、success criteria、timeline、riskを定め、導入を業務成果まで進める。` },
-    { title: "Program・partner orchestration", detail: "顧客、社内専門家、SI partnerの責任・依存関係・escalationを管理し、複雑projectを完了する。" },
-    { title: "再利用可能な実装標準", detail: "個社対応をtemplate、governance、enablementへ変え、品質とdelivery capacityをscaleさせる。" },
-  ];
-  if (family === "leadership") return [
-    { title: "営業組織の再現性", detail: `個人受注でなく、${domain}のpipeline、forecast、採用、coaching、達成者比率を改善する。` },
-    { title: "経営・地域間の資源配分", detail: "Japan、APAC、本社の意思決定をつなぎ、担当、価格、専門人材、partner投資を優先順位付けする。" },
-    { title: "複雑案件のquality control", detail: "大型案件のqualification、business case、risk、commercial条件をレビューし、予測精度を高める。" },
-  ];
-  if (family === "partner") return [
-    { title: "Ecosystem GTM", detail: `${domain}をpartnerのservice・solutionへ組み込み、共同account planとpipelineを作る。` },
-    { title: "Partner economics", detail: "紹介件数だけでなく、sourced／influenced revenue、enablement、delivery capacity、marginを管理する。" },
-    { title: "Directとのoperating model", detail: "案件登録、account ownership、credit、導入責任を明確にして競合を避ける。" },
-  ];
-  if (family === "technical") return [
-    { title: "Technical value engineering", detail: `${domain}の評価条件を顧客環境で検証し、技術指標を購買判断へ翻訳する。` },
-    { title: "PoCから本番への移行", detail: "成功基準、security、integration、change managementを設計し、demoで終わらせない。" },
-    { title: "Product feedback", detail: "個社要件と再利用可能な製品改善を分け、Product・Engineeringへ根拠付きで返す。" },
-  ];
-  if (family === "development") return [
-    { title: "仮説型prospecting", detail: `${domain}のbuyer、外部変化、既存systemを調べ、genericな接触でなくaccount固有の仮説を作る。` },
-    { title: "Qualification", detail: "meeting数だけでなく、課題、economic buyer、時期、次の検証をAEへ渡す。" },
+function roleArchetype(job: JobLike): RoleArchetype {
+  const value = `${job.title} ${job.segment}`.toLowerCase();
+  const title = job.title.toLowerCase();
+  if (/(country manager|general manager|head of japan|regional sales director.*japan)/.test(value)) return "country-leadership";
+  if (/(business development)/.test(value) && hasLeadershipScope(value)) return "development-leadership";
+  if (/(sales director|director of sales)/.test(title)) return "sales-leadership";
+  if (/(solutions consulting|solution consulting|pre.?sales|sales engineer|solutions engineer|solution engineer|solutions architect|solution architect|value engineer|solution advisor)/.test(value)) return hasLeadershipScope(value) ? "presales-leadership" : "presales";
+  if (/(account partner)/.test(title)) return "enterprise-seller";
+  if (/(partner|channel|alliance|alliances|ecosystem)/.test(value)) return hasLeadershipScope(value) ? "partner-leadership" : "partner";
+  if (/(customer success|customer experience|technical account|customer solutions|premium solutions|onboarding manager|account management)/.test(value)) return hasLeadershipScope(value) && !/(account director)/.test(title) ? "customer-leadership" : "customer";
+  if (/(technical success)/.test(value)) return "customer";
+  if (/(marketing|demand generation|field marketing)/.test(value)) return hasLeadershipScope(value) ? "marketing-leadership" : "marketing";
+  if (/(sales strategy|sales operations|revenue operations|revops|enablement|gtm operations|business analyst)/.test(value)) return hasLeadershipScope(value) ? "operations-leadership" : "operations";
+  if (/(technical escalation|technical support|support engineer|support specialist)/.test(value)) return hasLeadershipScope(value) ? "support-leadership" : "support";
+  if (/(forward.?deployed data scientist|applied ai architect|applications scientist|customer-facing data science|technical lead|business value consult|transformation architect|outcomes architect|field engineer|product gtm specialist|ai security specialist)/.test(value)) return "technical-specialist";
+  if (/(professional services|implementation|delivery|project manager|program manager|deployed engineer|application engineer|training engineer|forward deployed|consultant)/.test(value)) return hasLeadershipScope(value) ? "delivery-leadership" : "delivery";
+  if (/(ciso advisor|security advisor|technical advisor|evangelist|advocate)/.test(value)) return "technical-advisor";
+  if (hasLeadershipScope(value)) return "sales-leadership";
+  if (/(development representative|market development representative|sales development|business development representative|\bsdr\b|\bbdr\b|\bmdr\b|inside sales)/.test(value)) return "development";
+  if (/(strategic|global account|majors|major account|named account|top.?tier)/.test(value)) return "strategic-seller";
+  if (/(enterprise|large|key account)/.test(value)) return "enterprise-seller";
+  if (/(commercial|mid.?market|midmarket|field sales)/.test(value)) return "commercial-seller";
+  if (/(smb|small business|growth account)/.test(value)) return "smb-seller";
+  if (/(account manager|renewal|existing business)/.test(value)) return "account-manager";
+  return "enterprise-seller";
+}
+
+function profileForRole(job: JobLike, domain: string): RoleMarketProfile {
+  const key = roleArchetype(job);
+  const title = job.title;
+  const shared = {
+    key,
+    skills: [] as Array<{ title: string; detail: string }>,
+    nextRoles: [] as Array<{ title: string; detail: string }>,
+    marketBands: [] as Array<{ level: string; range: string; condition: string }>,
+    proofPoints: [] as string[],
+  };
+  if (key === "country-leadership") return { ...shared, label: "Japan事業責任者", benchmarkLabel: "President / Country Manager (Small)", benchmarkRange: "2,500万〜7,000万円", baseRange: "2,500万〜4,500万円", totalRange: "3,000万〜7,000万円", payModel: "固定給＋事業・売上bonus＋equityを想定。P&L範囲で振れ幅が大きい。", skills: [
+    { title: "Japan P&Lと資源配分", detail: `${domain}の売上だけでなく、採用、partner、delivery、marketing投資を統合する。` },
+    { title: "本社と日本市場の翻訳", detail: "global優先順位を日本の商習慣・調達・導入体制に落とし、必要なproduct投資を勝ち取る。" },
+    { title: "複数機能の組織設計", detail: "Sales、SE、CS、Partnerの目標と責任を揃え、個人に依存しない成長modelを作る。" },
+  ], nextRoles: [
+    { title: "より大規模な外資ITのJapan Country Manager", detail: "日本売上、利益、複数機能の採用・定着を数字で証明できる場合。" },
+    { title: "APAC Regional Vice President", detail: "日本で作ったGTMを他国で再現し、複数国責任者を育成できることが条件。" },
+    { title: "事業会社のChief Revenue Officer・事業部長", detail: "SaaS営業に加え、P&L、product、customer operationまで持った場合の隣接候補。" },
+  ], marketBands: [
+    { level: "小〜中規模のCountry Manager", range: "2,500万〜7,000万円", condition: "Japan P&L、採用、複数機能、本社交渉まで持つ。" },
+    { level: "大規模のCountry Manager", range: "5,000万〜1億円", condition: "大規模売上と利益、組織階層、複数productの実績がある。" },
+    { level: "APAC事業責任", range: "5,000万〜1億2,000万円（Genba仮説）", condition: "複数国のP&Lと人材育成を再現。equityの影響が大きい。" },
+  ], proofPoints: ["Japan売上・成長率・利益貢献", "組織のquota達成者比率と採用・ramp", "partner由来売上とdelivery capacity", "日本発のproduct・pricing・GTM改善"] };
+  if (key === "sales-leadership") return { ...shared, label: "Sales Manager・Director", benchmarkLabel: "Sales Manager / Sales Director", benchmarkRange: "2,000万〜5,000万円", baseRange: "1,500万〜2,500万円", totalRange: "2,000万〜4,000万円", payModel: "固定給＋team quota連動の変動給を想定。equityは企業stageとgrade次第。", skills: [
+    { title: "Team revenueの再現性", detail: `${domain}のpipeline、forecast、達成者比率を個人AEではなくteam単位で改善する。` },
+    { title: "採用・育成・ramp", detail: "採用基準、onboarding、deal coachingを標準化し、新任AEの立ち上がりを短縮する。" },
+    { title: "大型案件のquality control", detail: "qualification、executive coverage、commercial riskをレビューし、forecast精度とwin rateを高める。" },
+  ], nextRoles: [
+    { title: "Vice President of Sales, Japan", detail: "複数team・segmentの売上とleader育成を持てる場合の直線的な候補。" },
+    { title: "Japan Country Manager", detail: "Sales以外にpartner、marketing、delivery、予算まで責任を広げた場合。" },
+    { title: "APAC Sales Director・RVP", detail: "日本の勝ち方を英語で他国teamへ展開し、複数国で再現できることが条件。" },
+  ], marketBands: [
+    { level: "Sales Manager", range: "2,000万〜3,000万円", condition: "単一teamのquota、採用、coaching、forecastを持つ。" },
+    { level: "Sales Director", range: "2,500万〜5,000万円", condition: "複数teamまたは複数segmentの売上とleader育成を持つ。" },
+    { level: "Country Manager候補", range: "2,500万〜7,000万円", condition: "P&L、partner、delivery、採用全体まで実績を広げる。" },
+  ], proofPoints: ["team quota達成率と達成者比率", "forecast accuracyとpipeline coverage", "採用数・ramp期間・離職率", "案件単価・win rate・sales cycleの改善"] };
+  if (key === "partner-leadership" || key === "partner") {
+    const leader = key === "partner-leadership";
+    return { ...shared, label: leader ? "Partner・Alliance Leadership" : "Partner・Channel Sales", benchmarkLabel: "Channel Sales / Alliance Manager", benchmarkRange: "1,000万〜2,500万円", baseRange: leader ? "1,300万〜2,000万円" : "900万〜1,500万円", totalRange: leader ? "1,800万〜3,000万円" : "1,200万〜2,200万円", payModel: "固定給＋partner-sourced・partner-influenced目標に連動するbonusを想定。credit ruleで大きく変わる。", skills: [
+      { title: "Ecosystem GTM", detail: `${domain}をpartnerのservice・solutionへ組み込み、共同account planとpipelineを作る。` },
+      { title: "Partner economics", detail: "紹介件数でなく、sourced・influenced revenue、enablement、delivery capacity、marginを管理する。" },
+      { title: "Directとのoperating model", detail: "案件登録、account ownership、credit、導入責任を明確にし、channel conflictを抑える。" },
+    ], nextRoles: leader ? [
+      { title: "Japan Head of Alliances・Channels", detail: "複数種別のpartner portfolioとteam targetを持つ。" },
+      { title: "APAC Partner Sales Director", detail: "複数国でpartner programとsourced revenueを再現する。" },
+      { title: "Country Manager", detail: "partnerだけでなくdirect sales、delivery、P&Lまで責任を広げる。" },
+    ] : [
+      { title: "Senior Partner・Alliance Manager", detail: "単なるenablementでなく、sourced revenueと複数重要partnerを持つ。" },
+      { title: "Partner Sales Lead・Manager", detail: "担当者育成、portfolio設計、forecastまで責任を広げる。" },
+      { title: "Direct Enterprise AE", detail: "partner案件でもdiscovery、business case、commercial closeを自ら持った場合の転換候補。" },
+    ], marketBands: [
+      { level: "Channel Sales", range: "1,000万〜2,000万円", condition: "partner portfolioとsourced・influenced revenueを持つ。" },
+      { level: "Alliance Manager", range: "1,200万〜2,500万円", condition: "GSI・cloud・strategic allianceでjoint solutionと大型pipelineを作る。" },
+      { level: "Partner Sales Director", range: "2,000万〜3,500万円（Genba仮説）", condition: "team、複数partner種別、Japan targetを持つ。" },
+    ], proofPoints: ["partner-sourced・influenced pipelineと受注", "active・certified partner数と稼働率", "partner経由のwin rate・sales cycle", "delivery capacity・更新・拡張実績"] };
+  }
+  if (key === "presales-leadership" || key === "presales") {
+    const leader = key === "presales-leadership";
+    return { ...shared, label: leader ? "Solutions Consulting Leadership" : "Solutions Engineer・Architect", benchmarkLabel: "Pre-Sales / Solutions Architect", benchmarkRange: "800万〜2,500万円", baseRange: leader ? "1,300万〜2,000万円" : "900万〜1,600万円", totalRange: leader ? "1,600万〜2,600万円" : "1,100万〜2,100万円", payModel: "固定給中心＋teamまたは担当案件のtechnical win・受注連動bonusを想定。", skills: [
+      { title: "Technical value engineering", detail: `${domain}の評価条件を顧客環境で検証し、技術指標を購買判断へ翻訳する。` },
+      { title: "PoCから本番への設計", detail: "success criteria、security、integration、operationを先に定め、demoで終わせない。" },
+      { title: leader ? "SE組織のcapacityとquality" : "Productへの根拠付きfeedback", detail: leader ? "案件優先順位、専門性、coaching、technical winをteamとして最適化する。" : "個社要件と再利用可能な製品改善を分け、Product・Engineeringへ返す。" },
+    ], nextRoles: leader ? [
+      { title: "Director of Solutions Consulting", detail: "複数segmentのSE、technical win、採用・rampを持つ。" },
+      { title: "Japan CTO・Field CTO", detail: "個別案件を越え、経営層のcategory educationとproduct strategyに広げる。" },
+      { title: "APAC Solutions Engineering Leader", detail: "複数国のSE operating modelを英語で再現する。" },
+    ] : [
+      { title: "Senior・Principal Solutions Engineer", detail: "より大型・高難度の案件とtechnical standardを持つ。" },
+      { title: "Solutions Consulting Manager", detail: "SEの採用、coaching、capacity、technical winをteam単位で持つ。" },
+      { title: "Field CTO・Product Strategy", detail: "顧客課題を市場・product roadmapへ一般化できる場合。" },
+    ], marketBands: [
+      { level: "Pre-Sales・Solutions Engineer", range: "800万〜2,500万円", condition: "技術専門性、顧客対応、PoC、受注支援の複合度で変動。" },
+      { level: "Solutions Architect・Principal", range: "1,200万〜2,500万円（Genba仮説）", condition: "architecture、security、大型案件、再利用可能な設計を持つ。" },
+      { level: "Solutions Consulting Manager・Director", range: "1,600万〜3,000万円（Genba仮説）", condition: "team target、採用、capacity、technical winを持つ。" },
+    ], proofPoints: ["PoC-to-close・PoC-to-production転換率", "technical winと受注金額", "評価期間・実装工数の短縮", "再利用されたdemo・architecture・playbook"] };
+  }
+  if (key === "customer-leadership" || key === "customer" || key === "account-manager") {
+    const leader = key === "customer-leadership";
+    const account = key === "account-manager";
+    return { ...shared, label: leader ? "Customer Success Leadership" : account ? "Account Management・Renewal" : "Customer Success・TAM", benchmarkLabel: account ? "Account Manager / Renewal Sales" : "Customer Success Manager", benchmarkRange: account ? "700万〜2,200万円" : "900万〜2,500万円", baseRange: leader ? "1,300万〜2,000万円" : "850万〜1,500万円", totalRange: leader ? "1,600万〜2,700万円" : "950万〜1,900万円", payModel: "固定給中心＋retention・expansion・customer outcome連動bonusを想定。renewal quotaの有無を要確認。", skills: [
+      { title: "Value realization", detail: `${domain}の利用を顧客KPIへ結び、導入後の成果、risk、次の改善をQBRで合意する。` },
+      { title: "Renewal・expansionの先行管理", detail: "health、stakeholder、adoption、outcomeから更新riskと拡張機会を予測する。" },
+      { title: leader ? "Portfolio・CS組織設計" : "顧客組織のchange management", detail: leader ? "segment別coverage、capacity、playbook、escalationを設計し、NRRをteamで再現する。" : "championだけに依存せず、executive sponsor、現場、IT、partnerと定着責任を分担する。" },
+    ], nextRoles: leader ? [
+      { title: "Director・VP of Customer Success", detail: "NRR、portfolio health、team productivity、採用を持つ。" },
+      { title: "Chief Customer Officer・Japan Customer Leader", detail: "CSに加えSupport、Services、Renewal全体のP&L・KPIへ広げる。" },
+      { title: "APAC Customer Success Leader", detail: "複数国のcoverage modelとleader育成を再現する。" },
+    ] : account ? [
+      { title: "Strategic Account Manager", detail: "より大きいrenewal・expansion portfolioとexecutive relationshipを持つ。" },
+      { title: "Renewal・Account Management Lead", detail: "team forecast、retention、expansion、更新processを持つ。" },
+      { title: "Customer Success Manager", detail: "commercial更新だけでなくadoptionとbusiness outcomeを持った場合の隣接候補。" },
+    ] : [
+      { title: "Senior・Strategic Customer Success Manager", detail: "大型portfolio、executive QBR、複数productのadoptionを持つ。" },
+      { title: "Customer Success・TAM Manager", detail: "teamのcapacity、retention、expansion、採用・育成を持つ。" },
+      { title: "Value Consulting・Customer Transformation", detail: "利用定着の実績を経営KPIと変革programへ広げた場合。" },
+    ], marketBands: [
+      { level: account ? "Account Manager・Renewal" : "Customer Success Manager・TAM", range: account ? "700万〜2,200万円" : "900万〜2,500万円", condition: "portfolio規模、renewal quota、技術難度、expansion責任で変動。" },
+      { level: "Strategic・Principal", range: "1,200万〜2,500万円（Genba仮説）", condition: "大型顧客、executive sponsor、複数product、NRR貢献を持つ。" },
+      { level: "CS Manager・Director", range: "1,600万〜3,000万円（Genba仮説）", condition: "teamのGRR・NRR、capacity、採用・rampを持つ。" },
+    ], proofPoints: ["GRR・NRR・renewal率と担当ARR", "adoption・active use・time-to-value", "expansion pipeline・upsell・churn回避", "顧客の業務KPIとescalation削減"] };
+  }
+  if (key === "development-leadership") return { ...shared, label: "Business Development Leadership", benchmarkLabel: "Sales Manager / Business Development", benchmarkRange: "1,500万〜3,000万円（職務接続仮説）", baseRange: "1,200万〜1,800万円", totalRange: "1,600万〜2,600万円", payModel: "固定給＋teamのqualified pipeline・accepted opportunity・受注貢献に連動する変動給を想定。", skills: [
+    { title: "Pipeline engineの設計", detail: `${domain}のICP、segment、channel、message、capacityを分解し、必要pipelineから逆算する。` },
+    { title: "BDRの採用・育成・ramp", detail: "call数ではなく、仮説品質、AE acceptance、pipeline貢献まで再現する。" },
+    { title: "Sales・Marketingとのfunnel統合", detail: "lead定義、handoff、SLA、stage conversionを揃え、部門間の数字のずれをなくす。" },
+  ], nextRoles: [
+    { title: "Director of Business Development・Sales Development", detail: "複数segment、manager、採用・ramp、pipeline targetを持つ。" },
+    { title: "Head of Growth・Pipeline Generation", detail: "BDRに加えdemand、digital、partner経由のfunnel全体を持つ。" },
+    { title: "Commercial Sales Manager", detail: "pipeline創出だけでなく、AEのclose、forecast、revenue targetまで責任を広げる。" },
+  ], marketBands: [
+    { level: "BDR・SDR Manager", range: "1,300万〜2,200万円（OTE仮説）", condition: "team pipeline、conversion、採用・rampを持つ。" },
+    { level: "Business Development Director", range: "1,800万〜3,000万円（OTE仮説）", condition: "複数team・segmentのpipeline targetとmanager育成を持つ。" },
+    { level: "Head of Growth・Commercial Sales Manager", range: "2,000万〜3,500万円（OTE仮説）", condition: "pipelineからrevenue・予算・複数channelへ責任を広げる。" },
+  ], proofPoints: ["teamのsourced pipeline金額と受注貢献", "AE acceptance・meeting-to-opportunity転換率", "採用数・ramp期間・達成者比率", "segment・message・channel別の再現性"] };
+  if (key === "development") return { ...shared, label: "SDR・BDR・MDR", benchmarkLabel: "Business Development（Enterprise Technology市場の需要トレンド）", benchmarkRange: "700万〜1,200万円（Genba仮説）", baseRange: "550万〜850万円", totalRange: "700万〜1,200万円", payModel: "固定給＋meeting・qualified pipeline連動の変動給。外資SaaSは65:35〜75:25程度を仮置するが個社確認が必要。", skills: [
+    { title: "仮説型prospecting", detail: `${domain}のbuyer、外部変化、既存systemを調べ、account固有の接触理由を作る。` },
+    { title: "Qualificationとhandoff", detail: "meeting数だけでなく、課題、economic buyer、時期、次の検証をAEへ渡す。" },
     { title: "Pipeline analytics", detail: "channel・segment・message別の転換率を測り、再現性あるpipeline作成へ改善する。" },
-  ];
-  return [
-    { title: "Executive value selling", detail: `${domain}の機能を、売上、利益、生産性、risk、time-to-valueへ翻訳する。` },
-    { title: "Multi-stakeholder deal", detail: "business owner、IT、security、finance、legal、procurementと社内専門家を同じ意思決定へまとめる。" },
-    { title: "Territory creation", detail: "既存需要を待たず、ICP、account plan、partner、customer proofからnewとexpansionのpipelineを作る。" },
-  ];
+  ], nextRoles: [
+    { title: "Senior BDR・Enterprise BDR", detail: "大手accountの仮説、executive outreach、pipeline金額で成果を証明する。" },
+    { title: "Commercial・SMB Account Executive", detail: "discovery、demo、negotiation、closeを持ち、自分でrevenueを作る役割へ進む。" },
+    { title: "Sales Development Manager", detail: "message、capacity、conversion、採用・rampをteam単位で再現する。" },
+  ], marketBands: [
+    { level: "SDR・BDR・MDR", range: "700万〜1,200万円（OTE仮説）", condition: "qualified meeting、pipeline金額、conversionとpay mix次第。" },
+    { level: "Senior・Enterprise BDR", range: "900万〜1,400万円（OTE仮説）", condition: "大手・outbound・executive向けのpipeline創出を証明。" },
+    { level: "Commercial AEへ転換", range: "1,200万〜2,000万円（OTE仮説）", condition: "pipeline創出に加え、full-cycle closeとquota達成が必要。" },
+  ], proofPoints: ["qualified meeting数とAE acceptance率", "sourced pipeline金額・受注貢献", "meeting-to-opportunity・opportunity-to-close転換率", "outbound・account-basedで再現したmessage"] };
+  if (["strategic-seller", "enterprise-seller", "commercial-seller", "smb-seller"].includes(key)) {
+    const settings = key === "strategic-seller"
+      ? { label: "Strategic・Global Account Sales", benchmark: "Strategic / Global Account Manager", benchmarkRange: "1,000万〜2,500万円", base: "1,300万〜1,900万円", total: "2,200万〜3,500万円", current: "2,000万〜3,500万円（OTE仮説）", next: ["Global・Strategic Account Director", "Enterprise Sales Manager", "Industry Sales Lead"] }
+      : key === "enterprise-seller"
+        ? { label: "Enterprise Account Executive", benchmark: "Account Executive", benchmarkRange: "800万〜2,200万円", base: "1,100万〜1,600万円", total: "1,800万〜3,000万円", current: "1,800万〜3,000万円（OTE仮説）", next: ["Strategic・Global Account Executive", "Enterprise Sales Manager", "Industry・Account Director"] }
+        : key === "commercial-seller"
+          ? { label: "Commercial・Mid-Market AE", benchmark: "Account Executive", benchmarkRange: "800万〜2,200万円", base: "850万〜1,300万円", total: "1,300万〜2,200万円", current: "1,300万〜2,200万円（OTE仮説）", next: ["Senior Commercial・Mid-Market AE", "Enterprise Account Executive", "Commercial Sales Manager"] }
+          : { label: "SMB・Growth AE", benchmark: "Account Executive", benchmarkRange: "800万〜2,200万円", base: "650万〜1,000万円", total: "1,000万〜1,700万円", current: "1,000万〜1,700万円（OTE仮説）", next: ["Senior SMB・Growth AE", "Commercial・Mid-Market AE", "SMB Sales Manager"] };
+    return { ...shared, label: settings.label, benchmarkLabel: settings.benchmark, benchmarkRange: settings.benchmarkRange, baseRange: settings.base, totalRange: settings.total, payModel: "固定給＋個人quota連動の変動給。外資SaaSは50:50〜60:40を仮置するが、segment・ramp・acceleratorは個社確認が必要。", skills: [
+      { title: "Executive value selling", detail: `${domain}の機能を、売上、利益、生産性、risk、time-to-valueへ翻訳する。` },
+      { title: key === "smb-seller" ? "High-velocity full-cycle sales" : "Multi-stakeholder deal", detail: key === "smb-seller" ? "短いcycleでdiscovery、demo、交渉、closeを回し、conversionを改善する。" : "business owner、IT、security、finance、legal、procurementを同じ意思決定へまとめる。" },
+      { title: key === "strategic-seller" ? "Multi-year account strategy" : "Territory・pipeline creation", detail: key === "strategic-seller" ? "単発受注でなく、複数部門・複数productの長期account planを作る。" : "ICP、account plan、partner、customer proofからnewとexpansionのpipelineを作る。" },
+    ], nextRoles: settings.next.map((nextTitle, index) => ({ title: nextTitle, detail: /manager/i.test(nextTitle) ? "個人成果に加え、mentoring、deal review、forecast、採用・rampの実績が必要。" : index === 0 ? `現在の${settings.label}でquota達成と担当規模の拡大を再現した場合の直線的な候補。` : `特定業界または${domain}の専門性を、複数accountの勝ち方へ一般化できる場合。` })), marketBands: [
+      { level: settings.label, range: settings.current, condition: "quota、平均案件単価、sales cycle、new・expansion比率で上下。" },
+      { level: key === "smb-seller" || key === "commercial-seller" ? settings.next[1] : settings.next[0], range: key === "smb-seller" ? "1,300万〜2,200万円（OTE仮説）" : key === "commercial-seller" ? "1,800万〜3,000万円（OTE仮説）" : "2,000万〜3,500万円（OTE仮説）", condition: "より大きい担当規模、長いcycle、複数の意思決定者で達成を再現する。" },
+      { level: key === "smb-seller" || key === "commercial-seller" ? settings.next[2] : settings.next[1], range: "2,000万〜3,500万円（マネジャーOTE仮説）", condition: "team quota、採用、coaching、forecast accuracyを持つ。" },
+    ], proofPoints: ["quota達成率と達成年数", "new・expansion別の受注額と平均案件単価", "win rate・sales cycle・forecast accuracy", "executive sponsor・複数product・partnerを含む案件実績"] };
+  }
+  if (key === "marketing-leadership") return { ...shared, label: "Japan Marketing Leadership", benchmarkLabel: "Marketing, Enterprise Technology", benchmarkRange: "800万〜2,000万円", baseRange: "1,300万〜2,000万円", totalRange: "1,500万〜2,600万円", payModel: "固定給中心＋company・pipeline KPI bonus。予算・team・Japan planの範囲で変動。", skills: [
+    { title: "Japan category・brand strategy", detail: `${domain}のglobal messageを日本のbuyer、競合、導入実績に合わせ、市場の認知と購買理由を作る。` },
+    { title: "Marketing予算とrevenue貢献", detail: "brand、field、digital、partnerの予算をpipeline・受注・CACで優先順位付けする。" },
+    { title: "Team・agency・globalの運営", detail: "社内team、agency、Sales、APAC・HQのresponsibilityとcadenceを揃える。" },
+  ], nextRoles: [
+    { title: "Head・Director of Marketing, Japan", detail: "brand、demand、digital、partner、予算・teamの全体責任を持つ。" },
+    { title: "APAC Marketing Director", detail: "日本の学習を複数国へ展開し、国別leaderと予算を持つ。" },
+    { title: "Chief Marketing Officer・Revenue Marketing Leader", detail: "brandとpipelineだけでなく、company growth、product marketing、customer lifecycleまで責任を広げる。" },
+  ], marketBands: [
+    { level: "Senior Marketing Manager・Lead", range: "1,200万〜2,200万円（Genba仮説）", condition: "複数channel、予算、pipeline貢献を持つ。" },
+    { level: "Head・Director of Marketing, Japan", range: "1,600万〜3,000万円（Genba仮説）", condition: "team、Japan plan、予算、brandとdemand全体を持つ。" },
+    { level: "APAC Marketing Director・CMO候補", range: "2,500万〜4,500万円（Genba仮説）", condition: "複数国、leader育成、company growthを持つ。" },
+  ], proofPoints: ["marketing-sourced・influenced pipelineと受注", "予算ROI・CAC・stage conversion", "Japan発messageの認知・win rate・sales cycleへの影響", "team採用・agency運用・global資源の獲得"] };
+  if (key === "marketing") return { ...shared, label: "B2B Field・Demand Marketing", benchmarkLabel: "Marketing, Enterprise Technology", benchmarkRange: "800万〜2,000万円", baseRange: "800万〜1,500万円", totalRange: "900万〜1,800万円", payModel: "固定給中心＋company・pipeline KPI連動bonusを想定。", skills: [
+    { title: "Category demand creation", detail: `${domain}の外部変化と顧客課題をmessage・content・eventへ変え、qualified pipelineまで追跡する。` },
+    { title: "Salesとのrevenue連携", detail: "lead数で終わらず、ICP、account、stage、conversion、sourced・influenced pipelineを共通管理する。" },
+    { title: "日本市場のpositioning", detail: "campaign・event・content別の反応とwin/lossを分析し、global messageを日本の購買理由へ変える。" },
+  ], nextRoles: [
+    { title: "Senior Field・Demand Generation Manager", detail: "複数segmentのyearly planとsourced pipelineを持つ。" },
+    { title: "Head of Marketing, Japan", detail: "brand、field、digital、partner marketingと予算・teamを持つ。" },
+    { title: "Revenue Marketing・GTM Strategy", detail: "campaign経験をfunnel、capacity、pipeline modelへ広げる。" },
+  ], marketBands: [
+    { level: "Enterprise Technology Marketing", range: "800万〜2,000万円", condition: "担当領域、予算、sourced pipeline、英語でのglobal連携で変動。" },
+    { level: "Senior・Lead", range: "1,200万〜2,200万円（Genba仮説）", condition: "複数segmentのplanと予算、pipeline貢献を持つ。" },
+    { level: "Head of Marketing, Japan", range: "1,600万〜3,000万円（Genba仮説）", condition: "team、予算、brand、demand、partner marketingを統括。" },
+  ], proofPoints: ["sourced・influenced pipelineと受注", "MQL-to-opportunity・opportunity-to-close転換", "campaign・event別ROI", "Japan messageがwin rate・sales cycleへ与えた変化"] };
+  if (key === "operations-leadership") return { ...shared, label: "GTM・Revenue Operations Leadership", benchmarkLabel: "Consultant / Sales Managerの隣接市場", benchmarkRange: "1,200万〜3,000万円（職務接続仮説）", baseRange: "1,300万〜2,000万円", totalRange: "1,500万〜2,500万円", payModel: "固定給中心＋company・planning KPI bonus。個人commissionは通常持たない。", skills: [
+    { title: "GTM資源配分とannual planning", detail: `${domain}のterritory、capacity、quota、pipeline、予算を統合し、Japan planを作る。` },
+    { title: "Executive revenue cadence", detail: "forecast、attainment、hiring、riskを同じ定義で経営に示し、意思決定を早める。" },
+    { title: "Ops・Enablement teamの設計", detail: "system、analytics、process、enablementの優先順位とcapacityを持つ。" },
+  ], nextRoles: [
+    { title: "Head of Revenue Operations, Japan", detail: "annual planning、territory、quota、compensation、systems、teamを持つ。" },
+    { title: "APAC GTM Operations Director", detail: "複数国のplanningとdata definition、国別Ops leaderを持つ。" },
+    { title: "GTM Strategy・Chief of Staff", detail: "revenue operationから事業計画、投資配分、経営会議の意思決定へ広げる。" },
+  ], marketBands: [
+    { level: "Senior GTM・Revenue Operations Manager", range: "1,200万〜2,200万円（Genba仮説）", condition: "planning、territory、quota、forecastとproject leadを持つ。" },
+    { level: "Head of Revenue Operations, Japan", range: "1,800万〜3,000万円（Genba仮説）", condition: "team、annual planning、executive cadence、compensationを持つ。" },
+    { level: "APAC GTM Operations Director", range: "2,300万〜4,000万円（Genba仮説）", condition: "複数国の資源配分とleader育成を持つ。" },
+  ], proofPoints: ["forecast accuracy・pipeline coverage・attainment", "quota・headcount・territory配分の改善", "ramp期間・達成者比率・admin工数", "経営会議から実行までの意思決定速度"] };
+  if (key === "operations") return { ...shared, label: "GTM・Revenue Operations・Enablement", benchmarkLabel: "Consultant / Enterprise Technologyの隣接市場", benchmarkRange: "800万〜2,000万円", baseRange: "850万〜1,500万円", totalRange: "950万〜1,800万円", payModel: "固定給中心＋company・team KPI bonusを想定。個人commissionは通常小さい。", skills: [
+    { title: "GTM operating model", detail: `${domain}のterritory、capacity、pipeline、forecast、processをdataで設計する。` },
+    { title: "Revenue analytics", detail: "activityでなくconversion、cycle、coverage、attainment、unit economicsを一貫した定義で可視化する。" },
+    { title: "Cross-functional execution", detail: "Sales、Marketing、Finance、Product、Partnerの責任とcadenceを揃え、戦略を運用へ落とす。" },
+  ], nextRoles: [
+    { title: "Senior GTM・Revenue Operations Manager", detail: "planning、forecast、territory、compensation、systemsの複数領域を持つ。" },
+    { title: "Head of Revenue Operations, Japan・APAC", detail: "team、annual planning、executive cadence、複数国を持つ。" },
+    { title: "GTM Strategy・Chief of Staff", detail: "運用改善だけでなく、資源配分と事業計画の意思決定へ広げる。" },
+  ], marketBands: [
+    { level: "GTM・Revenue Operations", range: "900万〜1,800万円（Genba仮説）", condition: "scope、データ・CRM専門性、planning責任で変動。" },
+    { level: "Senior・Lead", range: "1,200万〜2,200万円（Genba仮説）", condition: "annual planning、territory、quota、compensationまで持つ。" },
+    { level: "Head of RevOps・GTM Strategy", range: "1,800万〜3,000万円（Genba仮説）", condition: "team、APAC scope、経営会議、事業計画を持つ。" },
+  ], proofPoints: ["forecast accuracy・pipeline coverage", "sales cycle・stage conversion・attainmentの改善", "planning・reporting・admin工数の削減", "ramp期間・達成者比率・data quality"] };
+  if (key === "delivery" || key === "delivery-leadership") {
+    const leader = key === "delivery-leadership";
+    return { ...shared, label: leader ? "Professional Services・Delivery Leadership" : "Professional Services・Implementation", benchmarkLabel: "Consultant / IT Project Manager", benchmarkRange: "800万〜2,400万円", baseRange: leader ? "1,300万〜2,000万円" : "850万〜1,500万円", totalRange: leader ? "1,500万〜2,600万円" : "900万〜1,700万円", payModel: "固定給中心＋company・project KPI bonusを想定。稼働率・travel・専門資格も影響。", skills: [
+    { title: "Outcome-led delivery", detail: `${domain}のscope、baseline、success criteria、timeline、riskを定め、導入を業務成果まで進める。` },
+    { title: "Program・partner orchestration", detail: "顧客、社内専門家、SI partnerの責任・依存関係・escalationを管理する。" },
+    { title: "再利用可能な実装標準", detail: "個社対応をtemplate、governance、enablementへ変え、品質とdelivery capacityをscaleさせる。" },
+    ], nextRoles: leader ? [
+      { title: "Director・VP of Professional Services", detail: "複数team、utilization、margin、quality、採用を持つ。" },
+      { title: "Japan Customer Delivery Leader", detail: "Servicesに加えSupport、CS、Partner deliveryの共通KPIを持つ。" },
+      { title: "APAC Services Leader", detail: "複数国のcapacity、partner model、収益性を再現する。" },
+    ] : [
+      { title: "Principal Consultant・Program Lead", detail: "より大きいscope、複数workstream、executive steeringを持つ。" },
+      { title: "Professional Services Manager・Director", detail: "team、utilization、quality、partner capacity、収益性を持つ。" },
+      { title: "Customer Transformation・Solution Architecture", detail: "deliveryの実績を上流のbusiness case・architecture設計へ広げる。" },
+    ], marketBands: leader ? [
+      { level: "Services Manager・Director", range: "1,600万〜3,000万円（Genba仮説）", condition: "team、utilization、margin、partner deliveryを持つ。" },
+      { level: "Japan Customer Delivery Leader", range: "2,000万〜3,500万円（Genba仮説）", condition: "Services、Support、CSのcross-functional KPIを持つ。" },
+      { level: "APAC Services Leader", range: "2,500万〜4,500万円（Genba仮説）", condition: "複数国、収益性、leader育成を持つ。" },
+    ] : [
+      { level: "Consultant・Implementation", range: "800万〜2,000万円", condition: "専門性、project規模、customer-facing、travelで変動。" },
+      { level: "IT Project Manager・Principal", range: "1,200万〜2,400万円", condition: "複数workstream、大型顧客、risk・予算・品質を持つ。" },
+      { level: "Services Manager・Director", range: "1,600万〜3,000万円（Genba仮説）", condition: "team、utilization、margin、partner deliveryを持つ。" },
+    ], proofPoints: ["time-to-live・納期・予算遵守", "PoC-to-production・adoption・利用定着", "不具合・escalation・手戻りの削減", "template再利用・partner enablement・utilization"] };
+  }
+  if (key === "technical-specialist") {
+    const value = `${job.title} ${job.segment}`.toLowerCase();
+    const scientist = /(data scientist|applied ai|applications scientist)/.test(value);
+    const valueAdvisor = /(business value|transformation architect|outcomes architect)/.test(value);
+    const productGtm = /(product gtm)/.test(value);
+    const fieldEngineer = /(field engineer)/.test(value);
+    const roleLabel = scientist ? "Applied AI・Customer Data Science" : valueAdvisor ? "Value Consulting・Transformation Architecture" : productGtm ? "Product GTM Specialist" : fieldEngineer ? "Customer・Field Engineering" : "Technical Specialist・Lead";
+    const next = scientist
+      ? ["Principal Applied Scientist・Data Scientist", "AI Solutions・Data Science Lead", "AI Product・Decisioning Strategy"]
+      : valueAdvisor
+        ? ["Principal Value Consultant・Transformation Architect", "Value Consulting Manager", "Field CTO・Business Transformation"]
+        : productGtm
+          ? ["Principal Product GTM Specialist", "Product Marketing・GTM Lead", "Product Strategy・Business Development"]
+          : fieldEngineer
+            ? ["Principal Field・Customer Engineer", "Customer Engineering Manager", "Product・Solutions Engineering"]
+            : ["Principal Technical Specialist", "Specialist Practice Lead", "Product・Field CTO Strategy"];
+    return { ...shared, label: roleLabel, benchmarkLabel: "Consultant / Solutions Architect / AI専門職", benchmarkRange: "800万〜2,500万円", baseRange: "1,000万〜1,700万円", totalRange: "1,100万〜2,100万円", payModel: "固定給中心＋案件・product・company KPI bonusを想定。sales quotaの有無でpay mixが大きく変わる。", skills: [
+      { title: scientist ? "Model・dataを顧客KPIへつなぐ力" : valueAdvisor ? "技術投資をbusiness caseへ変える力" : "専門技術を意思決定へ翻訳する力", detail: `${domain}の技術指標を、顧客の売上、cost、risk、speed、adoptionの指標へ変える。` },
+      { title: scientist ? "Production AIの検証と運用" : "Complex discovery・solution design", detail: "現行環境、data、workflow、security、success criteriaを分解し、検証から本番までの条件を設計する。" },
+      { title: "FieldからProductへの学習loop", detail: "個社要件、再利用可能なpattern、roadmap gapを分け、製品とGTMへ返す。" },
+    ], nextRoles: next.map((nextTitle, index) => ({ title: nextTitle, detail: index === 0 ? `${roleLabel}の専門性を高難度案件と再利用可能な標準で証明する。` : index === 1 ? "案件成果に加え、専門家のcapacity、coaching、quality、採用を持つ。" : "customer insightをproduct roadmap・市場戦略・executive advisoryへ一般化できる場合。" })), marketBands: [
+      { level: roleLabel, range: "1,100万〜2,100万円（総現金仮説）", condition: "専門性、customer-facing scope、sales quotaの有無、production責任で変動。" },
+      { level: next[0], range: "1,400万〜2,500万円（Genba仮説）", condition: "高難度案件、標準化、複数顧客への再現を持つ。" },
+      { level: next[1], range: "1,800万〜3,000万円（Genba仮説）", condition: "team、専門practice、案件優先順位、product影響を持つ。" },
+    ], proofPoints: ["model・architecture・workflowが改善した顧客KPI", "PoC-to-production・enablement・adoption", "技術評価期間・実装工数・errorの改善", "複数案件で再利用されたasset・product feedback"] };
+  }
+  if (key === "support-leadership") return { ...shared, label: "Technical Support Leadership", benchmarkLabel: "Application Support Team Lead / IT Manager", benchmarkRange: "800万〜1,600万円", baseRange: "1,000万〜1,600万円", totalRange: "1,100万〜1,900万円", payModel: "固定給中心＋SLA・quality・company KPI bonus。shift・待機・エスカレーション責任は個別確認。", skills: [
+    { title: "Support capacity・SLA設計", detail: `${domain}のticket量、severity、shift、skill mixから必要capacityを設計する。` },
+    { title: "Incident・escalation leadership", detail: "重大障害の顧客影響、復旧、root cause、executive communicationを統括する。" },
+    { title: "採用・育成・knowledge経営", detail: "専門性の採用とramp、knowledge・automationで、品質を落とさずscaleする。" },
+  ], nextRoles: [
+    { title: "Director of Technical Support", detail: "複数team、SLA、quality、採用、予算を持つ。" },
+    { title: "Japan Customer Reliability・Support Leader", detail: "Supportに加えTAM、incident response、customer communicationの共通KPIを持つ。" },
+    { title: "APAC Support Engineering Leader", detail: "複数国のfollow-the-sun運用とleader育成を持つ。" },
+  ], marketBands: [
+    { level: "Application Support Team Lead", range: "800万〜1,400万円", condition: "単一teamのSLA、quality、shift、育成を持つ。" },
+    { level: "Support Engineering Manager・Director", range: "1,300万〜2,500万円（Genba仮説）", condition: "複数team、重大障害、採用、capacityを持つ。" },
+    { level: "APAC Support Leader", range: "2,000万〜3,500万円（Genba仮説）", condition: "複数国、follow-the-sun、leader育成、予算を持つ。" },
+  ], proofPoints: ["SLA・MTTR・初回解決率", "severity別backlog・escalation・再発の削減", "採用数・ramp期間・attrition", "knowledge・automationで削減した工数"] };
+  const isSupport = key === "support";
+  return { ...shared, label: isSupport ? "Technical Support・Customer Engineering" : "Technical Advisor・Specialist", benchmarkLabel: isSupport ? "Application Support" : "Consultant / Solutions Architect", benchmarkRange: isSupport ? "600万〜1,600万円" : "800万〜2,200万円", baseRange: isSupport ? "700万〜1,200万円" : "900万〜1,600万円", totalRange: isSupport ? "750万〜1,350万円" : "1,000万〜1,900万円", payModel: "固定給中心＋company・quality KPI bonusを想定。shift・待機・専門資格手当は個別確認。", skills: [
+    { title: isSupport ? "Production troubleshooting" : "Executive・market advisory", detail: isSupport ? `${domain}の顧客環境で事象を再現し、root cause、復旧、再発防止をつなぐ。` : `${domain}の技術・riskを、経営層と市場が意思決定できる言葉へ変える。` },
+    { title: "Cross-functional escalation", detail: "customer、Sales、Product、Engineering、Securityの責任を切り分け、事実と優先順位を揃える。" },
+    { title: "Knowledgeの資産化", detail: "個別事象をplaybook、FAQ、product feedback、trainingへ変える。" },
+  ], nextRoles: isSupport ? [
+    { title: "Senior・Lead Technical Support Engineer", detail: "高難度incident、root cause、後進育成を持つ。" },
+    { title: "Support Engineering Manager", detail: "teamのSLA、quality、capacity、escalation、採用を持つ。" },
+    { title: "TAM・Customer Reliability", detail: "受動的な問題解決から、予防、architecture、adoption、executive communicationへ広げる。" },
+  ] : [
+    { title: "Principal Advisor・Field CTO", detail: "個別案件を越え、重要顧客と市場のcategory educationを持つ。" },
+    { title: "Product・Security Strategy", detail: "市場の課題をroadmap、policy、solution設計へ一般化する。" },
+    { title: "Specialist Team Manager", detail: "専門家のcapacity、品質、市場影響、採用・育成を持つ。" },
+  ], marketBands: [
+    { level: isSupport ? "Application・Technical Support" : "Technical Advisor・Specialist", range: isSupport ? "600万〜1,600万円" : "900万〜2,000万円（Genba仮説）", condition: "専門性、顧客impact、待機・shift、英語での本社連携で変動。" },
+    { level: "Senior・Principal", range: isSupport ? "900万〜1,800万円（Genba仮説）" : "1,300万〜2,500万円（Genba仮説）", condition: "高難度案件、標準化、executiveまたはproduct impactを持つ。" },
+    { level: "Manager・Field CTO", range: "1,600万〜3,000万円（Genba仮説）", condition: "team、品質、市場・productへの影響を持つ。" },
+  ], proofPoints: isSupport ? ["SLA・MTTR・初回解決率", "escalation・再発・incident影響の削減", "knowledge・automationで削減した工数", "高難度環境のroot-cause実績"] : ["executive briefing・重要案件の貢献", "市場・customer insightからのproduct改善", "content・event・mediaによるcategory impact", "再利用されたadvisory・assessment標準"] };
 }
 
 function normalizeJapanese(value: string) {
@@ -752,17 +1025,37 @@ function normalizeJapanese(value: string) {
     .replace(/^Japan$/, "日本");
 }
 
+export function getJobRoleMarketArchetype(job: JobLike) {
+  return roleArchetype(job);
+}
+
 export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
-  const family = roleFamily(job);
-  const skills = roleSkills(family, company.domain);
+  const role = profileForRole(job, company.domain);
   const sourceList = [
     { label: `${company.name} 公式Career・会社情報`, url: company.officialUrl, detail: "価値観、組織、働き方、職務を確認。会社発信であり、配属先の体験を保証しない。" },
     { label: job.source.label, url: job.source.url, detail: "対象職種の責任、要件、勤務地、公開されている条件を確認。" },
   ];
   if (company.communityUrl && company.communityLabel) sourceList.push({ label: company.communityLabel, url: company.communityUrl, detail: "匿名・自己申告または製品利用者の公開集計。日本の対象職種へ一般化しない。" });
   const compensation = officialCompensation[job.id];
+  const hypothesisCompensation = {
+    researchedAt: "2026-08-17",
+    confidence: "中" as const,
+    headline: `${role.label}の市場比較は年${role.totalRange}を起点とする`,
+    summary: `当該企業の公開提示額ではない。2026年の東京Enterprise Technology市場における${role.benchmarkLabel}の公開benchmark（${role.benchmarkRange}）を母数に、求人の職種、seniority、担当segment、quota・技術・portfolio責任を掛け合わせた【Genba仮説】。`,
+    breakdown: [
+      { label: "推定固定給", value: role.baseRange, status: "Genba仮説", detail: `2026年の職種別benchmarkと、${job.title}のseniority・責任範囲から算定。` },
+      { label: "推定OTE・総現金報酬", value: role.totalRange, status: "Genba仮説", detail: "目標達成時の変動給またはbonusを含む比較起点。equityは含めない。" },
+      { label: "Pay modelの前提", value: role.payModel, status: "要面接確認", detail: "quota、ramp、credit、accelerator、bonus、equityは企業・gradeごとに異なる。" },
+    ],
+    readerTake: `オファーでは固定給だけでなく、${role.payModel} あわせてquota、担当規模、ramp保証、達成者比率、accelerator、equity、退職時の権利を同じ表で比較する。`,
+    sources: [
+      { label: job.source.label, url: job.source.url, detail: `公式求人から${job.title}の職種、seniority、担当領域、目標責任を算定inputとして確認。` },
+      { label: "Morgan McKinley 2026 Japan Salary Guide — Sales & Marketing", url: compensationBenchmarkUrl, detail: "東京のEnterprise Technology職における職種別Low・Median・Highを市場benchmarkに使用。個社の提示額ではない。" },
+      ...(role.key === "delivery" || role.key === "support" ? [{ label: "Morgan McKinley 2026 Japan Salary Guide — Technology", url: technologyBenchmarkUrl, detail: "IT Project Manager・Application Support等のTokyo市場値をtechnical・delivery職の補助benchmarkに使用。" }] : []),
+    ],
+  };
   const language = job.companySlug === "glean"
     ? "公式求人では明記なし"
     : job.companySlug === "channel-talk"
@@ -777,9 +1070,8 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
     location: normalizeJapanese(job.location),
     language,
     lastChecked: "2026-08-17",
-    ...(compensation ? {
-      compensationReality: compensation.headline,
-      compensationResearch: {
+    compensationReality: compensation ? compensation.headline : `日本向けの公開報酬レンジは確認できない。${role.label}の市場benchmarkから【Genba仮説】を算定。`,
+    compensationResearch: compensation ? {
         researchedAt: "2026-08-17",
         confidence: "高" as const,
         headline: compensation.headline,
@@ -787,8 +1079,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
         breakdown: compensation.breakdown,
         readerTake: "公開レンジだけで判断せず、quota、ramp、達成率、credit、accelerator、equityを同じoffer条件として確認する。",
         sources: [{ label: job.source.label, url: job.source.url, detail: "公式求人に掲載された日本向け報酬レンジを確認。" }],
-      },
-    } : {}),
+      } : hypothesisCompensation,
     reputationResearch: {
       researchedAt: "2026-08-17",
       summary: `${company.name}の日本における対象職種だけを十分な件数で評価した公開レビューは確認できない。公式情報と確認できた外部集計を分け、肯定材料と注意材料を同じ粒度で整理した。`,
@@ -798,17 +1089,13 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
       sources: sourceList,
     },
     marketValueResearch: {
-      headline: `${company.domain}の専門性を、再現可能な顧客・組織成果へ変えられるかが市場価値を決める`,
-      summary: `【Genba仮説】${job.title}で得られる市場価値は社名や在籍だけでなく、${company.domain}の複雑な課題を定量化し、担当職種の成果を契約・導入・利用・顧客KPIで証明できたかで決まる。公開された転職者分布の十分な集計はないため、以下は職務構造からの仮説である。`,
-      skills,
-      nextRoles: company.next.map((title) => ({ title, detail: `この職種で${skills.map((skill) => skill.title).join("、")}を数字で証明できる場合の隣接候補。実際の転職実績を示すものではない。` })),
-      marketBands: [
-        { level: "同職種・同segment", range: "公開報酬レンジは確認不能", condition: "担当目標、達成率、案件・顧客成果を再現可能な形で説明できる。" },
-        { level: "上位segment・Lead", range: "公開報酬レンジは確認不能", condition: "より大きい顧客・複雑性に加え、mentoringや標準化の実績がある。" },
-        { level: "Manager・事業責任", range: "公開報酬レンジは確認不能", condition: "採用、予算、forecast、組織達成、partner・導入体制まで責任を広げている。" },
-      ],
-      proofPoints: ["個人またはチームの目標達成率と分母", "new・expansion・partner別のpipelineと受注成果", "顧客の導入前後で改善した業務・事業KPI", "sales cycle、forecast、PoC-to-production、renewal等の改善", "他の担当者・segment・地域へ勝ち方を再現した実績"],
-      caveat: "日本固有の給与・OTE・昇進・転職者分布は公開情報で確認できないため補完していない。役割候補は求人要件と隣接市場からの【Genba仮説】で、実際の評価は担当規模、成果、英語、業界知識、採用市場で変わる。",
+      headline: `${role.label}として${company.domain}の成果を再現できるかが市場価値を決める`,
+      summary: `【Genba仮説】${job.title}の市場価値は、社名や在籍年数ではなく、${role.label}固有の責任と${company.domain}の専門性を、数字で証明できたかで決まる。次の役割と報酬は、求人の担当segment・seniorityと2026年のTokyo Enterprise Technology市場benchmarkから個別算定した。`,
+      skills: role.skills,
+      nextRoles: role.nextRoles,
+      marketBands: role.marketBands,
+      proofPoints: role.proofPoints,
+      caveat: `報酬帯は当該企業の公式提示額ではない。Morgan McKinley 2026 Japan Salary Guideの東京職種別benchmarkを母数に、${job.title}のseniority、segment、目標責任を反映した【Genba仮説】。実際のオファーはquota、ramp、pay mix、達成率、equity、英語、採用時の市場で変わる。`,
     },
   };
 }

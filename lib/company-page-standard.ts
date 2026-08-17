@@ -22,6 +22,13 @@ export const COMPANY_PAGE_STANDARD = {
     allowHorizontalResize: false,
     wideTableOverflow: "horizontal-scroll",
   },
+  jobMarketValue: {
+    roleSpecific: true,
+    dimensions: ["role-family", "seniority", "segment", "target-ownership"],
+    compensationHypothesisWhenOfficialRangeMissing: true,
+    rejectUnpricedMarketBands: true,
+    rejectIdenticalOutputsAcrossDifferentRoleFamilies: true,
+  },
   hypothesisLabel: "【Genba仮説】",
   staleJobDays: 30,
 } as const;
