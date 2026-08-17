@@ -40,6 +40,7 @@ const batchSlugs = new Set(["planet", "replit", "rubrik", "saviynt", "scandit", 
 
 for (const slug of ["schrodinger", "sensor-tower", "shopify", "sierra", "sysdig"]) batchSlugs.add(slug);
 for (const slug of ["ubiquiti", "veeva", "wasabi", "workato", "zadara"]) batchSlugs.add(slug);
+for (const slug of ["zscaler", "1password", "sixsense", "abnormal-ai", "addepar"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -136,6 +137,18 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  zscaler: {
+    name: "Zscaler", domain: "Zero Trust・SSE・AI Security", officialUrl: "https://job-boards.greenhouse.io/zscaler",
+    positive: ["Sales、SE、Value、Renewal、Transformationの29対象求人を公式確認し、segment・specialist・lifecycleを日本で同時強化している。", "Q3 FY2026売上25%増、ARR25%増、ADK・NTTドコモ等の国内proofから大型platform transformationを経験できる可能性がある。"],
+    negative: ["GAAP営業赤字が続き、日本売上・headcount・quota・達成率・数値報酬は非公開。", "重複requisition、product credit、AI・data securityの実績、migration、partner delivery、3年TCOを案件・面接で検証する必要がある。"],
+    next: ["Zero Trust・SASE Enterprise GTM", "Cybersecurity Solutions・Value Engineering", "Data・AI Security Sales Leadership"],
+  },
+  "abnormal-ai": {
+    name: "Abnormal AI", domain: "Behavioral AI・Email・Identity Security", officialUrl: "https://abnormal.ai/careers/jobs/7820227003?gh_jid=7820227003",
+    positive: ["Japan founding AEとしてterritory、new ARR、new logo・expansion、CISO relationshipを0→1で作る。", "4,500 customers・Fortune 500の25%超とBehavioral AIのemail→identity・AI expansionを日本市場へ持ち込める可能性がある。"],
+    negative: ["Japan法人・office・leader・国内case・数値報酬は非公開。求人は英語のみ明記し、日本語水準を補完できない。", "Microsoft coexistence、catch・false positive、API permission、autonomous action、local SE・CS・IRをPoVと面接で検証する必要がある。"],
+    next: ["Email・Identity Security Enterprise Sales", "AI-native Cybersecurity Japan GTM", "CISO Platform Sales Leadership"],
+  },
   ubiquiti: {
     name: "Ubiquiti", domain: "Enterprise Networking・Physical IT", officialUrl: "https://job-boards.greenhouse.io/ubiquiti",
     positive: ["AEと日本初のSolution Engineering leadを同時採用し、direct・channel・technical validationをlocalで作る段階。", "高いGAAP operating incomeとnetwork・camera・access・voice・storageのwide portfolioを持つ。"],

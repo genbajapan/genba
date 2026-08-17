@@ -1,6 +1,48 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  zscaler: {
+    category: "ゼロトラスト・SSE・AIセキュリティ",
+    hq: "カリフォルニア州サンノゼ（米国）",
+    japanPresence: "ゼットスケーラー株式会社・東京／大阪",
+    description: "Zero Trust Exchangeでinternet・private access、data、workload、AIを保護。日本でSales、SE、Value、Renewal、Transformationの29対象求人を公式確認。",
+    salesRoles: 29,
+    lastChecked: "2026-08-17",
+  },
+  "1password": {
+    category: "統合アクセス管理・Identity Security",
+    hq: "トロント（カナダ）",
+    japanPresence: "日本語siteあり（日本法人・office・現行Japan求人は確認不能）",
+    description: "password、device trust、SaaS accessをUnified Access Managementで統合。公式Ashbyの現行Japan求人は0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  sixsense: {
+    category: "GTMインテリジェンス・収益AI・AIエージェント",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "日本法人・office・現行Japan求人を確認できず",
+    description: "buyer signal、intent、account intelligence、AI agentをGTM workflowへ統合。公式Careerは米国・Indiaのみで、現行Japan求人は0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  "abnormal-ai": {
+    category: "行動AI・メール／アイデンティティセキュリティ",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "日本Remote・市場立ち上げ（法人・office・責任者は確認不能）",
+    description: "behavioral AIでemail、identity、insider、AI riskを防御。日本市場を立ち上げるEnterprise Account Executiveを公式募集。",
+    salesRoles: 1,
+    hiringStatus: "採用中",
+    entryStatus: undefined,
+    lastChecked: "2026-08-17",
+  },
+  addepar: {
+    category: "WealthTech・投資データ／AI基盤",
+    hq: "カリフォルニア州マウンテンビュー（米国）",
+    japanPresence: "Singapore APAC hub（日本法人・office・現行Japan求人は確認不能）",
+    description: "複雑なportfolio、ownership、alternative assetのdata・analysis・reportingを統合。公式Greenhouseの現行Japan求人は0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
   ubiquiti: {
     category: "ネットワーク・物理IT・統合運用",
     hq: "ニューヨーク州ニューヨーク（米国）",

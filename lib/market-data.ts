@@ -16,6 +16,7 @@ import { jobs20260817BatchThirteen } from "@/lib/company-additions-2026-08-17-ba
 import { jobs20260817BatchFourteen } from "@/lib/company-additions-2026-08-17-batch-14";
 import { jobs20260817BatchFifteen } from "@/lib/company-additions-2026-08-17-batch-15";
 import { jobs20260817BatchSixteen } from "@/lib/company-additions-2026-08-17-batch-16";
+import { jobs20260817BatchSeventeen } from "@/lib/company-additions-2026-08-17-batch-17";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1316,6 +1317,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchSeventeen,
   ...jobs20260817BatchSixteen,
   ...jobs20260817BatchFifteen,
   ...jobs20260817BatchFourteen,
@@ -2954,6 +2956,7 @@ const closedJobIds = new Set([
   "fireblocks-sales-director-japan",
   "wasabi-channel-account-manager-japan",
   "zscaler-account-executive-japan",
+  "zscaler-account-executive-enterprise-japan",
   "schrodinger-senior-account-manager-japan",
   "schrodinger-account-manager-material-science-japan",
   "sensor-tower-account-executive-japan",
