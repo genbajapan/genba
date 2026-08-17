@@ -824,6 +824,27 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     description: "決済、請求、プラットフォームの資金移動、不正対策、税・データ基盤を提供。東京でCommercial Hunter・Grower、Enterprise Hunterの3つのAE職を公式募集。",
     lastChecked: "2026-08-17",
   },
+  servicenow: {
+    category: "企業向け業務ワークフロー・AI基盤",
+    hq: "カリフォルニア州サンタクララ（米国）",
+    japanPresence: "ServiceNow Japan合同会社・東京／大阪（2013年設立）",
+    description: "IT、人事、顧客対応、営業、製造の申請・判断・実行を共通データとAIでつなぐ業務基盤。日本で営業、BDR、Partner、Presales、Architecture、Customer Success、Deal Operationsの対象26職種を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  "tools-for-humanity": {
+    category: "人間性証明・デジタル本人確認・消費者向けアプリ",
+    hq: "カリフォルニア州サンフランシスコ（米国）／ミュンヘン（ドイツ）",
+    japanPresence: "World IDを日本で提供。Tinder Japanとマイナンバーカード連携を確認（日本法人・現行求人は未確認）",
+    description: "AIやbotが増えるインターネットで、氏名を渡さず一人の人間・年齢等を証明するWorld IDとWorld Appを開発。日本で実利用はあるが、公式ATSの現行Japan求人は0件。",
+    lastChecked: "2026-08-17",
+  },
+  lovable: {
+    category: "AIソフトウェア開発・業務アプリ作成",
+    hq: "ストックホルム（スウェーデン）",
+    japanPresence: "日本語サイトは提供。日本法人・国内拠点・Japan求人は未確認",
+    description: "自然言語から画面、バックエンド、データベース、認証、決済、公開まで含むアプリを作るAI開発基盤。公式ATS 74件にJapan・APAC勤務地はなく、日本未進出として継続観測。",
+    lastChecked: "2026-08-17",
+  },
 };
 
 export function standardizeRolloutCompany(company: Company): Company {

@@ -14,6 +14,7 @@ import { daily20260814IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { daily20260814WaveTwoIntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-14-wave-two";
 import { daily20260815IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-15";
 import { daily20260816IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-16";
+import { daily20260817IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-17";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -37,6 +38,7 @@ import { applyCompanyPageRolloutBatchNineteen } from "@/lib/company-page-rollout
 import { applyCompanyPageRolloutBatchTwenty } from "@/lib/company-page-rollout-batch-20";
 import { applyCompanyPageRolloutBatchTwentyOne } from "@/lib/company-page-rollout-batch-21";
 import { applyCompanyPageRolloutBatchTwentyTwo } from "@/lib/company-page-rollout-batch-22";
+import { applyCompanyPageRolloutBatchTwentyThree } from "@/lib/company-page-rollout-batch-23";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9605,6 +9607,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260814WaveTwoIntelligenceBySlug,
   ...daily20260815IntelligenceBySlug,
   ...daily20260816IntelligenceBySlug,
+  ...daily20260817IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9629,6 +9632,7 @@ applyCompanyPageRolloutBatchNineteen(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwenty(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyOne(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyTwo(intelligenceBySlug);
+applyCompanyPageRolloutBatchTwentyThree(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];

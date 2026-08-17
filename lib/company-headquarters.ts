@@ -15,6 +15,6 @@ export function getHeadquartersRegion(headquarters: string): Exclude<Headquarter
   if (primaryHeadquarters.includes("Canada") || primaryHeadquarters.includes("カナダ")) return "canada";
   if (primaryHeadquarters.includes("Israel") || primaryHeadquarters.includes("イスラエル")) return "israel";
   if (/Australia|Singapore|South Korea|オーストラリア|シンガポール|韓国/.test(primaryHeadquarters)) return "apac";
-  if (/UK|Germany|France|Switzerland|Ireland|Netherlands|Belgium|英国|ドイツ|フランス|スイス|アイルランド|オランダ|ベルギー|\bNL\b/.test(primaryHeadquarters)) return "europe";
+  if (/UK|Germany|France|Switzerland|Ireland|Netherlands|Belgium|Sweden|英国|ドイツ|フランス|スイス|アイルランド|オランダ|ベルギー|スウェーデン|\bNL\b/.test(primaryHeadquarters)) return "europe";
   return "other";
 }

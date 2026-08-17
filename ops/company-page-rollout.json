@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 112,
+    "total": 115,
     "byStatus": {
-      "未着手": 6,
+      "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 106
+      "公開済み": 115
     },
     "byPriority": {
-      "HOT": 49,
+      "HOT": 50,
       "Active": 14,
       "Selective": 15,
-      "求人なし": 34
+      "求人なし": 36
     },
-    "standardReady": 112
+    "standardReady": 115
   },
   "companies": [
     {
@@ -390,6 +390,15 @@
       "company": "Sensor Tower",
       "priority": "HOT",
       "salesRoles": 5,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "servicenow",
+      "company": "ServiceNow",
+      "priority": "HOT",
+      "salesRoles": 26,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -899,6 +908,15 @@
       "missingFields": []
     },
     {
+      "slug": "lovable",
+      "company": "Lovable",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "lucanet",
       "company": "Lucanet",
       "priority": "求人なし",
@@ -1018,6 +1036,15 @@
     {
       "slug": "tines",
       "company": "Tines",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "tools-for-humanity",
+      "company": "Tools for Humanity (World)",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

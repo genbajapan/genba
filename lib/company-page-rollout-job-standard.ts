@@ -46,6 +46,7 @@ for (const slug of ["zscaler", "1password", "sixsense", "abnormal-ai", "addepar"
 for (const slug of ["airtable", "apollo-io", "attio", "clay", "cribl"]) batchSlugs.add(slug);
 for (const slug of ["fireblocks", "gong", "halcyon", "harvey", "intercom"]) batchSlugs.add(slug);
 for (const slug of ["uipath", "wiz"]) batchSlugs.add(slug);
+for (const slug of ["servicenow"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -142,6 +143,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  servicenow: {
+    name: "ServiceNow", domain: "Enterprise Workflow・AI Platform", officialUrl: "https://careers.servicenow.com/jobs/?search=&country=Japan",
+    communityUrl: "https://www.repvue.com/companies/servicenow", communityLabel: "RepVue ServiceNow sales ratings",
+    positive: ["日本でSales、BDR、Partner、Presales、Architecture、Customer Success、Deal Operationsの26対象求人を公式確認し、顧客lifecycleを広く覆う。", "Q2 2026売上24%増、AI ACV 10億ドル超、資生堂等の国内定量caseから、platformのbusiness caseを職種別に作れる。"],
+    negative: ["日本の売上・ARR・headcount・quota・担当社数・数値報酬は非公開。", "Glassdoorはglobal 4.0/5・5,700件超、RepVueは約1,055 ratings・quota attainment約50.3%の参考値を示すが、Japan・segment・職種差を面接で分解する必要がある。"],
+    next: ["Enterprise Workflow GTM", "AI・Solution Architecture", "Customer Success・Value Leadership"],
+  },
   uipath: {
     name: "UiPath", domain: "Agentic Automation・Enterprise Workflow", officialUrl: "https://jobs.ashbyhq.com/uipath",
     positive: ["2017年から日本法人を展開し、東京・大阪拠点、現会長CEO、JPX・NTT Communicationsの国内caseを持つ。", "FY2026通期GAAP黒字化後、東京でSales・BDR・金融Sales Associate・Specialist SEの4職を採用している。"],
@@ -1022,6 +1030,8 @@ function profileForRole(job: JobLike, domain: string): RoleMarketProfile {
 function normalizeJapanese(value: string) {
   return value
     .replaceAll("Tokyo, Hanzomon", "東京・半蔵門")
+    .replaceAll("Tokyo, Japan", "東京・日本")
+    .replaceAll("Osaka, Japan", "大阪・日本")
     .replaceAll("Tokyo Prefecture", "東京都")
     .replace(/^Tokyo$/, "東京")
     .replace(/^Japan$/, "日本");

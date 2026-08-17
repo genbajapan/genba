@@ -21,6 +21,7 @@ import { jobs20260817BatchEighteen } from "@/lib/company-additions-2026-08-17-ba
 import { jobs20260817BatchNineteen } from "@/lib/company-additions-2026-08-17-batch-19";
 import { jobs20260817BatchTwentyTwo } from "@/lib/company-additions-2026-08-17-batch-22";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
+import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additions-2026-08-17-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -913,6 +914,7 @@ const companyRecords: Company[] = [
   ...companies20260814WaveTwo,
   ...companies20260815,
   ...companies20260816,
+  ...companies20260817Daily,
 ];
 
 // Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
@@ -1336,6 +1338,7 @@ const jobRecords: Job[] = [
   ...jobs20260817BatchSeven,
   ...jobs20260817BatchSix,
   ...jobs20260816,
+  ...jobs20260817Daily,
   ...jobs20260814WaveTwo,
   ...jobs20260815,
   ...jobs20260814,
