@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 36,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 71
+      "検証済み": 0,
+      "公開済み": 76
     },
     "byPriority": {
       "HOT": 44,
@@ -381,7 +381,7 @@
       "company": "Sensor Tower",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -516,7 +516,7 @@
       "company": "Schrödinger",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -633,7 +633,7 @@
       "company": "Shopify",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1290,7 +1290,7 @@
       "company": "Sierra",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1299,7 +1299,7 @@
       "company": "Sysdig",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
