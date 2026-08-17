@@ -108,7 +108,10 @@ function assess(company) {
   addMissing(missing, intelligence.overviewLeadership?.length >= 1, "経営陣");
   addMissing(missing, intelligence.companyStats?.japanOffice?.value, "日本オフィス");
   addMissing(missing, intelligence.companyStats?.globalHeadcount?.value, "グローバル社員数");
-  addMissing(missing, intelligence.companyStats?.japanHeadcount?.value, "日本社員数");
+  addMissing(missing, intelligence.companyStats?.japanHeadcount?.value, "国内被保険者数");
+  addMissing(missing, !/(?:非公開|確認不能|確認できず|未確認)/.test(intelligence.companyStats?.japanHeadcount?.value ?? ""), "国内被保険者数:gBizINFO監査ステータス");
+  addMissing(missing, intelligence.companyStats?.japanHeadcount?.sourceId?.startsWith("gbiz-headcount-"), "国内被保険者数:gBizINFO出典");
+  addMissing(missing, /(?:被保険者|対象外)/.test(intelligence.companyStats?.japanHeadcount?.detail ?? ""), "国内被保険者数:定義・対象範囲");
   addMissing(missing, intelligence.marketStatus?.milestones?.some((item) => item.label.includes("創業")), "創業年");
   if (company.entryStatus !== "not-entered") {
     addMissing(missing, intelligence.marketStatus?.milestones?.some((item) => item.label.includes("日本") && /(進出|開始|設立)/.test(item.label)), "日本進出年");

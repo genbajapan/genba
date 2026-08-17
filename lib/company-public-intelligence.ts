@@ -41,6 +41,7 @@ import { applyCompanyPageRolloutBatchTwentyOne } from "@/lib/company-page-rollou
 import { applyCompanyPageRolloutBatchTwentyTwo } from "@/lib/company-page-rollout-batch-22";
 import { applyCompanyPageRolloutBatchTwentyThree } from "@/lib/company-page-rollout-batch-23";
 import { applyCompanyPageRolloutBatchTwentyFour } from "@/lib/company-page-rollout-batch-24";
+import { applyJapanInsuredHeadcountAudit } from "@/lib/company-japan-insured-headcount";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9637,6 +9638,7 @@ applyCompanyPageRolloutBatchTwentyOne(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyTwo(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyThree(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyFour(intelligenceBySlug);
+applyJapanInsuredHeadcountAudit(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];

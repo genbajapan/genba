@@ -841,8 +841,9 @@ export default function CompanyIntelligenceProfile({
                           {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
                         </div>
                         <div>
-                          <span>日本の社員数</span>
+                          <span>国内の被保険者数</span>
                           <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
+                          <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
                         </div>
                       </div>
@@ -861,7 +862,12 @@ export default function CompanyIntelligenceProfile({
                           {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
                         </div>
                         <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
-                        <div><span>日本の社員数</span><strong>{publicIntel.companyStats.japanHeadcount.value}</strong></div>
+                        <div>
+                          <span>国内の被保険者数</span>
+                          <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
+                          <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
+                          {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
+                        </div>
                         <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
                         <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
                       </div>
