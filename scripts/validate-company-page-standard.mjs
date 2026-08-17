@@ -40,6 +40,8 @@ const {
 const intelligenceBySlug = getAllCompanyPublicIntelligence();
 const jobsBySlug = new Map();
 for (const job of jobs) jobsBySlug.set(job.companySlug, [...(jobsBySlug.get(job.companySlug) ?? []), job]);
+let officialCompensationJobs = 0;
+let hypothesisCompensationJobs = 0;
 const auditDate = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
 const today = new Date(`${auditDate}T00:00:00Z`);
 
@@ -154,8 +156,16 @@ function assess(company) {
     if (job.compensationResearch) {
       const breakdown = job.compensationResearch.breakdown ?? [];
       const isOfficial = breakdown.length > 0 && breakdown.every((item) => /公式/.test(item.status));
-      if (!isOfficial) {
+      if (isOfficial) {
+        officialCompensationJobs += 1;
+        addMissing(missing, breakdown.every((item) => /\d/.test(item.value)), `${prefix}:公式報酬の数値レンジ`);
+      } else {
+        hypothesisCompensationJobs += 1;
         addMissing(missing, breakdown.length >= 3 && breakdown.some((item) => /Genba(?:仮説|推定)/.test(item.status)), `${prefix}:報酬仮説の算定内訳`);
+        addMissing(missing, breakdown.some((item) => /固定給/.test(item.label) && /\d/.test(item.value)), `${prefix}:推定固定給レンジ`);
+        addMissing(missing, breakdown.some((item) => /OTE|総現金報酬/.test(item.label) && /\d/.test(item.value)), `${prefix}:推定OTE・総現金報酬レンジ`);
+        addMissing(missing, breakdown.some((item) => /Pay model|変動給|固定給：変動給/.test(item.label) && item.value.length >= 5), `${prefix}:Pay modelの前提`);
+        addMissing(missing, /(?:equity|株式報酬)は含めない/.test(JSON.stringify(breakdown)), `${prefix}:equityを現金報酬から除外`);
         addMissing(missing, job.compensationResearch.sources?.some((source) => /salary guide/i.test(`${source.label} ${source.url}`)) || job.compensationResearch.sources?.length >= 3, `${prefix}:報酬仮説の市場benchmark`);
       }
       addMissing(missing, !/確認不能|非公開$/.test(job.compensationResearch.headline), `${prefix}:確認不能で止めない報酬仮説`);
@@ -300,4 +310,5 @@ if (errors.length) {
 console.log("Adyen v1企業ページ標準: OK");
 console.log(`- 全${counts.total}社を監査（HOT ${counts.byPriority.HOT} / Active ${counts.byPriority.Active} / Selective ${counts.byPriority.Selective} / 求人なし ${counts.byPriority["求人なし"]}）`);
 console.log(`- 標準充足 ${counts.standardReady}社 / 公開済み ${counts.byStatus["公開済み"]}社`);
+console.log(`- 給与レンジ ${jobs.length}求人（公式 ${officialCompensationJobs} / Genba仮説 ${hypothesisCompensationJobs} / 未算定 ${jobs.length - officialCompensationJobs - hypothesisCompensationJobs}）`);
 console.log(`- 進捗台帳: ${path.relative(projectRoot, manifestPath)}`);
