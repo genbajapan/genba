@@ -845,6 +845,27 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     description: "自然言語から画面、バックエンド、データベース、認証、決済、公開まで含むアプリを作るAI開発基盤。公式ATS 74件にJapan・APAC勤務地はなく、日本未進出として継続観測。",
     lastChecked: "2026-08-17",
   },
+  atlassian: {
+    category: "チームワーク・業務管理・DevOps・ITサービス管理",
+    hq: "シドニー（オーストラリア）／サンフランシスコ（米国）",
+    japanPresence: "アトラシアン株式会社・横浜（2013年6月設立）",
+    description: "Jira、Confluence、Jira Service Management、LoomとAIで開発・業務・IT運用の協働を支援。横浜で日本語対応Senior Customer Success Managerを公式募集。",
+    lastChecked: "2026-08-18",
+  },
+  dynatrace: {
+    category: "オブザーバビリティ・AIOps・アプリケーションセキュリティ",
+    hq: "マサチューセッツ州ボストン（米国）",
+    japanPresence: "Dynatrace合同会社・東京（2015年設立）",
+    description: "application、infrastructure、log、顧客体験、securityをAIで相関し、障害原因と事業影響を可視化。東京でEnterprise Solutions Engineerを公式募集。",
+    lastChecked: "2026-08-18",
+  },
+  vercel: {
+    category: "AIクラウド・フロントエンドクラウド・開発者基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Tokyo・Osaka compute regionを提供（日本法人・office・Japan求人は未確認）",
+    description: "Next.js、AI SDK、v0とglobal application infrastructureを提供。APAC求人はSydney等を対象とし、日本法人・国内拠点・Japan専任求人は未確認。",
+    lastChecked: "2026-08-18",
+  },
 };
 
 export function standardizeRolloutCompany(company: Company): Company {

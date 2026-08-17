@@ -44,10 +44,25 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
       { "@type": "ListItem", position: 3, name: company.name, item: `${siteUrl}/companies/${company.slug}` },
     ],
   };
+  const profilePageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: company.name,
+    description: company.description,
+    url: `${siteUrl}/companies/${company.slug}`,
+    dateModified: company.lastChecked,
+    isPartOf: { "@type": "WebSite", name: "Genba", url: siteUrl },
+    about: {
+      "@type": "Organization",
+      name: company.name,
+      description: company.description,
+    },
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
       <CompanyIntelligenceProfile
         company={company}
         companyJobs={companyJobs}

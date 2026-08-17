@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 116,
+    "total": 119,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 116
+      "公開済み": 119
     },
     "byPriority": {
       "HOT": 44,
-      "Active": 13,
-      "Selective": 22,
-      "求人なし": 37
+      "Active": 12,
+      "Selective": 24,
+      "求人なし": 39
     },
-    "standardReady": 116
+    "standardReady": 119
   },
   "companies": [
     {
@@ -521,15 +521,6 @@
       "missingFields": []
     },
     {
-      "slug": "sonar",
-      "company": "Sonar",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "ubiquiti",
       "company": "Ubiquiti",
       "priority": "Active",
@@ -566,8 +557,8 @@
       "missingFields": []
     },
     {
-      "slug": "asana",
-      "company": "Asana",
+      "slug": "atlassian",
+      "company": "Atlassian",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -604,6 +595,15 @@
     {
       "slug": "doubleverify",
       "company": "DoubleVerify",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "dynatrace",
+      "company": "Dynatrace",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -710,6 +710,15 @@
       "missingFields": []
     },
     {
+      "slug": "sonar",
+      "company": "Sonar",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "tanium",
       "company": "Tanium",
       "priority": "Selective",
@@ -793,6 +802,15 @@
     {
       "slug": "apollo-io",
       "company": "Apollo.io",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "asana",
+      "company": "Asana",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -1063,6 +1081,15 @@
     {
       "slug": "vanta",
       "company": "Vanta",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "vercel",
+      "company": "Vercel",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

@@ -82,15 +82,17 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   appsflyer: { corporateNumber: "2011001122318", entityName: "AppsFlyer Japan株式会社", insuredCount: 12 },
   bluematrix: { corporateNumber: "8010003050182", entityName: "BlueMatrix合同会社" },
   ivanti: { corporateNumber: "9010401093419", entityName: "Ivanti Software株式会社", insuredCount: 20 },
+  atlassian: { corporateNumber: "7011001095419", entityName: "アトラシアン株式会社", insuredCount: 77 },
+  dynatrace: { corporateNumber: "4011003001897", entityName: "Dynatrace合同会社", insuredCount: 41 },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
   "gong", "harvey", "clay", "vanta", "writer", "rippling", "pinecone", "intercom", "addepar", "sixsense",
   "apollo-io", "tines", "attio", "retool", "island", "1password", "klaviyo", "airtable", "mistral-ai", "lovable",
-  "pigment", "ironclad",
+  "pigment", "ironclad", "vercel",
 ]);
 
-// 2026-08-18の一斉監査対象116社。将来追加された会社へ未調査のまま
+// 2026-08-18の一斉監査対象119社。将来追加された会社へ未調査のまま
 // 「確認済み」を自動付与しないため、対象slugを明示的に固定する。
 const AUDITED_SLUGS = new Set([
   "mongodb", "braze", "hubspot", "okta", "zendesk", "uipath", "confluent", "pagerduty", "amplitude", "contentsquare",
@@ -104,7 +106,7 @@ const AUDITED_SLUGS = new Set([
   "wiz", "dbt-labs", "gurobi", "neural-concept", "patch", "lakera", "tines", "attio", "retool", "cato-networks",
   "patsnap", "netskope", "mambu", "nice", "island", "1password", "dialpad", "fivetran", "klaviyo", "shopify",
   "zilliz", "airtable", "figma", "mistral-ai", "tools-for-humanity", "lovable", "tanium", "sayari", "doubleverify", "similarweb",
-  "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad",
+  "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad", "atlassian", "dynatrace", "vercel",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。

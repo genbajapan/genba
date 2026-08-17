@@ -23,6 +23,7 @@ import { jobs20260817BatchTwentyTwo } from "@/lib/company-additions-2026-08-17-b
 import { companies20260817BatchTwentyThree, jobs20260817BatchTwentyThree } from "@/lib/company-additions-2026-08-17-batch-23";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additions-2026-08-17-daily";
+import { companies20260818Daily, jobs20260818Daily } from "@/lib/company-additions-2026-08-18-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -917,6 +918,7 @@ const companyRecords: Company[] = [
   ...companies20260816,
   ...companies20260817Daily,
   ...companies20260817BatchTwentyThree,
+  ...companies20260818Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1341,6 +1343,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260818Daily,
   ...jobs20260817BatchTwentyThree,
   ...jobs20260817BatchTwentyTwo,
   ...jobs20260817BatchNineteen,
@@ -3016,16 +3019,20 @@ const closedJobIds = new Set([
   "datadog-commercial-account-executive-japan",
 ]);
 
-const temporarilyUnverifiableJobIds = new Set<string>([]);
+const temporarilyUnverifiableJobIds = new Set<string>([
+  "rubrik-customer-experience-manager-japan-current",
+  "rubrik-mid-market-account-executive-tokyo-current",
+  "appsflyer-growth-account-manager-tokyo",
+]);
 
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
 
 export const jobs = jobRecords
   .filter((job) => !publiclyExcludedCompanySlugs.has(job.companySlug) && !closedJobIds.has(job.id))
   .map((job) => {
-    const datedJob = temporarilyUnverifiableJobIds.has(job.id) || job.firstSeen === "2026-08-17"
+    const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-16" };
+      : { ...job, lastChecked: "2026-08-18" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3050,6 +3057,36 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-atlassian-japan-senior-csm",
+    companySlug: "atlassian",
+    date: "2026-08-18",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Atlassianが横浜で日本語対応Senior CSMを募集",
+    summary: "Strategic customerのsuccess plan、adoption、value realization、executive alignmentを担い、System of Workの利用をbusiness outcomeへつなぐ役割です。",
+    source: { label: "Atlassian Careers", url: "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us" },
+  },
+  {
+    id: "signal-dynatrace-japan-enterprise-se",
+    companySlug: "dynatrace",
+    date: "2026-08-18",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Dynatraceが東京でEnterprise Solutions Engineerを募集",
+    summary: "Observability、AIOps、Application Securityを対象に、discovery、architecture、PoV、business valueを通じてtechnical winを作る役割です。",
+    source: { label: "Dynatrace Careers", url: "https://apply.careers.dynatrace.com/job/Tokyo-Sr-Solutions-Engineer-Toky-100-0005/1390103700/" },
+  },
+  {
+    id: "signal-vercel-japan-entry-watch",
+    companySlug: "vercel",
+    date: "2026-08-18",
+    type: "注目領域",
+    confidence: "公式確認",
+    title: "VercelのAPAC基盤からJapan進出条件を観測",
+    summary: "Tokyo・Osaka region、93億ドル評価、APAC営業採用を確認。一方、Japan法人・office・専任求人・国内named caseは未確認です。",
+    source: { label: "Vercel Series F", url: "https://vercel.com/blog/series-f" },
+  },
   {
     id: "signal-shopify-japan-product-partnerships",
     companySlug: "shopify",

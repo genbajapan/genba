@@ -48,6 +48,13 @@ for (const slug of ["fireblocks", "gong", "halcyon", "harvey", "intercom"]) batc
 for (const slug of ["uipath", "wiz"]) batchSlugs.add(slug);
 for (const slug of ["servicenow"]) batchSlugs.add(slug);
 for (const slug of ["tanium", "sayari", "doubleverify", "similarweb", "appsflyer", "bluematrix", "black-duck", "ivanti"]) batchSlugs.add(slug);
+for (const slug of ["atlassian", "dynatrace"]) batchSlugs.add(slug);
+
+const temporarilyUnverifiableJobIds = new Set([
+  "rubrik-customer-experience-manager-japan-current",
+  "rubrik-mid-market-account-executive-tokyo-current",
+  "appsflyer-growth-account-manager-tokyo",
+]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -144,6 +151,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  atlassian: {
+    name: "Atlassian", domain: "Work Management・DevOps・ITSM・Customer Success", officialUrl: "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us",
+    communityUrl: "https://www.repvue.com/companies/Atlassian", communityLabel: "RepVue Atlassian sales reviews",
+    positive: ["横浜で日本語対応Senior Customer Success Managerを公式募集し、strategic customerのadoption・value realizationを担う。", "直近12カ月売上66億米ドル、35万顧客超と国内事例を持ち、product adoptionをbusiness outcomeへつなげられる。", "RepVueのglobal sales reviewは583 ratings・3.8/5を表示するが、日本CSの評価ではない。"],
+    negative: ["日本売上、顧客数、CS portfolio、renewal・expansion目標、達成率、数値報酬は非公開。", "Microsoft、ServiceNow、specialist toolとの重複、cloud migration、multi-product adoptionを顧客・面接で検証する必要がある。", "海外reviewにはquota・territory・leadershipへの注意もあり、Japan CSMのportfolio・managerへ一般化せず面接で反証する。"],
+    next: ["Enterprise Customer Success・Value Leadership", "Work Management・DevOps Transformation", "Customer Outcomes・APAC Leadership"],
+  },
+  dynatrace: {
+    name: "Dynatrace", domain: "Observability・AIOps・Application Security", officialUrl: "https://apply.careers.dynatrace.com/job/Tokyo-Sr-Solutions-Engineer-Toky-100-0005/1390103700/",
+    communityUrl: "https://www.glassdoor.co.uk/Reviews/Dynatrace-Reviews-E309684.htm", communityLabel: "Glassdoor Dynatrace global reviews",
+    positive: ["東京でEnterprise Solutions Engineerを公式募集し、discovery、architecture、PoV、technical winを担う。", "Q1 FY2027売上16%増、ARR21.36億米ドルと富士通の国内定量事例から、technical proofをbusiness caseへ変えられる。", "Glassdoorのglobal集計は3.7/5・1,498 reviews・62% recommendを表示するが、日本SEの評価ではない。"],
+    negative: ["日本売上、顧客数、SE:AE比、PoV conversion、quota、数値報酬は非公開。", "Datadog、Splunk、cloud標準等との重複、telemetry cost、partner・delivery capacityを案件と面接で検証する必要がある。", "海外reviewにはworkload、leadership、career opportunityへの注意もあり、日本の配属先へ一般化せずportfolio・managerを面接で確認する。"],
+    next: ["Observability Solutions Engineering", "AIOps・Application Security Value Consulting", "Principal SE・Japan Technical Leadership"],
+  },
   servicenow: {
     name: "ServiceNow", domain: "Enterprise Workflow・AI Platform", officialUrl: "https://careers.servicenow.com/jobs/?search=&country=Japan",
     communityUrl: "https://www.repvue.com/companies/servicenow", communityLabel: "RepVue ServiceNow sales ratings",
@@ -1158,7 +1179,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   }
   const compensation = officialCompensation[job.id];
   const hypothesisCompensation = {
-    researchedAt: "2026-08-17",
+    researchedAt: "2026-08-18",
     confidence: "中" as const,
     headline: `${role.label}の市場比較は年${role.totalRange}を起点とする`,
     summary: `当該企業の公開提示額ではない。2026年の東京Enterprise Technology市場における${role.benchmarkLabel}の公開benchmark（${role.benchmarkRange}）を母数に、求人の職種、seniority、担当segment、quota・技術・portfolio責任を掛け合わせた【Genba仮説】。`,
@@ -1187,10 +1208,10 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
     ...job,
     location: normalizeJapanese(job.location),
     language,
-    lastChecked: "2026-08-17",
+    lastChecked: temporarilyUnverifiableJobIds.has(job.id) ? job.lastChecked : "2026-08-18",
     compensationReality: compensation ? compensation.headline : `日本向けの公開報酬レンジは確認できない。${role.label}の市場benchmarkから【Genba仮説】を算定。`,
     compensationResearch: compensation ? {
-        researchedAt: "2026-08-17",
+        researchedAt: "2026-08-18",
         confidence: "高" as const,
         headline: compensation.headline,
         summary: compensation.summary,
@@ -1199,7 +1220,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
         sources: [{ label: job.source.label, url: job.source.url, detail: "公式求人に掲載された日本向け報酬レンジを確認。" }],
       } : hypothesisCompensation,
     reputationResearch: {
-      researchedAt: "2026-08-17",
+      researchedAt: "2026-08-18",
       summary: review
         ? company.name + "の日本の対象職種だけの十分なreview母数はないため、" + review.source.label + "の" + review.snapshot + "を参考にした。その上で【Genba仮説】として、" + role.label + "の活躍条件と面接で検証すべき論点まで導いた。"
         : company.name + "の公開情報を、【Genba仮説】として" + role.label + "の活躍条件と面接の検証論点へ落とし込んだ。",

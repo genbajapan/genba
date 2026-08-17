@@ -7,8 +7,8 @@ import type {
   SalesMarketOutlook,
 } from "@/lib/company-public-intelligence";
 
-export const rolloutResearchedAt = "2026-08-17";
-const rolloutDisplayDate = "2026.08.17";
+export const rolloutResearchedAt = "2026-08-18";
+const rolloutDisplayDate = "2026.08.18";
 
 export type StandardPatch = {
   leadership: CompanyPublicIntelligence["overviewLeadership"];

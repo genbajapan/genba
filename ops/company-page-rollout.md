@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全116社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 116）
+全119社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 119）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -60,16 +60,16 @@
 |Active|Replit|2|公開済み|はい|なし|
 |Active|Rubrik|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
-|Active|Sonar|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
-|Selective|Asana|1|公開済み|はい|なし|
+|Selective|Atlassian|1|公開済み|はい|なし|
 |Selective|Black Duck|1|公開済み|はい|なし|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
+|Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Ivanti|1|公開済み|はい|なし|
@@ -81,6 +81,7 @@
 |Selective|Sayari|1|公開済み|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Similarweb|1|公開済み|はい|なし|
+|Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Tanium|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
@@ -91,6 +92,7 @@
 |求人なし|Airtable|0|公開済み|はい|なし|
 |求人なし|Amplitude|0|公開済み|はい|なし|
 |求人なし|Apollo.io|0|公開済み|はい|なし|
+|求人なし|Asana|0|公開済み|はい|なし|
 |求人なし|Attio|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
@@ -121,6 +123,7 @@
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|Vanta|0|公開済み|はい|なし|
+|求人なし|Vercel|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
 
 進捗状態と公開ゲートは `ops/company-page-standard.md` を正本とする。詳細な不足項目は `ops/company-page-rollout.json` を参照。
