@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 41,
+      "未着手": 36,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 71
     },
     "byPriority": {
-      "HOT": 43,
-      "Active": 11,
-      "Selective": 21,
-      "求人なし": 37
+      "HOT": 44,
+      "Active": 12,
+      "Selective": 17,
+      "求人なし": 39
     },
-    "standardReady": 71
+    "standardReady": 76
   },
   "companies": [
     {
@@ -377,6 +377,15 @@
       "missingFields": []
     },
     {
+      "slug": "sensor-tower",
+      "company": "Sensor Tower",
+      "priority": "HOT",
+      "salesRoles": 5,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "speak",
       "company": "Speak",
       "priority": "HOT",
@@ -503,6 +512,15 @@
       "missingFields": []
     },
     {
+      "slug": "schrodinger",
+      "company": "Schrödinger",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "sonar",
       "company": "Sonar",
       "priority": "Active",
@@ -611,109 +629,13 @@
       "missingFields": []
     },
     {
-      "slug": "schrodinger",
-      "company": "Schrödinger",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Manager, Material Science, Japan:勤務地・言語の日本語表記",
-        "求人:Account Manager, Material Science, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Manager, Material Science, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "sensor-tower",
-      "company": "Sensor Tower",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive - Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive - Japan:市場価値"
-      ]
-    },
-    {
       "slug": "shopify",
       "company": "Shopify",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "創業年",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Product Partnerships Lead:勤務地・言語の日本語表記",
-        "求人:Product Partnerships Lead:ポジティブ・ネガティブ評判",
-        "求人:Product Partnerships Lead:市場価値"
-      ]
-    },
-    {
-      "slug": "sierra",
-      "company": "Sierra",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Partnerships Sales:ポジティブ・ネガティブ評判",
-        "求人:Partnerships Sales:市場価値"
-      ]
-    },
-    {
-      "slug": "sysdig",
-      "company": "Sysdig",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Country Manager, Japan:勤務地・言語の日本語表記",
-        "求人:Country Manager, Japan:ポジティブ・ネガティブ評判",
-        "求人:Country Manager, Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "ubiquiti",
@@ -1360,6 +1282,24 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sierra",
+      "company": "Sierra",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sysdig",
+      "company": "Sysdig",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },

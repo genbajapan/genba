@@ -14,6 +14,7 @@ import { jobs20260817BatchEleven } from "@/lib/company-additions-2026-08-17-batc
 import { jobs20260817BatchTwelve } from "@/lib/company-additions-2026-08-17-batch-12";
 import { jobs20260817BatchThirteen } from "@/lib/company-additions-2026-08-17-batch-13";
 import { jobs20260817BatchFourteen } from "@/lib/company-additions-2026-08-17-batch-14";
+import { jobs20260817BatchFifteen } from "@/lib/company-additions-2026-08-17-batch-15";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1314,6 +1315,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchFifteen,
   ...jobs20260817BatchFourteen,
   ...jobs20260817BatchThirteen,
   ...jobs20260817BatchTwelve,
@@ -2949,6 +2951,11 @@ const closedJobIds = new Set([
   "wasabi-channel-account-manager-japan",
   "zscaler-account-executive-japan",
   "schrodinger-senior-account-manager-japan",
+  "schrodinger-account-manager-material-science-japan",
+  "sensor-tower-account-executive-japan",
+  "shopify-product-partnerships-lead-japan",
+  "sierra-partnerships-sales-tokyo",
+  "sysdig-country-manager-japan",
   "okta-enterprise-ae-auth0",
   "amplitude-enterprise-ae",
   "amplitude-commercial-ae",

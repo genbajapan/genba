@@ -38,6 +38,8 @@ type JobLike = {
 
 const batchSlugs = new Set(["planet", "replit", "rubrik", "saviynt", "scandit", "nexthink", "nice", "patch", "patsnap", "pendo", "anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
 
+for (const slug of ["schrodinger", "sensor-tower", "shopify", "sierra", "sysdig"]) batchSlugs.add(slug);
+
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
@@ -133,6 +135,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  schrodinger: {
+    name: "Schrödinger", domain: "Computational Chemistry・Materials R&D", officialUrl: "https://www.schrodinger.com/company/careers/",
+    positive: ["physics-based simulationとAIを創薬・材料R&Dの実験判断へ接続できる。", "2002年から日本法人を持ち、SalesとApplicationsの2職種を公式募集。"],
+    negative: ["Q1 FY2026は純損失6,000万米ドル。日本売上・quota・報酬は非公開。", "研究成果はuse caseとdata qualityに依存し、顧客環境で実験validationが必要。"],
+    next: ["Scientific Enterprise Sales", "Computational R&D Solutions", "Materials・Life Science GTM Leadership"],
+  },
+  "sensor-tower": {
+    name: "Sensor Tower", domain: "Digital Market Intelligence", officialUrl: "https://jobs.ashbyhq.com/sensor-tower",
+    positive: ["2,500社超が利用するmobile・web・広告・gaming intelligenceをJapan・APACへ展開できる。", "東京でPartner、AM、Leadership、PMMの複数職種を採用。"],
+    negative: ["売上・利益・Japan scale・数値報酬は非公開。", "推計dataのcoverage・method・privacy・accuracyをcustomer dataで検証する必要がある。"],
+    next: ["Market Intelligence Sales・CS", "Data・AdTech Partnerships", "APAC Product Marketing・GTM Leadership"],
+  },
+  shopify: {
+    name: "Shopify", domain: "Commerce Platform・Product Ecosystem", officialUrl: "https://www.shopify.com/careers",
+    positive: ["世界175カ国超のcommerce platformで日本のproduct ecosystemを作る役割。", "FY2025は売上30%増、FCF margin 17%と成長・cash generationを両立。"],
+    negative: ["Japan revenue・headcount・partner KPI・報酬は非公開。", "platform・app dependency、migration、partner conflict、local fitを実案件で検証する必要がある。"],
+    next: ["Commerce Product Partnerships", "Platform Ecosystem GTM", "Japan・APAC Business Development Leadership"],
+  },
+  sierra: {
+    name: "Sierra", domain: "Customer Experience AI Agents", officialUrl: "https://jobs.ashbyhq.com/Sierra",
+    positive: ["東京office、Opera Tech買収、SoftBank独占販売partnerとLINEMO定量成果を確認。", "ARR 1.5億米ドル超の急成長categoryでAI agentのproduction outcomeへ携われる可能性。"],
+    negative: ["現行対象求人0。recognized revenue・profit・Japan scale・報酬は非公開。", "hallucination、authorization、rollback、data・model governance、outcome attributionを厳密に検証する必要がある。"],
+    next: ["AI Agent Enterprise GTM", "Customer Experience AI Strategy", "Japan AI Business Leadership"],
+  },
+  sysdig: {
+    name: "Sysdig", domain: "Cloud Runtime Security・CNAPP", officialUrl: "https://jobs.lever.co/sysdig",
+    positive: ["Falco・runtime insightを軸にCISO、Platform、SOC、Developerを横断できる。", "NTTドコモ・ログラスの国内cloud-native事例がある。"],
+    negative: ["現行日本求人0。recognized revenue・profit・Japan scale・報酬は非公開。", "競争の強いCNAPP市場でagent overhead、noise、pricing、tool consolidationを実測する必要がある。"],
+    next: ["Cloud Security Enterprise Sales", "CNAPP Solutions・Customer Success", "Japan Cybersecurity GTM Leadership"],
+  },
   planet: {
     name: "Planet", domain: "Earth Observation・Defence Intelligence", officialUrl: "https://job-boards.greenhouse.io/planetlabs/jobs/7564777",
     positive: ["Japan RemoteのD&I AEとして政府・防衛のpipeline、procurement、partnerを持ち、persistent monitoringを日本の安全保障workflowへ展開できる。", "FY2026売上成長、国内防衛・UMITRON事例、六本木office・Country Managerを公式に確認できる。"],

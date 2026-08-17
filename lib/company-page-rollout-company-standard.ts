@@ -1,6 +1,46 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  schrodinger: {
+    category: "計算化学・分子設計・創薬／材料R&D",
+    hq: "ニューヨーク州ニューヨーク（米国）",
+    japanPresence: "Schrödinger K.K.・東京（2002年設立）",
+    description: "physics-based simulationとAIで創薬・材料設計を支援。東京でMaterials Account ManagerとApplications Scientistを公式募集。",
+    salesRoles: 2,
+    lastChecked: "2026-08-17",
+  },
+  "sensor-tower": {
+    category: "デジタル市場・広告・競合インテリジェンス",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "東京office・東京都荒川区（2021年にJapan team開始）",
+    description: "mobile、web、広告、gaming、audienceの市場dataを提供。東京でAgency Partner、Account Director、AM Director、APAC PMMの5 ATS recordを公式掲載。",
+    salesRoles: 5,
+    lastChecked: "2026-08-17",
+  },
+  shopify: {
+    category: "コマース・決済・小売プラットフォーム",
+    hq: "オタワ（カナダ）／Digital by Design",
+    japanPresence: "日本Remote・日本市場組織",
+    description: "online、POS、B2B、payments、international commerceを統合。日本RemoteでProduct Partnerships Leadを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  sierra: {
+    category: "顧客対応AIエージェント・Agent OS",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "東京office（2025年開設、2026年Opera Tech買収）",
+    description: "customer-facing AI agentの設計・運用基盤を提供。公式ATSのTokyo求人はRecruiting 2件のみで、現行の営業・導入対象求人は0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  sysdig: {
+    category: "クラウドネイティブセキュリティ・CNAPP",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "日本語公式site・国内顧客（current office・責任者は確認不能）",
+    description: "runtime insightを核にcloud・container securityを統合。2026年8月17日時点で公式Leverの日本求人は0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
   planet: {
     category: "地球観測・衛星データ・地理空間インテリジェンス",
     hq: "カリフォルニア州サンフランシスコ（米国）",
