@@ -1,6 +1,51 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  fireblocks: {
+    category: "デジタル資産インフラ・決済・トークン化",
+    hq: "ニューヨーク（米国）／テルアビブ（イスラエル）",
+    japanPresence: "Fireblocks東京office（2024年開設）",
+    description: "wallet、treasury、payments、tokenization、networkを統合。日本でbilingual Project Managerを公式募集し、週3日出社のHybrid。",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+    tags: ["Digital Assets", "FinTech", "Payments", "Tokenization", "Japan Office"],
+  },
+  gong: {
+    category: "Revenue AI・収益インテリジェンス",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Singapore APAC office（日本法人・office・現行Japan求人は確認不能）",
+    description: "customer conversation、pipeline、forecast、enablementをRevenue AI OSで統合。公式Greenhouseの現行98求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  halcyon: {
+    category: "ランサムウェア耐性・サイバーレジリエンス",
+    hq: "テキサス州オースティン（米国）",
+    japanPresence: "Halcyon Japan株式会社・東京都渋谷区（2026年設立）",
+    description: "endpoint prevention、key capture・decryption、data exfiltration protection、recovery supportを統合。公式Greenhouseの現行Japan求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+    tags: ["Ransomware", "Cyber Resilience", "Japan Entity", "Partner", "Security"],
+  },
+  harvey: {
+    category: "法務AI・プロフェッショナルサービスAI",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Singapore APAC office（日本法人・office・現行Japan求人は確認不能）",
+    description: "legal research、drafting、knowledge、contract workflowをdomain AIで統合。公式Ashbyの現行391求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  intercom: {
+    name: "Intercom / Fin",
+    category: "AIカスタマーサービス・ヘルプデスク",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Sydney APAC office（日本法人・office・現行Japan求人は確認不能）",
+    description: "2026年に会社名をFinへ変更し、Intercomをcustomer service softwareとして継続。公式Greenhouseの現行118求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
   airtable: {
     category: "ノーコード業務アプリ・AIワークフロー",
     hq: "カリフォルニア州サンフランシスコ（米国）",

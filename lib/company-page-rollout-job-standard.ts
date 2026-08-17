@@ -42,6 +42,7 @@ for (const slug of ["schrodinger", "sensor-tower", "shopify", "sierra", "sysdig"
 for (const slug of ["ubiquiti", "veeva", "wasabi", "workato", "zadara"]) batchSlugs.add(slug);
 for (const slug of ["zscaler", "1password", "sixsense", "abnormal-ai", "addepar"]) batchSlugs.add(slug);
 for (const slug of ["airtable", "apollo-io", "attio", "clay", "cribl"]) batchSlugs.add(slug);
+for (const slug of ["fireblocks", "gong", "halcyon", "harvey", "intercom"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -138,6 +139,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  fireblocks: {
+    name: "Fireblocks", domain: "Digital Asset Infrastructure・Payments・Tokenization", officialUrl: "https://www.fireblocks.com/careers/",
+    positive: ["2024年に東京officeを開設し、現行Project Managerは日本語・英語で複雑な顧客導入を担う。", "2,400超の機関、10兆米ドル超のtransfer実績と、Mitsui Digital Commodities等の日本proofを持つ。"],
+    negative: ["recognized revenue・ARR・profit・FCF、日本売上・報酬・担当社数は非公開。", "規制適合、custody責任、key・approval設計、incident response、partner deliveryを案件ごとに検証する必要がある。"],
+    next: ["FinTech・Digital Asset Program Management", "Enterprise Cloud Professional Services", "Customer Delivery・Technical Account Leadership"],
+  },
+  gong: {
+    name: "Gong", domain: "Revenue AI・Revenue Intelligence", officialUrl: "https://www.gong.io/careers",
+    positive: ["ARR 5億米ドル超、5,000顧客超、複数product利用50%を背景にRevenue AIを拡張。", "Anthropic、Canva等のglobal定量caseを持つ。"],
+    negative: ["現行Japan求人・法人・office・国内named case・日本語機能の完全性は確認不能。", "recording同意、AI accuracy、CRM data、adoption、suite競争、usage economicsを検証する必要がある。"],
+    next: ["Revenue Intelligence Enterprise GTM", "Sales Enablement・RevOps Transformation", "AI-native Revenue Platform Leadership"],
+  },
+  halcyon: {
+    name: "Halcyon", domain: "Anti-Ransomware・Cyber Resilience", officialUrl: "https://www.halcyon.ai/careers",
+    positive: ["2026年にHalcyon Japan株式会社を設立し、日本語supportとpartner-led deliveryを開始。", "endpoint preventionに加えてkey capture・decryption・data exfiltration protectionを提供する。"],
+    negative: ["現行Japan求人は0件で、旧Commercial AEは終了。売上・ARR・profit・FCF、日本顧客の定量ROIは非公開。", "vendorのzero-disruption claim、agent coexistence、false positive、response SLA、warranty条件を検証する必要がある。"],
+    next: ["Ransomware Resilience GTM", "Endpoint・Cyber Recovery Sales", "Japan Security Partner Leadership"],
+  },
+  harvey: {
+    name: "Harvey", domain: "Legal AI・Professional Services AI", officialUrl: "https://www.harvey.ai/company/careers",
+    positive: ["1,300超の組織・10万超のlawyers・60超の国へ拡大し、Mori Hamada & Matsumotoのfirmwide caseを持つ。", "Agents、Vault、Knowledge、Contract Intelligenceを同じlegal workflowに統合する。"],
+    negative: ["現行Japan求人・法人・office・責任者、recognized revenue・total ARR・profit・FCFは確認不能。", "legal privilege、hallucination、source traceability、data residency、professional responsibilityを案件ごとに検証する必要がある。"],
+    next: ["Legal AI Enterprise GTM", "Professional Services AI Transformation", "AI Governance・Knowledge Platform Leadership"],
+  },
+  intercom: {
+    name: "Fin（旧Intercom）", domain: "AI Customer Service・Helpdesk", officialUrl: "https://www.intercom.com/careers",
+    positive: ["Finは約1億米ドルのrecurring revenue、週約200万件の解決、7,000 teamsを発表。", "AI Agent、Helpdesk、Knowledge、Evals・Monitorsを一体運用する。"],
+    negative: ["現行Japan求人・法人・office・国内named caseは確認不能。Salesforceによる約36億米ドルの買収契約は未完了。", "resolution定義、handoff、accuracy、pricing、data residency、acquisition後roadmapを検証する必要がある。"],
+    next: ["AI Customer Service Enterprise GTM", "CX Automation・Support Operations", "Conversational AI Platform Leadership"],
+  },
   cribl: {
     name: "Cribl", domain: "Telemetry Infrastructure・Security Data・Observability", officialUrl: "https://cribl.io/careers/",
     positive: ["Remote JapanでPartner Business Manager、Regional Sales Director、Enterprise Regional Sales Managerを同時採用し、日本GTMを0→1で構築する。", "ARR 3億米ドル超・1,400顧客超・Fortune 100の50%というglobal scaleを背景に、directとchannelの両方を作れる可能性がある。"],
