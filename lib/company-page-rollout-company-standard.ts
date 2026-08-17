@@ -1,6 +1,49 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  airtable: {
+    category: "ノーコード業務アプリ・AIワークフロー",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Sydney APAC office（日本法人・office・現行Japan求人は確認不能）",
+    description: "relational data、app building、automation、AI、governanceを統合。公式Greenhouseの現行17求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  "apollo-io": {
+    category: "GTMデータ・セールスエンゲージメント・収益AI",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "日本法人・office・現行Japan求人を確認できず",
+    description: "B2B data、prospecting、engagement、dialer、AIを統合。ARR 1.5億米ドルを発表するが、公式Greenhouseの現行43求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  attio: {
+    category: "AIネイティブCRM・GTMオーケストレーション",
+    hq: "ロンドン（英国）",
+    japanPresence: "日本法人・office・現行Japan求人を確認できず",
+    description: "柔軟なrelationship data、automation、AI agent、Developer Platformを統合。公式Ashbyの現行37求人にJapan・Tokyoは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  clay: {
+    category: "GTMエンジニアリング・データ／AIオーケストレーション",
+    hq: "ニューヨーク州ニューヨーク（米国）",
+    japanPresence: "日本法人・office・現行Japan求人を確認できず",
+    description: "data、AI、signals、sequencingを組み合わせるGTM orchestration platform。ARR 1億米ドル・14,000顧客を発表するが、公式Ashbyの現行73求人にJapanは0件。",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  cribl: {
+    category: "テレメトリ基盤・セキュリティ／オブザーバビリティデータ",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Remote Japan・市場立ち上げ（法人・office・責任者は確認不能）",
+    description: "Stream、Edge、Search、Lakeでtelemetryを収集・整形・保存・検索。日本でPartner、Sales Director、Enterprise sellerの3求人を公式募集。",
+    hiringStatus: "積極採用",
+    salesRoles: 3,
+    entryStatus: undefined,
+    tags: ["Japan Entry", "Telemetry", "Observability", "Security", "Channel", "Enterprise"],
+    lastChecked: "2026-08-17",
+  },
   zscaler: {
     category: "ゼロトラスト・SSE・AIセキュリティ",
     hq: "カリフォルニア州サンノゼ（米国）",

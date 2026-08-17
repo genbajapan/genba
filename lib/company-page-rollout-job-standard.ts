@@ -41,6 +41,7 @@ const batchSlugs = new Set(["planet", "replit", "rubrik", "saviynt", "scandit", 
 for (const slug of ["schrodinger", "sensor-tower", "shopify", "sierra", "sysdig"]) batchSlugs.add(slug);
 for (const slug of ["ubiquiti", "veeva", "wasabi", "workato", "zadara"]) batchSlugs.add(slug);
 for (const slug of ["zscaler", "1password", "sixsense", "abnormal-ai", "addepar"]) batchSlugs.add(slug);
+for (const slug of ["airtable", "apollo-io", "attio", "clay", "cribl"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -137,6 +138,12 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  cribl: {
+    name: "Cribl", domain: "Telemetry Infrastructure・Security Data・Observability", officialUrl: "https://cribl.io/careers/",
+    positive: ["Remote JapanでPartner Business Manager、Regional Sales Director、Enterprise Regional Sales Managerを同時採用し、日本GTMを0→1で構築する。", "ARR 3億米ドル超・1,400顧客超・Fortune 100の50%というglobal scaleを背景に、directとchannelの両方を作れる可能性がある。"],
+    negative: ["日本法人・office・責任者・国内case・数値報酬・言語要件は確認不能。", "telemetry cost削減だけでなくdata loss、query、residency、partner delivery、既存SIEM・observabilityとの責任境界をPoCと面接で検証する必要がある。"],
+    next: ["Telemetry・Observability Enterprise Sales", "Security Data Platform GTM", "Japan Channel・Sales Leadership"],
+  },
   zscaler: {
     name: "Zscaler", domain: "Zero Trust・SSE・AI Security", officialUrl: "https://job-boards.greenhouse.io/zscaler",
     positive: ["Sales、SE、Value、Renewal、Transformationの29対象求人を公式確認し、segment・specialist・lifecycleを日本で同時強化している。", "Q3 FY2026売上25%増、ARR25%増、ADK・NTTドコモ等の国内proofから大型platform transformationを経験できる可能性がある。"],
