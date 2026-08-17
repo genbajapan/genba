@@ -841,7 +841,8 @@ export default function CompanyIntelligenceProfile({
                           {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
                         </div>
                         <div>
-                          <span>国内の被保険者数</span>
+                          <span>日本法人従業員数</span>
+                          <small className="company-snapshot-basis">※国内被保険者</small>
                           <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
                           <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
@@ -863,7 +864,8 @@ export default function CompanyIntelligenceProfile({
                         </div>
                         <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
                         <div>
-                          <span>国内の被保険者数</span>
+                          <span>日本法人従業員数</span>
+                          <small className="company-snapshot-basis">※国内被保険者</small>
                           <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
                           <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
