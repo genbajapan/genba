@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 111,
+    "total": 110,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 111
+      "公開済み": 110
     },
     "byPriority": {
       "HOT": 46,
       "Active": 14,
-      "Selective": 15,
+      "Selective": 14,
       "求人なし": 36
     },
-    "standardReady": 111
+    "standardReady": 110
   },
   "companies": [
     {
@@ -577,15 +577,6 @@
     {
       "slug": "abnormal-ai",
       "company": "Abnormal AI",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "adyen",
-      "company": "Adyen",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",

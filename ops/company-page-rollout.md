@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-17 / 正本: [Adyen](/companies/adyen) / 基準コミット: `66ca2e2`
 
-全111社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 111）
+全110社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 110）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -67,7 +67,6 @@
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
-|Selective|Adyen|1|公開済み|はい|なし|
 |Selective|Asana|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|

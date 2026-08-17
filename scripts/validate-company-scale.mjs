@@ -61,9 +61,11 @@ for (const company of companies) {
 }
 
 const adyen = companies.find((company) => company.slug === "adyen");
-const adyenComparison = adyen ? getCompanyScaleComparisons(adyen, companies) : undefined;
-if (!adyenComparison?.revenueBasis?.includes("23.64億ユーロ")) errors.push("adyen: 公表済みの2025年純収益を比較基準として認識できていません。");
-if (adyenComparison?.revenueBasisDisclosure !== "公開値") errors.push("adyen: 公表済み純収益が推定値として扱われています。");
+if (adyen) {
+  const adyenComparison = getCompanyScaleComparisons(adyen, companies);
+  if (!adyenComparison.revenueBasis?.includes("23.64億ユーロ")) errors.push("adyen: 公表済みの2025年純収益を比較基準として認識できていません。");
+  if (adyenComparison.revenueBasisDisclosure !== "公開値") errors.push("adyen: 公表済み純収益が推定値として扱われています。");
+}
 
 if (errors.length) {
   console.error(errors.join("\n"));
