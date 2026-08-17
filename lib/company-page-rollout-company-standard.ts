@@ -1,6 +1,51 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  island: {
+    category: "エンタープライズブラウザ・セキュアワークスペース",
+    hq: "テキサス州ダラス（米国）／テルアビブ（イスラエル）",
+    japanPresence: "日本法人・office・現行Japan求人を確認できず",
+    description: "browserへsecurity、network、data、application、AI controlを統合。公式Careersの現行Japan・Tokyo求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  klaviyo: {
+    category: "B2C CRM・マーケティング／サービス基盤",
+    hq: "マサチューセッツ州ボストン（米国）",
+    japanPresence: "Sydney／Singapore APAC拠点（日本法人・office・現行Japan求人は確認不能）",
+    description: "customer data、Marketing、Service、AIをB2C CRMで統合。公式Careers・Greenhouseの現行Japan・Tokyo求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  lucanet: {
+    category: "CFOプラットフォーム・連結／経営管理",
+    hq: "ベルリン（ドイツ）",
+    japanPresence: "東京local team（2026年正式進出、Country Manager Makoto Yabushita）",
+    description: "連結、planning、開示、ESG、税務、treasury、AI agentをCFO Solution Platformで統合。現行Japan求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  "mistral-ai": {
+    category: "基盤モデル・エンタープライズAI／ソブリンAI",
+    hq: "パリ（フランス）",
+    japanPresence: "Singapore APAC体制（日本法人・office・現行Japan求人は確認不能）",
+    description: "frontier・open-weight models、Studio、Agents、Forge、Computeを提供。公式Ashbyの現行Japan・Tokyo求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  "monday-com": {
+    category: "AIワークプラットフォーム・業務管理／CRM",
+    hq: "テルアビブ（イスラエル）／ニューヨーク（米国）",
+    japanPresence: "monday.com株式会社・東京／丸の内（2022年本格参入）",
+    description: "work management、CRM、service、dev、AI agentを一つのWork Platformで提供。公式Careersの現行Japan・Tokyo求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
   fireblocks: {
     category: "デジタル資産インフラ・決済・トークン化",
     hq: "ニューヨーク（米国）／テルアビブ（イスラエル）",
