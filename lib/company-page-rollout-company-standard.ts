@@ -1,6 +1,42 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  ideals: {
+    category: "仮想データルーム・M&A案件管理",
+    hq: "グローバル分散（契約主体例はルツェルン、スイス）",
+    japanPresence: "東京・丸の内のground team（日本法人・責任者は確認不能）",
+    description: "M&A・fundraisingの機密document、権限、Q&A、redaction、auditを統合。東京でAE、BDA、Premium Solutionsの3機能roleを公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  knowbe4: {
+    category: "ヒューマンリスク管理・セキュリティ教育",
+    hq: "フロリダ州クリアウォーター（米国）",
+    japanPresence: "KnowBe4 Japan合同会社・東京ミッドタウン（2020年設立）",
+    description: "training、phishing simulation、report・triage、behavior・risk scoringを統合。東京でSales、SE、CS、Advisor、Partnerの対象6求人を公式確認。",
+    lastChecked: "2026-08-17",
+  },
+  lakera: {
+    category: "AIセキュリティ・LLM・エージェント制御",
+    hq: "チューリッヒ（スイス）・サンフランシスコ（米国）／Check Point傘下",
+    japanPresence: "過去Japan AE採用は確認。Lakera専用の日本法人・office・責任者は確認不能",
+    hiringStatus: "継続観測",
+    description: "prompt injection、RAG poisoning、data leakage、agent tool misuseをred-team・runtimeで制御。2026年8月17日時点の公式求人は0件。",
+    lastChecked: "2026-08-17",
+  },
+  lighthouse: {
+    category: "宿泊業の商用インテリジェンス・収益管理",
+    hq: "ロンドン（英国）・ヘント（ベルギー）",
+    japanPresence: "Greater Tokyo・Remote（日本法人・office・責任者は確認不能）",
+    description: "hotelのpricing、performance、direct、distribution、commercial dataを統合。日本RemoteでBusiness Development Manager（AE）を公式募集。",
+    lastChecked: "2026-08-17",
+  },
+  mambu: {
+    category: "コンポーザブル・コアバンキング基盤",
+    hq: "アムステルダム（オランダ）",
+    japanPresence: "JP-Remote・Employee of Record（日本法人・office・責任者は確認不能）",
+    description: "Deposits、Lending、Paymentsをcomposable SaaS coreで提供。Japan Remoteでreseller-ledのSenior Account Executive（Channel）を公式募集。",
+    lastChecked: "2026-08-17",
+  },
   figma: {
     category: "プロダクトDesign・Developer Workflow・AI協働",
     hq: "カリフォルニア州サンフランシスコ（米国）",

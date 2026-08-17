@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch"]);
+const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -426,6 +426,36 @@ const companyResearch: Record<string, {
     positive: ["YOKU MOKU CREAと豊田自動織機の国内事例は、計画時間を600時間、2〜3週→1日、63%削減と具体化している。", "solver performanceだけでなく、modeling、deployment、support、SIを製造・物流・経営成果へつなぐ希少な専門性がある。"],
     negative: ["2026年8月17日時点で現行日本求人は0件。旧Regional Sales DirectorのRemote・言語条件を現在へ転用できない。", "売上・ARR・profit・FCF、日本売上・headcount・責任者は非公開で、model保守・教育・目的関数の属人化も国内事例が示す。"],
     next: ["Optimization・Decision Intelligence GTM", "Supply Chain・Manufacturing Solution Sales", "Operations Research・Planning Consulting"],
+  },
+  ideals: {
+    name: "iDeals", domain: "Virtual Data Room・M&A Deal Management", officialUrl: "https://jobs.ashbyhq.com/ideals",
+    positive: ["東京でAE、BDA、Premium Solutionsを採用し、開拓からonboarding・権限・Q&A運用までlocalでつなぐ。", "Profitable・bootstrapped、200万超users、30万companiesと公式は説明し、M&A・Legal・Financeの専門性を磨ける。"],
+    negative: ["売上・ARR・利益額、日本法人・責任者・進出年、国内named caseは非公開・確認不能。", "給与・OTE・quota・attainment・担当社数と、Japan data location・契約主体・MCP data境界を確認する必要がある。"],
+    next: ["Virtual Data Room・LegalTech Enterprise Sales", "M&A・Finance SaaS Customer Delivery", "DealTech・Corporate Development Platform GTM"],
+  },
+  knowbe4: {
+    name: "KnowBe4", domain: "Human Risk Management・Cybersecurity", officialUrl: "https://job-boards.greenhouse.io/knowbe4",
+    positive: ["東京でSales、SE、CS、Advisor、Partnerの対象6求人を採用し、human riskをend-to-endで扱う。", "お金のデザインの工数50〜60%削減・hit率改善など国内定量proofがある。"],
+    negative: ["非公開化後のrevenue・ARR・profit・FCF、Japan revenue・headcountは非公開。", "顧客成果はvendor-hosted・self-reported。privacy・employee monitoring、Microsoft等existing stack、pricingをPoCで検証する必要がある。"],
+    next: ["Cybersecurity Enterprise Sales・Leadership", "Security Awareness・Customer Success Architecture", "Email Security・Human Risk Solutions Engineering"],
+  },
+  lakera: {
+    name: "Lakera", domain: "AI Security・LLM Guardrails", officialUrl: "https://jobs.ashbyhq.com/lakera.ai",
+    positive: ["Check Point AI Defense Planeへred-team・runtime guardrailsを統合し、agentic AI securityの新categoryに携われる。", "model-neutral、100超languages、SaaS・self-host、Gandalf threat intelligenceは技術差別化候補。"],
+    negative: ["2026年8月17日の公式ATSは現行求人0。過去Japan AEの条件を現在へ転用できない。", "Lakera単体財務、日本法人・責任者・office・顧客は非公開・確認不能。vendor performance claimは日本語workloadで再検証が必要。"],
+    next: ["AI Security・AppSec GTM", "GenAI Red Team・Product Security", "Cybersecurity Platform Sales・Solutions Engineering"],
+  },
+  lighthouse: {
+    name: "Lighthouse", domain: "Hospitality Commercial Intelligence", officialUrl: "https://job-boards.eu.greenhouse.io/lighthouse",
+    positive: ["Japan Remote AEがfull-cycle・self-sourced pipeline・3x coverageを持ち、early local marketの営業経験になる。", "8万超hotels、400超partnerと国内工数削減caseがあり、dataをhotel P&L・commercial outcomeへつなげられる。"],
+    negative: ["Groupのrecognized revenue・profit・FCF、日本法人・office・責任者・売上は非公開・確認不能。", "国内caseはvendor-authored・customer quote。PMS・RMS・OTA・市況の寄与を分け、ADR・RevPAR・TCOを比較する必要がある。"],
+    next: ["Hospitality SaaS Enterprise Sales", "Revenue Management・Commercial Strategy", "TravelTech・Vertical SaaS Country Build"],
+  },
+  mambu: {
+    name: "Mambu", domain: "Composable Core Banking・FinTech", officialUrl: "https://careers-mambu.icims.com/jobs/3352/senior-account-executive-%28channel%29/job",
+    positive: ["Japan RemoteのChannel AEとしてreseller採用・enablement、joint GTM、New ACVを担い、financial infrastructureのecosystemを作れる。", "230M end users、500M+ API calls/day、65+カ国と、Core・Paymentsのglobal scaleを公式は説明。"],
+    negative: ["revenue・ARR・profit・FCF、日本法人・office・責任者・本番顧客は非公開・確認不能。", "MPO廃止・Connectors support縮小、mission-critical移行・resilience・data residency・exit、partner capacityを必ず確認する必要がある。"],
+    next: ["Core Banking・FinTech Enterprise Sales", "Financial Services Channel・Alliance GTM", "Cloud Banking・Embedded Finance Country Build"],
   },
   hightouch: {
     name: "Hightouch", domain: "Composable CDP・Agentic Marketing", officialUrl: "https://job-boards.greenhouse.io/hightouch",
