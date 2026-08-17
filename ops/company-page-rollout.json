@@ -20,10 +20,10 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 11,
+      "未着手": 6,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 101
+      "公開済み": 106
     },
     "byPriority": {
       "HOT": 47,
@@ -912,7 +912,7 @@
       "company": "MongoDB",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -921,7 +921,7 @@
       "company": "Pinecone",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -930,7 +930,7 @@
       "company": "Postman",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -939,7 +939,7 @@
       "company": "Primer",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -957,7 +957,7 @@
       "company": "Retool",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
