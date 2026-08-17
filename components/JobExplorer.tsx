@@ -43,7 +43,7 @@ export default function JobExplorer() {
       <div className="filter-panel">
         <label className="search-field">
           <span>求人・企業名を検索</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Enterprise、Datadog" />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例：Enterprise、Braze" />
         </label>
         <label className="select-field">
           <span>職種</span>

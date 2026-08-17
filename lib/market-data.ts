@@ -918,8 +918,9 @@ const companyRecords: Company[] = [
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針と合わない大手企業は公開対象から除外する。
-// Salesforceは2026-08-11、ServiceNowは国内組織規模と知名度を踏まえて2026-08-17に除外した。
-const publiclyExcludedCompanySlugs = new Set(["salesforce", "servicenow"]);
+// Salesforceは2026-08-11、ServiceNow・Datadog・Zscaler・Veevaは国内組織規模と知名度を踏まえて2026-08-17に除外した。
+// HubSpotは読者の比較基準になるアンカー企業として、Jioの明示判断により公開を継続する。
+const publiclyExcludedCompanySlugs = new Set(["salesforce", "servicenow", "datadog", "zscaler", "veeva"]);
 const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -3100,7 +3101,7 @@ const signalRecords: Signal[] = [
   },
 ];
 
-export const signals = signalRecords.filter((signal) => signal.companySlug !== "salesforce");
+export const signals = signalRecords.filter((signal) => !publiclyExcludedCompanySlugs.has(signal.companySlug));
 
 export function getCompany(slug: string) {
   return companies.find((company) => company.slug === slug);

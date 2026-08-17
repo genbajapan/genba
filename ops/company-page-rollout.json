@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 114,
+    "total": 111,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 114
+      "公開済み": 111
     },
     "byPriority": {
-      "HOT": 49,
+      "HOT": 46,
       "Active": 14,
       "Selective": 15,
       "求人なし": 36
     },
-    "standardReady": 114
+    "standardReady": 111
   },
   "companies": [
     {
@@ -147,15 +147,6 @@
       "company": "Cursor",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "datadog",
-      "company": "Datadog",
-      "priority": "HOT",
-      "salesRoles": 22,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -422,15 +413,6 @@
       "missingFields": []
     },
     {
-      "slug": "veeva",
-      "company": "Veeva Systems",
-      "priority": "HOT",
-      "salesRoles": 32,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "verkada",
       "company": "Verkada",
       "priority": "HOT",
@@ -462,15 +444,6 @@
       "company": "Zendesk",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "zscaler",
-      "company": "Zscaler",
-      "priority": "HOT",
-      "salesRoles": 29,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
