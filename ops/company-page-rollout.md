@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-17 / 正本: [Adyen](/companies/adyen) / 基準コミット: `66ca2e2`
 
-全112社（未着手 31 / 調査中 0 / 検証済み 0 / 公開済み 81）
+全112社（未着手 26 / 調査中 0 / 検証済み 0 / 公開済み 86）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -51,7 +51,7 @@
 |HOT|Verkada|7|公開済み|はい|なし|
 |HOT|WalkMe|7|公開済み|はい|なし|
 |HOT|Zendesk|3|公開済み|はい|なし|
-|HOT|Zscaler|29|未着手|はい|なし|
+|HOT|Zscaler|29|公開済み|はい|なし|
 |Active|Aghanim|2|公開済み|はい|なし|
 |Active|Censys|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
@@ -65,7 +65,7 @@
 |Active|Sonar|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
-|Selective|Abnormal AI|1|未着手|はい|なし|
+|Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|Adyen|1|公開済み|はい|なし|
 |Selective|Asana|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
@@ -80,9 +80,9 @@
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
-|求人なし|1Password|0|未着手|はい|なし|
-|求人なし|6sense|0|未着手|はい|なし|
-|求人なし|Addepar|0|未着手|はい|なし|
+|求人なし|1Password|0|公開済み|はい|なし|
+|求人なし|6sense|0|公開済み|はい|なし|
+|求人なし|Addepar|0|公開済み|はい|なし|
 |求人なし|Airtable|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本市場の需要・3〜5年の見立て、FABE分析と競合比較ほか3件|
 |求人なし|Amplitude|0|公開済み|はい|なし|
 |求人なし|Apollo.io|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、創業年、日本市場の需要・3〜5年の見立てほか4件|

@@ -20,10 +20,10 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 31,
+      "未着手": 26,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 81
+      "公開済み": 86
     },
     "byPriority": {
       "HOT": 46,
@@ -444,7 +444,7 @@
       "company": "Zscaler",
       "priority": "HOT",
       "salesRoles": 29,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -570,7 +570,7 @@
       "company": "Abnormal AI",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -705,7 +705,7 @@
       "company": "1Password",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -714,7 +714,7 @@
       "company": "6sense",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -723,7 +723,7 @@
       "company": "Addepar",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
