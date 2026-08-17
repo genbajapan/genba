@@ -39,6 +39,7 @@ type JobLike = {
 const batchSlugs = new Set(["planet", "replit", "rubrik", "saviynt", "scandit", "nexthink", "nice", "patch", "patsnap", "pendo", "anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
 
 for (const slug of ["schrodinger", "sensor-tower", "shopify", "sierra", "sysdig"]) batchSlugs.add(slug);
+for (const slug of ["ubiquiti", "veeva", "wasabi", "workato", "zadara"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -135,6 +136,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  ubiquiti: {
+    name: "Ubiquiti", domain: "Enterprise Networking・Physical IT", officialUrl: "https://job-boards.greenhouse.io/ubiquiti",
+    positive: ["AEと日本初のSolution Engineering leadを同時採用し、direct・channel・technical validationをlocalで作る段階。", "高いGAAP operating incomeとnetwork・camera・access・voice・storageのwide portfolioを持つ。"],
+    negative: ["日本法人・office・責任者・国内named deployment・数値報酬は未確認。", "inventory、warranty、support SLA、founder dependency、partner deliveryを実案件で検証する必要がある。"],
+    next: ["Enterprise Networking Sales・SE", "Physical Security・IoT GTM", "Japan Channel・Solution Leadership"],
+  },
+  veeva: {
+    name: "Veeva Systems", domain: "Life Sciences Industry Cloud", officialUrl: "https://jobs.lever.co/veeva",
+    positive: ["日本でSales、Consulting、CS、Services、Presalesの対象32求人を公式掲載。", "Q1 FY2027は売上16%増、GAAP operating margin 30.9%で成長と利益を両立。"],
+    negative: ["日本の報酬・quota・attainment・採用人数・重複requisitionの扱いは非公開。", "職種は27 On-site・5 Remoteで、travel、規制domain、validation責任を個別確認する必要がある。"],
+    next: ["Life Sciences Enterprise Sales", "Clinical・Quality・Safety Consulting", "Industry Cloud Customer・Services Leadership"],
+  },
+  wasabi: {
+    name: "Wasabi Technologies", domain: "Cloud Storage・Data Protection", officialUrl: "https://job-boards.greenhouse.io/wasabi/jobs/5382765008",
+    positive: ["日本Inside SalesがSMB・Mid-MarketのcloseとChannel handoffを持つ明確なrole設計。", "東芝・Sumallyの国内定量caseとTokyo・Osaka storage regionを持つ。"],
+    negative: ["recognized revenue・profit・ARR、日本責任者のcurrent tenure、workstyle・数値報酬は非公開。", "minimum retention、support、restore、migration・exit、acquisition integrationをTCOで検証する必要がある。"],
+    next: ["Cloud Infrastructure Inside Sales", "Storage・Backup Enterprise Sales", "Channel・FinOps GTM"],
+  },
+  workato: {
+    name: "Workato", domain: "Enterprise Automation・Integration・AI Orchestration", officialUrl: "https://www.workato.com/careers?gh_jid=8627710002#open-roles",
+    positive: ["Partner Salesとしてco-market・co-sell・co-deliveryと新規partner開拓を一体で担う。", "NAVITIME・Coincheckの国内定量caseとJapan data center・Enterprise MCPを持つ。"],
+    negative: ["recognized revenue・profit・current ARR、日本責任者・数値報酬・個別出社日数は非公開。", "task・AI usage cost、connector保守、identity・audit、partner creditを実案件で検証する必要がある。"],
+    next: ["iPaaS・Automation Partner Sales", "AI Orchestration GTM", "Japan Ecosystem・Alliance Leadership"],
+  },
+  zadara: {
+    name: "Zadara", domain: "Sovereign Cloud・Edge Infrastructure", officialUrl: "https://jobs.lever.co/Zadara/f913dc3e-76dd-45eb-89a8-bda865b10ea6",
+    positive: ["東京RemoteのSenior TAMとしてarchitecture、incident、DR、success plan、MSP enablementをend-to-endで持つ。", "Rakuten Mobile等の日本企業導入と500超edge locationを確認。"],
+    negative: ["売上・ARR・profit、日本法人・office・leader・数値報酬・国内定量ROIは非公開。", "sovereigntyの実体、SLA、support、capacity、migration・exit、renewal ownershipを契約・面接で確認する必要がある。"],
+    next: ["Sovereign Cloud Technical Account Management", "Cloud・Storage Customer Success", "MSP・Edge Solution Leadership"],
+  },
   schrodinger: {
     name: "Schrödinger", domain: "Computational Chemistry・Materials R&D", officialUrl: "https://www.schrodinger.com/company/careers/",
     positive: ["physics-based simulationとAIを創薬・材料R&Dの実験判断へ接続できる。", "2002年から日本法人を持ち、SalesとApplicationsの2職種を公式募集。"],

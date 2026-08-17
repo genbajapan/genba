@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 36,
+      "未着手": 31,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 76
     },
     "byPriority": {
-      "HOT": 44,
-      "Active": 12,
-      "Selective": 17,
+      "HOT": 45,
+      "Active": 13,
+      "Selective": 15,
       "求人なし": 39
     },
-    "standardReady": 76
+    "standardReady": 81
   },
   "companies": [
     {
@@ -404,6 +404,15 @@
       "missingFields": []
     },
     {
+      "slug": "veeva",
+      "company": "Veeva Systems",
+      "priority": "HOT",
+      "salesRoles": 32,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "verkada",
       "company": "Verkada",
       "priority": "HOT",
@@ -530,6 +539,15 @@
       "missingFields": []
     },
     {
+      "slug": "ubiquiti",
+      "company": "Ubiquiti",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "zilliz",
       "company": "Zilliz",
       "priority": "Active",
@@ -638,108 +656,31 @@
       "missingFields": []
     },
     {
-      "slug": "ubiquiti",
-      "company": "Ubiquiti",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive - Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive - Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "veeva",
-      "company": "Veeva Systems",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Partner - MedTech Japan:勤務地・言語の日本語表記",
-        "求人:Account Partner - MedTech Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Partner - MedTech Japan:市場価値"
-      ]
-    },
-    {
       "slug": "wasabi",
       "company": "Wasabi Technologies",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Inside Sales Representative - Japan:勤務地・言語の日本語表記",
-        "求人:Inside Sales Representative - Japan:ポジティブ・ネガティブ評判",
-        "求人:Inside Sales Representative - Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "workato",
       "company": "Workato",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Partner Sales Manager:ポジティブ・ネガティブ評判",
-        "求人:Partner Sales Manager:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "zadara",
       "company": "Zadara",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Senior Account Executive:勤務地・言語の日本語表記",
-        "求人:Senior Account Executive:ポジティブ・ネガティブ評判",
-        "求人:Senior Account Executive:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "zscaler",

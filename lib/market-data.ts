@@ -15,6 +15,7 @@ import { jobs20260817BatchTwelve } from "@/lib/company-additions-2026-08-17-batc
 import { jobs20260817BatchThirteen } from "@/lib/company-additions-2026-08-17-batch-13";
 import { jobs20260817BatchFourteen } from "@/lib/company-additions-2026-08-17-batch-14";
 import { jobs20260817BatchFifteen } from "@/lib/company-additions-2026-08-17-batch-15";
+import { jobs20260817BatchSixteen } from "@/lib/company-additions-2026-08-17-batch-16";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1315,6 +1316,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchSixteen,
   ...jobs20260817BatchFifteen,
   ...jobs20260817BatchFourteen,
   ...jobs20260817BatchThirteen,
@@ -1925,14 +1927,14 @@ const jobRecords: Job[] = [
     title: "Partner Sales Manager",
     segment: "パートナーセールス",
     location: "東京",
-    workStyle: "公式求人で確認",
-    language: "日本語 / 英語",
+    workStyle: "個別求人で明記なし（全社CareerはHybrid）",
+    language: "公式求人で人間言語の明記なし",
     firstSeen: "2026-08-10",
-    lastChecked: "2026-08-13",
+    lastChecked: "2026-08-17",
     source: { label: "Workato Careers(Greenhouse)", url: "https://www.workato.com/careers?gh_jid=8627710002#open-roles" },
     descriptionSummary: "日本のチャネルチームの一員として、既存パートナーの関係管理と新規パートナーの開拓を担うポジション。「co-market・co-sell・co-delivery」を軸にしたチャネル戦略の立案・実行、パートナーとのエグゼクティブレベルの関係構築、競合状況を踏まえた事業成長提案、CRM/PRMツールでのパイプライン管理が求められる。",
     genbaTake: "「日本市場における最重要パートナーシップの管理」と「新規パートナーの発掘・審査」の両方を1ポジションで担う設計は、Workato Japanのパートナー戦略がまだ体制構築の途上にあることを示唆している。直販AEの求人が現時点で見当たらない一方でこのポジションが募集されている点から、日本市場ではSIer経由の間接販売が当面の主軸になっている可能性がある。",
-    compensationReality: "Workato Japan固有の給与データは確認できていない。求人にOTE等の金額記載はなく、OpenWorkにも2026年8月時点で口コミの投稿がない。",
+    compensationReality: "日本の給与、OTE、pay mix、quota、equityは公式求人で数値非公開。全社Hybrid方針を個別の出社日数へ転用しない。",
     desiredProfile: "求人では、営業/間接販売/チャネルパートナーシップでの3〜5年の経験(またはそれに相当する直販営業経験)、パートナーシップ関連職での2〜3年の経験、iPaaS・自動化業界への理解、CRM/PRMツールの実務経験、高い交渉力とパートナー・幹部層とのネットワークが明記されている。",
     careerInsights: {
       fit: "パートナー企業との信頼関係を軸に、co-sell・co-deliveryの事業成長を設計したい人に向く。逆に、個人の商談実績を直接的に積み上げたい人には、間接的な成果指標(パートナー経由のパイプライン)が評価しづらく感じられる可能性がある。",
@@ -2904,9 +2906,9 @@ const jobRecords: Job[] = [
     careerInsights: { fit: "dataをexecutive decisionへ変えるhunterに向く。", thingsToKnow: "Japan顧客、data validation、package、ACV、cycle、達成率は非公開。", marketValue: "mobile、AdTech、MarTech、market intelligenceの複合経験。", tenureAndPromotion: "Japan teamの在籍・昇進dataは未公開。", priorCompanies: "公開集計はない。求人要件からAdTech、MarTech、mobile data、research sales経験者が中心(仮説)。", nextCompanies: "公開傾向は未確認。隣接性からData SaaS、AdTech、Market IntelligenceのAEが候補(仮説)。" },
   },
   {
-    id: "ubiquiti-account-executive-japan", companySlug: "ubiquiti", title: "Account Executive - Japan", segment: "SMB / Enterprise / Channel", location: "日本（東京優先）", workStyle: "remote / hybrid", language: "日本語ネイティブ / 英語ビジネス推奨", firstSeen: "2026-08-12", lastChecked: "2026-08-13",
+    id: "ubiquiti-account-executive-japan", companySlug: "ubiquiti", title: "Account Executive - Japan", segment: "SMB / Enterprise / Channel", location: "日本（東京優先）", workStyle: "Remote / Hybrid", language: "日本語（native）／英語（business preferred）", firstSeen: "2026-08-12", lastChecked: "2026-08-17",
     source: { label: "Ubiquiti Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/ubiquiti/jobs/4245270009" },
-    descriptionSummary: "UniFiのnetwork、Wi-Fi、switching、surveillance、access、NAS、VoIPをSMB・Enterprise・Education・Hospitality・Retailへ提案し、end customerとchannelをfull-cycleで担当。",
+    descriptionSummary: "日本Remoteを基点に、UniFiのnetwork、Wi-Fi、switching、surveillance、access、storage、VoIPをSMB・Enterprise・Education・Hospitality・Retailへ提案し、end customerとchannelをfull-cycleで担当。",
     genbaTake: "安価なhardwareではなく、multi-site管理、license TCO、single-pane operation、partner deliveryを売るhybrid sale。inventoryとsupportもclose条件になる。",
     compensationReality: "日本の給与、OTE、equity、quotaは非公開。booking、shipment、revenue、partner、portfolio expansionのcredit時点を確認したい。",
     desiredProfile: "公式求人では2年以上のsales、full-cycle、channel/end customer、network/Wi-Fi/security portfolio、日本語と英語communicationを求める。",
@@ -2915,6 +2917,8 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "veeva-account-partner-medtech-japan",
+  "zadara-senior-account-executive",
   "planet-account-executive-defence-intelligence-japan",
   "replit-founding-account-executive-japan",
   "rubrik-mid-market-ae",

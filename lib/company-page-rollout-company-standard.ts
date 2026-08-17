@@ -1,6 +1,46 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  ubiquiti: {
+    category: "ネットワーク・物理IT・統合運用",
+    hq: "ニューヨーク州ニューヨーク（米国）",
+    japanPresence: "日本Remote・東京優先（法人・officeは確認不能）",
+    description: "UniFiでnetwork、security camera、access、VoIP、storage、ProAVを統合。日本でAccount Executiveと初のSales Solution Engineerを公式募集。",
+    salesRoles: 2,
+    lastChecked: "2026-08-17",
+  },
+  veeva: {
+    category: "ライフサイエンス業界クラウド・データ基盤",
+    hq: "カリフォルニア州プレザントン（米国）",
+    japanPresence: "Veeva Japan・東京／大阪",
+    description: "製薬・MedTechのR&D、Clinical、Safety、Quality、Regulatory、Medical、Commercialを業界cloudで統合。日本33求人のうちProduct Supportを除く32職種を掲載。",
+    salesRoles: 32,
+    lastChecked: "2026-08-17",
+  },
+  wasabi: {
+    category: "クラウドストレージ・データ保護",
+    hq: "マサチューセッツ州ボストン（米国）",
+    japanPresence: "Wasabi Technologies Japan合同会社・東京",
+    description: "S3互換のHot Cloud Storageを固定的なpricingとpartner modelで提供。日本でInside Sales Representativeを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  workato: {
+    category: "業務統合・自動化・AIオーケストレーション",
+    hq: "カリフォルニア州マウンテンビュー（米国）",
+    japanPresence: "Workato株式会社・東京都千代田区丸の内（2021年日本法人）",
+    description: "iPaaS、workflow automation、Enterprise MCP、AI agent orchestrationを統合。日本でPartner Sales Managerを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  zadara: {
+    category: "ソブリンクラウド・エッジ・ストレージ",
+    hq: "カリフォルニア州アーバイン（米国）",
+    japanPresence: "日本語公式site・国内顧客・東京Remote（法人・officeは確認不能）",
+    description: "500超のedge locationでcompute、storage、network、sovereign AI基盤をconsumption modelで提供。東京RemoteのSenior Technical Account Managerを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
   schrodinger: {
     category: "計算化学・分子設計・創薬／材料R&D",
     hq: "ニューヨーク州ニューヨーク（米国）",
