@@ -36,6 +36,7 @@ import { applyCompanyPageRolloutBatchEighteen } from "@/lib/company-page-rollout
 import { applyCompanyPageRolloutBatchNineteen } from "@/lib/company-page-rollout-batch-19";
 import { applyCompanyPageRolloutBatchTwenty } from "@/lib/company-page-rollout-batch-20";
 import { applyCompanyPageRolloutBatchTwentyOne } from "@/lib/company-page-rollout-batch-21";
+import { applyCompanyPageRolloutBatchTwentyTwo } from "@/lib/company-page-rollout-batch-22";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
 
@@ -9627,6 +9628,7 @@ applyCompanyPageRolloutBatchEighteen(intelligenceBySlug);
 applyCompanyPageRolloutBatchNineteen(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwenty(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyOne(intelligenceBySlug);
+applyCompanyPageRolloutBatchTwentyTwo(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {
   const intelligence = intelligenceBySlug[slug];

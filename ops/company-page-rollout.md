@@ -48,9 +48,11 @@
 |HOT|Sensor Tower|5|公開済み|はい|なし|
 |HOT|Speak|3|公開済み|はい|なし|
 |HOT|Stripe|3|公開済み|はい|なし|
+|HOT|UiPath|4|未着手|はい|なし|
 |HOT|Veeva Systems|32|公開済み|はい|なし|
 |HOT|Verkada|7|公開済み|はい|なし|
 |HOT|WalkMe|7|公開済み|はい|なし|
+|HOT|Wiz|8|未着手|はい|なし|
 |HOT|Zendesk|3|公開済み|はい|なし|
 |HOT|Zscaler|29|公開済み|はい|なし|
 |Active|Aghanim|2|公開済み|はい|なし|
@@ -61,6 +63,7 @@
 |Active|Mirakl|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
 |Active|Patsnap|2|公開済み|はい|なし|
+|Active|Replit|2|公開済み|はい|なし|
 |Active|Rubrik|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
 |Active|Sonar|2|公開済み|はい|なし|
@@ -77,7 +80,6 @@
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Pendo|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
-|Selective|Replit|1|公開済み|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
@@ -109,14 +111,12 @@
 |求人なし|Primer|0|公開済み|はい|なし|
 |求人なし|Qualtrics|0|公開済み|はい|なし|
 |求人なし|Retool|0|公開済み|はい|なし|
-|求人なし|Rippling|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本市場の需要・3〜5年の見立て、FABE分析と競合比較ほか3件|
+|求人なし|Rippling|0|未着手|はい|なし|
 |求人なし|Scandit|0|公開済み|はい|なし|
 |求人なし|Sierra|0|公開済み|はい|なし|
 |求人なし|Sysdig|0|公開済み|はい|なし|
-|求人なし|Tines|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、創業年、日本市場の需要・3〜5年の見立てほか4件|
-|求人なし|UiPath|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本進出年、日本市場の需要・3〜5年の見立てほか5件|
-|求人なし|Vanta|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本市場の需要・3〜5年の見立て、FABE分析と競合比較ほか3件|
-|求人なし|Wiz|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本進出年、日本市場の需要・3〜5年の見立てほか4件|
-|求人なし|Writer|0|未着手|いいえ|日本語の事業領域・本社表記、経営陣、日本市場の需要・3〜5年の見立て、FABE分析と競合比較ほか3件|
+|求人なし|Tines|0|未着手|はい|なし|
+|求人なし|Vanta|0|未着手|はい|なし|
+|求人なし|Writer|0|未着手|はい|なし|
 
 進捗状態と公開ゲートは `ops/company-page-standard.md` を正本とする。詳細な不足項目は `ops/company-page-rollout.json` を参照。

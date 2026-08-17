@@ -19,6 +19,7 @@ import { jobs20260817BatchSixteen } from "@/lib/company-additions-2026-08-17-bat
 import { jobs20260817BatchSeventeen } from "@/lib/company-additions-2026-08-17-batch-17";
 import { jobs20260817BatchEighteen } from "@/lib/company-additions-2026-08-17-batch-18";
 import { jobs20260817BatchNineteen } from "@/lib/company-additions-2026-08-17-batch-19";
+import { jobs20260817BatchTwentyTwo } from "@/lib/company-additions-2026-08-17-batch-22";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1319,6 +1320,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchTwentyTwo,
   ...jobs20260817BatchNineteen,
   ...jobs20260817BatchEighteen,
   ...jobs20260817BatchSeventeen,

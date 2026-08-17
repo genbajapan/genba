@@ -43,6 +43,7 @@ for (const slug of ["ubiquiti", "veeva", "wasabi", "workato", "zadara"]) batchSl
 for (const slug of ["zscaler", "1password", "sixsense", "abnormal-ai", "addepar"]) batchSlugs.add(slug);
 for (const slug of ["airtable", "apollo-io", "attio", "clay", "cribl"]) batchSlugs.add(slug);
 for (const slug of ["fireblocks", "gong", "halcyon", "harvey", "intercom"]) batchSlugs.add(slug);
+for (const slug of ["uipath", "wiz"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -139,6 +140,18 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  uipath: {
+    name: "UiPath", domain: "Agentic Automation・Enterprise Workflow", officialUrl: "https://jobs.ashbyhq.com/uipath",
+    positive: ["2017年から日本法人を展開し、東京・大阪拠点、現会長CEO、JPX・NTT Communicationsの国内caseを持つ。", "FY2026通期GAAP黒字化後、東京でSales・BDR・金融Sales Associate・Specialist SEの4職を採用している。"],
+    negative: ["日本の売上・ARR・headcount・quota・attainment・数値報酬は非公開。", "既存RPAからagentic productionへの転換、Microsoft等との競争、on-prem・partner deliveryを顧客環境と面接で検証する必要がある。"],
+    next: ["Agentic Automation Enterprise GTM", "AI・Workflow Solutions Engineering", "Automation CoE・Transformation Leadership"],
+  },
+  wiz: {
+    name: "Wiz", domain: "Cloud・AI Security・CNAPP", officialUrl: "https://www.wiz.io/careers",
+    positive: ["Google買収完了後も東京でAE、Partner、SE、TAM、Advanced Deliveryの8対象職を採用し、full-lifecycle coverageを構築している。", "Fortune 100の65%超、1日2300億files、顧客の約90%がAI security機能を利用するglobal scaleを持つ。"],
+    negative: ["日本の売上・顧客数・headcount・leader・国内named定量case・数値報酬は非公開。", "Google統合後のreporting、multi-cloud neutrality、product credit、quota、partner delivery、CNAPP競争を面接とPoCで検証する必要がある。"],
+    next: ["Cloud Security Enterprise GTM", "CNAPP Solutions・Customer Engineering", "Security Partner・Post-sales Leadership"],
+  },
   fireblocks: {
     name: "Fireblocks", domain: "Digital Asset Infrastructure・Payments・Tokenization", officialUrl: "https://www.fireblocks.com/careers/",
     positive: ["2024年に東京officeを開設し、現行Project Managerは日本語・英語で複雑な顧客導入を担う。", "2,400超の機関、10兆米ドル超のtransfer実績と、Mitsui Digital Commodities等の日本proofを持つ。"],
