@@ -22,6 +22,13 @@ export const COMPANY_PAGE_STANDARD = {
     allowHorizontalResize: false,
     wideTableOverflow: "horizontal-scroll",
   },
+  heroSummary: {
+    readerFirst: true,
+    requiredElements: ["customer-problem", "plain-language-solution", "business-outcome"],
+    rejectFeatureRowReuse: true,
+    rejectProductNameEnumeration: true,
+    minimumSentences: 2,
+  },
   jobMarketValue: {
     roleSpecific: true,
     dimensions: ["role-family", "seniority", "segment", "target-ownership"],

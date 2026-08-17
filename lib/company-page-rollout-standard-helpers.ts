@@ -14,16 +14,32 @@ export type StandardPatch = {
   leadership: CompanyPublicIntelligence["overviewLeadership"];
   marketOutlook: SalesMarketOutlook;
   fabe: SalesFabeOverview;
+  heroSummary?: string;
   culture: CultureDeepDive;
   aeItems: AeInterviewHypothesis[];
   sources?: ResearchSource[];
 };
 
+const businessOutcomePattern = /(解決|改善|減ら|高め|つな|変え|支援|実現|移せ|広げ|成果|売上|コスト|速度|安全|収益|生産性|定着|時間|工数|意思決定|投資効果|統合|自動化|一元管理|運用)/;
+
+function readerFirstSummary(intelligence: CompanyPublicIntelligence, fabe: SalesFabeOverview) {
+  const summary = intelligence.salesSnapshot.trim();
+  if (businessOutcomePattern.test(summary)) return summary;
+  const benefit = fabe.fabeRows.find((row) => row.key === "benefit")?.analysis.trim().replace(/。$/, "");
+  return benefit ? `${summary}その結果、${benefit}。` : summary;
+}
+
 export function applyStandard(intelligence: CompanyPublicIntelligence, patch: StandardPatch) {
   intelligence.researchedAt = rolloutResearchedAt;
   intelligence.overviewLeadership = patch.leadership;
   intelligence.salesMarketOutlook = patch.marketOutlook;
-  intelligence.salesFabeOverview = patch.fabe;
+  // The hero must explain the customer problem and business outcome without
+  // requiring the reader to know product names. The feature row remains in the
+  // expandable FABE table; it must never be reused as the company summary.
+  intelligence.salesFabeOverview = {
+    ...patch.fabe,
+    summary: patch.heroSummary ?? readerFirstSummary(intelligence, patch.fabe),
+  };
   intelligence.cultureDeepDive = patch.culture;
   intelligence.aeInterviewHypotheses = {
     intro: "会社・市場・求人の公開事実から、入社後の達成難度を左右する未公開情報を5点に絞った。仮説を先に示し、数字・具体例・反証を面接で確認するための論点である。",
@@ -118,6 +134,7 @@ export type CompactPatchInput = {
   externalId: string;
   financeId: string;
   targets: string[];
+  heroSummary?: string;
   competitors: string;
   feature: string;
   advantage: string;
@@ -161,6 +178,7 @@ export function buildCompactPatch(input: CompactPatchInput): StandardPatch {
         { key: "competitor", analysis: input.competitors, customerMeaning: "機能数だけでなく、導入負荷、統合、運用、成果、総コストで比較する。" },
       ]),
     },
+    heroSummary: input.heroSummary,
     culture: culture({
       headline: input.cultureHeadline,
       classification: input.classification,

@@ -112,6 +112,16 @@ function assess(company) {
   addMissing(missing, intelligence.facts?.length >= 3, "主要指標");
   addMissing(missing, intelligence.salesMarketOutlook?.paragraphs?.length >= 2, "日本市場の需要・3〜5年の見立て");
   addMissing(missing, intelligence.salesFabeOverview?.fabeRows?.length === 5, "FABE分析と競合比較");
+  if (intelligence.salesFabeOverview) {
+    const heroSummary = intelligence.salesFabeOverview.summary.trim();
+    const featureRow = intelligence.salesFabeOverview.fabeRows.find((row) => row.key === "feature")?.analysis.trim();
+    const sentenceCount = heroSummary.split("。").filter(Boolean).length;
+    addMissing(missing, heroSummary.length >= 80, "ヒーロー説明:課題・解決・成果の粒度");
+    addMissing(missing, sentenceCount >= COMPANY_PAGE_STANDARD.heroSummary.minimumSentences, "ヒーロー説明:2文以上");
+    addMissing(missing, heroSummary !== featureRow, "ヒーロー説明:Feature欄の転用禁止");
+    addMissing(missing, /(課題|困|分断|分かれ|手作業|遅|できない|負荷|リスク|機密|実験|取りこぼし|属人)/.test(heroSummary), "ヒーロー説明:顧客課題");
+    addMissing(missing, /(解決|改善|減ら|高め|つな|変え|支援|実現|移せ|広げ|成果|売上|コスト|速度|安全|収益|生産性|定着|時間|工数|意思決定|投資効果|統合|自動化|一元管理|運用)/.test(heroSummary), "ヒーロー説明:解決と事業成果");
+  }
   addMissing(missing, intelligence.salesFabeOverview?.targetSegments?.every((segment) => containsJapanese(segment) || /^(?:D2C|B2B|B2C|SaaS|FinTech|AI|IT)$/.test(segment)), "対象領域の日本語表記");
   addMissing(missing, intelligence.cultureDeepDive?.workStyle?.classification, "働き方・カルチャー");
   addMissing(missing, intelligence.comparisonMap?.length >= 1, "合わせて見るべき会社");
