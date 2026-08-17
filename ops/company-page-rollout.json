@@ -20,18 +20,18 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 46,
+      "未着手": 41,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 66
     },
     "byPriority": {
-      "HOT": 42,
-      "Active": 10,
-      "Selective": 24,
-      "求人なし": 36
+      "HOT": 43,
+      "Active": 11,
+      "Selective": 21,
+      "求人なし": 37
     },
-    "standardReady": 66
+    "standardReady": 71
   },
   "companies": [
     {
@@ -368,6 +368,15 @@
       "missingFields": []
     },
     {
+      "slug": "saviynt",
+      "company": "Saviynt",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "speak",
       "company": "Speak",
       "priority": "HOT",
@@ -485,6 +494,15 @@
       "missingFields": []
     },
     {
+      "slug": "rubrik",
+      "company": "Rubrik",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "sonar",
       "company": "Sonar",
       "priority": "Active",
@@ -579,103 +597,18 @@
       "company": "Planet",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Defence & Intelligence:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Defence & Intelligence:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "replit",
       "company": "Replit",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Founding Account Executive (Japan):ポジティブ・ネガティブ評判",
-        "求人:Founding Account Executive (Japan):市場価値"
-      ]
-    },
-    {
-      "slug": "rubrik",
-      "company": "Rubrik",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "決算分析・日本への注力度・リスク対応",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Mid Market Account Executive | Tokyo:ポジティブ・ネガティブ評判",
-        "求人:Mid Market Account Executive | Tokyo:市場価値"
-      ]
-    },
-    {
-      "slug": "saviynt",
-      "company": "Saviynt",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Strategic Account Executive, Japan:勤務地・言語の日本語表記",
-        "求人:Strategic Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Strategic Account Executive, Japan:市場価値"
-      ]
-    },
-    {
-      "slug": "scandit",
-      "company": "Scandit",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本語の事業領域・本社表記",
-        "経営陣",
-        "日本進出年",
-        "日本市場の需要・3〜5年の見立て",
-        "FABE分析と競合比較",
-        "対象領域の日本語表記",
-        "働き方・カルチャー",
-        "AEとして検証すべき5つの未解決論点",
-        "求人:Account Executive, Japan:ポジティブ・ネガティブ評判",
-        "求人:Account Executive, Japan:市場価値"
-      ]
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "schrodinger",
@@ -1420,6 +1353,15 @@
         "働き方・カルチャー",
         "AEとして検証すべき5つの未解決論点"
       ]
+    },
+    {
+      "slug": "scandit",
+      "company": "Scandit",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "tines",

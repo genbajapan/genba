@@ -13,6 +13,7 @@ import { jobs20260817BatchTen } from "@/lib/company-additions-2026-08-17-batch-1
 import { jobs20260817BatchEleven } from "@/lib/company-additions-2026-08-17-batch-11";
 import { jobs20260817BatchTwelve } from "@/lib/company-additions-2026-08-17-batch-12";
 import { jobs20260817BatchThirteen } from "@/lib/company-additions-2026-08-17-batch-13";
+import { jobs20260817BatchFourteen } from "@/lib/company-additions-2026-08-17-batch-14";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1313,6 +1314,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchFourteen,
   ...jobs20260817BatchThirteen,
   ...jobs20260817BatchTwelve,
   ...jobs20260817BatchEleven,
@@ -2911,6 +2913,11 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "planet-account-executive-defence-intelligence-japan",
+  "replit-founding-account-executive-japan",
+  "rubrik-mid-market-ae",
+  "saviynt-strategic-account-executive-japan",
+  "scandit-account-executive-japan",
   "nexthink-enterprise-account-executive-japan",
   "nice-account-executive-japan",
   "patch-enterprise-account-executive-apac-tokyo",

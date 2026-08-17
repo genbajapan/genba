@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["nexthink", "nice", "patch", "patsnap", "pendo", "anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
+const batchSlugs = new Set(["planet", "replit", "rubrik", "saviynt", "scandit", "nexthink", "nice", "patch", "patsnap", "pendo", "anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -133,6 +133,36 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  planet: {
+    name: "Planet", domain: "Earth Observation・Defence Intelligence", officialUrl: "https://job-boards.greenhouse.io/planetlabs/jobs/7564777",
+    positive: ["Japan RemoteのD&I AEとして政府・防衛のpipeline、procurement、partnerを持ち、persistent monitoringを日本の安全保障workflowへ展開できる。", "FY2026売上成長、国内防衛・UMITRON事例、六本木office・Country Managerを公式に確認できる。"],
+    negative: ["GAAP赤字が続き、Q1 FY2027はadjusted EBITDA・FCFもnegative。Japan売上・headcount・数値報酬は非公開。", "光学の雲・夜間制約、resolution、data sovereignty、政府調達周期、SAR・高解像度assetとの補完を実案件で検証する必要がある。"],
+    next: ["Geospatial・Defence Intelligence Enterprise Sales", "Government・Public Sector GTM", "Earth Observation・Data Platform Leadership"],
+  },
+  replit: {
+    name: "Replit", domain: "AI Software Creation・Agentic Development", officialUrl: "https://jobs.ashbyhq.com/replit/bcfdb564-48c9-42c9-ab5b-c901b6babb44",
+    positive: ["Japan Founding AEとしてnet-new、hackathon、adoption・expansion、local office前のmarket creationを0→1で担う。", "Agent 4とEnterprise governanceを、非技術builderとIT・securityへ同時に提案できる成長category。"],
+    negative: ["recognized revenue、profit・FCF、日本法人・office・leader・国内定量成果・数値報酬は非公開。", "高強度・曖昧なscopeを公式に明記し、generated codeの品質・security・ownership・handoff・usage costをpilotで検証する必要がある。"],
+    next: ["AI Developer Tools Enterprise Sales", "Agentic App Platform Japan GTM", "Business Transformation・AI Adoption Leadership"],
+  },
+  rubrik: {
+    name: "Rubrik", domain: "Data Security・Cyber Resilience", officialUrl: "https://boards-api.greenhouse.io/v1/boards/rubrik/jobs?content=true",
+    positive: ["東京でMid Market AEとCustomer Experience Managerを採用し、new・expandとlifecycle・escalationをlocalでつなぐ。", "NTT DATA等の国内大規模・定量proof、100% channel、ARR成長とpositive FCFを確認できる。"],
+    negative: ["Q1 FY2027はGAAP operating・net loss。Japan売上・ARR・headcount・数値報酬・勤務形態は非公開。", "NEC・LIXILの復旧半減は期待値で、recovery drill、identity・SaaS coverage、partner delivery、TCOを実測する必要がある。"],
+    next: ["Cyber Resilience Enterprise Sales", "Data Security Customer Experience", "Channel Security GTM・Sales Leadership"],
+  },
+  saviynt: {
+    name: "Saviynt", domain: "Identity Security・IGA・PAM", officialUrl: "https://jobs.lever.co/saviynt?location=Japan",
+    positive: ["JapanでStrategic AE、Staff SE、Professional Services、Trainingを同時採用し、technical winからdelivery・enablementまでlocal coverageを作る。", "ARR 3億米ドル超、LIXIL 70k+ identities、ZumaのAI・NHI governanceからidentity securityの専門性を広げられる。"],
+    negative: ["recognized revenue・current profit・FCF、Japan売上・headcount・数値報酬は非公開。Ashisutoの出資手続きも2026年6月時点で未完了。", "Zumaの実績、local delivery SLA、data residency、legacy migration、SailPoint・Entra・CyberArkとのTCOを実案件で検証する必要がある。"],
+    next: ["Identity Security Enterprise Sales", "IGA・PAM Solutions Engineering", "Identity Professional Services・Enablement Leadership"],
+  },
+  scandit: {
+    name: "Scandit", domain: "Smart Data Capture・Retail・Logistics Operations", officialUrl: "https://boards-api.greenhouse.io/v1/boards/scandit/jobs?content=true",
+    positive: ["U.S.M.H、AEON、Yamato、York Benimaru等の国内大規模・定量caseと、2020年日本法人・Country Managerを確認できる。", "capture SDKからStore・Shelf Intelligenceへ拡張し、device、software、operationを横断する専門性がある。"],
+    negative: ["2026年8月17日時点で現行日本求人0。旧AE IDは404で終了条件を現在へ転用できない。", "売上・ARR絶対額・profit・FCF・Japan売上・headcountは非公開。公式住所とscale指標にもページ間不一致がある。"],
+    next: ["Retail・Logistics Technology GTM", "Computer Vision・Edge AI Enterprise Sales", "Store Operations・Supply Chain Solutions Leadership"],
+  },
   nexthink: {
     name: "Nexthink", domain: "Digital Employee Experience・IT Operations", officialUrl: "https://api.smartrecruiters.com/v1/companies/Nexthink/postings?limit=100",
     positive: ["日本法人・日本語製品の開始後、Solution ConsultantとCustomer Success Managerを採用し、technical winからvalue realization・renewalまでlocal体制を作る。", "1,500+ enterprise customers・25m employeesのglobal scaleを背景に、CIOへDEX、Service Desk、SaaS・AI adoptionを横断して提案できる。"],

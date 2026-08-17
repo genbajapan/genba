@@ -1,6 +1,47 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  planet: {
+    category: "地球観測・衛星データ・地理空間インテリジェンス",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Planet Labs Japan株式会社・東京都港区六本木（設立年は確認不能）",
+    description: "near-daily Monitoring、Tasking、analytics、APIを提供。日本Remoteで防衛・情報機関向けAccount Executiveを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  replit: {
+    category: "AIソフトウェア作成・Agentic Development",
+    hq: "カリフォルニア州フォスターシティ（米国）",
+    japanPresence: "日本Remoteで市場立ち上げ（日本法人・office・責任者は確認不能）",
+    description: "Agent 4でideaからfull-stack application、test、deployまでを一体化。日本市場を立ち上げるFounding Account Executiveを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  rubrik: {
+    category: "データセキュリティ・サイバーレジリエンス",
+    hq: "カリフォルニア州パロアルト（米国）",
+    japanPresence: "Rubrik Japan株式会社・東京都港区（2016年設立）",
+    description: "data、identity、SaaS、AI agentの保護・脅威分析・clean recoveryを提供。東京でMid Market AEとCustomer Experience Managerを公式募集。",
+    salesRoles: 2,
+    lastChecked: "2026-08-17",
+  },
+  saviynt: {
+    category: "アイデンティティセキュリティ・IGA・PAM",
+    hq: "カリフォルニア州エルセグンド（米国）",
+    japanPresence: "Saviynt Japan株式会社・東京都港区六本木（Ashisuto出資手続きは2026年6月時点未完了）",
+    description: "human、external、workload、AI agentのidentity governanceとprivileged accessを統合。日本でSales、SE、Professional Services、Trainingの4求人を公式確認。",
+    salesRoles: 4,
+    lastChecked: "2026-08-17",
+  },
+  scandit: {
+    category: "スマートデータキャプチャ・コンピュータビジョン",
+    hq: "チューリッヒ（スイス）",
+    japanPresence: "スキャンディット合同会社・東京（2020年設立、公式ページ間でoffice住所不一致）",
+    description: "barcode、text、ID、labelをsmart deviceで取得し、Retail・物流workflowを支援。2026年8月17日時点の現行日本求人は0件。",
+    salesRoles: 0,
+    hiringStatus: "継続観測",
+    lastChecked: "2026-08-17",
+  },
   nexthink: {
     category: "デジタル従業員体験・IT運用自動化",
     hq: "ローザンヌ（スイス）／ボストン（米国）",
