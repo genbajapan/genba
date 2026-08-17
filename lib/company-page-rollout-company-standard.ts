@@ -1,6 +1,51 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  mongodb: {
+    category: "アプリケーションデータ基盤・クラウドデータベース",
+    hq: "ニューヨーク（米国）",
+    japanPresence: "MongoDB Japan合同会社・東京（現行Japan求人は確認不能）",
+    description: "document database、Atlas、Search、Vector Search、AI retrievalを提供。日本法人・国内事例はあるが、公式現行Japan求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  pinecone: {
+    category: "ベクトルデータベース・AI検索／Knowledge Engine",
+    hq: "ニューヨーク（米国）",
+    japanPresence: "Singapore Asia region（日本法人・office・現行Japan求人は確認不能）",
+    description: "vector database、Assistant、Inference・Rerank、Nexusを提供。三菱電機名は公式掲載するが、国内定量caseとJapan求人は未確認。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  postman: {
+    category: "AIネイティブAPI開発・ガバナンス基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "東京・新丸の内ビル10階（現行Japan求人は0件）",
+    description: "API design、test、docs、catalog、governance、AI Engineer・Agent Modeを提供。東京officeはあるが、旧SMB AEは終了。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  primer: {
+    category: "決済オーケストレーション・Unified Payments Infrastructure",
+    hq: "ロンドン（英国）",
+    japanPresence: "Singapore APAC体制（日本法人・office・現行Japan求人は確認不能）",
+    description: "checkout、routing、Fallbacks、reconciliation、treasury、AIを統合。Series C後もJapan専任求人・国内caseは未確認。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
+  retool: {
+    category: "内製業務ソフトウェア・AIアプリ基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "GxP exclusive official partner・国内case（Retool日本法人・officeは確認不能）",
+    description: "Apps、Workflows、Mobile、Agents、AppGenを提供。伊勢丹三越の国内定量caseはあるが、公式Careersは全社0求人。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-17",
+  },
   island: {
     category: "エンタープライズブラウザ・セキュアワークスペース",
     hq: "テキサス州ダラス（米国）／テルアビブ（イスラエル）",
