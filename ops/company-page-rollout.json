@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 115,
+    "total": 114,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 115
+      "公開済み": 114
     },
     "byPriority": {
-      "HOT": 50,
+      "HOT": 49,
       "Active": 14,
       "Selective": 15,
       "求人なし": 36
     },
-    "standardReady": 115
+    "standardReady": 114
   },
   "companies": [
     {
@@ -390,15 +390,6 @@
       "company": "Sensor Tower",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "servicenow",
-      "company": "ServiceNow",
-      "priority": "HOT",
-      "salesRoles": 26,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []

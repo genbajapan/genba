@@ -917,8 +917,10 @@ const companyRecords: Company[] = [
   ...companies20260817Daily,
 ];
 
-// Salesforceの構造化データは標準改善の履歴として保持するが、企業・求人・採用シグナルの公開対象からは除外する。
-const publishedCompanyRecords = companyRecords.filter((company) => company.slug !== "salesforce");
+// 構造化データは標準改善・調査履歴として保持しつつ、編集方針と合わない大手企業は公開対象から除外する。
+// Salesforceは2026-08-11、ServiceNowは国内組織規模と知名度を踏まえて2026-08-17に除外した。
+const publiclyExcludedCompanySlugs = new Set(["salesforce", "servicenow"]);
+const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
   firstSeen?: string;
@@ -3001,7 +3003,7 @@ const temporarilyUnverifiableJobIds = new Set<string>([]);
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
 
 export const jobs = jobRecords
-  .filter((job) => job.companySlug !== "salesforce" && !closedJobIds.has(job.id))
+  .filter((job) => !publiclyExcludedCompanySlugs.has(job.companySlug) && !closedJobIds.has(job.id))
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id) ? job : { ...job, lastChecked: "2026-08-16" };
     const company = publishedCompanyBySlug.get(job.companySlug);
