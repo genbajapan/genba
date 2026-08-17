@@ -33,6 +33,7 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     salesRoles: 1,
     hiringStatus: "採用中",
     entryStatus: undefined,
+    tags: ["Japan Entry", "Email Security", "AI Security", "Enterprise", "APJ"],
     lastChecked: "2026-08-17",
   },
   addepar: {
