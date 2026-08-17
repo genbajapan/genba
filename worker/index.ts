@@ -218,6 +218,15 @@ export default {
       return Response.redirect(`${url.origin}/#hiring-signals`, 301);
     }
 
+    if (
+      url.pathname === "/companies/salesforce" ||
+      url.pathname === "/companies/salesforce/" ||
+      url.pathname === "/companies/servicenow" ||
+      url.pathname === "/companies/servicenow/"
+    ) {
+      return Response.redirect(`${url.origin}/companies`, 301);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
