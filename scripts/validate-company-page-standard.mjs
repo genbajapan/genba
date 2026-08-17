@@ -15,7 +15,8 @@ const bundle = await build({
       import { getAllCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
       import { COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority } from "./lib/company-page-standard.ts";
       import { getJobRoleMarketArchetype } from "./lib/company-page-rollout-job-standard.ts";
-      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority, getJobRoleMarketArchetype };
+      import { getJapanOfficeDisplay, getUniqueOverviewFacts, isOverviewSnapshotDuplicateFact } from "./lib/company-overview-display.ts";
+      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority, getJobRoleMarketArchetype, getJapanOfficeDisplay, getUniqueOverviewFacts, isOverviewSnapshotDuplicateFact };
     `,
     resolveDir: projectRoot,
     sourcefile: "company-page-standard-validator-entry.ts",
@@ -36,6 +37,9 @@ const {
   COMPANY_PAGE_PRIORITY_ORDER,
   getCompanyPagePriority,
   getJobRoleMarketArchetype,
+  getJapanOfficeDisplay,
+  getUniqueOverviewFacts,
+  isOverviewSnapshotDuplicateFact,
 } = runtimeModule.exports;
 const intelligenceBySlug = getAllCompanyPublicIntelligence();
 const jobsBySlug = new Map();
@@ -107,6 +111,16 @@ function assess(company) {
   addMissing(missing, containsJapanese(company.category) && containsJapanese(company.hq), "日本語の事業領域・本社表記");
   addMissing(missing, intelligence.overviewLeadership?.length >= 1, "経営陣");
   addMissing(missing, intelligence.companyStats?.japanOffice?.value, "日本オフィス");
+  const japanOfficeDisplay = getJapanOfficeDisplay({
+    entryStatus: company.entryStatus,
+    officeValue: intelligence.companyStats.japanOffice.value,
+    japanSinceValue: intelligence.companyStats.japanSince.value,
+    milestones: intelligence.marketStatus.milestones,
+  });
+  addMissing(missing, japanOfficeDisplay.address && !/(?:株式会社|合同会社|K\.?K\.?).*[・／/]|(?:19|20)\d{2}/i.test(japanOfficeDisplay.address), "日本オフィス:住所のみ");
+  addMissing(missing, /^（.+）$/.test(japanOfficeDisplay.entryYearNote), "日本オフィス:進出年を2行目の括弧内に表示");
+  const overviewFacts = getUniqueOverviewFacts(intelligence.facts);
+  addMissing(missing, overviewFacts.every((fact) => !isOverviewSnapshotDuplicateFact(fact)), "企業概要:住所・進出年・被保険者の重複排除");
   addMissing(missing, intelligence.companyStats?.globalHeadcount?.value, "グローバル社員数");
   addMissing(missing, intelligence.companyStats?.japanHeadcount?.value, "国内被保険者数");
   addMissing(missing, !/(?:非公開|確認不能|確認できず|未確認)/.test(intelligence.companyStats?.japanHeadcount?.value ?? ""), "国内被保険者数:gBizINFO監査ステータス");
@@ -315,6 +329,9 @@ if (/company-sales-(?:table|content)-resize-note/.test(profileSource)) errors.pu
 if (/\.company-(?:sales-fabe-details[^\{]*\.company-sales-table-scroll|market-outlook-resizable)\s*\{[^}]*resize\s*:\s*horizontal/s.test(profileStyleSource)) errors.push("ヒーロー展開パネルに横方向リサイズが残っています。");
 if (!/\.company-identity\s*\{[^}]*min-width\s*:\s*0/s.test(profileStyleSource)) errors.push("ヒーロー本文カラムの縮小許可がありません。");
 if (!/\.company-market-outlook-resizable\s*\{[^}]*width\s*:\s*100%[^}]*max-width\s*:\s*100%/s.test(profileStyleSource)) errors.push("市場見立てパネルが本文カラム幅に制限されていません。");
+if (!COMPANY_PAGE_STANDARD.overview?.deduplicateSnapshotFacts) errors.push("企業概要の住所・進出年・被保険者の重複排除標準が未定義です。");
+if (!/getJapanOfficeDisplay\(\{/.test(profileSource) || !/overviewFacts\.map\(/.test(profileSource)) errors.push("共通UIが日本オフィス2行形式または概要指標の重複排除を使用していません。");
+if (/<span>日本法人設立<\/span>/.test(profileSource)) errors.push("日本進出年を別カードへ重複表示しています。");
 for (const forbidden of [
   /isAdyen/,
   /company\.slug\s*[!=]==?\s*["']adyen["']/,

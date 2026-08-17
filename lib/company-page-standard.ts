@@ -22,6 +22,11 @@ export const COMPANY_PAGE_STANDARD = {
     allowHorizontalResize: false,
     wideTableOverflow: "horizontal-scroll",
   },
+  overview: {
+    japanOfficeLines: ["address", "(japan-entry-year)"],
+    removeLegalEntityNameFromAddress: true,
+    deduplicateSnapshotFacts: true,
+  },
   heroSummary: {
     readerFirst: true,
     requiredElements: ["customer-problem", "plain-language-solution", "business-outcome"],

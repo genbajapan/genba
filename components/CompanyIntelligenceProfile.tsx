@@ -9,6 +9,7 @@ import StatusBadge from "@/components/StatusBadge";
 import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
 import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
+import { getJapanOfficeDisplay, getUniqueOverviewFacts } from "@/lib/company-overview-display";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
@@ -590,7 +591,13 @@ export default function CompanyIntelligenceProfile({
   const japanOfficeSource = publicIntel?.companyStats.japanOffice.sourceId ? getResearchSource(publicIntel, publicIntel.companyStats.japanOffice.sourceId) : undefined;
   const japanHeadcountSource = publicIntel?.companyStats.japanHeadcount.sourceId ? getResearchSource(publicIntel, publicIntel.companyStats.japanHeadcount.sourceId) : undefined;
   const foundedYear = publicIntel?.marketStatus.milestones.find((milestone) => milestone.label.includes("創業"))?.year;
-  const japanEntryYear = publicIntel?.marketStatus.milestones.find((milestone) => milestone.label.includes("日本") && (milestone.label.includes("進出") || milestone.label.includes("開始")))?.year;
+  const japanOfficeDisplay = publicIntel ? getJapanOfficeDisplay({
+    entryStatus: company.entryStatus,
+    officeValue: publicIntel.companyStats.japanOffice.value,
+    japanSinceValue: publicIntel.companyStats.japanSince.value,
+    milestones: publicIntel.marketStatus.milestones,
+  }) : undefined;
+  const overviewFacts = publicIntel ? getUniqueOverviewFacts(publicIntel.facts) : [];
   const scaleComparisons = getCompanyScaleComparisons(company, allCompanies);
   const knownRatio = Math.round((profile.knownTopics / profile.totalTopics) * 100);
   const sourceEntries = uniqueSources([
@@ -831,8 +838,8 @@ export default function CompanyIntelligenceProfile({
                         ) : <div><span>本社</span><strong>{company.hq}</strong>{foundedYear && <small className="company-snapshot-milestone">創業：{foundedYear}年</small>}</div>}
                         <div>
                           <span>日本オフィス</span>
-                          <strong>{publicIntel.companyStats.japanOffice.value}</strong>
-                          {japanEntryYear && <small className="company-snapshot-milestone">日本進出：{japanEntryYear}年</small>}
+                          <strong>{japanOfficeDisplay?.address}</strong>
+                          <small className="company-snapshot-milestone">{japanOfficeDisplay?.entryYearNote}</small>
                           {japanOfficeSource && <a className="company-snapshot-source" href={japanOfficeSource.url} target="_blank" rel="noreferrer">{japanOfficeSource.kind} ↗</a>}
                         </div>
                         <div>
@@ -849,7 +856,7 @@ export default function CompanyIntelligenceProfile({
                         </div>
                       </div>
                     ) : (
-                      <div className="company-snapshot-strip company-snapshot-strip-6col">
+                      <div className="company-snapshot-strip company-snapshot-strip-5col">
                         {directoryEntry ? (
                           <a className="company-snapshot-official" href={directoryEntry.officialWebsite.url} target="_blank" rel="noreferrer">
                             <span>本社 / 公式サイト</span>
@@ -862,7 +869,11 @@ export default function CompanyIntelligenceProfile({
                           <strong>{globalScale?.value ?? "確認中"}</strong>
                           {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
                         </div>
-                        <div><span>日本オフィス</span><strong>{publicIntel.companyStats.japanOffice.value}</strong></div>
+                        <div>
+                          <span>日本オフィス</span>
+                          <strong>{japanOfficeDisplay?.address}</strong>
+                          <small className="company-snapshot-milestone">{japanOfficeDisplay?.entryYearNote}</small>
+                        </div>
                         <div>
                           <span>日本法人従業員数</span>
                           <small className="company-snapshot-basis">※国内被保険者</small>
@@ -870,13 +881,12 @@ export default function CompanyIntelligenceProfile({
                           <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
                         </div>
-                        <div><span>日本法人設立</span><strong>{publicIntel.companyStats.japanSince.value}</strong></div>
                         <div><span>代表者</span><strong>{publicIntel.leadership.name}</strong></div>
                       </div>
                     )}
 
                     <div className={`public-fact-grid public-fact-grid-compact${publicIntel.overviewLeadership ? " public-fact-grid-merged" : ""}`}>
-                      {publicIntel.facts.map((fact) => {
+                      {overviewFacts.map((fact) => {
                         const source = getResearchSource(publicIntel, fact.sourceIds[0]);
                         return (
                           <article key={fact.label}>
