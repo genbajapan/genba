@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 46,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 61
+      "検証済み": 0,
+      "公開済み": 66
     },
     "byPriority": {
       "HOT": 42,
@@ -336,7 +336,7 @@
       "company": "NiCE",
       "priority": "HOT",
       "salesRoles": 4,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -471,7 +471,7 @@
       "company": "Nexthink",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -480,7 +480,7 @@
       "company": "Patsnap",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -561,7 +561,7 @@
       "company": "Patch",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -570,7 +570,7 @@
       "company": "Pendo",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
