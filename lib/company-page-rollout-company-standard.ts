@@ -1,6 +1,46 @@
 import type { Company } from "@/lib/market-data";
 
 const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
+  nexthink: {
+    category: "デジタル従業員体験・IT運用自動化",
+    hq: "ローザンヌ（スイス）／ボストン（米国）",
+    japanPresence: "Nexthink合同会社・東京都港区赤坂（2025年設立）",
+    description: "端末・network・application・従業員feedbackからDEXを観測し、診断・修復・adoptionへ接続。東京でCustomer Success ManagerとSolution Consultantを公式募集。",
+    salesRoles: 2,
+    lastChecked: "2026-08-17",
+  },
+  nice: {
+    category: "顧客体験AI・コンタクトセンター・金融犯罪対策",
+    hq: "ラアナナ（イスラエル）／ホーボーケン（米国）",
+    japanPresence: "ナイスジャパン株式会社・東京都港区赤坂（2004年設立）",
+    description: "CXoneでcustomer interaction・AI・WEMを統合し、ActimizeでAML・fraudを支援。東京でSales、AI leadership、SE、AML deliveryの4求人を公式確認。",
+    salesRoles: 4,
+    lastChecked: "2026-08-17",
+  },
+  patch: {
+    category: "気候金融・環境市場・脱炭素調達",
+    hq: "カリフォルニア州サンフランシスコ（米国）／ロンドン（英国）",
+    japanPresence: "東京Remote・APAC市場開発（日本法人・常設officeは確認不能）",
+    description: "carbon、再生可能energy、SAF等のstrategy、sourcing、diligence、purchase、portfolio管理を統合。東京でAPAC初のEnterprise AEを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
+  patsnap: {
+    category: "研究開発・知財インテリジェンス・ドメインAI",
+    hq: "シンガポール",
+    japanPresence: "東京office・東京都港区新橋（2023年までに日本展開を公式確認）",
+    description: "patent・science・chemical・clinical dataとdomain AI agentでR&D・IP判断を支援。東京でForward Deployed EngineerとKey Account Managerを公式募集。",
+    salesRoles: 2,
+    lastChecked: "2026-08-17",
+  },
+  pendo: {
+    category: "ソフトウェア体験管理・プロダクト分析・デジタル定着",
+    hq: "ノースカロライナ州ローリー（米国）",
+    japanPresence: "Pendo.io Japan株式会社・東京都渋谷区（2020年設立）",
+    description: "analytics、session、feedback、in-app guide、AI・agent analyticsを統合。東京HybridでEnterprise Account Executiveを公式募集。",
+    salesRoles: 1,
+    lastChecked: "2026-08-17",
+  },
   marqvision: {
     category: "ブランド保護・知財インテリジェンス",
     hq: "ロサンゼルス（米国）",

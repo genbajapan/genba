@@ -36,7 +36,7 @@ type JobLike = {
   };
 };
 
-const batchSlugs = new Set(["anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
+const batchSlugs = new Set(["nexthink", "nice", "patch", "patsnap", "pendo", "anaplan", "braze", "channel-talk", "coupa", "cursor", "glean", "hubspot", "qualtrics", "speak", "stripe", "verkada", "walkme", "celonis", "confluent", "dataiku", "deepl", "elevenlabs", "mirakl", "new-relic", "notion", "okta", "pagerduty", "sonar", "zendesk", "zilliz", "aghanim", "airwallex", "amplitude", "anthropic", "asana", "cambly", "cato-networks", "censys", "cloudflare", "cognition", "cohere", "contentsquare", "datadog", "dbt-labs", "deel", "dialpad", "docusign", "dragos", "elastic", "extreme-networks", "figma", "fivetran", "grafana-labs", "gurobi", "hightouch", "ideals", "knowbe4", "lakera", "lighthouse", "mambu", "marqvision", "mendix", "miro", "netskope", "neural-concept"]);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -133,6 +133,37 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  nexthink: {
+    name: "Nexthink", domain: "Digital Employee Experience・IT Operations", officialUrl: "https://api.smartrecruiters.com/v1/companies/Nexthink/postings?limit=100",
+    positive: ["日本法人・日本語製品の開始後、Solution ConsultantとCustomer Success Managerを採用し、technical winからvalue realization・renewalまでlocal体制を作る。", "1,500+ enterprise customers・25m employeesのglobal scaleを背景に、CIOへDEX、Service Desk、SaaS・AI adoptionを横断して提案できる。"],
+    negative: ["最新売上・ARR・profit・FCF、日本売上・顧客数・headcount・給与・quotaは非公開。国内実名定量caseも確認できない。", "endpoint・employee dataのprivacy、PoV→production、remediation権限、Microsoft・ServiceNow・DEX専業とのTCOを顧客環境で検証する必要がある。"],
+    next: ["DEX・Digital Workplace Customer Success", "IT Operations・EUC Solutions Consulting", "ServiceNow・Endpoint・SaaS Adoption GTM"],
+  },
+  nice: {
+    name: "NiCE", domain: "CX AI・CCaaS・Financial Crime", officialUrl: "https://boards-api.greenhouse.io/v1/boards/nice/jobs?content=true",
+    positive: ["日本でAE、AI Sales Director、Senior SE、Actimize BAを採用し、CXoneのnew business・technical winとAML deliveryをlocalで広げている。", "FY2025はGAAP営業利益・FCF黒字で、キューサイ等の国内enterprise migration proofを持つ。"],
+    negative: ["Q1 2026は売上成長の一方でGAAP operating・net incomeが前年割れ。Japan売上・headcount・quota・数値報酬は非公開。", "CXoneとActimizeのbuyerを混同せず、日本語AI、integration、migration、partner quality、TCOをGenesys・Amazon等と実証比較する必要がある。"],
+    next: ["CCaaS・CX AI Enterprise GTM", "Contact Center Solutions Engineering", "Financial Crime・AML Professional Services"],
+  },
+  patch: {
+    name: "Patch", domain: "Climate Markets・Environmental Commodities", officialUrl: "https://jobs.ashbyhq.com/patch.io",
+    positive: ["APAC初のAEとしてJapan重点のpipeline、lighthouse deal、playbookをAPAC GMと0→1で作るgreenfield role。", "carbonだけでなくrenewable energy・SAF等のstrategy、diligence、transaction、portfolio管理へ拡張し、Finance・Procurement・Legalを横断できる。"],
+    negative: ["売上・ARR・profit・FCF、日本法人・office・顧客proof・給与・OTEは非公開。SF向け報酬を日本へ転用できない。", "instrument eligibility、project integrity、fee・markup、expert independence、delivery・replacement、claim liabilityを制度・顧客側auditで検証する必要がある。"],
+    next: ["Climate Finance Enterprise Sales", "Environmental Markets・Energy Procurement GTM", "APAC Market Development・Sustainability Solutions"],
+  },
+  patsnap: {
+    name: "Patsnap", domain: "Innovation Intelligence・Domain AI", officialUrl: "https://jobs.lever.co/patsnap?location=Tokyo",
+    positive: ["東京でFDEとKAMを同時採用し、AI solutionのPoC・implementationからretention・expansionまで顧客journeyをつなぐ。", "2024年ARR 1億米ドルとCanon・Takasago等のadoptionがあり、R&D・IP・AIを横断する専門性を得られる。"],
+    negative: ["current revenue・profit・FCF、日本法人設立・Country Manager・国内定量成果・給与・OTEは非公開。KAMはTokyo分類とSEA担当本文が不整合。", "AIのrecall・precision、citation、false negative、legal opinionとの境界、private data、3年TCOをgold setで検証する必要がある。"],
+    next: ["IP・R&D Intelligence Enterprise GTM", "Forward Deployed AI Engineering", "Strategic Account・Customer Growth Leadership"],
+  },
+  pendo: {
+    name: "Pendo", domain: "Software Experience Management・Product Analytics", officialUrl: "https://job-boards.greenhouse.io/pendo",
+    communityUrl: "https://www.glassdoor.ca/Reviews/Pendo-Reviews-E1061465.htm", communityLabel: "Glassdoor global reviews",
+    positive: ["日本法人、Country Manager、国内data center、Enterprise AE、SmartDrive・NEC等の定量caseを確認でき、Product・IT・CXを横断するbusiness caseを作れる。", "Analytics、Replay、Feedback、Guides、Agent Analyticsを一つのSXM platformで扱い、insightからactionまで販売できる。"],
+    negative: ["GAAP revenue・profit・FCF、日本売上・headcount・quota・数値報酬は非公開。2026年に約10%のlayoff報道がある。", "suiteのmodule adoption、capture精度、privacy、pricing、Classic Feedback移行、Amplitude・WalkMe・FullStory等best-of-breedとのTCOを検証する必要がある。"],
+    next: ["Product Analytics・SXM Enterprise GTM", "Digital Adoption・Employee Experience Sales", "Product-led Growth・Customer Experience Leadership"],
+  },
   marqvision: {
     name: "MarqVision", domain: "Brand Protection・IP Intelligence", officialUrl: "https://job-boards.greenhouse.io/marqvision",
     positive: ["東京でSales、Brand Protection、Customer Successを同時採用し、new logoから執行・renewalまで日本の顧客journeyを作る段階。", "Panasonic、Nissan、SEGA、Mizunoの採用を公式求人で確認でき、AI・法務・ecommerceを横断する専門性を得られる。"],

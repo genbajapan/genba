@@ -12,6 +12,7 @@ import { jobs20260817BatchNine } from "@/lib/company-additions-2026-08-17-batch-
 import { jobs20260817BatchTen } from "@/lib/company-additions-2026-08-17-batch-10";
 import { jobs20260817BatchEleven } from "@/lib/company-additions-2026-08-17-batch-11";
 import { jobs20260817BatchTwelve } from "@/lib/company-additions-2026-08-17-batch-12";
+import { jobs20260817BatchThirteen } from "@/lib/company-additions-2026-08-17-batch-13";
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1312,6 +1313,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260817BatchThirteen,
   ...jobs20260817BatchTwelve,
   ...jobs20260817BatchEleven,
   ...jobs20260817BatchTen,
@@ -2909,6 +2911,11 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "nexthink-enterprise-account-executive-japan",
+  "nice-account-executive-japan",
+  "patch-enterprise-account-executive-apac-tokyo",
+  "patsnap-key-account-manager-japan",
+  "pendo-enterprise-account-executive-japan",
   "marqvision-account-executive-japan",
   "mendix-specialized-account-executive-japan",
   "miro-strategic-ae",
