@@ -195,7 +195,8 @@ async function handleImprovementRequest(request: Request, env: Env): Promise<Res
       text: emailBody,
     });
     return jsonResponse({ ok: true }, { status: 200, headers }, null);
-  } catch {
+  } catch (deliveryError) {
+    console.error("Improvement request email delivery failed", deliveryError);
     return jsonResponse({ error: "email_delivery_failed" }, { status: 502, headers }, null);
   }
 }
