@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 31,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 76
+      "検証済み": 0,
+      "公開済み": 81
     },
     "byPriority": {
       "HOT": 45,
@@ -408,7 +408,7 @@
       "company": "Veeva Systems",
       "priority": "HOT",
       "salesRoles": 32,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -543,7 +543,7 @@
       "company": "Ubiquiti",
       "priority": "Active",
       "salesRoles": 2,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -660,7 +660,7 @@
       "company": "Wasabi Technologies",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -669,7 +669,7 @@
       "company": "Workato",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -678,7 +678,7 @@
       "company": "Zadara",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
