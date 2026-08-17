@@ -1,8 +1,11 @@
 import { buildKnowledgeBlocks, retrieveRelevantBlocks } from "./knowledge";
+import { getCompany } from "../lib/market-data";
 
 export interface Env {
   AI: Ai;
   ASSETS: Fetcher;
+  IMPROVEMENT_EMAIL: SendEmail;
+  IMPROVEMENT_RATE_LIMITER: RateLimit;
 }
 
 type ChatRole = "user" | "assistant";
@@ -11,6 +14,15 @@ type ChatMessage = { role: ChatRole; content: string };
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 const MAX_HISTORY = 8;
 const MAX_MESSAGE_LENGTH = 800;
+const IMPROVEMENT_DESTINATION = "js@genbajapan.com";
+const IMPROVEMENT_SENDER = "notifications@genbajapan.com";
+const IMPROVEMENT_CATEGORIES = new Set([
+  "情報が足りない",
+  "説明がわかりにくい",
+  "内容が古い・誤っている",
+  "画面が使いにくい",
+  "その他",
+]);
 
 const SYSTEM_PROMPT = `あなたはGenba(外資SaaS営業職向けの日本語インテリジェンスメディア)のAIアシスタントです。読者がGenbaに掲載されている企業情報やキャリアの考え方について「壁打ち」できるよう手伝います。
 
@@ -99,6 +111,95 @@ async function handleChat(request: Request, env: Env, origin: string | null): Pr
   }
 }
 
+function cleanText(value: unknown, maxLength: number): string {
+  if (typeof value !== "string") return "";
+  return value.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, "").trim().slice(0, maxLength);
+}
+
+async function handleImprovementRequest(request: Request, env: Env): Promise<Response> {
+  const requestUrl = new URL(request.url);
+  const origin = request.headers.get("Origin");
+  const headers: Record<string, string> = {};
+  if (origin === requestUrl.origin) {
+    headers["Access-Control-Allow-Origin"] = origin;
+    headers.Vary = "Origin";
+  }
+
+  if (request.method === "OPTIONS") {
+    if (origin !== requestUrl.origin) return jsonResponse({ error: "origin_not_allowed" }, { status: 403 }, null);
+    return new Response(null, { headers: { ...headers, "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" } });
+  }
+  if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, { status: 405, headers }, null);
+  if (origin !== requestUrl.origin) return jsonResponse({ error: "origin_not_allowed" }, { status: 403 }, null);
+
+  const contentLength = Number(request.headers.get("Content-Length") ?? "0");
+  if (contentLength > 12_000) return jsonResponse({ error: "payload_too_large" }, { status: 413, headers }, null);
+
+  let payload: Record<string, unknown>;
+  try {
+    const parsed = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error("invalid_payload");
+    payload = parsed as Record<string, unknown>;
+  } catch {
+    return jsonResponse({ error: "invalid_json" }, { status: 400, headers }, null);
+  }
+
+  // Botが埋める非表示欄。送信成功のように返し、再試行を誘発しない。
+  if (cleanText(payload.companyWebsite, 200)) return jsonResponse({ ok: true }, { status: 200, headers }, null);
+
+  const companySlug = cleanText(payload.companySlug, 80);
+  const company = getCompany(companySlug);
+  const category = cleanText(payload.category, 40);
+  const section = cleanText(payload.section, 120);
+  const message = cleanText(payload.message, 2_000);
+  const pageUrl = cleanText(payload.pageUrl, 500);
+  const token = cleanText(payload.visitorToken, 100);
+
+  if (!company || !IMPROVEMENT_CATEGORIES.has(category) || message.length < 10 || !/^[a-zA-Z0-9-]{8,100}$/.test(token)) {
+    return jsonResponse({ error: "invalid_fields" }, { status: 400, headers }, null);
+  }
+
+  try {
+    const submittedUrl = new URL(pageUrl);
+    const expectedPaths = [`/companies/${company.slug}`, `/companies/${company.slug}.html`];
+    if (submittedUrl.origin !== origin || !expectedPaths.includes(submittedUrl.pathname.replace(/\/$/, ""))) {
+      return jsonResponse({ error: "invalid_page" }, { status: 400, headers }, null);
+    }
+  } catch {
+    return jsonResponse({ error: "invalid_page" }, { status: 400, headers }, null);
+  }
+
+  const rateLimit = await env.IMPROVEMENT_RATE_LIMITER.limit({ key: `improvement:${token}` });
+  if (!rateLimit.success) return jsonResponse({ error: "rate_limited" }, { status: 429, headers }, null);
+
+  const receivedAt = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+  const emailBody = [
+    "Genbaの企業ページから改善要請が届きました。",
+    "",
+    `企業：${company.name}`,
+    `要請の種類：${category}`,
+    `対象箇所：${section || "未指定"}`,
+    "",
+    "【改善してほしい内容】",
+    message,
+    "",
+    `ページURL：${pageUrl}`,
+    `受信日時：${receivedAt}`,
+  ].join("\n");
+
+  try {
+    await env.IMPROVEMENT_EMAIL.send({
+      from: { email: IMPROVEMENT_SENDER, name: "Genba改善要請" },
+      to: IMPROVEMENT_DESTINATION,
+      subject: "改善要請",
+      text: emailBody,
+    });
+    return jsonResponse({ ok: true }, { status: 200, headers }, null);
+  } catch {
+    return jsonResponse({ error: "email_delivery_failed" }, { status: 502, headers }, null);
+  }
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -106,6 +207,10 @@ export default {
 
     if (url.pathname === "/api/chat") {
       return handleChat(request, env, origin);
+    }
+
+    if (url.pathname === "/api/improvement-request") {
+      return handleImprovementRequest(request, env);
     }
 
     if (url.pathname === "/signals" || url.pathname === "/signals/") {

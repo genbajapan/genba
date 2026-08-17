@@ -1917,6 +1917,54 @@ button, input, select { font: inherit; }
   .source-ledger time { grid-column: 2; }
 }
 
+.improvement-request-trigger { position: fixed; right: 20px; bottom: 78px; z-index: 60; display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 16px; border: 1px solid #9fc9c1; border-radius: 999px; background: rgba(255,255,255,.96); color: var(--signal); font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 8px 22px rgba(11,38,56,.16); backdrop-filter: blur(10px); transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.improvement-request-trigger:hover { transform: translateY(-2px); border-color: var(--signal); box-shadow: 0 12px 28px rgba(11,38,56,.2); }
+.improvement-request-trigger:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+.improvement-request-trigger span { font-size: 14px; line-height: 1; }
+
+.improvement-request-backdrop { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 24px; background: rgba(4,22,33,.66); backdrop-filter: blur(5px); animation: improvement-backdrop-in .18s ease both; }
+@keyframes improvement-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+.improvement-request-dialog { width: min(620px,100%); max-height: min(760px,calc(100vh - 48px)); overflow-y: auto; border: 1px solid #b8d4cf; background: #f8faf9; box-shadow: 0 26px 80px rgba(4,22,33,.34); animation: improvement-dialog-in .22s cubic-bezier(.22,1,.36,1) both; }
+@keyframes improvement-dialog-in { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.improvement-request-dialog > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 24px 26px; border-bottom: 1px solid #294957; background: var(--navy); color: white; }
+.improvement-request-dialog > header span { display: block; color: #70d3c5; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.improvement-request-dialog > header h2 { margin: 7px 0 0; font-size: 20px; letter-spacing: -.02em; line-height: 1.45; }
+.improvement-request-dialog > header button { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: transparent; color: white; font-size: 18px; cursor: pointer; }
+.improvement-request-dialog > header button:hover { background: rgba(255,255,255,.12); }
+.improvement-request-dialog form { padding: 24px 26px 26px; }
+.improvement-request-intro { margin: 0 0 20px; color: #4c626c; font-size: 12px; line-height: 1.8; }
+.improvement-request-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.improvement-request-dialog label { display: block; }
+.improvement-request-dialog label > span { display: block; margin-bottom: 7px; color: var(--navy); font-size: 11px; font-weight: 800; }
+.improvement-request-dialog label > span small { color: #84969d; font-size: 9px; font-weight: 650; }
+.improvement-request-dialog input,.improvement-request-dialog select,.improvement-request-dialog textarea { width: 100%; border: 1px solid #cbd8d8; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 13px; }
+.improvement-request-dialog input,.improvement-request-dialog select { height: 43px; padding: 0 12px; }
+.improvement-request-dialog textarea { min-height: 132px; padding: 11px 12px; resize: vertical; line-height: 1.7; }
+.improvement-request-dialog input:focus,.improvement-request-dialog select:focus,.improvement-request-dialog textarea:focus { outline: 2px solid rgba(11,122,112,.18); border-color: var(--signal); }
+.improvement-request-message { margin-top: 16px; }
+.improvement-request-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; }
+.improvement-request-note { margin: 12px 0 0; color: #778990; font-size: 9.5px; line-height: 1.65; }
+.improvement-request-error { margin: 12px 0 0; padding: 10px 12px; border-left: 3px solid #b8492f; background: #fdf1ee; color: #87351f; font-size: 11px; line-height: 1.6; }
+.improvement-request-dialog form footer { display: flex; justify-content: flex-end; gap: 9px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.improvement-request-dialog form footer button:disabled { opacity: .55; cursor: wait; }
+.improvement-request-success { padding: 42px 30px 36px; text-align: center; }
+.improvement-request-success > span { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto; border-radius: 50%; background: var(--signal-soft); color: var(--signal); font-size: 22px; font-weight: 900; }
+.improvement-request-success h3 { margin: 18px 0 0; color: var(--navy); font-size: 20px; }
+.improvement-request-success p { max-width: 430px; margin: 10px auto 22px; color: #60737b; font-size: 12px; line-height: 1.8; }
+
+@media (max-width: 640px) {
+  .improvement-request-trigger { right: 12px; bottom: 61px; min-height: 34px; padding: 0 13px; font-size: 10px; }
+  .improvement-request-backdrop { align-items: end; padding: 0; }
+  .improvement-request-dialog { width: 100%; max-height: 88vh; border-width: 1px 0 0; border-radius: 18px 18px 0 0; }
+  .improvement-request-dialog > header { padding: 18px 18px 16px; border-radius: 18px 18px 0 0; }
+  .improvement-request-dialog > header h2 { font-size: 17px; }
+  .improvement-request-dialog form { padding: 18px; }
+  .improvement-request-grid { grid-template-columns: 1fr; gap: 13px; }
+  .improvement-request-dialog input,.improvement-request-dialog select,.improvement-request-dialog textarea { font-size: 16px; }
+  .improvement-request-dialog form footer { position: sticky; bottom: -18px; margin-inline: -18px; padding: 13px 18px 18px; background: #f8faf9; }
+  .improvement-request-dialog form footer .button { flex: 1; padding-inline: 12px; }
+}
+
 .genba-chat-toggle { position: fixed; right: 20px; bottom: 20px; z-index: 60; padding: 14px 22px; border: none; border-radius: 999px; background: var(--navy); color: white; font-size: 13px; font-weight: 800; letter-spacing: .02em; cursor: pointer; box-shadow: 0 12px 28px rgba(11,38,56,.32); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
 .genba-chat-toggle:hover { background: var(--signal); transform: translateY(-2px); box-shadow: 0 16px 34px rgba(11,38,56,.36); }
 .genba-chat-toggle:active { transform: translateY(0); }

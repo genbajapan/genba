@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import Container from "@/components/Container";
+import CompanyImprovementRequest from "@/components/CompanyImprovementRequest";
 import DossierNav from "@/components/DossierNav";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
@@ -1654,6 +1655,7 @@ export default function CompanyIntelligenceProfile({
       </section>
 
       <section className="content-section surface-section"><Container><NewsletterCTA /></Container></section>
+      <CompanyImprovementRequest companyName={company.name} companySlug={company.slug} />
     </>
   );
 }

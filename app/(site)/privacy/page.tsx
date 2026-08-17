@@ -17,11 +17,13 @@ export default function PrivacyPage() {
         <Container>
           <div className="prose-genba privacy-policy">
             <h2>取得する情報</h2>
-            <p>ニュースレター登録時にメールアドレスを取得します。問い合わせ時には、利用者がメール本文またはフォームへ入力した会社名、氏名、連絡先、問い合わせ内容を取得する場合があります。</p>
+            <p>ニュースレター登録時にメールアドレスを取得します。問い合わせ時には、利用者がメール本文またはフォームへ入力した会社名、氏名、連絡先、問い合わせ内容を取得する場合があります。企業ページの改善要請では、入力された要請内容、対象企業、対象箇所、ページURLを取得します。氏名やメールアドレスの入力は求めません。</p>
             <h2>利用目的</h2>
             <ul><li>Genbaのメール配信と購読管理</li><li>問い合わせ、訂正依頼への対応</li><li>個人を特定しない集計値による媒体改善</li></ul>
             <h2>ニュースレター配信事業者</h2>
             <p>ニュースレターの登録、確認、配信、解除、開封・クリック集計にはKitを利用します。登録されたメールアドレスは配信に必要な範囲で同サービスへ送信されます。取扱いの詳細は<a href="https://kit.com/privacy" target="_blank" rel="noreferrer">Kitのプライバシーポリシー</a>をご確認ください。</p>
+            <h2>改善要請の送信</h2>
+            <p>企業ページの改善要請はCloudflare WorkersとCloudflare Email Serviceを通じてGenba運営者のメールアドレスへ送信します。迷惑送信防止のため、ブラウザ内で生成した無作為な識別子を短時間の送信回数制限にのみ利用します。改善要請のための会員登録は不要です。</p>
             <h2>アクセス解析</h2>
             <p>Genbaは、サイトの利用状況を把握し媒体を改善するため、Google Analytics 4を利用します。GoogleはCookie等を使用し、閲覧ページ、流入元、端末・ブラウザ情報、おおよその地域、サイト内での操作などを収集する場合があります。Genbaは集計結果を個人を特定しない媒体改善に利用します。Googleによる情報の取扱いは<a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noreferrer">Googleプライバシーポリシー</a>をご確認ください。</p>
             <p>Google Analyticsによる計測を望まない場合は、<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noreferrer">Google Analyticsオプトアウト アドオン</a>等を利用できます。</p>
@@ -33,7 +35,7 @@ export default function PrivacyPage() {
             <p>取得情報へのアクセスを運営上必要な範囲に限定し、利用する外部サービスの認証・権限設定を適切に管理します。</p>
             <h2>改定</h2>
             <p>取扱内容または利用サービスを変更した場合は、本ページを更新します。</p>
-            <p className="source-note">制定日：2026年8月11日　改定日：2026年8月15日</p>
+            <p className="source-note">制定日：2026年8月11日　改定日：2026年8月17日</p>
           </div>
         </Container>
       </section>
