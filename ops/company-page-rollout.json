@@ -20,10 +20,10 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 21,
+      "未着手": 16,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 91
+      "公開済み": 96
     },
     "byPriority": {
       "HOT": 47,
@@ -615,7 +615,7 @@
       "company": "Fireblocks",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -813,7 +813,7 @@
       "company": "Gong",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -831,7 +831,7 @@
       "company": "Halcyon",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -840,7 +840,7 @@
       "company": "Harvey",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -849,7 +849,7 @@
       "company": "Intercom / Fin",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
