@@ -20,10 +20,10 @@
   "counts": {
     "total": 112,
     "byStatus": {
-      "未着手": 26,
+      "未着手": 21,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 86
+      "公開済み": 91
     },
     "byPriority": {
       "HOT": 47,
@@ -138,7 +138,7 @@
       "company": "Cribl",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -741,7 +741,7 @@
       "company": "Airtable",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -759,7 +759,7 @@
       "company": "Apollo.io",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -768,7 +768,7 @@
       "company": "Attio",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -777,7 +777,7 @@
       "company": "Clay",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "未着手",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
