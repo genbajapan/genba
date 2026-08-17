@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { companies, jobs } from "@/lib/market-data";
+import { companyListSortOptions, compareKnownNumbers, type CompanyListSortMetric, type CompanyListSortMode } from "@/lib/company-list-sort";
 import { getHeadquartersRegion, headquartersRegions, type HeadquartersRegion } from "@/lib/company-headquarters";
 import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
@@ -28,13 +29,6 @@ const tierCompanySlugs = {
 type TierFilter = "すべて" | keyof typeof tierAreas;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
 type EntryFilter = "すべて" | "not-entered";
-type SortMode = "updated" | "new-jobs" | "jobs" | "name";
-const sortOptions: Array<{ value: SortMode; label: string }> = [
-  { value: "updated", label: "最終更新が新しい順" },
-  { value: "new-jobs", label: "新着求人が新しい順" },
-  { value: "jobs", label: "求人が多い順" },
-  { value: "name", label: "企業名 A–Z" },
-];
 const companyNameCollator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 const returnPositionKey = "genba:company-explorer:return-position";
 
@@ -44,7 +38,13 @@ type ReturnPosition = {
   cardOffset: number;
 };
 
-export default function CompanyExplorer({ companyCardSummaries }: { companyCardSummaries: Record<string, string> }) {
+export default function CompanyExplorer({
+  companyCardSummaries,
+  companySortMetrics,
+}: {
+  companyCardSummaries: Record<string, string>;
+  companySortMetrics: Record<string, CompanyListSortMetric>;
+}) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const tierParam = searchParams.get("tier");
@@ -56,7 +56,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const headquartersParam = searchParams.get("hq");
   const initialHeadquarters: HeadquartersRegion = headquartersRegions.some((region) => region.value === headquartersParam) ? headquartersParam as HeadquartersRegion : "すべて";
   const sortParam = searchParams.get("sort");
-  const initialSort: SortMode = sortOptions.some((option) => option.value === sortParam) ? sortParam as SortMode : "updated";
+  const initialSort: CompanyListSortMode = companyListSortOptions.some((option) => option.value === sortParam) ? sortParam as CompanyListSortMode : "updated";
   const openJobsOnly = searchParams.get("openJobs") === "1";
   const companySlugsWithOpenJobs = useMemo(() => new Set(jobs.map((job) => job.companySlug)), []);
   const newestJobDates = useMemo(() => {
@@ -73,7 +73,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const [tier, setTier] = useState<TierFilter>(initialTier);
   const [entry, setEntry] = useState<EntryFilter>(initialEntry);
   const [headquarters, setHeadquarters] = useState<HeadquartersRegion>(initialHeadquarters);
-  const [sort, setSort] = useState<SortMode>(initialSort);
+  const [sort, setSort] = useState<CompanyListSortMode>(initialSort);
   const results = useMemo(() => companies.filter((company) => {
     const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.hq} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
@@ -88,8 +88,13 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
     if (sort === "name") return byName;
     if (sort === "jobs") return b.salesRoles - a.salesRoles || (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || byName;
     if (sort === "new-jobs") return (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || b.salesRoles - a.salesRoles || b.lastChecked.localeCompare(a.lastChecked) || byName;
+    const aMetric = companySortMetrics[a.slug];
+    const bMetric = companySortMetrics[b.slug];
+    if (sort === "entry-asc" || sort === "entry-desc") return compareKnownNumbers(aMetric?.japanEntryYear ?? null, bMetric?.japanEntryYear ?? null, sort === "entry-asc" ? "asc" : "desc") || byName;
+    if (sort === "headcount-asc" || sort === "headcount-desc") return compareKnownNumbers(aMetric?.japanHeadcount ?? null, bMetric?.japanHeadcount ?? null, sort === "headcount-asc" ? "asc" : "desc") || byName;
+    if (sort === "entity-asc" || sort === "entity-desc") return compareKnownNumbers(aMetric?.japanEntityYear ?? null, bMetric?.japanEntityYear ?? null, sort === "entity-asc" ? "asc" : "desc") || byName;
     return b.lastChecked.localeCompare(a.lastChecked) || b.salesRoles - a.salesRoles || byName;
-  }), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, sort, companySlugsWithOpenJobs, newestJobDates]);
+  }), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, sort, companySlugsWithOpenJobs, newestJobDates, companySortMetrics]);
 
   const clearReturnTarget = useCallback(() => {
     window.sessionStorage.removeItem(returnPositionKey);
@@ -253,8 +258,8 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
         <p className="result-count" aria-live="polite">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
         <label className="select-field company-sort-field">
           <span>並び替え</span>
-          <select value={sort} onChange={(event) => { clearReturnTarget(); setSort(event.target.value as SortMode); }}>
-            {sortOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          <select value={sort} onChange={(event) => { clearReturnTarget(); setSort(event.target.value as CompanyListSortMode); }}>
+            {companyListSortOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
           </select>
         </label>
       </div>

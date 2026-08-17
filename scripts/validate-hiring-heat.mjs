@@ -10,9 +10,11 @@ const bundle = await build({
     contents: `
       import { companies, jobs } from "./lib/market-data.ts";
       import { getCompanyCardSummary } from "./lib/company-card-summary.ts";
+      import { getAllCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
       import { getHeadquartersRegion } from "./lib/company-headquarters.ts";
       import { buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria } from "./lib/solution-categories.ts";
-      export { companies, jobs, getCompanyCardSummary, getHeadquartersRegion, buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria };
+      import { buildCompanyListSortMetric, companyListSortOptions, compareKnownNumbers } from "./lib/company-list-sort.ts";
+      export { companies, jobs, getCompanyCardSummary, getAllCompanyPublicIntelligence, getHeadquartersRegion, buildHiringHeatRows, getHiringHeatCompanies, hiringHeatCriteria, buildCompanyListSortMetric, companyListSortOptions, compareKnownNumbers };
     `,
     resolveDir: root,
     sourcefile: "hiring-heat-validator-entry.ts",
@@ -31,8 +33,12 @@ const {
   buildHiringHeatRows,
   getHiringHeatCompanies,
   getCompanyCardSummary,
+  getAllCompanyPublicIntelligence,
   getHeadquartersRegion,
   hiringHeatCriteria,
+  buildCompanyListSortMetric,
+  companyListSortOptions,
+  compareKnownNumbers,
 } = bundledModule.exports;
 
 const expectedCriteria = {
@@ -46,6 +52,11 @@ if (JSON.stringify(hiringHeatCriteria) !== JSON.stringify(expectedCriteria)) {
 }
 
 const companyBySlug = new Map(companies.map((company) => [company.slug, company]));
+const intelligenceBySlug = getAllCompanyPublicIntelligence();
+const sortMetricsBySlug = new Map(companies.map((company) => [
+  company.slug,
+  buildCompanyListSortMetric(company, intelligenceBySlug[company.slug]),
+]));
 const jobCounts = new Map();
 for (const job of jobs) {
   const company = companyBySlug.get(job.companySlug);
@@ -76,6 +87,19 @@ for (const job of jobs) {
 }
 
 for (const company of companies) {
+  const sortMetric = sortMetricsBySlug.get(company.slug);
+  if (company.entryStatus === "not-entered" && sortMetric.japanHeadcount !== 0) {
+    errors.push(`${company.name}: 日本未進出企業の日本法人従業員数が0人ではありません。`);
+  }
+  for (const [value, label] of [[sortMetric.japanEntryYear, "日本進出年"], [sortMetric.japanEntityYear, "日本法人設立年"]]) {
+    if (value !== null && (value < 1900 || value > new Date().getFullYear() + 1)) {
+      errors.push(`${company.name}: ${label}=${value}が想定範囲外です。`);
+    }
+  }
+  if (sortMetric.japanHeadcount !== null && sortMetric.japanHeadcount < 0) {
+    errors.push(`${company.name}: 日本法人従業員数=${sortMetric.japanHeadcount}が負数です。`);
+  }
+
   const expectedSalesRoles = company.entryStatus === "not-entered" ? 0 : jobCounts.get(company.slug) ?? 0;
   const expectedStatus = expectedSalesRoles >= 3 ? "積極採用" : expectedSalesRoles >= 1 ? "採用中" : "継続観測";
   if (company.salesRoles !== expectedSalesRoles) {
@@ -180,11 +204,14 @@ const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExp
 if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {
   errors.push("企業一覧にURL同期する本社所在地フィルターがありません。");
 }
-for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z"]) {
-  if (!explorerComponent.includes(requiredSort)) errors.push(`企業一覧に並び替えがありません: ${requiredSort}`);
+for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z", "日本進出が早い順", "日本進出が遅い順", "日本法人従業員数が多い順", "日本法人従業員数が少ない順", "日本法人設立が早い順", "日本法人設立が遅い順"]) {
+  if (!companyListSortOptions.some((option) => option.label === requiredSort)) errors.push(`企業一覧に並び替えがありません: ${requiredSort}`);
 }
 if (!explorerComponent.includes('setOptionalParam("sort"')) {
   errors.push("企業一覧の並び替えがURLへ同期されていません。");
+}
+if (compareKnownNumbers(null, 10, "asc") <= 0 || compareKnownNumbers(null, 10, "desc") <= 0) {
+  errors.push("企業一覧の未確認値が昇順・降順の両方で末尾に並びません。");
 }
 const globalStyles = fs.readFileSync(path.join(root, "app/globals.css"), "utf8");
 if (/company-card-grid \.data-card > p\s*\{[^}]*display:\s*none/.test(globalStyles)) {
@@ -209,3 +236,4 @@ console.log(`- 固定基準: HOT ${expectedCriteria.hot.minimumJobs}件/${expect
 console.log(`- 日本未進出 ${preEntryCount}社と求人0件企業の3分類からの除外を確認`);
 console.log("- 企業単位のsalesRoles・hiringStatus自動算出を確認");
 console.log(`- ${companies.length}社すべてで価値説明と本社所在地分類を確認`);
+console.log(`- 並び替え数値: 日本進出年 ${[...sortMetricsBySlug.values()].filter((metric) => metric.japanEntryYear !== null).length}社 / 日本法人設立年 ${[...sortMetricsBySlug.values()].filter((metric) => metric.japanEntityYear !== null).length}社 / 従業員数 ${[...sortMetricsBySlug.values()].filter((metric) => metric.japanHeadcount !== null).length}社`);
