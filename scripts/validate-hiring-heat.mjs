@@ -180,6 +180,12 @@ const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExp
 if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {
   errors.push("企業一覧にURL同期する本社所在地フィルターがありません。");
 }
+for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z"]) {
+  if (!explorerComponent.includes(requiredSort)) errors.push(`企業一覧に並び替えがありません: ${requiredSort}`);
+}
+if (!explorerComponent.includes('setOptionalParam("sort"')) {
+  errors.push("企業一覧の並び替えがURLへ同期されていません。");
+}
 const globalStyles = fs.readFileSync(path.join(root, "app/globals.css"), "utf8");
 if (/company-card-grid \.data-card > p\s*\{[^}]*display:\s*none/.test(globalStyles)) {
   errors.push("スマホの企業カードで価値説明が非表示になっています。");

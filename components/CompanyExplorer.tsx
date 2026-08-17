@@ -28,6 +28,14 @@ const tierCompanySlugs = {
 type TierFilter = "すべて" | keyof typeof tierAreas;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
 type EntryFilter = "すべて" | "not-entered";
+type SortMode = "updated" | "new-jobs" | "jobs" | "name";
+const sortOptions: Array<{ value: SortMode; label: string }> = [
+  { value: "updated", label: "最終更新が新しい順" },
+  { value: "new-jobs", label: "新着求人が新しい順" },
+  { value: "jobs", label: "求人が多い順" },
+  { value: "name", label: "企業名 A–Z" },
+];
+const companyNameCollator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 const returnPositionKey = "genba:company-explorer:return-position";
 
 type ReturnPosition = {
@@ -47,8 +55,17 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const initialStatus = statusParam && statuses.some((item) => item.value === statusParam) ? statusParam : "すべて";
   const headquartersParam = searchParams.get("hq");
   const initialHeadquarters: HeadquartersRegion = headquartersRegions.some((region) => region.value === headquartersParam) ? headquartersParam as HeadquartersRegion : "すべて";
+  const sortParam = searchParams.get("sort");
+  const initialSort: SortMode = sortOptions.some((option) => option.value === sortParam) ? sortParam as SortMode : "updated";
   const openJobsOnly = searchParams.get("openJobs") === "1";
   const companySlugsWithOpenJobs = useMemo(() => new Set(jobs.map((job) => job.companySlug)), []);
+  const newestJobDates = useMemo(() => {
+    const dates = new Map<string, string>();
+    for (const job of jobs) {
+      if (job.firstSeen > (dates.get(job.companySlug) ?? "")) dates.set(job.companySlug, job.firstSeen);
+    }
+    return dates;
+  }, []);
 
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [status, setStatus] = useState(initialStatus);
@@ -56,6 +73,7 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
   const [tier, setTier] = useState<TierFilter>(initialTier);
   const [entry, setEntry] = useState<EntryFilter>(initialEntry);
   const [headquarters, setHeadquarters] = useState<HeadquartersRegion>(initialHeadquarters);
+  const [sort, setSort] = useState<SortMode>(initialSort);
   const results = useMemo(() => companies.filter((company) => {
     const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.hq} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
@@ -65,7 +83,13 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
     const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
     const matchesOpenJobs = !openJobsOnly || companySlugsWithOpenJobs.has(company.slug);
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters && matchesOpenJobs;
-  }).sort((a, b) => headquarters === "すべて" ? 0 : a.hq.localeCompare(b.hq, "ja") || a.name.localeCompare(b.name, "ja")), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, companySlugsWithOpenJobs]);
+  }).sort((a, b) => {
+    const byName = companyNameCollator.compare(a.name, b.name);
+    if (sort === "name") return byName;
+    if (sort === "jobs") return b.salesRoles - a.salesRoles || (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || byName;
+    if (sort === "new-jobs") return (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || b.salesRoles - a.salesRoles || b.lastChecked.localeCompare(a.lastChecked) || byName;
+    return b.lastChecked.localeCompare(a.lastChecked) || b.salesRoles - a.salesRoles || byName;
+  }), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, sort, companySlugsWithOpenJobs, newestJobDates]);
 
   const clearReturnTarget = useCallback(() => {
     window.sessionStorage.removeItem(returnPositionKey);
@@ -89,8 +113,9 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
     setOptionalParam("tier", tier, "すべて");
     setOptionalParam("entry", entry, "すべて");
     setOptionalParam("hq", headquarters, "すべて");
+    setOptionalParam("sort", sort, "updated");
     window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
-  }, [query, status, solutionArea, tier, entry, headquarters]);
+  }, [query, status, solutionArea, tier, entry, headquarters, sort]);
 
   useLayoutEffect(() => {
     let timers: number[] = [];
@@ -224,7 +249,15 @@ export default function CompanyExplorer({ companyCardSummaries }: { companyCardS
           <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
         </div>
       </div>
-      <p className="result-count">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
+      <div className="company-results-toolbar">
+        <p className="result-count" aria-live="polite">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
+        <label className="select-field company-sort-field">
+          <span>並び替え</span>
+          <select value={sort} onChange={(event) => { clearReturnTarget(); setSort(event.target.value as SortMode); }}>
+            {sortOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+        </label>
+      </div>
       <div className="card-grid company-card-grid">
         {results.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={companyCardSummaries[company.slug]} onNavigate={rememberCompanyPosition} />)}
       </div>

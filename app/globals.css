@@ -371,6 +371,10 @@ button, input, select { font: inherit; }
 .filter-chips button.active { background: var(--navy); border-color: var(--navy); color: white; }
 .filter-chips button.entry-active { border-color: #c7a026; background: #ffe58b; color: #5b4700; }
 .entry-filter-chips button { min-width: 130px; }
+.company-results-toolbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin: 24px 0 16px; }
+.company-results-toolbar .result-count { margin: 0 0 12px; }
+.company-sort-field { min-width: 240px; }
+.company-sort-field select { background-color: white; font-weight: 700; }
 .pre-entry-badge { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 5px 9px; border: 1px solid #d0aa31; background: #ffe58b; color: #5d4900; font-size: 9px; font-weight: 850; white-space: nowrap; }
 .pre-entry-badge i { width: 6px; height: 6px; border-radius: 50%; background: #b58400; }
 .pre-entry-badge-hero { margin-top: 8px; padding: 7px 10px; font-size: 10px; letter-spacing: .04em; }
@@ -1680,6 +1684,9 @@ button, input, select { font: inherit; }
   .filter-panel,.company-filter-panel { grid-template-columns: 1fr; }
   .company-filter-panel .filter-chips { grid-column: auto; }
   .company-filter-panel .status-filter-chips,.company-filter-panel .entry-filter-chips { grid-column: auto; }
+  .company-results-toolbar { align-items: stretch; flex-direction: column; gap: 10px; }
+  .company-results-toolbar .result-count { margin: 0; }
+  .company-sort-field { min-width: 0; width: 100%; }
   .entry-filter-chips { grid-template-columns: 1fr; }
   .job-row { grid-template-columns: 38px minmax(0,1fr); }
   .job-row > .button { grid-column: 2; justify-self: start; }
