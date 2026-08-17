@@ -1,3 +1,5 @@
+import { COMPANY_GLOBAL_REVIEW_PROFILES } from "@/lib/company-global-review-profiles";
+
 type JobLike = {
   id: string;
   companySlug: string;
@@ -1029,15 +1031,64 @@ export function getJobRoleMarketArchetype(job: JobLike) {
   return roleArchetype(job);
 }
 
+function roleReputationHypothesis(role: RoleMarketProfile, companyName: string) {
+  const key = role.key;
+  if (["country-leadership", "sales-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "で活躍しやすいのは、個人の受注力よりも、適正なquota、territory、採用・ramp、forecastをteam単位で整えられる人。",
+    caution: "【Genba仮説】面接ではJapan planの決定権、teamの達成者比率、未充足headcount、HQとの意思決定、直属上司のcoaching実績を数字で確認すべき。",
+  };
+  if (["strategic-seller", "enterprise-seller", "commercial-seller", "smb-seller", "account-manager", "development", "development-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、" + companyName + "の知名度より、良質なterritory、現実的なquota、十分なpipeline、managerのdeal coachingが揃うかが活躍確率を左右する。",
+    caution: "【Genba仮説】面接では過去4四半期のquota達成者比率、現実のpipeline source、territory変更、失注理由、ramp中の達成定義、managerごとの離職率を分けて聞くべき。",
+  };
+  if (["presales", "presales-leadership", "technical-specialist", "technical-advisor"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、AEと対等にdiscoveryとsuccess criteriaを設計し、PoCを受注・本番化まで進められる環境なら市場価値を伸ばしやすい。",
+    caution: "【Genba仮説】面接ではSE一人当たりのAE数・同時PoC数、demo資産、PoC-to-close、失注時の技術責任、Productへのfeedback経路、出張負荷を確認すべき。",
+  };
+  if (["customer", "customer-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、問合せ対応ではなく、担当portfolioのadoption・renewal・expansionと顧客KPIを自分で動かせる設計なら実績を転用しやすい。",
+    caution: "【Genba仮説】面接では担当ARR・社数、GRR・NRR、renewalの契約責任、expansion credit、escalation比率、導入後のServices・Support境界を確認すべき。",
+  };
+  if (["delivery", "delivery-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、個別導入をtemplate・partner enablement・governanceに変え、納期と顧客成果の両方を再現できる人が活躍しやすい。",
+    caution: "【Genba仮説】面接ではutilization目標、同時project数、travel、scope変更の責任、無償支援の比率、partner capacity、導入後の引継ぎを確認すべき。",
+  };
+  if (["support", "support-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、incident解決をknowledge・product改善・予防運用に変えられるなら、単なるticket処理を超えた実績になる。",
+    caution: "【Genba仮説】面接ではshift・待機、severity別SLA、backlog、escalation比率、Engineeringの応答責任、customer abuse対策、自動化で減らした工数を確認すべき。",
+  };
+  if (["partner", "partner-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、partner数でなく、sourced・相互pipeline、delivery capacity、win rateを作れる環境なら実績を証明しやすい。",
+    caution: "【Genba仮説】面接ではpartner-sourced・influencedのcredit定義、案件登録、direct salesとの競合、active partner数、certificationと導入品質を確認すべき。",
+  };
+  if (["marketing", "marketing-leadership"].includes(key)) return {
+    positive: "【Genba仮説】" + role.label + "では、event数ではなく、Japan messageとsourced・influenced pipelineの両方を作れるかが成長機会になる。",
+    caution: "【Genba仮説】面接では予算決定権、MQL以降の責任、SalesとのSLA、agency依存、HQ approval、campaign別pipelineとROIを確認すべき。",
+  };
+  return {
+    positive: "【Genba仮説】" + role.label + "では、個人の作業を再利用可能なprocess・data・enablementに変え、他部門の成果まで動かせる環境かが活躍可能性を左右する。",
+    caution: "【Genba仮説】面接では目標KPI、意思決定権、stakeholder、未整備process、過去の成功者の共通点、managerのfeedback・昇進実績を確認すべき。",
+  };
+}
+
 export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
+  const review = COMPANY_GLOBAL_REVIEW_PROFILES[job.companySlug];
+  const reputationHypothesis = roleReputationHypothesis(role, company.name);
   const sourceList = [
     { label: `${company.name} 公式Career・会社情報`, url: company.officialUrl, detail: "価値観、組織、働き方、職務を確認。会社発信であり、配属先の体験を保証しない。" },
     { label: job.source.label, url: job.source.url, detail: "対象職種の責任、要件、勤務地、公開されている条件を確認。" },
   ];
   if (company.communityUrl && company.communityLabel) sourceList.push({ label: company.communityLabel, url: company.communityUrl, detail: "匿名・自己申告または製品利用者の公開集計。日本の対象職種へ一般化しない。" });
+  if (review && !sourceList.some((source) => source.url === review.source.url)) {
+    sourceList.push({
+      label: review.source.label,
+      url: review.source.url,
+      detail: review.snapshot + "。対象範囲は" + review.scope + "。日本の配属先の事実として一般化しない。",
+    });
+  }
   const compensation = officialCompensation[job.id];
   const hypothesisCompensation = {
     researchedAt: "2026-08-17",
@@ -1082,10 +1133,20 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
       } : hypothesisCompensation,
     reputationResearch: {
       researchedAt: "2026-08-17",
-      summary: `${company.name}の日本における対象職種だけを十分な件数で評価した公開レビューは確認できない。公式情報と確認できた外部集計を分け、肯定材料と注意材料を同じ粒度で整理した。`,
-      positiveTopics: company.positive,
-      negativeTopics: company.negative,
-      caveat: "匿名・自己申告の投稿、会社発信、製品レビューは性質が異なり、配属先や個人の体験を確定しない。公開情報で確認できない評判は補完せず、面接で直属上司、評価、勤務、昇進の具体例を確認する。",
+      summary: review
+        ? company.name + "の日本の対象職種だけの十分なreview母数はないため、" + review.source.label + "の" + review.snapshot + "を参考にした。その上で【Genba仮説】として、" + role.label + "の活躍条件と面接で検証すべき論点まで導いた。"
+        : company.name + "の公開情報を、【Genba仮説】として" + role.label + "の活躍条件と面接の検証論点へ落とし込んだ。",
+      positiveTopics: [
+        ...company.positive.map((topic) => "【公開事実】" + topic),
+        ...(review ? ["【海外レビュー参考】" + review.positive + "。"] : []),
+        reputationHypothesis.positive,
+      ],
+      negativeTopics: [
+        ...company.negative.map((topic) => "【公開事実】" + topic),
+        ...(review ? ["【海外レビュー参考】" + review.caution + "。"] : []),
+        reputationHypothesis.caution,
+      ],
+      caveat: "匿名・自己申告のreviewはself-selection biasがあり、国、時期、職種、managerの違いを分離できない。" + (review?.scope ?? "外部employee reviewの十分な母数は未確認") + "。ここでの結論は配属先の事実ではなく、面接で数字と実例を引き出すための仮説として使う。",
       sources: sourceList,
     },
     marketValueResearch: {

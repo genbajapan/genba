@@ -42,6 +42,8 @@ const jobsBySlug = new Map();
 for (const job of jobs) jobsBySlug.set(job.companySlug, [...(jobsBySlug.get(job.companySlug) ?? []), job]);
 let officialCompensationJobs = 0;
 let hypothesisCompensationJobs = 0;
+let externalReputationJobs = 0;
+const externalReputationCompanies = new Set();
 const auditDate = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
 const today = new Date(`${auditDate}T00:00:00Z`);
 
@@ -171,6 +173,21 @@ function assess(company) {
       addMissing(missing, !/確認不能|非公開$/.test(job.compensationResearch.headline), `${prefix}:確認不能で止めない報酬仮説`);
     }
     addMissing(missing, job.reputationResearch?.positiveTopics?.length && job.reputationResearch?.negativeTopics?.length, `${prefix}:ポジティブ・ネガティブ評判`);
+    if (job.reputationResearch) {
+      const reputationText = JSON.stringify(job.reputationResearch);
+      const hasExternalSource = job.reputationResearch.sources?.some((source) =>
+        /glassdoor|indeed|comparably|repvue|openwork|greatplacetowork|trustpilot|ambitionbox|reddit|lightbrd|demoday/i.test(source.url),
+      );
+      if (hasExternalSource) {
+        externalReputationJobs += 1;
+        externalReputationCompanies.add(job.companySlug);
+      }
+      addMissing(missing, hasExternalSource, `${prefix}:海外を含む外部評判source`);
+      addMissing(missing, /【Genba仮説】/.test(job.reputationResearch.summary), `${prefix}:職種別の評判仮説`);
+      addMissing(missing, /【海外レビュー参考】/.test(reputationText), `${prefix}:海外reviewの肯定・注意theme`);
+      addMissing(missing, /quota|territory|portfolio|PoC|utilization|SLA|pipeline|KPI|partner/.test(reputationText), `${prefix}:職種固有の検証論点`);
+      addMissing(missing, !/確認できない[。.]?$|情報(?:が)?ない[。.]?$/.test(job.reputationResearch.summary), `${prefix}:情報なしで止めない評判分析`);
+    }
     addMissing(missing, job.marketValueResearch?.skills?.length && job.marketValueResearch?.nextRoles?.length && job.marketValueResearch?.marketBands?.length, `${prefix}:市場価値`);
     if (job.marketValueResearch) {
       addMissing(missing, job.marketValueResearch.marketBands.every((band) => /\d/.test(band.range) && !/確認不能|非公開/.test(band.range)), `${prefix}:数値ありの職種別報酬帯`);
@@ -311,4 +328,5 @@ console.log("Adyen v1企業ページ標準: OK");
 console.log(`- 全${counts.total}社を監査（HOT ${counts.byPriority.HOT} / Active ${counts.byPriority.Active} / Selective ${counts.byPriority.Selective} / 求人なし ${counts.byPriority["求人なし"]}）`);
 console.log(`- 標準充足 ${counts.standardReady}社 / 公開済み ${counts.byStatus["公開済み"]}社`);
 console.log(`- 給与レンジ ${jobs.length}求人（公式 ${officialCompensationJobs} / Genba仮説 ${hypothesisCompensationJobs} / 未算定 ${jobs.length - officialCompensationJobs - hypothesisCompensationJobs}）`);
+console.log(`- 海外を含む外部評判 ${externalReputationJobs}/${jobs.length}求人・${externalReputationCompanies.size}/${jobsBySlug.size}社（全件に職種別Genba仮説）`);
 console.log(`- 進捗台帳: ${path.relative(projectRoot, manifestPath)}`);

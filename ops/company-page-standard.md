@@ -64,6 +64,8 @@
 - 求人概要の中に求める人物・経験を含める
 - 給与事情、ポジティブ・ネガティブ評判、活躍後に身につくスキル・次に狙える役割・市場価値
 - 給与、OTE、Pay Mix、勤務形態、言語要件は推測で補完しない。第三者データは母数、地域、職種、限界を明記する
+- 日本の対象職種だけの十分な評判母数がない場合も「情報なし」で止めない。Glassdoor、Indeed、Comparably、RepVue、OpenWork、Great Place To Work、公開社員発信等を海外まで確認し、会社・職種の取り違えを除外する
+- 評判欄は「公開事実」「海外レビュー参考」「Genba仮説」を表示上分ける。海外集計の母数・地域・時点・self-selection biasを示し、日本の配属先の事実として一般化しない
 
 ### AEの判断材料
 
@@ -82,6 +84,8 @@
 - 結論を先に置き、事実、Genbaの読み、反証・留保を混ぜない
 - 日本法人売上など非公開情報は「非公開」とし、他地域の値を日本の実績として扱わない
 - 評判は単一口コミを事実化せず、肯定・否定の両方、母数、地域差、時点を示す
+- 評判は会社単位の海外集計を貼って終わらせない。営業はterritory・quota・pipeline・manager、PresalesはAE比率・PoC負荷・technical win、CSはportfolio・GRR/NRR・renewal/expansion、Deliveryはutilization・travel・scope・partner capacity、Supportはshift・SLA・escalationを職種別の検証仮説へ落とす
+- 日本の口コミがないことだけを結論にした評判欄、外部レビューsourceがない評判欄、肯定・注意の両面と「Genba仮説」がない評判欄は公開基準を満たさない
 - 市場価値は「身につく具体的スキル→次の役割・領域→成立条件つきの報酬帯」の順で書く
 - 市場価値は会社単位で使い回さない。各求人を`role family`、`seniority`、`segment`、`quota・portfolio・team・技術責任`で分類し、身につくスキル、次の役割、報酬帯を職種別に作る
 - 異なるrole familyの求人に、同じ「その先に狙えるポジション・領域」と報酬帯を入れない。同一職種・同一segmentの別requisitionだけは同一でよい

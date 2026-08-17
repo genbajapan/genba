@@ -40,6 +40,15 @@ export const COMPANY_PAGE_STANDARD = {
     rejectUnpricedMarketBands: true,
     rejectIdenticalOutputsAcrossDifferentRoleFamilies: true,
   },
+  reputationResearch: {
+    requireExternalReviewSource: true,
+    useOverseasReviewsWhenJapanSampleIsInsufficient: true,
+    separateFactsExternalSignalsAndHypotheses: true,
+    requirePositiveAndCautionThemes: true,
+    requireRoleSpecificHypothesis: true,
+    roleDimensions: ["quota-or-portfolio", "manager", "team-capacity", "workload", "career"],
+    rejectUnavailableOnlyConclusion: true,
+  },
   hypothesisLabel: "【Genba仮説】",
   staleJobDays: 30,
 } as const;
