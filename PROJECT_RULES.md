@@ -49,7 +49,8 @@ Jioから「デイリータスク」という指示を受けた場合(Claude Cod
 
 ## 4. 求人・企業データの非交渉ルール
 
-- Codex・Claude Codeが企業を追加・更新する場合は、`ops/company-page-standard.md`、共通の`CompanyIntelligenceProfile`、`CompanyPublicIntelligence`型、`ops/daily-task-workflow.md`、`ops/company-selling-playbook-standard.md`を正本とし、Adyen v1と同じセクション順・見出し・開閉状態・データ構造に合わせる。Salesforce個別ページは2026-08-11に編集対象から削除し、2026-08-17以降はAdyenページ（基準コミット`66ca2e2`）を唯一の公開見本とする。企業ごとに利用可能な公開情報を徹底調査し、同じ判断価値を目指す一方、情報量を増やす目的で企業固有のUI、データ項目、追加セクションを作らない。標準から外れる必要がある場合は、実装・公開前にJioの明示承認を得る
+- Codex・Claude Codeが企業を追加・更新する場合は、`ops/company-page-standard.md`、共通の`CompanyIntelligenceProfile`、`CompanyPublicIntelligence`型、`ops/daily-task-workflow.md`、`ops/company-selling-playbook-standard.md`を正本とし、共通企業ページv1と同じセクション順・見出し・開閉状態・データ構造に合わせる。Salesforce個別ページは2026-08-11に編集対象から削除し、2026-08-17以降はFigmaページを公開見本とする。企業ごとに利用可能な公開情報を徹底調査し、同じ判断価値を目指す一方、情報量を増やす目的で企業固有のUI、データ項目、追加セクションを作らない。標準から外れる必要がある場合は、実装・公開前にJioの明示承認を得る
+- 現勤務先との利益相反を避けるため、Adyenおよび決済領域の企業は、企業一覧、個別企業ページ、求人、採用シグナル、ニュースレターの通常5社枠、X下書き、スポンサー候補へ追加・再掲載しない。決済領域は、決済受入、acquiring、processing、payment orchestration、資金移動、Merchant of Recordを主要商材または主要GTMにする企業を指す。決済機能を一部に持つだけのcommerce、banking、payroll等まで自動的に除外せず、主要商材か判断が曖昧な場合は公開前にJioへ確認する。既存の調査データは非公開の履歴として保持できるが、公開導線へ戻さない
 - `想定できる売り方`は`ops/company-selling-playbook-standard.md`を必ず参照する。課題視点は「既存顧客の導入目的」「製品の成り立ち」「外部環境の要求」、提案の流れは「背景」「課題」「解決策」「選定の理由」の固定順とする。特に外部環境は企業内部の施策や製品機能で代用せず、企業の外側の変化からBuyerの要求・事業課題・投資理由まで因果で記述する
 - 企業公式Career、公式ATS、公式ニュースルーム、日本公式サイトを優先する
 - 公式求人の存在を実際に確認してから追加・更新する

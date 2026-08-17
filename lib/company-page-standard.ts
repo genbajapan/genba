@@ -1,8 +1,8 @@
 export const COMPANY_PAGE_STANDARD = {
-  id: "adyen-v1",
-  canonicalSlug: "adyen",
+  id: "company-intelligence-v1",
+  canonicalSlug: "figma",
   canonicalCommit: "66ca2e2",
-  canonicalPath: "/companies/adyen",
+  canonicalPath: "/companies/figma",
   sections: [
     { id: "overview", label: "会社概要", defaultOpen: true },
     { id: "scale", label: "近しい規模感の外資IT企業", defaultOpen: false },

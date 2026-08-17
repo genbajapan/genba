@@ -19,16 +19,16 @@ const companies: NewsletterCompany[] = [
   {
     index: "01",
     kind: "ANCHOR",
-    name: "Stripe",
-    category: "決済・財務基盤",
+    name: "Figma",
+    category: "プロダクト開発・AI協働",
     status: "積極採用",
     statusClass: "active",
     summary:
-      "2025年にStripe上の事業者が生み出した総取扱高は1.9兆ドル。規模以上に面白いのは、Paymentsを入口にBilling、Connect、Tax、Radarへ広がり、顧客の「売上を受け取る仕組み」そのものに入っていけることです。",
+      "Figmaはdesign toolから、Design、Dev Mode、FigJam、Sites、Makeまでをつなぐproduct-development platformへ広がっています。三菱電機の公式事例では、あるprojectのprototype構築が2週間から1日へ短縮されました。",
     perspective:
-      "決済手数料の比較だけでなく、承認率、不正対策、継続課金、marketplaceの資金移動、海外展開を経営課題として扱うplatform saleです。TokyoではCommercial Hunter、Commercial Grower、Enterprise Hunterを同時募集。新規開拓と既存拡張のどちらで勝負するかまで選べ、公式OTEはいずれも年額1,720万〜2,580万円です。",
-    cta: "3つのAE求人とOTEを比較する",
-    href: "/companies/stripe",
+      "design部門だけでなく、Product、Engineering、Marketing、IT・Securityを同じworkflowへ巻き込むplatform saleです。東京ではSales、Solutions、Onboarding、Enablement、TAMまで対象8求人を確認でき、new logoからadoptionまで日本で組織を厚くしている局面です。",
+    cta: "東京の8つの役割を見る",
+    href: "/companies/figma",
   },
   {
     index: "02",

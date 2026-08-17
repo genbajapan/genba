@@ -218,12 +218,12 @@ export default {
       return Response.redirect(`${url.origin}/#hiring-signals`, 301);
     }
 
-    if (
-      url.pathname === "/companies/salesforce" ||
-      url.pathname === "/companies/salesforce/" ||
-      url.pathname === "/companies/servicenow" ||
-      url.pathname === "/companies/servicenow/"
-    ) {
+    const removedCompanyPaths = new Set([
+      "/companies/salesforce", "/companies/servicenow", "/companies/datadog",
+      "/companies/zscaler", "/companies/veeva", "/companies/adyen",
+      "/companies/stripe", "/companies/airwallex", "/companies/primer", "/companies/aghanim",
+    ]);
+    if (removedCompanyPaths.has(url.pathname.replace(/\/$/, ""))) {
       return Response.redirect(`${url.origin}/companies`, 301);
     }
 

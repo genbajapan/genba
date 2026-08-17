@@ -917,11 +917,24 @@ const companyRecords: Company[] = [
   ...companies20260817Daily,
 ];
 
-// 構造化データは標準改善・調査履歴として保持しつつ、編集方針と合わない大手企業は公開対象から除外する。
+// 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
 // Salesforceは2026-08-11、ServiceNow・Datadog・Zscaler・Veevaは国内組織規模と知名度を踏まえて2026-08-17に除外した。
-// Adyenは現勤務先との利益相反を避けるため、Jioの明示判断により2026-08-17に除外した。
+// Adyenと決済領域（決済受入・処理・orchestration・資金移動・Merchant of Recordを主要商材にする企業）は、
+// 現勤務先との利益相反を避けるため、Jioの明示判断により2026-08-17に除外した。
 // HubSpotは読者の比較基準になるアンカー企業として、Jioの明示判断により公開を継続する。
-const publiclyExcludedCompanySlugs = new Set(["salesforce", "servicenow", "datadog", "zscaler", "veeva", "adyen"]);
+const paymentConflictCompanySlugs = new Set(["adyen", "stripe", "airwallex", "primer", "aghanim"]);
+const paymentConflictPattern = /(?:payments?|決済|merchant of record|payment orchestration)/i;
+const unclassifiedPaymentCompanies = companyRecords.filter((company) =>
+  paymentConflictPattern.test([company.category, ...company.tags].join(" ")) && !paymentConflictCompanySlugs.has(company.slug)
+);
+if (unclassifiedPaymentCompanies.length) {
+  throw new Error(`決済領域の企業は公開対象へ追加できません: ${unclassifiedPaymentCompanies.map((company) => company.slug).join(", ")}`);
+}
+
+const publiclyExcludedCompanySlugs = new Set([
+  "salesforce", "servicenow", "datadog", "zscaler", "veeva",
+  ...paymentConflictCompanySlugs,
+]);
 const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {

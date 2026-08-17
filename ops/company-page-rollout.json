@@ -1,7 +1,7 @@
 {
-  "standard": "adyen-v1",
+  "standard": "company-intelligence-v1",
   "canonical": {
-    "path": "/companies/adyen",
+    "path": "/companies/figma",
     "commit": "66ca2e2"
   },
   "auditedAt": "2026-08-17",
@@ -18,31 +18,22 @@
     "求人なし"
   ],
   "counts": {
-    "total": 110,
+    "total": 106,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 110
+      "公開済み": 106
     },
     "byPriority": {
-      "HOT": 46,
-      "Active": 14,
+      "HOT": 44,
+      "Active": 13,
       "Selective": 14,
-      "求人なし": 36
+      "求人なし": 35
     },
-    "standardReady": 110
+    "standardReady": 106
   },
   "companies": [
-    {
-      "slug": "airwallex",
-      "company": "Airwallex",
-      "priority": "HOT",
-      "salesRoles": 6,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
     {
       "slug": "anaplan",
       "company": "Anaplan",
@@ -395,15 +386,6 @@
       "missingFields": []
     },
     {
-      "slug": "stripe",
-      "company": "Stripe",
-      "priority": "HOT",
-      "salesRoles": 3,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "uipath",
       "company": "UiPath",
       "priority": "HOT",
@@ -444,15 +426,6 @@
       "company": "Zendesk",
       "priority": "HOT",
       "salesRoles": 3,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "aghanim",
-      "company": "Aghanim",
-      "priority": "Active",
-      "salesRoles": 2,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -919,15 +892,6 @@
     {
       "slug": "postman",
       "company": "Postman",
-      "priority": "求人なし",
-      "salesRoles": 0,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "primer",
-      "company": "Primer",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

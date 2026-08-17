@@ -256,9 +256,9 @@ const manifest = {
 };
 
 const rolloutTable = [
-  "# 企業ページ Adyen v1 展開進捗",
+  "# 企業ページ 共通企業ページv1 展開進捗",
   "",
-  `最終監査: ${auditDate} / 正本: [Adyen](${COMPANY_PAGE_STANDARD.canonicalPath}) / 基準コミット: \`${COMPANY_PAGE_STANDARD.canonicalCommit}\``,
+  `最終監査: ${auditDate} / 公開見本: [Figma](${COMPANY_PAGE_STANDARD.canonicalPath}) / 基準コミット: \`${COMPANY_PAGE_STANDARD.canonicalCommit}\``,
   "",
   `全${counts.total}社（未着手 ${counts.byStatus["未着手"]} / 調査中 ${counts.byStatus["調査中"]} / 検証済み ${counts.byStatus["検証済み"]} / 公開済み ${counts.byStatus["公開済み"]}）`,
   "",
@@ -319,12 +319,12 @@ for (const forbidden of [
 }
 
 if (errors.length) {
-  console.error("Adyen v1企業ページ標準の検証に失敗しました:\n");
+  console.error("共通企業ページv1の検証に失敗しました:\n");
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
 
-console.log("Adyen v1企業ページ標準: OK");
+console.log("共通企業ページv1: OK");
 console.log(`- 全${counts.total}社を監査（HOT ${counts.byPriority.HOT} / Active ${counts.byPriority.Active} / Selective ${counts.byPriority.Selective} / 求人なし ${counts.byPriority["求人なし"]}）`);
 console.log(`- 標準充足 ${counts.standardReady}社 / 公開済み ${counts.byStatus["公開済み"]}社`);
 console.log(`- 給与レンジ ${jobs.length}求人（公式 ${officialCompensationJobs} / Genba仮説 ${hypothesisCompensationJobs} / 未算定 ${jobs.length - officialCompensationJobs - hypothesisCompensationJobs}）`);
