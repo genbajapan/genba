@@ -120,14 +120,14 @@ function assess(company) {
   addMissing(missing, japanOfficeDisplay.address && !/(?:株式会社|合同会社|K\.?K\.?).*[・／/]|(?:19|20)\d{2}/i.test(japanOfficeDisplay.address), "日本オフィス:住所のみ");
   addMissing(missing, /^（.+）$/.test(japanOfficeDisplay.entryYearNote), "日本オフィス:進出年を2行目の括弧内に表示");
   const overviewFacts = getUniqueOverviewFacts(intelligence.facts);
-  addMissing(missing, overviewFacts.every((fact) => !isOverviewSnapshotDuplicateFact(fact)), "企業概要:住所・進出年・被保険者の重複排除");
+  addMissing(missing, overviewFacts.every((fact) => !isOverviewSnapshotDuplicateFact(fact)), "企業概要:住所・進出年・日本法人での想定従業員数の重複排除");
   addMissing(missing, intelligence.companyStats?.globalHeadcount?.value, "グローバル社員数");
-  addMissing(missing, intelligence.companyStats?.japanHeadcount?.value, "国内被保険者数");
-  addMissing(missing, !/(?:非公開|確認不能|確認できず|未確認)/.test(intelligence.companyStats?.japanHeadcount?.value ?? ""), "国内被保険者数:gBizINFO監査ステータス");
-  addMissing(missing, intelligence.companyStats?.japanHeadcount?.sourceId?.startsWith("gbiz-headcount-"), "国内被保険者数:gBizINFO出典");
-  addMissing(missing, /(?:被保険者|対象外)/.test(intelligence.companyStats?.japanHeadcount?.detail ?? ""), "国内被保険者数:定義・対象範囲");
+  addMissing(missing, intelligence.companyStats?.japanHeadcount?.value, "日本法人での想定従業員数");
+  addMissing(missing, !/(?:非公開|確認不能|確認できず|未確認)/.test(intelligence.companyStats?.japanHeadcount?.value ?? ""), "日本法人での想定従業員数:gBizINFO監査ステータス");
+  addMissing(missing, intelligence.companyStats?.japanHeadcount?.sourceId?.startsWith("gbiz-headcount-"), "日本法人での想定従業員数:gBizINFO出典");
+  addMissing(missing, /(?:被保険者|対象外|事業所情報|想定従業員数)/.test(intelligence.companyStats?.japanHeadcount?.detail ?? ""), "日本法人での想定従業員数:定義・対象範囲");
   if (company.entryStatus === "not-entered") {
-    addMissing(missing, intelligence.companyStats?.japanHeadcount?.value === "0人", "国内被保険者数:日本未進出は0人");
+    addMissing(missing, intelligence.companyStats?.japanHeadcount?.value === "0人", "日本法人での想定従業員数:日本未進出は0人");
   }
   addMissing(missing, intelligence.marketStatus?.milestones?.some((item) => item.label.includes("創業")), "創業年");
   if (company.entryStatus !== "not-entered") {
@@ -301,6 +301,22 @@ if (writeManifest) {
 }
 
 const errors = [];
+const legacyHeadcountLabels = [["国内", "被保険者"].join(""), ["日本法人", "従業員数"].join("")];
+function collectPublicSourceFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return collectPublicSourceFiles(entryPath);
+    return /\.(?:ts|tsx)$/.test(entry.name) ? [entryPath] : [];
+  });
+}
+for (const directory of ["app", "components", "lib"].map((name) => path.join(projectRoot, name))) {
+  for (const filePath of collectPublicSourceFiles(directory)) {
+    const source = fs.readFileSync(filePath, "utf8");
+    for (const legacyLabel of legacyHeadcountLabels) {
+      if (source.includes(legacyLabel)) errors.push(`${path.relative(projectRoot, filePath)}: 従業員数の旧表記が残っています。`);
+    }
+  }
+}
 const allowedStatuses = new Set(manifest.statusOrder);
 for (const entry of entries) {
   if (!allowedStatuses.has(entry.status)) errors.push(`${entry.slug}: 不正な進捗状態「${entry.status}」`);

@@ -9,7 +9,7 @@ type JapanOfficeDisplayInput = {
 
 const locationPattern = /(〒|北海道|東京都|京都府|大阪府|.{2,3}県|東京|横浜|大阪|丸の内|大手町|日本橋|赤坂|六本木|渋谷|新宿|新橋|霞が関|虎ノ門|八重洲|日暮里|府中|ランドマークタワー|ミッドタウン|ヒルズ|ビル|タワー|スクエア)/;
 const unavailableAddressPattern = /^(?:未確認|非公開|確認不能|実稼働オフィスは確認不能|常設オフィス未確認|公式一次情報で確認不能|住所未確認|開設準備中・住所未確認)$/;
-const duplicateOverviewFactPattern = /^(?:日本法人(?:設立)?|国内法人|日本進出(?:年)?|日本市場進出|東京(?:拠点|オフィス|office)|国内(?:拠点|被保険者)|日本(?:拠点|オフィス|法人従業員数))$/i;
+const duplicateOverviewFactPattern = /^(?:日本法人(?:設立)?|国内法人|日本進出(?:年)?|日本市場進出|東京(?:拠点|オフィス|office)|国内拠点|日本(?:拠点|オフィス)|日本法人での想定従業員数)$/i;
 
 function normalizeOfficeAddress(value: string, isPreEntry: boolean) {
   if (isPreEntry || /未進出/.test(value)) return "日本法人住所なし";

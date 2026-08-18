@@ -89,7 +89,7 @@ for (const job of jobs) {
 for (const company of companies) {
   const sortMetric = sortMetricsBySlug.get(company.slug);
   if (company.entryStatus === "not-entered" && sortMetric.japanHeadcount !== 0) {
-    errors.push(`${company.name}: 日本未進出企業の日本法人従業員数が0人ではありません。`);
+    errors.push(`${company.name}: 日本未進出企業の日本法人での想定従業員数が0人ではありません。`);
   }
   for (const [value, label] of [[sortMetric.japanEntryYear, "日本進出年"], [sortMetric.japanEntityYear, "日本法人設立年"]]) {
     if (value !== null && (value < 1900 || value > new Date().getFullYear() + 1)) {
@@ -97,7 +97,7 @@ for (const company of companies) {
     }
   }
   if (sortMetric.japanHeadcount !== null && sortMetric.japanHeadcount < 0) {
-    errors.push(`${company.name}: 日本法人従業員数=${sortMetric.japanHeadcount}が負数です。`);
+    errors.push(`${company.name}: 日本法人での想定従業員数=${sortMetric.japanHeadcount}が負数です。`);
   }
 
   const expectedSalesRoles = company.entryStatus === "not-entered" ? 0 : jobCounts.get(company.slug) ?? 0;
@@ -204,7 +204,7 @@ const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExp
 if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {
   errors.push("企業一覧にURL同期する本社所在地フィルターがありません。");
 }
-for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z", "日本進出が早い順", "日本進出が遅い順", "日本法人従業員数が多い順", "日本法人従業員数が少ない順", "日本法人設立が早い順", "日本法人設立が遅い順"]) {
+for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z", "日本進出が早い順", "日本進出が遅い順", "日本法人での想定従業員数が多い順", "日本法人での想定従業員数が少ない順", "日本法人設立が早い順", "日本法人設立が遅い順"]) {
   if (!companyListSortOptions.some((option) => option.label === requiredSort)) errors.push(`企業一覧に並び替えがありません: ${requiredSort}`);
 }
 if (!explorerComponent.includes('setOptionalParam("sort"')) {

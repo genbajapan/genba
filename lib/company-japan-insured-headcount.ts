@@ -122,7 +122,7 @@ function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
     kind: "公的機関",
     scope: entity
       ? `法人番号${entity.corporateNumber}・厚生年金保険/健康保険の被保険者数`
-      : "国内法人の法人番号・事業所情報・被保険者数",
+      : "国内法人の法人番号・事業所情報・日本法人での想定従業員数",
     checkedAt: CHECKED_AT,
   };
 }
@@ -154,13 +154,13 @@ export function applyJapanInsuredHeadcountAudit(intelligenceBySlug: Record<strin
     } else if (NOT_ENTERED_SLUGS.has(slug)) {
       intelligence.companyStats.japanHeadcount = {
         value: "0人",
-        detail: `Genbaの日本未進出区分に基づき0人と表示。公式情報で日本法人・国内拠点を確認できず、gBizINFOで紐づく国内法人の被保険者数もない。国内RemoteまたはEOR雇用者が存在しないことまで保証するものではない。${CHECKED_AT}確認。`,
+        detail: `Genbaの日本未進出区分に基づき0人と表示。公式情報で日本法人・国内拠点を確認できず、gBizINFOで紐づく国内法人の事業所情報もない。国内RemoteまたはEOR雇用者が存在しないことまで保証するものではない。${CHECKED_AT}確認。`,
         sourceId: source.id,
       };
     } else {
       intelligence.companyStats.japanHeadcount = {
         value: "対象法人未特定",
-        detail: `gBizINFOで会社ブランドと結びつく国内法人番号を特定できず、被保険者数を掲載できない。求人、外国会社、EORまたは販売パートナーの活動を国内法人の人数へ置き換えていない。${CHECKED_AT}確認。`,
+        detail: `gBizINFOで会社ブランドと結びつく国内法人番号を特定できず、日本法人での想定従業員数を掲載できない。求人、外国会社、EORまたは販売パートナーの活動を国内法人の人数へ置き換えていない。${CHECKED_AT}確認。`,
         sourceId: source.id,
       };
     }

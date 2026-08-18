@@ -43,7 +43,7 @@ const atlassianIntelligence = buildIntelligence({
     { label: "顧客", value: "35万社超", detail: "2026年6月末時点。", source: "finance" },
     { label: "Fortune 500", value: "85%超", detail: "2026年6月末時点の有料顧客比率。", source: "finance" },
     { label: "日本法人", value: "2013年", detail: "アトラシアン株式会社を設立。", source: "company" },
-    { label: "国内被保険者", value: "77人", detail: "gBizINFOの事業所欄。社員総数と一致しない場合がある。", source: "company" },
+    { label: "日本法人での想定従業員数", value: "77人", detail: "gBizINFOの事業所欄を基に表示。社員総数と一致しない場合がある。", source: "company" },
     { label: "日本対象求人", value: "1件", detail: "Senior Customer Success Manager。", source: "job" },
   ],
   customers: [
@@ -115,7 +115,7 @@ const dynatraceIntelligence = buildIntelligence({
     { label: "Q1売上", value: "5.55億ドル", detail: "前年比16%増。", source: "finance" },
     { label: "FY2026顧客", value: "約4,100社", detail: "110カ国超。", source: "finance" },
     { label: "global人員", value: "約5,600人", detail: "2026年3月末。", source: "finance" },
-    { label: "国内被保険者", value: "41人", detail: "gBizINFOの事業所欄。社員総数と一致しない場合がある。", source: "company" },
+    { label: "日本法人での想定従業員数", value: "41人", detail: "gBizINFOの事業所欄を基に表示。社員総数と一致しない場合がある。", source: "company" },
     { label: "日本対象求人", value: "1件", detail: "Enterprise Solutions Engineer。", source: "job" },
   ],
   customers: [

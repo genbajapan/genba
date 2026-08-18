@@ -1186,7 +1186,7 @@ const mongodbSources: ResearchSource[] = [
     label: "MongoDB Japan合同会社 企業情報",
     url: "https://www.houjin.info/detail/2010003019010",
     kind: "外部集計",
-    scope: "日本法人従業員数の推定値・設立日・所在地",
+    scope: "日本法人での想定従業員数・設立日・所在地",
     checkedAt: "2026-08-06",
   },
   {
@@ -1773,7 +1773,7 @@ const brazeSources: ResearchSource[] = [
     label: "Braze株式会社 会社概要",
     url: "https://salesnow.jp/db/companies/jcbhr4cttgydm0c4",
     kind: "外部集計",
-    scope: "日本法人従業員数の推定値・設立日・代表者",
+    scope: "日本法人での想定従業員数・設立日・代表者",
     checkedAt: "2026-08-06",
   },
   {

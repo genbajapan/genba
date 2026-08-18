@@ -22,7 +22,7 @@ function patchAtlassian(intelligence: CompanyPublicIntelligence) {
     advantage: "developer workflowを起点にbusiness・IT service・knowledgeまで広がるdata・workflow・ecosystemと、35万社超の導入基盤。",
     benefit: "cycle time、handoff、meeting hours、self-service、MTTR、adoptionを減らし、team間の仕事をbusiness outcomeへ結びつけられる可能性がある。",
     evidence: "Royal Caribbeanは年800時間超・50万ドルのconsulting cost削減、Lumenはthroughput 200%増を公表。国内ではKADOKAWA等の事例を公式掲載。",
-    marketVerdict: "結論：直近12カ月売上66億ドル、顧客35万社超、国内被保険者77人、日本CS採用は強い。一方、日本売上・顧客数・role別達成率は非公開で、既存suiteとの重複とadoption責任を見極める必要がある。",
+    marketVerdict: "結論：直近12カ月売上66億ドル、顧客35万社超、日本法人での想定従業員数77人、日本CS採用は強い。一方、日本売上・顧客数・role別達成率は非公開で、既存suiteとの重複とadoption責任を見極める必要がある。",
     marketParagraphs: [
       "AIとcloud toolが増えるほど、team間のcontext、権限、decision、work itemをつなぐoperating layerの重要性が高まる。",
       "Atlassianはdeveloper issue trackingからknowledge、ITSM、video、AIへ広がり、個別team toolからenterprise System of Workへ予算範囲を拡張している。",
@@ -53,7 +53,7 @@ function patchAtlassian(intelligence: CompanyPublicIntelligence) {
       ],
       growthDrivers: [{ title: "System of WorkとAI", evidence: "development、service、knowledge、work managementをAI付きplatformへ統合。", japanMeaning: "日本CS roleは契約後のadoptionとvalue realizationを担う。", sourceIds: ["atlassian-finance", "atlassian-job"] }],
       risks: [{ title: "suite競争・cloud移行・価値実現", disclosedRisk: "Microsoft、ServiceNow、specialist toolとの競争とplatform重複。", companyResponse: "System of Work、cloud、AI、ecosystemを拡張。", genbaRead: "seat増よりworkflow成果、migration、adoption、3年TCOを検証する。", sourceIds: ["atlassian-finance", "atlassian-company"] }],
-      japanCommitment: { verdict: "2013年法人、横浜拠点、国内事例、Senior CSM採用、被保険者77人を確認", summary: "国内基盤は確認できるが日本売上、顧客数、CS portfolio・達成率は非公開。", signals: [{ year: "2026", title: "Senior CSM採用", detail: "日本語対応のEnterprise Customer Successを横浜で募集。", sourceIds: ["atlassian-job"] }], unknowns: ["日本売上・ARR・顧客数", "CS portfolio・目標・達成率", "team別昇進・離職"] },
+      japanCommitment: { verdict: "2013年法人、横浜拠点、国内事例、Senior CSM採用、日本法人での想定従業員数77人を確認", summary: "国内基盤は確認できるが日本売上、顧客数、CS portfolio・達成率は非公開。", signals: [{ year: "2026", title: "Senior CSM採用", detail: "日本語対応のEnterprise Customer Successを横浜で募集。", sourceIds: ["atlassian-job"] }], unknowns: ["日本売上・ARR・顧客数", "CS portfolio・目標・達成率", "team別昇進・離職"] },
       scenarios: [
         { scenario: "基本", title: "Cloud・AI adoption拡大", body: "既存顧客でJira・Confluence・JSM・AIの利用とvalue realizationが進む。" },
         { scenario: "上振れ", title: "System of Work標準化", body: "developmentからbusiness・serviceまで共通platformになる。" },
@@ -85,7 +85,7 @@ function patchDynatrace(intelligence: CompanyPublicIntelligence) {
     advantage: "automatic discovery・topologyとcausal AIを軸に、observability、business analytics、application security、AI workloadを同じplatformで扱う。",
     benefit: "MTTD・MTTR、alert noise、調査工数、release risk、digital lossを減らし、system reliabilityを事業KPIへ結びつけられる可能性がある。",
     evidence: "富士通は1,000 VMで障害調査を1日超から1〜2時間へ短縮し、年約9,960時間削減見込み。Coca-Cola HBCはMTTR 30%短縮を公表。",
-    marketVerdict: "結論：Q1売上16%増、ARR21.36億ドル、国内被保険者41人、日本Enterprise SE採用は堅調。一方、日本売上・顧客数・quotaは非公開で、telemetry costと既存tool重複を含むtechnical・business proofが必要。",
+    marketVerdict: "結論：Q1売上16%増、ARR21.36億ドル、日本法人での想定従業員数41人、日本Enterprise SE採用は堅調。一方、日本売上・顧客数・quotaは非公開で、telemetry costと既存tool重複を含むtechnical・business proofが必要。",
     marketParagraphs: [
       "cloud-nativeとAI workloadはsystem dependency、data量、failure modeを増やし、reliabilityとsecurityを顧客体験・売上へ結びつける必要がある。",
       "DynatraceはAPMからfull-stack observability、log、security、business analytics、AI observabilityへ広がり、operations dataの予算範囲を拡張している。",
@@ -116,7 +116,7 @@ function patchDynatrace(intelligence: CompanyPublicIntelligence) {
       ],
       growthDrivers: [{ title: "ObservabilityからAI reliabilityへ", evidence: "full-stack observability、security、business、AI workloadを統合。", japanMeaning: "東京でEnterprise Solutions Engineerを採用しtechnical coverageを強化。", sourceIds: ["dynatrace-finance", "dynatrace-job"] }],
       risks: [{ title: "競争・consumption・platform consolidation", disclosedRisk: "Observability市場の競争、customer consumption、cloud・open-source代替。", companyResponse: "DPS consumption model、Grail、AI・securityのplatform拡張。", genbaRead: "data量よりMTTR・business impact・tool TCOを同条件で検証する。", sourceIds: ["dynatrace-finance", "dynatrace-company"] }],
-      japanCommitment: { verdict: "東京法人、国内事例、Enterprise SE採用、被保険者41人を確認", summary: "local technical capacityは確認できるが、日本売上、顧客数、team別quota・達成率は非公開。", signals: [{ year: "2026", title: "Enterprise SE採用", detail: "東京でJapan Enterprise Solutions Engineerを募集。", sourceIds: ["dynatrace-job"] }], unknowns: ["日本売上・ARR・顧客数", "SE:AE比・PoV conversion", "職種別quota・昇進・離職"] },
+      japanCommitment: { verdict: "東京法人、国内事例、Enterprise SE採用、日本法人での想定従業員数41人を確認", summary: "local technical capacityは確認できるが、日本売上、顧客数、team別quota・達成率は非公開。", signals: [{ year: "2026", title: "Enterprise SE採用", detail: "東京でJapan Enterprise Solutions Engineerを募集。", sourceIds: ["dynatrace-job"] }], unknowns: ["日本売上・ARR・顧客数", "SE:AE比・PoV conversion", "職種別quota・昇進・離職"] },
       scenarios: [
         { scenario: "基本", title: "Observability consolidation", body: "full-stack observabilityとlog・securityの統合が進む。" },
         { scenario: "上振れ", title: "AI reliability control plane", body: "AI workloadのquality・cost・securityを既存system contextと一体管理する。" },

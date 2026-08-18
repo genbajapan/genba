@@ -20,8 +20,8 @@ export const companyListSortOptions: Array<{ value: CompanyListSortMode; label: 
   { value: "name", label: "企業名 A–Z" },
   { value: "entry-asc", label: "日本進出が早い順" },
   { value: "entry-desc", label: "日本進出が遅い順" },
-  { value: "headcount-desc", label: "日本法人従業員数が多い順" },
-  { value: "headcount-asc", label: "日本法人従業員数が少ない順" },
+  { value: "headcount-desc", label: "日本法人での想定従業員数が多い順" },
+  { value: "headcount-asc", label: "日本法人での想定従業員数が少ない順" },
   { value: "entity-asc", label: "日本法人設立が早い順" },
   { value: "entity-desc", label: "日本法人設立が遅い順" },
 ];
