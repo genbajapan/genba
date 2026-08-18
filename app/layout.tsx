@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import GenbaChatWidget from "@/components/GenbaChatWidget";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
         {children}
         <GoogleAnalytics />
+        <AnalyticsTracker />
         <GenbaChatWidget />
       </body>
     </html>

@@ -621,6 +621,8 @@ MVPでは自動決済を実装せず、掲載審査後に請求する。無審�
 
 最低限、以下を計測する。
 
+- `newsletter_cta_click`: ヘッダーや共通CTAからニュースレター登録導線を押した
+- `newsletter_form_submit`: メールアドレスを送信し、確認メール待ちへ進んだ（メールアドレス自体は送信しない）
 - `newsletter_signup`
 - `company_view`
 - `company_filter_used`
@@ -629,6 +631,8 @@ MVPでは自動決済を実装せず、掲載審査後に請求する。無審�
 - `sponsor_click`
 - `advertise_inquiry`
 - `source_link_click`
+
+`newsletter_signup`はダブルオプトインの確認メールを押し、`/newsletter/confirmed`へ到達した時点で記録する。フォーム送信元のページ、CTA位置、企業slug、UTMだけを引き継ぎ、メールアドレスその他の個人情報はGoogle Analyticsへ送信しない。
 
 個人を過剰追跡せず、媒体価値とUX改善に必要な範囲に限定する。
 

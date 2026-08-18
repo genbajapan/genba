@@ -282,10 +282,22 @@ button, input, select { font: inherit; }
 
 .newsletter-card { display: flex; align-items: center; justify-content: space-between; gap: 50px; padding: 48px 52px; background: var(--navy); color: white; }
 .newsletter-card h2 { margin: 0; font-size: clamp(25px,3vw,35px); letter-spacing: -.035em; }
+.newsletter-card h2 span,.newsletter-signup h2 span { display: block; }
 .newsletter-card p:not(.eyebrow) { max-width: 640px; margin: 12px 0 0; color: #b9cad2; font-size: 13px; line-height: 1.8; }
 .newsletter-card-compact { margin-top: 56px; }
-.newsletter-detail-grid { grid-template-columns: minmax(0,1fr) 390px; align-items: start; }
+.newsletter-card-inline { display: grid; grid-template-columns: minmax(0,1fr) minmax(310px,390px); align-items: start; }
+.newsletter-card-form { width: 100%; }
+.newsletter-card-form .newsletter-kit-embed { margin-top: 0; }
+.newsletter-card-form .newsletter-kit-embed .formkit-submit { background: var(--signal) !important; }
+.newsletter-card-form .formkit-powered-by-convertkit-container { filter: brightness(0) invert(1); opacity: .55; }
+.newsletter-card-form .newsletter-consent { border-top-color: #315061; color: #91a9b3 !important; }
+.newsletter-card-form .newsletter-consent a { color: #70d3c5; }
+.newsletter-card-form .newsletter-sender { color: #91a9b3 !important; }
+.company-newsletter-section { padding-block: 42px; }
+.newsletter-detail-grid { grid-template-columns: minmax(0,1fr) 390px; grid-template-areas: "content signup"; align-items: start; }
+.newsletter-detail-content { grid-area: content; }
 .newsletter-sidebar { position: sticky; top: 105px; padding: 30px; }
+.newsletter-sidebar { grid-area: signup; }
 .newsletter-signup h2 { margin: 10px 0 12px; color: var(--navy); font-size: 23px; letter-spacing: -.025em; }
 .newsletter-signup > p:not(.eyebrow) { color: var(--muted); font-size: 12px; line-height: 1.75; }
 .newsletter-kit-embed { min-height: 132px; margin-top: 23px; }
@@ -1662,6 +1674,9 @@ button, input, select { font: inherit; }
   .advertise-process-grid { grid-template-columns: 1fr 1fr; }
   .data-card { min-height: auto; }
   .newsletter-card { align-items: flex-start; flex-direction: column; padding: 35px 28px; gap: 25px; }
+  .newsletter-card-inline { display: grid; grid-template-columns: 1fr; }
+  .newsletter-card-form { max-width: none; }
+  .newsletter-detail-grid { grid-template-areas: "signup" "content"; }
   .newsletter-sidebar { position: static; padding: 24px; }
   .newsletter-status-card { padding: 32px 24px; }
   .newsletter-status-actions { align-items: stretch; flex-direction: column; }

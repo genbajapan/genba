@@ -796,6 +796,12 @@ export default function CompanyIntelligenceProfile({
         </Container>
       </div>
 
+      <section className="content-section surface-section company-newsletter-section">
+        <Container>
+          <NewsletterCTA inlineForm location="company_page" companySlug={company.slug} />
+        </Container>
+      </section>
+
       <section className="content-section company-intelligence-section">
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
@@ -1277,7 +1283,17 @@ export default function CompanyIntelligenceProfile({
                               <h3>{job.title}</h3>
                               <time className="role-last-updated">最終更新日 {shortDate(job.lastChecked)}</time>
                             </div>
-                            <a href={job.source.url} target="_blank" rel="noreferrer">公式求人 ↗</a>
+                            <a
+                              href={job.source.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              data-analytics-event="official_apply_click"
+                              data-analytics-location="company_role"
+                              data-analytics-company-slug={job.companySlug}
+                              data-analytics-job-id={job.id}
+                            >
+                              公式求人 ↗
+                            </a>
                           </header>
                           <div className="role-facts role-facts-standard">
                             <div className="known"><span>勤務地</span><strong>{job.location}</strong></div>
@@ -1670,7 +1686,6 @@ export default function CompanyIntelligenceProfile({
         </Container>
       </section>
 
-      <section className="content-section surface-section"><Container><NewsletterCTA /></Container></section>
       <CompanyImprovementRequest companyName={company.name} companySlug={company.slug} />
     </>
   );

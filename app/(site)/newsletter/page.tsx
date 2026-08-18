@@ -16,7 +16,7 @@ export default function NewsletterPage() {
       </section>
       <section className="content-section">
         <Container className="detail-grid newsletter-detail-grid">
-          <div className="prose-genba">
+          <div className="prose-genba newsletter-detail-content">
             <h2>月曜・木曜・土曜に届くもの</h2>
             <ul>
               <li>新しく確認した外資IT・SaaS営業求人</li>
@@ -30,7 +30,7 @@ export default function NewsletterPage() {
             <p>Genbaは読者課金ではなく、採用企業・人材関連企業・SaaS企業からの明示された広告やスポンサーシップで運営する方針です。編集内容と広告は分離します。</p>
           </div>
           <aside className="detail-sidebar newsletter-sidebar">
-            <NewsletterSignupForm />
+            <NewsletterSignupForm sourceLocation="newsletter_page" />
           </aside>
         </Container>
       </section>

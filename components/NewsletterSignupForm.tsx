@@ -8,7 +8,15 @@ const kitFormUrl = process.env.NEXT_PUBLIC_KIT_FORM_URL?.trim() || "https://genb
 
 const isConfigured = Boolean(kitFormUid && kitFormEmbedUrl?.startsWith("https://"));
 
-export default function NewsletterSignupForm() {
+export default function NewsletterSignupForm({
+  sourceLocation = "newsletter_page",
+  companySlug,
+  compact = false,
+}: {
+  sourceLocation?: string;
+  companySlug?: string;
+  compact?: boolean;
+}) {
   const embedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,10 +33,20 @@ export default function NewsletterSignupForm() {
   }, []);
 
   return (
-    <div className="newsletter-signup" aria-labelledby="newsletter-signup-title">
-      <p className="eyebrow" id="newsletter-signup-title">FREE SUBSCRIPTION</p>
-      <h2>無料購読に登録</h2>
-      <p>メールアドレスを入力後、届いた確認メールのボタンを押すと登録完了。Genbaから毎週月曜・木曜・土曜に、必要な変化を短く届けます。</p>
+    <div
+      className={compact ? "newsletter-signup newsletter-signup-compact" : "newsletter-signup"}
+      aria-labelledby={compact ? undefined : "newsletter-signup-title"}
+      data-newsletter-form
+      data-analytics-location={sourceLocation}
+      data-analytics-company-slug={companySlug}
+    >
+      {!compact && (
+        <>
+          <p className="eyebrow" id="newsletter-signup-title">FREE SUBSCRIPTION</p>
+          <h2><span>次に知るべき小中規模外資</span><span>5社を、週3回無料で受け取る</span></h2>
+          <p>求人の有無だけでなく、仕事として面白い理由と応募前の確認点まで3分で読めます。メールアドレスを入力後、届いた確認メールのボタンを押すと登録完了です。</p>
+        </>
+      )}
 
       {isConfigured ? (
         <div ref={embedRef} className="newsletter-kit-embed">

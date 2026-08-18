@@ -12,7 +12,18 @@ export default function JobCard({ job }: { job: Job }) {
         <h3>{job.title}</h3>
         <div className="job-meta"><span>{job.location}</span><span>{job.language}</span><span>更新 {job.lastChecked}</span></div>
       </div>
-      <a className="button button-secondary" href={job.source.url} target="_blank" rel="noreferrer">公式求人 <span aria-hidden="true">↗</span></a>
+      <a
+        className="button button-secondary"
+        href={job.source.url}
+        target="_blank"
+        rel="noreferrer"
+        data-analytics-event="official_apply_click"
+        data-analytics-location="job_card"
+        data-analytics-company-slug={job.companySlug}
+        data-analytics-job-id={job.id}
+      >
+        公式求人 <span aria-hidden="true">↗</span>
+      </a>
     </article>
   );
 }

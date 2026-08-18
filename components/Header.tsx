@@ -42,7 +42,7 @@ export default function Header({ locale = "en", displayLanguage = "ja" }: { loca
               </Link>
             ))}
           </nav>
-          {locale === "en" && <Link href="/newsletter" className="button button-primary header-cta">{displayLanguage === "en" ? "Newsletter (JP)" : "注目企業を無料で受け取る"}</Link>}
+          {locale === "en" && <Link href="/newsletter" className="button button-primary header-cta" data-analytics-event="newsletter_cta_click" data-analytics-location="header">{displayLanguage === "en" ? "Newsletter (JP)" : "注目企業を無料で受け取る"}</Link>}
         </div>
       </Container>
       {locale === "en" && <Container className="mobile-nav"><nav>{activeNav.slice(0, 4).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav></Container>}
