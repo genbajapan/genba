@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-19 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全119社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 119）
+全122社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 122）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -64,13 +64,13 @@
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
-|Selective|Atlassian|1|公開済み|はい|なし|
 |Selective|Black Duck|1|公開済み|はい|なし|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
+|Selective|GitLab|1|公開済み|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Ivanti|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
@@ -84,6 +84,7 @@
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Tanium|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
+|Selective|WatchGuard Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
 |求人なし|1Password|0|公開済み|はい|なし|
@@ -93,6 +94,7 @@
 |求人なし|Amplitude|0|公開済み|はい|なし|
 |求人なし|Apollo.io|0|公開済み|はい|なし|
 |求人なし|Asana|0|公開済み|はい|なし|
+|求人なし|Atlassian|0|公開済み|はい|なし|
 |求人なし|Attio|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
@@ -106,6 +108,7 @@
 |求人なし|Island|0|公開済み|はい|なし|
 |求人なし|Klaviyo|0|公開済み|はい|なし|
 |求人なし|Lakera|0|公開済み|はい|なし|
+|求人なし|LangChain|0|公開済み|はい|なし|
 |求人なし|Lovable|0|公開済み|はい|なし|
 |求人なし|Lucanet|0|公開済み|はい|なし|
 |求人なし|Mistral AI|0|公開済み|はい|なし|

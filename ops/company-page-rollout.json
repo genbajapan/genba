@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-18",
+  "auditedAt": "2026-08-19",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 119,
+    "total": 122,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 119
+      "公開済み": 122
     },
     "byPriority": {
       "HOT": 44,
       "Active": 12,
-      "Selective": 24,
-      "求人なし": 39
+      "Selective": 25,
+      "求人なし": 41
     },
-    "standardReady": 119
+    "standardReady": 122
   },
   "companies": [
     {
@@ -557,15 +557,6 @@
       "missingFields": []
     },
     {
-      "slug": "atlassian",
-      "company": "Atlassian",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "black-duck",
       "company": "Black Duck",
       "priority": "Selective",
@@ -613,6 +604,15 @@
     {
       "slug": "fireblocks",
       "company": "Fireblocks",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "gitlab",
+      "company": "GitLab",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -737,6 +737,15 @@
       "missingFields": []
     },
     {
+      "slug": "watchguard",
+      "company": "WatchGuard Technologies",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "workato",
       "company": "Workato",
       "priority": "Selective",
@@ -811,6 +820,15 @@
     {
       "slug": "asana",
       "company": "Asana",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "atlassian",
+      "company": "Atlassian",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -928,6 +946,15 @@
     {
       "slug": "lakera",
       "company": "Lakera",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "langchain",
+      "company": "LangChain",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

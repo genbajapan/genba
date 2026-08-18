@@ -1,6 +1,7 @@
 import type { CompanyPublicIntelligence, ResearchSource } from "@/lib/company-public-intelligence";
 
 const CHECKED_AT = "2026-08-18";
+const NEW_COMPANY_CHECKED_AT = "2026-08-19";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -13,6 +14,7 @@ type VerifiedEntity = {
 
 // gBizINFOの法人プロフィールと、その「事業所」欄に掲載された
 // 厚生年金保険・健康保険の被保険者数を2026-08-18に照合した。
+// 2026-08-19追加分は国内法人を特定できない状態として監査対象へ加えた。
 // insuredCountがない項目は法人番号までは一致したが、事業所行の掲載がなかった法人。
 const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   mongodb: { corporateNumber: "2010003019010", entityName: "MongoDB Japan合同会社" },
@@ -84,15 +86,16 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   ivanti: { corporateNumber: "9010401093419", entityName: "Ivanti Software株式会社", insuredCount: 20 },
   atlassian: { corporateNumber: "7011001095419", entityName: "アトラシアン株式会社", insuredCount: 77 },
   dynatrace: { corporateNumber: "4011003001897", entityName: "Dynatrace合同会社", insuredCount: 41 },
+  gitlab: { corporateNumber: "6010403021867", entityName: "GitLab合同会社", insuredCount: 58 },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
   "gong", "harvey", "clay", "vanta", "writer", "rippling", "pinecone", "intercom", "addepar", "sixsense",
   "apollo-io", "tines", "attio", "retool", "island", "1password", "klaviyo", "airtable", "mistral-ai", "lovable",
-  "pigment", "ironclad", "vercel",
+  "pigment", "ironclad", "vercel", "langchain",
 ]);
 
-// 2026-08-18の一斉監査対象119社。将来追加された会社へ未調査のまま
+// 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
 // 「確認済み」を自動付与しないため、対象slugを明示的に固定する。
 const AUDITED_SLUGS = new Set([
   "mongodb", "braze", "hubspot", "okta", "zendesk", "uipath", "confluent", "pagerduty", "amplitude", "contentsquare",
@@ -107,6 +110,7 @@ const AUDITED_SLUGS = new Set([
   "patsnap", "netskope", "mambu", "nice", "island", "1password", "dialpad", "fivetran", "klaviyo", "shopify",
   "zilliz", "airtable", "figma", "mistral-ai", "tools-for-humanity", "lovable", "tanium", "sayari", "doubleverify", "similarweb",
   "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad", "atlassian", "dynatrace", "vercel",
+  "gitlab", "watchguard", "langchain",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -115,6 +119,7 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
+  const checkedAt = ["gitlab", "watchguard", "langchain"].includes(slug) ? NEW_COMPANY_CHECKED_AT : CHECKED_AT;
   return {
     id: `gbiz-headcount-${slug}`,
     label: entity ? `Gビズインフォ ${entity.entityName}` : "Gビズインフォ 法人検索",
@@ -123,7 +128,7 @@ function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
     scope: entity
       ? `法人番号${entity.corporateNumber}・厚生年金保険/健康保険の被保険者数`
       : "国内法人の法人番号・事業所情報・日本法人での想定従業員数",
-    checkedAt: CHECKED_AT,
+    checkedAt,
   };
 }
 
@@ -139,7 +144,7 @@ export function applyJapanInsuredHeadcountAudit(intelligenceBySlug: Record<strin
       intelligence.companyStats.japanHeadcount = {
         value: `${entity.insuredCount.toLocaleString("ja-JP")}人`,
         detail: [
-          `${entity.entityName}について、gBizINFOの事業所情報に掲載された厚生年金保険・健康保険の被保険者数。${CHECKED_AT}確認。`,
+          `${entity.entityName}について、gBizINFOの事業所情報に掲載された厚生年金保険・健康保険の被保険者数。${source.checkedAt}確認。`,
           "役員、制度の対象外となる従業者、他法人雇用者等との関係により、会社が通常いう社員総数とは一致しない場合がある。",
           entity.caveat,
         ].filter(Boolean).join(" "),
@@ -148,19 +153,19 @@ export function applyJapanInsuredHeadcountAudit(intelligenceBySlug: Record<strin
     } else if (entity) {
       intelligence.companyStats.japanHeadcount = {
         value: "掲載なし",
-        detail: `${entity.entityName}（法人番号${entity.corporateNumber}）をgBizINFOで確認したが、事業所の被保険者数欄に行データの掲載はなかった。${CHECKED_AT}確認。`,
+        detail: `${entity.entityName}（法人番号${entity.corporateNumber}）をgBizINFOで確認したが、事業所の被保険者数欄に行データの掲載はなかった。${source.checkedAt}確認。`,
         sourceId: source.id,
       };
     } else if (NOT_ENTERED_SLUGS.has(slug)) {
       intelligence.companyStats.japanHeadcount = {
         value: "0人",
-        detail: `Genbaの日本未進出区分に基づき0人と表示。公式情報で日本法人・国内拠点を確認できず、gBizINFOで紐づく国内法人の事業所情報もない。国内RemoteまたはEOR雇用者が存在しないことまで保証するものではない。${CHECKED_AT}確認。`,
+        detail: `Genbaの日本未進出区分に基づき0人と表示。公式情報で日本法人・国内拠点を確認できず、gBizINFOで紐づく国内法人の事業所情報もない。国内RemoteまたはEOR雇用者が存在しないことまで保証するものではない。${source.checkedAt}確認。`,
         sourceId: source.id,
       };
     } else {
       intelligence.companyStats.japanHeadcount = {
         value: "対象法人未特定",
-        detail: `gBizINFOで会社ブランドと結びつく国内法人番号を特定できず、日本法人での想定従業員数を掲載できない。求人、外国会社、EORまたは販売パートナーの活動を国内法人の人数へ置き換えていない。${CHECKED_AT}確認。`,
+        detail: `gBizINFOで会社ブランドと結びつく国内法人番号を特定できず、日本法人での想定従業員数を掲載できない。求人、外国会社、EORまたは販売パートナーの活動を国内法人の人数へ置き換えていない。${source.checkedAt}確認。`,
         sourceId: source.id,
       };
     }

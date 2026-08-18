@@ -17,6 +17,7 @@ import { daily20260816IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { daily20260817IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-17";
 import { additions20260817BatchTwentyThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-17-batch-23";
 import { daily20260818IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-18";
+import { applyDaily20260819Closures, daily20260819IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-19";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -43,6 +44,7 @@ import { applyCompanyPageRolloutBatchTwentyTwo } from "@/lib/company-page-rollou
 import { applyCompanyPageRolloutBatchTwentyThree } from "@/lib/company-page-rollout-batch-23";
 import { applyCompanyPageRolloutBatchTwentyFour } from "@/lib/company-page-rollout-batch-24";
 import { applyCompanyPageRolloutBatchTwentyFive } from "@/lib/company-page-rollout-batch-25";
+import { applyCompanyPageRolloutBatchTwentySix } from "@/lib/company-page-rollout-batch-26";
 import { applyJapanInsuredHeadcountAudit } from "@/lib/company-japan-insured-headcount";
 
 export type ResearchSourceKind = "企業公式" | "法定開示" | "公的機関" | "外部集計" | "コミュニティ";
@@ -9615,6 +9617,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260817IntelligenceBySlug,
   ...additions20260817BatchTwentyThreeIntelligenceBySlug,
   ...daily20260818IntelligenceBySlug,
+  ...daily20260819IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9642,6 +9645,8 @@ applyCompanyPageRolloutBatchTwentyTwo(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyThree(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyFour(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyFive(intelligenceBySlug);
+applyCompanyPageRolloutBatchTwentySix(intelligenceBySlug);
+applyDaily20260819Closures(intelligenceBySlug);
 applyJapanInsuredHeadcountAudit(intelligenceBySlug);
 
 export function getCompanyPublicIntelligence(slug: string) {

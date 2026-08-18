@@ -866,6 +866,27 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     description: "Next.js、AI SDK、v0とglobal application infrastructureを提供。APAC求人はSydney等を対象とし、日本法人・国内拠点・Japan専任求人は未確認。",
     lastChecked: "2026-08-18",
   },
+  gitlab: {
+    category: "DevSecOps・AIソフトウェア開発基盤",
+    hq: "全社リモート（米国法人）",
+    japanPresence: "GitLab合同会社・東京都中央区日本橋（2020年に日本市場へ本格進出）",
+    description: "source code、CI/CD、security、planning、AIを一つのDevSecOps platformで提供。日本からRemoteのSenior Ecosystem Sales Managerを公式募集。",
+    lastChecked: "2026-08-19",
+  },
+  watchguard: {
+    category: "サイバーセキュリティ・MSP基盤・MDR",
+    hq: "ワシントン州シアトル（米国）",
+    japanPresence: "日本公式サイト・東京onsite求人（国内法人・人員は確認不能）",
+    description: "network、endpoint、identity、MDRをMSP・channel向けplatformで提供。東京で日本事業を率いるCountry Managerを公式募集。",
+    lastChecked: "2026-08-19",
+  },
+  langchain: {
+    category: "AIエージェント開発・評価／オブザーバビリティ基盤",
+    hq: "カリフォルニア州サンフランシスコ／ニューヨーク（米国）",
+    japanPresence: "楽天の国内事例・APAC region選択（日本法人・office・Japan求人は未確認）",
+    description: "LangChain、LangGraph、LangSmithでAI agentの開発・評価・運用を支援。国内事例はあるが日本法人・拠点・専任求人は未確認。",
+    lastChecked: "2026-08-19",
+  },
 };
 
 export function standardizeRolloutCompany(company: Company): Company {

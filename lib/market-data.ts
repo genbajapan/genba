@@ -24,6 +24,7 @@ import { companies20260817BatchTwentyThree, jobs20260817BatchTwentyThree } from 
 import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08-16";
 import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additions-2026-08-17-daily";
 import { companies20260818Daily, jobs20260818Daily } from "@/lib/company-additions-2026-08-18-daily";
+import { companies20260819Daily, jobs20260819Daily } from "@/lib/company-additions-2026-08-19-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -919,6 +920,7 @@ const companyRecords: Company[] = [
   ...companies20260817Daily,
   ...companies20260817BatchTwentyThree,
   ...companies20260818Daily,
+  ...companies20260819Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1343,6 +1345,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260819Daily,
   ...jobs20260818Daily,
   ...jobs20260817BatchTwentyThree,
   ...jobs20260817BatchTwentyTwo,
@@ -2951,6 +2954,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "atlassian-senior-customer-success-manager-japanese-21718",
   "veeva-account-partner-medtech-japan",
   "zadara-senior-account-executive",
   "planet-account-executive-defence-intelligence-japan",
@@ -3032,7 +3036,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-18" };
+      : { ...job, lastChecked: "2026-08-19" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3057,6 +3061,46 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-atlassian-senior-csm-ended",
+    companySlug: "atlassian",
+    date: "2026-08-19",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Atlassianの日本Senior CSM求人が終了",
+    summary: "前日まで掲載していた公式求人URLが404となったため公開求人から除外しました。採用停止や日本事業の縮小までは意味しません。",
+    source: { label: "Atlassian Careers", url: "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us" },
+  },
+  {
+    id: "signal-gitlab-japan-ecosystem-sales",
+    companySlug: "gitlab",
+    date: "2026-08-19",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "GitLabが日本のEcosystem Sales Managerを募集",
+    summary: "hyperscaler、GSI、reseller、technology partnerとのjoint business plan、pipeline、co-sell、enablementを担うRemote Japanの役割です。",
+    source: { label: "GitLab Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/gitlab/jobs/8640173002" },
+  },
+  {
+    id: "signal-watchguard-country-manager-japan",
+    companySlug: "watchguard",
+    date: "2026-08-19",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "WatchGuardが東京でCountry Managerを募集",
+    summary: "日本のsales strategy、revenue target、forecast、team、二層distribution、channel・MSP partnerを統括するonsiteのcountry leadership roleです。",
+    source: { label: "WatchGuard Careers (Lever)", url: "https://jobs.lever.co/watchguard/31981db1-54fb-4764-9f8c-16b886d176ae" },
+  },
+  {
+    id: "signal-langchain-japan-entry-watch",
+    companySlug: "langchain",
+    date: "2026-08-19",
+    type: "注目領域",
+    confidence: "公式確認",
+    title: "LangChainの楽天事例から日本進出条件を観測",
+    summary: "楽天の国内利用とLangSmithのAPAC region選択を確認。一方、日本法人・office・Japan専任求人・local supportは未確認です。",
+    source: { label: "LangChain customer story: Rakuten", url: "https://www.langchain.com/blog/customers-rakuten" },
+  },
   {
     id: "signal-atlassian-japan-senior-csm",
     companySlug: "atlassian",

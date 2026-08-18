@@ -49,6 +49,7 @@ for (const slug of ["uipath", "wiz"]) batchSlugs.add(slug);
 for (const slug of ["servicenow"]) batchSlugs.add(slug);
 for (const slug of ["tanium", "sayari", "doubleverify", "similarweb", "appsflyer", "bluematrix", "black-duck", "ivanti"]) batchSlugs.add(slug);
 for (const slug of ["atlassian", "dynatrace"]) batchSlugs.add(slug);
+for (const slug of ["gitlab", "watchguard"]) batchSlugs.add(slug);
 
 const temporarilyUnverifiableJobIds = new Set([
   "rubrik-customer-experience-manager-japan-current",
@@ -164,6 +165,20 @@ const companyResearch: Record<string, {
     positive: ["東京でEnterprise Solutions Engineerを公式募集し、discovery、architecture、PoV、technical winを担う。", "Q1 FY2027売上16%増、ARR21.36億米ドルと富士通の国内定量事例から、technical proofをbusiness caseへ変えられる。", "Glassdoorのglobal集計は3.7/5・1,498 reviews・62% recommendを表示するが、日本SEの評価ではない。"],
     negative: ["日本売上、顧客数、SE:AE比、PoV conversion、quota、数値報酬は非公開。", "Datadog、Splunk、cloud標準等との重複、telemetry cost、partner・delivery capacityを案件と面接で検証する必要がある。", "海外reviewにはworkload、leadership、career opportunityへの注意もあり、日本の配属先へ一般化せずportfolio・managerを面接で確認する。"],
     next: ["Observability Solutions Engineering", "AIOps・Application Security Value Consulting", "Principal SE・Japan Technical Leadership"],
+  },
+  gitlab: {
+    name: "GitLab", domain: "DevSecOps・AI Software Delivery・Ecosystem Sales", officialUrl: "https://job-boards.greenhouse.io/gitlab/jobs/8640173002",
+    communityUrl: "https://www.comparably.com/companies/gitlab", communityLabel: "Comparably GitLab employee reviews",
+    positive: ["日本RemoteのSenior Ecosystem Sales Managerとしてhyperscaler、GSI、resellerとのjoint planとpartner pipelineを担う。", "FY2026にARR 10億米ドル超、free cash flow 2.2億米ドルを公表し、富士通の国内事例も持つ。"],
+    negative: ["日本売上、顧客数、partner経由売上、team人数、quota、達成率、数値報酬は非公開。", "2026年の再編後の日本投資、directとのcredit、partner delivery capacityを面接で検証する必要がある。"],
+    next: ["Japan Head of Alliances・Channels", "APAC Partner Sales Director", "DevSecOps Country Leadership"],
+  },
+  watchguard: {
+    name: "WatchGuard Technologies", domain: "Cybersecurity・MSP・Channel Leadership", officialUrl: "https://jobs.lever.co/watchguard/31981db1-54fb-4764-9f8c-16b886d176ae",
+    communityUrl: "https://www.comparably.com/companies/watchguard-technologies", communityLabel: "Comparably WatchGuard Technologies employee reviews",
+    positive: ["東京onsiteのCountry Managerとしてsales strategy、revenue、forecast、team、distribution、MSP・channelを統括する。", "25,000 MSP、179カ国のpartner、国内customer storyを持ち、channel-firstのsecurity事業を率いられる。"],
+    negative: ["非公開企業で日本売上、顧客数、team人数、seller達成率、報酬、権限範囲は非公開。", "installed base、partner productivity、service attach、P&L・pricing・hiringのdecision rightを面接で確認する必要がある。"],
+    next: ["大規模Cybersecurity Country Manager", "APAC Channel・Sales Vice President", "Managed Security事業責任者"],
   },
   servicenow: {
     name: "ServiceNow", domain: "Enterprise Workflow・AI Platform", officialUrl: "https://careers.servicenow.com/jobs/?search=&country=Japan",
