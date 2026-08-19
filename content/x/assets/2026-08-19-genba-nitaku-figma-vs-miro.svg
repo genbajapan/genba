@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071f2e"/>
+      <stop offset="1" stop-color="#123b51"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="22" flood-color="#071f2e" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .jp { font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; }
+      .navy { fill: #0b2638; }
+      .muted { fill: #58707d; }
+      .label { font-size: 24px; font-weight: 800; letter-spacing: 0.08em; }
+      .company { font-size: 54px; font-weight: 900; letter-spacing: -0.02em; }
+      .role { font-size: 28px; font-weight: 800; }
+      .row-label { font-size: 23px; font-weight: 800; letter-spacing: 0.04em; }
+      .body { font-size: 29px; font-weight: 700; }
+      .small { font-size: 21px; font-weight: 650; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#f4f7f6"/>
+  <rect width="1200" height="410" fill="url(#header)"/>
+  <g opacity="0.15" stroke="#ffffff" stroke-width="1">
+    <path d="M0 70H1200M0 140H1200M0 210H1200M0 280H1200M0 350H1200"/>
+    <path d="M70 0V410M140 0V410M210 0V410M280 0V410M350 0V410M420 0V410M490 0V410M560 0V410M630 0V410M700 0V410M770 0V410M840 0V410M910 0V410M980 0V410M1050 0V410M1120 0V410"/>
+  </g>
+
+  <g class="jp">
+    <rect x="72" y="62" width="264" height="54" rx="27" fill="#70d3c5"/>
+    <text x="204" y="99" text-anchor="middle" class="label navy">GENBA 二択 #01</text>
+    <text x="72" y="196" fill="#ffffff" font-size="61" font-weight="900" letter-spacing="-0.04em">高回転で鍛える？</text>
+    <text x="72" y="274" fill="#ffffff" font-size="61" font-weight="900" letter-spacing="-0.04em">深耕で鍛える？</text>
+    <text x="74" y="343" fill="#c8dedb" font-size="26" font-weight="650">同じコラボレーション領域のAEでも、営業の筋肉は別物。</text>
+
+    <g filter="url(#shadow)">
+      <rect x="54" y="372" width="1092" height="1000" rx="18" fill="#ffffff"/>
+    </g>
+
+    <line x1="600" y1="442" x2="600" y2="1295" stroke="#d9e3e1" stroke-width="2"/>
+
+    <rect x="91" y="438" width="58" height="58" rx="29" fill="#0b7a70"/>
+    <text x="120" y="478" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="900">A</text>
+    <text x="174" y="478" class="company navy">Figma</text>
+    <text x="91" y="529" class="role muted">SMB Account Executive</text>
+
+    <rect x="637" y="438" width="58" height="58" rx="29" fill="#123b51"/>
+    <text x="666" y="478" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="900">B</text>
+    <text x="720" y="478" class="company navy">Miro</text>
+    <text x="637" y="529" class="role muted">Strategic Account Executive</text>
+
+    <rect x="91" y="594" width="455" height="54" rx="7" fill="#e3f4f1"/>
+    <text x="116" y="630" class="row-label" fill="#08685f">担当する顧客</text>
+    <text x="91" y="702" class="body navy">従業員500人未満</text>
+    <text x="91" y="748" class="small muted">新規・既存のSMB</text>
+
+    <rect x="637" y="594" width="455" height="54" rx="7" fill="#e9eef1"/>
+    <text x="662" y="630" class="row-label" fill="#123b51">担当する顧客</text>
+    <text x="637" y="702" class="body navy">3〜10社の大手顧客</text>
+    <text x="637" y="748" class="small muted">戦略的なnamed accounts</text>
+
+    <line x1="91" y1="805" x2="546" y2="805" stroke="#d9e3e1" stroke-width="2"/>
+    <line x1="637" y1="805" x2="1092" y2="805" stroke="#d9e3e1" stroke-width="2"/>
+
+    <rect x="91" y="844" width="455" height="54" rx="7" fill="#e3f4f1"/>
+    <text x="116" y="880" class="row-label" fill="#08685f">商談の進め方</text>
+    <text x="91" y="952" class="body navy">inbound + outbound</text>
+    <text x="91" y="998" class="small muted">高ボリューム / 1〜3カ月</text>
+
+    <rect x="637" y="844" width="455" height="54" rx="7" fill="#e9eef1"/>
+    <text x="662" y="880" class="row-label" fill="#123b51">商談の進め方</text>
+    <text x="637" y="952" class="body navy">複数年のaccount戦略</text>
+    <text x="637" y="998" class="small muted">部門横断で深く拡張</text>
+
+    <line x1="91" y1="1055" x2="546" y2="1055" stroke="#d9e3e1" stroke-width="2"/>
+    <line x1="637" y1="1055" x2="1092" y2="1055" stroke="#d9e3e1" stroke-width="2"/>
+
+    <rect x="91" y="1094" width="455" height="54" rx="7" fill="#0b2638"/>
+    <text x="116" y="1130" class="row-label" fill="#70d3c5">GENBA分析</text>
+    <text x="91" y="1201" class="body navy">仮説検証を速く回し、</text>
+    <text x="91" y="1247" class="body navy">勝ち筋を再現する力</text>
+
+    <rect x="637" y="1094" width="455" height="54" rx="7" fill="#0b2638"/>
+    <text x="662" y="1130" class="row-label" fill="#70d3c5">GENBA分析</text>
+    <text x="637" y="1201" class="body navy">複雑な組織を読み、</text>
+    <text x="637" y="1247" class="body navy">深く広げる力</text>
+
+    <text x="600" y="1422" text-anchor="middle" class="navy" font-size="39" font-weight="900">あなたなら A / B？ 理由も一言で。</text>
+    <text x="600" y="1467" text-anchor="middle" class="muted" font-size="21" font-weight="650">企業の優劣ではなく、公開中の求人を同じ軸で比較</text>
+  </g>
+</svg>
