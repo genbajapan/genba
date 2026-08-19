@@ -28,7 +28,7 @@ const tierCompanySlugs = {
 };
 type TierFilter = "すべて" | keyof typeof tierAreas;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
-type EntryFilter = "すべて" | "not-entered";
+type EntryFilter = "すべて" | "pre-entry" | "not-entered" | "pre-entry-signal";
 const companyNameCollator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 const returnPositionKey = "genba:company-explorer:return-position";
 
@@ -49,7 +49,8 @@ export default function CompanyExplorer({
   const categoryParam = searchParams.get("category");
   const tierParam = searchParams.get("tier");
   const initialSolutionArea = categoryParam && solutionAreas.includes(categoryParam) ? categoryParam : "すべて";
-  const initialEntry: EntryFilter = searchParams.get("entry") === "not-entered" ? "not-entered" : "すべて";
+  const entryParam = searchParams.get("entry");
+  const initialEntry: EntryFilter = entryParam === "pre-entry" || entryParam === "not-entered" || entryParam === "pre-entry-signal" ? entryParam : "すべて";
   const initialTier: TierFilter = initialEntry === "すべて" && initialSolutionArea === "すべて" && (tierParam === "hot" || tierParam === "active" || tierParam === "selective") ? tierParam : "すべて";
   const statusParam = searchParams.get("status");
   const initialStatus = statusParam && statuses.some((item) => item.value === statusParam) ? statusParam : "すべて";
@@ -79,7 +80,11 @@ export default function CompanyExplorer({
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
     const matchesSolution = solutionArea === "すべて" || company.broadCategory === solutionArea;
     const matchesTier = tier === "すべて" || tierCompanySlugs[tier].has(company.slug);
-    const matchesEntry = entry === "すべて" || company.entryStatus === entry;
+    const matchesEntry = entry === "すべて"
+      ? true
+      : entry === "pre-entry"
+        ? Boolean(company.entryStatus)
+        : company.entryStatus === entry;
     const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
     const matchesOpenJobs = !openJobsOnly || companySlugsWithOpenJobs.has(company.slug);
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters && matchesOpenJobs;
@@ -206,7 +211,7 @@ export default function CompanyExplorer({
   function changeEntry(nextEntry: EntryFilter) {
     clearReturnTarget();
     setEntry(nextEntry);
-    if (nextEntry === "not-entered") {
+    if (nextEntry !== "すべて") {
       setTier("すべて");
       setStatus("すべて");
     }
@@ -221,10 +226,10 @@ export default function CompanyExplorer({
           <button type="button" onClick={() => { clearReturnTarget(); setTier("すべて"); }}>絞り込みを解除</button>
         </div>
       )}
-      {entry === "not-entered" && (
+      {entry !== "すべて" && (
         <div className="entry-filter-summary">
-          <div><span>進出状況で絞り込み中</span><strong>日本未進出</strong></div>
-          <p>日本法人・国内拠点・日本向け求人が未確認で、将来の進出可能性を調査した企業を表示</p>
+          <div><span>進出状況で絞り込み中</span><strong>{entry === "pre-entry-signal" ? "進出準備シグナル" : entry === "not-entered" ? "日本未進出" : "未進出・進出準備"}</strong></div>
+          <p>{entry === "pre-entry-signal" ? "日本法人・国内拠点は未確認だが、日本市場担当求人などの進出準備シグナルを観測した企業を表示" : entry === "not-entered" ? "日本法人・国内拠点・日本向け求人が未確認で、将来の進出可能性を調査した企業を表示" : "日本法人・国内拠点が未確認の企業を、進出準備シグナルの有無を含めて表示"}</p>
           <button type="button" onClick={() => changeEntry("すべて")}>絞り込みを解除</button>
         </div>
       )}
@@ -252,10 +257,11 @@ export default function CompanyExplorer({
         </div>
         <div className="filter-chips entry-filter-chips" aria-label="日本進出状況で絞り込み">
           <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
+          <button className={entry === "pre-entry-signal" ? "active entry-active" : ""} aria-pressed={entry === "pre-entry-signal"} onClick={() => changeEntry(entry === "pre-entry-signal" ? "すべて" : "pre-entry-signal")}>進出準備シグナル</button>
         </div>
       </div>
       <div className="company-results-toolbar">
-        <p className="result-count" aria-live="polite">{entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
+        <p className="result-count" aria-live="polite">{entry === "pre-entry-signal" ? `進出準備シグナル企業${results.length}社を表示` : entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : entry === "pre-entry" ? `未進出・進出準備企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
         <label className="select-field company-sort-field">
           <span>並び替え</span>
           <select value={sort} onChange={(event) => { clearReturnTarget(); setSort(event.target.value as CompanyListSortMode); }}>

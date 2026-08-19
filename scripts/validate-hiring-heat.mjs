@@ -88,8 +88,11 @@ for (const job of jobs) {
 
 for (const company of companies) {
   const sortMetric = sortMetricsBySlug.get(company.slug);
-  if (company.entryStatus === "not-entered" && sortMetric.japanHeadcount !== 0) {
+  if (company.entryStatus && sortMetric.japanHeadcount !== 0) {
     errors.push(`${company.name}: 日本未進出企業の日本法人での想定従業員数が0人ではありません。`);
+  }
+  if (!company.entryStatus && /過去.{0,20}(?:Japan|日本).{0,20}(?:求人|採用)/i.test(company.japanPresence) && /(?:日本法人|office|国内拠点).{0,30}(?:未確認|確認不能|確認できず)/i.test(company.japanPresence)) {
+    errors.push(`${company.name}: 過去の日本市場求人と法人・拠点未確認を同時に持つため、entryStatus=pre-entry-signalが必要です。`);
   }
   for (const [value, label] of [[sortMetric.japanEntryYear, "日本進出年"], [sortMetric.japanEntityYear, "日本法人設立年"]]) {
     if (value !== null && (value < 1900 || value > new Date().getFullYear() + 1)) {
@@ -163,7 +166,7 @@ for (const tier of tierNames) {
   const tierCompanies = getHiringHeatCompanies(companies, jobs, tier);
   const tierAreas = new Set(rows.filter((row) => row.tier === tier).map((row) => row.area));
   for (const company of tierCompanies) {
-    if (company.entryStatus === "not-entered") {
+    if (company.entryStatus) {
       errors.push(`${tier}: 日本未進出企業 ${company.name} が混入しています。`);
     }
     if ((jobCounts.get(company.slug) ?? 0) === 0) {
@@ -183,7 +186,7 @@ const spec = fs.readFileSync(path.join(root, "docs/10-website-renewal-spec.md"),
 for (const required of [
   "国内営業求人20件以上、かつ採用企業10社以上",
   "国内営業求人10件以上、かつ採用企業5社以上",
-  "求人0件または`entryStatus: \"not-entered\"`の企業を結果へ混ぜない",
+  "`entryStatus`が`not-entered`・`pre-entry-signal`の企業を結果へ混ぜない",
   "`積極採用`は3件以上、`採用中`は1〜2件、`継続観測`は0件",
 ]) {
   if (!spec.includes(required)) errors.push(`Web仕様に採用温度ルールがありません: ${required}`);
@@ -230,7 +233,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-const preEntryCount = companies.filter((company) => company.entryStatus === "not-entered").length;
+const preEntryCount = companies.filter((company) => company.entryStatus).length;
 console.log("採用温度ルール: OK");
 console.log(`- 固定基準: HOT ${expectedCriteria.hot.minimumJobs}件/${expectedCriteria.hot.minimumCompanies}社、Active ${expectedCriteria.active.minimumJobs}件/${expectedCriteria.active.minimumCompanies}社、Selective ${expectedCriteria.selective.minimumJobs}件以上`);
 console.log(`- 日本未進出 ${preEntryCount}社と求人0件企業の3分類からの除外を確認`);

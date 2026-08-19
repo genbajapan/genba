@@ -576,7 +576,7 @@ export default function CompanyIntelligenceProfile({
   companySignals,
   allCompanies,
 }: ProfileProps) {
-  const isPreEntry = company.entryStatus === "not-entered";
+  const isPreEntry = Boolean(company.entryStatus);
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
@@ -681,7 +681,11 @@ export default function CompanyIntelligenceProfile({
                 <span className="company-monogram" aria-hidden="true">{company.name.slice(0, 1)}</span>
                 <div>
                   <p className="eyebrow eyebrow-light">COMPANY FIELD DOSSIER</p>
-                  {isPreEntry ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> 日本未進出の注目企業</span> : <StatusBadge status={company.hiringStatus} />}
+                  {company.entryStatus === "pre-entry-signal"
+                    ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> {company.salesRoles > 0 ? "日本進出準備中" : "日本未進出・進出シグナルあり"}</span>
+                    : isPreEntry
+                      ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> 日本未進出の注目企業</span>
+                      : <StatusBadge status={company.hiringStatus} />}
                 </div>
               </div>
               <h1>{company.name}</h1>
@@ -1653,7 +1657,7 @@ export default function CompanyIntelligenceProfile({
               <div className="alternative-grid">
                 {profile.alternatives.map((alternative, index) => (
                   <article className="alternative-card" key={alternative.company.slug}>
-                    <div className="alternative-topline"><span>0{index + 1}</span>{alternative.company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={alternative.company.hiringStatus} />}</div>
+                    <div className="alternative-topline"><span>0{index + 1}</span>{alternative.company.entryStatus === "pre-entry-signal" ? <span className="pre-entry-badge"><i /> 進出シグナルあり</span> : alternative.company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={alternative.company.hiringStatus} />}</div>
                     <h3>{alternative.company.name}</h3>
                     <p className="alternative-category">{alternative.company.category}</p>
                     <p>{alternative.reason}</p>

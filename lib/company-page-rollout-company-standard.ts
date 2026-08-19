@@ -489,10 +489,10 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
   lakera: {
     category: "AIセキュリティ・LLM・エージェント制御",
     hq: "チューリッヒ（スイス）・サンフランシスコ（米国）／Check Point傘下",
-    japanPresence: "過去Japan AE採用は確認。Lakera専用の日本法人・office・責任者は確認不能",
+    japanPresence: "日本法人・国内拠点は未確認／過去にJapan AE求人を観測",
     hiringStatus: "継続観測",
-    description: "prompt injection、RAG poisoning、data leakage、agent tool misuseをred-team・runtimeで制御。2026年8月17日時点の公式求人は0件。",
-    lastChecked: "2026-08-17",
+    description: "prompt injection、RAG poisoning、data leakage、agent tool misuseをred-team・runtimeで制御。過去のJapan AE求人は募集終了し、2026年8月19日時点の公式ATSは0件。",
+    lastChecked: "2026-08-19",
   },
   lighthouse: {
     category: "宿泊業の商用インテリジェンス・収益管理",

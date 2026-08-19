@@ -35,7 +35,7 @@ export default function HomePage() {
   const lastUpdated = [...companies.map((company) => company.lastChecked), ...jobs.map((job) => job.lastChecked)].sort().at(-1) ?? "—";
   const companySlugsWithOpenJobs = new Set(jobs.map((job) => job.companySlug));
   const companiesWithOpenJobs = companies.filter((company) => companySlugsWithOpenJobs.has(company.slug));
-  const preEntryCompanies = companies.filter((company) => company.entryStatus === "not-entered");
+  const preEntryCompanies = companies.filter((company) => company.entryStatus);
 
   return (
     <>
@@ -174,7 +174,7 @@ export default function HomePage() {
 
       <section className="content-section">
         <Container>
-          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出」注目企業" description="海外で成長し、今後の日本進出が注目される企業を、進出の可能性と障壁の両面から追います。" href="/companies?entry=not-entered#company-results" linkLabel={`日本未進出企業${preEntryCompanies.length}社をすべて見る`} />
+          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出・進出準備」注目企業" description="海外成長だけでなく、日本市場担当求人などの進出準備シグナルと、法人・拠点・導入体制の障壁を分けて追います。" href="/companies?entry=pre-entry#company-results" linkLabel={`未進出・進出準備企業${preEntryCompanies.length}社をすべて見る`} />
           <RandomCompanyGrid companies={preEntryCompanies} valueSummaries={companyCardSummaries} />
         </Container>
       </section>

@@ -1,7 +1,7 @@
 # X下書き: Genba二択 #01 Lakera vs Saviynt
 
 投稿予定: 2026-08-19 21:30（Asia/Tokyo）
-ステータス: Jio確認待ち・未予約
+ステータス: 保留・未予約（Lakeraの現行求人0件を確認）
 比較テーマ: AIエージェント事故を防ぐなら、会話を守るか、権限を守るか
 使用企業: Lakera / Saviynt
 
@@ -39,7 +39,9 @@ Genba分析：
 AはAI開発・Product Securityから入りやすい。
 BはIAM・GRC・CISOから入りやすい。
 
-しかも今、LakeraはEnterprise AE、SaviyntはStrategic AEを日本で募集中。
+Lakeraは過去にJapan AEを募集していたが、現在は終了。日本法人・国内拠点も未確認のため、Genbaでは「日本未進出・進出シグナルあり」として継続観測する。
+
+SaviyntはStrategic AEを日本で募集中。
 
 あなたなら、どちらのriskを顧客へ提案したい？
 A / Bと理由を教えてください。
@@ -63,9 +65,9 @@ https://genbajapan.com/companies/saviynt?utm_source=x&utm_medium=organic_social&
 
 ## 公式出典と確認内容
 
-- Lakera / Enterprise Account Executive, Japan (Tokyo)
-  - https://jobs.ashbyhq.com/lakera.ai/150abd1d-60a3-49ce-87b1-7a61806ab56e
-  - 2026-08-19確認: 応募ページ公開中。Japan hybrid / Tokyo preferred。日本のAI security市場でnew logo、複雑なpilot・integration、partner、sales playbookを担う
+- Lakera / official Ashby board API
+  - https://api.ashbyhq.com/posting-api/job-board/lakera.ai
+  - 2026-08-19確認: 現行求人0件。過去にJapan AE求人を観測したが、日本法人・国内拠点・現在の採用を示す証拠として扱わない
 - Check Point AI Guardrails / Prompt Defense
   - https://docs.lakera.ai/docs/prompt-defense
   - 2026-08-19確認: user inputだけでなく、reference document、web content、tool response・descriptionに埋め込まれたdirect / indirect prompt attackを検査対象にする
@@ -85,5 +87,5 @@ https://genbajapan.com/companies/saviynt?utm_source=x&utm_medium=organic_social&
 - `AI開発・Product Securityから入りやすい`、`IAM・GRC・CISOから入りやすい`は、製品のcontrol pointと公式solutionのrole分類を材料にしたGenba分析
 - LakeraはCheck Point companyだが、公式求人・製品documentationでLakera名が継続使用されているため投稿上もLakeraと表記する
 - 企業の評価、勝者、応募推奨ではない
+- Lakeraの現行求人を前提にした初稿だったため保留。本文を再利用する場合も、Jioの再確認と明示承認が必要
 - `#外資IT #転職`は、週末2シリーズの指定を自動適用せず、本投稿には付けない
-

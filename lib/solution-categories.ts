@@ -21,7 +21,7 @@ export const hiringHeatCriteria = {
 type CategorizedCompany = {
   slug: string;
   broadCategory: BroadCategory;
-  entryStatus?: "not-entered";
+  entryStatus?: "not-entered" | "pre-entry-signal";
 };
 
 type CompanyJob = {
@@ -36,7 +36,7 @@ export type HiringHeatRow = {
 };
 
 export function buildHiringHeatRows(companies: CategorizedCompany[], jobs: CompanyJob[]): HiringHeatRow[] {
-  const eligibleCompanies = companies.filter((company) => company.entryStatus !== "not-entered");
+  const eligibleCompanies = companies.filter((company) => !company.entryStatus);
   const companyBySlug = new Map(eligibleCompanies.map((company) => [company.slug, company]));
   const jobCounts = new Map<BroadCategory, number>();
   const hiringCompanies = new Map<BroadCategory, Set<string>>();
@@ -78,7 +78,7 @@ export function getHiringHeatCompanies<T extends CategorizedCompany>(companies: 
   const companiesWithJobs = new Set(jobs.map((job) => job.companySlug));
 
   return companies.filter((company) => (
-    company.entryStatus !== "not-entered"
+    !company.entryStatus
     && companiesWithJobs.has(company.slug)
     && tierAreas.has(company.broadCategory)
   ));

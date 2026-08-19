@@ -92,7 +92,9 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
 const NOT_ENTERED_SLUGS = new Set([
   "gong", "harvey", "clay", "vanta", "writer", "rippling", "pinecone", "intercom", "addepar", "sixsense",
   "apollo-io", "tines", "attio", "retool", "island", "1password", "klaviyo", "airtable", "mistral-ai", "lovable",
-  "pigment", "ironclad", "vercel", "langchain",
+  "pigment", "ironclad", "vercel", "langchain", "lakera",
+  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cognition", "cribl",
+  "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -119,7 +121,7 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["gitlab", "watchguard", "langchain"].includes(slug) ? NEW_COMPANY_CHECKED_AT : CHECKED_AT;
+  const checkedAt = ["gitlab", "watchguard", "langchain", "lakera"].includes(slug) ? NEW_COMPANY_CHECKED_AT : CHECKED_AT;
   return {
     id: `gbiz-headcount-${slug}`,
     label: entity ? `Gビズインフォ ${entity.entityName}` : "Gビズインフォ 法人検索",

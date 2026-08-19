@@ -1,7 +1,7 @@
 import type { CompanyPublicIntelligence, PublicFact } from "@/lib/company-public-intelligence";
 
 type JapanOfficeDisplayInput = {
-  entryStatus?: "not-entered";
+  entryStatus?: "not-entered" | "pre-entry-signal";
   officeValue: string;
   japanSinceValue: string;
   milestones: CompanyPublicIntelligence["marketStatus"]["milestones"];
@@ -55,7 +55,7 @@ function normalizedYear(value: string) {
 }
 
 function resolveJapanEntryYear(input: JapanOfficeDisplayInput) {
-  if (input.entryStatus === "not-entered" || /未設立|未進出/.test(input.japanSinceValue)) return "日本未進出";
+  if (input.entryStatus || /未設立|未進出/.test(input.japanSinceValue)) return "日本未進出";
   if (/(?:未確認|確認不能|非公開|不明|未特定|確認済み|採用|求人|GTM)/i.test(input.japanSinceValue)) return "日本進出年未確認";
   const fromStat = normalizedYear(input.japanSinceValue);
   if (fromStat) return fromStat;
@@ -69,7 +69,7 @@ function resolveJapanEntryYear(input: JapanOfficeDisplayInput) {
 }
 
 export function getJapanOfficeDisplay(input: JapanOfficeDisplayInput) {
-  const isPreEntry = input.entryStatus === "not-entered";
+  const isPreEntry = Boolean(input.entryStatus);
   return {
     address: normalizeOfficeAddress(input.officeValue, isPreEntry),
     entryYearNote: `（${resolveJapanEntryYear(input)}）`,

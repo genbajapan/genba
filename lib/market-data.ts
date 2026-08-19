@@ -52,7 +52,7 @@ export type Company = {
   lastChecked: string;
   careersUrl: string;
   tags: string[];
-  entryStatus?: "not-entered";
+  entryStatus?: "not-entered" | "pre-entry-signal";
   interviewFlow?: {
     steps: InterviewFlowStep[];
     note: string;
@@ -942,6 +942,14 @@ const publiclyExcludedCompanySlugs = new Set([
   ...paymentConflictCompanySlugs,
 ]);
 const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
+
+// 2026-08-19の全122社監査で、日本法人・常設拠点は確認できない一方、
+// 現行または過去の日本市場担当求人を公式に観測した企業。
+// salesRolesが1件以上なら「日本進出準備中」、0件なら「日本未進出・進出シグナルあり」と表示する。
+const preEntrySignalCompanySlugs = new Set([
+  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cognition", "cribl",
+  "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
+]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
   firstSeen?: string;
@@ -3021,6 +3029,8 @@ const closedJobIds = new Set([
   "dbt-labs-bdr-commercial",
   "dbt-labs-business-development-representative-commercial",
   "datadog-commercial-account-executive-japan",
+  "docusign-field-marketing-specialist-japan",
+  "cursor-director-channel-partners-tokyo",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([
@@ -3048,16 +3058,30 @@ const publishedJobCounts = jobs.reduce((counts, job) => {
 }, new Map<string, number>());
 
 // 採用状況と営業求人数は、公開中と確認できた求人レコードから自動算出する。
-// 日本未進出企業は求人温度へ含めず、必ず継続観測・0件として扱う。
+// 未進出企業は0件、進出準備シグナル企業は現行求人件数を保持する。
+// どちらも求人温度からは solution-categories.ts 側で除外する。
 export const companies = publishedCompanyRecords.map((company): Company => {
-  const salesRoles = company.entryStatus === "not-entered" ? 0 : publishedJobCounts.get(company.slug) ?? 0;
+  const entryStatus: Company["entryStatus"] = preEntrySignalCompanySlugs.has(company.slug)
+    ? "pre-entry-signal"
+    : company.entryStatus;
+  const salesRoles = entryStatus === "not-entered" ? 0 : publishedJobCounts.get(company.slug) ?? 0;
   const hiringStatus: Company["hiringStatus"] = salesRoles >= 3
     ? "積極採用"
     : salesRoles >= 1
       ? "採用中"
       : "継続観測";
 
-  return standardizeRolloutCompany({ ...company, salesRoles, hiringStatus });
+  const standardized = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
+  return preEntrySignalCompanySlugs.has(company.slug)
+    ? {
+        ...standardized,
+        entryStatus: "pre-entry-signal",
+        salesRoles,
+        hiringStatus,
+        lastChecked: "2026-08-19",
+        tags: [...new Set(["進出準備シグナル", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
+      }
+    : standardized;
 });
 
 const signalRecords: Signal[] = [

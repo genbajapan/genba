@@ -707,7 +707,7 @@ const companyResearch: Record<string, {
   lakera: {
     name: "Lakera", domain: "AI Security・LLM Guardrails", officialUrl: "https://jobs.ashbyhq.com/lakera.ai",
     positive: ["Check Point AI Defense Planeへred-team・runtime guardrailsを統合し、agentic AI securityの新categoryに携われる。", "model-neutral、100超languages、SaaS・self-host、Gandalf threat intelligenceは技術差別化候補。"],
-    negative: ["2026年8月17日の公式ATSは現行求人0。過去Japan AEの条件を現在へ転用できない。", "Lakera単体財務、日本法人・責任者・office・顧客は非公開・確認不能。vendor performance claimは日本語workloadで再検証が必要。"],
+    negative: ["2026年8月19日の公式ATSは現行求人0。過去Japan AEの条件を現在へ転用できない。", "Lakera単体財務、日本法人・責任者・office・顧客は非公開・確認不能。vendor performance claimは日本語workloadで再検証が必要。"],
     next: ["AI Security・AppSec GTM", "GenAI Red Team・Product Security", "Cybersecurity Platform Sales・Solutions Engineering"],
   },
   lighthouse: {

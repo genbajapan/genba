@@ -90,15 +90,14 @@ for (const slug of companySlugs) {
   if (!getCompanyDirectoryEntry(slug)) errors.push(`company-directoryに${slug}の公式サイト定義がありません。`);
 }
 
-const notEnteredCompanies = runtimeCompanies.filter((company) => company.entryStatus === "not-entered");
-const notEnteredCount = notEnteredCompanies.length;
-const missingEntryAssessments = notEnteredCompanies.filter((company) => (
+const preEntryCompanies = runtimeCompanies.filter((company) => company.entryStatus);
+const notEnteredCount = preEntryCompanies.length;
+const missingEntryAssessments = preEntryCompanies.filter((company) => (
   !getCompanyPublicIntelligence(company.slug)?.marketStatus?.japanGrowth?.entryAssessment
 ));
 if (missingEntryAssessments.length) {
   errors.push(`日本未進出企業のentryAssessmentがありません: ${missingEntryAssessments.map((company) => company.slug).join(", ")}`);
 }
-
 let runtimeSolutionCount = 0;
 for (const company of runtimeCompanies) {
   const intelligence = getCompanyPublicIntelligence(company.slug);

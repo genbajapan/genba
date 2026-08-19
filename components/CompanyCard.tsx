@@ -12,7 +12,11 @@ export default function CompanyCard({ company, valueSummary, onNavigate }: { com
       <article id={`company-${company.slug}`} className="data-card group">
         <div className="data-card-topline">
           <span>{company.broadCategory}</span>
-          {company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={company.hiringStatus} />}
+          {company.entryStatus === "pre-entry-signal"
+            ? <span className="pre-entry-badge"><i /> {company.salesRoles > 0 ? "日本進出準備中" : "進出シグナルあり"}</span>
+            : company.entryStatus === "not-entered"
+              ? <span className="pre-entry-badge"><i /> 日本未進出</span>
+              : <StatusBadge status={company.hiringStatus} />}
         </div>
         <h3>{company.name}</h3>
         <p className="company-card-value">{valueSummary}</p>

@@ -50,7 +50,7 @@ function parseJapanHeadcount(value: string) {
 }
 
 function resolveJapanEntityYear(company: Company, intelligence: CompanyPublicIntelligence) {
-  if (company.entryStatus === "not-entered") return null;
+  if (company.entryStatus) return null;
 
   const explicitEntityYears = intelligence.marketStatus.milestones
     .filter((milestone) => {
@@ -68,7 +68,7 @@ function resolveJapanEntityYear(company: Company, intelligence: CompanyPublicInt
 }
 
 function resolveJapanEntryYear(company: Company, intelligence: CompanyPublicIntelligence, entityYear: number | null) {
-  if (company.entryStatus === "not-entered") return null;
+  if (company.entryStatus) return null;
 
   const entryYears = intelligence.marketStatus.milestones
     .filter((milestone) => {
@@ -85,7 +85,7 @@ export function buildCompanyListSortMetric(company: Company, intelligence?: Comp
     return {
       japanEntryYear: null,
       japanEntityYear: null,
-      japanHeadcount: company.entryStatus === "not-entered" ? 0 : null,
+      japanHeadcount: company.entryStatus ? 0 : null,
     };
   }
 
@@ -93,7 +93,7 @@ export function buildCompanyListSortMetric(company: Company, intelligence?: Comp
   return {
     japanEntryYear: resolveJapanEntryYear(company, intelligence, japanEntityYear),
     japanEntityYear,
-    japanHeadcount: company.entryStatus === "not-entered" ? 0 : parseJapanHeadcount(intelligence.companyStats.japanHeadcount.value),
+    japanHeadcount: company.entryStatus ? 0 : parseJapanHeadcount(intelligence.companyStats.japanHeadcount.value),
   };
 }
 

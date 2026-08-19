@@ -20,7 +20,7 @@ const tierStats = Object.fromEntries(
   ]),
 ) as Record<"hot" | "active" | "selective", { companies: number; jobs: number }>;
 const lastUpdated = companies.reduce((latest, company) => (company.lastChecked > latest ? company.lastChecked : latest), "");
-const preEntryCompanies = companies.filter((company) => company.entryStatus === "not-entered");
+const preEntryCompanies = companies.filter((company) => company.entryStatus);
 
 function tierHref(tier: "hot" | "active" | "selective") {
   return `/companies?tier=${tier}#company-results`;
@@ -84,8 +84,8 @@ export default function HiringHeatmap() {
             </div>
             <p>国内営業求人を{hiringHeatCriteria.selective.minimumJobs}件以上確認している大分類。</p>
           </Link>
-          <Link href="/companies?entry=not-entered#company-results" className="market-tier market-tier-pre-entry" aria-label="日本未進出の注目企業をすべて見る">
-            <span className="market-tier-label">日本未進出</span>
+          <Link href="/companies?entry=pre-entry#company-results" className="market-tier market-tier-pre-entry" aria-label="日本未進出・進出準備の注目企業を見る">
+            <span className="market-tier-label">未進出・進出準備</span>
             <div className="market-tier-tags">
               <span className="market-tier-tag">注目企業 {preEntryCompanies.length}社</span>
             </div>

@@ -138,17 +138,18 @@ function patchMambu(intelligence: CompanyPublicIntelligence) {
 }
 
 function patchLakera(intelligence: CompanyPublicIntelligence) {
+  ensureMilestone(intelligence, "2021", "創業", "AI security研究者・engineerがスイスでLakeraを創業。", "rollout-lakera-acquisition");
   ensureMilestone(intelligence, "2025", "Check Pointが買収完了", "2025年10月22日にCheck PointがLakeraの買収を完了。", "rollout-lakera-acquisition");
-  ensureMilestone(intelligence, "過去観測", "日本市場活動開始・過去採用", "過去Japan AEを確認したが、2026年8月17日の公式ATSは0件。進出年・現行体制の証明ではない。", "rollout-lakera-jobs-20260817");
+  ensureMilestone(intelligence, "過去観測", "過去のJapan AE求人を観測", "過去にJapan AE求人を確認したが、2026年8月19日の公式ATSは0件。日本法人・国内拠点・現在の採用を示す証拠ではない。", "rollout-lakera-jobs-20260819");
   applyStandard(intelligence, buildCompactPatch({
     slug: "lakera", leaderName: "David Haber / Nadav Zafrir", leaderLabel: "VP, AI Security／Check Point CEO", leaderUrl: "https://www.checkpoint.com/press-releases/check-point-launches-ai-defense-plane-to-secure-the-agentic-enterprise-at-scale/", localName: "確認不能", localLabel: "Lakera日本責任者", localUrl: "https://jobs.ashbyhq.com/lakera.ai",
-    companyId: "rollout-lakera-acquisition", jobId: "rollout-lakera-jobs-20260817", customersId: "rollout-lakera-customers", externalId: "rollout-lakera-meti-ai", financeId: "rollout-lakera-checkpoint-20f",
+    companyId: "rollout-lakera-acquisition", jobId: "rollout-lakera-jobs-20260819", customersId: "rollout-lakera-customers", externalId: "rollout-lakera-meti-ai", financeId: "rollout-lakera-checkpoint-20f",
     targets: ["CISO・AIセキュリティ責任者", "AppSec・プロダクトセキュリティ", "AI・MLプラットフォーム・生成AI製品", "リスク・法務・コンプライアンス", "SOC・セキュリティ設計"], competitors: "model-provider guardrails、Protect AI、HiddenLayer、Prompt Security、CalypsoAI、WAF・DLP・API gateway、内製red team",
     feature: "AI Guardrails、AI Agent Security、AI Red Teamingでprompt injection、RAG poisoning、data leakage、unauthorized action、unsafe contentをpre-deploy・runtimeで検証・制御する。", advantage: "model・provider横断のred-team、runtime policy、Gandalf由来のthreat intelligenceをCheck Point AI Defense Planeと接続する。", benefit: "attack success、data・PII leak、tool misuse、policy incidentを下げつつ、false positive・latencyと安全なAI本番化を両立できる可能性がある。", evidence: "日本顧客事例は確認できない。Dropbox事例は低false positive・低latencyを定性的に説明するが、vendor-authoredでROI非開示。",
-    marketVerdict: "結論：GenAI・RAG・agent本番化とsecurity-by-design・証跡要求が追い風。ただしLakera単体の売上・ARR・利益は非公開で、買収後2025年寄与はimmaterial。現行日本求人は0件。", marketParagraphs: ["provider guardrail、WAF、DLP、手動red teamだけではprompt injection、RAG poisoning、tool misuse、横断policyに空白が残る。", "runtime防御は過剰blockによるUX悪化、latency、日本語・domain適合、data residency、loggingが導入条件になる。", "Genba分析：1〜2本番appでattack success、false positive、p95 latency、leak、tool-policy incident、SOC工数を既存guardrail・内製と比較する。"],
-    cultureHeadline: "公式valuesはLess but better、Take risks and learn、Drivers not passengers、Execute as one、In IT to win IT。現行日本求人0のため日本の勤務条件は確認不能。", classification: "未確認", displayLabel: "現行日本求人なし", officeDays: "該当なし", remoteOnly: "過去求人の条件を転用しない", flexibility: "Global Hybrid方針の日末適用は未確認",
-    goodFor: ["AI SecurityとAppSecを横断したい", "runtimeとred-teamを同じプログラムで扱いたい", "Check Point統合後のcategoryを作りたい"], cautionFor: ["今すぐ応募できる日本roleを必須にする", "Lakera単体の財務を必須にする", "日本法人・専用team・国内caseを必須にする"],
-    unresolved: [["日末体制", "過去Japan AEは確認。現行ATSは0件。", "Check Point JapanとLakeraの専任Sales・SE・CS、日末責任者、product ownershipは？"], ["単体財務", "取得価額と親連結は公閏。", "Lakera revenue、ARR、profit、customer、retention、買収後synergyは？"], ["Performance", ">98% detection、<50ms、<0.5% false positiveのvendor claimあり。", "日本語・domain・real traffic・競合条件での再現値は？"], ["Data・deployment", "SaaS・self-hostを選択可。", "Japan region、log・prompt retention、training use、subprocessor、SIEM、MCP・agent tool coverageは？"], ["Product integration", "Check Point AI Defense Planeへ統合。", "Lakera brand、pricing、contract、support、migration、bundle discount、roadmapは？"]],
+    marketVerdict: "結論：日本法人・国内拠点・現行日本求人は確認できないため、Genbaでは『日本未進出・進出シグナルあり』に分類する。過去のJapan AE求人は日本市場への関心を示すが、進出済みの証拠ではない。", marketParagraphs: ["GenAI・RAG・agent本番化とsecurity-by-design・証跡要求は追い風。provider guardrail、WAF、DLP、手動red teamだけではprompt injection、RAG poisoning、tool misuse、横断policyに空白が残る。", "runtime防御は過剰blockによるUX悪化、latency、日本語・domain適合、data residency、loggingが導入条件になる。", "Genba分析：今後Japan担当求人が再開するか、日本法人・国内拠点・専任体制が公表されるかを進出シグナルとして継続観測する。"],
+    cultureHeadline: "公式valuesはLess but better、Take risks and learn、Drivers not passengers、Execute as one、In IT to win IT。現行日本求人はなく、日本の勤務条件は確認不能。", classification: "未確認", displayLabel: "現行日本求人なし", officeDays: "該当なし", remoteOnly: "過去求人の条件を転用しない", flexibility: "Global Hybrid方針の日本適用は未確認",
+    goodFor: ["将来の日本市場担当求人を先回りして観測したい", "AI SecurityとAppSecを横断したい", "Check Point統合後のcategoryを追いたい"], cautionFor: ["今すぐ応募できる日本roleを必須にする", "Lakera単体の財務を必須にする", "日本法人・専用team・国内caseを必須にする"],
+    unresolved: [["日本体制", "過去Japan AEは確認。2026年8月19日の現行ATSは0件。", "Check Point JapanとLakeraの専任Sales・SE・CS、日本責任者、product ownershipは？"], ["単体財務", "取得価額と親連結は公開。", "Lakera revenue、ARR、profit、customer、retention、買収後synergyは？"], ["Performance", ">98% detection、<50ms、<0.5% false positiveのvendor claimあり。", "日本語・domain・real traffic・競合条件での再現値は？"], ["Data・deployment", "SaaS・self-hostを選択可。", "Japan region、log・prompt retention、training use、subprocessor、SIEM、MCP・agent tool coverageは？"], ["Product integration", "Check Point AI Defense Planeへ統合。", "Lakera brand、pricing、contract、support、migration、bundle discount、roadmapは？"]],
   }));
   intelligence.facts = [
     { label: "Lakera単体の年間売上・稼ぐ力", value: "非公開", detail: "2025年取得後の年末までの売上・営業成績寄与はCheck Point 20-F上immaterial。", sourceIds: ["rollout-lakera-checkpoint-20f"] },
@@ -156,13 +157,15 @@ function patchLakera(intelligence: CompanyPublicIntelligence) {
     { label: "Vendor-reported technical scale", value: ">98% detection／<50ms latency／<0.5% false positive／8,000万超adversarial patterns", detail: "比較条件・日本語での独立再現は確認できない。", sourceIds: ["rollout-lakera-acquisition"] },
   ];
   intelligence.companyStats.globalHeadcount = { value: "非公開", detail: "公式は11 PhDsと説明するが、買収後のLakera専用headcountは確認できない。", sourceId: "rollout-lakera-acquisition" };
-  intelligence.companyStats.japanHeadcount = { value: "確認不能", detail: "現行日本求人0。", sourceId: "rollout-lakera-jobs-20260817" };
-  intelligence.companyStats.japanOffice = { value: "Lakera専用officeは確認不能", detail: "Check Point Japan拠点をLakera専用体制とみなさない。", sourceId: "rollout-lakera-jobs-20260817" };
-  intelligence.companyStats.japanSince = { value: "過去にJapan AE採用", detail: "進出年・法人・現行体制の証明ではない。", sourceId: "rollout-lakera-jobs-20260817" };
+  intelligence.companyStats.japanHeadcount = { value: "0人扱い", detail: "日本法人・国内拠点を確認できないため、国内従業員数の集計対象外。", sourceId: "rollout-lakera-jobs-20260819" };
+  intelligence.companyStats.japanOffice = { value: "未進出", detail: "Lakera公式contactに日本拠点の掲載はない。Check Pointの日本拠点をLakera専用の法人・拠点とはみなさない。", sourceId: "rollout-lakera-contact" };
+  intelligence.companyStats.japanSince = { value: "未設立", detail: "過去のJapan AE求人は日本法人・国内拠点・進出年の証拠ではない。", sourceId: "rollout-lakera-jobs-20260819" };
   intelligence.customerProof = [{ company: "日本named customer", products: "Lakera Guard・AI Security", outcome: "公式の国内顧客名・定量成果は確認できない。", implication: "Dropbox・匿名EdTechのglobal vendor caseを日末実績へ外挿しない。", sourceId: "rollout-lakera-customers" }];
-  intelligence.roleLens = { salesMotion: "2026年8月17日時点で公式Ashby boardは0求人。過去Japan AEは終了とし、現行のSales・SE・CS・channel分担を推測しない。", compensation: "現行日本roleがなく、日末向け給与・OTE・equityは該当なし。", quota: "現行のJapan quota、attainment、ACV、cycle、partner creditは非公開。", collaboration: "Check Point AI Security、ThreatCloud、Sales・SE・Support、顧客CISO・AppSec・AI Platformの境界は選考・商談で確認が必要。" };
+  intelligence.roleLens = { salesMotion: "2026年8月19日時点で公式Ashby boardは0求人。過去のJapan AE求人は終了済みとして扱い、現行のSales・SE・CS・channel分担を推測しない。", compensation: "現行日本roleがなく、日本向け給与・OTE・equityは該当なし。", quota: "現行のJapan quota、attainment、ACV、cycle、partner creditは非公開。", collaboration: "Check Point AI Security、ThreatCloud、Sales・SE・Support、顧客CISO・AppSec・AI Platformの境界は将来の求人・公式発表で確認する。" };
   addSources(intelligence, [
-    { id: "rollout-lakera-jobs-20260817", label: "Lakera official Ashby board API", url: "https://api.ashbyhq.com/posting-api/job-board/lakera.ai", kind: "企業公式", scope: "現行求人0・過去Japan AE終了", checkedAt: researchedAt },
+    { id: "rollout-lakera-jobs-20260819", label: "Lakera official Ashby board API", url: "https://api.ashbyhq.com/posting-api/job-board/lakera.ai", kind: "企業公式", scope: "2026年8月19日時点の現行求人0・過去Japan AE終了", checkedAt: "2026-08-19" },
+    { id: "rollout-lakera-contact", label: "Lakera Contact", url: "https://www.lakera.ai/contact", kind: "企業公式", scope: "公式掲載拠点・日本法人と国内拠点の非確認", checkedAt: "2026-08-19" },
+    { id: "rollout-lakera-checkpoint-offices", label: "Check Point Offices", url: "https://www.checkpoint.com/about-us/contact-check-point/", kind: "企業公式", scope: "Check Point日本拠点との区別", checkedAt: "2026-08-19" },
     { id: "rollout-lakera-acquisition", label: "Check Point・Lakera買収発表", url: "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/", kind: "企業公式", scope: "創業・買収・技術指標", checkedAt: researchedAt },
     { id: "rollout-lakera-checkpoint-20f", label: "Check Point FY2025 20-F", url: "https://www.sec.gov/Archives/edgar/data/1015922/000117891326001932/zk2634942.htm", kind: "法定開示", scope: "取得対価・無形資産・Lakera寄与", checkedAt: researchedAt },
     { id: "rollout-lakera-customers", label: "Lakera customer stories", url: "https://www.lakera.ai/customers", kind: "企業公式", scope: "global customer evidence・vendor claim", checkedAt: researchedAt },
@@ -171,6 +174,9 @@ function patchLakera(intelligence: CompanyPublicIntelligence) {
     { id: "rollout-b11-boj-usd", label: "日本銀行 2026年8月14日外国為替市況", url: "https://www.boj.or.jp/statistics/market/forex/fxdaily/fxlist/fx260814.pdf", kind: "公的機関", scope: "円換算（1米ドル=159.38円）", checkedAt: researchedAt },
   ]);
   refreshSourceDates(intelligence);
+  intelligence.sources = intelligence.sources.map((source) => source.id.startsWith("rollout-lakera-")
+    ? { ...source, checkedAt: "2026-08-19" }
+    : source);
 }
 
 function patchLighthouse(intelligence: CompanyPublicIntelligence) {

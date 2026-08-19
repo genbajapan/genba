@@ -8,7 +8,7 @@ export function generateStaticParams() { return companies.map(({ slug }) => ({ s
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const company = getCompany(params.slug);
   if (!company) return {};
-  const isPreEntry = company.entryStatus === "not-entered";
+  const isPreEntry = Boolean(company.entryStatus);
   const title = isPreEntry ? `${company.name}の日本進出可能性・営業としての魅力・企業研究` : `${company.name}の応募判断・営業求人・併願企業`;
   const description = isPreEntry ? `${company.name}の海外成長、APAC展開、日本対応、営業としての面白さ、日本進出の追い風と反証を公開情報から整理。` : `${company.name}に今応募する価値、営業求人、ソリューション、日本組織、報酬の確認状況、合わせて見るべき企業を公開情報から整理。`;
   return {
