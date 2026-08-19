@@ -16,7 +16,7 @@
 
 |企業|確認した現行シグナル|公式求人例|
 |---|---|---|
-|Glean|Strategic AE、Enterprise AE、SDR|[公式求人](https://job-boards.greenhouse.io/gleanwork/jobs/4721393005)|
+|Glean|日本カントリーマネージャーと日本組織を公式発表。Strategic AE、Enterprise AE、SDRを採用中|[公式求人](https://job-boards.greenhouse.io/gleanwork/jobs/4721393005)・[日本責任者の公式発表](https://prtimes.jp/main/html/rd/p/000000004.000179911.html)|
 |Cambly|日本・中国・韓国を担当し東京を勤務地候補とするSales Director, APAC|[公式求人](https://jobs.ashbyhq.com/Cambly/96f0b293-0cdc-4d96-9b36-507c787f2b34)|
 |Censys|Account Executive、Solutions Engineer - Japan|[公式求人](https://job-boards.greenhouse.io/censys/jobs/8558569002)|
 |Lighthouse|Business Development Manager（Account Executive）- Japan|[公式求人](https://job-boards.eu.greenhouse.io/lighthouse/jobs/4500582101)|
@@ -52,7 +52,7 @@
 
 ## 日本担当者と日本法人を分けた再確認
 
-- Gleanは会社発表で小澤正治氏の日本カントリーマネージャー就任と日本組織構築を確認した。日本teamは存在するが、日本法人の登記・公式な常設officeは確認できない
+- Gleanは会社発表で小澤正治氏の日本カントリーマネージャー就任と日本組織構築を確認した。公開プロフィールでも日本のGTM・Marketing・Sales担当者が複数確認できる。日本teamは存在するが、日本法人の登記・公式な常設office・各人の雇用主体は確認できない
 - CohereはHyonju Cho氏の公開プロフィールでCountry Manager, Japan・東京所在を確認した。公式Careersの拠点一覧に東京はなく、日本法人・雇用主体は確認できない
 - Cursorは公式CareersでCountry Leader - Japanを含む日本求人を確認したが、現任者、日本法人、公式な東京officeは確認できない
 - 日本在住・日本担当者の存在は、日本法人での雇用を意味しない。本国法人との直接雇用、EOR等の可能性を区別し、公開根拠がない雇用主体は断定しない

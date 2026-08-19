@@ -127,7 +127,7 @@ function assess(company) {
   addMissing(missing, intelligence.companyStats?.japanHeadcount?.sourceId?.startsWith("gbiz-headcount-"), "日本法人での想定従業員数:gBizINFO出典");
   addMissing(missing, /(?:被保険者|対象外|事業所情報|想定従業員数)/.test(intelligence.companyStats?.japanHeadcount?.detail ?? ""), "日本法人での想定従業員数:定義・対象範囲");
   if (company.entryStatus) {
-    addMissing(missing, intelligence.companyStats?.japanHeadcount?.value === "0人", "日本法人での想定従業員数:日本未進出は0人");
+    addMissing(missing, intelligence.companyStats?.japanHeadcount?.value === "対象法人未特定", "日本法人での想定従業員数:法人未特定時に0人と断定しない");
   }
   addMissing(missing, intelligence.marketStatus?.milestones?.some((item) => item.label.includes("創業")), "創業年");
   if (!company.entryStatus) {

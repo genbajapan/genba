@@ -11,8 +11,9 @@ const locationPattern = /(〒|北海道|東京都|京都府|大阪府|.{2,3}県|
 const unavailableAddressPattern = /^(?:未確認|非公開|確認不能|実稼働オフィスは確認不能|常設オフィス未確認|公式一次情報で確認不能|住所未確認|開設準備中・住所未確認)$/;
 const duplicateOverviewFactPattern = /^(?:日本法人(?:設立)?|国内法人|日本進出(?:年)?|日本市場進出|東京(?:拠点|オフィス|office)|国内拠点|日本(?:拠点|オフィス)|日本法人での想定従業員数)$/i;
 
-function normalizeOfficeAddress(value: string, isPreEntry: boolean) {
-  if (isPreEntry || /未進出/.test(value)) return "日本法人住所なし";
+function normalizeOfficeAddress(value: string, entryStatus?: JapanOfficeDisplayInput["entryStatus"]) {
+  if (entryStatus === "pre-entry-signal") return "常設オフィス未確認";
+  if (entryStatus === "not-entered" || /未進出/.test(value)) return "日本法人住所なし";
 
   let normalized = value
     .trim()
@@ -55,7 +56,8 @@ function normalizedYear(value: string) {
 }
 
 function resolveJapanEntryYear(input: JapanOfficeDisplayInput) {
-  if (input.entryStatus || /未設立|未進出/.test(input.japanSinceValue)) return "日本未進出";
+  if (input.entryStatus === "pre-entry-signal") return "日本GTM・採用を確認";
+  if (input.entryStatus === "not-entered" || /未設立|未進出/.test(input.japanSinceValue)) return "日本未進出";
   if (/(?:未確認|確認不能|非公開|不明|未特定|確認済み|採用|求人|GTM)/i.test(input.japanSinceValue)) return "日本進出年未確認";
   const fromStat = normalizedYear(input.japanSinceValue);
   if (fromStat) return fromStat;
@@ -69,9 +71,8 @@ function resolveJapanEntryYear(input: JapanOfficeDisplayInput) {
 }
 
 export function getJapanOfficeDisplay(input: JapanOfficeDisplayInput) {
-  const isPreEntry = Boolean(input.entryStatus);
   return {
-    address: normalizeOfficeAddress(input.officeValue, isPreEntry),
+    address: normalizeOfficeAddress(input.officeValue, input.entryStatus),
     entryYearNote: `（${resolveJapanEntryYear(input)}）`,
   };
 }

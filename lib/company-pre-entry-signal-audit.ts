@@ -14,7 +14,7 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
     name: "Glean",
     jobUrl: "https://job-boards.greenhouse.io/gleanwork/jobs/4721393005",
     roleSignal: "Strategic AE、Enterprise AE、SDRなど日本市場の現行求人を確認",
-    marketContext: "国内販売と日本市場チームは確認できるが、日本法人・常設拠点は確認できない",
+    marketContext: "公式発表で日本カントリーマネージャー、日本組織の構築、国内販売を確認できるが、日本法人・常設拠点は確認できない",
   },
   cambly: {
     name: "Cambly",
@@ -180,13 +180,13 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
       ]),
     };
     intelligence.companyStats.japanOffice = {
-      value: "未進出",
+      value: "常設オフィス未確認",
       detail: `${profile.marketContext}。求人の勤務地やRemote勤務を常設officeの証明へ置き換えない。`,
       sourceId: registrySourceId,
     };
     intelligence.companyStats.japanSince = {
-      value: "法人・拠点未確認",
-      detail: "日本市場担当求人の確認時点を、法人設立年や正式な進出年として扱わない。",
+      value: "日本GTM・採用を確認",
+      detail: "日本市場担当者や求人を確認しているが、その確認時点を法人設立年や常設拠点の開設年として扱わない。",
       sourceId: jobSourceId,
     };
   }

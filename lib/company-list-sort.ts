@@ -85,7 +85,7 @@ export function buildCompanyListSortMetric(company: Company, intelligence?: Comp
     return {
       japanEntryYear: null,
       japanEntityYear: null,
-      japanHeadcount: company.entryStatus ? 0 : null,
+      japanHeadcount: null,
     };
   }
 
@@ -93,7 +93,7 @@ export function buildCompanyListSortMetric(company: Company, intelligence?: Comp
   return {
     japanEntryYear: resolveJapanEntryYear(company, intelligence, japanEntityYear),
     japanEntityYear,
-    japanHeadcount: company.entryStatus ? 0 : parseJapanHeadcount(intelligence.companyStats.japanHeadcount.value),
+    japanHeadcount: parseJapanHeadcount(intelligence.companyStats.japanHeadcount.value),
   };
 }
 

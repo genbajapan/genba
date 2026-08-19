@@ -578,6 +578,8 @@ export default function CompanyIntelligenceProfile({
   allCompanies,
 }: ProfileProps) {
   const isPreEntry = Boolean(company.entryStatus);
+  const hasJapanHiringSignal = company.entryStatus === "pre-entry-signal";
+  const isNotEntered = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
@@ -662,7 +664,7 @@ export default function CompanyIntelligenceProfile({
     { label: "ソリューション", value: company.category, confirmed: true },
     { label: "日本拠点", value: company.japanPresence, confirmed: true },
     { label: "OTE・Pay Mix", value: "未確認", confirmed: false },
-    { label: "日本社員・AE人数", value: isPreEntry ? "確認できず" : "未確認", confirmed: false },
+    { label: "日本社員・AE人数", value: hasJapanHiringSignal ? "日本担当求人あり・人数は非公開" : isNotEntered ? "確認できず" : "未確認", confirmed: false },
     { label: "Quota達成率", value: "未確認", confirmed: false },
     { label: "在籍・昇進データ", value: "未確認", confirmed: false },
   ];
@@ -1238,11 +1240,11 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="work-there">
               <div className="intel-heading">
-                <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{isPreEntry ? `${company.name}の海外GTM人材を見る。` : `${company.name}で働いている人を見る。`}</h2></div>
+                <div><p className="intel-kicker">02 / MEET THE PEOPLE</p><h2>{hasJapanHiringSignal ? `${company.name}の日本チームを見る。` : isNotEntered ? `${company.name}の海外GTM人材を見る。` : `${company.name}で働いている人を見る。`}</h2></div>
               </div>
               <a
                 // geoUrn 101355337 = 日本(2026-08-08検証済み。105646813は誤りでスペインを指していたため修正した経緯あり)
-                href={isPreEntry ? `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(`${company.name} Singapore sales`)}&origin=GLOBAL_SEARCH_HEADER` : `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name)}&geoUrn=%5B%22101355337%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
+                href={isNotEntered ? `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(`${company.name} Singapore sales`)}&origin=GLOBAL_SEARCH_HEADER` : `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(hasJapanHiringSignal ? `${company.name} Japan` : company.name)}&geoUrn=%5B%22101355337%22%5D&origin=SWITCH_SEARCH_VERTICAL`}
                 target="_blank"
                 rel="noreferrer"
                 className="work-there-card"
@@ -1250,11 +1252,11 @@ export default function CompanyIntelligenceProfile({
                 <div className="work-there-card-glow" aria-hidden="true" />
                 <div className="work-there-card-body">
                   <p className="work-there-card-kicker">LINKEDIN PEOPLE SEARCH</p>
-                  <h3>{isPreEntry ? `${company.name}のAPAC・海外GTM人材を、LinkedInで探してみる。` : `${company.name}で働く人を、LinkedInで探してみる。`}</h3>
-                  <p className="work-there-card-sub">{isPreEntry ? "公開プロフィールから、APACで先に置かれた役割と組織構成を確認。個人の経歴ではなく、将来の日本GTMに必要な機能を読み解きます。" : "経歴、前職、今の役割。実際に働いている人のプロフィールを見れば、求人票よりも解像度高くイメージできます。"}</p>
+                  <h3>{hasJapanHiringSignal ? `${company.name}の日本市場担当者を、LinkedInで探してみる。` : isNotEntered ? `${company.name}のAPAC・海外GTM人材を、LinkedInで探してみる。` : `${company.name}で働く人を、LinkedInで探してみる。`}</h3>
+                  <p className="work-there-card-sub">{hasJapanHiringSignal ? "日本カントリーマネージャーや日本市場担当者の公開プロフィールから、すでに置かれた役割と組織構成を確認します。" : isNotEntered ? "公開プロフィールから、APACで先に置かれた役割と組織構成を確認。個人の経歴ではなく、将来の日本GTMに必要な機能を読み解きます。" : "経歴、前職、今の役割。実際に働いている人のプロフィールを見れば、求人票よりも解像度高くイメージできます。"}</p>
                   <p className="work-there-card-tip">
                     <strong>採用確度アップのTips</strong>
-                    {isPreEntry ? "公開プロフィールは組織の完全な名簿ではありません。少数例から採用要件や進出時期を断定せず、公式拠点・求人・製品対応と合わせて確認しましょう。" : "アプライをする前に、勇気を振り絞って、応募しようと思っているポジションの方などに1on1を申し込んでみましょう!Genbaにも載っていないリアルな情報や雰囲気をつかめたり、その場でぜひ一緒に働きたいなとなれば通過しやすくなることもあります。これも立派な自分という商品を売るための営業スキルです。"}
+                    {isPreEntry ? "公開プロフィールは組織の完全な名簿ではなく、日本法人での雇用証明でもありません。公式発表・法人登記・求人と分けて確認しましょう。" : "アプライをする前に、勇気を振り絞って、応募しようと思っているポジションの方などに1on1を申し込んでみましょう!Genbaにも載っていないリアルな情報や雰囲気をつかめたり、その場でぜひ一緒に働きたいなとなれば通過しやすくなることもあります。これも立派な自分という商品を売るための営業スキルです。"}
                   </p>
                 </div>
                 <span className="work-there-card-cta">
@@ -1266,8 +1268,8 @@ export default function CompanyIntelligenceProfile({
 
             <section className="intel-section" id="roles">
               <div className="intel-heading">
-                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>{isPreEntry ? "日本進出時の役割を先回りして考える。" : "ポジションの実態を深ぼる。"}</h2></div>
-                <p>{isPreEntry ? "日本向け求人は未確認。海外の営業モデルから、進出求人が出たときに確認すべき条件を整理しています。" : companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
+                <div><p className="intel-kicker">03 / ROLE REALITY</p><h2>{hasJapanHiringSignal ? "日本ポジションの実態を深ぼる。" : isNotEntered ? "日本進出時の役割を先回りして考える。" : "ポジションの実態を深ぼる。"}</h2></div>
+                <p>{isNotEntered ? "日本向け求人は未確認。海外の営業モデルから、進出求人が出たときに確認すべき条件を整理しています。" : companyJobs.length === profile.observedRoleCount ? "求人票で確認できる事実と、面接で確認すべき項目を分けています。" : `集計${profile.observedRoleCount}件のうち、${companyJobs.length}件を個別データに整理済みです。`}</p>
               </div>
 
               {companyJobs.length ? (

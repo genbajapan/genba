@@ -88,8 +88,8 @@ for (const job of jobs) {
 
 for (const company of companies) {
   const sortMetric = sortMetricsBySlug.get(company.slug);
-  if (company.entryStatus && sortMetric.japanHeadcount !== 0) {
-    errors.push(`${company.name}: 日本未進出企業の日本法人での想定従業員数が0人ではありません。`);
+  if (company.entryStatus && sortMetric.japanHeadcount !== null) {
+    errors.push(`${company.name}: 国内法人を特定できない企業の人数を数値として扱っています。日本在住・日本担当者数と法人被保険者数を分けてください。`);
   }
   if (company.entryStatus && /(?:株式会社|合同会社|K\.K\.|G\.K\.)/.test(company.japanPresence) && !/(?:未確認|確認不能|確認できず)/.test(company.japanPresence)) {
     errors.push(`${company.name}: 日本法人名を確認済みなのにentryStatusが設定されています。法人確認と日本採用の分類を再監査してください。`);
