@@ -259,8 +259,8 @@ export default function CompanyExplorer({
           ))}
         </div>
         <div className="filter-chips entry-filter-chips" aria-label="日本進出状況で絞り込み">
-          <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
           <button className={entry === "pre-entry-signal" ? "active entry-active" : ""} aria-pressed={entry === "pre-entry-signal"} onClick={() => changeEntry(entry === "pre-entry-signal" ? "すべて" : "pre-entry-signal")}>{PRE_ENTRY_SIGNAL_FILTER_LABEL}</button>
+          <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
         </div>
         <p className="entry-status-definition"><strong>「{PRE_ENTRY_SIGNAL_FILTER_LABEL}」とは</strong>{PRE_ENTRY_SIGNAL_DEFINITION}</p>
       </div>
