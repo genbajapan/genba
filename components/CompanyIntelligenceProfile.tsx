@@ -796,12 +796,6 @@ export default function CompanyIntelligenceProfile({
         </Container>
       </div>
 
-      <section className="content-section surface-section company-newsletter-section">
-        <Container>
-          <NewsletterCTA inlineForm location="company_page" companySlug={company.slug} />
-        </Container>
-      </section>
-
       <section className="content-section company-intelligence-section">
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
@@ -1669,6 +1663,10 @@ export default function CompanyIntelligenceProfile({
               </div>
               <p className="analysis-disclaimer">併願候補は、企業データのカテゴリ・想定Buyer・求人セグメントの近さから算出したGenba分析です。競合関係や合格可能性を断定するものではありません。</p>
             </section>
+
+            <div className="company-newsletter-after-compare">
+              <NewsletterCTA inlineForm location="company_page" companySlug={company.slug} />
+            </div>
 
             <section className="intel-section" id="sources">
               <details className="intel-section-disclosure intel-section-disclosure-sources" data-section-disclosure>

@@ -293,7 +293,6 @@ button, input, select { font: inherit; }
 .newsletter-card-form .newsletter-consent { border-top-color: #315061; color: #91a9b3 !important; }
 .newsletter-card-form .newsletter-consent a { color: #70d3c5; }
 .newsletter-card-form .newsletter-sender { color: #91a9b3 !important; }
-.company-newsletter-section { padding-block: 42px; }
 .newsletter-detail-grid { grid-template-columns: minmax(0,1fr) 390px; grid-template-areas: "content signup"; align-items: start; }
 .newsletter-detail-content { grid-area: content; }
 .newsletter-sidebar { position: sticky; top: 105px; padding: 30px; }
@@ -586,6 +585,8 @@ button, input, select { font: inherit; }
 .company-intelligence-main { min-width: 0; }
 .intel-section { scroll-margin-top: 145px; }
 .intel-section + .intel-section { margin-top: 92px; padding-top: 80px; border-top: 1px solid #cfd9da; }
+.company-newsletter-after-compare { margin-top: 64px; }
+.company-newsletter-after-compare + .intel-section { margin-top: 92px; padding-top: 80px; border-top: 1px solid #cfd9da; }
 .intel-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 28px; }
 .intel-heading > div { min-width: 0; }
 .intel-kicker,.card-index { margin: 0 0 9px; color: var(--signal); font-size: 11px; font-weight: 850; letter-spacing: .18em; }
@@ -1757,6 +1758,8 @@ button, input, select { font: inherit; }
   .dossier-nav-more strong { font-size: 16px; }
   .intel-section { scroll-margin-top: 155px; }
   .intel-section + .intel-section { margin-top: 65px; padding-top: 58px; }
+  .company-newsletter-after-compare { margin-top: 48px; }
+  .company-newsletter-after-compare + .intel-section { margin-top: 65px; padding-top: 58px; }
   .intel-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
   .company-overview-toggle { align-items: flex-start; }
   .company-overview-toggle .intel-heading { padding-right: 0; }
