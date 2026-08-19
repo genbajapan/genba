@@ -122,7 +122,7 @@ function patchCognition(intelligence: CompanyPublicIntelligence) {
   intelligence.marketStatus.milestones = intelligence.marketStatus.milestones.filter((item) => !(item.year === "2023" && item.label === "創業"));
   ensureMilestone(intelligence, "確認不能", "創業年は一次情報で確認不能", "公式Devin launchは2024年。外部資料の創業年を確定表示しない。", "rollout-cognition-devin-launch");
   ensureMilestone(intelligence, "2024", "Devinを公開", "2024年3月にAI software engineerとしてDevinを発表。", "rollout-cognition-devin-launch");
-  ensureMilestone(intelligence, "2026.04", "日本事業を正式開始", "Asia初の市場として日本展開を発表し、正井拓己氏がJapan President & GMへ就任。", "cognition-company");
+  ensureMilestone(intelligence, "2026.03", "日本法人を設立", "Cognition AI Japan合同会社が3月4日に法人番号指定。4月9日に日本法人設立と日本事業開始を発表。", "rollout-cognition-japan-entity");
   applyStandard(intelligence, buildCompactPatch({
     slug: "cognition",
     leaderName: "Scott Wu",
@@ -172,8 +172,8 @@ function patchCognition(intelligence: CompanyPublicIntelligence) {
   ];
   intelligence.companyStats.globalHeadcount = { value: "350人", detail: "2026年7月会社発表。", sourceId: "rollout-cognition-one-year" };
   intelligence.companyStats.japanHeadcount = { value: "非公開", detail: "東京7求人とdedicated local teamは投資signalだが、現在人数ではない。", sourceId: "rollout-cognition-jobs-20260817" };
-  intelligence.companyStats.japanOffice = { value: "東京（住所は非公開）", detail: "On-site求人と日本teamは確認できるが、日本法人商号・office住所は確認不能。", sourceId: "rollout-cognition-jobs-20260817" };
-  intelligence.companyStats.japanSince = { value: "2026年4月", detail: "Asia初の市場として正式launch。", sourceId: "cognition-company" };
+  intelligence.companyStats.japanOffice = { value: "東京都中央区銀座（登記本店）", detail: "Cognition AI Japan合同会社（法人番号8010003050587）の登記本店。会社発表の日本拠点は東京都千代田区有楽町。", sourceId: "rollout-cognition-japan-entity" };
+  intelligence.companyStats.japanSince = { value: "2026年3月", detail: "3月4日に法人番号指定、4月9日に日本法人設立・日本事業開始を発表。", sourceId: "rollout-cognition-japan-launch" };
   intelligence.customerProof = [
     { company: "DeNA", products: "Devin", outcome: "複数のengineering機能で業務効率2倍超。全社導入では2,000人超が利用可能、40 team超が利用開始。", implication: "利用可能数はactive paid seats・ROIではなく、2倍超の母数・期間も非公開。", sourceId: "rollout-cognition-dena" },
     { company: "ちばぎんコンピューターサービス", products: "Devin＋C-chatSupport", outcome: "新規systemは4.0→1.5人月・原価57.8%減、VB.NET移行は12.5→2.0人月・原価81.6%減。", implication: "2 project限定で伴走支援との複合成果。品質・長期保守は非公開。", sourceId: "rollout-cognition-chibagin" },
@@ -196,6 +196,8 @@ function patchCognition(intelligence: CompanyPublicIntelligence) {
     { id: "rollout-cognition-desktop", label: "Cognition Devin Desktop", url: "https://cognition.com/blog/introducing-devin-desktop", kind: "企業公式", scope: "現行desktop製品・agent orchestration", checkedAt: researchedAt },
     { id: "rollout-cognition-dpa", label: "Cognition Data Processing Addendum", url: "https://cognition.com/documents/Cognition-DPA.pdf", kind: "企業公式", scope: "法人名・本社住所・data processing", checkedAt: researchedAt },
     { id: "rollout-cognition-jobs-20260817", label: "Cognition Tokyo現行求人", url: "https://cognition.com/careers", kind: "企業公式", scope: "現行7求人・role・workstyle・culture", checkedAt: researchedAt },
+    { id: "rollout-cognition-japan-entity", label: "Gビズインフォ Cognition AI Japan合同会社", url: "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=8010003050587", kind: "公的機関", scope: "法人番号・法人名・登記本店", checkedAt: "2026-08-19" },
+    { id: "rollout-cognition-japan-launch", label: "Cognition 日本法人設立・日本事業開始発表", url: "https://prtimes.jp/main/html/rd/p/000000001.000181315.html", kind: "企業公式", scope: "日本法人設立・日本拠点・Japan President・国内team", checkedAt: "2026-08-19" },
     { id: "rollout-cognition-dena", label: "DeNA・Cognition戦略提携・全社導入", url: "https://dena.com/jp/news/5269/", kind: "企業公式", scope: "国内導入成果・CEO", checkedAt: researchedAt },
     { id: "rollout-cognition-chibagin", label: "DeNA・ちばぎんコンピューターサービス成果", url: "https://dena.com/jp/news/5372/", kind: "企業公式", scope: "国内2案件の工数・原価成果", checkedAt: researchedAt },
     { id: "rollout-cognition-ipa-2026", label: "IPA DX動向2026", url: "https://www.ipa.go.jp/pressrelease/2026/press20260716.html", kind: "公的機関", scope: "AI導入と価値創出の外部環境", checkedAt: researchedAt },

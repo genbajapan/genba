@@ -174,7 +174,7 @@ export default function HomePage() {
 
       <section className="content-section">
         <Container>
-          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本未進出・進出準備」注目企業" description="海外成長だけでなく、日本市場担当求人などの進出準備シグナルと、法人・拠点・導入体制の障壁を分けて追います。" href="/companies?entry=pre-entry#company-results" linkLabel={`未進出・進出準備企業${preEntryCompanies.length}社をすべて見る`} />
+          <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本法人未確認」注目企業" description="日本法人・常設拠点、日本で働く担当者、現行の日本採用を分けて追います。" href="/companies?entry=pre-entry#company-results" linkLabel={`日本法人未確認企業${preEntryCompanies.length}社をすべて見る`} />
           <RandomCompanyGrid companies={preEntryCompanies} valueSummaries={companyCardSummaries} />
         </Container>
       </section>

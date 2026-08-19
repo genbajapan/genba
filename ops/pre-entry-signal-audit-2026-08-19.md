@@ -1,4 +1,4 @@
-# 日本進出準備シグナル全社監査
+# 日本法人未確認・日本採用シグナル全社監査
 
 実施日: 2026-08-19
 
@@ -10,9 +10,9 @@
 - gBizINFOで紐づく国内法人を確認できた企業、または企業公式情報・求人で常設officeを確認できた企業は、住所や設立年の一部が非公開でも進出準備カテゴリへ移していない
 - 日本市場での販売、partner、顧客、Remote teamがあっても、日本法人・常設拠点を確認できない場合は、求人シグナルと法人・拠点の状態を分けて判定した
 
-## 日本進出準備中
+## 日本法人未確認・日本採用あり
 
-日本法人・常設拠点を確認できず、日本市場を担当する現行公式求人を確認した17社。
+日本法人・常設拠点を確認できず、日本市場を担当する現行公式求人を確認した16社。日本で働く担当者がいる場合を含み、雇用主体が本国法人・EORなどのどれかは公開情報から確定していない。
 
 |企業|確認した現行シグナル|公式求人例|
 |---|---|---|
@@ -23,7 +23,6 @@
 |Replit|Founding Account Executive、Growth Lead - Japan|[公式求人](https://jobs.ashbyhq.com/replit/bcfdb564-48c9-42c9-ab5b-c901b6babb44)|
 |Cohere|Account Executive、Partner Development、FDE - Japan|[公式求人](https://jobs.ashbyhq.com/cohere/85e808ab-ee45-4944-bedc-832bf933d0b6)|
 |Dragos|Senior Enterprise AE、Advisory Solutions Architect - Japan|[公式求人](https://job-boards.greenhouse.io/dragos/jobs/5254855008)|
-|Cognition|Account Director、Partnerships、GTM Operations等のJapan求人|[公式求人](https://jobs.ashbyhq.com/cognition/0aabb166-3e97-437b-ab84-b04fe20dd426)|
 |Cribl|Sales Director、Enterprise Sales、Partner Business Manager - Japan|[公式求人](https://cribl.io/job-detail/?gh_jid=6098546004)|
 |Hightouch|Enterprise Account Executive, APAC（Japan）|[公式求人](https://job-boards.greenhouse.io/hightouch/jobs/5836057004)|
 |Cursor|Strategic AE、Field Engineering、FDE、Solutions Architect - Japan|[公式求人](https://cursor.com/careers/strategic-enterprise-account-executive-japan)|
@@ -34,7 +33,7 @@
 |Mambu|JP-RemoteのSenior Account Executive（Channel）|[公式求人](https://careers-mambu.icims.com/jobs/3352/senior-account-executive-%28channel%29/job)|
 |Zilliz|Enterprise AE、Founding Field Engineer - Japan|[公式求人](https://jobs.lever.co/zilliz/8144e236-2836-4980-92cf-b6501ce0f81c)|
 
-## 日本未進出・進出シグナルあり
+## 日本法人未確認・過去に日本採用
 
 過去に日本市場担当求人を公式観測したが、現行求人が終了し、日本法人・常設拠点も確認できない企業。
 
@@ -44,11 +43,19 @@
 
 ## 新カテゴリへ移さなかった主な境界事例
 
+- Cognitionは当初このカテゴリへ誤分類したが、[Gビズインフォ](https://info.gbiz.go.jp/hojin/ichiran?hojinBango=8010003050587)のCognition AI Japan合同会社と[会社発表](https://prtimes.jp/main/html/rd/p/000000001.000181315.html)の日本法人設立を再確認し、日本進出済みへ訂正した
 - ElevenLabs、Amplitude、Halcyon、Grafana Labs、Fivetran、Shopify等は、国内法人を確認できるため対象外
 - iDeals、MarqVision、Mendix、Sierra、Sonar、WatchGuard等は、公式情報または求人で国内office・onsite拠点を確認できるため対象外
 - dbt Labsの現行求人は統合先Fivetranの日本法人求人として掲載されているため、dbt Labs単独の進出準備企業へは移さない
 - Sysdig、Scandit、Gurobi等は現行求人が0件でも国内法人を確認できるため、「進出シグナルあり」ではなく進出済み企業の求人なしとして扱う
 - 日本市場に触れる求人でも、単に日本から応募可能なglobal roleで、日本territory・日本顧客・日本市場の責任を持たないものは対象外
+
+## 日本担当者と日本法人を分けた再確認
+
+- Gleanは会社発表で小澤正治氏の日本カントリーマネージャー就任と日本組織構築を確認した。日本teamは存在するが、日本法人の登記・公式な常設officeは確認できない
+- CohereはHyonju Cho氏の公開プロフィールでCountry Manager, Japan・東京所在を確認した。公式Careersの拠点一覧に東京はなく、日本法人・雇用主体は確認できない
+- Cursorは公式CareersでCountry Leader - Japanを含む日本求人を確認したが、現任者、日本法人、公式な東京officeは確認できない
+- 日本在住・日本担当者の存在は、日本法人での雇用を意味しない。本国法人との直接雇用、EOR等の可能性を区別し、公開根拠がない雇用主体は断定しない
 
 ## 求人鮮度の追加差分
 
@@ -59,5 +66,6 @@
 ## 判定上の留保
 
 - 「法人・拠点未確認」は、存在しないことの証明ではなく、2026-08-19時点の企業公式情報と公的法人検索で確認できないという意味
+- 日本法人が未確認でも日本在住・日本担当の社員が存在し得る。本国法人との直接雇用、EOR等の可能性はあるが、雇用主体は公開根拠がない限り断定しない
 - 過去求人はGenbaが公式URLを観測・保存した履歴に限定する。Genbaの観測開始前に終了した未保存求人まで網羅したとは断定しない
 - 現行求人の存在は数年以内の本格進出を支持する材料だが、進出時期、法人設立、採用計画を確定するものではない

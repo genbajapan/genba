@@ -52,12 +52,6 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
     roleSignal: "Senior Enterprise AEとAdvisory Solutions Architectの日本向け現行求人を確認",
     marketContext: "国内partnerとRemote teamは確認できるが、日本法人・常設拠点は確認できない",
   },
-  cognition: {
-    name: "Cognition",
-    jobUrl: "https://jobs.ashbyhq.com/cognition/0aabb166-3e97-437b-ab84-b04fe20dd426",
-    roleSignal: "Account Director、Partnerships、GTM Operationsなど日本市場の現行求人を確認",
-    marketContext: "Japan launchと日本市場チームは確認できるが、日本法人商号・常設拠点は確認できない",
-  },
   cribl: {
     name: "Cribl",
     jobUrl: "https://cribl.io/job-detail/?gh_jid=6098546004",
@@ -121,7 +115,7 @@ function unique(values: string[]) {
 function buildAssessment(profile: ActiveSignalProfile, companySourceIds: string[], jobSourceId: string, registrySourceId: string): JapanEntryAssessment {
   const evidenceIds = unique([jobSourceId, ...companySourceIds]);
   return {
-    verdict: `進出準備シグナルあり。${profile.roleSignal}。一方、${profile.marketContext}ため、日本進出済みとは扱わない。`,
+    verdict: `日本法人未確認・日本採用あり。${profile.roleSignal}。一方、${profile.marketContext}ため、日本法人がある企業とは扱わない。`,
     factSignals: [
       { title: "現行の日本市場担当求人", body: profile.roleSignal, sourceIds: [jobSourceId] },
       { title: "法人・拠点の確認状況", body: profile.marketContext, sourceIds: [registrySourceId, jobSourceId] },
@@ -170,13 +164,13 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
 
     intelligence.researchedAt = checkedAt;
     intelligence.marketStatus.genbaVerdict = {
-      headline: "日本進出準備中：現行の日本市場担当求人あり、法人・常設拠点は未確認。",
-      body: `${profile.roleSignal}。${profile.marketContext}。求人は強い進出シグナルだが、日本法人設立・拠点開設・国内売上の証明とは分けて継続観測する。`,
+      headline: "日本法人未確認・日本採用あり：現行の日本市場担当求人を確認。",
+      body: `${profile.roleSignal}。${profile.marketContext}。日本で働く担当者がいる場合を含む分類で、求人を日本法人設立・拠点開設・国内売上の証明とは分けて継続観測する。`,
     };
     intelligence.marketStatus.japanGrowth = {
       ...intelligence.marketStatus.japanGrowth,
       headline: "日本市場担当を採用中。法人・常設拠点の確認前にGTMを組成する段階。",
-      narrative: `${profile.roleSignal}。${profile.marketContext}。Genbaでは現行求人を『日本進出準備中』のシグナルとして扱い、日本進出済み企業の採用温度からは除外する。`,
+      narrative: `${profile.roleSignal}。${profile.marketContext}。Genbaでは日本法人の確認と日本採用を別軸で扱い、雇用主体が本国法人・EORなどのどれかを公開情報から確定できない場合は日本進出済み企業の採用温度から除外する。`,
       entryAssessment: assessment,
       sourceIds: unique([
         ...(intelligence.marketStatus.japanGrowth?.sourceIds ?? []),

@@ -7,6 +7,7 @@ import { companyListSortOptions, compareKnownNumbers, type CompanyListSortMetric
 import { getHeadquartersRegion, headquartersRegions, type HeadquartersRegion } from "@/lib/company-headquarters";
 import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
+import { PRE_ENTRY_SIGNAL_DEFINITION, PRE_ENTRY_SIGNAL_FILTER_LABEL } from "@/lib/company-entry-status";
 
 const statuses = [
   { value: "すべて", label: "すべて" },
@@ -228,8 +229,8 @@ export default function CompanyExplorer({
       )}
       {entry !== "すべて" && (
         <div className="entry-filter-summary">
-          <div><span>進出状況で絞り込み中</span><strong>{entry === "pre-entry-signal" ? "進出準備シグナル" : entry === "not-entered" ? "日本未進出" : "未進出・進出準備"}</strong></div>
-          <p>{entry === "pre-entry-signal" ? "日本法人・国内拠点は未確認だが、日本市場担当求人などの進出準備シグナルを観測した企業を表示" : entry === "not-entered" ? "日本法人・国内拠点・日本向け求人が未確認で、将来の進出可能性を調査した企業を表示" : "日本法人・国内拠点が未確認の企業を、進出準備シグナルの有無を含めて表示"}</p>
+          <div><span>進出状況で絞り込み中</span><strong>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_FILTER_LABEL : entry === "not-entered" ? "日本未進出" : "日本法人未確認"}</strong></div>
+          <p>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_DEFINITION : entry === "not-entered" ? "日本法人・国内拠点・日本向け求人が未確認で、将来の進出可能性を調査した企業を表示" : "日本法人・国内拠点を確認できない企業を、日本採用の有無を分けて表示"}</p>
           <button type="button" onClick={() => changeEntry("すべて")}>絞り込みを解除</button>
         </div>
       )}
@@ -257,11 +258,12 @@ export default function CompanyExplorer({
         </div>
         <div className="filter-chips entry-filter-chips" aria-label="日本進出状況で絞り込み">
           <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
-          <button className={entry === "pre-entry-signal" ? "active entry-active" : ""} aria-pressed={entry === "pre-entry-signal"} onClick={() => changeEntry(entry === "pre-entry-signal" ? "すべて" : "pre-entry-signal")}>進出準備シグナル</button>
+          <button className={entry === "pre-entry-signal" ? "active entry-active" : ""} aria-pressed={entry === "pre-entry-signal"} onClick={() => changeEntry(entry === "pre-entry-signal" ? "すべて" : "pre-entry-signal")}>{PRE_ENTRY_SIGNAL_FILTER_LABEL}</button>
         </div>
+        <p className="entry-status-definition"><strong>「{PRE_ENTRY_SIGNAL_FILTER_LABEL}」とは</strong>{PRE_ENTRY_SIGNAL_DEFINITION}</p>
       </div>
       <div className="company-results-toolbar">
-        <p className="result-count" aria-live="polite">{entry === "pre-entry-signal" ? `進出準備シグナル企業${results.length}社を表示` : entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : entry === "pre-entry" ? `未進出・進出準備企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
+        <p className="result-count" aria-live="polite">{entry === "pre-entry-signal" ? `${PRE_ENTRY_SIGNAL_FILTER_LABEL}企業${results.length}社を表示` : entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : entry === "pre-entry" ? `日本法人未確認企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>
         <label className="select-field company-sort-field">
           <span>並び替え</span>
           <select value={sort} onChange={(event) => { clearReturnTarget(); setSort(event.target.value as CompanyListSortMode); }}>

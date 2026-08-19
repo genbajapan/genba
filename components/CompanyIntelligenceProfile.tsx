@@ -6,6 +6,7 @@ import DossierNav from "@/components/DossierNav";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
 import StatusBadge from "@/components/StatusBadge";
+import { getPreEntrySignalLabel, PRE_ENTRY_SIGNAL_DEFINITION } from "@/lib/company-entry-status";
 import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
 import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
@@ -682,7 +683,7 @@ export default function CompanyIntelligenceProfile({
                 <div>
                   <p className="eyebrow eyebrow-light">COMPANY FIELD DOSSIER</p>
                   {company.entryStatus === "pre-entry-signal"
-                    ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> {company.salesRoles > 0 ? "日本進出準備中" : "日本未進出・進出シグナルあり"}</span>
+                    ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> {getPreEntrySignalLabel(company)}</span>
                     : isPreEntry
                       ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> 日本未進出の注目企業</span>
                       : <StatusBadge status={company.hiringStatus} />}
@@ -690,6 +691,7 @@ export default function CompanyIntelligenceProfile({
               </div>
               <h1>{company.name}</h1>
               <p className="company-category">{company.category} <span>/</span> {company.hq}</p>
+              {company.entryStatus === "pre-entry-signal" && <p className="pre-entry-definition">{PRE_ENTRY_SIGNAL_DEFINITION}</p>}
               {publicIntel && (
                 <div className="company-sales-snapshot-heading">
                   <span>セールス観点から見たこの会社</span>
@@ -852,8 +854,8 @@ export default function CompanyIntelligenceProfile({
                           {globalScaleSource && <a className="company-snapshot-source" href={globalScaleSource.url} target="_blank" rel="noreferrer">{globalScaleSource.label} ↗</a>}
                         </div>
                         <div>
-                          <span>日本法人での想定従業員数</span>
-                          <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
+                          <span>{company.entryStatus ? "日本法人の確認" : "日本法人での想定従業員数"}</span>
+                          <strong>{company.entryStatus ? "法人未確認" : publicIntel.companyStats.japanHeadcount.value}</strong>
                           <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
                         </div>
@@ -878,8 +880,8 @@ export default function CompanyIntelligenceProfile({
                           <small className="company-snapshot-milestone">{japanOfficeDisplay?.entryYearNote}</small>
                         </div>
                         <div>
-                          <span>日本法人での想定従業員数</span>
-                          <strong>{publicIntel.companyStats.japanHeadcount.value}</strong>
+                          <span>{company.entryStatus ? "日本法人の確認" : "日本法人での想定従業員数"}</span>
+                          <strong>{company.entryStatus ? "法人未確認" : publicIntel.companyStats.japanHeadcount.value}</strong>
                           <small className="company-snapshot-detail">{publicIntel.companyStats.japanHeadcount.detail}</small>
                           {japanHeadcountSource && <a className="company-snapshot-source" href={japanHeadcountSource.url} target="_blank" rel="noreferrer">{japanHeadcountSource.kind} ↗</a>}
                         </div>
@@ -1657,7 +1659,7 @@ export default function CompanyIntelligenceProfile({
               <div className="alternative-grid">
                 {profile.alternatives.map((alternative, index) => (
                   <article className="alternative-card" key={alternative.company.slug}>
-                    <div className="alternative-topline"><span>0{index + 1}</span>{alternative.company.entryStatus === "pre-entry-signal" ? <span className="pre-entry-badge"><i /> 進出シグナルあり</span> : alternative.company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={alternative.company.hiringStatus} />}</div>
+                    <div className="alternative-topline"><span>0{index + 1}</span>{alternative.company.entryStatus === "pre-entry-signal" ? <span className="pre-entry-badge"><i /> 法人未確認・日本採用</span> : alternative.company.entryStatus === "not-entered" ? <span className="pre-entry-badge"><i /> 日本未進出</span> : <StatusBadge status={alternative.company.hiringStatus} />}</div>
                     <h3>{alternative.company.name}</h3>
                     <p className="alternative-category">{alternative.company.category}</p>
                     <p>{alternative.reason}</p>

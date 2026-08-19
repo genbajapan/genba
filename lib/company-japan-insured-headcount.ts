@@ -87,13 +87,14 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   atlassian: { corporateNumber: "7011001095419", entityName: "アトラシアン株式会社", insuredCount: 77 },
   dynatrace: { corporateNumber: "4011003001897", entityName: "Dynatrace合同会社", insuredCount: 41 },
   gitlab: { corporateNumber: "6010403021867", entityName: "GitLab合同会社", insuredCount: 58 },
+  cognition: { corporateNumber: "8010003050587", entityName: "Cognition AI Japan合同会社" },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
   "gong", "harvey", "clay", "vanta", "writer", "rippling", "pinecone", "intercom", "addepar", "sixsense",
   "apollo-io", "tines", "attio", "retool", "island", "1password", "klaviyo", "airtable", "mistral-ai", "lovable",
   "pigment", "ironclad", "vercel", "langchain", "lakera",
-  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cognition", "cribl",
+  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
 ]);
 

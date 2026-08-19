@@ -582,7 +582,7 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
   cohere: {
     category: "企業向け生成AI・Private AI基盤",
     hq: "トロント（カナダ）",
-    japanPresence: "東京Remote team・富士通との日本語AI提携（日本法人・office・責任者は確認不能）",
+    japanPresence: "Japan Country Manager・東京Remote team（日本法人・officeは確認不能）",
     description: "enterprise LLM、retrieval、agent applicationをprivate deploymentを含め提供。東京RemoteでAE、Partner Development、FDEの現行3求人を公式確認。",
     lastChecked: "2026-08-17",
   },
@@ -645,7 +645,7 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
   cognition: {
     category: "AIソフトウェアエンジニアリング",
     hq: "カリフォルニア州サンフランシスコ（米国）",
-    japanPresence: "Cognition Japan team・東京（2026年4月launch、法人商号・office住所は確認不能）",
+    japanPresence: "Cognition AI Japan合同会社・東京（2026年3月登記、4月事業開始発表）",
     description: "Devin Cloud・Desktop・Review・Securityでsoftware taskをagent実行。東京でSales、Partnerships、Deployed、Support、GTM Opsの現行7求人を公式確認。",
     lastChecked: "2026-08-17",
   },

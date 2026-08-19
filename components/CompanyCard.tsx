@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { getPreEntrySignalLabel } from "@/lib/company-entry-status";
 import type { Company } from "@/lib/market-data";
 import StatusBadge from "./StatusBadge";
 
@@ -13,7 +14,7 @@ export default function CompanyCard({ company, valueSummary, onNavigate }: { com
         <div className="data-card-topline">
           <span>{company.broadCategory}</span>
           {company.entryStatus === "pre-entry-signal"
-            ? <span className="pre-entry-badge"><i /> {company.salesRoles > 0 ? "日本進出準備中" : "進出シグナルあり"}</span>
+            ? <span className="pre-entry-badge"><i /> {getPreEntrySignalLabel(company)}</span>
             : company.entryStatus === "not-entered"
               ? <span className="pre-entry-badge"><i /> 日本未進出</span>
               : <StatusBadge status={company.hiringStatus} />}

@@ -91,6 +91,9 @@ for (const company of companies) {
   if (company.entryStatus && sortMetric.japanHeadcount !== 0) {
     errors.push(`${company.name}: 日本未進出企業の日本法人での想定従業員数が0人ではありません。`);
   }
+  if (company.entryStatus && /(?:株式会社|合同会社|K\.K\.|G\.K\.)/.test(company.japanPresence) && !/(?:未確認|確認不能|確認できず)/.test(company.japanPresence)) {
+    errors.push(`${company.name}: 日本法人名を確認済みなのにentryStatusが設定されています。法人確認と日本採用の分類を再監査してください。`);
+  }
   if (!company.entryStatus && /過去.{0,20}(?:Japan|日本).{0,20}(?:求人|採用)/i.test(company.japanPresence) && /(?:日本法人|office|国内拠点).{0,30}(?:未確認|確認不能|確認できず)/i.test(company.japanPresence)) {
     errors.push(`${company.name}: 過去の日本市場求人と法人・拠点未確認を同時に持つため、entryStatus=pre-entry-signalが必要です。`);
   }

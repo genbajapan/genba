@@ -839,8 +839,8 @@ const companyRecords: Company[] = [
     description: "Siemens傘下のlow-code platform。TokyoでEnterprise Account Executiveを募集し、channelと日本pipelineを拡張。", lastChecked: "2026-08-12", careersUrl: "https://jobs.lever.co/mendix?location=Tokyo", tags: ["Enterprise", "Low-code", "Application Modernization", "Partner", "Siemens"],
   },
   {
-    slug: "cognition", name: "Cognition", category: "AI Software Engineering / Developer Tools", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "日本市場team / Tokyo on-site（法人商号・office住所は非公開）", hiringStatus: "積極採用", salesRoles: 7,
-    description: "2026年4月にAsia初の市場としてJapanを正式launch。Account Director・partnership等のGTM人材を採用。", lastChecked: "2026-08-12", careersUrl: "https://cognition.com/careers", tags: ["Enterprise AI", "Developer Tools", "Account Director", "Japan launch", "Partner"],
+    slug: "cognition", name: "Cognition", category: "AI Software Engineering / Developer Tools", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "Cognition AI Japan合同会社・東京（2026年3月登記、4月事業開始発表）", hiringStatus: "積極採用", salesRoles: 7,
+    description: "2026年4月にAsia初の市場としてJapanを正式launch。Account Director・partnership等のGTM人材を採用。", lastChecked: "2026-08-19", careersUrl: "https://cognition.com/careers", tags: ["Enterprise AI", "Developer Tools", "Account Director", "Japan launch", "Partner"],
   },
   {
     slug: "harvey", name: "Harvey", category: "Legal AI / Professional Services AI", broadCategory: "コマース・業界特化", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
@@ -945,9 +945,9 @@ const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcl
 
 // 2026-08-19の全122社監査で、日本法人・常設拠点は確認できない一方、
 // 現行または過去の日本市場担当求人を公式に観測した企業。
-// salesRolesが1件以上なら「日本進出準備中」、0件なら「日本未進出・進出シグナルあり」と表示する。
+// salesRolesが1件以上なら「日本法人未確認・日本採用あり」、0件なら「日本法人未確認・過去に日本採用」と表示する。
 const preEntrySignalCompanySlugs = new Set([
-  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cognition", "cribl",
+  "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
 ]);
 
@@ -3058,7 +3058,7 @@ const publishedJobCounts = jobs.reduce((counts, job) => {
 }, new Map<string, number>());
 
 // 採用状況と営業求人数は、公開中と確認できた求人レコードから自動算出する。
-// 未進出企業は0件、進出準備シグナル企業は現行求人件数を保持する。
+// 日本向け求人未確認企業は0件、法人未確認・日本採用企業は現行求人件数を保持する。
 // どちらも求人温度からは solution-categories.ts 側で除外する。
 export const companies = publishedCompanyRecords.map((company): Company => {
   const entryStatus: Company["entryStatus"] = preEntrySignalCompanySlugs.has(company.slug)
@@ -3079,7 +3079,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         salesRoles,
         hiringStatus,
         lastChecked: "2026-08-19",
-        tags: [...new Set(["進出準備シグナル", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
+        tags: [...new Set(["法人未確認・日本採用", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
