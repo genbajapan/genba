@@ -1,7 +1,7 @@
 # X下書き: Genba二択 #01 Gurobi Optimization vs Neural Concept
 
 投稿予定: 2026-08-19 21:30（Asia/Tokyo）
-ステータス: Jio確認待ち・未予約
+ステータス: 不採用・未予約（2026-08-19 Jio確認: テーマの前提知識が必要で、読み応えと入口の分かりやすさが不足）
 比較テーマ: 製造業の意思決定を変えるなら、計画か、設計か
 使用企業: Gurobi Optimization / Neural Concept
 
