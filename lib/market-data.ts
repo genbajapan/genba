@@ -945,7 +945,7 @@ const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcl
 
 // 2026-08-19の全122社監査で、日本法人・常設拠点は確認できない一方、
 // 現行または過去の日本市場担当求人を公式に観測した企業。
-// salesRolesが1件以上なら「日本法人未確認・日本採用あり」、0件なら「日本法人未確認・過去に日本採用」と表示する。
+// salesRolesが1件以上なら「日本進出の兆しあり」、0件なら「過去に日本進出の兆しあり」と表示する。
 const preEntrySignalCompanySlugs = new Set([
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
@@ -3058,7 +3058,7 @@ const publishedJobCounts = jobs.reduce((counts, job) => {
 }, new Map<string, number>());
 
 // 採用状況と営業求人数は、公開中と確認できた求人レコードから自動算出する。
-// 日本向け求人未確認企業は0件、法人未確認・日本採用企業は現行求人件数を保持する。
+// 日本向け求人未確認企業は0件、日本進出の兆しあり企業は現行求人件数を保持する。
 // どちらも求人温度からは solution-categories.ts 側で除外する。
 export const companies = publishedCompanyRecords.map((company): Company => {
   const entryStatus: Company["entryStatus"] = preEntrySignalCompanySlugs.has(company.slug)
@@ -3079,7 +3079,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         salesRoles,
         hiringStatus,
         lastChecked: "2026-08-19",
-        tags: [...new Set(["法人未確認・日本採用", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
+        tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });

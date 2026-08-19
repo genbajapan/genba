@@ -85,7 +85,9 @@ export default function CompanyExplorer({
       ? true
       : entry === "pre-entry"
         ? Boolean(company.entryStatus)
-        : company.entryStatus === entry;
+        : entry === "pre-entry-signal"
+          ? company.entryStatus === "pre-entry-signal" && company.salesRoles > 0
+          : company.entryStatus === entry;
     const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
     const matchesOpenJobs = !openJobsOnly || companySlugsWithOpenJobs.has(company.slug);
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters && matchesOpenJobs;

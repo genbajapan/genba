@@ -39,7 +39,7 @@ Genba分析：
 AはAI開発・Product Securityから入りやすい。
 BはIAM・GRC・CISOから入りやすい。
 
-Lakeraは過去にJapan AEを募集していたが、現在は終了。日本法人・国内拠点も未確認のため、Genbaでは「日本法人未確認・過去に日本採用」として継続観測する。
+Lakeraは過去にJapan AEを募集していたが、現在は終了。日本法人・国内拠点も未確認のため、Genbaでは「過去に日本進出の兆しあり」として継続観測する。現行の「日本進出の兆しあり」には含めない。
 
 SaviyntはStrategic AEを日本で募集中。
 

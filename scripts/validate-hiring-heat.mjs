@@ -210,6 +210,13 @@ const explorerComponent = fs.readFileSync(path.join(root, "components/CompanyExp
 if (!explorerComponent.includes("<span>本社所在地</span>") || !explorerComponent.includes('setOptionalParam("hq"')) {
   errors.push("企業一覧にURL同期する本社所在地フィルターがありません。");
 }
+if (!explorerComponent.includes('company.entryStatus === "pre-entry-signal" && company.salesRoles > 0')) {
+  errors.push("『日本進出の兆しあり』フィルターから過去シグナルのみの企業を除外できません。");
+}
+const entryStatusSource = fs.readFileSync(path.join(root, "lib/company-entry-status.ts"), "utf8");
+for (const required of ["日本進出の兆しあり", "日本法人・拠点設立予定の公式発表", "日本責任者・日本市場担当者", "現行の日本市場向け公式求人", "法人の有無や雇用主体とは分けて表示"]) {
+  if (!entryStatusSource.includes(required)) errors.push(`『日本進出の兆しあり』の表示名・定義が不足しています: ${required}`);
+}
 for (const requiredSort of ["最終更新が新しい順", "新着求人が新しい順", "求人が多い順", "企業名 A–Z", "日本進出が早い順", "日本進出が遅い順", "日本法人での想定従業員数が多い順", "日本法人での想定従業員数が少ない順", "日本法人設立が早い順", "日本法人設立が遅い順"]) {
   if (!companyListSortOptions.some((option) => option.label === requiredSort)) errors.push(`企業一覧に並び替えがありません: ${requiredSort}`);
 }

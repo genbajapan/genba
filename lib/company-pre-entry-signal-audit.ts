@@ -115,7 +115,7 @@ function unique(values: string[]) {
 function buildAssessment(profile: ActiveSignalProfile, companySourceIds: string[], jobSourceId: string, registrySourceId: string): JapanEntryAssessment {
   const evidenceIds = unique([jobSourceId, ...companySourceIds]);
   return {
-    verdict: `日本法人未確認・日本採用あり。${profile.roleSignal}。一方、${profile.marketContext}ため、日本法人がある企業とは扱わない。`,
+    verdict: `日本進出の兆しあり。${profile.roleSignal}。一方、${profile.marketContext}ため、日本法人がある企業とは扱わない。`,
     factSignals: [
       { title: "現行の日本市場担当求人", body: profile.roleSignal, sourceIds: [jobSourceId] },
       { title: "法人・拠点の確認状況", body: profile.marketContext, sourceIds: [registrySourceId, jobSourceId] },
@@ -164,7 +164,7 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
 
     intelligence.researchedAt = checkedAt;
     intelligence.marketStatus.genbaVerdict = {
-      headline: "日本法人未確認・日本採用あり：現行の日本市場担当求人を確認。",
+      headline: "日本進出の兆しあり：現行の日本市場担当求人を確認。",
       body: `${profile.roleSignal}。${profile.marketContext}。日本で働く担当者がいる場合を含む分類で、求人を日本法人設立・拠点開設・国内売上の証明とは分けて継続観測する。`,
     };
     intelligence.marketStatus.japanGrowth = {
