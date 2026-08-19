@@ -4,7 +4,7 @@
 
 ## 方針
 
-- 配信日: 毎週月曜日・木曜日・土曜日（日本時間）
+- 配信日時: 毎週月曜日・木曜日・土曜日19:30（日本時間）
 - 送信者名: `Genba`
 - 送信元: `js@genbajapan.com`
 - 登録項目: メールアドレスのみ
@@ -60,14 +60,10 @@ NEXT_PUBLIC_KIT_FORM_URL=<FormのShare URL>
 - メール本文からGenbaへ戻す全リンクにはUTMを付ける。各社CTAは`utm_source=newsletter`、`utm_medium=email`、`utm_campaign=genba_hakkutsu_<号数3桁>`、`utm_content=company_<掲載順2桁>_<企業slug>`の固定形式とする（例: `https://genbajapan.com/companies/stripe?utm_source=newsletter&utm_medium=email&utm_campaign=genba_hakkutsu_001&utm_content=company_01_stripe`）
 - 末尾の企業一覧は`utm_content=footer_companies`、求人一覧は`footer_jobs`、日本未進出一覧は`footer_preentry`、スポンサー相談は`footer_sponsor`とする。既存queryがあるURLではUTMを`&`で追加し、`#`がある場合はUTMをfragmentより前に置く
 - Kitのclick trackingだけに依存しない。配信前のテストメールで、5社すべてと末尾CTAの遷移先URLに上記UTMが残ることを確認する
-- 配信曜日は日本時間の月曜日・木曜日・土曜日に固定する。通常運用へ移る際の基準時刻は19:30とする
-- 配信時刻の初期検証では、朝7:30・昼12:15・夜19:30（すべて日本時間）の3枠を使う。曜日差を時間帯差と誤認しないよう、3週間を1サイクルとして次の順に入れ替える
-  - 1週目: 月19:30 / 木7:30 / 土12:15
-  - 2週目: 月12:15 / 木19:30 / 土7:30
-  - 3週目: 月7:30 / 木12:15 / 土19:30
+- 配信日時は日本時間の月曜日・木曜日・土曜日19:30に固定する。朝・昼・夜の配信時刻ローテーションは行わない
 - 各号に日本時間の予約日時を記録する。Kitのaccount timezoneが日本時間でない場合は、予約確認画面のtimezoneとUTC offsetを確認し、日本時間へ換算してから確定する
-- 時間帯評価は24時間・72時間のunique open rate、unique click rate、CTA別click、reply、unsubscribeを記録する。開封率はmail privacy機能の影響を受けるため、click率とreply率を併記して判断する
-- 件名A/B testと配信時刻testを同じ号で同時に行わない。まず3サイクル（9週間）を目安に蓄積し、購読者数が少ない期間は暫定傾向として扱う
+- 配信後は24時間・72時間のunique open rate、unique click rate、CTA別click、reply、unsubscribeを記録する。開封率はmail privacy機能の影響を受けるため、click率とreply率を併記して判断する
+- 件名や構成のA/B testを行う場合も配信時刻は19:30から動かさず、複数要因を同時に変えない。時刻変更が必要と考えられる場合は、実績をJioへ報告して明示判断を待つ
 - 週3回を超える臨時配信は原則行わない
 - 公式情報とGenba分析を分ける
 - X投稿と同様に、メール配信はJioが内容を確認して明示承認した場合だけ実行する
