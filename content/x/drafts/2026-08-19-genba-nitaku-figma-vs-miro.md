@@ -1,7 +1,7 @@
 # X下書き: Genba二択 #01 Figma vs Miro
 
 投稿予定: 2026-08-19 21:30（Asia/Tokyo）
-ステータス: Jio確認待ち・未予約
+ステータス: 不採用・未予約（2026-08-19 Jio確認: 比較が浅く、Genba固有の発見価値が弱いため差し替え）
 比較テーマ: 同じコラボレーション領域で、どちらの営業力を鍛えたいか
 使用企業: Figma / Miro
 
@@ -56,4 +56,3 @@ https://genbajapan.com/companies?utm_source=x&utm_medium=organic_social&utm_camp
 - 会社全体の営業モデルではなく、現在公開中のFigma SMB AEとMiro Strategic AEの求人比較
 - 企業の評価、勝者、応募推奨ではない
 - `#外資IT #転職`は、定期2シリーズの指定を自動適用せず、本投稿には付けない
-
