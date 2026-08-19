@@ -25,6 +25,7 @@ import { companies20260816, jobs20260816 } from "@/lib/company-additions-2026-08
 import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additions-2026-08-17-daily";
 import { companies20260818Daily, jobs20260818Daily } from "@/lib/company-additions-2026-08-18-daily";
 import { companies20260819Daily, jobs20260819Daily } from "@/lib/company-additions-2026-08-19-daily";
+import { companies20260820Daily, jobs20260820Daily } from "@/lib/company-additions-2026-08-20-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -921,6 +922,7 @@ const companyRecords: Company[] = [
   ...companies20260817BatchTwentyThree,
   ...companies20260818Daily,
   ...companies20260819Daily,
+  ...companies20260820Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -938,17 +940,18 @@ if (unclassifiedPaymentCompanies.length) {
 }
 
 const publiclyExcludedCompanySlugs = new Set([
-  "salesforce", "servicenow", "datadog", "zscaler", "veeva",
+  "salesforce", "servicenow", "datadog", "zscaler", "veeva", "perforce",
   ...paymentConflictCompanySlugs,
 ]);
 const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
 
-// 2026-08-19の全122社監査で、日本法人・常設拠点は確認できない一方、
+// 2026-08-20の全社監査で、日本法人・常設拠点は確認できない一方、
 // 現行または過去の日本市場担当求人を公式に観測した企業。
 // salesRolesが1件以上なら「日本進出の兆しあり」、0件なら「過去に日本進出の兆しあり」と表示する。
 const preEntrySignalCompanySlugs = new Set([
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
+  "deepgram",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1353,6 +1356,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260820Daily,
   ...jobs20260819Daily,
   ...jobs20260818Daily,
   ...jobs20260817BatchTwentyThree,
@@ -3031,6 +3035,8 @@ const closedJobIds = new Set([
   "datadog-commercial-account-executive-japan",
   "docusign-field-marketing-specialist-japan",
   "cursor-director-channel-partners-tokyo",
+  "extreme-networks-sr-services-sales-account-executive-tokyo-current",
+  "perforce-enterprise-account-executive-delphix-japan-9eeec4e8",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([
@@ -3046,7 +3052,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-19" };
+      : { ...job, lastChecked: "2026-08-20" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);

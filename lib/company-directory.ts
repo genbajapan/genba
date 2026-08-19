@@ -21,6 +21,16 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  twilio: { officialWebsite: { url: "https://www.twilio.com/ja-jp", locale: "ja" } },
+  "fusion-worldwide": { officialWebsite: { url: "https://www.fusionww.jp/", locale: "ja" } },
+  perforce: {
+    officialWebsite: { url: "https://www.perforce.com/", locale: "global" },
+    globalScaleFallback: { value: "1,700人超", detail: "2026年8月20日時点の会社公式表示。", sourceUrl: "https://www.perforce.com/company", sourceLabel: "Perforce会社情報" },
+  },
+  deepgram: {
+    officialWebsite: { url: "https://deepgram.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/deepgram/"),
+  },
   salesforce: { officialWebsite: { url: "https://www.salesforce.com/jp/", locale: "ja" } },
   mongodb: { officialWebsite: { url: "https://www.mongodb.com/ja-jp", locale: "ja" } },
   braze: { officialWebsite: { url: "https://www.braze.com/ja", locale: "ja" } },

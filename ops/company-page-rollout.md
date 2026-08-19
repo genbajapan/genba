@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-19 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全122社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 122）
+全125社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 125）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -17,15 +17,15 @@
 |HOT|Cohere|3|公開済み|はい|なし|
 |HOT|Coupa|6|公開済み|はい|なし|
 |HOT|Cribl|3|公開済み|はい|なし|
-|HOT|Cursor|5|公開済み|はい|なし|
+|HOT|Cursor|4|公開済み|はい|なし|
 |HOT|Dataiku|3|公開済み|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|Deel|4|公開済み|はい|なし|
 |HOT|DeepL|7|公開済み|はい|なし|
-|HOT|DocuSign|7|公開済み|はい|なし|
+|HOT|DocuSign|6|公開済み|はい|なし|
 |HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
-|HOT|Extreme Networks|4|公開済み|はい|なし|
+|HOT|Extreme Networks|3|公開済み|はい|なし|
 |HOT|Figma|8|公開済み|はい|なし|
 |HOT|Fivetran|4|公開済み|はい|なし|
 |HOT|Glean|3|公開済み|はい|なし|
@@ -67,9 +67,11 @@
 |Selective|Black Duck|1|公開済み|はい|なし|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
+|Selective|Deepgram|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
+|Selective|Fusion Worldwide|1|公開済み|はい|なし|
 |Selective|GitLab|1|公開済み|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Ivanti|1|公開済み|はい|なし|
@@ -83,6 +85,7 @@
 |Selective|Similarweb|1|公開済み|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Tanium|1|公開済み|はい|なし|
+|Selective|Twilio|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|WatchGuard Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|

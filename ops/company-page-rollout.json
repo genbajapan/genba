@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-19",
+  "auditedAt": "2026-08-20",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 122,
+    "total": 125,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 122
+      "公開済み": 125
     },
     "byPriority": {
       "HOT": 44,
       "Active": 12,
-      "Selective": 25,
+      "Selective": 28,
       "求人なし": 41
     },
-    "standardReady": 122
+    "standardReady": 125
   },
   "companies": [
     {
@@ -137,7 +137,7 @@
       "slug": "cursor",
       "company": "Cursor",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -182,7 +182,7 @@
       "slug": "docusign",
       "company": "DocuSign",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 6,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -209,7 +209,7 @@
       "slug": "extreme-networks",
       "company": "Extreme Networks",
       "priority": "HOT",
-      "salesRoles": 4,
+      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -584,6 +584,15 @@
       "missingFields": []
     },
     {
+      "slug": "deepgram",
+      "company": "Deepgram",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "doubleverify",
       "company": "DoubleVerify",
       "priority": "Selective",
@@ -604,6 +613,15 @@
     {
       "slug": "fireblocks",
       "company": "Fireblocks",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "fusion-worldwide",
+      "company": "Fusion Worldwide",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -721,6 +739,15 @@
     {
       "slug": "tanium",
       "company": "Tanium",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "twilio",
+      "company": "Twilio",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",

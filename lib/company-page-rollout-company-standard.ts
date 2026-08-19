@@ -887,6 +887,34 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     description: "LangChain、LangGraph、LangSmithでAI agentの開発・評価・運用を支援。国内事例はあるが日本法人・拠点・専任求人は未確認。",
     lastChecked: "2026-08-19",
   },
+  twilio: {
+    category: "顧客エンゲージメント・通信API・CPaaS",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Twilio Japan合同会社・東京都渋谷区（2018年設立）",
+    description: "Voice、Messaging、Email、Verify、Flex、SegmentをAPIとcustomer dataでつなぐ顧客engagement基盤。日本でStrategic Account Executiveを公式募集。",
+    lastChecked: "2026-08-20",
+  },
+  perforce: {
+    category: "DevOps・テストデータ管理・開発者ツール",
+    hq: "ミネソタ州ミネアポリス（米国）",
+    japanPresence: "Delphix Software合同会社・東京都港区／国内販売partner",
+    description: "code、quality、test data、infrastructure automationをportfolioで提供。日本在住RemoteのEnterprise Account Executive - Delphixを公式募集。",
+    lastChecked: "2026-08-20",
+  },
+  "fusion-worldwide": {
+    category: "半導体・電子部品調達・Supply Chain Intelligence",
+    hq: "ニューハンプシャー州ポーツマス（米国）",
+    japanPresence: "Fusion Trade Japan合同会社・東京／丸の内（2021年設立）",
+    description: "半導体・電子部品の不足、EOL、余剰在庫、品質riskをglobal sourcing、inspection、market intelligenceで解く独立系distributor。東京でSales Account Executiveを公式募集。",
+    lastChecked: "2026-08-20",
+  },
+  deepgram: {
+    category: "音声AI・音声認識・Voice Agent基盤",
+    hq: "カリフォルニア州サンフランシスコ（米国）",
+    japanPresence: "Japan Country Leader求人（日本法人・常設拠点は未確認）",
+    description: "real-timeのSTT、TTS、Voice Agent APIを提供。日本市場を立ち上げるSales Country Leaderを公式募集しているが、日本法人・常設拠点は未確認。",
+    lastChecked: "2026-08-20",
+  },
 };
 
 export function standardizeRolloutCompany(company: Company): Company {

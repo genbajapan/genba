@@ -50,12 +50,7 @@ for (const slug of ["servicenow"]) batchSlugs.add(slug);
 for (const slug of ["tanium", "sayari", "doubleverify", "similarweb", "appsflyer", "bluematrix", "black-duck", "ivanti"]) batchSlugs.add(slug);
 for (const slug of ["atlassian", "dynatrace"]) batchSlugs.add(slug);
 for (const slug of ["gitlab", "watchguard"]) batchSlugs.add(slug);
-
-const temporarilyUnverifiableJobIds = new Set([
-  "rubrik-customer-experience-manager-japan-current",
-  "rubrik-mid-market-account-executive-tokyo-current",
-  "appsflyer-growth-account-manager-tokyo",
-]);
+for (const slug of ["twilio", "perforce", "fusion-worldwide", "deepgram"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -179,6 +174,34 @@ const companyResearch: Record<string, {
     positive: ["東京onsiteのCountry Managerとしてsales strategy、revenue、forecast、team、distribution、MSP・channelを統括する。", "25,000 MSP、179カ国のpartner、国内customer storyを持ち、channel-firstのsecurity事業を率いられる。"],
     negative: ["非公開企業で日本売上、顧客数、team人数、seller達成率、報酬、権限範囲は非公開。", "installed base、partner productivity、service attach、P&L・pricing・hiringのdecision rightを面接で確認する必要がある。"],
     next: ["大規模Cybersecurity Country Manager", "APAC Channel・Sales Vice President", "Managed Security事業責任者"],
+  },
+  twilio: {
+    name: "Twilio", domain: "Customer Engagement・CPaaS・Strategic Sales", officialUrl: "https://jobs.twilio.com/careers?pid=1099553600898&sort_by=timestamp&start=0",
+    communityUrl: "https://www.glassdoor.com/Overview/Working-at-Twilio-EI_IE410790.11%2C17.htm", communityLabel: "Glassdoor Twilio global reviews",
+    positive: ["日本RemoteのStrategic AEとして既存大手顧客のmulti-product expansionを担う。", "Q2 2026はorganic growth 17%、DBNER 116%、国内法人22人と複数の国内事例を確認。"],
+    negative: ["日本売上、顧客数、担当account、gross margin、quota、達成率、数値報酬は非公開。", "通信原価、discount、customer concentration、product別creditを面接で検証する必要がある。"],
+    next: ["Global・Strategic Account Director", "Customer Engagement Sales Leadership", "Japan・APAC Communications Platform Leadership"],
+  },
+  perforce: {
+    name: "Perforce Software", domain: "Test Data Management・DevOps・Data Compliance", officialUrl: "https://jobs.lever.co/perforce/9eeec4e8-9bc0-4a07-9ac1-3cbd99236b7d",
+    communityUrl: "https://www.glassdoor.com/Overview/Working-at-Perforce-Software-EI_IE381047.11%2C28.htm", communityLabel: "Glassdoor Perforce Software global reviews",
+    positive: ["Japan based RemoteのEnterprise AEとしてDelphixのdata provisioning・masking・complianceを売る。", "20,000社超、Fortune 100の75%超と日本法人・partner基盤を確認。"],
+    negative: ["非公開企業で日本売上、顧客数、team、quota、達成率、数値報酬は非公開。", "買収後のportfolio ownership、delivery capacity、script・cloud-nativeとのTCOを検証する必要がある。"],
+    next: ["Data Platform Strategic Sales", "DevOps・Data Security Sales Leadership", "Japan・APAC Portfolio Sales Leadership"],
+  },
+  "fusion-worldwide": {
+    name: "Fusion Worldwide", domain: "半導体・電子部品調達・Supply Chain Sales", officialUrl: "https://job-boards.greenhouse.io/fusionworldwide/jobs/5079961003",
+    communityUrl: "https://www.glassdoor.co.uk/Reviews/Fusion-Worldwide-Reviews-E39187.htm", communityLabel: "Glassdoor Fusion Worldwide global reviews",
+    positive: ["東京officeのSales AEとして新規開拓、価格・納期交渉、global Purchasingとの案件実行を担う。", "会社公式は年間売上20億ドル超、8,500 supplier、20超拠点、日本公式は東京16人を掲載。"],
+    negative: ["日本売上、顧客数、account数、quota、pay mix、達成率、repeat gross profitは非公開。", "scarcity時の価格、source quality、RMA・liability、spotからrepeat businessへの転換を面接で検証する必要がある。"],
+    next: ["Semiconductor・Supply Chain Strategic Sales", "Procurement・Distribution Sales Leadership", "Japan・APAC Electronic Components Leadership"],
+  },
+  deepgram: {
+    name: "Deepgram", domain: "Voice AI・Developer Infrastructure・Country Build", officialUrl: "https://jobs.ashbyhq.com/Deepgram/3ecb28e4-4ce3-468c-8bf2-e2b3c4a722bf",
+    communityUrl: "https://www.glassdoor.com/Overview/Working-at-Deepgram-EI_IE1404455.11%2C19.htm", communityLabel: "Glassdoor Deepgram global reviews",
+    positive: ["Japan Country Leaderとしてpipeline・ARR、direct・partner sales、team buildを0→1で担う。", "Series C 1.3億ドル、1,300社超、20万developerとVoice AIのproduction事例を確認。"],
+    negative: ["日本法人、office、雇用主体、国内顧客、team、quota、報酬は非公開。", "日本語accuracy、latency、privacy、human handoff、local deliveryを実環境で検証する必要がある。"],
+    next: ["Voice AI Country Manager", "APAC AI Infrastructure Sales Vice President", "AI・Customer Experience事業責任者"],
   },
   servicenow: {
     name: "ServiceNow", domain: "Enterprise Workflow・AI Platform", officialUrl: "https://careers.servicenow.com/jobs/?search=&country=Japan",
@@ -1223,7 +1246,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
     ...job,
     location: normalizeJapanese(job.location),
     language,
-    lastChecked: temporarilyUnverifiableJobIds.has(job.id) ? job.lastChecked : "2026-08-18",
+    lastChecked: job.lastChecked,
     compensationReality: compensation ? compensation.headline : `日本向けの公開報酬レンジは確認できない。${role.label}の市場benchmarkから【Genba仮説】を算定。`,
     compensationResearch: compensation ? {
         researchedAt: "2026-08-18",

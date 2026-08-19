@@ -1,6 +1,6 @@
 import type { CompanyPublicIntelligence, JapanEntryAssessment, ResearchSource } from "@/lib/company-public-intelligence";
 
-const checkedAt = "2026-08-19";
+const checkedAt = "2026-08-20";
 
 type ActiveSignalProfile = {
   name: string;
@@ -105,6 +105,12 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
     jobUrl: "https://jobs.lever.co/zilliz/8144e236-2836-4980-92cf-b6501ce0f81c",
     roleSignal: "Enterprise AEとFounding Field Engineerの日本向け現行求人を確認",
     marketContext: "Tokyo Hybridのfounding teamとTokyo cloud regionは確認できるが、日本法人・常設拠点は確認できない",
+  },
+  deepgram: {
+    name: "Deepgram",
+    jobUrl: "https://jobs.ashbyhq.com/Deepgram/3ecb28e4-4ce3-468c-8bf2-e2b3c4a722bf",
+    roleSignal: "日本のpipeline・ARR、direct・partner sales、team buildを担うSales Country Leaderの現行求人を確認",
+    marketContext: "日本市場の立ち上げ採用は確認できるが、日本法人・常設拠点は確認できない",
   },
 };
 

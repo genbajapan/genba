@@ -88,12 +88,16 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   dynatrace: { corporateNumber: "4011003001897", entityName: "Dynatrace合同会社", insuredCount: 41 },
   gitlab: { corporateNumber: "6010403021867", entityName: "GitLab合同会社", insuredCount: 58 },
   cognition: { corporateNumber: "8010003050587", entityName: "Cognition AI Japan合同会社" },
+  twilio: { corporateNumber: "1011003009480", entityName: "Twilio Japan合同会社", insuredCount: 22 },
+  perforce: { corporateNumber: "4010403012901", entityName: "Delphix Software合同会社" },
+  "fusion-worldwide": { corporateNumber: "9010003036643", entityName: "Fusion Trade Japan合同会社", insuredCount: 13 },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
   "gong", "harvey", "clay", "vanta", "writer", "rippling", "pinecone", "intercom", "addepar", "sixsense",
   "apollo-io", "tines", "attio", "retool", "island", "1password", "klaviyo", "airtable", "mistral-ai", "lovable",
   "pigment", "ironclad", "vercel", "langchain", "lakera",
+  "deepgram",
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
 ]);
@@ -113,7 +117,7 @@ const AUDITED_SLUGS = new Set([
   "patsnap", "netskope", "mambu", "nice", "island", "1password", "dialpad", "fivetran", "klaviyo", "shopify",
   "zilliz", "airtable", "figma", "mistral-ai", "tools-for-humanity", "lovable", "tanium", "sayari", "doubleverify", "similarweb",
   "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad", "atlassian", "dynatrace", "vercel",
-  "gitlab", "watchguard", "langchain",
+  "gitlab", "watchguard", "langchain", "twilio", "perforce", "fusion-worldwide", "deepgram",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。

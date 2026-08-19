@@ -18,6 +18,7 @@ import { daily20260817IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { additions20260817BatchTwentyThreeIntelligenceBySlug } from "@/lib/company-public-intelligence-additions-2026-08-17-batch-23";
 import { daily20260818IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-18";
 import { applyDaily20260819Closures, daily20260819IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-19";
+import { applyDaily20260820Closures, daily20260820IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-20";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -45,6 +46,7 @@ import { applyCompanyPageRolloutBatchTwentyThree } from "@/lib/company-page-roll
 import { applyCompanyPageRolloutBatchTwentyFour } from "@/lib/company-page-rollout-batch-24";
 import { applyCompanyPageRolloutBatchTwentyFive } from "@/lib/company-page-rollout-batch-25";
 import { applyCompanyPageRolloutBatchTwentySix } from "@/lib/company-page-rollout-batch-26";
+import { applyCompanyPageRolloutBatchTwentySeven } from "@/lib/company-page-rollout-batch-27";
 import { applyJapanInsuredHeadcountAudit } from "@/lib/company-japan-insured-headcount";
 import { applyPreEntrySignalAudit } from "@/lib/company-pre-entry-signal-audit";
 
@@ -9619,6 +9621,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...additions20260817BatchTwentyThreeIntelligenceBySlug,
   ...daily20260818IntelligenceBySlug,
   ...daily20260819IntelligenceBySlug,
+  ...daily20260820IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9647,7 +9650,9 @@ applyCompanyPageRolloutBatchTwentyThree(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyFour(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentyFive(intelligenceBySlug);
 applyCompanyPageRolloutBatchTwentySix(intelligenceBySlug);
+applyCompanyPageRolloutBatchTwentySeven(intelligenceBySlug);
 applyDaily20260819Closures(intelligenceBySlug);
+applyDaily20260820Closures(intelligenceBySlug);
 applyPreEntrySignalAudit(intelligenceBySlug);
 applyJapanInsuredHeadcountAudit(intelligenceBySlug);
 
