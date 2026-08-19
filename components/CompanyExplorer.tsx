@@ -229,13 +229,6 @@ export default function CompanyExplorer({
           <button type="button" onClick={() => { clearReturnTarget(); setTier("すべて"); }}>絞り込みを解除</button>
         </div>
       )}
-      {entry !== "すべて" && (
-        <div className="entry-filter-summary">
-          <div><span>進出状況で絞り込み中</span><strong>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_FILTER_LABEL : entry === "not-entered" ? "日本未進出" : "日本法人未確認"}</strong></div>
-          <p>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_DEFINITION : entry === "not-entered" ? "日本に来たら面白そうな企業をGenba編集長がピックアップ。" : "日本法人・国内拠点を確認できない企業を、日本採用の有無を分けて表示"}</p>
-          <button type="button" onClick={() => changeEntry("すべて")}>絞り込みを解除</button>
-        </div>
-      )}
       <div className="filter-panel company-filter-panel">
         <label className="search-field">
           <span>企業・カテゴリを検索</span>
@@ -262,6 +255,13 @@ export default function CompanyExplorer({
           <button className={entry === "pre-entry-signal" ? "active entry-active" : ""} aria-pressed={entry === "pre-entry-signal"} onClick={() => changeEntry(entry === "pre-entry-signal" ? "すべて" : "pre-entry-signal")}>{PRE_ENTRY_SIGNAL_FILTER_LABEL}</button>
           <button className={entry === "not-entered" ? "active entry-active" : ""} aria-pressed={entry === "not-entered"} onClick={() => changeEntry(entry === "not-entered" ? "すべて" : "not-entered")}>日本未進出</button>
         </div>
+        {entry !== "すべて" && (
+          <div className="entry-filter-summary">
+            <div><span>進出状況で絞り込み中</span><strong>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_FILTER_LABEL : entry === "not-entered" ? "日本未進出" : "日本法人未確認"}</strong></div>
+            <p>{entry === "pre-entry-signal" ? PRE_ENTRY_SIGNAL_DEFINITION : entry === "not-entered" ? "日本に来たら面白そうな企業をGenba編集長がピックアップ。" : "日本法人・国内拠点を確認できない企業を、日本採用の有無を分けて表示"}</p>
+            <button type="button" onClick={() => changeEntry("すべて")}>絞り込みを解除</button>
+          </div>
+        )}
       </div>
       <div className="company-results-toolbar">
         <p className="result-count" aria-live="polite">{entry === "pre-entry-signal" ? `${PRE_ENTRY_SIGNAL_FILTER_LABEL}企業${results.length}社を表示` : entry === "not-entered" ? `日本未進出の注目企業${results.length}社を表示` : entry === "pre-entry" ? `日本法人未確認企業${results.length}社を表示` : tier !== "すべて" ? `${tierLabels[tier]}に含まれる${results.length}社を表示` : openJobsOnly ? `現在求人ありの企業${results.length}社を表示` : `${results.length}社を表示`}</p>

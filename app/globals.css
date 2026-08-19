@@ -226,6 +226,7 @@ button, input, select { font: inherit; }
 .entry-filter-summary div > strong { margin-top: 4px; color: #715b0b; font-size: 18px; }
 .entry-filter-summary p { margin: 0; color: #665d3b; font-size: 11px; }
 .entry-filter-summary button { padding: 8px 11px; border: 1px solid #b99722; background: transparent; color: #715b0b; font-size: 10px; font-weight: 750; cursor: pointer; }
+.company-filter-panel .entry-filter-summary { grid-column: 1 / -1; margin-bottom: 0; }
 .content-section-tight { padding: 58px 0; }
 .surface-section { background: white; border-block: 1px solid var(--line); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 30px; }
