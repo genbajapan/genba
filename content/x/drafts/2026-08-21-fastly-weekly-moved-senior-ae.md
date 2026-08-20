@@ -42,7 +42,7 @@ https://genbajapan.com/companies/fastly?utm_source=x&utm_medium=organic_social&u
 
 シリーズ: 今週動いた外資
 確認日: 2026-08-21
-ステータス: @chosenshi08のX下書き保存済み・未投稿・未予約
+ステータス: 終了企画・投稿候補外（X保存済みの既存履歴。投稿・予約しない）
 
 ## 事実確認メモ
 
