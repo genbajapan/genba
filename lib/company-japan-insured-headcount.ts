@@ -2,6 +2,7 @@ import type { CompanyPublicIntelligence, ResearchSource } from "@/lib/company-pu
 
 const CHECKED_AT = "2026-08-18";
 const NEW_COMPANY_CHECKED_AT = "2026-08-19";
+const DAILY_20260821_CHECKED_AT = "2026-08-21";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -91,6 +92,8 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   twilio: { corporateNumber: "1011003009480", entityName: "Twilio Japan合同会社", insuredCount: 22 },
   perforce: { corporateNumber: "4010403012901", entityName: "Delphix Software合同会社" },
   "fusion-worldwide": { corporateNumber: "9010003036643", entityName: "Fusion Trade Japan合同会社", insuredCount: 13 },
+  dropbox: { corporateNumber: "8010401113045", entityName: "Dropbox Japan株式会社", insuredCount: 28 },
+  fastly: { corporateNumber: "6010401117015", entityName: "ファストリー株式会社", insuredCount: 35 },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
@@ -100,6 +103,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "deepgram",
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
+  "webflow",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -118,6 +122,7 @@ const AUDITED_SLUGS = new Set([
   "zilliz", "airtable", "figma", "mistral-ai", "tools-for-humanity", "lovable", "tanium", "sayari", "doubleverify", "similarweb",
   "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad", "atlassian", "dynatrace", "vercel",
   "gitlab", "watchguard", "langchain", "twilio", "perforce", "fusion-worldwide", "deepgram",
+  "dropbox", "fastly", "webflow",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -126,7 +131,11 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["gitlab", "watchguard", "langchain", "lakera"].includes(slug) ? NEW_COMPANY_CHECKED_AT : CHECKED_AT;
+  const checkedAt = ["dropbox", "fastly", "webflow"].includes(slug)
+    ? DAILY_20260821_CHECKED_AT
+    : ["gitlab", "watchguard", "langchain", "lakera"].includes(slug)
+      ? NEW_COMPANY_CHECKED_AT
+      : CHECKED_AT;
   return {
     id: `gbiz-headcount-${slug}`,
     label: entity ? `Gビズインフォ ${entity.entityName}` : "Gビズインフォ 法人検索",

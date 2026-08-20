@@ -11,6 +11,8 @@ const glassdoor = (name: string, id: string) => `https://www.glassdoor.com/Revie
 // 2026-08-17確認。数値は取得地域・filterで揺れるため、記事本文では快照としてのみ使う。
 // 個別投稿は事実認定せず、職種別の面接質問を作るための外部signalとして扱う。
 export const COMPANY_GLOBAL_REVIEW_PROFILES: Record<string, CompanyGlobalReviewProfile> = {
+  dropbox: { source: { label: "Glassdoor Dropbox global reviews", url: glassdoor("Dropbox", "415350") }, snapshot: "global employee reviewsを職種別の面接論点作成に限定して参照", positive: "product、柔軟な働き方、同僚、報酬に関する肯定theme", caution: "組織変更、career、management、workloadのteam差", scope: "global全職種。Japan Customer Successの専用集計ではない" },
+  fastly: { source: { label: "Glassdoor Fastly global reviews", url: glassdoor("Fastly", "814479") }, snapshot: "global employee reviewsを職種別の面接論点作成に限定して参照", positive: "technology、同僚、flexibility、学習に関する肯定theme", caution: "事業変更、leadership、sales execution、careerのteam差", scope: "global全職種。Japan Enterprise Salesの専用集計ではない" },
   adyen: { source: { label: "Glassdoor Adyen global reviews", url: glassdoor("Adyen", "684495") }, snapshot: "3.7/5、913件、71%が推奨", positive: "WLB、人、柔軟性、興味深いprojectを評価する声", caution: "昇進の見え方、manager、組織運営の地域・team差", scope: "global全職種。Japan・対象職種の専用集計ではない" },
   "abnormal-ai": { source: { label: "Glassdoor Abnormal AI global reviews", url: glassdoor("Abnormal-AI", "3146005") }, snapshot: "3.7〜3.9/5、約200件以上", positive: "成長、人、benefits、remoteを肯定する声", caution: "業務の反復性、孤立、career体験のteam差", scope: "global全職種" },
   aghanim: { source: { label: "Trustpilot Aghanim customer reviews", url: "https://ca.trustpilot.com/review/aghanim.com" }, snapshot: "customer review 2件のみ。employee reviewの十分な母数は未確認", positive: "少数の顧客投稿でproduct価値を肯定", caution: "employee experienceの根拠にはならず、創業期のmanager・資源・役割変更は面接確認必須", scope: "海外顧客review。employee reviewではない" },

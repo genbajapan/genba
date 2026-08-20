@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-21 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全125社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 125）
+全128社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 128）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -69,7 +69,9 @@
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Deepgram|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
+|Selective|Dropbox|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
+|Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Fusion Worldwide|1|公開済み|はい|なし|
 |Selective|GitLab|1|公開済み|はい|なし|
@@ -130,6 +132,7 @@
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|Vanta|0|公開済み|はい|なし|
 |求人なし|Vercel|0|公開済み|はい|なし|
+|求人なし|Webflow|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
 
 進捗状態と公開ゲートは `ops/company-page-standard.md` を正本とする。詳細な不足項目は `ops/company-page-rollout.json` を参照。

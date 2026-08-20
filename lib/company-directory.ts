@@ -21,6 +21,12 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  dropbox: { officialWebsite: { url: "https://www.dropbox.com/ja/", locale: "ja" } },
+  fastly: { officialWebsite: { url: "https://www.fastly.com/jp/", locale: "ja" } },
+  webflow: {
+    officialWebsite: { url: "https://webflow.com/", locale: "global" },
+    globalScaleFallback: { value: "900人超", detail: "2026年8月21日時点の会社公式表示。", sourceUrl: "https://webflow.com/company/about", sourceLabel: "Webflow会社情報" },
+  },
   twilio: { officialWebsite: { url: "https://www.twilio.com/ja-jp", locale: "ja" } },
   "fusion-worldwide": { officialWebsite: { url: "https://www.fusionww.jp/", locale: "ja" } },
   perforce: {

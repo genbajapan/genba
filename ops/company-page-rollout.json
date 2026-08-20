@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-20",
+  "auditedAt": "2026-08-21",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 125,
+    "total": 128,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 125
+      "公開済み": 128
     },
     "byPriority": {
       "HOT": 44,
       "Active": 12,
-      "Selective": 28,
-      "求人なし": 41
+      "Selective": 30,
+      "求人なし": 42
     },
-    "standardReady": 125
+    "standardReady": 128
   },
   "companies": [
     {
@@ -602,8 +602,26 @@
       "missingFields": []
     },
     {
+      "slug": "dropbox",
+      "company": "Dropbox",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "dynatrace",
       "company": "Dynatrace",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "fastly",
+      "company": "Fastly",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -1144,6 +1162,15 @@
     {
       "slug": "vercel",
       "company": "Vercel",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "webflow",
+      "company": "Webflow",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

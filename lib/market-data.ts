@@ -26,6 +26,7 @@ import { companies20260817Daily, jobs20260817Daily } from "@/lib/company-additio
 import { companies20260818Daily, jobs20260818Daily } from "@/lib/company-additions-2026-08-18-daily";
 import { companies20260819Daily, jobs20260819Daily } from "@/lib/company-additions-2026-08-19-daily";
 import { companies20260820Daily, jobs20260820Daily } from "@/lib/company-additions-2026-08-20-daily";
+import { companies20260821Daily, jobs20260821Daily } from "@/lib/company-additions-2026-08-21-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -923,6 +924,7 @@ const companyRecords: Company[] = [
   ...companies20260818Daily,
   ...companies20260819Daily,
   ...companies20260820Daily,
+  ...companies20260821Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1356,6 +1358,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260821Daily,
   ...jobs20260820Daily,
   ...jobs20260819Daily,
   ...jobs20260818Daily,
@@ -3052,7 +3055,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-20" };
+      : { ...job, lastChecked: "2026-08-21" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3091,6 +3094,36 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-fastly-japan-senior-ae",
+    companySlug: "fastly",
+    date: "2026-08-21",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Fastlyが東京でSenior Account Executiveを募集",
+    summary: "8月20日に公式ATSが更新。Commerce・Financeを中心にGTM plan、new business、PoC、pricing、契約、account managementを担うHybridの役割です。",
+    source: { label: "Fastly Careers (Greenhouse)", url: "https://www.fastly.com/about/jobs/apply?gh_jid=6873321" },
+  },
+  {
+    id: "signal-dropbox-japan-csm",
+    companySlug: "dropbox",
+    date: "2026-08-21",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Dropboxが日本のCustomer Success Managerを募集",
+    summary: "大手顧客のdeployment、adoption、value realizationを持ち、Salesとretention・growthを進めるRemote Japanの役割です。",
+    source: { label: "Dropbox Careers", url: "https://jobs.dropbox.com/listing/6862441" },
+  },
+  {
+    id: "signal-webflow-japan-entry-watch",
+    companySlug: "webflow",
+    date: "2026-08-21",
+    type: "注目領域",
+    confidence: "公式確認",
+    title: "Webflowの日本進出条件を継続観測",
+    summary: "日本のcommunity・certified partner、JCT対応、Localizationは確認。一方、日本法人・常設拠点・Japan求人は未確認です。",
+    source: { label: "Webflow Open Roles", url: "https://webflow.com/company/careers/roles" },
+  },
   {
     id: "signal-atlassian-senior-csm-ended",
     companySlug: "atlassian",

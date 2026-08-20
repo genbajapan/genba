@@ -51,6 +51,7 @@ for (const slug of ["tanium", "sayari", "doubleverify", "similarweb", "appsflyer
 for (const slug of ["atlassian", "dynatrace"]) batchSlugs.add(slug);
 for (const slug of ["gitlab", "watchguard"]) batchSlugs.add(slug);
 for (const slug of ["twilio", "perforce", "fusion-worldwide", "deepgram"]) batchSlugs.add(slug);
+for (const slug of ["dropbox", "fastly"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -147,6 +148,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  dropbox: {
+    name: "Dropbox", domain: "Content Collaboration・Enterprise Search・Customer Success", officialUrl: "https://jobs.dropbox.com/listing/6862441",
+    communityUrl: "https://www.glassdoor.com/Reviews/Dropbox-Reviews-E415350.htm", communityLabel: "Glassdoor Dropbox global reviews",
+    positive: ["日本国内RemoteのCustomer Success Managerとして大手顧客のdeployment、adoption、value realizationを担う。", "Q2 2026はARR 25.66億米ドル、paying users 1,819万人で、国内の大容量共有・server移行・電子署名事例を確認。"],
+    negative: ["日本売上、顧客数、担当社数、renewal・expansion目標、達成率、数値報酬は非公開。", "Microsoft・Google・Box・Gleanとの重複、Dashの国内adoption、Salesとのcommercial responsibilityを面接で検証する必要がある。"],
+    next: ["Enterprise Customer Success Leadership", "AI Search・Content Transformation", "Japan・APAC Customer Outcomes Leadership"],
+  },
+  fastly: {
+    name: "Fastly", domain: "Edge Cloud・Application Security・Enterprise Sales", officialUrl: "https://www.fastly.com/about/jobs/apply?gh_jid=6873321",
+    communityUrl: "https://www.glassdoor.com/Reviews/Fastly-Reviews-E814479.htm", communityLabel: "Glassdoor Fastly global reviews",
+    positive: ["東京HybridのSenior Account ExecutiveとしてCommerce・Financeのnew businessからPoC、契約、account managementまで担う。", "Q2 2026は売上23%増、Security売上43%増、LTM NRR 117%で、毎日放送の国内定量事例も確認。"],
+    negative: ["日本売上、顧客数、territory、quota、達成率、数値報酬は非公開。", "Cloudflare・Akamai・cloud標準との競争、SE capacity、partner credit、performanceとsecurityのportfolio saleを面接で検証する必要がある。"],
+    next: ["Strategic・Industry Account Director", "Edge・Security Sales Leadership", "Japan・APAC Internet Infrastructure Leadership"],
+  },
   atlassian: {
     name: "Atlassian", domain: "Work Management・DevOps・ITSM・Customer Success", officialUrl: "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us",
     communityUrl: "https://www.repvue.com/companies/Atlassian", communityLabel: "RepVue Atlassian sales reviews",
