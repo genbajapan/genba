@@ -768,7 +768,12 @@ button, input, select { font: inherit; }
 .capital-read-metrics article > strong { display: block; margin-top: 7px; color: var(--navy); font-size: 17px; font-weight: 900; line-height: 1.35; }
 .capital-read-metrics article > b { display: block; margin-top: 5px; color: var(--signal); font-size: 10.5px; }
 .capital-read-metrics article > p { margin: 9px 0 0; color: #53666d; font-size: 10.5px; line-height: 1.65; }
+.capital-read-metrics-1 { grid-template-columns: 1fr; width: 25%; margin-inline: auto; }
+.capital-read-metrics-2 { grid-template-columns: repeat(2,minmax(0,1fr)); width: 50%; margin-inline: auto; }
+.capital-read-metrics-3 { grid-template-columns: repeat(3,minmax(0,1fr)); width: 75%; margin-inline: auto; }
 .capital-read-growth-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 20px; }
+.capital-read-growth-grid-1 { grid-template-columns: 1fr; width: calc((100% - 16px) / 3); margin-inline: auto; }
+.capital-read-growth-grid-2 { grid-template-columns: repeat(2,minmax(0,1fr)); width: calc((200% - 8px) / 3); margin-inline: auto; }
 .capital-read-growth-grid > article { position: relative; min-width: 0; padding: 21px; border: 1px solid #d8e4e1; background: #fbfdfc; }
 .capital-read-growth-grid > article > span:first-child { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #0b2a3b; color: #70d3c5; font-size: 10px; font-weight: 900; }
 .capital-read-growth-grid h5 { margin: 13px 0 0; color: var(--navy); font-size: 14px; line-height: 1.55; }
@@ -1574,7 +1579,9 @@ button, input, select { font: inherit; }
   .capital-read-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .capital-read-metrics article:nth-child(3) { border-top: 1px solid #d8e4e1; border-left: 0; }
   .capital-read-metrics article:nth-child(4) { border-top: 1px solid #d8e4e1; }
+  .capital-read-metrics-1,.capital-read-metrics-2,.capital-read-metrics-3 { width: 100%; }
   .capital-read-growth-grid { grid-template-columns: 1fr; }
+  .capital-read-growth-grid-1,.capital-read-growth-grid-2 { width: 100%; }
   .capital-read-signal-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .capital-read-signal-list article:nth-child(3) { border-top: 1px solid #d8e4e1; border-left: 0; }
   .capital-read-signal-list article:nth-child(4) { border-top: 1px solid #d8e4e1; }

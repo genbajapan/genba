@@ -291,7 +291,7 @@ function CapitalMarketReadPanel({ intelligence }: { intelligence: CompanyPublicI
           <h4>決算の数字をどう読むか</h4>
           <p>{analysis.asOf}時点。会社公表値とGenbaの読みを分けて記載しています。</p>
         </div>
-        <div className="capital-read-metrics">
+        <div className={`capital-read-metrics capital-read-metrics-${Math.min(analysis.metrics.length, 4)}`}>
           {analysis.metrics.map((metric) => (
             <article key={metric.label}>
               <span>{metric.label}</span>
@@ -309,7 +309,7 @@ function CapitalMarketReadPanel({ intelligence }: { intelligence: CompanyPublicI
           <span>02 / GROWTH</span>
           <h4>成長性を支える根拠</h4>
         </div>
-        <div className="capital-read-growth-grid">
+        <div className={`capital-read-growth-grid capital-read-growth-grid-${Math.min(analysis.growthDrivers.length, 3)}`}>
           {analysis.growthDrivers.map((driver, index) => (
             <article key={driver.title}>
               <span>0{index + 1}</span>
