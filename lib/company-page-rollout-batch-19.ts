@@ -254,10 +254,10 @@ function patchHalcyon(intelligence: CompanyPublicIntelligence) {
 function patchHarvey(intelligence: CompanyPublicIntelligence) {
   patch(intelligence, {
     slug: "harvey", leaderName: "Winston Weinberg", leaderLabel: "Co-founder・CEO", leaderUrl: "https://www.harvey.ai/about",
-    localName: "公開情報で確認不能", localLabel: "Japan法人・責任者", localUrl: "https://www.harvey.ai/company/careers",
+    localName: "公開情報で確認不能", localLabel: "Japan法人・責任者", localUrl: "https://www.harvey.ai/careers",
     companyId: "rollout-harvey-company", jobsId: "rollout-harvey-jobs", customerId: "rollout-harvey-mhm", externalId: metiAi.id, financeId: "rollout-harvey-funding",
     founded: "2022", foundedDetail: "Winston WeinbergとGabriel Pereyraがlaw firm・professional services向けdomain AIとして創業。",
-    localStatus: "2026", localDetail: "Mori Hamada & Matsumotoのfirmwide caseはあるが、公式Ashbyの現行391求人にJapan・Tokyoは0件。Singapore officeは2026年6月開設、日本法人・office・責任者は確認不能。",
+    localStatus: "2026", localDetail: "Mori Hamada & Matsumotoのfirmwide caseはあるが、公式Careersの現行勤務地にJapan・Tokyoはない。Singapore officeは2026年6月開設、日本法人・office・責任者は確認不能。",
     targets: ["法律事務所・弁護士", "企業法務・コンプライアンス", "金融・資産運用・専門サービス", "ナレッジ管理・法務オペレーション", "CIO・CISO・AIガバナンス"],
     competitors: "Thomson Reuters CoCounsel、Lexis+ AI、vLex Vincent、Microsoft・OpenAI・Anthropic、Luminance・Hebbia、legal research・DMS・内製RAG",
     feature: "Agents、Assistant、Vault、Knowledge、Shared Spaces、Contract Intelligence、Command Centerをlegal・professional workflowへ統合。",
@@ -286,7 +286,7 @@ function patchHarvey(intelligence: CompanyPublicIntelligence) {
       { id: "rollout-harvey-company", label: "Harvey About", url: "https://www.harvey.ai/about", kind: "企業公式", scope: "会社・leadership・mission", checkedAt: researchedAt },
       { id: "rollout-harvey-funding", label: "Harvey 110億米ドルvaluation", url: "https://www.harvey.ai/blog/harvey-raises-at-dollar11-billion-valuation-to-scale-agents-across-law-firms-and-enterprises", kind: "企業公式", scope: "funding・valuation・customer scale", checkedAt: researchedAt },
       { id: "rollout-harvey-arr", label: "Harvey Strategic Investment", url: "https://www.harvey.ai/blog/harvey-announces-strategic-investment-from-goldman-sachs-and-jp-morgan", kind: "企業公式", scope: "quarterly added ARR", checkedAt: researchedAt },
-      { id: "rollout-harvey-jobs", label: "Harvey Ashby API", url: "https://api.ashbyhq.com/posting-api/job-board/harvey?includeCompensation=true", kind: "企業公式", scope: "現行391求人・Japan 0件", checkedAt: researchedAt },
+      { id: "rollout-harvey-jobs", label: "Harvey Careers", url: "https://www.harvey.ai/careers", kind: "企業公式", scope: "現行求人・勤務地一覧・Japan 0件", checkedAt: "2026-08-20" },
       { id: "rollout-harvey-mhm", label: "Harvey Mori Hamada & Matsumoto Case", url: "https://www.harvey.ai/customers/mori-hamada-and-matsumoto", kind: "企業公式", scope: "国内firmwide customer proof", checkedAt: researchedAt },
       metiAi, fx,
     ],

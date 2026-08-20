@@ -845,7 +845,7 @@ const companyRecords: Company[] = [
   },
   {
     slug: "harvey", name: "Harvey", category: "Legal AI / Professional Services AI", broadCategory: "コマース・業界特化", hq: "San Francisco, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,
-    description: "2,400社超・70カ国超とSingapore拠点、日本顧客事例を持つLegal AI。日本専任組織の動きを継続観測。", lastChecked: "2026-08-12", careersUrl: "https://www.harvey.ai/company/careers", tags: ["日本未進出", "Legal AI", "Enterprise", "APAC", "Professional Services"], entryStatus: "not-entered",
+    description: "2,400社超・70カ国超とSingapore拠点、日本顧客事例を持つLegal AI。日本専任組織の動きを継続観測。", lastChecked: "2026-08-20", careersUrl: "https://www.harvey.ai/careers", tags: ["日本未進出", "Legal AI", "Enterprise", "APAC", "Professional Services"], entryStatus: "not-entered",
   },
   {
     slug: "clay", name: "Clay", category: "GTM Engineering / Sales Data", broadCategory: "CRM・顧客体験", hq: "New York, US", japanPresence: "日本法人・国内拠点を確認できず", hiringStatus: "継続観測", salesRoles: 0,

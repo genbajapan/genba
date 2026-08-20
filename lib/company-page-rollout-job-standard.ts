@@ -241,7 +241,7 @@ const companyResearch: Record<string, {
     next: ["Ransomware Resilience GTM", "Endpoint・Cyber Recovery Sales", "Japan Security Partner Leadership"],
   },
   harvey: {
-    name: "Harvey", domain: "Legal AI・Professional Services AI", officialUrl: "https://www.harvey.ai/company/careers",
+    name: "Harvey", domain: "Legal AI・Professional Services AI", officialUrl: "https://www.harvey.ai/careers",
     positive: ["1,300超の組織・10万超のlawyers・60超の国へ拡大し、Mori Hamada & Matsumotoのfirmwide caseを持つ。", "Agents、Vault、Knowledge、Contract Intelligenceを同じlegal workflowに統合する。"],
     negative: ["現行Japan求人・法人・office・責任者、recognized revenue・total ARR・profit・FCFは確認不能。", "legal privilege、hallucination、source traceability、data residency、professional responsibilityを案件ごとに検証する必要がある。"],
     next: ["Legal AI Enterprise GTM", "Professional Services AI Transformation", "AI Governance・Knowledge Platform Leadership"],
