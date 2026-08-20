@@ -1,6 +1,6 @@
 # Genbaニュースレター / Kit接続手順
 
-最終更新: 2026-08-15
+最終更新: 2026-08-20
 
 ## 方針
 
@@ -49,15 +49,28 @@ NEXT_PUBLIC_KIT_FORM_URL=<FormのShare URL>
 6. SPF・DKIM・DMARCの認証結果と迷惑メール判定を確認する
 7. CSVをエクスポートし、購読者データを月1回バックアップする
 
+### 毎号のテスト送信（必須）
+
+初期設定時の配信テストとは別に、`Genba発掘`は予約・本配信の前に毎号Kitからテスト送信する。次をすべて確認し、下書きのfront matterに`testedAt`を記録する。
+
+1. Fromが`Genba <js@genbajapan.com>`で、件名・プレヘッダー・号数が確定版と一致する
+2. デスクトップとスマートフォンで、濃紺ヘッダー、5社のカード、状態ラベル、末尾CTA、フッターが崩れない
+3. 5社すべてのCTA、末尾の企業一覧CTA、スポンサー相談導線が正しいページへ遷移する
+4. 上記のGenba内リンクに`utm_source=newsletter`、`utm_medium=email`、対象号の`utm_campaign`、対応する`utm_content`が残る
+5. 配信停止導線とKit所定の送信者情報が表示される
+6. 予約日時、timezone、UTC offset、配信対象数が意図どおりである
+
+1項目でも未確認または不合格がある場合は修正し、再度テスト送信する。`testedAt`がない号は予約・本配信しない。
+
 ## 月曜日・木曜日・土曜日の運用
 
 - シリーズ名は`Genba発掘`、各号は`Genba発掘 #NNN`の連番とし、過去の下書き・配信記録と重複させない
 - 1通5社の発見形式とし、選定条件・再掲載間隔・スポンサー枠は`docs/09-pivot-business-plan.md`と`ops/daily-task-workflow.md`に従う
 - 各社の見出しは`01 Twilio`のように、2桁の番号と会社名だけを表示する。分類用の補助見出しは付けない
 - 本文の書き出しは`Genba編集長です！`、続けて`皆さん、いつもありがとうございます。`に統一する
-- 読了時間は3分を標準とする。各社は`その会社ならではの魅力`と、太字の`仕事として見ると：`を2つの短い段落で伝える。日本未進出企業は後段を`日本進出を先回りすると：`へ置き換える
+- 読了時間は3分を上限とする。各社は`その会社ならではの魅力`と、太字の`仕事として見ると：`を2つの短い段落、20〜28秒程度で伝える。英語は公式の固有名詞・役職名・意味を保つのに必要な用語に絞る。日本未進出企業は後段を`日本進出を先回りすると：`へ置き換える
 - 短い段落と十分な改行を使い、事実、Genba分析、次の話題、CTAの境界が一目で分かるようにする
-- URLを本文へ直接貼らず、リンク先で得られる答えが分かる文字列へリンクを設定する
+- URLを本文へ直接貼らず、リンク先で得られる答えが分かる文字列へリンクを設定する。`論点を見る`、`構造を見る`などの抽象表現だけで終わらせず、`日本の3職種・組織・応募前の確認点を見る`のように求人・役割・日本組織・応募前の確認点を具体化する。日本未進出企業は、進出の兆し・成立条件・未確認点を示す
 - メール本文からGenbaへ戻す全リンクにはUTMを付ける。各社CTAは`utm_source=newsletter`、`utm_medium=email`、`utm_campaign=genba_hakkutsu_<号数3桁>`、`utm_content=company_<掲載順2桁>_<企業slug>`の固定形式とする（例: `https://genbajapan.com/companies/stripe?utm_source=newsletter&utm_medium=email&utm_campaign=genba_hakkutsu_001&utm_content=company_01_stripe`）
 - 末尾の企業一覧は`utm_content=footer_companies`、求人一覧は`footer_jobs`、日本未進出一覧は`footer_preentry`、スポンサー相談は`footer_sponsor`とする。既存queryがあるURLではUTMを`&`で追加し、`#`がある場合はUTMをfragmentより前に置く
 - Kitのclick trackingだけに依存しない。配信前のテストメールで、5社すべてと末尾CTAの遷移先URLに上記UTMが残ることを確認する
