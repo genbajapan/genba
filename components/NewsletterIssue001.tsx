@@ -3,7 +3,6 @@ import Container from "@/components/Container";
 
 type NewsletterCompany = {
   index: string;
-  kind: string;
   name: string;
   category: string;
   status: string;
@@ -18,7 +17,6 @@ type NewsletterCompany = {
 const companies: NewsletterCompany[] = [
   {
     index: "01",
-    kind: "有名企業",
     name: "Figma",
     category: "プロダクト開発・AI協働",
     status: "積極採用",
@@ -32,7 +30,6 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "02",
-    kind: "穴場企業",
     name: "Zilliz",
     category: "AIデータ基盤",
     status: "積極採用",
@@ -46,7 +43,6 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "03",
-    kind: "採用の動き",
     name: "Dialpad",
     category: "AI Communications",
     status: "採用中",
@@ -60,7 +56,6 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "04",
-    kind: "異色企業",
     name: "Planet",
     category: "衛星データ・地理空間情報",
     status: "採用中",
@@ -74,7 +69,6 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "05",
-    kind: "日本進出候補",
     name: "Airtable",
     category: "業務アプリ・AI workflow",
     status: "日本未進出",
@@ -122,7 +116,6 @@ export default function NewsletterIssue001() {
             <article className="newsletter-company" key={company.name}>
               <div className="newsletter-company-index">
                 <strong>{company.index}</strong>
-                <span>{company.kind}</span>
               </div>
               <div className="newsletter-company-body">
                 <div className="newsletter-company-title">
