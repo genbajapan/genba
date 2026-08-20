@@ -253,7 +253,7 @@ function patchHalcyon(intelligence: CompanyPublicIntelligence) {
 
 function patchHarvey(intelligence: CompanyPublicIntelligence) {
   patch(intelligence, {
-    slug: "harvey", leaderName: "Winston Weinberg", leaderLabel: "Co-founder・CEO", leaderUrl: "https://www.harvey.ai/about",
+    slug: "harvey", leaderName: "Winston Weinberg", leaderLabel: "Co-founder・CEO", leaderUrl: "https://www.harvey.ai/company",
     localName: "公開情報で確認不能", localLabel: "Japan法人・責任者", localUrl: "https://www.harvey.ai/careers",
     companyId: "rollout-harvey-company", jobsId: "rollout-harvey-jobs", customerId: "rollout-harvey-mhm", externalId: metiAi.id, financeId: "rollout-harvey-funding",
     founded: "2022", foundedDetail: "Winston WeinbergとGabriel Pereyraがlaw firm・professional services向けdomain AIとして創業。",
@@ -283,7 +283,7 @@ function patchHarvey(intelligence: CompanyPublicIntelligence) {
     ],
     roleLens: { salesMotion: "現行Japan求人なし。将来はtrusted legal workflowでlandし、Assistant、Vault、Knowledge、Agents、Contract Intelligence、enterprise governanceへexpandするmotionが想定される。", compensation: "対象求人なし。日本の給与・OTEは確認不能。", quota: "Japan TAM、quota、ACV、cycle、attainmentは確認不能。", collaboration: "Managing Partner、GC、lawyer、Knowledge、Legal Ops、IT、Security、Risk、Procurementを横断する想定。" },
     sources: [
-      { id: "rollout-harvey-company", label: "Harvey About", url: "https://www.harvey.ai/about", kind: "企業公式", scope: "会社・leadership・mission", checkedAt: researchedAt },
+      { id: "rollout-harvey-company", label: "Harvey Company", url: "https://www.harvey.ai/company", kind: "企業公式", scope: "会社・leadership・mission", checkedAt: "2026-08-20" },
       { id: "rollout-harvey-funding", label: "Harvey 110億米ドルvaluation", url: "https://www.harvey.ai/blog/harvey-raises-at-dollar11-billion-valuation-to-scale-agents-across-law-firms-and-enterprises", kind: "企業公式", scope: "funding・valuation・customer scale", checkedAt: researchedAt },
       { id: "rollout-harvey-arr", label: "Harvey Strategic Investment", url: "https://www.harvey.ai/blog/harvey-announces-strategic-investment-from-goldman-sachs-and-jp-morgan", kind: "企業公式", scope: "quarterly added ARR", checkedAt: researchedAt },
       { id: "rollout-harvey-jobs", label: "Harvey Careers", url: "https://www.harvey.ai/careers", kind: "企業公式", scope: "現行求人・勤務地一覧・Japan 0件", checkedAt: "2026-08-20" },

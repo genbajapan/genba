@@ -568,10 +568,12 @@ button, input, select { font: inherit; }
 .company-snapshot-strip-leadership > :nth-child(even) { border-left: 1px solid var(--line); }
 .company-snapshot-strip-leadership > :nth-child(n+3) { border-top: 1px solid var(--line); }
 .company-snapshot-people { display: grid; gap: 5px; margin-top: 4px; }
-.company-snapshot-people a { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; color: inherit; text-decoration: none; }
-.company-snapshot-people a:hover strong { color: var(--signal); }
+.company-snapshot-person { display: grid; gap: 5px; }
 .company-snapshot-people strong { margin-top: 0; }
-.company-snapshot-people small { flex-shrink: 0; color: var(--signal); font-size: 8px; font-weight: 800; }
+.company-snapshot-person-links { display: grid; justify-items: start; gap: 3px; }
+.company-snapshot-person-links a { color: #587079; font-size: 8.5px; font-weight: 750; line-height: 1.45; text-decoration: none; }
+.company-snapshot-person-links a:hover { text-decoration: underline; }
+.company-snapshot-person-links .company-snapshot-person-link-primary { color: var(--signal); font-size: 9.5px; font-weight: 850; }
 .company-overview-card { position: relative; overflow: hidden; margin-top: 10px; border: 1px solid #c8d8d5; border-radius: 10px; background: white; box-shadow: 0 14px 34px rgba(11,38,56,.07); }
 .company-overview-card::before { content: ""; position: absolute; top: 0; right: 0; left: 0; z-index: 1; height: 3px; background: linear-gradient(90deg, var(--signal), #74d4c6 55%, #d6f2ed); }
 .company-overview-card .company-snapshot-strip { margin-top: 0; border: 0; background: linear-gradient(135deg,#fff 0%,#f8fbfa 100%); }
@@ -582,8 +584,7 @@ button, input, select { font: inherit; }
 .company-overview-card .company-snapshot-strip strong { color: #102f40; font-size: 12.5px; font-weight: 760; }
 .company-overview-card .company-snapshot-milestone { margin-top: 5px; color: #4f6e76; font-size: 9.5px; }
 .company-overview-card .company-snapshot-people { gap: 4px; }
-.company-overview-card .company-snapshot-people a { border-radius: 4px; }
-.company-overview-card .company-snapshot-people a:hover { background: rgba(10,109,99,.05); }
+.company-overview-card .company-snapshot-person { border-radius: 4px; }
 
 .company-intelligence-section { background: #edf1f0; }
 .company-intelligence-layout { display: block; }

@@ -363,6 +363,11 @@ export type CompanyPublicIntelligence = {
       name: string;
       url: string;
       linkLabel: string;
+      linkedinUrl?: string;
+      publicInfo?: {
+        url: string;
+        label: string;
+      };
     }>;
   }>;
   // 企業ごとに人手で検証したFABEサマリー。未設定時は共通ロジックで生成する。

@@ -26,6 +26,11 @@ export const COMPANY_PAGE_STANDARD = {
     japanOfficeLines: ["address", "(japan-entry-year)"],
     removeLegalEntityNameFromAddress: true,
     deduplicateSnapshotFacts: true,
+    leadershipLinks: {
+      primary: "linkedin",
+      maxPublicSourcesPerPerson: 1,
+      requireGlobalAndJapanGroups: true,
+    },
   },
   heroSummary: {
     readerFirst: true,

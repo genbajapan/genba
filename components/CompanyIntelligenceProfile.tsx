@@ -10,6 +10,7 @@ import { getPreEntrySignalDefinition, getPreEntrySignalLabel } from "@/lib/compa
 import { getCompanyDirectoryEntry, getGlobalScaleSource, resolveGlobalScale } from "@/lib/company-directory";
 import { getCompanyFABESalesView, getSolutionFABE } from "@/lib/company-fabe";
 import { getCompanyDecisionProfile } from "@/lib/company-intelligence";
+import { resolveLeadershipLinks } from "@/lib/company-leadership-links";
 import { getJapanOfficeDisplay, getUniqueOverviewFacts } from "@/lib/company-overview-display";
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
@@ -827,12 +828,20 @@ export default function CompanyIntelligenceProfile({
                           <div className="company-snapshot-leadership-card" key={group.label}>
                             <span>{group.label}</span>
                             <div className="company-snapshot-people">
-                              {group.people.map((person) => (
-                                <a href={person.url} target="_blank" rel="noreferrer" key={person.name}>
-                                  <strong>{person.name}</strong>
-                                  <small>{person.linkLabel} ↗</small>
-                                </a>
-                              ))}
+                              {group.people.map((person) => {
+                                const links = resolveLeadershipLinks(company.name, group.label, person);
+                                return (
+                                  <div className="company-snapshot-person" key={person.name}>
+                                    <strong>{person.name}</strong>
+                                    <div className="company-snapshot-person-links">
+                                      <a className="company-snapshot-person-link-primary" href={links.linkedinUrl} target="_blank" rel="noreferrer">{links.linkedinLabel} ↗</a>
+                                      {links.publicInfo && (
+                                        <a href={links.publicInfo.url} target="_blank" rel="noreferrer">{links.publicInfo.label} ↗</a>
+                                      )}
+                                    </div>
+                                  </div>
+                                );
+                              })}
                             </div>
                           </div>
                         ))}

@@ -177,7 +177,7 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     category: "法務AI・プロフェッショナルサービスAI",
     hq: "カリフォルニア州サンフランシスコ（米国）",
     japanPresence: "Singapore APAC office（日本法人・office・現行Japan求人は確認不能）",
-    description: "legal research、drafting、knowledge、contract workflowをdomain AIで統合。公式Ashbyの現行391求人にJapan・Tokyoは0件。",
+    description: "legal research、drafting、knowledge、contract workflowをdomain AIで統合。公式Careersの現行勤務地にJapan・Tokyoはない。",
     salesRoles: 0,
     lastChecked: "2026-08-17",
   },

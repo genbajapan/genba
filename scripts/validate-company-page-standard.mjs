@@ -15,8 +15,9 @@ const bundle = await build({
       import { getAllCompanyPublicIntelligence } from "./lib/company-public-intelligence.ts";
       import { COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority } from "./lib/company-page-standard.ts";
       import { getJobRoleMarketArchetype } from "./lib/company-page-rollout-job-standard.ts";
+      import { resolveLeadershipLinks } from "./lib/company-leadership-links.ts";
       import { getJapanOfficeDisplay, getUniqueOverviewFacts, isOverviewSnapshotDuplicateFact } from "./lib/company-overview-display.ts";
-      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority, getJobRoleMarketArchetype, getJapanOfficeDisplay, getUniqueOverviewFacts, isOverviewSnapshotDuplicateFact };
+      export { companies, jobs, getAllCompanyPublicIntelligence, COMPANY_PAGE_STANDARD, COMPANY_PAGE_PRIORITY_ORDER, getCompanyPagePriority, getJobRoleMarketArchetype, resolveLeadershipLinks, getJapanOfficeDisplay, getUniqueOverviewFacts, isOverviewSnapshotDuplicateFact };
     `,
     resolveDir: projectRoot,
     sourcefile: "company-page-standard-validator-entry.ts",
@@ -37,6 +38,7 @@ const {
   COMPANY_PAGE_PRIORITY_ORDER,
   getCompanyPagePriority,
   getJobRoleMarketArchetype,
+  resolveLeadershipLinks,
   getJapanOfficeDisplay,
   getUniqueOverviewFacts,
   isOverviewSnapshotDuplicateFact,
@@ -47,6 +49,7 @@ for (const job of jobs) jobsBySlug.set(job.companySlug, [...(jobsBySlug.get(job.
 let officialCompensationJobs = 0;
 let hypothesisCompensationJobs = 0;
 let externalReputationJobs = 0;
+let leadershipPeople = 0;
 const externalReputationCompanies = new Set();
 const auditDate = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
 const today = new Date(`${auditDate}T00:00:00Z`);
@@ -109,7 +112,18 @@ function assess(company) {
 
   addMissing(missing, containsJapanese(company.description) && containsJapanese(intelligence.salesSnapshot), "日本語の会社説明");
   addMissing(missing, containsJapanese(company.category) && containsJapanese(company.hq), "日本語の事業領域・本社表記");
-  addMissing(missing, intelligence.overviewLeadership?.length >= 1, "経営陣");
+  const leadershipGroups = intelligence.overviewLeadership ?? [];
+  addMissing(missing, leadershipGroups.length === 2, "経営責任者・Japan法人責任者の2カード");
+  for (const group of leadershipGroups) {
+    addMissing(missing, group.people.length >= 1, `責任者:${group.label}`);
+    for (const person of group.people) {
+      leadershipPeople += 1;
+      const links = resolveLeadershipLinks(company.name, group.label, person);
+      addMissing(missing, links.linkedinUrl.includes("linkedin.com/"), `LinkedIn第一導線:${group.label}`);
+      addMissing(missing, !Array.isArray(links.publicInfo), `公開情報は1件まで:${group.label}`);
+      addMissing(missing, !links.publicInfo || links.publicInfo.url !== links.linkedinUrl, `LinkedInと公開情報の重複排除:${group.label}`);
+    }
+  }
   addMissing(missing, intelligence.companyStats?.japanOffice?.value, "日本オフィス");
   const japanOfficeDisplay = getJapanOfficeDisplay({
     entryStatus: company.entryStatus,
@@ -346,6 +360,10 @@ if (/\.company-(?:sales-fabe-details[^\{]*\.company-sales-table-scroll|market-ou
 if (!/\.company-identity\s*\{[^}]*min-width\s*:\s*0/s.test(profileStyleSource)) errors.push("ヒーロー本文カラムの縮小許可がありません。");
 if (!/\.company-market-outlook-resizable\s*\{[^}]*width\s*:\s*100%[^}]*max-width\s*:\s*100%/s.test(profileStyleSource)) errors.push("市場見立てパネルが本文カラム幅に制限されていません。");
 if (!COMPANY_PAGE_STANDARD.overview?.deduplicateSnapshotFacts) errors.push("企業概要の住所・進出年・被保険者の重複排除標準が未定義です。");
+if (COMPANY_PAGE_STANDARD.overview?.leadershipLinks?.primary !== "linkedin") errors.push("経営責任者カードの第一導線はLinkedInにしてください。");
+if (COMPANY_PAGE_STANDARD.overview?.leadershipLinks?.maxPublicSourcesPerPerson !== 1) errors.push("経営責任者カードの公開情報は1件までにしてください。");
+if (!COMPANY_PAGE_STANDARD.overview?.leadershipLinks?.requireGlobalAndJapanGroups) errors.push("グローバルとJapanの責任者カードを両方必須にしてください。");
+if (!/resolveLeadershipLinks\(company\.name, group\.label, person\)/.test(profileSource)) errors.push("共通UIがLinkedIn第一導線の解決ロジックを使用していません。");
 if (!/getJapanOfficeDisplay\(\{/.test(profileSource) || !/overviewFacts\.map\(/.test(profileSource)) errors.push("共通UIが日本オフィス2行形式または概要指標の重複排除を使用していません。");
 if (/<span>日本法人設立<\/span>/.test(profileSource)) errors.push("日本進出年を別カードへ重複表示しています。");
 for (const forbidden of [
@@ -368,4 +386,5 @@ console.log(`- 全${counts.total}社を監査（HOT ${counts.byPriority.HOT} / A
 console.log(`- 標準充足 ${counts.standardReady}社 / 公開済み ${counts.byStatus["公開済み"]}社`);
 console.log(`- 給与レンジ ${jobs.length}求人（公式 ${officialCompensationJobs} / Genba仮説 ${hypothesisCompensationJobs} / 未算定 ${jobs.length - officialCompensationJobs - hypothesisCompensationJobs}）`);
 console.log(`- 海外を含む外部評判 ${externalReputationJobs}/${jobs.length}求人・${externalReputationCompanies.size}/${jobsBySlug.size}社（全件に職種別Genba仮説）`);
+console.log(`- 経営・Japan責任者 ${leadershipPeople}人のLinkedIn第一導線と公開情報1件上限を確認`);
 console.log(`- 進捗台帳: ${path.relative(projectRoot, manifestPath)}`);

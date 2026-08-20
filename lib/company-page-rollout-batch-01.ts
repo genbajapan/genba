@@ -261,7 +261,6 @@ function patchRemaining(intelligenceBySlug: Record<string, CompanyPublicIntellig
         ["Japan traction", "国内大規模事例はあるが、日本ARR・有料顧客数・renewalは非公開。", "日本の有料顧客、ARR、GRR、NRR、new/expansion構成は？"], ["quotaとterritory", "高成長でも日本初期のaccount配分とpipelineは未成熟な可能性。", "named account数、quota、ramp、seller達成率は？"], ["PoCから全社展開", "個人利用が多くてもsecurity reviewとchange managementで全社化が止まる可能性。", "評価からproduction rolloutへの転換率と期間は？"], ["Partnerと直販", "partner-first市場でcreditとdelivery責任が曖昧だと速度が落ちる。", "direct/partner ownership、revenue credit、FDE capacityは？"], ["製品差別化", "競合モデル・agentの進化で機能差が短期間に縮む可能性。", "日本での勝因・敗因と、継続利用を決めるKPIは？"],
       ],
     }));
-    cursor.overviewLeadership = cursor.overviewLeadership?.slice(0, 1);
     cursor.facts = [
       { label: "Annualized revenue", value: "$1B超（約1,547億円）", detail: "2025年11月のSeries D時点の会社公表。ARRとは表記されておらず、年間売上高とも同一視しない。1ドル=154.72円（日本銀行 2025年11月13日17時時点レンジの中値）の参照換算。", sourceIds: ["cursor-finance", "rollout-cursor-boj-20251113"] },
       { label: "収益性", value: "非公開", detail: "純利益、営業利益、EBITDA、フリーキャッシュフロー、粗利率は公開情報で確認できない。", sourceIds: ["cursor-finance"] },
