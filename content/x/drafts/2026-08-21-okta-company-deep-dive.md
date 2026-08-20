@@ -1,10 +1,10 @@
 # X下書き: Oktaは「ログインを各社が自作する時代」から始まった
 
-Okta、SSOの大手ですが、始まりが結構おもろいです。
+Okta、SSOの大手ですが、始まりがおもろいです。
 
-2009年、SaaSが増え始めた一方で、企業は社員や顧客のアクセス管理を自社で組むか、オンプレミスのIdentity製品を運用していました。
+2009年、SaaSが増え始めた一方で、企業はアクセス管理を自作するか、オンプレミスのIdentity製品を運用していました。
 
-アプリがcloudへ移るほど、誰が・何へ・どの条件で入れるかを各社が個別に作るのは重くなる。そこでOktaは、特定のアプリに属さない独立したIdentity基盤をcloudで作りました。
+アプリがcloudへ移るほど、誰が何へ入れるかを各社が個別に作るのは重くなる。そこでOktaは、特定のアプリに属さないIdentity基盤をcloudで作りました。
 
 現在は、
 
@@ -19,15 +19,17 @@ Okta、SSOの大手ですが、始まりが結構おもろいです。
 ・RPO 47.19億ドル、同16%増
 ・年間契約額10万ドル超の顧客5,180社
 
-さらに2026年1月末時点で顧客は2万社超。
+2026年1月末時点で顧客は2万社超。
 
-なぜ今も伸びるのか。
+イメージでいうと、DropboxやZoomと同じくらいの規模感です。年商数十億ドル級です。
 
-Genba分析では、SaaSが1つ増えるたびに新しいIDと権限管理が生まれ、顧客向けappやAI agentまで対象が広がるから。個別systemの裏側に共通基盤として入り、SSOからGovernance、Security、Customer Identityへ利用範囲を広げられる構造も強いです。
+なぜ伸びるのか。
+
+企業がSaaSやAIを増やすほど、管理するIDと権限も増えます。各appを別々に守るより、会社共通の「玄関」を置く方が早くて安全。一度その玄関になると全社員が使い、認証から権限管理や脅威対策へ契約も広がる。そりゃ伸びるよね、となります。
 
 J:COMの事例では、4つのcore systemへOktaを導入。認証開発を5〜6カ月から2〜3カ月へ短縮し、月20時間超だった認証運用をほぼゼロにしたと公表しています。
 
-現在の日本向け公式掲載は7件（うちTalent Community 1件）。
+今日時点での日本向け公式求人は7件（うちTalent Community 1件）。
 
 ・テクニカルアカウントマネージャー（TAM）, Auth0
 ・Digital Media Specialist
@@ -59,6 +61,9 @@ https://genbajapan.com/companies/okta?utm_source=x&utm_medium=organic_social&utm
 - 顧客規模: 2026年1月31日時点で2万社超、年間契約額10万ドル超の顧客5,100社をFY2026 Form 10-Kで確認。5,180社は2026年4月30日時点のQ1 FY2027 Form 10-Qで確認。
   - https://www.sec.gov/Archives/edgar/data/1660134/000166013426000020/okta-20260131.htm
   - https://www.sec.gov/Archives/edgar/data/1660134/000166013426000051/okta-20260430.htm
+- 規模比較: OktaのFY2026売上29.19億ドルに対し、Dropboxの2025年売上は25.21億ドル、ZoomのFY2026売上は48.688億ドル。3社を厳密な同規模とせず、年商数十億ドル級という桁の比較に限定した。
+  - https://www.sec.gov/Archives/edgar/data/1467623/000146762326000008/dbx-20251231.htm
+  - https://investors.zoom.us/node/14151/pdf
 - J:COM事例: 対象は4つのcore system。ID・認証開発を5〜6カ月から2〜3カ月へ短縮し、月20時間超の認証運用をほぼゼロにしたとするOkta公式顧客事例。vendor公表値であり、独立検証値ではない。
   - https://www.okta.com/jp/customers/jcom/
 - 日本求人: 2026-08-21にOkta Japan公式Greenhouseで7件を確認。Sales Development Representativeは通常求人ではなくTalent Communityであるため、本文でも区別した。

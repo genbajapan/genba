@@ -23,13 +23,17 @@ Glean、企業内searchの会社という理解だけだと、いまの伸び方
 
 ※ARRは売上高ではありません。
 
+イメージでいうと、SnowflakeやCrowdStrikeがIPOした頃と同じくらいの規模感です。
+
+※GleanはARR、2社は当時の売上高なので、完全な横並びではありません。
+
 なぜ伸びているのか。
 
-Genba分析では、最初に「探す」という全社員共通の課題で入り、そのまま回答生成とagent実行へ広げられるから。汎用AIが苦手な「社内のどこに正しい情報があり、誰に閲覧権限があるか」を先に押さえているので、AI活用がPoCで終わりにくい構造です。
+生成AIを入れても、社内情報がSlack、Drive、CRMに散らばったままでは賢く答えられません。Gleanは情報と閲覧権限を1つにつなぐ。「探す」から入り、回答作成、agentによる業務実行へ広げられる。AIを使う会社が増えるほど必要になる土台なので、こりゃ伸びるわ、となります。
 
-Zillowでは7,000人規模で導入率80%。従業員1人あたり週1.5時間超を削減し、6週間で500のAI agent、累計3,400超のagentが作られたと公表しています。
+日本企業の公式導入事例は確認できなかったため、海外事例では、Zillowが7,000人規模で導入率80%。従業員1人あたり週1.5時間超を削減し、6週間で500のAI agent、累計3,400超のagentが作られたと公表しています。
 
-現在の日本向け公式求人は3件。
+今日時点での日本向け公式求人は3件。
 
 ・Content Marketing Manager, Japan
 ・Enterprise Account Executive, Japan
@@ -56,8 +60,13 @@ https://genbajapan.com/companies/glean?utm_source=x&utm_medium=organic_social&ut
   - https://www.glean.com/about
 - 現在の規模: 2026-05-28時点でARR 3億ドル、ARR 1億ドルから15カ月で到達、28カ国で事業、85%以上の顧客が5部門以上で利用しているとするGlean公式発表。ARRはGAAP売上高ではない。
   - https://www.glean.com/press/glean-surpasses-300m-arr-unrivaled-enterprise-context-fuels-ai-adoption
+- 規模比較: GleanのARR 3億ドルに対し、Snowflakeは2020年IPO直前年度の売上2.647億ドル、CrowdStrikeは2019年IPO直前年度の売上2.498億ドル。GleanはARR、比較先は売上高で定義が異なるため、同じ成長段階のおおまかな規模比較に限定した。
+  - https://www.sec.gov/Archives/edgar/data/1640147/000162828020013010/snowflakes-1.htm
+  - https://www.sec.gov/Archives/edgar/data/1535527/000104746919003341/a2238881zs-1a.htm
 - Zillow事例: 7,000人規模で導入率80%、従業員1人あたり週1.5時間超を削減、6週間で500のagent、累計3,400超のagentを作成したとするGlean公式顧客事例。vendor公表値であり、独立検証値ではない。
   - https://www.glean.com/resources/customer-stories/zillow
+- 日本企業事例: 2026-08-21にGlean公式の顧客事例一覧を確認したが、日本企業の公式導入事例を確認できなかったため、本文では海外のZillow事例を使用した。
+  - https://www.glean.com/jp/resources/customer-stories
 - 日本求人: 2026-08-21にGlean公式GreenhouseでJapan勤務地の3件を確認。
   - https://job-boards.greenhouse.io/gleanwork
 - Genba掲載確認: 2026-08-21に本番企業ページで現在掲載中であることを確認。
