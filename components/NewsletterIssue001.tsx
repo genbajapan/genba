@@ -18,7 +18,7 @@ type NewsletterCompany = {
 const companies: NewsletterCompany[] = [
   {
     index: "01",
-    kind: "比較の基準になる企業",
+    kind: "有名企業",
     name: "Figma",
     category: "プロダクト開発・AI協働",
     status: "積極採用",
@@ -32,7 +32,7 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "02",
-    kind: "隠れた注目企業",
+    kind: "穴場企業",
     name: "Zilliz",
     category: "AIデータ基盤",
     status: "積極採用",
@@ -46,7 +46,7 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "03",
-    kind: "新しい採用の動き",
+    kind: "採用の動き",
     name: "Dialpad",
     category: "AI Communications",
     status: "採用中",
@@ -60,7 +60,7 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "04",
-    kind: "視野を広げる企業",
+    kind: "異色企業",
     name: "Planet",
     category: "衛星データ・地理空間情報",
     status: "採用中",
@@ -74,7 +74,7 @@ const companies: NewsletterCompany[] = [
   },
   {
     index: "05",
-    kind: "日本進出を先読み",
+    kind: "日本進出候補",
     name: "Airtable",
     category: "業務アプリ・AI workflow",
     status: "日本未進出",
