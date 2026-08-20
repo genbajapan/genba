@@ -35,7 +35,7 @@ https://genbajapan.com/companies/harvey?utm_source=x&utm_medium=organic_social&u
 
 #外資IT #転職 #Genba企業研究
 
-シリーズ: 日本未進出注目外資
+シリーズ: 1社深掘り
 確認日: 2026-08-20
 ステータス: 下書き・未投稿
 

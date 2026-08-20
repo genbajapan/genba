@@ -32,12 +32,11 @@
 
 ## Phase 3: コンテンツ在庫の確保(公開前バッファ)
 
-- [ ] [content-calendar.md](../content/calendar/content-calendar.md) を最低4週間分(5カテゴリのローテーション)埋める
+- [ ] Xは[現行投稿戦略](x-content-strategy.md)の`1社深掘り`と`今週動いた外資`だけを運用し、旧5カテゴリのカレンダーを再利用しない
 - [ ] 一次情報の収集を [research/market-data/](../research/market-data/) と [research/competitors/](../research/competitors/) にストック(経産省・観光庁・JETROデータ、Nihonium等競合の発信内容の分析)。カテゴリ3(市場データ)記事はこれが揃うまで下書きのまま([content/blog/drafts/japans-cashless-shift.md](../content/blog/drafts/japans-cashless-shift.md))
 - [x] 初回記事を4本、[content/blog/published/](../content/blog/published/) に執筆済み(カテゴリ1・2・4・5)。カテゴリ3は一次情報待ちで下書きに留め置き
 - [ ] 各記事を [guardrails.md](guardrails.md) でレビュー(公開済み4本は執筆時にガードレール沿いで作成済みだが、公開前に再確認推奨)
-- [ ] 各記事に対応するXダイジェストスレッドを [x-thread-template.md](../content/templates/x-thread-template.md) で作成
-- [ ] 単発の気づきツイートも並行して10〜20本ストック(記事に紐付かない日常的な発信用)
+- [ ] 公式情報を確認した`1社深掘り`の下書きを確保する。記事ダイジェストスレッドや単発Tipsは作らない
 
 ## Phase 4: 運用フローの確立
 
