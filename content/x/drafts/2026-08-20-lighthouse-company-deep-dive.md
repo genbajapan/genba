@@ -43,7 +43,7 @@ https://genbajapan.com/companies/lighthouse?utm_source=x&utm_medium=organic_soci
 
 シリーズ: 1社深掘り
 確認日: 2026-08-20
-ステータス: 下書き・X保存待ち・未投稿・未予約
+ステータス: X下書き保存済み・未投稿・未予約
 
 ## 事実確認メモ
 
