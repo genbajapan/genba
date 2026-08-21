@@ -27,6 +27,7 @@ import { companies20260818Daily, jobs20260818Daily } from "@/lib/company-additio
 import { companies20260819Daily, jobs20260819Daily } from "@/lib/company-additions-2026-08-19-daily";
 import { companies20260820Daily, jobs20260820Daily } from "@/lib/company-additions-2026-08-20-daily";
 import { companies20260821Daily, jobs20260821Daily } from "@/lib/company-additions-2026-08-21-daily";
+import { companies20260822Daily, jobs20260822Daily } from "@/lib/company-additions-2026-08-22-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -925,6 +926,7 @@ const companyRecords: Company[] = [
   ...companies20260819Daily,
   ...companies20260820Daily,
   ...companies20260821Daily,
+  ...companies20260822Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1358,6 +1360,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260822Daily,
   ...jobs20260821Daily,
   ...jobs20260820Daily,
   ...jobs20260819Daily,
@@ -3040,6 +3043,7 @@ const closedJobIds = new Set([
   "cursor-director-channel-partners-tokyo",
   "extreme-networks-sr-services-sales-account-executive-tokyo-current",
   "perforce-enterprise-account-executive-delphix-japan-9eeec4e8",
+  "dropbox-customer-success-manager-japan-6862441",
 ]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([
@@ -3055,7 +3059,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-21" };
+      : { ...job, lastChecked: "2026-08-22" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3094,6 +3098,36 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-dropbox-japan-csm-ended-20260822",
+    companySlug: "dropbox",
+    date: "2026-08-22",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Dropboxの日本Customer Success求人が終了",
+    summary: "公式求人URLが404となったため公開求人から除外しました。これだけで日本の採用停止や事業縮小を示すものではありません。",
+    source: { label: "Dropbox Careers", url: "https://jobs.dropbox.com/listing/6862441" },
+  },
+  {
+    id: "signal-cirrus-data-tokyo-ae",
+    companySlug: "cirrus-data",
+    date: "2026-08-22",
+    type: "新着求人",
+    confidence: "公式確認",
+    title: "Cirrus Data Solutionsが東京担当Account Executiveを募集",
+    summary: "日本territoryのnew logo、strategic deal、channel co-sellを担い、block storageの停止を抑えたmigrationを提案する役割です。",
+    source: { label: "Cirrus Data Solutions Careers (SmartRecruiters)", url: "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo" },
+  },
+  {
+    id: "signal-synthesia-apac-entry-watch",
+    companySlug: "synthesia",
+    date: "2026-08-22",
+    type: "注目領域",
+    confidence: "公式確認",
+    title: "SynthesiaがAPAC専任Field Marketingの初採用を進める",
+    summary: "APAC営業teamを支える初の専任field marketerを募集。2025年に日本を拡張市場へ挙げましたが、日本法人・常設拠点・Japan求人は未確認です。",
+    source: { label: "Synthesia Careers (Ashby)", url: "https://jobs.ashbyhq.com/synthesia/bd9ba8f0-b87b-4a3a-bca9-6496afc776f2/" },
+  },
   {
     id: "signal-fastly-japan-senior-ae",
     companySlug: "fastly",

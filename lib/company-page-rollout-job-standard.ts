@@ -52,6 +52,7 @@ for (const slug of ["atlassian", "dynatrace"]) batchSlugs.add(slug);
 for (const slug of ["gitlab", "watchguard"]) batchSlugs.add(slug);
 for (const slug of ["twilio", "perforce", "fusion-worldwide", "deepgram"]) batchSlugs.add(slug);
 for (const slug of ["dropbox", "fastly"]) batchSlugs.add(slug);
+for (const slug of ["cirrus-data"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -148,6 +149,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  "cirrus-data": {
+    name: "Cirrus Data Solutions", domain: "Data Mobility・Storage Migration・Enterprise Sales", officialUrl: "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo",
+    communityUrl: "https://www.glassdoor.com/Reviews/Cirrus-Data-Solutions-Reviews-E836227.htm", communityLabel: "Glassdoor Cirrus Data Solutions global reviews",
+    positive: ["東京担当AEとしてnew logo、strategic transaction、partner co-sell、市場feedbackまで持つ。", "会社公式は累計1EB超のdata移行、125超のpartner、13件のpatentを表示。"],
+    negative: ["日本法人、雇用主体、office、local team、国内顧客、quota、達成率、数値報酬は非公開。", "Glassdoorは3件の極小標本で、日本のmanager・career・workloadへ一般化せず面接で反証する必要がある。"],
+    next: ["Strategic Storage・Cloud Sales", "Data Resilience・Migration Leadership", "Japan・APAC Channel / Country Leadership"],
+  },
   dropbox: {
     name: "Dropbox", domain: "Content Collaboration・Enterprise Search・Customer Success", officialUrl: "https://jobs.dropbox.com/listing/6862441",
     communityUrl: "https://www.glassdoor.com/Reviews/Dropbox-Reviews-E415350.htm", communityLabel: "Glassdoor Dropbox global reviews",

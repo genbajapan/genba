@@ -3,6 +3,7 @@ import type { CompanyPublicIntelligence, ResearchSource } from "@/lib/company-pu
 const CHECKED_AT = "2026-08-18";
 const NEW_COMPANY_CHECKED_AT = "2026-08-19";
 const DAILY_20260821_CHECKED_AT = "2026-08-21";
+const DAILY_20260822_CHECKED_AT = "2026-08-22";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -104,6 +105,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
   "webflow",
+  "cirrus-data", "synthesia",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -123,6 +125,7 @@ const AUDITED_SLUGS = new Set([
   "appsflyer", "bluematrix", "black-duck", "ivanti", "pigment", "ironclad", "atlassian", "dynatrace", "vercel",
   "gitlab", "watchguard", "langchain", "twilio", "perforce", "fusion-worldwide", "deepgram",
   "dropbox", "fastly", "webflow",
+  "cirrus-data", "synthesia",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -131,8 +134,10 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["dropbox", "fastly", "webflow"].includes(slug)
-    ? DAILY_20260821_CHECKED_AT
+  const checkedAt = ["cirrus-data", "synthesia"].includes(slug)
+    ? DAILY_20260822_CHECKED_AT
+    : ["dropbox", "fastly", "webflow"].includes(slug)
+      ? DAILY_20260821_CHECKED_AT
     : ["gitlab", "watchguard", "langchain", "lakera"].includes(slug)
       ? NEW_COMPANY_CHECKED_AT
       : CHECKED_AT;

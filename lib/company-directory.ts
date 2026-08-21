@@ -21,6 +21,14 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  "cirrus-data": {
+    officialWebsite: { url: "https://cirrusdata.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("11〜50人規模", "https://www.linkedin.com/company/cirrusdata/"),
+  },
+  synthesia: {
+    officialWebsite: { url: "https://www.synthesia.io/", locale: "global" },
+    globalScaleFallback: { value: "900人超", detail: "2026年8月22日時点の会社公式Careers表示。", sourceUrl: "https://www.synthesia.io/careers", sourceLabel: "Synthesia Careers" },
+  },
   dropbox: { officialWebsite: { url: "https://www.dropbox.com/ja/", locale: "ja" } },
   fastly: { officialWebsite: { url: "https://www.fastly.com/jp/", locale: "ja" } },
   webflow: {

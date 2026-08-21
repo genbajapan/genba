@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-21",
+  "auditedAt": "2026-08-22",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 128,
+    "total": 130,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
       "検証済み": 0,
-      "公開済み": 128
+      "公開済み": 130
     },
     "byPriority": {
       "HOT": 44,
       "Active": 12,
       "Selective": 30,
-      "求人なし": 42
+      "求人なし": 44
     },
-    "standardReady": 128
+    "standardReady": 130
   },
   "companies": [
     {
@@ -584,6 +584,15 @@
       "missingFields": []
     },
     {
+      "slug": "cirrus-data",
+      "company": "Cirrus Data Solutions",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "deepgram",
       "company": "Deepgram",
       "priority": "Selective",
@@ -595,15 +604,6 @@
     {
       "slug": "doubleverify",
       "company": "DoubleVerify",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "dropbox",
-      "company": "Dropbox",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -917,6 +917,15 @@
       "missingFields": []
     },
     {
+      "slug": "dropbox",
+      "company": "Dropbox",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "gong",
       "company": "Gong",
       "priority": "求人なし",
@@ -1117,6 +1126,15 @@
     {
       "slug": "sierra",
       "company": "Sierra",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "synthesia",
+      "company": "Synthesia",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
