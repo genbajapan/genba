@@ -14,7 +14,13 @@ Notion、始まりがおもろいです。
 
 なぜ伸びているのか。
 
-会社が大きくなるほど、議事録、手順書、案件、taskが別々のtoolへ散らばります。Notionは個人や小さなteamから隣のteamへ広がり、情報が集まるほど検索とAIも役立つ。最後は全社の仕事場になるので、こりゃ伸びるわ、となります。
+ただ、AI時代は追い風だけではありません。ClaudeやCodexが文書作成やtask整理まで行えば、「人がNotionを開いて書く」時間は減ります。
+
+そこでNotionは、AI modelと正面から戦うのではなく、AIが働く共通workspaceを取りにいっています。Notion MCPでClaudeやCodexが社内情報を読み書きでき、Claude AgentもbetaでNotion内から使える。さらにNotion上で作られたCustom Agentsは、2026年5月時点で100万を超えました。
+
+つまり生存戦略は、「どのAIを使っても、最新情報、権限、承認、実行履歴はNotionに集まる」状態を作ること。AIが増えるほどNotionを外しにくくなる、という賭けです。
+
+逆に、ClaudeやCodexが各systemを直接つなぎ、MicrosoftやGoogleがその管理層まで取れば苦しい。文書toolから「人と複数のAIが働く仕事OS」へ移れるかが、Notionの勝負です。
 
 トヨタ自動車では、未来創生センターが情報共有と承認workflowを集約。X投稿1件の承認作業を15分から5分へ短縮しました。
 
@@ -59,6 +65,14 @@ https://genbajapan.com/companies/notion?utm_source=x&utm_medium=organic_social&u
 - 規模比較: Miroは2026-05-19時点で1億人超の利用者、Canvaは2025年に月間利用者2.6億人を公式発表。NotionとMiroの公表値は月間利用者と明記されておらず、Canvaは月間利用者で定義が異なるため、本文では「世界で1億人単位に使われる」という桁の比較に限定した。
   - https://miro.com/newsroom/miro-takes-aim-at-the-gap-between-ai-potential-and-organizational-reality/
   - https://www.canva.com/newsroom/news/canva-2025-wrap/
+- AI時代の生存戦略: Notion MCPはClaude Code、Cursor、Codex等がNotionの情報を検索・閲覧・作成・更新できる公式接続。Enterpriseでは接続を許可するAI appを管理し、既存のNotion権限を維持できる。Claude agents in NotionはBusiness・Enterprise向けbetaで、Notion内の共有文書・task boardを使って作業する。Developer Platformでは外部Agent、実行の可視化、承認、権限、sandboxを共通workspaceへ集める方向を公式に示している。
+  - https://developers.notion.com/guides/mcp/overview
+  - https://www.notion.com/help/notion-mcp
+  - https://www.notion.com/help/use-claude-agents-in-notion
+  - https://www.notion.com/blog/introducing-developer-platform
+- Custom Agents: 2026-05-13のNotion公式発表で、teamが作成したCustom Agentsは累計100万超。active agent数や有料利用数ではないため、本文では導入・作成の広がりを示す数字としてのみ使用した。
+  - https://www.notion.com/blog/introducing-developer-platform
+- 競争リスク: Microsoft、Google、Claude、Codexが各systemを直接接続し、情報、権限、Agent管理まで担えばNotionが共通workspaceとして選ばれない可能性がある、という部分は上記の公式製品戦略を踏まえた編集上の分析。会社の公式見解や確定した将来予測ではない。
 - トヨタ自動車事例: 未来創生センターが草案、共有、承認をNotionへ集約し、1件15分ほどだったX投稿の承認作業を5分へ短縮したとするNotion公式顧客事例。効果はvendor公表値であり、独立検証値ではない。
   - https://www.notion.com/ja/customers/toyota
 - 日本求人: 2026-08-21にNotion公式Ashbyで勤務地をTokyo, Japanに絞り、15件を確認。内訳はfull time 13件、contract 1件、temporary 1件。本文は件数とposition名だけを記載した。
