@@ -26,21 +26,7 @@ Notion、始まりがおもろいです。
 
 今日時点での日本向け公式求人は15件。
 
-・[Contract] Language Training Specialist - Japanese
-・Workplace Technology Operation (Contractor), Tokyo
-・SMB Marketing Manager
-・Commercial Outcomes Architect, Japan
-・Enterprise Outcomes Architect, Japan
-・GTM Recruiter, Tokyo
-・Business Development Representative, Japan
-・Commercial Sales Manager, Japan
-・Commercial Solutions Consultant, Japan
-・Enterprise Solutions Consultant, Japan
-・Forward Deployed Architect, Japan
-・Forward Deployed Engineer, GTM, Japan
-・Head of Enterprise Solutions Consultants, Japan (Sales Leadership)
-・Mid-Market Solutions Consultant, Japan
-・Solutions Consultants Manager, Enterprise - Japan (Sales Leadership)
+Genbaでは営業・マーケティング等の対象ロールの情報を確認でき、各求人からNotionの公式採用ページへ進めます。
 
 一度失敗した製品を京都で作り直し、世界1億人規模へ。これがNotionの面白さです。
 
@@ -75,8 +61,10 @@ https://genbajapan.com/companies/notion?utm_source=x&utm_medium=organic_social&u
 - 競争リスク: Microsoft、Google、Claude、Codexが各systemを直接接続し、情報、権限、Agent管理まで担えばNotionが共通workspaceとして選ばれない可能性がある、という部分は上記の公式製品戦略を踏まえた編集上の分析。会社の公式見解や確定した将来予測ではない。
 - トヨタ自動車事例: 未来創生センターが草案、共有、承認をNotionへ集約し、1件15分ほどだったX投稿の承認作業を5分へ短縮したとするNotion公式顧客事例。効果はvendor公表値であり、独立検証値ではない。
   - https://www.notion.com/ja/customers/toyota
-- 日本求人: 2026-08-21にNotion公式Ashbyで勤務地をTokyo, Japanに絞り、15件を確認。内訳はfull time 13件、contract 1件、temporary 1件。本文は件数とposition名だけを記載した。
+- 日本求人: 2026-08-21にNotion公式Ashbyで勤務地をTokyo, Japanに絞り、15件を確認。内訳はfull time 13件、contract 1件、temporary 1件。本文はJioの指示により件数だけを記載し、長いposition一覧は省略した。
   - https://jobs.ashbyhq.com/notion?locationId=09ab600d-2330-43ab-bb1a-760bb7b9b635
+- Genba求人導線: 2026-08-21に本番企業ページで営業・マーケティング等の対象12ロールを確認。各role cardに公式求人への直接linkがある。公式ATSの15件すべてをGenbaへ掲載しているわけではないため、本文では「対象ロール」と表現した。
+  - https://genbajapan.com/companies/notion#roles
 - Genba掲載確認: 2026-08-21に本番企業ページで現在掲載中であることを確認。
   - https://genbajapan.com/companies/notion
 - Genba導線: 2026-08-21にUTM付きURLで本番ページへ正常到達し、4つのparameter保持を確認。
