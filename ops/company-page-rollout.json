@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 130,
+    "total": 135,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 5,
       "公開済み": 130
     },
     "byPriority": {
       "HOT": 44,
       "Active": 12,
-      "Selective": 30,
+      "Selective": 35,
       "求人なし": 44
     },
-    "standardReady": 130
+    "standardReady": 135
   },
   "companies": [
     {
@@ -692,6 +692,15 @@
       "missingFields": []
     },
     {
+      "slug": "outsystems",
+      "company": "OutSystems",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "patch",
       "company": "Patch",
       "priority": "Selective",
@@ -710,11 +719,29 @@
       "missingFields": []
     },
     {
+      "slug": "pingcap",
+      "company": "PingCAP",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "planet",
       "company": "Planet",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sailpoint",
+      "company": "SailPoint",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -764,6 +791,15 @@
       "missingFields": []
     },
     {
+      "slug": "think-cell",
+      "company": "think-cell",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "twilio",
       "company": "Twilio",
       "priority": "Selective",
@@ -796,6 +832,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "workiva",
+      "company": "Workiva",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },

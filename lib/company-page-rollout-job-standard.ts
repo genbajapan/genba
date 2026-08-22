@@ -53,6 +53,7 @@ for (const slug of ["gitlab", "watchguard"]) batchSlugs.add(slug);
 for (const slug of ["twilio", "perforce", "fusion-worldwide", "deepgram"]) batchSlugs.add(slug);
 for (const slug of ["dropbox", "fastly"]) batchSlugs.add(slug);
 for (const slug of ["cirrus-data"]) batchSlugs.add(slug);
+for (const slug of ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -149,6 +150,41 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  workiva: {
+    name: "Workiva", domain: "Connected Reporting・GRC・CFO Enterprise Sales", officialUrl: "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/Account-Executive_R10985",
+    communityUrl: "https://www.glassdoor.com/Reviews/Workiva-Reviews-E833165.htm", communityLabel: "Glassdoor Workiva global reviews",
+    positive: ["東京Account Executiveとしてnew businessとcustomer expansionを持ち、Inside Sales、Solution Seller、Partnerとexecutive buyerを動かす。", "2025年売上約8.85億ドル、顧客6,624社、gross retention 97.2%の公式規模を確認。"],
+    negative: ["日本売上、顧客数、team人数、territory、quota、達成率、数値報酬は非公開。", "CFO・CRO・Sustainability buyer間の優先順位、multi-solution credit、既存toolからのchange managementを面接で検証する必要がある。"],
+    next: ["CFO Platform Strategic Sales", "GRC・Connected Reporting Sales Leadership", "Japan・APAC Enterprise Sales Leadership"],
+  },
+  outsystems: {
+    name: "OutSystems", domain: "AI Development Platform・App Modernization・Enterprise Sales", officialUrl: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Senior-Account-Executive_R1544",
+    communityUrl: "https://www.glassdoor.com/Reviews/OutSystems-Reviews-E660359.htm", communityLabel: "Glassdoor OutSystems global reviews",
+    positive: ["東京Senior AEとしてEnterprise new logo、strategic named account、SI・商社とのco-sellを持つ。", "1,700人、900K超developer、600超partnerとToyotaの国内定量caseを公式確認。"],
+    negative: ["日本売上、team人数、named account、quota、達成率、数値報酬は非公開。", "AI coding・low-code・custom SIの比較、partner delivery capacity、PoCからproductionへの転換を面接で検証する必要がある。"],
+    next: ["Enterprise App Modernization Sales", "AI Development Platform Sales Leadership", "Japan・APAC Partner-led GTM Leadership"],
+  },
+  sailpoint: {
+    name: "SailPoint", domain: "Identity Security・Agentic AI・Specialist Sales", officialUrl: "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Strategic-Account-Executive--Agentic-Technologies-Specialist--Japan_R013034-1",
+    communityUrl: "https://www.glassdoor.com/Reviews/SailPoint-Technologies-Reviews-E449696.htm", communityLabel: "Glassdoor SailPoint global reviews",
+    positive: ["Tokyo office・Japan remoteのspecialist AEとしてMachine Identity、Data Access、Agent Identityとprimary seller enablementを担う。", "NASDAQ再上場とFortune 500の約半数を含む顧客基盤を公式確認。"],
+    negative: ["日本ARR、顧客数、team人数、specialist quota・credit、達成率、数値報酬は非公開。", "Microsoft・Saviynt・PAM等との役割、Agentic製品のproduction reference、SE・CS capacityを面接で検証する必要がある。"],
+    next: ["Identity Security Specialist Sales", "AI・Data Governance GTM Leadership", "Japan・APAC Security Sales Leadership"],
+  },
+  pingcap: {
+    name: "PingCAP", domain: "Distributed SQL・Database Modernization・Solutions Architecture", officialUrl: "https://jobs.lever.co/pingcap/5de30748-2a1e-45be-bea5-ddf514d3719c",
+    communityUrl: "https://www.glassdoor.com/Reviews/PingCAP-Reviews-E2724795.htm", communityLabel: "Glassdoor PingCAP global reviews",
+    positive: ["東京Solution Architectとしてarchitecture、PoC・benchmark、partner支援、product feedback、community発信を担う。", "2021年の日本法人設立、3,000社超のglobal採用、Tokyo Gas・MIXI等の国内caseを公式確認。"],
+    negative: ["売上、ARR、日本team人数、PoC件数・production転換率、数値報酬は非公開。", "Aurora・Spanner・CockroachDB等への勝敗、migration・support責任、同時PoC負荷を面接で検証する必要がある。"],
+    next: ["Principal Database Solutions Architect", "Data Platform Solutions Leadership", "Japan・APAC Database Field CTO"],
+  },
+  "think-cell": {
+    name: "think-cell", domain: "Customer Enablement・PowerPoint Productivity・Adoption", officialUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4727026101",
+    communityUrl: "https://www.glassdoor.com/Reviews/think-cell-Reviews-E253722.htm", communityLabel: "Glassdoor think-cell global reviews",
+    positive: ["東京Customer Enablementとしてtraining、workshop、trial・PoC、adoption、churn risk、account growthを横断する。", "35,000社、130万人超、global 210人超とJT・NTT DATAの国内caseを公式確認。"],
+    negative: ["日本売上、team人数、担当portfolio、adoption・renewal KPI、数値報酬は非公開。", "training実施をactive use・renewal・expansionへ変える責任、AE・Supportとの境界、出社頻度を面接で検証する必要がある。"],
+    next: ["Senior Customer Enablement・Adoption Lead", "Customer Success・Value Leadership", "Japan・APAC Customer Education Leadership"],
+  },
   "cirrus-data": {
     name: "Cirrus Data Solutions", domain: "Data Mobility・Storage Migration・Enterprise Sales", officialUrl: "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo",
     communityUrl: "https://www.glassdoor.com/Reviews/Cirrus-Data-Solutions-Reviews-E836227.htm", communityLabel: "Glassdoor Cirrus Data Solutions global reviews",
@@ -1224,6 +1260,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
+  const researchedAt = ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(job.companySlug) ? "2026-08-22" : "2026-08-18";
   const review = COMPANY_GLOBAL_REVIEW_PROFILES[job.companySlug];
   const reputationHypothesis = roleReputationHypothesis(role, company.name);
   const sourceList = [
@@ -1240,7 +1277,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   }
   const compensation = officialCompensation[job.id];
   const hypothesisCompensation = {
-    researchedAt: "2026-08-18",
+    researchedAt,
     confidence: "中" as const,
     headline: `${role.label}の市場比較は年${role.totalRange}を起点とする`,
     summary: `当該企業の公開提示額ではない。2026年の東京Enterprise Technology市場における${role.benchmarkLabel}の公開benchmark（${role.benchmarkRange}）を母数に、求人の職種、seniority、担当segment、quota・技術・portfolio責任を掛け合わせた【Genba仮説】。`,
@@ -1272,7 +1309,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
     lastChecked: job.lastChecked,
     compensationReality: compensation ? compensation.headline : `日本向けの公開報酬レンジは確認できない。${role.label}の市場benchmarkから【Genba仮説】を算定。`,
     compensationResearch: compensation ? {
-        researchedAt: "2026-08-18",
+        researchedAt,
         confidence: "高" as const,
         headline: compensation.headline,
         summary: compensation.summary,
@@ -1281,7 +1318,7 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
         sources: [{ label: job.source.label, url: job.source.url, detail: "公式求人に掲載された日本向け報酬レンジを確認。" }],
       } : hypothesisCompensation,
     reputationResearch: {
-      researchedAt: "2026-08-18",
+      researchedAt,
       summary: review
         ? company.name + "の日本の対象職種だけの十分なreview母数はないため、" + review.source.label + "の" + review.snapshot + "を参考にした。その上で【Genba仮説】として、" + role.label + "の活躍条件と面接で検証すべき論点まで導いた。"
         : company.name + "の公開情報を、【Genba仮説】として" + role.label + "の活躍条件と面接の検証論点へ落とし込んだ。",

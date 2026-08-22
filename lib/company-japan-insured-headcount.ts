@@ -126,6 +126,7 @@ const AUDITED_SLUGS = new Set([
   "gitlab", "watchguard", "langchain", "twilio", "perforce", "fusion-worldwide", "deepgram",
   "dropbox", "fastly", "webflow",
   "cirrus-data", "synthesia",
+  "workiva", "outsystems", "sailpoint", "pingcap", "think-cell",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -134,7 +135,7 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["cirrus-data", "synthesia"].includes(slug)
+  const checkedAt = ["cirrus-data", "synthesia", "workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(slug)
     ? DAILY_20260822_CHECKED_AT
     : ["dropbox", "fastly", "webflow"].includes(slug)
       ? DAILY_20260821_CHECKED_AT
