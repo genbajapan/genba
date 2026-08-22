@@ -54,6 +54,7 @@ for (const slug of ["twilio", "perforce", "fusion-worldwide", "deepgram"]) batch
 for (const slug of ["dropbox", "fastly"]) batchSlugs.add(slug);
 for (const slug of ["cirrus-data"]) batchSlugs.add(slug);
 for (const slug of ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"]) batchSlugs.add(slug);
+for (const slug of ["vonage", "coderabbit"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -865,6 +866,20 @@ const companyResearch: Record<string, {
     positive: ["東京のSales Engineerがdiscovery、demo、technical validation、solution designをAccount Managerと担う。", "ライフネット生命、東映アニメーション、ブラザー工業等の国内事例を持ち、UEM・ITSM・Exposureを横断できる。"],
     negative: ["日本売上・headcount・quota・attainment・数値報酬は非公開。", "Microsoft・ServiceNow等との重複、patch・exposureの実効性、security incidentへの対応、tool consolidationと3年TCOを検証する必要がある。"],
     next: ["Endpoint・ITSM Solutions Engineering", "Cybersecurity Presales", "Enterprise IT Platform Architecture"],
+  },
+  vonage: {
+    name: "Vonage", domain: "Communications API・CPaaS・Customer Success", officialUrl: "https://job-boards.greenhouse.io/vonage/jobs/8528707002",
+    communityUrl: "https://www.glassdoor.com/Reviews/Vonage-Reviews-E23019.htm", communityLabel: "Glassdoor Vonage global reviews",
+    positive: ["日本RemoteのJunior Customer Success ManagerとしてAPI顧客のadoption、renewal、upsell、training、issue解決を担う。", "世界100,000社超、登録developer 160万人超と、HugCome・KDDI Web Communicationsの国内proofを公式確認。"],
+    negative: ["日本売上、顧客数、team人数、担当portfolio、renewal・expansion目標、数値報酬は非公開。", "APIの到達・利用量を顧客KPIへ変える責任、Sales・Supportとのcommercial credit、incident時の日本語支援を面接で検証する必要がある。"],
+    next: ["Senior Technical Customer Success", "CPaaS・Contact Center Customer Growth", "Japan・APAC Customer Success Leadership"],
+  },
+  coderabbit: {
+    name: "CodeRabbit", domain: "AI Code Review・Developer Tools・Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/coderabbit/0e889e16-a2a3-47f3-bce9-ce87ef795762",
+    communityUrl: "https://www.glassdoor.com/Reviews/CodeRabbit-Reviews-E10747148.htm", communityLabel: "Glassdoor CodeRabbit global reviews",
+    positive: ["Japan Salesのfounding memberとしてnamed mid-enterpriseのoutbound、PoV、six-figure close、land-and-expandをfull-cycleで持つ。", "17,000社超、600万repository、週200万超のreviewと、Swiggyのmerge time・review cycle改善を公式確認。"],
+    negative: ["日本法人、常設office、雇用主体、local SE・CS、日本売上・顧客、quota、attainment、数値報酬は非公開。", "Glassdoorは15件の小標本で、日本のfounding salesへ一般化できない。GitHub標準機能との差、PoV支援、国内security review、support capacityを面接で検証する必要がある。"],
+    next: ["Developer Tools Strategic Sales", "AI・DevSecOps Japan GTM Leadership", "Japan・APAC Country Build"],
   },
 };
 

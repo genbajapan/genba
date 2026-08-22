@@ -29,6 +29,7 @@ import { companies20260820Daily, jobs20260820Daily } from "@/lib/company-additio
 import { companies20260821Daily, jobs20260821Daily } from "@/lib/company-additions-2026-08-21-daily";
 import { companies20260822Daily, jobs20260822Daily } from "@/lib/company-additions-2026-08-22-daily";
 import { companies20260822JapanFive, jobs20260822JapanFive } from "@/lib/company-additions-2026-08-22-japan-five";
+import { companies20260823Daily, jobs20260823Daily } from "@/lib/company-additions-2026-08-23-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -929,6 +930,7 @@ const companyRecords: Company[] = [
   ...companies20260821Daily,
   ...companies20260822Daily,
   ...companies20260822JapanFive,
+  ...companies20260823Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -958,6 +960,7 @@ const preEntrySignalCompanySlugs = new Set([
   "glean", "cambly", "censys", "lighthouse", "replit", "cohere", "dragos", "cribl",
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
   "deepgram",
+  "coderabbit",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1362,6 +1365,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260823Daily,
   ...jobs20260822JapanFive,
   ...jobs20260822Daily,
   ...jobs20260821Daily,
@@ -2987,6 +2991,9 @@ const closedJobIds = new Set([
   "nice-account-executive-japan",
   "patch-enterprise-account-executive-apac-tokyo",
   "patsnap-key-account-manager-japan",
+  "patsnap-forward-deployed-engineer-japan-current",
+  "patsnap-key-account-manager-japan-current",
+  "pingcap-solution-architect-japan-5de30748",
   "pendo-enterprise-account-executive-japan",
   "marqvision-account-executive-japan",
   "mendix-specialized-account-executive-japan",

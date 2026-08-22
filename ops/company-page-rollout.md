@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-23 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全135社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 135）
+全137社（未着手 0 / 調査中 0 / 検証済み 2 / 公開済み 135）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -56,7 +56,6 @@
 |Active|Grafana Labs|2|公開済み|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
-|Active|Patsnap|2|公開済み|はい|なし|
 |Active|Replit|2|公開済み|はい|なし|
 |Active|Rubrik|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
@@ -68,6 +67,7 @@
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
+|Selective|CodeRabbit|1|検証済み|はい|なし|
 |Selective|Deepgram|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
@@ -82,7 +82,6 @@
 |Selective|OutSystems|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Pendo|1|公開済み|はい|なし|
-|Selective|PingCAP|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|SailPoint|1|公開済み|はい|なし|
 |Selective|Sayari|1|公開済み|はい|なし|
@@ -92,6 +91,7 @@
 |Selective|Tanium|1|公開済み|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Twilio|1|公開済み|はい|なし|
+|Selective|Vonage|1|検証済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|WatchGuard Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
@@ -125,8 +125,10 @@
 |求人なし|Mistral AI|0|公開済み|はい|なし|
 |求人なし|monday.com|0|公開済み|はい|なし|
 |求人なし|MongoDB|0|公開済み|はい|なし|
+|求人なし|Patsnap|0|公開済み|はい|なし|
 |求人なし|Pigment|0|公開済み|はい|なし|
 |求人なし|Pinecone|0|公開済み|はい|なし|
+|求人なし|PingCAP|0|公開済み|はい|なし|
 |求人なし|Postman|0|公開済み|はい|なし|
 |求人なし|Qualtrics|0|公開済み|はい|なし|
 |求人なし|Retool|0|公開済み|はい|なし|

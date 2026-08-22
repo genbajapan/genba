@@ -112,6 +112,12 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
     roleSignal: "日本のpipeline・ARR、direct・partner sales、team buildを担うSales Country Leaderの現行求人を確認",
     marketContext: "日本市場の立ち上げ採用は確認できるが、日本法人・常設拠点は確認できない",
   },
+  coderabbit: {
+    name: "CodeRabbit",
+    jobUrl: "https://jobs.ashbyhq.com/coderabbit/0e889e16-a2a3-47f3-bce9-ce87ef795762",
+    roleSignal: "Japan Salesのfounding memberとなるAccount Executiveの現行求人を確認",
+    marketContext: "Remoteでの日本市場立ち上げは確認できるが、日本法人・常設拠点は確認できない",
+  },
 };
 
 function unique(values: string[]) {

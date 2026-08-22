@@ -4,6 +4,7 @@ const CHECKED_AT = "2026-08-18";
 const NEW_COMPANY_CHECKED_AT = "2026-08-19";
 const DAILY_20260821_CHECKED_AT = "2026-08-21";
 const DAILY_20260822_CHECKED_AT = "2026-08-22";
+const DAILY_20260823_CHECKED_AT = "2026-08-23";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -95,6 +96,7 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   "fusion-worldwide": { corporateNumber: "9010003036643", entityName: "Fusion Trade Japan合同会社", insuredCount: 13 },
   dropbox: { corporateNumber: "8010401113045", entityName: "Dropbox Japan株式会社", insuredCount: 28 },
   fastly: { corporateNumber: "6010401117015", entityName: "ファストリー株式会社", insuredCount: 35 },
+  vonage: { corporateNumber: "3010003025214", entityName: "Vonage Japan合同会社" },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
@@ -106,6 +108,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz",
   "webflow",
   "cirrus-data", "synthesia",
+  "coderabbit",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -127,6 +130,7 @@ const AUDITED_SLUGS = new Set([
   "dropbox", "fastly", "webflow",
   "cirrus-data", "synthesia",
   "workiva", "outsystems", "sailpoint", "pingcap", "think-cell",
+  "vonage", "coderabbit",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -135,8 +139,10 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["cirrus-data", "synthesia", "workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(slug)
-    ? DAILY_20260822_CHECKED_AT
+  const checkedAt = ["vonage", "coderabbit"].includes(slug)
+    ? DAILY_20260823_CHECKED_AT
+    : ["cirrus-data", "synthesia", "workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(slug)
+      ? DAILY_20260822_CHECKED_AT
     : ["dropbox", "fastly", "webflow"].includes(slug)
       ? DAILY_20260821_CHECKED_AT
     : ["gitlab", "watchguard", "langchain", "lakera"].includes(slug)

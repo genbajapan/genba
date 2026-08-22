@@ -425,9 +425,10 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     category: "研究開発・知財インテリジェンス・ドメインAI",
     hq: "シンガポール",
     japanPresence: "東京office・東京都港区新橋（2023年までに日本展開を公式確認）",
-    description: "patent・science・chemical・clinical dataとdomain AI agentでR&D・IP判断を支援。東京でForward Deployed EngineerとKey Account Managerを公式募集。",
-    salesRoles: 2,
-    lastChecked: "2026-08-17",
+    description: "patent・science・chemical・clinical dataとdomain AI agentでR&D・IP判断を支援。2026年8月23日に日本向け公式求人2件の終了を確認し、現行掲載求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-08-23",
   },
   pendo: {
     category: "ソフトウェア体験管理・プロダクト分析・デジタル定着",
