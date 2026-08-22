@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全135社（未着手 0 / 調査中 0 / 検証済み 5 / 公開済み 130）
+全135社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 135）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -79,23 +79,23 @@
 |Selective|Ivanti|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
-|Selective|OutSystems|1|検証済み|はい|なし|
+|Selective|OutSystems|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Pendo|1|公開済み|はい|なし|
-|Selective|PingCAP|1|検証済み|はい|なし|
+|Selective|PingCAP|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
-|Selective|SailPoint|1|検証済み|はい|なし|
+|Selective|SailPoint|1|公開済み|はい|なし|
 |Selective|Sayari|1|公開済み|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Similarweb|1|公開済み|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Tanium|1|公開済み|はい|なし|
-|Selective|think-cell|1|検証済み|はい|なし|
+|Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Twilio|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|WatchGuard Technologies|1|公開済み|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
-|Selective|Workiva|1|検証済み|はい|なし|
+|Selective|Workiva|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
 |求人なし|1Password|0|公開済み|はい|なし|
 |求人なし|6sense|0|公開済み|はい|なし|

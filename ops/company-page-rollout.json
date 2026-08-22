@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 5,
-      "公開済み": 130
+      "検証済み": 0,
+      "公開済み": 135
     },
     "byPriority": {
       "HOT": 44,
@@ -696,7 +696,7 @@
       "company": "OutSystems",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -723,7 +723,7 @@
       "company": "PingCAP",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -741,7 +741,7 @@
       "company": "SailPoint",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -795,7 +795,7 @@
       "company": "think-cell",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -840,7 +840,7 @@
       "company": "Workiva",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
