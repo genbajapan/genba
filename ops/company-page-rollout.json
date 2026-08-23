@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 2,
-      "公開済み": 137
+      "検証済み": 0,
+      "公開済み": 139
     },
     "byPriority": {
       "HOT": 44,
@@ -597,7 +597,7 @@
       "company": "DataSnipper",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -741,7 +741,7 @@
       "company": "Runway",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
