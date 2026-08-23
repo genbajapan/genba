@@ -37,7 +37,7 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
 
 シリーズ: 1社深掘り
 確認日: 2026-08-24
-ステータス: ローカル下書き・未投稿・未予約・X未投稿ドラフト未保存
+ステータス: ローカル下書き・X未投稿ドラフト保存済み（2026-08-24 07:11 JST）・未投稿・未予約
 
 ## 事実確認メモ
 
@@ -59,4 +59,4 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
   - https://www.datasnipper.com/jp/contact-us
 - 日本求人: 2026-08-24に公式Ashbyで`Sales Account Executive` 1件をactive確認。Japan、full-time、native Japanese・professional English、初期AE・BDRとの市場構築を記載。
   - https://jobs.ashbyhq.com/datasnipper/3adf1eee-09c2-4187-837b-0579591afe3a
-- 外部操作: スケジュール実行ではSNS上のrepresentational actionに必要な実行直前確認を得られないため、X未投稿ドラフトへの保存は行わずローカル保持。投稿・予約もしていない。
+- 外部操作: 2026-08-24 07:11 JSTに`@chosenshi08`のX `Unsent posts`へ保存し、ドラフト一覧で冒頭を確認。投稿・予約・返信・引用・再投稿はしていない。

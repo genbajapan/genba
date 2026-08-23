@@ -39,7 +39,7 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
 
 シリーズ: 1社深掘り
 確認日: 2026-08-24
-ステータス: ローカル下書き・未投稿・未予約・X未投稿ドラフト未保存
+ステータス: ローカル下書き・X未投稿ドラフト保存済み（2026-08-24 07:11 JST）・未投稿・未予約
 
 ## 事実確認メモ
 
@@ -60,4 +60,4 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
 - 日本求人: 2026-08-24に公式Ashbyで`General Manager, Japan` 1件をactive確認。GTM、partnership、初期顧客、将来のTokyo officeとlocal teamを記載。
   - https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796
 - 進出区分: Japan GM求人は強いsignalだが、日本法人・常設office・雇用主体・current local teamは未確認。Genbaでは「日本進出の兆しあり」とし、進出済み企業の採用温度とは分ける。
-- 外部操作: スケジュール実行ではSNS上のrepresentational actionに必要な実行直前確認を得られないため、X未投稿ドラフトへの保存は行わずローカル保持。投稿・予約もしていない。
+- 外部操作: 2026-08-24 07:11 JSTに`@chosenshi08`のX `Unsent posts`へ保存し、ドラフト一覧で冒頭を確認。投稿・予約・返信・引用・再投稿はしていない。
