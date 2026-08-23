@@ -2,12 +2,12 @@
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { companies, jobs } from "@/lib/market-data";
-import { companyListSortOptions, compareKnownNumbers, type CompanyListSortMetric, type CompanyListSortMode } from "@/lib/company-list-sort";
-import { getHeadquartersRegion, headquartersRegions, type HeadquartersRegion } from "@/lib/company-headquarters";
-import { broadCategories, buildHiringHeatRows, getHiringHeatCompanies } from "@/lib/solution-categories";
+import { companyListSortOptions, compareKnownNumbers, type CompanyListSortMode } from "@/lib/company-list-sort";
+import { headquartersRegions, type HeadquartersRegion } from "@/lib/company-headquarters";
+import { broadCategories } from "@/lib/solution-categories";
 import CompanyCard from "./CompanyCard";
 import { PRE_ENTRY_SIGNAL_DEFINITION, PRE_ENTRY_SIGNAL_FILTER_LABEL } from "@/lib/company-entry-status";
+import type { CompanyExplorerItem, TierAreaCounts } from "@/lib/listing-data";
 
 const statuses = [
   { value: "すべて", label: "すべて" },
@@ -16,18 +16,7 @@ const statuses = [
   { value: "継続観測", label: "求人なし" },
 ];
 const solutionAreas = ["すべて", ...broadCategories];
-const heatRows = buildHiringHeatRows(companies, jobs);
-const tierAreas = {
-  hot: new Set(heatRows.filter((row) => row.tier === "hot").map((row) => row.area)),
-  active: new Set(heatRows.filter((row) => row.tier === "active").map((row) => row.area)),
-  selective: new Set(heatRows.filter((row) => row.tier === "selective").map((row) => row.area)),
-};
-const tierCompanySlugs = {
-  hot: new Set(getHiringHeatCompanies(companies, jobs, "hot").map((company) => company.slug)),
-  active: new Set(getHiringHeatCompanies(companies, jobs, "active").map((company) => company.slug)),
-  selective: new Set(getHiringHeatCompanies(companies, jobs, "selective").map((company) => company.slug)),
-};
-type TierFilter = "すべて" | keyof typeof tierAreas;
+type TierFilter = "すべて" | keyof TierAreaCounts;
 const tierLabels: Record<TierFilter, string> = { "すべて": "すべて", hot: "HOT", active: "Active", selective: "Selective" };
 type EntryFilter = "すべて" | "pre-entry" | "not-entered" | "pre-entry-signal";
 const companyNameCollator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
@@ -40,11 +29,11 @@ type ReturnPosition = {
 };
 
 export default function CompanyExplorer({
-  companyCardSummaries,
-  companySortMetrics,
+  companies,
+  tierAreaCounts,
 }: {
-  companyCardSummaries: Record<string, string>;
-  companySortMetrics: Record<string, CompanyListSortMetric>;
+  companies: CompanyExplorerItem[];
+  tierAreaCounts: TierAreaCounts;
 }) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
@@ -60,14 +49,6 @@ export default function CompanyExplorer({
   const sortParam = searchParams.get("sort");
   const initialSort: CompanyListSortMode = companyListSortOptions.some((option) => option.value === sortParam) ? sortParam as CompanyListSortMode : "updated";
   const openJobsOnly = searchParams.get("openJobs") === "1";
-  const companySlugsWithOpenJobs = useMemo(() => new Set(jobs.map((job) => job.companySlug)), []);
-  const newestJobDates = useMemo(() => {
-    const dates = new Map<string, string>();
-    for (const job of jobs) {
-      if (job.firstSeen > (dates.get(job.companySlug) ?? "")) dates.set(job.companySlug, job.firstSeen);
-    }
-    return dates;
-  }, []);
 
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [status, setStatus] = useState(initialStatus);
@@ -77,10 +58,10 @@ export default function CompanyExplorer({
   const [headquarters, setHeadquarters] = useState<HeadquartersRegion>(initialHeadquarters);
   const [sort, setSort] = useState<CompanyListSortMode>(initialSort);
   const results = useMemo(() => companies.filter((company) => {
-    const matchesQuery = `${company.name} ${company.broadCategory} ${company.category} ${company.hq} ${company.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
+    const matchesQuery = company.searchText.includes(query.toLowerCase());
     const matchesStatus = status === "すべて" || company.hiringStatus === status;
     const matchesSolution = solutionArea === "すべて" || company.broadCategory === solutionArea;
-    const matchesTier = tier === "すべて" || tierCompanySlugs[tier].has(company.slug);
+    const matchesTier = tier === "すべて" || company.tier === tier;
     const matchesEntry = entry === "すべて"
       ? true
       : entry === "pre-entry"
@@ -88,21 +69,21 @@ export default function CompanyExplorer({
         : entry === "pre-entry-signal"
           ? company.entryStatus === "pre-entry-signal" && company.salesRoles > 0
           : company.entryStatus === entry;
-    const matchesHeadquarters = headquarters === "すべて" || getHeadquartersRegion(company.hq) === headquarters;
-    const matchesOpenJobs = !openJobsOnly || companySlugsWithOpenJobs.has(company.slug);
+    const matchesHeadquarters = headquarters === "すべて" || company.headquartersRegion === headquarters;
+    const matchesOpenJobs = !openJobsOnly || company.hasOpenJobs;
     return matchesQuery && matchesStatus && matchesSolution && matchesTier && matchesEntry && matchesHeadquarters && matchesOpenJobs;
   }).sort((a, b) => {
     const byName = companyNameCollator.compare(a.name, b.name);
     if (sort === "name") return byName;
-    if (sort === "jobs") return b.salesRoles - a.salesRoles || (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || byName;
-    if (sort === "new-jobs") return (newestJobDates.get(b.slug) ?? "").localeCompare(newestJobDates.get(a.slug) ?? "") || b.salesRoles - a.salesRoles || b.lastChecked.localeCompare(a.lastChecked) || byName;
-    const aMetric = companySortMetrics[a.slug];
-    const bMetric = companySortMetrics[b.slug];
+    if (sort === "jobs") return b.salesRoles - a.salesRoles || b.newestJobDate.localeCompare(a.newestJobDate) || byName;
+    if (sort === "new-jobs") return b.newestJobDate.localeCompare(a.newestJobDate) || b.salesRoles - a.salesRoles || b.lastChecked.localeCompare(a.lastChecked) || byName;
+    const aMetric = a.sortMetric;
+    const bMetric = b.sortMetric;
     if (sort === "entry-asc" || sort === "entry-desc") return compareKnownNumbers(aMetric?.japanEntryYear ?? null, bMetric?.japanEntryYear ?? null, sort === "entry-asc" ? "asc" : "desc") || byName;
     if (sort === "headcount-asc" || sort === "headcount-desc") return compareKnownNumbers(aMetric?.japanHeadcount ?? null, bMetric?.japanHeadcount ?? null, sort === "headcount-asc" ? "asc" : "desc") || byName;
     if (sort === "entity-asc" || sort === "entity-desc") return compareKnownNumbers(aMetric?.japanEntityYear ?? null, bMetric?.japanEntityYear ?? null, sort === "entity-asc" ? "asc" : "desc") || byName;
     return b.lastChecked.localeCompare(a.lastChecked) || b.salesRoles - a.salesRoles || byName;
-  }), [query, status, solutionArea, tier, entry, headquarters, openJobsOnly, sort, companySlugsWithOpenJobs, newestJobDates, companySortMetrics]);
+  }), [companies, query, status, solutionArea, tier, entry, headquarters, openJobsOnly, sort]);
 
   const clearReturnTarget = useCallback(() => {
     window.sessionStorage.removeItem(returnPositionKey);
@@ -225,7 +206,7 @@ export default function CompanyExplorer({
       {tier !== "すべて" && (
         <div className={`tier-filter-summary tier-filter-summary-${tier}`}>
           <div><span>採用温度で絞り込み中</span><strong>{tierLabels[tier]}</strong></div>
-          <p>{tierAreas[tier].size}つの大分類に属し、現在日本向け営業求人を確認できる企業だけを表示</p>
+          <p>{tierAreaCounts[tier]}つの大分類に属し、現在日本向け営業求人を確認できる企業だけを表示</p>
           <button type="button" onClick={() => { clearReturnTarget(); setTier("すべて"); }}>絞り込みを解除</button>
         </div>
       )}
@@ -273,7 +254,7 @@ export default function CompanyExplorer({
         </label>
       </div>
       <div className="card-grid company-card-grid">
-        {results.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={companyCardSummaries[company.slug]} onNavigate={rememberCompanyPosition} />)}
+        {results.map((company) => <CompanyCard key={company.slug} company={company} onNavigate={rememberCompanyPosition} />)}
       </div>
     </>
   );

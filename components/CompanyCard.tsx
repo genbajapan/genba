@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { getPreEntrySignalLabel } from "@/lib/company-entry-status";
-import type { Company } from "@/lib/market-data";
+import type { CompanyCardItem } from "@/lib/listing-data";
 import StatusBadge from "./StatusBadge";
 
-export default function CompanyCard({ company, valueSummary, onNavigate }: { company: Company; valueSummary: string; onNavigate?: (slug: string) => void }) {
+export default function CompanyCard({ company, onNavigate }: { company: CompanyCardItem; onNavigate?: (slug: string) => void }) {
   const rememberPosition = () => onNavigate?.(company.slug);
 
   return (
@@ -20,7 +20,7 @@ export default function CompanyCard({ company, valueSummary, onNavigate }: { com
               : <StatusBadge status={company.hiringStatus} />}
         </div>
         <h3>{company.name}</h3>
-        <p className="company-card-value">{valueSummary}</p>
+        <p className="company-card-value">{company.valueSummary}</p>
         <div className="metric-row">
           <div><strong>{company.salesRoles}</strong><span>現在の求人</span></div>
           <div><strong>{company.lastChecked.slice(5).replace("-", "/")}</strong><span>最終更新日</span></div>

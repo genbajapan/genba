@@ -8,6 +8,7 @@ import AudienceList from "@/components/AudienceList";
 import HiringHeatmap from "@/components/HiringHeatmap";
 import RandomCompanyGrid from "@/components/RandomCompanyGrid";
 import { getCompanyCardSummary } from "@/lib/company-card-summary";
+import { buildJobListItems, toCompanyCardItem } from "@/lib/listing-data";
 import { companies, jobs } from "@/lib/market-data";
 
 export const metadata: Metadata = {
@@ -36,6 +37,9 @@ export default function HomePage() {
   const companySlugsWithOpenJobs = new Set(jobs.map((job) => job.companySlug));
   const companiesWithOpenJobs = companies.filter((company) => companySlugsWithOpenJobs.has(company.slug));
   const preEntryCompanies = companies.filter((company) => company.entryStatus);
+  const openCompanyCards = companiesWithOpenJobs.map((company) => toCompanyCardItem(company, companyCardSummaries[company.slug]));
+  const preEntryCompanyCards = preEntryCompanies.map((company) => toCompanyCardItem(company, companyCardSummaries[company.slug]));
+  const latestJobCards = buildJobListItems(jobs.slice(0, 5), companies);
 
   return (
     <>
@@ -168,21 +172,21 @@ export default function HomePage() {
       <section className="content-section">
         <Container>
           <SectionHeader eyebrow="COMPANY TRACKER" title="企業研究一覧" description="現在の求人の有無やソリューション領域をベースに企業を探す" href="/companies" linkLabel={`${companies.length}件の企業を全て見る`} />
-          <RandomCompanyGrid companies={companiesWithOpenJobs} valueSummaries={companyCardSummaries} />
+          <RandomCompanyGrid companies={openCompanyCards} />
         </Container>
       </section>
 
       <section className="content-section">
         <Container>
           <SectionHeader eyebrow="PRE-ENTRY WATCH" title="「日本法人未確認」注目企業" description="日本法人・常設拠点、日本で働く担当者、現行の日本採用を分けて追います。" href="/companies?entry=pre-entry#company-results" linkLabel={`日本法人未確認企業${preEntryCompanies.length}社をすべて見る`} />
-          <RandomCompanyGrid companies={preEntryCompanies} valueSummaries={companyCardSummaries} />
+          <RandomCompanyGrid companies={preEntryCompanyCards} />
         </Container>
       </section>
 
       <section className="content-section">
         <Container>
           <SectionHeader eyebrow="OPEN SALES ROLES" title="公式サイトで確認した営業求人" description="応募や個人情報の入力はGenba上では行いません。各社の公式採用ページへ直接つなぎます。" href="/jobs" linkLabel="すべての求人" />
-          <div className="job-list">{jobs.slice(0, 5).map((job) => <JobCard key={job.id} job={job} />)}</div>
+          <div className="job-list">{latestJobCards.map((job) => <JobCard key={job.id} job={job} />)}</div>
         </Container>
       </section>
 

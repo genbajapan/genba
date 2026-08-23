@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { jobs, getCompany } from "@/lib/market-data";
 import JobCard from "./JobCard";
+import type { JobListItem } from "@/lib/listing-data";
 
 const jobFunctions = [
   "すべて",
@@ -28,15 +28,14 @@ function getJobFunction(title: string): Exclude<JobFunction, "すべて"> {
   return "アカウント営業";
 }
 
-export default function JobExplorer() {
+export default function JobExplorer({ jobs }: { jobs: JobListItem[] }) {
   const [query, setQuery] = useState("");
   const [jobFunction, setJobFunction] = useState<JobFunction>("すべて");
   const lastUpdated = [...jobs].sort((a, b) => b.lastChecked.localeCompare(a.lastChecked))[0]?.lastChecked ?? "—";
   const results = useMemo(() => jobs.filter((job) => {
-    const company = getCompany(job.companySlug);
-    const matchesQuery = `${job.title} ${company?.name ?? ""} ${job.location}`.toLowerCase().includes(query.toLowerCase());
+    const matchesQuery = `${job.title} ${job.companyName} ${job.location}`.toLowerCase().includes(query.toLowerCase());
     return matchesQuery && (jobFunction === "すべて" || getJobFunction(job.title) === jobFunction);
-  }), [query, jobFunction]);
+  }), [jobs, query, jobFunction]);
 
   return (
     <>

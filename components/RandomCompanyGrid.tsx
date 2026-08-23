@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import CompanyCard from "@/components/CompanyCard";
-import type { Company } from "@/lib/market-data";
+import type { CompanyCardItem } from "@/lib/listing-data";
 
-function pickRandomCompanies(companies: Company[], count: number) {
+function pickRandomCompanies(companies: CompanyCardItem[], count: number) {
   const shuffled = [...companies];
 
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
@@ -15,7 +15,7 @@ function pickRandomCompanies(companies: Company[], count: number) {
   return shuffled.slice(0, count);
 }
 
-export default function RandomCompanyGrid({ companies, valueSummaries, count = 4 }: { companies: Company[]; valueSummaries: Record<string, string>; count?: number }) {
+export default function RandomCompanyGrid({ companies, count = 4 }: { companies: CompanyCardItem[]; count?: number }) {
   const [displayedCompanies, setDisplayedCompanies] = useState(() => companies.slice(0, count));
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function RandomCompanyGrid({ companies, valueSummaries, count = 4
 
   return (
     <div className="card-grid">
-      {displayedCompanies.map((company) => <CompanyCard key={company.slug} company={company} valueSummary={valueSummaries[company.slug]} />)}
+      {displayedCompanies.map((company) => <CompanyCard key={company.slug} company={company} />)}
     </div>
   );
 }
