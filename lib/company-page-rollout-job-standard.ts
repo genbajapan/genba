@@ -55,6 +55,7 @@ for (const slug of ["dropbox", "fastly"]) batchSlugs.add(slug);
 for (const slug of ["cirrus-data"]) batchSlugs.add(slug);
 for (const slug of ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"]) batchSlugs.add(slug);
 for (const slug of ["vonage", "coderabbit"]) batchSlugs.add(slug);
+for (const slug of ["datasnipper", "runway"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -880,6 +881,20 @@ const companyResearch: Record<string, {
     positive: ["Japan Salesのfounding memberとしてnamed mid-enterpriseのoutbound、PoV、six-figure close、land-and-expandをfull-cycleで持つ。", "17,000社超、600万repository、週200万超のreviewと、Swiggyのmerge time・review cycle改善を公式確認。"],
     negative: ["日本法人、常設office、雇用主体、local SE・CS、日本売上・顧客、quota、attainment、数値報酬は非公開。", "Glassdoorは15件の小標本で、日本のfounding salesへ一般化できない。GitHub標準機能との差、PoV支援、国内security review、support capacityを面接で検証する必要がある。"],
     next: ["Developer Tools Strategic Sales", "AI・DevSecOps Japan GTM Leadership", "Japan・APAC Country Build"],
+  },
+  datasnipper: {
+    name: "DataSnipper", domain: "Audit AI・Finance Automation・Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/datasnipper/3adf1eee-09c2-4187-837b-0579591afe3a",
+    communityUrl: "https://www.glassdoor.com/Reviews/DataSnipper-Reviews-E3276307.htm", communityLabel: "Glassdoor DataSnipper global reviews",
+    positive: ["日本の最初期AEとしてprospectingからcloseまで持ち、BDRと市場playbookを作る。", "600,000人超、175カ国、Big Four全社利用と東京officeを公式確認。"],
+    negative: ["日本法人、国内顧客、日本売上、team人数、quota、attainment、数値報酬は非公開。", "監査methodology、AI governance、日本語のSE・CS・support、国内security review、既存Excel・audit suiteとのTCOを面接で検証する必要がある。"],
+    next: ["Finance Transformation Enterprise Sales", "Audit Technology GTM", "Japan・APAC Sales Leadership"],
+  },
+  runway: {
+    name: "Runway", domain: "Creative AI・Media Enterprise・Country Leadership", officialUrl: "https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796",
+    communityUrl: "https://www.glassdoor.com/Reviews/Runway-NYC-Reviews-E5638023.htm", communityLabel: "Glassdoor Runway (NYC) global reviews",
+    positive: ["日本のGTM、Enterprise partnership、初期顧客、local teamとofficeを一から作るGeneral Manager role。", "50 million超のcreator利用とLionsgate等のEnterprise partnershipを公式確認。"],
+    negative: ["日本法人、常設office、雇用主体、国内顧客、日本売上、team、P&L権限、数値報酬は非公開。", "生成映像のrights・brand・security、production integration、日本語deployment、既存制作商流との責任境界を面接で検証する必要がある。"],
+    next: ["Creative AI Country Manager", "Media Technology General Management", "APAC Enterprise Leadership"],
   },
 };
 

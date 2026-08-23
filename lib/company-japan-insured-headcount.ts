@@ -5,6 +5,7 @@ const NEW_COMPANY_CHECKED_AT = "2026-08-19";
 const DAILY_20260821_CHECKED_AT = "2026-08-21";
 const DAILY_20260822_CHECKED_AT = "2026-08-22";
 const DAILY_20260823_CHECKED_AT = "2026-08-23";
+const DAILY_20260824_CHECKED_AT = "2026-08-24";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -109,6 +110,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "webflow",
   "cirrus-data", "synthesia",
   "coderabbit",
+  "runway",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -131,6 +133,7 @@ const AUDITED_SLUGS = new Set([
   "cirrus-data", "synthesia",
   "workiva", "outsystems", "sailpoint", "pingcap", "think-cell",
   "vonage", "coderabbit",
+  "datasnipper", "runway",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -139,7 +142,9 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["vonage", "coderabbit"].includes(slug)
+  const checkedAt = ["datasnipper", "runway"].includes(slug)
+    ? DAILY_20260824_CHECKED_AT
+    : ["vonage", "coderabbit"].includes(slug)
     ? DAILY_20260823_CHECKED_AT
     : ["cirrus-data", "synthesia", "workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(slug)
       ? DAILY_20260822_CHECKED_AT

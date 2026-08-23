@@ -7,6 +7,7 @@ type ActiveSignalProfile = {
   jobUrl: string;
   roleSignal: string;
   marketContext: string;
+  checkedAt?: string;
 };
 
 const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
@@ -118,6 +119,13 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
     roleSignal: "Japan Salesのfounding memberとなるAccount Executiveの現行求人を確認",
     marketContext: "Remoteでの日本市場立ち上げは確認できるが、日本法人・常設拠点は確認できない",
   },
+  runway: {
+    name: "Runway",
+    jobUrl: "https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796",
+    roleSignal: "日本のGTM、Enterprise partnership、初期顧客、local teamとofficeを作るGeneral Managerの現行求人を確認",
+    marketContext: "Tokyo拠点化の意図は確認できるが、日本法人・常設拠点・現在のlocal teamは確認できない",
+    checkedAt: "2026-08-24",
+  },
 };
 
 function unique(values: string[]) {
@@ -158,13 +166,14 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
 
     const jobSourceId = `pre-entry-signal-job-${slug}`;
     const registrySourceId = `gbiz-headcount-${slug}`;
+    const profileCheckedAt = profile.checkedAt ?? checkedAt;
     const jobSource: ResearchSource = {
       id: jobSourceId,
       label: `${profile.name}公式日本市場求人`,
       url: profile.jobUrl,
       kind: "企業公式",
-      scope: `${profile.roleSignal}・2026年8月19日現行確認`,
-      checkedAt,
+      scope: `${profile.roleSignal}・${profileCheckedAt}現行確認`,
+      checkedAt: profileCheckedAt,
     };
     if (!intelligence.sources.some((source) => source.id === jobSourceId)) intelligence.sources.push(jobSource);
 
@@ -174,7 +183,7 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
       .map((source) => source.id);
     const assessment = buildAssessment(profile, companySourceIds, jobSourceId, registrySourceId);
 
-    intelligence.researchedAt = checkedAt;
+    intelligence.researchedAt = profileCheckedAt;
     intelligence.marketStatus.genbaVerdict = {
       headline: "日本進出の兆しあり：現行の日本市場担当求人を確認。",
       body: `${profile.roleSignal}。${profile.marketContext}。日本で働く担当者がいる場合を含む分類で、求人を日本法人設立・拠点開設・国内売上の証明とは分けて継続観測する。`,

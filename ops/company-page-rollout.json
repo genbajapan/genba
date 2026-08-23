@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-23",
+  "auditedAt": "2026-08-24",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 137,
+    "total": 139,
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 0,
+      "検証済み": 2,
       "公開済み": 137
     },
     "byPriority": {
       "HOT": 44,
       "Active": 11,
-      "Selective": 36,
+      "Selective": 38,
       "求人なし": 46
     },
-    "standardReady": 137
+    "standardReady": 139
   },
   "companies": [
     {
@@ -593,6 +593,15 @@
       "missingFields": []
     },
     {
+      "slug": "datasnipper",
+      "company": "DataSnipper",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "deepgram",
       "company": "Deepgram",
       "priority": "Selective",
@@ -724,6 +733,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "runway",
+      "company": "Runway",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "検証済み",
       "standardReady": true,
       "missingFields": []
     },

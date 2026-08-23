@@ -30,6 +30,7 @@ import { companies20260821Daily, jobs20260821Daily } from "@/lib/company-additio
 import { companies20260822Daily, jobs20260822Daily } from "@/lib/company-additions-2026-08-22-daily";
 import { companies20260822JapanFive, jobs20260822JapanFive } from "@/lib/company-additions-2026-08-22-japan-five";
 import { companies20260823Daily, jobs20260823Daily } from "@/lib/company-additions-2026-08-23-daily";
+import { companies20260824Daily, jobs20260824Daily } from "@/lib/company-additions-2026-08-24-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -931,6 +932,7 @@ const companyRecords: Company[] = [
   ...companies20260822Daily,
   ...companies20260822JapanFive,
   ...companies20260823Daily,
+  ...companies20260824Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1366,6 +1368,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 
 const jobRecords: Job[] = [
   ...jobs20260823Daily,
+  ...jobs20260824Daily,
   ...jobs20260822JapanFive,
   ...jobs20260822Daily,
   ...jobs20260821Daily,
@@ -3059,7 +3062,6 @@ const closedJobIds = new Set([
 const temporarilyUnverifiableJobIds = new Set<string>([
   "rubrik-customer-experience-manager-japan-current",
   "rubrik-mid-market-account-executive-tokyo-current",
-  "appsflyer-growth-account-manager-tokyo",
 ]);
 
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
@@ -3069,7 +3071,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-22" };
+      : { ...job, lastChecked: "2026-08-24" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
