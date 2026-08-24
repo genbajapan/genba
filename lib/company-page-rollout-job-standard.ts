@@ -56,6 +56,7 @@ for (const slug of ["cirrus-data"]) batchSlugs.add(slug);
 for (const slug of ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"]) batchSlugs.add(slug);
 for (const slug of ["vonage", "coderabbit"]) batchSlugs.add(slug);
 for (const slug of ["datasnipper", "runway"]) batchSlugs.add(slug);
+for (const slug of ["clickhouse"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -895,6 +896,13 @@ const companyResearch: Record<string, {
     positive: ["日本のGTM、Enterprise partnership、初期顧客、local teamとofficeを一から作るGeneral Manager role。", "50 million超のcreator利用とLionsgate等のEnterprise partnershipを公式確認。"],
     negative: ["日本法人、常設office、雇用主体、国内顧客、日本売上、team、P&L権限、数値報酬は非公開。", "生成映像のrights・brand・security、production integration、日本語deployment、既存制作商流との責任境界を面接で検証する必要がある。"],
     next: ["Creative AI Country Manager", "Media Technology General Management", "APAC Enterprise Leadership"],
+  },
+  clickhouse: {
+    name: "ClickHouse", domain: "Real-time Analytics・OLAP・Professional Services", officialUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
+    communityUrl: "https://www.glassdoor.com/Reviews/ClickHouse-Reviews-E2504499.htm", communityLabel: "Glassdoor ClickHouse global reviews",
+    positive: ["Japan RemoteのSenior Consulting Engineerとしてarchitecture、implementation、PoC、production supportを各50%で担う。", "4,000社超、annual run-rate revenue 2.5億ドル、日本法人とLINEヤフー等の国内proofを公式確認。"],
+    negative: ["日本売上、team人数、担当社数、utilization、on-call頻度、数値報酬は非公開。", "最大35%のtravelとglobal 24x7 support scheduling、migration・production incidentの責任境界を面接で検証する必要がある。"],
+    next: ["Principal Data Platform Consultant", "Solutions Architecture・TAM Leadership", "APJ Professional Services Leadership"],
   },
 };
 
