@@ -28,9 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/`, lastModified: latestCompanyUpdate, changeFrequency: "daily" as const },
     { url: `${siteUrl}/companies`, lastModified: latestCompanyUpdate, changeFrequency: "weekly" as const },
     { url: `${siteUrl}/jobs`, lastModified: latestJobUpdate, changeFrequency: "weekly" as const },
-    { url: `${siteUrl}/insights`, lastModified: new Date(), changeFrequency: "weekly" as const },
+    { url: `${siteUrl}/insights`, changeFrequency: "weekly" as const },
   ];
-  const staticRoutes = staticInfoPaths.map((route) => ({ url: `${siteUrl}${route}`, lastModified: new Date(), changeFrequency: "monthly" as const }));
+  const staticRoutes = staticInfoPaths.map((route) => ({ url: `${siteUrl}${route}`, changeFrequency: "monthly" as const }));
   const companyRoutes = companies.map((company) => ({ url: `${siteUrl}/companies/${company.slug}`, lastModified: company.lastChecked, changeFrequency: "weekly" as const }));
   const jaPostRoutes = getAllPostsMeta("ja").map((post) => ({ url: `${siteUrl}/ja/blog/${post.slug}`, lastModified: post.publishedDate }));
   return [...dataDrivenRoutes, ...staticRoutes, ...companyRoutes, ...jaPostRoutes];
