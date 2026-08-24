@@ -3099,7 +3099,30 @@ export const companies = publishedCompanyRecords.map((company): Company => {
       ? "採用中"
       : "継続観測";
 
-  const standardized = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
+  const basicInformationAudit: Record<string, string> = {
+    workato: "Workato株式会社（2021年11月設立）・東京office（グラントウキョウサウスタワー9F）",
+    "think-cell": "think-cell Japan（社長：松塚展国）・東京office（2022年開設）",
+    outsystems: "OutSystemsジャパン（代表取締役会長＆CEO：手島主税）・東京office",
+    sailpoint: "SailPointテクノロジーズジャパン（日本法人代表：福島徹）・東京office",
+    tanium: "タニウム合同会社（代表執行役社長：原田英典）・東京office（2015年設立）",
+    "sensor-tower": "日本カントリーマネージャー：松尾蔵人・東京office",
+    datasnipper: "日本カントリーマネージャー：砂山源樹・日本office（2024年立ち上げ）",
+    similarweb: "Similarweb Japan（カントリーマネージャー：米田匡克）・東京拠点",
+    doubleverify: "DoubleVerify Japan株式会社（代表取締役・日本法人代表：武田隆）",
+    dynatrace: "Dynatrace合同会社（代表執行役社長：徳永信二）・東京office",
+    gitlab: "GitLab合同会社（Head of Japan：小澤正治）",
+    watchguard: "ウォッチガード・テクノロジー・ジャパン株式会社（代表：Sylvain Lejeune）・2002年11月設立",
+    sayari: "Sayari Japan株式会社（代表取締役：草羽宏和）・東京office（2025年launch）",
+    ivanti: "Ivanti Software株式会社・日本担当カントリーマネージャーは司馬聡氏（2023年就任を公式確認）",
+    "black-duck": "東京office（渋谷スクランブルスクエア39F）・Japan Sales and Technical team",
+    bluematrix: "東京office（丸の内トラストタワー本館20F）・Client team",
+    dialpad: "Dialpad Japan・東京office（CIRCLES渋谷6F）",
+  };
+  const auditedPresence = basicInformationAudit[company.slug];
+  const standardizedBase = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
+  const standardized = auditedPresence
+    ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: "2026-08-25" }
+    : standardizedBase;
   return preEntrySignalCompanySlugs.has(company.slug)
     ? {
         ...standardized,
