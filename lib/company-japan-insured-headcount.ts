@@ -7,6 +7,7 @@ const DAILY_20260822_CHECKED_AT = "2026-08-22";
 const DAILY_20260823_CHECKED_AT = "2026-08-23";
 const DAILY_20260824_CHECKED_AT = "2026-08-24";
 const DAILY_20260825_CHECKED_AT = "2026-08-25";
+const DAILY_20260826_CHECKED_AT = "2026-08-26";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -113,6 +114,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "cirrus-data", "synthesia",
   "coderabbit",
   "runway",
+  "chainguard",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -137,6 +139,7 @@ const AUDITED_SLUGS = new Set([
   "vonage", "coderabbit",
   "datasnipper", "runway",
   "clickhouse",
+  "behavox", "chainguard",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -145,7 +148,9 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["clickhouse"].includes(slug)
+  const checkedAt = ["behavox", "chainguard"].includes(slug)
+    ? DAILY_20260826_CHECKED_AT
+    : ["clickhouse"].includes(slug)
     ? DAILY_20260825_CHECKED_AT
     : ["datasnipper", "runway"].includes(slug)
     ? DAILY_20260824_CHECKED_AT

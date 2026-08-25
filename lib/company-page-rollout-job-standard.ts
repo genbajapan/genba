@@ -57,6 +57,7 @@ for (const slug of ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell
 for (const slug of ["vonage", "coderabbit"]) batchSlugs.add(slug);
 for (const slug of ["datasnipper", "runway"]) batchSlugs.add(slug);
 for (const slug of ["clickhouse"]) batchSlugs.add(slug);
+for (const slug of ["behavox"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -153,6 +154,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  behavox: {
+    name: "Behavox", domain: "AI Controls・RegTech・Enterprise Delivery", officialUrl: "https://job-boards.greenhouse.io/behavox/jobs/7959497",
+    communityUrl: "https://www.glassdoor.com/Reviews/Behavox-Reviews-E1038487.htm", communityLabel: "Glassdoor Behavox global reviews",
+    positive: ["東京Delivery Managerとしてenterprise導入のschedule、scope、risk、technical dependency、time-to-valueを持つ。", "東京office、NRIとの国内delivery連携、みずほ証券等の日本顧客proofを公式確認。"],
+    negative: ["日本売上、team人数、同時案件数、reporting line、評価KPI、給与は非公開。", "高いexecution期待、office週2日、live exerciseを含む選考を、配属先のsupport・権限と合わせて面接で検証する必要がある。"],
+    next: ["Professional Services Leadership", "RegTech Customer Delivery Leadership", "Japan・APAC Program Leadership"],
+  },
   workiva: {
     name: "Workiva", domain: "Connected Reporting・GRC・CFO Enterprise Sales", officialUrl: "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/Account-Executive_R10985",
     communityUrl: "https://www.glassdoor.com/Reviews/Workiva-Reviews-E833165.htm", communityLabel: "Glassdoor Workiva global reviews",
