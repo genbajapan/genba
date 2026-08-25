@@ -2,7 +2,7 @@
 
 最終監査: 2026-08-26 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全142社（未着手 0 / 調査中 0 / 検証済み 2 / 公開済み 140）
+全142社（未着手 0 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -63,7 +63,7 @@
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
-|Selective|Behavox|1|検証済み|はい|なし|
+|Selective|Behavox|1|公開済み|はい|なし|
 |Selective|Black Duck|1|公開済み|はい|なし|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
@@ -110,7 +110,7 @@
 |求人なし|Asana|0|公開済み|はい|なし|
 |求人なし|Atlassian|0|公開済み|はい|なし|
 |求人なし|Attio|0|公開済み|はい|なし|
-|求人なし|Chainguard|0|検証済み|はい|なし|
+|求人なし|Chainguard|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
 |求人なし|Contentsquare|0|公開済み|はい|なし|

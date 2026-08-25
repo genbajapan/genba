@@ -22,8 +22,8 @@
     "byStatus": {
       "未着手": 0,
       "調査中": 0,
-      "検証済み": 2,
-      "公開済み": 140
+      "検証済み": 0,
+      "公開済み": 142
     },
     "byPriority": {
       "HOT": 44,
@@ -552,7 +552,7 @@
       "company": "Behavox",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -975,7 +975,7 @@
       "company": "Chainguard",
       "priority": "求人なし",
       "salesRoles": 0,
-      "status": "検証済み",
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
