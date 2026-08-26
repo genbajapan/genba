@@ -1,6 +1,6 @@
 # Genba X(@chosenshi08)投稿戦略
 
-最終更新: 2026-08-25
+最終更新: 2026-08-26
 
 `ops/daily-workflow.md`のステップ4から参照するX投稿の正本。`ops/guardrails.md`と`ops/job-publication-and-sponsor-policy.md`に従う。
 
@@ -81,7 +81,7 @@
 9. **ニュースレター固定CTA**: 次の文面・改行・URLを改変せず、投稿本文の最後に置く
 
 ```text
-こうした「あまり知られていない小中規模外資IT」を、週3回・3分で5社ずつ紹介しています。無料ニュースレター「Genba発掘」↓
+「小中規模外資ITを知る機会」を頑張って提供していきたいと思います！週3回・3分で5社ずつ紹介しています。無料ニュースレター「Genba発掘」↓
 
 https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_campaign=20260819_profi
 ```
