@@ -33,6 +33,7 @@ import { companies20260823Daily, jobs20260823Daily } from "@/lib/company-additio
 import { companies20260824Daily, jobs20260824Daily } from "@/lib/company-additions-2026-08-24-daily";
 import { companies20260825Daily, jobs20260825Daily } from "@/lib/company-additions-2026-08-25-daily";
 import { companies20260826Daily, jobs20260826Daily } from "@/lib/company-additions-2026-08-26-daily";
+import { companies20260827Daily, jobs20260827Daily } from "@/lib/company-additions-2026-08-27-daily";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -937,6 +938,7 @@ const companyRecords: Company[] = [
   ...companies20260824Daily,
   ...companies20260825Daily,
   ...companies20260826Daily,
+  ...companies20260827Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1371,6 +1373,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260827Daily,
   ...jobs20260826Daily,
   ...jobs20260825Daily,
   ...jobs20260823Daily,
@@ -3077,7 +3080,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-26" };
+      : { ...job, lastChecked: "2026-08-27" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);

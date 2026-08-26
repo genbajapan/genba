@@ -58,6 +58,7 @@ for (const slug of ["vonage", "coderabbit"]) batchSlugs.add(slug);
 for (const slug of ["datasnipper", "runway"]) batchSlugs.add(slug);
 for (const slug of ["clickhouse"]) batchSlugs.add(slug);
 for (const slug of ["behavox"]) batchSlugs.add(slug);
+for (const slug of ["glance", "getyourguide"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -154,6 +155,18 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  glance: {
+    name: "Glance", domain: "AI Commerce・Distribution Partnerships・Japan P&L", officialUrl: "https://job-boards.greenhouse.io/glance/jobs/7938622",
+    positive: ["東京の初期country teamで小売、super-app、TV OSのdistribution roadmap、役員交渉、activation、unit economics、Japan P&Lを持つ。", "Sharpでの日本launch、Samsung／SoftBankへの展開、1日2億人超のglobal reachを公式確認。"],
+    negative: ["日本のactive users、conversion、売上、team人数、既存pipeline、出社頻度は非公開。", "生成AIのconsumer data、attribution、brand safety、partner別unit economicsを契約前に検証する必要がある。"],
+    next: ["Japan General Manager", "Consumer Platform Partnerships Leadership", "APAC AI Commerce Leadership"],
+  },
+  getyourguide: {
+    name: "GetYourGuide", domain: "Travel Marketplace・Supplier Acquisition・Business Development", officialUrl: "https://job-boards.greenhouse.io/getyourguide/jobs/8050667",
+    positive: ["東京で日本のtour・experience provider・attractionを発掘し、交渉、契約、onboardingまでのfull funnelとquotaを持つ。", "FY2025の売上10億ユーロ超、GMV40億ユーロ超、3,300万件超、黒字化を公式確認。"],
+    negative: ["日本の予約、GMV、供給者数、quota、達成率、team人数、数値報酬は非公開。", "獲得数だけでなくlisting activation、在庫、cancel、review、incremental bookingまでの責任境界を面接で検証する必要がある。"],
+    next: ["Travel Marketplace Sales Leadership", "Supplier Growth Leadership", "Japan・APAC Partnerships Leadership"],
+  },
   behavox: {
     name: "Behavox", domain: "AI Controls・RegTech・Enterprise Delivery", officialUrl: "https://job-boards.greenhouse.io/behavox/jobs/7959497",
     communityUrl: "https://www.glassdoor.com/Reviews/Behavox-Reviews-E1038487.htm", communityLabel: "Glassdoor Behavox global reviews",
