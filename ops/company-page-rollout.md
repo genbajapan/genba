@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-27 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-28 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全145社（未着手 3 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全148社（未着手 6 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -84,10 +84,12 @@
 |Selective|Ivanti|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|Menlo Security|1|未着手|はい|なし|
 |Selective|OutSystems|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Pendo|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
+|Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
 |Selective|SailPoint|1|公開済み|はい|なし|
 |Selective|Sayari|1|公開済み|はい|なし|
@@ -99,7 +101,7 @@
 |Selective|Twilio|1|公開済み|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
-|Selective|WatchGuard Technologies|1|公開済み|はい|なし|
+|Selective|WitnessAI|1|未着手|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
@@ -149,6 +151,7 @@
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|Vanta|0|公開済み|はい|なし|
 |求人なし|Vercel|0|公開済み|はい|なし|
+|求人なし|WatchGuard Technologies|0|公開済み|はい|なし|
 |求人なし|Webflow|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
 

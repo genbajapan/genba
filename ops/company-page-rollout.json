@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-27",
+  "auditedAt": "2026-08-28",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 145,
+    "total": 148,
     "byStatus": {
-      "未着手": 3,
+      "未着手": 6,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 44,
       "Active": 11,
-      "Selective": 42,
-      "求人なし": 48
+      "Selective": 44,
+      "求人なし": 49
     },
-    "standardReady": 142
+    "standardReady": 145
   },
   "companies": [
     {
@@ -748,6 +748,15 @@
       "missingFields": []
     },
     {
+      "slug": "menlo-security",
+      "company": "Menlo Security",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "outsystems",
       "company": "OutSystems",
       "priority": "Selective",
@@ -780,6 +789,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "rokt",
+      "company": "Rokt",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -883,11 +901,11 @@
       "missingFields": []
     },
     {
-      "slug": "watchguard",
-      "company": "WatchGuard Technologies",
+      "slug": "witnessai",
+      "company": "WitnessAI",
       "priority": "Selective",
       "salesRoles": 1,
-      "status": "公開済み",
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1328,6 +1346,15 @@
     {
       "slug": "vercel",
       "company": "Vercel",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "watchguard",
+      "company": "WatchGuard Technologies",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

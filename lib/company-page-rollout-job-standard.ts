@@ -59,6 +59,7 @@ for (const slug of ["datasnipper", "runway"]) batchSlugs.add(slug);
 for (const slug of ["clickhouse"]) batchSlugs.add(slug);
 for (const slug of ["behavox"]) batchSlugs.add(slug);
 for (const slug of ["glance", "getyourguide"]) batchSlugs.add(slug);
+for (const slug of ["rokt", "menlo-security", "witnessai"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -155,14 +156,37 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  rokt: {
+    name: "Rokt", domain: "AI Commerce・Retail Media・Customer Success", officialUrl: "https://www.rokt.com/jp/company/careers",
+    communityUrl: "https://www.repvue.com/companies/rokt", communityLabel: "RepVue Rokt sales reviews",
+    positive: ["東京のCustomer Success Managerとして広告主の導入、施策開始、成果分析、最適化、関係拡大を担う。", "会社公式は年間100億件超の取引、700人超、国内法人と日本語の顧客導線を掲載。"],
+    negative: ["日本売上、顧客数、担当社数、継続・拡大目標、給与・賞与・株式は非公開。", "週4日オフィス勤務、広告主成果とEC事業者収益の両立、増分性の測り方を面接で検証する必要がある。"],
+    next: ["Retail Media Customer Success Leadership", "Commerce Advertising Account Leadership", "Japan・APAC Customer Growth Leadership"],
+  },
+  "menlo-security": {
+    name: "Menlo Security", domain: "Browser Security・SSE・Channel Sales Engineering", officialUrl: "https://www.menlosecurity.com/ja-jp/about/life-at-menlo",
+    communityUrl: "https://www.repvue.com/companies/menlo-security", communityLabel: "RepVue Menlo Security sales reviews",
+    positive: ["日本のChannel Sales Engineerとして販売パートナーの技術提案、デモ、評価、構成助言を担う。", "ARR1億ドル超、顧客1,000社超、国内大規模事例と東京拠点を公式確認。"],
+    negative: ["日本売上、顧客数、担当パートナー数、案件支援目標、給与・賞与・株式は非公開。", "既存SSE・専用ブラウザとの役割、直販との案件所有、評価から導入への転換を面接で検証する必要がある。"],
+    next: ["Security Channel SE Lead", "Solutions Engineering Leadership", "Japan・APAC Partner Engineering Leadership"],
+  },
+  witnessai: {
+    name: "WitnessAI", domain: "AI Security・AI Governance・Sales Engineering", officialUrl: "https://jobs.ashbyhq.com/witnessai/2674ec49-4e29-463f-b6a4-07277aac23e6",
+    communityUrl: "https://www.repvue.com/companies/witness-ai", communityLabel: "RepVue WitnessAI sales reviews",
+    positive: ["Japan RemoteのSenior Sales EngineerとしてAI利用統制の概念実証、構成設計、SASE・SIEM等の統合を担う。", "5,800万ドルの戦略調達、ARR500%超成長、社員数5倍を会社公式が発表。"],
+    negative: ["日本法人、雇用主体、国内顧客、営業担当、support、勤務条件の整合は未確認。", "既存SASE・DLP・AI gatewayとの増分価値、概念実証から本番への転換、米ドルOTEの日本適用を面接で検証する必要がある。"],
+    next: ["AI Security Principal Sales Engineer", "Security Architecture Leadership", "Japan・APAC AI Governance Field CTO"],
+  },
   glance: {
     name: "Glance", domain: "AI Commerce・Distribution Partnerships・Japan P&L", officialUrl: "https://job-boards.greenhouse.io/glance/jobs/7938622",
+    communityUrl: "https://www.glassdoor.com/Reviews/Glance-Reviews-E3141037.htm", communityLabel: "Glassdoor Glance global reviews",
     positive: ["東京の初期country teamで小売、super-app、TV OSのdistribution roadmap、役員交渉、activation、unit economics、Japan P&Lを持つ。", "Sharpでの日本launch、Samsung／SoftBankへの展開、1日2億人超のglobal reachを公式確認。"],
     negative: ["日本のactive users、conversion、売上、team人数、既存pipeline、出社頻度は非公開。", "生成AIのconsumer data、attribution、brand safety、partner別unit economicsを契約前に検証する必要がある。"],
     next: ["Japan General Manager", "Consumer Platform Partnerships Leadership", "APAC AI Commerce Leadership"],
   },
   getyourguide: {
     name: "GetYourGuide", domain: "Travel Marketplace・Supplier Acquisition・Business Development", officialUrl: "https://job-boards.greenhouse.io/getyourguide/jobs/8050667",
+    communityUrl: "https://www.glassdoor.com/Reviews/GetYourGuide-Reviews-E705604.htm", communityLabel: "Glassdoor GetYourGuide global reviews",
     positive: ["東京で日本のtour・experience provider・attractionを発掘し、交渉、契約、onboardingまでのfull funnelとquotaを持つ。", "FY2025の売上10億ユーロ超、GMV40億ユーロ超、3,300万件超、黒字化を公式確認。"],
     negative: ["日本の予約、GMV、供給者数、quota、達成率、team人数、数値報酬は非公開。", "獲得数だけでなくlisting activation、在庫、cancel、review、incremental bookingまでの責任境界を面接で検証する必要がある。"],
     next: ["Travel Marketplace Sales Leadership", "Supplier Growth Leadership", "Japan・APAC Partnerships Leadership"],
