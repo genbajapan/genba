@@ -2994,6 +2994,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "knowbe4-customer-success-architect-japan-current",
   "think-cell-customer-enablement-trainer-japan-4727026101",
   "atlassian-senior-customer-success-manager-japanese-21718",
   "veeva-account-partner-medtech-japan",
@@ -3073,7 +3074,16 @@ const closedJobIds = new Set([
   "watchguard-country-manager-japan-31981db1",
 ]);
 
-const recentlyAuditedCompanySlugs = new Set(["gitlab", "sensor-tower", "think-cell"]);
+const recentlyAuditedCompanySlugs = new Set([
+  "cohere",
+  "figma",
+  "gitlab",
+  "mambu",
+  "mirakl",
+  "sensor-tower",
+  "think-cell",
+  "verkada",
+]);
 
 const temporarilyUnverifiableJobIds = new Set<string>([
   "rubrik-customer-experience-manager-japan-current",
@@ -3087,7 +3097,7 @@ export const jobs = jobRecords
   .map((job) => {
     const datedJob = temporarilyUnverifiableJobIds.has(job.id)
       ? job
-      : { ...job, lastChecked: "2026-08-28" };
+      : { ...job, lastChecked: "2026-08-29" };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3133,7 +3143,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
   };
   const auditedPresence = basicInformationAudit[company.slug];
   const standardizedBase = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
-  const auditedLastChecked = recentlyAuditedCompanySlugs.has(company.slug) ? "2026-08-28" : "2026-08-25";
+  const auditedLastChecked = recentlyAuditedCompanySlugs.has(company.slug) ? "2026-08-29" : "2026-08-25";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : standardizedBase;
