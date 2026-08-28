@@ -26,12 +26,12 @@
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 44,
+      "HOT": 45,
       "Active": 11,
-      "Selective": 44,
+      "Selective": 43,
       "求人なし": 49
     },
-    "standardReady": 145
+    "standardReady": 148
   },
   "companies": [
     {
@@ -226,6 +226,15 @@
     {
       "slug": "fivetran",
       "company": "Fivetran",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "gitlab",
+      "company": "GitLab",
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
@@ -679,21 +688,6 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本進出年",
-        "ヒーロー説明:顧客課題",
-        "求人:New Business Development Manager (Japanese Speaker):海外を含む外部評判source",
-        "求人:New Business Development Manager (Japanese Speaker):海外reviewの肯定・注意theme",
-        "外貨の円換算:marketStatus.milestones[3].detail=売上10億ユーロ超、GMV40億ユーロ超、3,300万件超を公式発表。,marketStatus.genbaVerdict.body=2009年創業。会社公式はFY2025に売上10億ユーロ超、GMV40億ユーロ超、3,300万件超の体験予約、5万の供給partner、20万超の体験、1.8万destination、黒字化を発表。日本別の数字は非公開。 一方、日本の顧客基盤、ramped sellerの達成率、案件単価は非公開であり、求人の勢いとterritoryの実現可能性を分けて判断する必要がある。,facts[1].value=10億ユーロ超"
-      ]
-    },
-    {
-      "slug": "gitlab",
-      "company": "GitLab",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -703,13 +697,8 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本進出年",
-        "ヒーロー説明:顧客課題",
-        "求人:Director, Distribution Partnerships and Business Development - Tokyo, Japan:海外を含む外部評判source",
-        "求人:Director, Distribution Partnerships and Business Development - Tokyo, Japan:海外reviewの肯定・注意theme"
-      ]
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "hightouch",
@@ -987,10 +976,8 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "対象領域の日本語表記"
-      ]
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "apollo-io",

@@ -227,11 +227,11 @@ const companyResearch: Record<string, {
     next: ["Principal Database Solutions Architect", "Data Platform Solutions Leadership", "Japan・APAC Database Field CTO"],
   },
   "think-cell": {
-    name: "think-cell", domain: "Customer Enablement・PowerPoint Productivity・Adoption", officialUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4727026101",
+    name: "think-cell", domain: "B2B Marketing・PowerPoint Productivity・Japan Growth", officialUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4953129101",
     communityUrl: "https://www.glassdoor.com/Reviews/think-cell-Reviews-E253722.htm", communityLabel: "Glassdoor think-cell global reviews",
-    positive: ["東京Customer Enablementとしてtraining、workshop、trial・PoC、adoption、churn risk、account growthを横断する。", "35,000社、130万人超、global 210人超とJT・NTT DATAの国内caseを公式確認。"],
-    negative: ["日本売上、team人数、担当portfolio、adoption・renewal KPI、数値報酬は非公開。", "training実施をactive use・renewal・expansionへ変える責任、AE・Supportとの境界、出社頻度を面接で検証する必要がある。"],
-    next: ["Senior Customer Enablement・Adoption Lead", "Customer Success・Value Leadership", "Japan・APAC Customer Education Leadership"],
+    positive: ["東京Marketing Managerとしてcampaign、event、partner・influencer、sales enablementを横断する。", "35,000社、130万人超、global 220人超とJT・NTT DATAの国内caseを公式確認。"],
+    negative: ["日本売上、team人数、campaign budget、pipeline・event ROI、数値報酬は非公開。", "brand施策をdemand・pipelineへ変える責任、Sales・global Marketingとの境界、出社頻度を面接で検証する必要がある。"],
+    next: ["Senior Regional Marketing・Japan Marketing Lead", "Demand Generation・Partner Marketing Leadership", "Japan・APAC Field Marketing Leadership"],
   },
   "cirrus-data": {
     name: "Cirrus Data Solutions", domain: "Data Mobility・Storage Migration・Enterprise Sales", officialUrl: "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo",
@@ -269,11 +269,11 @@ const companyResearch: Record<string, {
     next: ["Observability Solutions Engineering", "AIOps・Application Security Value Consulting", "Principal SE・Japan Technical Leadership"],
   },
   gitlab: {
-    name: "GitLab", domain: "DevSecOps・AI Software Delivery・Ecosystem Sales", officialUrl: "https://job-boards.greenhouse.io/gitlab/jobs/8640173002",
+    name: "GitLab", domain: "DevSecOps・AI Software Delivery・Japan GTM", officialUrl: "https://job-boards.greenhouse.io/gitlab",
     communityUrl: "https://www.comparably.com/companies/gitlab", communityLabel: "Comparably GitLab employee reviews",
-    positive: ["日本RemoteのSenior Ecosystem Sales Managerとしてhyperscaler、GSI、resellerとのjoint planとpartner pipelineを担う。", "FY2026にARR 10億米ドル超、free cash flow 2.2億米ドルを公表し、富士通の国内事例も持つ。"],
-    negative: ["日本売上、顧客数、partner経由売上、team人数、quota、達成率、数値報酬は非公開。", "2026年の再編後の日本投資、directとのcredit、partner delivery capacityを面接で検証する必要がある。"],
-    next: ["Japan Head of Alliances・Channels", "APAC Partner Sales Director", "DevSecOps Country Leadership"],
+    positive: ["日本向けにEnterprise Sales、Ecosystem、Professional Services、Commercial Legalの4求人を公式募集する。", "FY2026にARR 10億米ドル超、free cash flow 2.2億米ドルを公表し、富士通の国内事例も持つ。"],
+    negative: ["日本売上、顧客数、team人数、role別のquota・稼働・評価指標、数値報酬は非公開。", "2026年の再編後の日本投資、direct・partner・deliveryのcapacityと責任分界を面接で検証する必要がある。"],
+    next: ["Japan Enterprise・Ecosystem Leadership", "DevSecOps Professional Services Leadership", "APAC Commercial・GTM Leadership"],
   },
   watchguard: {
     name: "WatchGuard Technologies", domain: "Cybersecurity・MSP・Channel Leadership", officialUrl: "https://jobs.lever.co/watchguard/31981db1-54fb-4764-9f8c-16b886d176ae",

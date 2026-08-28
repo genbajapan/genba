@@ -2994,6 +2994,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "think-cell-customer-enablement-trainer-japan-4727026101",
   "atlassian-senior-customer-success-manager-japanese-21718",
   "veeva-account-partner-medtech-japan",
   "zadara-senior-account-executive",
@@ -3072,6 +3073,8 @@ const closedJobIds = new Set([
   "watchguard-country-manager-japan-31981db1",
 ]);
 
+const recentlyAuditedCompanySlugs = new Set(["gitlab", "sensor-tower", "think-cell"]);
+
 const temporarilyUnverifiableJobIds = new Set<string>([
   "rubrik-customer-experience-manager-japan-current",
   "rubrik-mid-market-account-executive-tokyo-current",
@@ -3130,8 +3133,9 @@ export const companies = publishedCompanyRecords.map((company): Company => {
   };
   const auditedPresence = basicInformationAudit[company.slug];
   const standardizedBase = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
+  const auditedLastChecked = recentlyAuditedCompanySlugs.has(company.slug) ? "2026-08-28" : "2026-08-25";
   const standardized = auditedPresence
-    ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: "2026-08-25" }
+    ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : standardizedBase;
   return preEntrySignalCompanySlugs.has(company.slug)
     ? {

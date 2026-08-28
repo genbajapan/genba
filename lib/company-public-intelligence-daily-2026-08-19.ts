@@ -3,25 +3,26 @@ import { buildPreEntryIntelligence } from "@/lib/company-public-intelligence-pre
 import { buildIntelligence } from "@/lib/company-public-intelligence-wave-two";
 
 const checkedAt = "2026-08-19";
+const gitlabCheckedAt = "2026-08-28";
 
 const gitlabIntelligence = buildIntelligence({
-  checkedAt,
+  checkedAt: gitlabCheckedAt,
   slug: "gitlab",
   name: "GitLab",
-  jobUrl: "https://job-boards.greenhouse.io/gitlab/jobs/8640173002",
+  jobUrl: "https://job-boards.greenhouse.io/gitlab",
   officialUrl: "https://about.gitlab.com/company/team/",
   customersUrl: "https://about.gitlab.com/customers/fujitsu/",
   externalUrl: "https://www.ipa.go.jp/digital/ai/guideline.html",
   financeUrl: "https://about.gitlab.com/press/releases/2026-03-03-gitlab-reports-fourth-quarter-fiscal-year-2026-financial-results/",
   publicInfo: { ticker: "GTLB", exchange: "NASDAQ", listedSince: "2021年" },
-  salesSnapshot: "GitLabは、planning、source code、CI/CD、security、AIを一つのDevSecOps platformへ統合する会社。日本のSenior Ecosystem Sales Managerはpartner契約の管理ではなく、hyperscaler、GSI、resellerとの共同計画、pipeline、co-sell、enablementを売上へつなぐ。",
+  salesSnapshot: "GitLabは、planning、source code、CI/CD、security、AIを一つのDevSecOps platformへ統合する会社。日本向けにEnterprise Sales、Ecosystem、Professional Services、Commercial Legalの4求人を公式募集し、販売から導入・契約まで複数機能を補強している。",
   growthSummary: "FY2026にARR 10億ドル超、free cash flow 2.2億ドル、登録user 5,000万人超を公表。2026年5月にはagentic software deliveryへ集中する再編も発表しており、成長指標と実行riskを併せて見る必要がある。日本単体の売上、顧客数、partner経由売上は非公開。",
   milestones: [
     { year: "2014", label: "創業・会社設立", detail: "open source projectを基にGitLab Inc.を設立。", source: "company" },
     { year: "2020", label: "日本へ本格進出", detail: "日本語製品・営業・support体制を含む市場投資を公式発表。", source: "company" },
     { year: "2021", label: "NASDAQ上場", detail: "ticker GTLBで上場。", source: "finance" },
     { year: "2026.03", label: "ARR 10億ドル超", detail: "FY2026通期でARR 10億ドル超、free cash flow 2.2億ドルを公表。", source: "finance" },
-    { year: "2026.08", label: "日本Ecosystem採用", detail: "日本のSenior Ecosystem Sales Managerを確認。", source: "job" },
+    { year: "2026.08", label: "日本向け4求人", detail: "Enterprise Sales、Ecosystem、Professional Services、Commercial Legalの公式求人を確認。", source: "job" },
   ],
   issueLenses: [
     { title: "既存顧客の導入目的から見る課題", body: "富士通の公式事例は、複数toolと手作業に分かれたsoftware deliveryを共通platformへ寄せ、workflow、security、developer productivityを改善する目的を示す。" },
@@ -45,7 +46,7 @@ const gitlabIntelligence = buildIntelligence({
     { label: "team members", value: "2,500人超", detail: "all-remote組織の会社表示。", source: "company" },
     { label: "日本市場", value: "2020年本格参入", detail: "公式press release。", source: "company" },
     { label: "日本法人での想定従業員数", value: "58人", detail: "gBizINFOの事業所欄に掲載された被保険者数。社員総数と一致しない場合がある。", source: "company" },
-    { label: "日本対象求人", value: "1件", detail: "Senior Ecosystem Sales Manager。", source: "job" },
+    { label: "日本対象求人", value: "4件", detail: "Territory Sales Manager、Senior Ecosystem Sales Manager、Senior Professional Services Engineer、Senior Commercial Legal Counsel。", source: "job" },
   ],
   customers: [
     { company: "富士通", products: "GitLab", outcome: "cloud service開発のworkflowとcollaborationを改善した国内公式事例。", implication: "大規模日本企業でplatform標準化を進めるproof。" },
@@ -56,9 +57,9 @@ const gitlabIntelligence = buildIntelligence({
     { label: "AI governance", value: "lifecycle全体の責任", detail: "AI事業者ガイドラインはrisk、透明性、accountability、人間中心の運用を求める。", caveat: "GitLabの利用が個別systemの適法性・安全性を保証するものではない。" },
     { label: "software supply chain", value: "速度と統制", detail: "AI生成codeが増えるほどsource、dependency、review、security、deploymentのtraceabilityが重要になる。", caveat: "platform統合だけで脆弱性やincidentを防げるわけではない。" },
   ],
-  role: "Senior Ecosystem Sales Managerが日本のhyperscaler、GSI、reseller、technology partnerとjoint business plan、pipeline、co-sell、enablementを担う。",
-  organization: "all-remoteのglobal組織で、Japan ecosystem roleがSales、Solutions、Channel、Marketing、Customer Successと連携する。GitLab合同会社は確認できるが、team構成とreporting lineは非公開。",
-  careerValue: "DevSecOps、AI software delivery、hyperscaler・GSI alliance、partner-sourced pipelineを横断し、日本のecosystem GTMを作る経験。",
+  role: "Territory Sales ManagerはDigital Native・Retailの大手顧客、Ecosystem Salesはhyperscaler・GSI・partner、Professional Servicesは導入・migration、Commercial LegalはAPAC取引を担う。",
+  organization: "all-remoteのglobal組織で、日本向け4求人がSales、Ecosystem、Professional Services、Legalを横断する。GitLab合同会社は確認できるが、現在のteam構成とreporting lineは非公開。",
+  careerValue: "DevSecOps・AI software deliveryでEnterprise Sales、alliance、顧客導入、APAC commercial legalの複数careerを比較できる。",
   globalHeadcount: "2,500人超",
   japanPresence: "GitLab合同会社・東京都中央区日本橋。2020年に日本市場への本格参入を公式発表",
   japanSince: "2020年に本格参入",

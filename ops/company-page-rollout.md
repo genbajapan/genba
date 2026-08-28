@@ -28,6 +28,7 @@
 |HOT|Extreme Networks|3|公開済み|はい|なし|
 |HOT|Figma|8|公開済み|はい|なし|
 |HOT|Fivetran|4|公開済み|はい|なし|
+|HOT|GitLab|4|公開済み|はい|なし|
 |HOT|Glean|3|公開済み|はい|なし|
 |HOT|HubSpot|7|公開済み|はい|なし|
 |HOT|iDeals|3|公開済み|はい|なし|
@@ -77,9 +78,8 @@
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Fusion Worldwide|1|公開済み|はい|なし|
-|Selective|GetYourGuide|1|未着手|いいえ|日本進出年、ヒーロー説明:顧客課題、求人:New Business Development Manager (Japanese Speaker):海外を含む外部評判source、求人:New Business Development Manager (Japanese Speaker):海外reviewの肯定・注意themeほか1件|
-|Selective|GitLab|1|公開済み|はい|なし|
-|Selective|Glance|1|未着手|いいえ|日本進出年、ヒーロー説明:顧客課題、求人:Director, Distribution Partnerships and Business Development - Tokyo, Japan:海外を含む外部評判source、求人:Director, Distribution Partnerships and Business Development - Tokyo, Japan:海外reviewの肯定・注意theme|
+|Selective|GetYourGuide|1|未着手|はい|なし|
+|Selective|Glance|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Ivanti|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
@@ -110,7 +110,7 @@
 |求人なし|Addepar|0|公開済み|はい|なし|
 |求人なし|Airtable|0|公開済み|はい|なし|
 |求人なし|Amplitude|0|公開済み|はい|なし|
-|求人なし|Antithesis|0|未着手|いいえ|対象領域の日本語表記|
+|求人なし|Antithesis|0|未着手|はい|なし|
 |求人なし|Apollo.io|0|公開済み|はい|なし|
 |求人なし|Asana|0|公開済み|はい|なし|
 |求人なし|Atlassian|0|公開済み|はい|なし|

@@ -3,6 +3,7 @@ import { buildIntelligence, type Profile } from "@/lib/company-public-intelligen
 import { applyStandard, buildCompactPatch, type CompactPatchInput } from "@/lib/company-page-rollout-standard-helpers";
 
 const checkedAt = "2026-08-22";
+const thinkCellCheckedAt = "2026-08-28";
 
 function build(profile: Profile, patch: CompactPatchInput) {
   const intelligence = buildIntelligence(profile);
@@ -425,23 +426,23 @@ pingcapIntelligence.companyStats.globalHeadcount = {
 };
 
 const thinkCellIntelligence = build({
-  checkedAt,
+  checkedAt: thinkCellCheckedAt,
   slug: "think-cell",
   name: "think-cell",
-  jobUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4727026101",
+  jobUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4953129101",
   officialUrl: "https://www.think-cell.com/en/company/about",
   customersUrl: "https://www.think-cell.com/en/product/success-stories",
   externalUrl: "https://www.meti.go.jp/policy/it_policy/dx/dx.html",
   financeUrl: "https://www.think-cell.com/en/career",
-  salesSnapshot: "PowerPointのchart、layout、data更新、brand templateに使うmanual作業を減らし、分析・議論へ時間を戻す会社。日本のCustomer Enablementはtrainingとtrialをadoption、retention、account growthへ変える。",
-  growthSummary: "2002年創業の非公開・profitability重視企業。公式は35,000社、130万人超のusers、Fortune 100の88%、global 210人超、Tokyo officeを表示。日本売上とteam人数は非公開。",
+  salesSnapshot: "PowerPointのchart、layout、data更新、brand templateに使うmanual作業を減らし、分析・議論へ時間を戻す会社。日本のMarketing Managerはcampaign、event、partner・influencer施策を認知、engagement、growthへつなぐ。",
+  growthSummary: "2002年創業の非公開企業。公式は35,000社、130万人超のusers、Fortune 100の88%、global 220人超、Tokyo officeを表示。日本売上とteam人数は非公開。",
   ipoSummary: "非公開企業。外部調達、売上、ARR、企業価値、IPO時期、日本単体業績は公表されていない。",
   milestones: [
     { year: "2002", label: "創業", detail: "Markus HannebauerとArno SchödlがBerlinで設立。", source: "company" },
     { year: "2022", label: "100万users", detail: "global user baseが100万人を超過。", source: "company" },
     { year: "2025", label: "think-cell Suite", detail: "chart中心から複数productへ拡張。", source: "company" },
     { year: "2026", label: "130万人・35,000社", detail: "会社公式Careersの表示。", source: "company" },
-    { year: "2026.08", label: "日本事業開始済みを確認", detail: "東京officeと日本語必須roleを公式Greenhouseで確認。日本事業の開始年自体は未確認。", source: "job" },
+    { year: "2026.08", label: "日本Marketing採用", detail: "東京のMarketing Manager - Japanを公式Greenhouseで確認。", source: "job" },
   ],
   issueLenses: [
     { title: "既存顧客の導入目的から見る課題", body: "JTとNTT DATAの公式事例は、chart・schedule・template調整の時間を減らし、分析、research、議論、意思決定へ時間を移す目的を示す。" },
@@ -463,8 +464,8 @@ const thinkCellIntelligence = build({
     { label: "顧客", value: "35,000社", detail: "会社公式表示。", source: "company" },
     { label: "users", value: "130万人超", detail: "会社公式表示。", source: "company" },
     { label: "Fortune 100", value: "88%", detail: "会社公式reference page。", source: "customers" },
-    { label: "global team", value: "210人超", detail: "公式求人記載。", source: "company" },
-    { label: "日本求人", value: "Customer Enablement 1件", detail: "東京の公式求人を確認。", source: "job" },
+    { label: "global team", value: "220人超", detail: "2026年8月の公式求人記載。", source: "company" },
+    { label: "日本求人", value: "Marketing 1件", detail: "東京のMarketing Manager - Japanを確認。", source: "job" },
   ],
   customers: [
     { company: "Japan Tobacco", products: "think-cell", outcome: "chart作成・Excel linkの手作業を減らし、社内意思決定用report作成を効率化した公式事例。", implication: "国内Enterpriseで日常利用へ定着するproof。" },
@@ -475,10 +476,10 @@ const thinkCellIntelligence = build({
     { label: "knowledge work", value: "作成から判断へ時間移行", detail: "DXが進んでも経営・営業・consultingの意思決定はdocumentとpresentationを介して行われる。", caveat: "生産性効果は利用頻度とadoptionで異なる。" },
     { label: "生成AI", value: "draft速度と品質統制", detail: "AIでslide draftが速くなるほど、source accuracy、brand、data link、human reviewのworkflowが重要になる。", caveat: "AI機能だけでstoryの品質を保証しない。" },
   ],
-  role: "東京のCustomer Enablementが日本・一部APAC顧客へtraining、workshop、trial・PoCを提供し、AEとgrowth・churn riskへ対応してproduct feedbackを還流する。",
-  organization: "Tokyo officeを含むglobal 210人超の組織。日本語native・英語必須。現行求人本文では出社頻度、日本team人数、担当社数を確認できない。",
-  careerValue: "Customer Enablement、training design、adoption、trial・PoC、retention・expansion支援をproductivity SaaSで横断する経験。",
-  globalHeadcount: "210人超",
+  role: "東京のMarketing Managerが日本市場のmulti-channel campaign、event、partner・influencer施策、sales enablementを企画・実行し、performanceを分析する。",
+  organization: "Tokyo officeを含むglobal 220人超の組織。日本語・英語が必須。現行求人本文では出社頻度、日本team人数、担当budgetを確認できない。",
+  careerValue: "Japan field marketing、event、partner・influencer、brand、sales enablementをproductivity SaaSで横断する経験。",
+  globalHeadcount: "220人超",
   japanPresence: "東京office・Japan customer team",
   japanSince: "日本拠点開始年は一次情報で未確認",
   solutions: [
@@ -486,14 +487,14 @@ const thinkCellIntelligence = build({
     { name: "think-cell Library", valueProp: "slide、image、templateを検索・再利用する。", url: "https://www.think-cell.com/en/product/library", competitors: "SharePoint、brand portal、manual folder。", differentiation: "PowerPoint workflow内のasset access。" },
     { name: "think-cell Suite", valueProp: "chart、layout、data storytelling、AI支援を統合する。", url: "https://www.think-cell.com/en/product", competitors: "Office add-in群、Canva、Copilot、agency。", differentiation: "既存PowerPoint利用を変えずにautomationを追加。" },
   ],
-  fitTags: ["Customer Enablement", "Adoption", "PowerPoint", "Productivity", "Training", "Japan", "APAC"],
+  fitTags: ["B2B Marketing", "Events", "Partnerships", "PowerPoint", "Productivity", "Japan"],
   comparisons: [
     { arena: "PowerPoint productivity", companies: ["think-cell", "PowerPoint native", "Office add-ins"], why: "作成時間、quality、data link" },
     { arena: "Presentation workflow", companies: ["think-cell", "Canva", "agency・specialist team"], why: "既存workflow、brand、collaboration" },
     { arena: "AI slide", companies: ["think-cell", "Microsoft Copilot", "AI deck tools"], why: "accuracy、editing、data connection、governance" },
   ],
 }, {
-  slug: "think-cell", leaderName: "Alexander von Fritsch", leaderLabel: "CEO", leaderUrl: "https://www.think-cell.com/en/company/about", localName: "未確認", localLabel: "Japan責任者", localUrl: "https://job-boards.eu.greenhouse.io/think-cell/jobs/4727026101",
+  slug: "think-cell", leaderName: "Alexander von Fritsch", leaderLabel: "CEO", leaderUrl: "https://www.think-cell.com/en/company/about", localName: "松塚展国", localLabel: "think-cell Japan社長", localUrl: "https://www.think-cell.com/ja/resources/content-hub/summary-pivot-matsutsuka",
   companyId: "think-cell-company", jobId: "think-cell-job", customersId: "think-cell-customers", externalId: "think-cell-external", financeId: "think-cell-finance",
   targets: ["経営企画・Finance・IR部門", "consulting・professional services部門", "Sales・Market Intelligence部門"],
   heroSummary: "PowerPointのchart、layout、data更新、brand調整へ時間を使い、分析・議論・意思決定が圧迫される課題を解決する。既存のPowerPoint workflow内で反復作業を自動化し、knowledge workerの時間を判断とstoryへ戻す。",
@@ -502,17 +503,17 @@ const thinkCellIntelligence = build({
   advantage: "利用者に別のauthoring toolを学ばせず、日常のPowerPoint workflow内でconsulting-gradeのautomationを提供する。",
   benefit: "chart・deck作成と更新の時間を減らし、analysis、discussion、customer・management communicationへ時間を移す。",
   evidence: "JTとNTT DATA Institute of Management Consultingの国内公式事例で、作成効率、brand consistency、意思決定への効果を確認。",
-  marketVerdict: "広いglobal利用と国内named proofがある。日本ではtrainingをactive use、renewal、department expansionへ変える再現性が成長条件。",
+  marketVerdict: "広いglobal利用と国内named proofがある。日本ではconsulting・financeを中心とする既存認知を、event、partner、influencer、sales enablementで継続的な需要へ変える再現性が成長条件。",
   marketParagraphs: ["data量と意思決定頻度が増えるほど、presentation作業のautomationは経営・営業・consultingの隠れた生産性投資になる。", "AI slide機能が増えるほど、PowerPoint内のeditability、source data、brand、adoptionを一続きに管理できることが差になる。"],
-  cultureHeadline: "trainingを実施するだけでなく、adoption・churn・account growthまでAEと持つCustomer Enablement role。",
-  classification: "未確認", displayLabel: "Tokyo勤務（出社頻度は未確認）", officeDays: "現行求人本文に固定日数の記載なし", remoteOnly: "remote専任ではない", flexibility: "日本・一部APAC accountを担当",
-  goodFor: ["trainingをcustomer outcomeへ変えたい人", "productivityとadoptionを定量化したい人"], cautionFor: ["deliveryだけでcommercial責任を避けたい人", "technical implementation中心を望む人"],
+  cultureHeadline: "campaign実行だけでなく、event、partner、influencer、sales enablementとperformance分析まで持つJapan Marketing role。",
+  classification: "未確認", displayLabel: "Tokyo勤務（出社頻度は未確認）", officeDays: "現行求人本文に固定日数の記載なし", remoteOnly: "remote専任ではない", flexibility: "日本市場のregional marketingを担当",
+  goodFor: ["日本市場のcampaignをend-to-endで持ちたい人", "event・partner施策をgrowthへつなげたい人"], cautionFor: ["単一channelの運用だけを望む人", "分析・sales enablementを避けたい人"],
   unresolved: [
-    ["portfolio", "日本・一部APAC accountを担当する。", "担当社数、segment、地域比率、利用者数の分布は。"],
-    ["KPI", "growthとchurn riskへAEと対応する。", "adoption、renewal、expansionのKPIとcredit ruleは。"],
-    ["program", "training・workshopを設計する。", "標準programとcustom deliveryの比率、年間実施数、成果測定は。"],
-    ["team", "product・marketingへfeedbackする。", "JapanのAE、CS、support、marketing人数と責任分界は。"],
-    ["career", "enablement・CS・AMの経験を求める。", "次role、昇進基準、直近24カ月の異動・退職は。"],
+    ["budget", "日本向けcampaignをend-to-endで担う。", "年間budget、channel配分、裁量範囲、approvalは。"],
+    ["KPI", "growth、brand awareness、engagementを担う。", "pipeline、revenue、event ROI、influencer施策のKPIとattributionは。"],
+    ["channel", "event、partner、influencerを横断する。", "現在の主力channelと、直近12カ月の成功・失敗例は。"],
+    ["team", "Sales、Product、Design、Contentと連携する。", "JapanのSales・Marketing人数とglobal teamとの責任分界は。"],
+    ["career", "日本市場のB2B marketing経験を求める。", "次role、昇進基準、直近24カ月の異動・退職は。"],
   ],
 });
 
