@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-28",
+  "auditedAt": "2026-08-29",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -26,19 +26,19 @@
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 45,
-      "Active": 11,
-      "Selective": 43,
-      "求人なし": 49
+      "HOT": 44,
+      "Active": 24,
+      "Selective": 30,
+      "求人なし": 50
     },
-    "standardReady": 148
+    "standardReady": 147
   },
   "companies": [
     {
       "slug": "anaplan",
       "company": "Anaplan",
       "priority": "HOT",
-      "salesRoles": 3,
+      "salesRoles": 6,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -53,10 +53,19 @@
       "missingFields": []
     },
     {
+      "slug": "black-duck",
+      "company": "Black Duck",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "braze",
       "company": "Braze",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -65,7 +74,7 @@
       "slug": "cato-networks",
       "company": "Cato Networks",
       "priority": "HOT",
-      "salesRoles": 10,
+      "salesRoles": 9,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -83,7 +92,7 @@
       "slug": "channel-talk",
       "company": "Channel Talk",
       "priority": "HOT",
-      "salesRoles": 11,
+      "salesRoles": 16,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -92,7 +101,7 @@
       "slug": "cloudflare",
       "company": "Cloudflare",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -137,16 +146,7 @@
       "slug": "cursor",
       "company": "Cursor",
       "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "dataiku",
-      "company": "Dataiku",
-      "priority": "HOT",
-      "salesRoles": 3,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -161,19 +161,10 @@
       "missingFields": []
     },
     {
-      "slug": "deel",
-      "company": "Deel",
-      "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "deepl",
       "company": "DeepL",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 8,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -209,7 +200,7 @@
       "slug": "extreme-networks",
       "company": "Extreme Networks",
       "priority": "HOT",
-      "salesRoles": 3,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -242,11 +233,11 @@
       "missingFields": []
     },
     {
-      "slug": "glean",
-      "company": "Glean",
+      "slug": "glance",
+      "company": "Glance",
       "priority": "HOT",
-      "salesRoles": 3,
-      "status": "公開済み",
+      "salesRoles": 5,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -254,7 +245,7 @@
       "slug": "hubspot",
       "company": "HubSpot",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 8,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -272,16 +263,7 @@
       "slug": "knowbe4",
       "company": "KnowBe4",
       "priority": "HOT",
-      "salesRoles": 6,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "marqvision",
-      "company": "MarqVision",
-      "priority": "HOT",
-      "salesRoles": 3,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -308,16 +290,7 @@
       "slug": "netskope",
       "company": "Netskope",
       "priority": "HOT",
-      "salesRoles": 12,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "neural-concept",
-      "company": "Neural Concept",
-      "priority": "HOT",
-      "salesRoles": 4,
+      "salesRoles": 10,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -327,15 +300,6 @@
       "company": "New Relic",
       "priority": "HOT",
       "salesRoles": 7,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "nice",
-      "company": "NiCE",
-      "priority": "HOT",
-      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -353,7 +317,16 @@
       "slug": "okta",
       "company": "Okta",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 7,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "outsystems",
+      "company": "OutSystems",
+      "priority": "HOT",
+      "salesRoles": 7,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -362,7 +335,25 @@
       "slug": "pagerduty",
       "company": "PagerDuty",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "rubrik",
+      "company": "Rubrik",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sailpoint",
+      "company": "SailPoint",
+      "priority": "HOT",
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -386,8 +377,17 @@
       "missingFields": []
     },
     {
-      "slug": "speak",
-      "company": "Speak",
+      "slug": "similarweb",
+      "company": "Similarweb",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "tanium",
+      "company": "Tanium",
       "priority": "HOT",
       "salesRoles": 3,
       "status": "公開済み",
@@ -398,7 +398,7 @@
       "slug": "uipath",
       "company": "UiPath",
       "priority": "HOT",
-      "salesRoles": 4,
+      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -407,7 +407,7 @@
       "slug": "verkada",
       "company": "Verkada",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 6,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -425,23 +425,41 @@
       "slug": "wiz",
       "company": "Wiz",
       "priority": "HOT",
-      "salesRoles": 8,
+      "salesRoles": 7,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
     {
-      "slug": "zendesk",
-      "company": "Zendesk",
-      "priority": "HOT",
-      "salesRoles": 3,
+      "slug": "asana",
+      "company": "Asana",
+      "priority": "Active",
+      "salesRoles": 2,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
     {
-      "slug": "censys",
-      "company": "Censys",
+      "slug": "behavox",
+      "company": "Behavox",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "bluematrix",
+      "company": "BlueMatrix",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "dataiku",
+      "company": "Dataiku",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -467,6 +485,33 @@
       "missingFields": []
     },
     {
+      "slug": "fusion-worldwide",
+      "company": "Fusion Worldwide",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "getyourguide",
+      "company": "GetYourGuide",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "glean",
+      "company": "Glean",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "grafana-labs",
       "company": "Grafana Labs",
       "priority": "Active",
@@ -476,8 +521,35 @@
       "missingFields": []
     },
     {
+      "slug": "marqvision",
+      "company": "MarqVision",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "menlo-security",
+      "company": "Menlo Security",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "mirakl",
       "company": "Mirakl",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "neural-concept",
+      "company": "Neural Concept",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -494,6 +566,15 @@
       "missingFields": []
     },
     {
+      "slug": "nice",
+      "company": "NiCE",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "replit",
       "company": "Replit",
       "priority": "Active",
@@ -503,8 +584,8 @@
       "missingFields": []
     },
     {
-      "slug": "rubrik",
-      "company": "Rubrik",
+      "slug": "sayari",
+      "company": "Sayari",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -521,8 +602,35 @@
       "missingFields": []
     },
     {
+      "slug": "speak",
+      "company": "Speak",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "twilio",
+      "company": "Twilio",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "ubiquiti",
       "company": "Ubiquiti",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "zendesk",
+      "company": "Zendesk",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -548,6 +656,27 @@
       "missingFields": []
     },
     {
+      "slug": "antithesis",
+      "company": "Antithesis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Solutions Engineer:報酬仮説の算定内訳",
+        "求人:Solutions Engineer:推定固定給レンジ",
+        "求人:Solutions Engineer:推定OTE・総現金報酬レンジ",
+        "求人:Solutions Engineer:Pay modelの前提",
+        "求人:Solutions Engineer:equityを現金報酬から除外",
+        "求人:Solutions Engineer:報酬仮説の市場benchmark",
+        "求人:Solutions Engineer:海外を含む外部評判source",
+        "求人:Solutions Engineer:職種別の評判仮説",
+        "求人:Solutions Engineer:海外reviewの肯定・注意theme",
+        "求人:Solutions Engineer:職種固有の検証論点",
+        "求人:Solutions Engineer:数値ありの職種別報酬帯"
+      ]
+    },
+    {
       "slug": "appsflyer",
       "company": "AppsFlyer",
       "priority": "Selective",
@@ -557,35 +686,17 @@
       "missingFields": []
     },
     {
-      "slug": "behavox",
-      "company": "Behavox",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "black-duck",
-      "company": "Black Duck",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "bluematrix",
-      "company": "BlueMatrix",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "cambly",
       "company": "Cambly",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "censys",
+      "company": "Censys",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -629,15 +740,6 @@
       "missingFields": []
     },
     {
-      "slug": "deepgram",
-      "company": "Deepgram",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "doubleverify",
       "company": "DoubleVerify",
       "priority": "Selective",
@@ -674,44 +776,8 @@
       "missingFields": []
     },
     {
-      "slug": "fusion-worldwide",
-      "company": "Fusion Worldwide",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "getyourguide",
-      "company": "GetYourGuide",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "glance",
-      "company": "Glance",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "hightouch",
       "company": "Hightouch",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "ivanti",
-      "company": "Ivanti",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -737,35 +803,8 @@
       "missingFields": []
     },
     {
-      "slug": "menlo-security",
-      "company": "Menlo Security",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "outsystems",
-      "company": "OutSystems",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "patch",
       "company": "Patch",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "pendo",
-      "company": "Pendo",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -800,35 +839,8 @@
       "missingFields": []
     },
     {
-      "slug": "sailpoint",
-      "company": "SailPoint",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "sayari",
-      "company": "Sayari",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "shopify",
       "company": "Shopify",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "similarweb",
-      "company": "Similarweb",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -845,15 +857,6 @@
       "missingFields": []
     },
     {
-      "slug": "tanium",
-      "company": "Tanium",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "think-cell",
       "company": "think-cell",
       "priority": "Selective",
@@ -863,8 +866,8 @@
       "missingFields": []
     },
     {
-      "slug": "twilio",
-      "company": "Twilio",
+      "slug": "vanta",
+      "company": "Vanta",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -971,26 +974,8 @@
       "missingFields": []
     },
     {
-      "slug": "antithesis",
-      "company": "Antithesis",
-      "priority": "求人なし",
-      "salesRoles": 0,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "apollo-io",
       "company": "Apollo.io",
-      "priority": "求人なし",
-      "salesRoles": 0,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "asana",
-      "company": "Asana",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -1045,6 +1030,24 @@
     {
       "slug": "contentsquare",
       "company": "Contentsquare",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "deel",
+      "company": "Deel",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "deepgram",
+      "company": "Deepgram",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -1117,6 +1120,15 @@
     {
       "slug": "island",
       "company": "Island",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ivanti",
+      "company": "Ivanti",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -1198,6 +1210,15 @@
     {
       "slug": "patsnap",
       "company": "Patsnap",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "pendo",
+      "company": "Pendo",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -1315,15 +1336,6 @@
     {
       "slug": "tools-for-humanity",
       "company": "Tools for Humanity (World)",
-      "priority": "求人なし",
-      "salesRoles": 0,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "vanta",
-      "company": "Vanta",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",

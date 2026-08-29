@@ -60,6 +60,7 @@ for (const slug of ["clickhouse"]) batchSlugs.add(slug);
 for (const slug of ["behavox"]) batchSlugs.add(slug);
 for (const slug of ["glance", "getyourguide"]) batchSlugs.add(slug);
 for (const slug of ["rokt", "menlo-security", "witnessai"]) batchSlugs.add(slug);
+for (const slug of ["vanta"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -156,6 +157,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  vanta: {
+    name: "Vanta", domain: "Trust Management・Compliance Automation・Sales Engineering", officialUrl: "https://www.vanta.com/company/careers",
+    communityUrl: "https://www.repvue.com/companies/vanta", communityLabel: "RepVue Vanta sales reviews",
+    positive: ["日本向けSales Engineerとして、顧客のsecurity・compliance課題を技術評価、demo、solution designへつなぐ役割を公式確認。", "SOC 2、ISO 27001等の継続的なcontrol monitoringとtrust workflowを一つのplatformで扱う。"],
+    negative: ["日本法人、国内office、雇用主体、日本売上、顧客数、担当社数、給与・OTE・株式は公開情報で確認できない。", "日本市場での導入・support体制、AEとの分担、PoCから本番への転換、partner経由案件の責任を面接で検証する必要がある。"],
+    next: ["Security Sales Engineering Lead", "Trust・GRC Solutions Consulting Leadership", "Japan・APAC Security Field Leadership"],
+  },
   rokt: {
     name: "Rokt", domain: "AI Commerce・Retail Media・Customer Success", officialUrl: "https://www.rokt.com/jp/company/careers",
     communityUrl: "https://www.repvue.com/companies/rokt", communityLabel: "RepVue Rokt sales reviews",

@@ -35,6 +35,7 @@ import { companies20260825Daily, jobs20260825Daily } from "@/lib/company-additio
 import { companies20260826Daily, jobs20260826Daily } from "@/lib/company-additions-2026-08-26-daily";
 import { companies20260827Daily, jobs20260827Daily } from "@/lib/company-additions-2026-08-27-daily";
 import { companies20260828Daily, jobs20260828Daily } from "@/lib/company-additions-2026-08-28-daily";
+import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
 import { standardizeRolloutCompany } from "@/lib/company-page-rollout-company-standard";
@@ -971,6 +972,8 @@ const preEntrySignalCompanySlugs = new Set([
   "hightouch", "cursor", "zadara", "abnormal-ai", "neural-concept", "patch", "mambu", "zilliz", "lakera",
   "deepgram",
   "coderabbit",
+  "vanta",
+  "antithesis",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1375,6 +1378,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260829FullAudit,
   ...jobs20260828Daily,
   ...jobs20260827Daily,
   ...jobs20260826Daily,
@@ -3072,22 +3076,46 @@ const closedJobIds = new Set([
   "perforce-enterprise-account-executive-delphix-japan-9eeec4e8",
   "dropbox-customer-success-manager-japan-6862441",
   "watchguard-country-manager-japan-31981db1",
-]);
-
-const recentlyAuditedCompanySlugs = new Set([
-  "cohere",
-  "figma",
-  "gitlab",
-  "mambu",
-  "mirakl",
-  "sensor-tower",
-  "think-cell",
-  "verkada",
-]);
-
-const temporarilyUnverifiableJobIds = new Set<string>([
-  "rubrik-customer-experience-manager-japan-current",
-  "rubrik-mid-market-account-executive-tokyo-current",
+  "uipath-senior-business-development-representative-japan-current",
+  "uipath-enterprise-sales-associate-financial-services-japan-current",
+  "glean-sdr-japan",
+  "speak-csm-japan",
+  "speak-b2b-marketing-manager-japan",
+  "dataiku-marketing-intern-japan",
+  "verkada-field-marketing-manager-japan",
+  "censys-account-executive-japan",
+  "ideals-account-executive-japan-current",
+  "ideals-business-development-associate-japan-current",
+  "marqvision-customer-success-manager-japan-current",
+  "knowbe4-ciso-advisor-japan-current",
+  "deel-sales-development-representative-japan-current",
+  "deel-customer-onboarding-manager-japanese",
+  "deel-senior-manager-payroll-operations-japan",
+  "deel-senior-payroll-associate-japan",
+  "deepl-lead-solutions-consultant-japan",
+  "pendo-enterprise-account-executive-japan-current",
+  "anthropic-channel-account-manager-si-reseller-japan",
+  "anthropic-enterprise-ae-retail-japan",
+  "anthropic-enterprise-ae-transportation-utilities-japan",
+  "cloudflare-senior-director-partner-sales-japan",
+  "cloudflare-premium-technical-support-engineer-vietnamese-tokyo",
+  "wiz-senior-strategic-partner-manager-global-si-japan-current",
+  "neural-concept-regional-sales-director-japan-current",
+  "neural-concept-technical-account-manager-japan-current",
+  "cato-networks-product-support-engineer-team-lead-t2-japan",
+  "netskope-channel-solutions-engineer-japan-current",
+  "netskope-territory-sales-manager-midmarket-japan-7742450-current",
+  "nice-account-executive-japan-current",
+  "nice-senior-solution-engineer-japan-current",
+  "ivanti-sales-engineer-japan",
+  "twilio-strategic-account-executive-japan-1099553600898",
+  "deepgram-sales-country-leader-japan-3ecb28e4",
+  "zendesk-business-development-representative",
+  "sailpoint-strategic-ae-agentic-technologies-r013034",
+  "pagerduty-professional-services-consultant-8293",
+  "pagerduty-professional-services-consultant-7991",
+  "braze-manager-business-development",
+  "bluematrix-client-success-manager-tokyo",
 ]);
 
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
@@ -3095,9 +3123,11 @@ const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => 
 export const jobs = jobRecords
   .filter((job) => !publiclyExcludedCompanySlugs.has(job.companySlug) && !closedJobIds.has(job.id))
   .map((job) => {
-    const datedJob = temporarilyUnverifiableJobIds.has(job.id)
-      ? job
-      : { ...job, lastChecked: "2026-08-29" };
+    const datedJob = {
+      ...job,
+      title: jobTitleOverrides20260829[job.id] ?? job.title,
+      lastChecked: "2026-08-29",
+    };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
     return strengthenRolloutBatchOneJob(strengthened);
@@ -3142,18 +3172,22 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     dialpad: "Dialpad Japan・東京office（CIRCLES渋谷6F）",
   };
   const auditedPresence = basicInformationAudit[company.slug];
-  const standardizedBase = standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus });
-  const auditedLastChecked = recentlyAuditedCompanySlugs.has(company.slug) ? "2026-08-29" : "2026-08-25";
+  const standardizedBase = {
+    ...standardizeRolloutCompany({ ...company, entryStatus, salesRoles, hiringStatus }),
+    salesRoles,
+    hiringStatus,
+  };
+  const auditedLastChecked = "2026-08-29";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
-    : standardizedBase;
+    : { ...standardizedBase, lastChecked: auditedLastChecked };
   return preEntrySignalCompanySlugs.has(company.slug)
     ? {
         ...standardized,
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-08-19",
+        lastChecked: "2026-08-29",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;

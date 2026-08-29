@@ -1,0 +1,146 @@
+import type { Job } from "@/lib/market-data";
+
+type AuditedJobSeed = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source">;
+
+const auditedAt = "2026-08-29";
+
+function createAuditedJob(seed: AuditedJobSeed): Job {
+  const role = seed.title;
+  const domain = seed.segment;
+
+  return {
+    ...seed,
+    firstSeen: auditedAt,
+    lastChecked: auditedAt,
+    descriptionSummary: `${seed.location}を対象に公式採用ページで現行掲載を確認した${role}。求人の詳細・応募条件は公式ページを正本とする。`,
+    genbaTake: `${domain}で、顧客課題の把握から社内外の関係者を動かし、案件・導入・継続利用のいずれかを前へ進める役割。担当範囲と評価指標は面接で確認したい。`,
+    compensationReality: "日本向けの給与、OTE、株式報酬、quotaは公式求人で確認できない。報酬構成、評価期間、達成率、変動報酬のcredit条件を面接で確認したい。",
+    compensationResearch: {
+      researchedAt: auditedAt,
+      confidence: "探索中",
+      headline: "日本向けの公式報酬レンジは未確認",
+      summary: `公式求人で${role}の日本向け給与、OTE、株式報酬の金額は確認できない。市場相場を個社の提示額として扱わず、面接とofferで構成要素を確認する。`,
+      breakdown: [
+        { label: "基本給", value: "未確認", status: "要確認", detail: "日本向け公式求人に金額の記載を確認できない。" },
+        { label: "変動給・bonus", value: "未確認", status: "要確認", detail: "pay mix、quota、credit、acceleratorは未確認。" },
+        { label: "株式報酬", value: "未確認", status: "要確認", detail: "付与有無、数量、権利確定条件は未確認。" },
+      ],
+      readerTake: "offer比較では基本給、変動給、quota、立ち上がり保証、達成率、株式報酬を同じ条件表にそろえる。",
+      sources: [{ ...seed.source, detail: "対象職種の勤務地、求人名、公開されている条件を確認。報酬額は確認できない。" }],
+    },
+    reputationResearch: {
+      researchedAt: auditedAt,
+      summary: `${role}の日本配属先だけを十分な件数で評価した公開レビューは確認していない。公式求人の責任範囲から、活躍条件と面接での確認点を仮説化する。`,
+      positiveTopics: [`【Genba仮説】${domain}の顧客課題と成果責任を持ち、社内外の関係者を動かせる環境なら、職種固有の再現性を作りやすい。`],
+      negativeTopics: ["【Genba仮説】目標、担当範囲、意思決定権、支援体制が曖昧な場合は、会社の成長と個人の成果が一致しない可能性がある。"],
+      caveat: "日本の対象職種に限定した十分なreview母数は未確認。配属先の事実として一般化せず、面接で数字と実例を確認する。",
+      sources: [{ ...seed.source, detail: "対象職種の責任、要件、勤務地、公開されている働き方を確認。" }],
+    },
+    marketValueResearch: {
+      headline: `${domain}の成果を再現できるかが市場価値を決める`,
+      summary: `【Genba仮説】${role}の市場価値は、社名や在籍年数だけでなく、${domain}の責任をどの規模で持ち、顧客・事業成果を数字で証明できたかで決まる。`,
+      skills: [
+        { title: "顧客課題の構造化", detail: "製品説明から入らず、顧客の業務・経営課題と投資理由を整理する。" },
+        { title: "部門横断の実行", detail: "顧客と社内の複数関係者を同じ成果へそろえ、次の意思決定を前へ進める。" },
+        { title: "成果の定量化", detail: "案件創出、受注、導入、利用、継続、拡張の該当指標で結果を残す。" },
+      ],
+      nextRoles: [
+        { title: `${domain}の上位職`, detail: "より大きな顧客、地域、製品範囲、複雑な案件を持つ。" },
+        { title: "Lead / Manager", detail: "個人成果に加えて、採用、育成、予測、再現可能な進め方を持つ。" },
+      ],
+      marketBands: [{ level: "同職種・上位scope", range: "個社の公式報酬は未確認", condition: "成果の規模、再現性、英語、担当範囲を説明できる場合。" }],
+      proofPoints: ["担当範囲と目標", "成果の金額・件数・改善率", "複数関係者を動かした実例", "再現可能な進め方"],
+      caveat: "公開された日本の転職先・報酬分布ではなく、職務構造からのGenba仮説。実際の選択肢は担当規模、成果、英語、採用市場で変わる。",
+    },
+    desiredProfile: `公式求人の職種・勤務地から、${domain}の実務経験と、日本市場の顧客・社内関係者を巻き込む力が重要になる。年数・言語・個別要件は公式求人を確認したい。`,
+    careerInsights: {
+      fit: `${domain}で、会社固有の製品価値を日本市場の顧客成果へつなげたい人に向く。`,
+      thingsToKnow: "担当顧客数、目標、平均案件規模、達成率、出社頻度、選考言語は公開情報だけでは確定できない。面接で具体例を確認したい。",
+      marketValue: `${domain}の成果を案件創出、受注、導入、継続利用、拡張の定量実績で残せれば、隣接する外資SaaSの同職種・上位職へ説明しやすい。`,
+      tenureAndPromotion: `【Genba仮説】${domain}では、在籍年数だけでなく担当範囲、個人・チーム成果、再現可能な進め方の構築が次のlevelを決める。支持材料: 公式求人は顧客成果、部門横断の実行、継続的な学習を求める。反証・留保: 日本の対象職種だけを十分な件数で集計した在籍年数・昇進率は確認できず、会社や職種で評価軸は異なる。面接で確認: 直近24カ月の昇進・異動・退職件数、次levelに必要な定量成果、評価周期は。`,
+      priorCompanies: `【Genba仮説】入社元は社名より、${domain}に近い顧客課題、複数の意思決定者、目標責任、部門横断の実行が共通項になる。支持材料: 公式求人が職種固有の経験と成果、日本市場での顧客対応を求める。反証・留保: 日本の公開プロフィールを同一条件で十分に集計できず、特定企業からの採用傾向は断定できない。面接で確認: 直近採用者の前職category上位3つ、共通skill、立ち上がり期間、採用で重視した成果は。`,
+      nextCompanies: `【Genba仮説】案件創出、受注、導入、利用、顧客KPIなど${domain}の成果を定量化できれば、同職種の上位segment、Lead、management、隣接する顧客接点職へ接続しやすい。支持材料: 公式求人が成果責任と部門横断のownershipを求める。反証・留保: 公開された日本の転職先分布ではなく、隣接する職務構造からの仮説で、実際の選択肢は担当規模・成果・英語・採用市場で変わる。面接で確認: 退職者の次role category、社内で範囲を広げた実例、次職で評価された成果は。`,
+    },
+  };
+}
+
+const seeds: AuditedJobSeed[] = [
+  { id: "okta-director-sales-development-japan-8141257", companySlug: "okta", title: "Director, Sales Development, Japan", segment: "Sales Development Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Okta Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/oktajp/jobs/8141257" } },
+  { id: "okta-sales-development-representative-japan-8102282", companySlug: "okta", title: "Sales Development Representative", segment: "Sales Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Okta Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/oktajp/jobs/8102282" } },
+  { id: "uipath-sales-engineering-specialist-team-b926953b", companySlug: "uipath", title: "Sales Engineering - Specialist Team", segment: "Sales Engineering", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "UiPath Careers (Ashby)", url: "https://jobs.ashbyhq.com/uipath/b926953b-26a7-4c6b-8916-7e7048d7ec19" } },
+  { id: "anaplan-solution-consulting-manager-8607390002", companySlug: "anaplan", title: "Solution Consulting Manager", segment: "Solution Consulting Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anaplan Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anaplan/jobs/8607390002" } },
+  { id: "anaplan-enterprise-account-executive-finance-8438757002", companySlug: "anaplan", title: "大手直販営業 (Enterprise Account Executive) - Finance", segment: "Enterprise Sales / Finance", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anaplan Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anaplan/jobs/8438757002" } },
+  { id: "anaplan-enterprise-account-executive-manufacturing-8365786002", companySlug: "anaplan", title: "大手直販営業 (Enterprise Account Executive) - Manufacturing", segment: "Enterprise Sales / Manufacturing", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anaplan Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anaplan/jobs/8365786002" } },
+  { id: "rubrik-senior-customer-success-engineer-japan-8143267", companySlug: "rubrik", title: "Senior Customer Success Engineer", segment: "Customer Success Engineering", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Rubrik Careers", url: "https://www.rubrik.com/company/careers/departments/job.8143267?gh_jid=8143267" } },
+  { id: "speak-sales-development-representative-japan-ad2f9ef5", companySlug: "speak", title: "Sales Development Representative - Japan", segment: "Sales Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Speak Careers (Ashby)", url: "https://jobs.ashbyhq.com/speak/ad2f9ef5-caf1-49e3-b9e7-b4076987a470" } },
+  { id: "ideals-account-executive-japan-b9ddb16e", companySlug: "ideals", title: "Account Executive - Japan", segment: "Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "iDeals Careers (Ashby)", url: "https://jobs.ashbyhq.com/ideals/b9ddb16e-bacf-4f55-9f74-1802f3f9da97" } },
+  { id: "ideals-business-development-manager-japan-743d14a5", companySlug: "ideals", title: "Business Development Manager, Japan", segment: "Business Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "iDeals Careers (Ashby)", url: "https://jobs.ashbyhq.com/ideals/743d14a5-53f5-4e57-9270-45722152d052" } },
+  { id: "deepl-lead-solutions-consultant-apj-d930454d", companySlug: "deepl", title: "Lead Solutions Consultant | APJ", segment: "Solutions Consulting", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "DeepL Careers (Ashby)", url: "https://jobs.ashbyhq.com/DeepL/d930454d-9b73-499f-8cff-0fcbdee6d4a6" } },
+  { id: "deepl-senior-solutions-consultant-tokyo-d5cea1af", companySlug: "deepl", title: "Senior Solutions Consultant | Tokyo, Japan (Hybrid)", segment: "Solutions Consulting", location: "東京", workStyle: "Hybrid", language: "公式求人で確認", source: { label: "DeepL Careers (Ashby)", url: "https://jobs.ashbyhq.com/DeepL/d5cea1af-08a0-463c-aa31-a1a001761eae" } },
+  { id: "anthropic-enterprise-ae-retail-cpg-trading-japan-5219967008", companySlug: "anthropic", title: "Enterprise Account Executive - Retail / CPG / Trading", segment: "Enterprise Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5219967008" } },
+  { id: "anthropic-enterprise-ae-telecommunications-japan-5096041008", companySlug: "anthropic", title: "Enterprise Account Executive, Telecommunications", segment: "Enterprise Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5096041008" } },
+  { id: "anthropic-head-partnerships-japan-5391207008", companySlug: "anthropic", title: "Head of Partnerships, Japan", segment: "Partnerships Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Anthropic Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/anthropic/jobs/5391207008" } },
+  { id: "cloudflare-senior-sales-manager-digital-native-japan-7767743", companySlug: "cloudflare", title: "Senior Sales Manager, Digital Native, Japan", segment: "Sales Leadership", location: "東京", workStyle: "Hybrid", language: "公式求人で確認", source: { label: "Cloudflare Careers (Greenhouse)", url: "https://boards.greenhouse.io/cloudflare/jobs/7767743?gh_jid=7767743" } },
+  { id: "vanta-sales-engineer-japan-0d8925dc", companySlug: "vanta", title: "Sales Engineer - Japan", segment: "Sales Engineering", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Vanta Careers (Ashby)", url: "https://jobs.ashbyhq.com/vanta/0d8925dc-e6ad-47da-9458-a8dac56a6b15" } },
+  { id: "cursor-manager-channel-partners-japan-de322c3d", companySlug: "cursor", title: "Manager, Channel & Partners", segment: "Channel & Partnerships", location: "日本", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Cursor Careers (Ashby)", url: "https://jobs.ashbyhq.com/cursor/de322c3d-337e-4301-a7dc-90ccf331d60f" } },
+  { id: "channel-talk-account-management-onboarding-retention-50a8e40c", companySlug: "channel-talk", title: "アカウントマネジメント（オンボーディング＆リテンション）", segment: "Customer Success", location: "東京・半蔵門", workStyle: "公式求人で確認", language: "日本語", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/50a8e40c-68ac-4ab2-ba37-4d6ff8510aa3" } },
+  { id: "channel-talk-account-management-renewal-expansion-94ea1ef9", companySlug: "channel-talk", title: "アカウントマネジメント（リニューアル＆エクスパンション）", segment: "Customer Success / Expansion", location: "東京・半蔵門", workStyle: "公式求人で確認", language: "日本語", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/94ea1ef9-eddc-45e1-b34e-2289e8853e77" } },
+  { id: "channel-talk-customer-experience-8fe67af8", companySlug: "channel-talk", title: "カスタマーエクスペリエンス", segment: "Customer Experience", location: "東京・半蔵門", workStyle: "公式求人で確認", language: "日本語", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/8fe67af8-1f09-499e-8b81-64a1dddf649c" } },
+  { id: "channel-talk-customer-success-062b3109", companySlug: "channel-talk", title: "カスタマーサクセス", segment: "Customer Success", location: "東京・半蔵門", workStyle: "公式求人で確認", language: "日本語", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/062b3109-4c2e-433e-8f46-a474e754e39a" } },
+  { id: "channel-talk-manager-account-management-5e2e1482", companySlug: "channel-talk", title: "マネージャー・アカウントマネジメント", segment: "Customer Success Leadership", location: "東京・半蔵門", workStyle: "公式求人で確認", language: "日本語", source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi/5e2e1482-dbfd-4f88-88ff-534cef3c7480" } },
+  { id: "extreme-networks-sr-services-sales-ae-tokyo-dc7de9db", companySlug: "extreme-networks", title: "Sr. Services Sales Account Executive - Tokyo", segment: "Services Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Extreme Networks Careers (Lever)", url: "https://jobs.lever.co/extremenetworks/dc7de9db-7057-4321-8a80-b0ec64d53dae" } },
+  { id: "tanium-customer-success-manager-japan-8024983", companySlug: "tanium", title: "Customer Success Manager", segment: "Customer Success", location: "東京", workStyle: "Hybrid", language: "公式求人で確認", source: { label: "Tanium Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/tanium/jobs/8024983" } },
+  { id: "tanium-senior-value-engineering-manager-japan-7518622", companySlug: "tanium", title: "Senior Value Engineering Manager (Senior Solutions Architect)", segment: "Value Engineering", location: "東京または大阪", workStyle: "Hybrid", language: "公式求人で確認", source: { label: "Tanium Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/tanium/jobs/7518622" } },
+  { id: "sayari-senior-customer-success-manager-japan-4365017009", companySlug: "sayari", title: "Senior Customer Success Manager, Japan", segment: "Customer Success", location: "日本", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Sayari Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/sayari/jobs/4365017009" } },
+  { id: "similarweb-customer-success-manager-smb-enterprise-7741468", companySlug: "similarweb", title: "Customer Success Manager, SMB / Enterprise", segment: "Customer Success", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Similarweb Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/similarweb/jobs/7741468" } },
+  { id: "similarweb-enterprise-account-manager-japan-7865101", companySlug: "similarweb", title: "Enterprise Account Manager", segment: "Enterprise Account Management", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Similarweb Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/similarweb/jobs/7865101" } },
+  { id: "similarweb-sales-manager-inside-sales-japan-8016360", companySlug: "similarweb", title: "Sales Manager, Inside Sales", segment: "Inside Sales Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Similarweb Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/similarweb/jobs/8016360" } },
+  { id: "bluematrix-client-sales-manager-tokyo-c4e24c6f", companySlug: "bluematrix", title: "Client Sales Manager - Tokyo Japan", segment: "Client Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "BlueMatrix Careers (Lever)", url: "https://jobs.lever.co/BlueMatrix/c4e24c6f-4e53-4909-9a43-ab5d96deeb5a" } },
+  { id: "bluematrix-senior-specialist-client-solutions-tokyo-37e77916", companySlug: "bluematrix", title: "Senior Specialist - Client Solutions", segment: "Client Solutions", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "BlueMatrix Careers (Lever)", url: "https://jobs.lever.co/BlueMatrix/37e77916-65b7-4080-8918-e1b53ab6d194" } },
+  { id: "black-duck-sales-engineer-japan-5254222008", companySlug: "black-duck", title: "Sales Engineer", segment: "Sales Engineering", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Black Duck Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/blackduck/jobs/5254222008" } },
+  { id: "black-duck-senior-sales-development-representative-japan-5388698008", companySlug: "black-duck", title: "Sr. Sales Development Representative", segment: "Sales Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Black Duck Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/blackduck/jobs/5388698008" } },
+  { id: "twilio-new-business-account-executive-japan-8125581", companySlug: "twilio", title: "New Business Account Executive", segment: "New Business Sales", location: "日本", workStyle: "Remote", language: "公式求人で確認", source: { label: "Twilio Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/twilio/jobs/8125581" } },
+  { id: "twilio-strategic-account-executive-japan-8088055", companySlug: "twilio", title: "Strategic Account Executive", segment: "Strategic Sales", location: "日本", workStyle: "Remote", language: "公式求人で確認", source: { label: "Twilio Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/twilio/jobs/8088055" } },
+  { id: "fusion-worldwide-business-development-manager-tokyo-5090368003", companySlug: "fusion-worldwide", title: "Business Development Manager (Tokyo)", segment: "Business Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Fusion Worldwide Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/fusionworldwide/jobs/5090368003" } },
+  { id: "behavox-enterprise-account-executive-japan-8157133", companySlug: "behavox", title: "Account Executive, Enterprise", segment: "Enterprise Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Behavox Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/behavox/jobs/8157133" } },
+  { id: "glance-director-commerce-partnerships-japan-7213756", companySlug: "glance", title: "Director - Commerce Partnerships", segment: "Commerce Partnerships", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Glance Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/glance/jobs/7213756" } },
+  { id: "glance-manager-commerce-partnerships-japan-8020092", companySlug: "glance", title: "Manager, Commerce Partnerships", segment: "Commerce Partnerships", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Glance Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/glance/jobs/8020092" } },
+  { id: "glance-senior-manager-commerce-partnerships-japan-8020086", companySlug: "glance", title: "Senior Manager - Commerce Partnerships", segment: "Commerce Partnerships", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Glance Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/glance/jobs/8020086" } },
+  { id: "glance-senior-manager-distribution-partnerships-japan-8019884", companySlug: "glance", title: "Senior Manager, Distribution Partnerships & Business Development", segment: "Distribution Partnerships", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Glance Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/glance/jobs/8019884" } },
+  { id: "getyourguide-partnerships-lead-dmo-japan-7806344", companySlug: "getyourguide", title: "Partnerships Lead - DMO", segment: "Partnerships", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "GetYourGuide Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/getyourguide/jobs/7806344" } },
+  { id: "antithesis-solutions-engineer-japan-26d53e9b", companySlug: "antithesis", title: "Solutions Engineer", segment: "Solutions Engineering", location: "日本", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Antithesis Careers (Ashby)", url: "https://jobs.ashbyhq.com/antithesis/26d53e9b-5b45-490a-afbd-df578b5d4d91" } },
+  { id: "menlo-security-customer-success-manager-japan-165467d7", companySlug: "menlo-security", title: "Customer Success Manager - Japan", segment: "Customer Success", location: "日本", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Menlo Security Careers (Ashby)", url: "https://jobs.ashbyhq.com/menlosecurity/165467d7-5b6d-496b-97a5-0868d2595152" } },
+  { id: "hubspot-core-partner-development-manager-japan-6448238", companySlug: "hubspot", title: "Core Partner Development Manager", segment: "Partner Development", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "HubSpot Careers", url: "https://www.hubspot.com/careers/jobs/6448238" } },
+  { id: "asana-customer-success-manager-scaled-accounts-japan-8107419", companySlug: "asana", title: "Customer Success Manager, Scaled Accounts", segment: "Customer Success", location: "東京", workStyle: "Hybrid（週3日出社）", language: "日本語／英語", source: { label: "Asana Careers", url: "https://asana.com/jobs/apply/8107419" } },
+  { id: "asana-corporate-account-executive-japan-8055062", companySlug: "asana", title: "Corporate Account Executive", segment: "Corporate Sales", location: "東京", workStyle: "Hybrid（週3日出社）", language: "日本語", source: { label: "Asana Careers", url: "https://asana.com/jobs/apply/8055062" } },
+  { id: "outsystems-solution-architect-presales-r1105", companySlug: "outsystems", title: "Solution Architect (Pre-Sales)", segment: "Pre-Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Solution-Architect--Pre-Sales-_R1105" } },
+  { id: "outsystems-senior-solution-architect-presales-r1109", companySlug: "outsystems", title: "Senior Solution Architect (Pre-Sales)", segment: "Pre-Sales", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Senior-Solution-Architect_R1109" } },
+  { id: "outsystems-senior-account-manager-customer-success-r1209", companySlug: "outsystems", title: "Senior Account Manager (Customer Success)", segment: "Customer Success", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Senior-Customer-Success-Manager_R1209" } },
+  { id: "outsystems-regional-sales-manager-mid-market-r1247", companySlug: "outsystems", title: "Regional Sales Manager, Mid-Market", segment: "Sales Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Regional-Sales-Manager---Team-Management-_R1247" } },
+  { id: "outsystems-head-partner-alliances-r1328", companySlug: "outsystems", title: "Head of Partner & Alliances", segment: "Partner & Alliances Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Senior-Partner-Alliances-Manager_R1328" } },
+  { id: "outsystems-regional-sales-manager-enterprise-r1619", companySlug: "outsystems", title: "Regional Sales Manager (Enterprise)", segment: "Sales Leadership", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "OutSystems Careers (Workday)", url: "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Japan---Tokyo/Regional-Sales-Manager--Enterprise--Team---Management-_R1619-3" } },
+  { id: "sailpoint-value-strategist-japan-r011666", companySlug: "sailpoint", title: "Value Strategist", segment: "Value Consulting", location: "日本", workStyle: "Remote", language: "公式求人で確認", source: { label: "SailPoint Careers (Workday)", url: "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Remote-Japan/Value-Strategist_R011666" } },
+  { id: "sailpoint-principal-agentic-technologist-japan-r013365", companySlug: "sailpoint", title: "Principal Agentic Technologist", segment: "Solutions Consulting", location: "日本", workStyle: "Remote", language: "公式求人で確認", source: { label: "SailPoint Careers (Workday)", url: "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Remote-Japan/Principal-Solutions-Consultant_R013365" } },
+  { id: "sailpoint-engagement-manager-japan-r013565", companySlug: "sailpoint", title: "Engagement Manager", segment: "Customer Engagement", location: "日本", workStyle: "Remote", language: "公式求人で確認", source: { label: "SailPoint Careers (Workday)", url: "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Remote-Japan/Engagement-Manager_R013565" } },
+  { id: "sailpoint-technical-advisor-japan-r013857", companySlug: "sailpoint", title: "Technical Advisor", segment: "Technical Advisory", location: "東京", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "SailPoint Careers (Workday)", url: "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Local-Office-Tokyo-Japan/Technical-Advisor_R013857" } },
+  { id: "pagerduty-strategic-alliance-senior-manager-japan-8426", companySlug: "pagerduty", title: "Strategic Alliance Senior Manager", segment: "Strategic Alliances", location: "日本", workStyle: "公式求人で確認", language: "公式求人で確認", source: { label: "Japan Cloud Careers", url: "https://japancloud.jp/career/jobs/8426/" } },
+];
+
+export const jobs20260829FullAudit = seeds.map(createAuditedJob);
+
+export const jobTitleOverrides20260829: Record<string, string> = {
+  "okta-digital-media-senior-specialist": "Digital Media Specialist",
+  "uipath-sales-engineer-specialist-team-japan-current": "Sales Engineer - Field",
+  "anaplan-rvp-fsi": "Regional Vice President (Sales Director - Finance team)",
+  "notion-japan-commercial-sales-manager": "Solutions Consultant Manager, Commercial (Sales Leadership)",
+  "marqvision-account-executive-japan-current": "Senior Account Executive",
+  "dragos-advisory-solutions-architect-japan-current": "Associate Principal Solutions Architect (Japan)",
+  "anthropic-channel-account-manager-japan": "Partner Account Manager",
+  "anthropic-enterprise-ae-fsi-japan": "Enterprise Account Executive, Financial Services & Insurance",
+  "saviynt-principal-engineer-professional-services-japan-current": "Principal Architect, Professional Services",
+  "extreme-networks-premier-service-delivery-engineer-japan": "Sr. Field Service Support Engineer",
+  "neural-concept-application-engineer-japanese-current": "Forward Deployed Engineer - Japan",
+  "figma-senior-sales-enablement-manager-tokyo-current": "Senior Field Enablement Manager (Tokyo, Japan)",
+  "replit-growth-lead-japan-current": "Japan Growth Lead",
+  "replit-founding-account-executive-japan-current": "Account Executive (Japan)",
+};
