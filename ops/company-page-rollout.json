@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-29",
+  "auditedAt": "2026-08-31",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 148,
+    "total": 151,
     "byStatus": {
-      "未着手": 6,
+      "未着手": 9,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 44,
+      "HOT": 45,
       "Active": 24,
-      "Selective": 30,
+      "Selective": 32,
       "求人なし": 50
     },
-    "standardReady": 147
+    "standardReady": 150
   },
   "companies": [
     {
@@ -319,6 +319,15 @@
       "priority": "HOT",
       "salesRoles": 7,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "omnissa",
+      "company": "Omnissa",
+      "priority": "HOT",
+      "salesRoles": 10,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -776,6 +785,15 @@
       "missingFields": []
     },
     {
+      "slug": "genspark",
+      "company": "Genspark",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "hightouch",
       "company": "Hightouch",
       "priority": "Selective",
@@ -871,6 +889,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "vizcom",
+      "company": "Vizcom",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

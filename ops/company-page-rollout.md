@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-29 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-08-31 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全148社（未着手 6 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全151社（未着手 9 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -38,6 +38,7 @@
 |HOT|New Relic|7|公開済み|はい|なし|
 |HOT|Notion|12|公開済み|はい|なし|
 |HOT|Okta|7|公開済み|はい|なし|
+|HOT|Omnissa|10|未着手|はい|なし|
 |HOT|OutSystems|7|公開済み|はい|なし|
 |HOT|PagerDuty|5|公開済み|はい|なし|
 |HOT|Rubrik|3|公開済み|はい|なし|
@@ -87,6 +88,7 @@
 |Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
+|Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
@@ -98,6 +100,7 @@
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
+|Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|WitnessAI|1|未着手|はい|なし|

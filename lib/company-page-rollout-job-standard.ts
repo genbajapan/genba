@@ -61,6 +61,7 @@ for (const slug of ["behavox"]) batchSlugs.add(slug);
 for (const slug of ["glance", "getyourguide"]) batchSlugs.add(slug);
 for (const slug of ["rokt", "menlo-security", "witnessai"]) batchSlugs.add(slug);
 for (const slug of ["vanta"]) batchSlugs.add(slug);
+for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -157,6 +158,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  omnissa: {
+    name: "Omnissa", domain: "Digital Workspace・UEM・VDI・Enterprise GTM", officialUrl: "https://www.omnissa.com/careers/",
+    communityUrl: "https://www.comparably.com/companies/omnissa", communityLabel: "Comparably Omnissa employee reviews",
+    positive: ["日本でStrategic Sales、Partner、Solution、Architecture、Professional Servicesの10求人を公式確認し、顧客開拓から導入までを広く強化している。", "会社公式は世界26,000顧客、4,000人、ARR15億ドル超を公表し、国内では30万台超の端末管理事例を持つ。"],
+    negative: ["日本の売上、更新率、職種別人数、territory、quota、達成率、数値報酬は非公開。", "旧VMware契約の更新と新規platform拡張の比率、Microsoft・Citrix等との競争、独立後の支援体制を面接で検証する必要がある。"],
+    next: ["Digital Workspace Enterprise Sales・Solutions Leadership", "UEM・VDI・DEX Partner GTM", "Japan・APAC End User Computing Leadership"],
+  },
+  genspark: {
+    name: "Genspark", domain: "Enterprise AI・Multi-agent Workspace・Solutions Engineering", officialUrl: "https://jobs.ashbyhq.com/genspark",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Genspark", communityLabel: "Glassdoor Genspark review search",
+    positive: ["日本法人と東京拠点を設け、日本最初のSolutions Engineerがarchitecture、demo、pilot、security review、evaluation toolkitを作る。", "会社公式はSeries B 4.85億ドル、評価額26億ドル、国内企業・自治体の導入例を掲載する。"],
+    negative: ["日本売上、法人顧客数、SE・AE・CS人数、pilot転換率、数値報酬は非公開。", "多数のmodel・agentの品質、data・権限・audit、既存法人AIとの総費用、製品変更の速さを面接とpilotで検証する必要がある。"],
+    next: ["Enterprise AI Principal Solutions Engineer", "AI・Agent Platform Solutions Leadership", "Japan・APAC AI GTM Engineering Leadership"],
+  },
+  vizcom: {
+    name: "Vizcom", domain: "Industrial Design AI・Enterprise Sales・APAC Market Building", officialUrl: "https://jobs.ashbyhq.com/vizcom",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Vizcom", communityLabel: "Glassdoor Vizcom review search",
+    positive: ["日本を初期重点市場にAPAC初のEnterprise営業を採用し、既存関係、新規開拓、partner、市場feedbackまで持たせる。", "会社公式は利用designer 70万人超、累計調達5,100万ドルを説明し、公式求人はglobal design顧客を掲載する。"],
+    negative: ["日本法人、国内拠点、雇用主体、local SE・CS・Support、日本売上、数値報酬は非公開。", "Adobe・Autodesk・汎用AIとの重複、design data・IP、CAD連携、pilotから本番・更新への転換を面接で検証する必要がある。"],
+    next: ["Design・Creative Software Strategic Sales", "Industrial AI Japan Sales Leadership", "APAC Design Technology GTM Leadership"],
+  },
   vanta: {
     name: "Vanta", domain: "Trust Management・Compliance Automation・Sales Engineering", officialUrl: "https://www.vanta.com/company/careers",
     communityUrl: "https://www.repvue.com/companies/vanta", communityLabel: "RepVue Vanta sales reviews",
