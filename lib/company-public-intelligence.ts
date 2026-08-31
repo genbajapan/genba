@@ -29,6 +29,7 @@ import { daily20260826IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { daily20260827IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-27";
 import { daily20260828IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-28";
 import { daily20260831IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-08-31";
+import { daily20260901IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-09-01";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -9648,6 +9649,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260827IntelligenceBySlug,
   ...daily20260828IntelligenceBySlug,
   ...daily20260831IntelligenceBySlug,
+  ...daily20260901IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);

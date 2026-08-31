@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-08-31",
+  "auditedAt": "2026-09-01",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 151,
+    "total": 154,
     "byStatus": {
-      "未着手": 9,
+      "未着手": 12,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 45,
       "Active": 24,
-      "Selective": 32,
+      "Selective": 35,
       "求人なし": 50
     },
-    "standardReady": 150
+    "standardReady": 153
   },
   "companies": [
     {
@@ -803,6 +803,15 @@
       "missingFields": []
     },
     {
+      "slug": "liferay",
+      "company": "Liferay",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "lighthouse",
       "company": "Lighthouse",
       "priority": "Selective",
@@ -857,11 +866,29 @@
       "missingFields": []
     },
     {
+      "slug": "rzr",
+      "company": "RZR",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "shopify",
       "company": "Shopify",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sitecore",
+      "company": "Sitecore",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

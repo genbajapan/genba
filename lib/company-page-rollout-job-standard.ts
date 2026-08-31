@@ -62,6 +62,7 @@ for (const slug of ["glance", "getyourguide"]) batchSlugs.add(slug);
 for (const slug of ["rokt", "menlo-security", "witnessai"]) batchSlugs.add(slug);
 for (const slug of ["vanta"]) batchSlugs.add(slug);
 for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
+for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -158,6 +159,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  sitecore: {
+    name: "Sitecore", domain: "Digital Experience・CMS・Sales Development", officialUrl: "https://jobs.jobvite.com/sitecore/job/oWZjzfwx",
+    communityUrl: "https://www.glassdoor.com/Reviews/Sitecore-Reviews-E187994.htm", communityLabel: "Glassdoor Sitecore global reviews",
+    positive: ["東京のSales Development Representativeとして調査、outbound・inbound、event、socialから日本のpipelineを作る。", "会社公式はARR5億ドル超、3,000超のbrand、日本進出17年とFujitsuの国内定量caseを公表する。"],
+    negative: ["日本売上、顧客数、SDR・AE・SE人数、quota、達成率、数値報酬は非公開。", "既存CMS顧客のSitecoreAI移行、Marketing起点とself-sourceの比率、Adobe・Optimizely等への勝敗を面接で検証する必要がある。"],
+    next: ["Enterprise Account Executive", "Sales Development Leadership", "Digital Experience Japan GTM Leadership"],
+  },
+  liferay: {
+    name: "Liferay", domain: "Digital Experience・Portal・Sales Engineering", officialUrl: "https://jobs.jobvite.com/liferay/job/oCrDAfw0",
+    communityUrl: "https://www.glassdoor.com/Reviews/Liferay-Reviews-E479073.htm", communityLabel: "Glassdoor Liferay global reviews",
+    positive: ["東京のSales Engineerとして業務・技術要件、提案、demo、RFI・RFP、partner連携を担う。", "公式求人は1,000人超、自力資本・黒字を説明し、日本法人14年と東京海上日動の大規模caseを確認できる。"],
+    negative: ["日本売上、顧客数、営業・SE人数、同時案件、PoC転換率、数値報酬は非公開。", "cloud移行、既存portal・大手suiteとの差、partner delivery、最大30%の出張実態を面接で検証する必要がある。"],
+    next: ["Principal Sales Engineer", "Solutions Engineering Leadership", "DXP・Portal Japan Field Leadership"],
+  },
+  rzr: {
+    name: "RZR", domain: "AdTech・App Growth・Japan Market Building", officialUrl: "https://job-boards.greenhouse.io/rzr/jobs/4335686009",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=RZR%20Aarki", communityLabel: "Glassdoor RZR・Aarki review search",
+    positive: ["日本初の専任Account Executiveとして新規開拓、提案、交渉、受注、拡大とlocal playbookを作る。", "会社公式は10年以上の実績data、4つの自社data center、毎秒600万超の処理、APAC拡張を公表する。"],
+    negative: ["日本法人、国内office、雇用主体、国内顧客、local SE・運用、quota、達成率、数値報酬は非公開。", "Google・Meta・Moloco・AppLovin等との差、privacy、incrementality、長期価値の再現を初期顧客で検証する必要がある。"],
+    next: ["Japan Sales Lead", "AdTech Strategic Sales Leadership", "APAC App Growth GTM Leadership"],
+  },
   omnissa: {
     name: "Omnissa", domain: "Digital Workspace・UEM・VDI・Enterprise GTM", officialUrl: "https://www.omnissa.com/careers/",
     communityUrl: "https://www.comparably.com/companies/omnissa", communityLabel: "Comparably Omnissa employee reviews",

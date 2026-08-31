@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-08-31 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-01 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全151社（未着手 9 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全154社（未着手 12 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -90,13 +90,16 @@
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
+|Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
+|Selective|RZR|1|未着手|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
+|Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
