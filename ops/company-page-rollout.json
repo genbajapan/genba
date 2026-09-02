@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-01",
+  "auditedAt": "2026-09-02",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 154,
+    "total": 157,
     "byStatus": {
-      "未着手": 12,
+      "未着手": 15,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 45,
-      "Active": 24,
+      "Active": 25,
       "Selective": 35,
-      "求人なし": 50
+      "求人なし": 52
     },
-    "standardReady": 153
+    "standardReady": 156
   },
   "companies": [
     {
@@ -128,7 +128,7 @@
       "slug": "coupa",
       "company": "Coupa",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -530,6 +530,15 @@
       "missingFields": []
     },
     {
+      "slug": "kong",
+      "company": "Kong",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "marqvision",
       "company": "MarqVision",
       "priority": "Active",
@@ -722,15 +731,6 @@
       "missingFields": []
     },
     {
-      "slug": "clickhouse",
-      "company": "ClickHouse",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "coderabbit",
       "company": "CodeRabbit",
       "priority": "Selective",
@@ -835,6 +835,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "perplexity",
+      "company": "Perplexity",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1073,6 +1082,15 @@
       "missingFields": []
     },
     {
+      "slug": "clickhouse",
+      "company": "ClickHouse",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "confluent",
       "company": "Confluent",
       "priority": "求人なし",
@@ -1213,6 +1231,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "linear",
+      "company": "Linear",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

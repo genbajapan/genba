@@ -63,6 +63,7 @@ for (const slug of ["rokt", "menlo-security", "witnessai"]) batchSlugs.add(slug)
 for (const slug of ["vanta"]) batchSlugs.add(slug);
 for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
 for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
+for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -159,6 +160,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  kong: {
+    name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",
+    communityUrl: "https://www.glassdoor.com/Reviews/Kong-Reviews-E1041424.htm", communityLabel: "Glassdoor Kong global reviews",
+    positive: ["日本で営業開発とAccount Executiveの2職種を公式確認し、商談創出から新規Enterprise受注までを強化している。", "会社公式はARR1億ドル超、500人超、600超の顧客組織を公表し、日本法人と六本木拠点を確認できる。"],
+    negative: ["日本売上、顧客数、職種別人数、quota、達成率、数値報酬は非公開。", "既存cloud gatewayとの共存、API需要からAI接続管理への拡張、日本での技術支援とPartner責任を面接で検証する必要がある。"],
+    next: ["Enterprise Account Executive", "Sales Development Leadership", "API・AI Infrastructure Japan GTM Leadership"],
+  },
+  perplexity: {
+    name: "Perplexity", domain: "Enterprise AI検索・Customer Success・Technical Support", officialUrl: "https://jobs.ashbyhq.com/perplexity/ab448b33-0a0e-4acf-8b86-df61f38716ac",
+    communityUrl: "https://www.glassdoor.com/Reviews/Perplexity-AI-Reviews-E9441288.htm", communityLabel: "Glassdoor Perplexity AI global reviews",
+    positive: ["東京のAPAC地域担当として、日本本社のEnterprise顧客の導入、利用、更新、拡大と最終技術支援を一体で担う。", "SoftBankとの日本向け提携と、月間数十億queryの利用規模を公式情報で確認できる。"],
+    negative: ["日本法人、office、雇用主体、国内顧客数、担当社数、緊急対応、数値報酬は非公開。", "顧客成果とSupport量の両立、Microsoft・Google・OpenAI等との差、日本語の技術・security支援を面接で検証する必要がある。"],
+    next: ["Strategic Customer Success Manager", "Enterprise AI Technical Success Leadership", "Japan・APAC Customer Success Leadership"],
+  },
   sitecore: {
     name: "Sitecore", domain: "Digital Experience・CMS・Sales Development", officialUrl: "https://jobs.jobvite.com/sitecore/job/oWZjzfwx",
     communityUrl: "https://www.glassdoor.com/Reviews/Sitecore-Reviews-E187994.htm", communityLabel: "Glassdoor Sitecore global reviews",

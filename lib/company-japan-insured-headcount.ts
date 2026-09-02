@@ -9,6 +9,7 @@ const DAILY_20260824_CHECKED_AT = "2026-08-24";
 const DAILY_20260825_CHECKED_AT = "2026-08-25";
 const DAILY_20260826_CHECKED_AT = "2026-08-26";
 const DAILY_20260827_CHECKED_AT = "2026-08-27";
+const DAILY_20260902_CHECKED_AT = "2026-09-02";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -102,6 +103,7 @@ const VERIFIED_ENTITIES: Record<string, VerifiedEntity> = {
   fastly: { corporateNumber: "6010401117015", entityName: "ファストリー株式会社", insuredCount: 35 },
   vonage: { corporateNumber: "3010003025214", entityName: "Vonage Japan合同会社" },
   clickhouse: { corporateNumber: "3010401192564", entityName: "ClickHouse株式会社" },
+  kong: { corporateNumber: "4010401176839", entityName: "Kong株式会社" },
 };
 
 const NOT_ENTERED_SLUGS = new Set([
@@ -117,6 +119,7 @@ const NOT_ENTERED_SLUGS = new Set([
   "runway",
   "chainguard",
   "antithesis",
+  "perplexity", "linear",
 ]);
 
 // 2026-08-18の一斉監査対象119社と、2026-08-19追加の3社。将来追加された会社へ未調査のまま
@@ -142,6 +145,7 @@ const AUDITED_SLUGS = new Set([
   "datasnipper", "runway",
   "clickhouse",
   "behavox", "chainguard", "glance", "getyourguide", "antithesis",
+  "kong", "perplexity", "linear",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -150,7 +154,9 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["glance", "getyourguide", "antithesis"].includes(slug)
+  const checkedAt = ["kong", "perplexity", "linear"].includes(slug)
+    ? DAILY_20260902_CHECKED_AT
+    : ["glance", "getyourguide", "antithesis"].includes(slug)
     ? DAILY_20260827_CHECKED_AT
     : ["behavox", "chainguard"].includes(slug)
     ? DAILY_20260826_CHECKED_AT

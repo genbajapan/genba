@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-01 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-02 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全154社（未着手 12 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全157社（未着手 15 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -16,7 +16,7 @@
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Cohere|3|公開済み|はい|なし|
-|HOT|Coupa|6|公開済み|はい|なし|
+|HOT|Coupa|5|公開済み|はい|なし|
 |HOT|Cribl|3|公開済み|はい|なし|
 |HOT|Cursor|5|公開済み|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
@@ -61,6 +61,7 @@
 |Active|GetYourGuide|2|未着手|はい|なし|
 |Active|Glean|2|公開済み|はい|なし|
 |Active|Grafana Labs|2|公開済み|はい|なし|
+|Active|Kong|2|未着手|はい|なし|
 |Active|MarqVision|2|公開済み|はい|なし|
 |Active|Menlo Security|2|未着手|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
@@ -81,7 +82,6 @@
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
-|Selective|ClickHouse|1|公開済み|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
 |Selective|DataSnipper|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
@@ -94,6 +94,7 @@
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
+|Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
@@ -120,6 +121,7 @@
 |求人なし|Attio|0|公開済み|はい|なし|
 |求人なし|Chainguard|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
+|求人なし|ClickHouse|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
 |求人なし|Contentsquare|0|公開済み|はい|なし|
 |求人なし|Deel|0|公開済み|はい|なし|
@@ -136,6 +138,7 @@
 |求人なし|Klaviyo|0|公開済み|はい|なし|
 |求人なし|Lakera|0|公開済み|はい|なし|
 |求人なし|LangChain|0|公開済み|はい|なし|
+|求人なし|Linear|0|未着手|はい|なし|
 |求人なし|Lovable|0|公開済み|はい|なし|
 |求人なし|Lucanet|0|公開済み|はい|なし|
 |求人なし|Mistral AI|0|公開済み|はい|なし|
