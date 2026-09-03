@@ -25,7 +25,7 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
 
 シリーズ: 1社深掘り
 確認日: 2026-09-03
-ステータス: ローカル確定稿・X未投稿ドラフト保存待ち・未投稿・未予約
+ステータス: ローカル確定稿・X未投稿ドラフト保存済み（@chosenshi08）・未投稿・未予約
 
 ## 事実確認メモ
 
