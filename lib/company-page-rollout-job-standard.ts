@@ -64,6 +64,7 @@ for (const slug of ["vanta"]) batchSlugs.add(slug);
 for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
 for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
 for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
+for (const slug of ["jamf", "matterport"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -160,6 +161,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  jamf: {
+    name: "Jamf", domain: "Apple端末管理・Security・Enterprise GTM", officialUrl: "https://www.jamf.com/about/careers/jobs/",
+    communityUrl: "https://www.glassdoor.com/Reviews/Jamf-Reviews-E636547.htm", communityLabel: "Glassdoor Jamf global reviews",
+    positive: ["日本でAccount Executive、Systems Engineer、Inside Salesの3職種を公式確認し、直販・技術・既存拡大を同時に強化している。", "gBizINFOで事業所被保険者数57人、国内のApple端末管理事例を確認できる。"],
+    negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "Francisco Partners傘下での投資計画、Intune等との共存、Apple管理からsecurity拡張への勝因を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Solutions Engineering Leadership", "Apple Management・Security Japan GTM Leadership"],
+  },
+  matterport: {
+    name: "Matterport", domain: "Spatial Data・Digital Twin・Enterprise GTM", officialUrl: "https://www.costargroup.com/careers",
+    communityUrl: "https://www.glassdoor.com/Reviews/Matterport-Reviews-E1085431.htm", communityLabel: "Glassdoor Matterport global reviews",
+    positive: ["日本でSenior Account Executive、Channel Account Manager、Customer Support Engineerの3職種を公式確認し、販売から顧客支援までを同時に強化している。", "CoStar傘下で177カ国、1,400万超の空間、500億平方フィートの会社公表規模と国内事例を確認できる。"],
+    negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "CoStar統合後の製品・営業計画、直販と販売パートナーの責任、3D撮影から業務成果への転換を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Channel Sales Leadership", "Spatial Data・PropTech Japan GTM Leadership"],
+  },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",
     communityUrl: "https://www.glassdoor.com/Reviews/Kong-Reviews-E1041424.htm", communityLabel: "Glassdoor Kong global reviews",

@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-02",
+  "auditedAt": "2026-09-03",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 157,
+    "total": 160,
     "byStatus": {
-      "未着手": 15,
+      "未着手": 18,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 45,
+      "HOT": 47,
       "Active": 25,
       "Selective": 35,
-      "求人なし": 52
+      "求人なし": 53
     },
-    "standardReady": 156
+    "standardReady": 160
   },
   "companies": [
     {
@@ -260,11 +260,29 @@
       "missingFields": []
     },
     {
+      "slug": "jamf",
+      "company": "Jamf",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "knowbe4",
       "company": "KnowBe4",
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "matterport",
+      "company": "Matterport",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -679,20 +697,8 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "求人:Solutions Engineer:報酬仮説の算定内訳",
-        "求人:Solutions Engineer:推定固定給レンジ",
-        "求人:Solutions Engineer:推定OTE・総現金報酬レンジ",
-        "求人:Solutions Engineer:Pay modelの前提",
-        "求人:Solutions Engineer:equityを現金報酬から除外",
-        "求人:Solutions Engineer:報酬仮説の市場benchmark",
-        "求人:Solutions Engineer:海外を含む外部評判source",
-        "求人:Solutions Engineer:職種別の評判仮説",
-        "求人:Solutions Engineer:海外reviewの肯定・注意theme",
-        "求人:Solutions Engineer:職種固有の検証論点",
-        "求人:Solutions Engineer:数値ありの職種別報酬帯"
-      ]
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "appsflyer",
@@ -1132,6 +1138,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "gamma",
+      "company": "Gamma",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

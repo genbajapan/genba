@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-02 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-03 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全157社（未着手 15 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全160社（未着手 18 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -31,7 +31,9 @@
 |HOT|Glance|5|未着手|はい|なし|
 |HOT|HubSpot|8|公開済み|はい|なし|
 |HOT|iDeals|3|公開済み|はい|なし|
+|HOT|Jamf|3|未着手|はい|なし|
 |HOT|KnowBe4|4|公開済み|はい|なし|
+|HOT|Matterport|3|未着手|はい|なし|
 |HOT|Mendix|3|公開済み|はい|なし|
 |HOT|Miro|8|公開済み|はい|なし|
 |HOT|Netskope|10|公開済み|はい|なし|
@@ -77,7 +79,7 @@
 |Active|Zendesk|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
-|Selective|Antithesis|1|未着手|いいえ|求人:Solutions Engineer:報酬仮説の算定内訳、求人:Solutions Engineer:推定固定給レンジ、求人:Solutions Engineer:推定OTE・総現金報酬レンジ、求人:Solutions Engineer:Pay modelの前提ほか7件|
+|Selective|Antithesis|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
@@ -127,6 +129,7 @@
 |求人なし|Deel|0|公開済み|はい|なし|
 |求人なし|Deepgram|0|公開済み|はい|なし|
 |求人なし|Dropbox|0|公開済み|はい|なし|
+|求人なし|Gamma|0|未着手|はい|なし|
 |求人なし|Gong|0|公開済み|はい|なし|
 |求人なし|Gurobi Optimization|0|公開済み|はい|なし|
 |求人なし|Halcyon|0|公開済み|はい|なし|
