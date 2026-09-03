@@ -64,7 +64,7 @@ for (const slug of ["vanta"]) batchSlugs.add(slug);
 for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
 for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
 for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
-for (const slug of ["jamf", "matterport"]) batchSlugs.add(slug);
+for (const slug of ["jamf", "matterport", "antithesis"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -161,6 +161,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  antithesis: {
+    name: "Antithesis", domain: "Autonomous Testing・Reliability・Solutions Engineering", officialUrl: "https://jobs.ashbyhq.com/antithesis",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Antithesis", communityLabel: "Glassdoor Antithesis review search",
+    positive: ["日本を含むAPACのSolutions Engineer求人を公式確認し、技術評価、導入、顧客成功、地域市場の立ち上げを横断する。", "会社公式は決定論的simulationで複雑なsoftwareのfaultを自動探索し、完全再現する独自基盤を説明する。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内顧客、local支援、数値報酬は非公開。", "新しいtest categoryの教育、顧客環境の再現、APACの時差・出張、SalesとEngineeringの責任境界を面接で検証する必要がある。"],
+    next: ["Principal Solutions Engineer", "Reliability Engineering Leadership", "APAC Developer Infrastructure GTM Leadership"],
+  },
   jamf: {
     name: "Jamf", domain: "Apple端末管理・Security・Enterprise GTM", officialUrl: "https://www.jamf.com/about/careers/jobs/",
     communityUrl: "https://www.glassdoor.com/Reviews/Jamf-Reviews-E636547.htm", communityLabel: "Glassdoor Jamf global reviews",
