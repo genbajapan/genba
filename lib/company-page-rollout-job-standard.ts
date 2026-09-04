@@ -65,6 +65,7 @@ for (const slug of ["omnissa", "genspark", "vizcom"]) batchSlugs.add(slug);
 for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
 for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
 for (const slug of ["jamf", "matterport", "antithesis"]) batchSlugs.add(slug);
+for (const slug of ["canva", "monotype"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -181,6 +182,20 @@ const companyResearch: Record<string, {
     positive: ["日本でSenior Account Executive、Channel Account Manager、Customer Support Engineerの3職種を公式確認し、販売から顧客支援までを同時に強化している。", "CoStar傘下で177カ国、1,400万超の空間、500億平方フィートの会社公表規模と国内事例を確認できる。"],
     negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "CoStar統合後の製品・営業計画、直販と販売パートナーの責任、3D撮影から業務成果への転換を面接で検証する必要がある。"],
     next: ["Strategic Account Executive", "Channel Sales Leadership", "Spatial Data・PropTech Japan GTM Leadership"],
+  },
+  canva: {
+    name: "Canva", domain: "AIデザイン・Visual Communication・Enterprise GTM", officialUrl: "https://www.lifeatcanva.com/en/jobs/",
+    communityUrl: "https://www.glassdoor.com/Reviews/Canva-Reviews-E1011065.htm", communityLabel: "Glassdoor Canva global reviews",
+    positive: ["日本で販売パートナー営業と成長マーケティングを公式確認し、販売網と利用成長を同時に強化している。", "会社公式は2025年に月間利用者2.6億人、売上35億ドルを公表し、gBizINFOの事業所被保険者数は16人。"],
+    negative: ["日本売上、企業顧客数、職種別人数、quota、達成率、数値報酬は非公開。", "広い個人利用を企業契約へ転換する率、販売会社との責任分担、AI素材・ブランド統制を面接で検証する必要がある。"],
+    next: ["Enterprise Account Executive", "Channel Sales Leadership", "Japan Growth・Enterprise GTM Leadership"],
+  },
+  monotype: {
+    name: "Monotype", domain: "Font Management・Brand Governance・Enterprise GTM", officialUrl: "https://monotype.wd1.myworkdayjobs.com/olapic",
+    communityUrl: "https://www.glassdoor.com/Reviews/Monotype-Reviews-E322066.htm", communityLabel: "Glassdoor Monotype global reviews",
+    positive: ["東京で営業5件と顧客成功1件を公式確認し、大型案件、営業組織、導入・更新を同時に強化している。", "gBizINFOで事業所被保険者数78人、25万超の書体と日本語UI、Fontworks統合を公式確認できる。"],
+    negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "書体単体から企業管理基盤への転換、Fontworks統合、Adobe・Morisawa等との差を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Customer Success Leadership", "Brand Technology Japan GTM Leadership"],
   },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",

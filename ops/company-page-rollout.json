@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-03",
+  "auditedAt": "2026-09-04",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 160,
+    "total": 163,
     "byStatus": {
-      "未着手": 18,
+      "未着手": 21,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 47,
-      "Active": 25,
+      "HOT": 48,
+      "Active": 26,
       "Selective": 35,
-      "求人なし": 53
+      "求人なし": 54
     },
-    "standardReady": 160
+    "standardReady": 163
   },
   "companies": [
     {
@@ -305,6 +305,15 @@
       "missingFields": []
     },
     {
+      "slug": "monotype",
+      "company": "Monotype",
+      "priority": "HOT",
+      "salesRoles": 6,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "netskope",
       "company": "Netskope",
       "priority": "HOT",
@@ -481,6 +490,15 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "canva",
+      "company": "Canva",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1399,6 +1417,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "supabase",
+      "company": "Supabase",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
