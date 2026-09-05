@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-04 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-05 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全163社（未着手 21 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全166社（未着手 24 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -103,11 +103,13 @@
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
 |Selective|RZR|1|未着手|はい|なし|
+|Selective|Shift Technology|1|未着手|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
+|Selective|Via|1|未着手|はい|なし|
 |Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
 |Selective|Wasabi Technologies|1|公開済み|はい|なし|
@@ -163,6 +165,7 @@
 |求人なし|Supabase|0|未着手|はい|なし|
 |求人なし|Synthesia|0|公開済み|はい|なし|
 |求人なし|Sysdig|0|公開済み|はい|なし|
+|求人なし|Temporal|0|未着手|はい|なし|
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|Vercel|0|公開済み|はい|なし|

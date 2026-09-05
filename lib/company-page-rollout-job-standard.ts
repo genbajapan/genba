@@ -66,6 +66,7 @@ for (const slug of ["sitecore", "liferay", "rzr"]) batchSlugs.add(slug);
 for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
 for (const slug of ["jamf", "matterport", "antithesis"]) batchSlugs.add(slug);
 for (const slug of ["canva", "monotype"]) batchSlugs.add(slug);
+for (const slug of ["shift-technology", "via"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -196,6 +197,20 @@ const companyResearch: Record<string, {
     positive: ["東京で営業5件と顧客成功1件を公式確認し、大型案件、営業組織、導入・更新を同時に強化している。", "gBizINFOで事業所被保険者数78人、25万超の書体と日本語UI、Fontworks統合を公式確認できる。"],
     negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "書体単体から企業管理基盤への転換、Fontworks統合、Adobe・Morisawa等との差を面接で検証する必要がある。"],
     next: ["Strategic Account Executive", "Customer Success Leadership", "Brand Technology Japan GTM Leadership"],
+  },
+  "shift-technology": {
+    name: "Shift Technology", domain: "Insurance AI・Claims・Enterprise Sales", officialUrl: "https://job-boards.greenhouse.io/shifttechnology/jobs/7651254003",
+    communityUrl: "https://www.glassdoor.com/Reviews/Shift-Technology-Reviews-E1753075.htm", communityLabel: "Glassdoor Shift Technology global reviews",
+    positive: ["東京のSales Executiveとして損害保険会社の新規開拓、経営層提案、契約、既存拡大を担う。", "世界120超の保険会社、40億件超の請求・文書、国内保険会社の導入事例を会社公式で確認できる。"],
+    negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "自社AI・SAS・FRISS等との差、誤検知と説明可能性、日本の査定業務への定着を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Insurance AI Sales Leadership", "Japan Insurance Technology GTM Leadership"],
+  },
+  via: {
+    name: "Via", domain: "TransitTech・Mobility Operations・Market Expansion", officialUrl: "https://job-boards.greenhouse.io/via/jobs/8334684002",
+    communityUrl: "https://www.glassdoor.com/Reviews/Via-Transportation-Reviews-E1312786.htm", communityLabel: "Glassdoor Via global reviews",
+    positive: ["東京のExpansion Managerとして自治体・交通事業者と運行地域の設計、立ち上げ、数値改善、拡大を担う。", "2025年末に顧客821、ARR4.76億ドルを会社が公表し、2018年設立の日本法人と国内共同事業を確認できる。"],
+    negative: ["日本売上、顧客数、職種別人数、担当案件数、評価指標、数値報酬は非公開。", "自治体調達、現場運行、国内事業者との責任分界、地域ごとの成果再現性を面接で検証する必要がある。"],
+    next: ["Senior Expansion Manager", "Transit Operations Leadership", "Japan Mobility Business Leadership"],
   },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",
