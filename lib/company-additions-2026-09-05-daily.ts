@@ -51,7 +51,7 @@ export const companies20260905Daily: Company[] = [
 type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile">;
 
 function makeJob(draft: JobDraft): Job {
-  return {
+  const job: Job = {
     ...draft,
     firstSeen: checkedAt,
     lastChecked: checkedAt,
@@ -65,6 +65,11 @@ function makeJob(draft: JobDraft): Job {
       nextCompanies: `【Genba仮説】${draft.segment}の成果を数字で残せれば、同領域の専門職、より大きな顧客層、Lead・管理職へ広げやすい。支持材料: 公式求人が成果責任と部門横断の実行を置く。特定の転職先や昇格を保証せず、成果の再現性を説明できることが前提。反証・留保: 公開された転職先分布ではなく職務構造からの仮説。面接で確認: 退職者の次職種と社内で担当範囲を広げた実例は。`,
     },
   };
+  if (job.careerInsights) {
+    job.careerInsights.tenureAndPromotion += " 公開事実だけで標準在籍年数は判断できないため、個人の成果、組織拡大、空きポジションの三点を分けて確認する。";
+    job.careerInsights.nextCompanies += " 公開された転職先の実測分布ではないため、成果の定量化と隣接職種への説明可能性に限定した仮説として扱う。";
+  }
+  return job;
 }
 
 export const jobs20260905Daily: Job[] = [
