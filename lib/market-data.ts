@@ -41,6 +41,7 @@ import { companies20260902Daily, jobs20260902Daily } from "@/lib/company-additio
 import { companies20260903Daily, jobs20260903Daily } from "@/lib/company-additions-2026-09-03-daily";
 import { companies20260904Daily, jobs20260904Daily } from "@/lib/company-additions-2026-09-04-daily";
 import { companies20260905Daily, jobs20260905Daily } from "@/lib/company-additions-2026-09-05-daily";
+import { companies20260906Daily, jobs20260906Daily } from "@/lib/company-additions-2026-09-06-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -954,6 +955,7 @@ const companyRecords: Company[] = [
   ...companies20260903Daily,
   ...companies20260904Daily,
   ...companies20260905Daily,
+  ...companies20260906Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1392,6 +1394,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 
 const jobRecords: Job[] = [
   ...jobs20260905Daily,
+  ...jobs20260906Daily,
   ...jobs20260902Daily,
   ...jobs20260903Daily,
   ...jobs20260904Daily,
@@ -3198,7 +3201,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-05";
+  const auditedLastChecked = "2026-09-06";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };

@@ -67,6 +67,7 @@ for (const slug of ["kong", "perplexity"]) batchSlugs.add(slug);
 for (const slug of ["jamf", "matterport", "antithesis"]) batchSlugs.add(slug);
 for (const slug of ["canva", "monotype"]) batchSlugs.add(slug);
 for (const slug of ["shift-technology", "via"]) batchSlugs.add(slug);
+for (const slug of ["appier", "appian"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -211,6 +212,20 @@ const companyResearch: Record<string, {
     positive: ["東京のExpansion Managerとして自治体・交通事業者と運行地域の設計、立ち上げ、数値改善、拡大を担う。", "2025年末に顧客821、ARR4.76億ドルを会社が公表し、2018年設立の日本法人と国内共同事業を確認できる。"],
     negative: ["日本売上、顧客数、職種別人数、担当案件数、評価指標、数値報酬は非公開。", "自治体調達、現場運行、国内事業者との責任分界、地域ごとの成果再現性を面接で検証する必要がある。"],
     next: ["Senior Expansion Manager", "Transit Operations Leadership", "Japan Mobility Business Leadership"],
+  },
+  appier: {
+    name: "Appier", domain: "AI Marketing・Customer Data・Enterprise GTM", officialUrl: "https://job-boards.greenhouse.io/appier/?offices%5B%5D=23561",
+    communityUrl: "https://www.glassdoor.com/Reviews/Appier-Reviews-E1089725.htm", communityLabel: "Glassdoor Appier global reviews",
+    positive: ["東京で新規営業、既存支援、Enterprise Sales、Customer Successの4職種を公式確認し、獲得から継続までを同時に強化している。", "2025年売上437億円、前年比28%増、世界17拠点・1,800社超と国内顧客事例を会社公式で確認できる。"],
+    negative: ["日本売上、製品別構成、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "広告、顧客データ、施策実行を統合した増分効果と、Adobe・Salesforce・Braze等への勝因を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Customer Success Leadership", "AI Marketing Japan GTM Leadership"],
+  },
+  appian: {
+    name: "Appian", domain: "Process Automation・Low-code・Customer Success", officialUrl: "https://careers.appian.com/jobs",
+    communityUrl: "https://www.glassdoor.com/Reviews/Appian-Reviews-E27819.htm", communityLabel: "Glassdoor Appian global reviews",
+    positive: ["東京でConsultantとSenior Consultantを公式確認し、業務・技術要件から実装、定着、顧客の自走までを担う。", "2025年売上7.269億ドル、前年比18%増、Cloud subscriptions revenue 19%増を会社公式で確認できる。"],
+    negative: ["日本売上、国内顧客数、案件数、職種別人数、評価指標、数値報酬は非公開。", "小規模な日本法人での役割分担、パートナー活用、例外処理を含む導入成果を面接で検証する必要がある。"],
+    next: ["Principal Consultant", "Customer Success Leadership", "Process Automation Japan Delivery Leadership"],
   },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",
