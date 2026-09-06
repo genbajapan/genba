@@ -68,12 +68,18 @@ for (const slug of ["jamf", "matterport", "antithesis"]) batchSlugs.add(slug);
 for (const slug of ["canva", "monotype"]) batchSlugs.add(slug);
 for (const slug of ["shift-technology", "via"]) batchSlugs.add(slug);
 for (const slug of ["appier", "appian"]) batchSlugs.add(slug);
+for (const slug of ["o9-solutions", "kinaxis", "ashby"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "ashby-product-support-specialist-apac-033ce772": {
+    headline: "公式求人に日本向け年収640.95万〜780万円と株式を掲載",
+    summary: "日本向け給与レンジと株式の存在は確認できるが、昇給、評価、為替調整、福利厚生の詳細は公開されていない。",
+    breakdown: [{ label: "年収", value: "640.95万〜780万円", status: "公式掲載", detail: "日本勤務地の年額レンジ。株式あり。付与額と権利確定条件は未確認。" }],
+  },
   "grafana-labs-senior-solutions-engineer-japan-current": {
     headline: "公式求人にOTE年1,400万〜1,850万円を掲載",
     summary: "OTE rangeとRSUの存在は確認できるが、base・variable内訳、quota、ramp、達成率、RSU額は非公開。",
@@ -226,6 +232,27 @@ const companyResearch: Record<string, {
     positive: ["東京でConsultantとSenior Consultantを公式確認し、業務・技術要件から実装、定着、顧客の自走までを担う。", "2025年売上7.269億ドル、前年比18%増、Cloud subscriptions revenue 19%増を会社公式で確認できる。"],
     negative: ["日本売上、国内顧客数、案件数、職種別人数、評価指標、数値報酬は非公開。", "小規模な日本法人での役割分担、パートナー活用、例外処理を含む導入成果を面接で検証する必要がある。"],
     next: ["Principal Consultant", "Customer Success Leadership", "Process Automation Japan Delivery Leadership"],
+  },
+  "o9-solutions": {
+    name: "o9 Solutions", domain: "Enterprise Planning・Supply Chain・AI Sales", officialUrl: "https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal",
+    communityUrl: "https://www.glassdoor.com/Reviews/o9-Solutions-Reviews-E1692890.htm", communityLabel: "Glassdoor o9 Solutions global reviews",
+    positive: ["東京のAccount Executive求人と2018年設立の日本法人、国内顧客事例を公式確認。", "会社は3,000人超、2025年130超の本番稼働、28四半期連続ARR成長を公表。"],
+    negative: ["日本売上、職種別人数、quota、達成率、数値報酬は非公開。", "大型計画変革の実装期間、顧客側体制、競合勝因を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Supply Chain Transformation Sales Leadership", "Japan Enterprise Planning GTM Leadership"],
+  },
+  kinaxis: {
+    name: "Kinaxis", domain: "Supply Chain Orchestration・Enterprise Sales", officialUrl: "https://join.kinaxis.com/jobs/33342?lang=en-us",
+    communityUrl: "https://www.glassdoor.com/Reviews/Kinaxis-Reviews-E137976.htm", communityLabel: "Glassdoor Kinaxis global reviews",
+    positive: ["東京のAccount Executive求人、日本法人被保険者89人、日本企業40社超を公式・公的情報で確認。", "2025年ARR4.33億ドル、世界2,000人超、100カ国超4万人利用を公表。"],
+    negative: ["日本売上、quota、達成率、ACV、数値報酬は非公開。", "既存更新・拡大と新規の配分、実装期間、競合勝因を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Supply Chain Sales Leadership", "Japan Manufacturing GTM Leadership"],
+  },
+  ashby: {
+    name: "Ashby", domain: "Recruiting Operations・Product Support・HRTech", officialUrl: "https://jobs.ashbyhq.com/ashby",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Ashby", communityLabel: "Glassdoor Ashby review search",
+    positive: ["日本を勤務地に含むAPACリモートのProduct Support求人と日本向け給与レンジを公式確認。", "会社は顧客4,400社超、前年比100%超の売上成長、24カ国のremote-first組織を公表。"],
+    negative: ["日本法人、国内拠点、日本専任の販売・導入・顧客成功、国内事例は未確認。", "週末勤務、時差、問い合わせ量、エスカレーション、雇用主体を面接で検証する必要がある。"],
+    next: ["Senior Product Support Specialist", "Support Engineering Leadership", "APAC Customer Experience Leadership"],
   },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",

@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-06 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-07 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全169社（未着手 27 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全172社（未着手 30 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -85,6 +85,7 @@
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
+|Selective|Ashby|1|未着手|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
@@ -96,9 +97,11 @@
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
+|Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|

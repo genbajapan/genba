@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-06",
+  "auditedAt": "2026-09-07",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 169,
+    "total": 172,
     "byStatus": {
-      "未着手": 27,
+      "未着手": 30,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 49,
       "Active": 27,
-      "Selective": 37,
+      "Selective": 40,
       "求人なし": 56
     },
-    "standardReady": 169
+    "standardReady": 172
   },
   "companies": [
     {
@@ -746,6 +746,15 @@
       "missingFields": []
     },
     {
+      "slug": "ashby",
+      "company": "Ashby",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "cambly",
       "company": "Cambly",
       "priority": "Selective",
@@ -845,6 +854,15 @@
       "missingFields": []
     },
     {
+      "slug": "kinaxis",
+      "company": "Kinaxis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "liferay",
       "company": "Liferay",
       "priority": "Selective",
@@ -868,6 +886,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "o9-solutions",
+      "company": "o9 Solutions",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
