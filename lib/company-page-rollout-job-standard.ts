@@ -69,6 +69,7 @@ for (const slug of ["canva", "monotype"]) batchSlugs.add(slug);
 for (const slug of ["shift-technology", "via"]) batchSlugs.add(slug);
 for (const slug of ["appier", "appian"]) batchSlugs.add(slug);
 for (const slug of ["o9-solutions", "kinaxis", "ashby"]) batchSlugs.add(slug);
+for (const slug of ["darktrace", "meltwater", "teamworks"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -156,6 +157,14 @@ const officialCompensation: Record<string, {
       { label: "基本給", value: "1,527.3万〜1,730.9万円", status: "公式掲載", detail: "年額。" },
       { label: "OTE", value: "2,181.8万〜2,472.7333万円", status: "公式掲載", detail: "目標達成時の総現金報酬。" },
       { label: "Pay mix", value: "70 / 30", status: "公式掲載", detail: "基本給70%、変動給30%。" },
+    ],
+  },
+  "teamworks-customer-success-manager-ii-japan-63c7c86c": {
+    headline: "公式求人に年収880万〜1,040万円、変動給144万円と株式を掲載",
+    summary: "年収レンジ、変動給、株式の存在は確認できるが、評価指標、支給条件、株式数、権利確定条件は公開されていない。",
+    breakdown: [
+      { label: "年収", value: "880万〜1,040万円", status: "公式掲載", detail: "日本勤務地向けの年額レンジ。" },
+      { label: "変動給", value: "144万円", status: "公式掲載", detail: "支給指標と達成条件は未確認。" },
     ],
   },
 };
@@ -253,6 +262,27 @@ const companyResearch: Record<string, {
     positive: ["日本を勤務地に含むAPACリモートのProduct Support求人と日本向け給与レンジを公式確認。", "会社は顧客4,400社超、前年比100%超の売上成長、24カ国のremote-first組織を公表。"],
     negative: ["日本法人、国内拠点、日本専任の販売・導入・顧客成功、国内事例は未確認。", "週末勤務、時差、問い合わせ量、エスカレーション、雇用主体を面接で検証する必要がある。"],
     next: ["Senior Product Support Specialist", "Support Engineering Leadership", "APAC Customer Experience Leadership"],
+  },
+  darktrace: {
+    name: "Darktrace", domain: "AI Cybersecurity・Enterprise Sales・Japan GTM", officialUrl: "https://darktrace.wd3.myworkdayjobs.com/DarktaceExternal",
+    communityUrl: "https://www.glassdoor.com/Reviews/Darktrace-Reviews-E1059406.htm", communityLabel: "Glassdoor Darktrace global reviews",
+    positive: ["東京でSenior SDR、Senior AE、Sales Directorの3職種を公式確認し、商談創出、大型受注、営業組織と販売パートナー網を同時に強化している。", "会社公式は110カ国10,000組織、2,300人超を公表し、国内顧客事例と東京事業所を確認できる。"],
+    negative: ["日本売上、顧客数、職種別人数、quota、達成率、数値報酬は非公開。", "Microsoft、CrowdStrike、Palo Alto Networks等との共存、誤検知、POVから本番への転換、既存SOCの運用負荷を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Cybersecurity Sales Leadership", "Japan・APAC Security GTM Leadership"],
+  },
+  meltwater: {
+    name: "Meltwater", domain: "Media Intelligence・New Business・Customer Success", officialUrl: "https://meltwatercareers.ttcportals.com/search/jobs/in/tokyo-japan",
+    communityUrl: "https://www.glassdoor.com/Reviews/Meltwater-Reviews-E237838.htm", communityLabel: "Glassdoor Meltwater global reviews",
+    positive: ["東京でSales ConsultantとEnterprise Client Success Executiveを公式確認し、中小企業の新規受注と大手顧客の利用・更新・拡大を同時に強化している。", "会社公式は27,000社、2,200人超、50拠点を公表し、ネスレ日本やNTTドコモ等の国内事例を確認できる。"],
+    negative: ["日本売上、更新率、職種別人数、quota、達成率、数値報酬は非公開。", "日本語の文脈、生成AI回答の観測精度、分析から顧客施策への反映、営業と顧客成功の収益責任を面接で検証する必要がある。"],
+    next: ["Enterprise Account Executive", "Customer Success Leadership", "Japan Media・Consumer Intelligence GTM Leadership"],
+  },
+  teamworks: {
+    name: "Teamworks", domain: "SportsTech・Customer Success・Japan Market Build", officialUrl: "https://jobs.ashbyhq.com/teamworks/63c7c86c-8e0e-43e0-a015-c8dde03a07ff",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Teamworks", communityLabel: "Glassdoor Teamworks review search",
+    positive: ["日本から勤務するCustomer Success Manager II求人を公式確認し、国内スポーツ組織の導入、利用、更新、日本向け運用の構築を担う。", "会社公式は7,000超のスポーツ組織、485人超、17カ国を公表し、侍ジャパンの利用事例を確認できる。"],
+    negative: ["日本法人、常設拠点、雇用主体、国内契約組織数、担当社数、更新率は未確認。", "選手データの保管・権限、現場定着、米国本社との時差、日本語支援、初期市場での責任境界を面接で検証する必要がある。"],
+    next: ["Senior Customer Success Manager", "Sports Technology Customer Success Leadership", "Japan・APAC SportsTech Market Leadership"],
   },
   kong: {
     name: "Kong", domain: "API・AI接続管理・Enterprise GTM", officialUrl: "https://open.talentio.com/r/1/c/japancloud/homes/4310",

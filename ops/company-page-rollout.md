@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-07 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-08 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全172社（未着手 30 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全175社（未着手 33 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -20,6 +20,7 @@
 |HOT|Coupa|5|公開済み|はい|なし|
 |HOT|Cribl|3|公開済み|はい|なし|
 |HOT|Cursor|5|公開済み|はい|なし|
+|HOT|Darktrace|3|未着手|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|DeepL|8|公開済み|はい|なし|
 |HOT|DocuSign|6|公開済み|はい|なし|
@@ -53,7 +54,7 @@
 |HOT|Tanium|3|公開済み|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
-|HOT|WalkMe|7|公開済み|はい|なし|
+|HOT|WalkMe|6|公開済み|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
@@ -69,6 +70,7 @@
 |Active|Grafana Labs|2|公開済み|はい|なし|
 |Active|Kong|2|未着手|はい|なし|
 |Active|MarqVision|2|公開済み|はい|なし|
+|Active|Meltwater|2|未着手|はい|なし|
 |Active|Menlo Security|2|未着手|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
 |Active|Neural Concept|2|公開済み|はい|なし|
@@ -112,6 +114,7 @@
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
+|Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Via|1|未着手|はい|なし|

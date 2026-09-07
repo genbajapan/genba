@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-07",
+  "auditedAt": "2026-09-08",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 172,
+    "total": 175,
     "byStatus": {
-      "未着手": 30,
+      "未着手": 33,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 49,
-      "Active": 27,
-      "Selective": 40,
+      "HOT": 50,
+      "Active": 28,
+      "Selective": 41,
       "求人なし": 56
     },
-    "standardReady": 172
+    "standardReady": 175
   },
   "companies": [
     {
@@ -157,6 +157,15 @@
       "priority": "HOT",
       "salesRoles": 5,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "darktrace",
+      "company": "Darktrace",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -461,7 +470,7 @@
       "slug": "walkme",
       "company": "WalkMe",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 6,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -598,6 +607,15 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "meltwater",
+      "company": "Meltwater",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -985,6 +1003,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "teamworks",
+      "company": "Teamworks",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
