@@ -70,6 +70,7 @@ for (const slug of ["shift-technology", "via"]) batchSlugs.add(slug);
 for (const slug of ["appier", "appian"]) batchSlugs.add(slug);
 for (const slug of ["o9-solutions", "kinaxis", "ashby"]) batchSlugs.add(slug);
 for (const slug of ["darktrace", "meltwater", "teamworks"]) batchSlugs.add(slug);
+for (const slug of ["suse", "ninjaone"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -179,6 +180,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  suse: {
+    name: "SUSE", domain: "Enterprise Linux・Kubernetes・Open Source Infrastructure", officialUrl: "https://suse.wd3.myworkdayjobs.com/jobsatsuse",
+    communityUrl: "https://www.glassdoor.com/Reviews/SUSE-Reviews-E46622.htm", communityLabel: "Glassdoor SUSE global reviews",
+    positive: ["東京で通信・公共営業、領域営業、技術営業、パートナー営業の4職種を公式確認し、直販と販売網の両方を強化している。", "会社公式はFortune 500の60%以上が利用と公表し、IDCフロンティアなどの国内事例を確認できる。"],
+    negative: ["日本売上、製品別収益、職種別人数、quota、達成率、数値報酬は非公開。", "Linuxの更新需要をKubernetes・AI基盤へ広げる再現性、Red Hat・VMware・クラウド各社への勝因、国内支援体制を面接で検証する必要がある。"],
+    next: ["Enterprise Open Source Sales・Solutions Architecture", "Linux・Kubernetes Partner GTM Leadership", "Japan・APAC Infrastructure Sales Leadership"],
+  },
+  ninjaone: {
+    name: "NinjaOne", domain: "Endpoint Management・IT Operations・Solutions Engineering", officialUrl: "https://jobs.jobvite.com/ninjaone/job/oYJpAfwq",
+    communityUrl: "https://www.glassdoor.com/Reviews/NinjaOne-Reviews-E2573874.htm", communityLabel: "Glassdoor NinjaOne global reviews",
+    positive: ["2026年6月の日本展開と9月の国内法人設立直後に、東京のSolutions Engineerが要件整理、デモ、技術検証、導入計画を担う。", "会社公式は約4万顧客、2,000人超、140カ国超を公表し、国内顧客GEMBAとマクニカとの販売体制を確認できる。"],
+    negative: ["日本売上、顧客数、営業・技術営業・顧客成功の人数、検証勝率、正確な報酬内訳は非公開。", "Microsoft Intune、Jamf、既存RMM・バックアップとの差、日本語化範囲、技術検証から導入までの国内支援を面接で検証する必要がある。"],
+    next: ["Principal Solutions Engineer", "Endpoint・IT Operations Solutions Leadership", "Japan・APAC Technical GTM Leadership"],
+  },
   antithesis: {
     name: "Antithesis", domain: "Autonomous Testing・Reliability・Solutions Engineering", officialUrl: "https://jobs.ashbyhq.com/antithesis",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Antithesis", communityLabel: "Glassdoor Antithesis review search",

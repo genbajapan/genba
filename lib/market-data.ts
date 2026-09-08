@@ -44,6 +44,7 @@ import { companies20260905Daily, jobs20260905Daily } from "@/lib/company-additio
 import { companies20260906Daily, jobs20260906Daily } from "@/lib/company-additions-2026-09-06-daily";
 import { companies20260907Daily, jobs20260907Daily } from "@/lib/company-additions-2026-09-07-daily";
 import { companies20260908Daily, jobs20260908Daily } from "@/lib/company-additions-2026-09-08-daily";
+import { companies20260909Daily, jobs20260909Daily } from "@/lib/company-additions-2026-09-09-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -960,6 +961,7 @@ const companyRecords: Company[] = [
   ...companies20260906Daily,
   ...companies20260907Daily,
   ...companies20260908Daily,
+  ...companies20260909Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1398,6 +1400,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260909Daily,
   ...jobs20260908Daily,
   ...jobs20260907Daily,
   ...jobs20260905Daily,
@@ -3027,6 +3030,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "behavox-delivery-manager-3-tokyo-7959497",
   "walkme-partner-sales-manager",
   "clickhouse-senior-consulting-engineer-japan-6140123004",
   "coupa-account-director",
@@ -3158,7 +3162,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-08",
+      lastChecked: "2026-09-09",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3209,7 +3213,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-08";
+  const auditedLastChecked = "2026-09-09";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3219,13 +3223,23 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-08",
+        lastChecked: "2026-09-09",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-behavox-delivery-manager-ended-20260909",
+    companySlug: "behavox",
+    date: "2026-09-09",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Behavoxの東京Delivery Manager求人が終了",
+    summary: "公式Greenhouse APIで求人を確認できなくなったため公開求人から除外しました。これだけで日本の採用停止や事業縮小を示すものではありません。",
+    source: { label: "Behavox Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/behavox/jobs/7959497" },
+  },
   {
     id: "signal-dropbox-japan-csm-ended-20260822",
     companySlug: "dropbox",

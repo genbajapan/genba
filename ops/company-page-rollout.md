@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-08 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-09 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全175社（未着手 33 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全178社（未着手 36 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -51,6 +51,7 @@
 |HOT|Saviynt|4|公開済み|はい|なし|
 |HOT|Sensor Tower|5|公開済み|はい|なし|
 |HOT|Similarweb|4|公開済み|はい|なし|
+|HOT|SUSE|4|未着手|はい|なし|
 |HOT|Tanium|3|公開済み|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
@@ -58,7 +59,6 @@
 |HOT|Wiz|7|公開済み|はい|なし|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
-|Active|Behavox|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Canva|2|未着手|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
@@ -88,6 +88,7 @@
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
+|Selective|Behavox|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
@@ -103,6 +104,7 @@
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
@@ -146,6 +148,7 @@
 |求人なし|Gurobi Optimization|0|公開済み|はい|なし|
 |求人なし|Halcyon|0|公開済み|はい|なし|
 |求人なし|Harvey|0|公開済み|はい|なし|
+|求人なし|Hebbia|0|未着手|はい|なし|
 |求人なし|Intercom / Fin|0|公開済み|はい|なし|
 |求人なし|Ironclad|0|公開済み|はい|なし|
 |求人なし|Island|0|公開済み|はい|なし|

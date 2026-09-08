@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-08",
+  "auditedAt": "2026-09-09",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 175,
+    "total": 178,
     "byStatus": {
-      "未着手": 33,
+      "未着手": 36,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 50,
-      "Active": 28,
-      "Selective": 41,
-      "求人なし": 56
+      "HOT": 51,
+      "Active": 27,
+      "Selective": 43,
+      "求人なし": 57
     },
-    "standardReady": 175
+    "standardReady": 178
   },
   "companies": [
     {
@@ -440,6 +440,15 @@
       "missingFields": []
     },
     {
+      "slug": "suse",
+      "company": "SUSE",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "tanium",
       "company": "Tanium",
       "priority": "HOT",
@@ -496,15 +505,6 @@
     {
       "slug": "asana",
       "company": "Asana",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "behavox",
-      "company": "Behavox",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -773,6 +773,15 @@
       "missingFields": []
     },
     {
+      "slug": "behavox",
+      "company": "Behavox",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "cambly",
       "company": "Cambly",
       "priority": "Selective",
@@ -904,6 +913,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ninjaone",
+      "company": "NinjaOne",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1291,6 +1309,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "hebbia",
+      "company": "Hebbia",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
