@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-09 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-10 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全178社（未着手 36 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全181社（未着手 39 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -18,7 +18,6 @@
 |HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Cohere|3|公開済み|はい|なし|
 |HOT|Coupa|5|公開済み|はい|なし|
-|HOT|Cribl|3|公開済み|はい|なし|
 |HOT|Cursor|5|公開済み|はい|なし|
 |HOT|Darktrace|3|未着手|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
@@ -51,6 +50,7 @@
 |HOT|Saviynt|4|公開済み|はい|なし|
 |HOT|Sensor Tower|5|公開済み|はい|なし|
 |HOT|Similarweb|4|公開済み|はい|なし|
+|HOT|Sprinklr|3|未着手|はい|なし|
 |HOT|SUSE|4|未着手|はい|なし|
 |HOT|Tanium|3|公開済み|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
@@ -61,6 +61,7 @@
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Canva|2|未着手|はい|なし|
+|Active|Cribl|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
 |Active|Dragos|2|公開済み|はい|なし|
@@ -109,6 +110,7 @@
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
+|Selective|Recorded Future|1|未着手|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
 |Selective|RZR|1|未着手|はい|なし|
@@ -140,6 +142,7 @@
 |求人なし|ClickHouse|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
 |求人なし|Contentsquare|0|公開済み|はい|なし|
+|求人なし|Decagon|0|未着手|はい|なし|
 |求人なし|Deel|0|公開済み|はい|なし|
 |求人なし|Deepgram|0|公開済み|はい|なし|
 |求人なし|Dropbox|0|公開済み|はい|なし|

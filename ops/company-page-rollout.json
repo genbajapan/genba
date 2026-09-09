@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-09",
+  "auditedAt": "2026-09-10",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 178,
+    "total": 181,
     "byStatus": {
-      "未着手": 36,
+      "未着手": 39,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 51,
-      "Active": 27,
-      "Selective": 43,
-      "求人なし": 57
+      "Active": 28,
+      "Selective": 44,
+      "求人なし": 58
     },
-    "standardReady": 178
+    "standardReady": 181
   },
   "companies": [
     {
@@ -138,15 +138,6 @@
       "company": "Coupa",
       "priority": "HOT",
       "salesRoles": 5,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "cribl",
-      "company": "Cribl",
-      "priority": "HOT",
-      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -440,6 +431,15 @@
       "missingFields": []
     },
     {
+      "slug": "sprinklr",
+      "company": "Sprinklr",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "suse",
       "company": "SUSE",
       "priority": "HOT",
@@ -526,6 +526,15 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "cribl",
+      "company": "Cribl",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -962,6 +971,15 @@
       "missingFields": []
     },
     {
+      "slug": "recorded-future",
+      "company": "Recorded Future",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "rokt",
       "company": "Rokt",
       "priority": "Selective",
@@ -1237,6 +1255,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "decagon",
+      "company": "Decagon",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

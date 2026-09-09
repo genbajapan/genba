@@ -71,6 +71,7 @@ for (const slug of ["appier", "appian"]) batchSlugs.add(slug);
 for (const slug of ["o9-solutions", "kinaxis", "ashby"]) batchSlugs.add(slug);
 for (const slug of ["darktrace", "meltwater", "teamworks"]) batchSlugs.add(slug);
 for (const slug of ["suse", "ninjaone"]) batchSlugs.add(slug);
+for (const slug of ["recorded-future", "sprinklr"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -193,6 +194,20 @@ const companyResearch: Record<string, {
     positive: ["2026年6月の日本展開と9月の国内法人設立直後に、東京のSolutions Engineerが要件整理、デモ、技術検証、導入計画を担う。", "会社公式は約4万顧客、2,000人超、140カ国超を公表し、国内顧客GEMBAとマクニカとの販売体制を確認できる。"],
     negative: ["日本売上、顧客数、営業・技術営業・顧客成功の人数、検証勝率、正確な報酬内訳は非公開。", "Microsoft Intune、Jamf、既存RMM・バックアップとの差、日本語化範囲、技術検証から導入までの国内支援を面接で検証する必要がある。"],
     next: ["Principal Solutions Engineer", "Endpoint・IT Operations Solutions Leadership", "Japan・APAC Technical GTM Leadership"],
+  },
+  "recorded-future": {
+    name: "Recorded Future", domain: "Threat Intelligence・Cybersecurity・Technical Account Management", officialUrl: "https://job-boards.greenhouse.io/recordedfuture/jobs/8725963002",
+    communityUrl: "https://www.glassdoor.com/Reviews/Recorded-Future-Reviews-E1322290.htm", communityLabel: "Glassdoor Recorded Future global reviews",
+    positive: ["東京のPrincipal Technical Account Managerが、脅威インテリジェンスの導入、定着、価値評価、技術的問題解決を担う。", "日本事業所の被保険者24人、新任Country Manager、パナソニック・東芝・HIS等の国内事例を公式・公的情報で確認。"],
+    negative: ["日本売上、顧客数、担当社数、更新・拡張の責任、評価KPI、数値報酬は非公開。", "脅威情報の情報量を顧客の優先順位と継続運用へ変える責任、解約・利用不振時の対応を面接で検証する必要がある。"],
+    next: ["Principal Technical Account Management", "Threat Intelligence Customer Success Leadership", "Japan・APAC Cybersecurity Customer Outcomes Leadership"],
+  },
+  sprinklr: {
+    name: "Sprinklr", domain: "Unified CXM・CCaaS・Professional Services", officialUrl: "https://sprinklr.wd1.myworkdayjobs.com/careers",
+    communityUrl: "https://www.glassdoor.com/Reviews/Sprinklr-Reviews-E427532.htm", communityLabel: "Glassdoor Sprinklr global reviews",
+    positive: ["東京でSaaS導入プロジェクト、CCaaS導入、運用改善の3職種を公式確認し、受注後の稼働・定着を強化している。", "日本事業所の被保険者21人、Hondaの国内統合CX事例、FY2027 Q2のRPO 11%増を公式・公的情報で確認。"],
+    negative: ["日本売上、職種別人数、同時担当案件数、稼働率、導入利益率、数値報酬は非公開。", "大規模なCCaaS・CXM移行の範囲、多国籍チームとの責任分担、カスタム対応と標準化、更新・拡張への関与を面接で検証する必要がある。"],
+    next: ["Enterprise CCaaS Program Leadership", "Unified CXM Professional Services Leadership", "Japan・APAC Customer Transformation Leadership"],
   },
   antithesis: {
     name: "Antithesis", domain: "Autonomous Testing・Reliability・Solutions Engineering", officialUrl: "https://jobs.ashbyhq.com/antithesis",
