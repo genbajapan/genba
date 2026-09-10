@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-10 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-11 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全181社（未着手 39 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全184社（未着手 42 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -105,6 +105,7 @@
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|Medallia|1|未着手|はい|なし|
 |Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
@@ -120,6 +121,7 @@
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
+|Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Via|1|未着手|はい|なし|
 |Selective|Vizcom|1|未着手|はい|なし|
@@ -159,6 +161,7 @@
 |求人なし|Klaviyo|0|公開済み|はい|なし|
 |求人なし|Lakera|0|公開済み|はい|なし|
 |求人なし|LangChain|0|公開済み|はい|なし|
+|求人なし|LaunchDarkly|0|未着手|はい|なし|
 |求人なし|Linear|0|未着手|はい|なし|
 |求人なし|Lovable|0|公開済み|はい|なし|
 |求人なし|Lucanet|0|公開済み|はい|なし|

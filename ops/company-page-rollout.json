@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-10",
+  "auditedAt": "2026-09-11",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 181,
+    "total": 184,
     "byStatus": {
-      "未着手": 39,
+      "未着手": 42,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 51,
       "Active": 28,
-      "Selective": 44,
-      "求人なし": 58
+      "Selective": 46,
+      "求人なし": 59
     },
-    "standardReady": 181
+    "standardReady": 184
   },
   "companies": [
     {
@@ -926,6 +926,15 @@
       "missingFields": []
     },
     {
+      "slug": "medallia",
+      "company": "Medallia",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "ninjaone",
       "company": "NinjaOne",
       "priority": "Selective",
@@ -1057,6 +1066,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "tricentis",
+      "company": "Tricentis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1408,6 +1426,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "launchdarkly",
+      "company": "LaunchDarkly",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

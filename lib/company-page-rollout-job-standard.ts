@@ -72,6 +72,7 @@ for (const slug of ["o9-solutions", "kinaxis", "ashby"]) batchSlugs.add(slug);
 for (const slug of ["darktrace", "meltwater", "teamworks"]) batchSlugs.add(slug);
 for (const slug of ["suse", "ninjaone"]) batchSlugs.add(slug);
 for (const slug of ["recorded-future", "sprinklr"]) batchSlugs.add(slug);
+for (const slug of ["tricentis", "medallia"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -181,6 +182,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  tricentis: {
+    name: "Tricentis", domain: "Continuous Testing・Quality Engineering・Enterprise Sales", officialUrl: "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers/job/JP---Tokyo/Senior-Account-Executive_JR105896",
+    communityUrl: "https://www.glassdoor.com/Reviews/Tricentis-Reviews-E1225908.htm", communityLabel: "Glassdoor Tricentis global reviews",
+    positive: ["東京のSenior Account Executiveが10万ドル超ACVを含む大企業の新規・拡大商談を担う。", "会社はARR 3.3億ドル超、顧客3,000社超を公表し、エン株式会社のテスト時間50%削減事例を確認できる。"],
+    negative: ["日本売上、営業人数、quota、達成率、pipeline構成、数値報酬は非公開。", "SAP・DevOps・AI品質のどこを日本の成長軸にするか、技術営業と顧客成功の国内支援、10万ドル超商談の再現性を面接で検証する必要がある。"],
+    next: ["Strategic Account Executive", "Quality Engineering Sales Leadership", "Japan・APAC DevOps GTM Leadership"],
+  },
+  medallia: {
+    name: "Medallia", domain: "Experience Management・Technical Consulting・Client Delivery", officialUrl: "https://jobs.medallia.com/jobs/5978?lang=en-us",
+    communityUrl: "https://www.glassdoor.com/Reviews/Medallia-Reviews-E268309.htm", communityLabel: "Glassdoor Medallia global reviews",
+    positive: ["東京のSenior Technical Consultantが事業目標を技術設計へ変え、洞察、経営提案、利用定着、投資対効果まで担う。", "会社は2,000超のブランドと月10億超の体験信号を公表し、日産のフォーム入力率32.5%改善事例を確認できる。"],
+    negative: ["日本売上、案件数、同時担当数、utilization、評価KPI、数値報酬は非公開。", "Qualtrics・Sprinklr等との差、分析から現場行動までの責任、案件終了後の顧客成功との境界を面接で検証する必要がある。"],
+    next: ["Principal Technical Consultant", "Experience Management Delivery Leadership", "Japan・APAC Customer Experience Transformation Leadership"],
+  },
   suse: {
     name: "SUSE", domain: "Enterprise Linux・Kubernetes・Open Source Infrastructure", officialUrl: "https://suse.wd3.myworkdayjobs.com/jobsatsuse",
     communityUrl: "https://www.glassdoor.com/Reviews/SUSE-Reviews-E46622.htm", communityLabel: "Glassdoor SUSE global reviews",
