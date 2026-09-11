@@ -47,6 +47,7 @@ import { companies20260908Daily, jobs20260908Daily } from "@/lib/company-additio
 import { companies20260909Daily, jobs20260909Daily } from "@/lib/company-additions-2026-09-09-daily";
 import { companies20260910Daily, jobs20260910Daily } from "@/lib/company-additions-2026-09-10-daily";
 import { companies20260911Daily, jobs20260911Daily } from "@/lib/company-additions-2026-09-11-daily";
+import { companies20260912Daily, jobs20260912Daily } from "@/lib/company-additions-2026-09-12-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -966,6 +967,7 @@ const companyRecords: Company[] = [
   ...companies20260909Daily,
   ...companies20260910Daily,
   ...companies20260911Daily,
+  ...companies20260912Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1404,6 +1406,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260912Daily,
   ...jobs20260911Daily,
   ...jobs20260910Daily,
   ...jobs20260909Daily,
@@ -3036,6 +3039,8 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "walkme-director-alliances-and-channels",
+  "channel-talk-ax-sales",
   "cribl-6137610004",
   "behavox-delivery-manager-3-tokyo-7959497",
   "walkme-partner-sales-manager",
@@ -3169,7 +3174,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-11",
+      lastChecked: "2026-09-12",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3220,7 +3225,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-11";
+  const auditedLastChecked = "2026-09-12";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3230,13 +3235,33 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-11",
+        lastChecked: "2026-09-12",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-walkme-director-alliances-ended-20260912",
+    companySlug: "walkme",
+    date: "2026-09-12",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "WalkMeのDirector, Alliances and Channels求人が終了",
+    summary: "公式求人URLが404となり、現行の公式Lever求人一覧にも存在しないため公開求人から除外しました。これだけで日本の採用停止や事業縮小を示すものではありません。",
+    source: { label: "WalkMe Careers", url: "https://jobs.lever.co/walkme" },
+  },
+  {
+    id: "signal-channel-talk-ax-sales-ended-20260912",
+    companySlug: "channel-talk",
+    date: "2026-09-12",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Channel TalkのAX Sales求人が終了",
+    summary: "公式Lever求人IDが404となり、現行のJapan求人一覧にも存在しないため公開求人から除外しました。これだけで日本の採用停止や事業縮小を示すものではありません。",
+    source: { label: "Channel Talk Careers (Lever)", url: "https://jobs.lever.co/zoyi?department=Japan" },
+  },
   {
     id: "signal-cribl-delivery-manager-ended-20260910",
     companySlug: "cribl",

@@ -73,6 +73,7 @@ for (const slug of ["darktrace", "meltwater", "teamworks"]) batchSlugs.add(slug)
 for (const slug of ["suse", "ninjaone"]) batchSlugs.add(slug);
 for (const slug of ["recorded-future", "sprinklr"]) batchSlugs.add(slug);
 for (const slug of ["tricentis", "medallia"]) batchSlugs.add(slug);
+for (const slug of ["cloudera", "boomi"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -195,6 +196,18 @@ const companyResearch: Record<string, {
     positive: ["東京のSenior Technical Consultantが事業目標を技術設計へ変え、洞察、経営提案、利用定着、投資対効果まで担う。", "会社は2,000超のブランドと月10億超の体験信号を公表し、日産のフォーム入力率32.5%改善事例を確認できる。"],
     negative: ["日本売上、案件数、同時担当数、utilization、評価KPI、数値報酬は非公開。", "Qualtrics・Sprinklr等との差、分析から現場行動までの責任、案件終了後の顧客成功との境界を面接で検証する必要がある。"],
     next: ["Principal Technical Consultant", "Experience Management Delivery Leadership", "Japan・APAC Customer Experience Transformation Leadership"],
+  },
+  cloudera: {
+    name: "Cloudera", domain: "Hybrid Data・AI・Forward Deployed Engineering", officialUrl: "https://cloudera.wd5.myworkdayjobs.com/External_Career",
+    positive: ["日本向けAI専門職3件が課題発見、技術検証、実装、本番化を横断する。", "会社公表の10億ドル超ARRと25エクサバイト超の管理データ、国内10年以上の実績を顧客提案の土台にできる。"],
+    negative: ["日本売上、職種別人数、案件数、利用率、数値報酬は非公開。", "個別実装と製品標準化の境界、同時担当社数、顧客データへのアクセス、運用責任を面接で確認する必要がある。"],
+    next: ["Forward Deployed AI Engineering", "AI Solutions Architecture・Technical Sales", "Data・AI Platform Leadership"],
+  },
+  boomi: {
+    name: "Boomi", domain: "Integration・API Management・Enterprise Sales", officialUrl: "https://boomi.com/company/careers/",
+    positive: ["日本の大企業向け直販営業2件が、統合・API・自動化・AIを全社課題として売る役割を担う。", "3万社超の顧客、30万超の接続とJAL等の国内事例を会社公式で確認できる。"],
+    negative: ["日本売上、営業人数、quota、達成率、案件単価、数値報酬は非公開。", "MuleSoft、Informatica、Workato、クラウド各社との勝因、国内の技術・導入支援、AIエージェントの本番実績を面接で確認する必要がある。"],
+    next: ["Integration・API Enterprise Sales", "Automation・Data Platform GTM", "Japan・APAC Enterprise Sales Leadership"],
   },
   suse: {
     name: "SUSE", domain: "Enterprise Linux・Kubernetes・Open Source Infrastructure", officialUrl: "https://suse.wd3.myworkdayjobs.com/jobsatsuse",

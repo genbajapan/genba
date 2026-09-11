@@ -4,7 +4,7 @@ import { applyStandard, buildCompactPatch, type CompactPatchInput } from "@/lib/
 
 const checkedAt = "2026-09-11";
 
-type Input = {
+export type DailyIntelligenceInput = {
   slug: string;
   name: string;
   jobConfirmed: boolean;
@@ -34,9 +34,9 @@ type Input = {
   preEntry?: { verdict: string; signal: string; hurdle: string; conditions: string[]; watches: string[] };
 };
 
-function build(input: Input): CompanyPublicIntelligence {
+export function buildDailyCompanyIntelligence(input: DailyIntelligenceInput, researchDate = checkedAt): CompanyPublicIntelligence {
   const profile: Profile = {
-    checkedAt,
+    checkedAt: researchDate,
     jobConfirmed: input.jobConfirmed,
     slug: input.slug,
     name: input.name,
@@ -109,8 +109,8 @@ function build(input: Input): CompanyPublicIntelligence {
       ["報酬・昇進", "日本の数値報酬は未確認。", "基本給、変動給、株式、評価KPI、昇進基準は。"],
     ],
   }));
-  intelligence.researchedAt = checkedAt;
-  if (intelligence.cultureDeepDive) intelligence.cultureDeepDive.researchedAt = "2026.09.11";
+  intelligence.researchedAt = researchDate;
+  if (intelligence.cultureDeepDive) intelligence.cultureDeepDive.researchedAt = researchDate.replaceAll("-", ".");
   if (input.preEntry && intelligence.marketStatus.japanGrowth) {
     intelligence.marketStatus.japanGrowth.headline = "日本法人・国内拠点・日本求人は未確認";
     intelligence.marketStatus.japanGrowth.narrative = `${input.japanPresence}。現在応募できる日本求人があるとは扱わない。`;
@@ -125,7 +125,7 @@ function build(input: Input): CompanyPublicIntelligence {
   return intelligence;
 }
 
-const tricentis = build({
+const tricentis = buildDailyCompanyIntelligence({
   slug: "tricentis", name: "Tricentis", jobConfirmed: true,
   jobUrl: "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers/job/JP---Tokyo/Senior-Account-Executive_JR105896",
   officialUrl: "https://www.tricentis.com/ja/company", customersUrl: "https://www.tricentis.com/ja/case-studies/en-inc-improves-test-automation-coverage-with-tricentis-testim",
@@ -150,7 +150,7 @@ const tricentis = build({
 tricentis.sources.push({ id: "gbiz-headcount-tricentis", label: "gBizINFO Tricentis Japan合同会社", url: "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=7010403031618", kind: "公的機関", scope: "日本法人・事業所被保険者数・所在地", checkedAt });
 tricentis.companyStats.japanHeadcount = { value: "14人", detail: "gBizINFOの事業所情報に掲載された厚生年金保険・健康保険の被保険者数。役員・制度対象外・業務委託等を含む総在籍人数ではない。", sourceId: "gbiz-headcount-tricentis" };
 
-const medallia = build({
+const medallia = buildDailyCompanyIntelligence({
   slug: "medallia", name: "Medallia", jobConfirmed: true,
   jobUrl: "https://jobs.medallia.com/jobs/5978?lang=en-us", officialUrl: "https://www.medallia.com/ja/",
   customersUrl: "https://www.medallia.com/ja/resource/nissan-case-study/", financeUrl: "https://www.medallia.com/ja/press-release/medallia-appoints-mark-bishof-as-chairman-and-ceo/",
@@ -175,7 +175,7 @@ medallia.sources.push({ id: "medallia-gbiz", label: "gBizINFO Medallia株式会�
 medallia.sources[medallia.sources.length - 1].id = "gbiz-headcount-medallia";
 medallia.companyStats.japanHeadcount = { value: "掲載なし", detail: "gBizINFOで法人と所在地を特定したが、事業所情報の被保険者数は掲載されていない。日本法人での想定従業員数を0人とは扱わない。", sourceId: "gbiz-headcount-medallia" };
 
-const launchdarkly = build({
+const launchdarkly = buildDailyCompanyIntelligence({
   slug: "launchdarkly", name: "LaunchDarkly", jobConfirmed: false,
   jobUrl: "https://job-boards.greenhouse.io/launchdarkly/jobs/7588897003", officialUrl: "https://launchdarkly.com/about-us/",
   customersUrl: "https://launchdarkly.com/customer-stories/", financeUrl: "https://launchdarkly.com/blog/dreaming-bigger/",

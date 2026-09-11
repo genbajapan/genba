@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-11 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-12 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全184社（未着手 42 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全187社（未着手 45 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -13,7 +13,8 @@
 |HOT|Braze|5|公開済み|はい|なし|
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
-|HOT|Channel Talk|16|公開済み|はい|なし|
+|HOT|Channel Talk|15|公開済み|はい|なし|
+|HOT|Cloudera|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果ほか6件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Cohere|3|公開済み|はい|なし|
@@ -55,11 +56,12 @@
 |HOT|Tanium|3|公開済み|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
-|HOT|WalkMe|6|公開済み|はい|なし|
+|HOT|WalkMe|5|公開済み|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
+|Active|Boomi|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Account Executive 4, Direct Sales:海外を含む外部評判sourceほか3件|
 |Active|Canva|2|未着手|はい|なし|
 |Active|Cribl|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
@@ -142,6 +144,7 @@
 |求人なし|Chainguard|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|ClickHouse|0|公開済み|はい|なし|
+|求人なし|Cockroach Labs|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典|
 |求人なし|Confluent|0|公開済み|はい|なし|
 |求人なし|Contentsquare|0|公開済み|はい|なし|
 |求人なし|Decagon|0|未着手|はい|なし|

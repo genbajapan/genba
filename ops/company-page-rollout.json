@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-11",
+  "auditedAt": "2026-09-12",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,18 +18,18 @@
     "求人なし"
   ],
   "counts": {
-    "total": 184,
+    "total": 187,
     "byStatus": {
-      "未着手": 42,
+      "未着手": 45,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 51,
-      "Active": 28,
+      "HOT": 52,
+      "Active": 29,
       "Selective": 46,
-      "求人なし": 59
+      "求人なし": 60
     },
     "standardReady": 184
   },
@@ -101,10 +101,30 @@
       "slug": "channel-talk",
       "company": "Channel Talk",
       "priority": "HOT",
-      "salesRoles": 16,
+      "salesRoles": 15,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "cloudera",
+      "company": "Cloudera",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "ヒーロー説明:解決と事業成果",
+        "求人:Forward Deployed AI Engineer:海外を含む外部評判source",
+        "求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme",
+        "求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判source",
+        "求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外reviewの肯定・注意theme",
+        "求人:Applied AI Specialist:海外を含む外部評判source",
+        "求人:Applied AI Specialist:海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "cloudflare",
@@ -479,7 +499,7 @@
       "slug": "walkme",
       "company": "WalkMe",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -519,6 +539,23 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "boomi",
+      "company": "Boomi",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Account Executive 4, Direct Sales:海外を含む外部評判source",
+        "求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme",
+        "求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source",
+        "求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "canva",
@@ -1257,6 +1294,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "cockroach-labs",
+      "company": "Cockroach Labs",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO出典"
+      ]
     },
     {
       "slug": "confluent",
