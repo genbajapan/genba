@@ -74,6 +74,7 @@ for (const slug of ["suse", "ninjaone"]) batchSlugs.add(slug);
 for (const slug of ["recorded-future", "sprinklr"]) batchSlugs.add(slug);
 for (const slug of ["tricentis", "medallia"]) batchSlugs.add(slug);
 for (const slug of ["cloudera", "boomi"]) batchSlugs.add(slug);
+for (const slug of ["equativ", "quantexa", "torq"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -1191,6 +1192,24 @@ const companyResearch: Record<string, {
     negative: ["日本法人、常設office、雇用主体、国内顧客、日本売上、team、P&L権限、数値報酬は非公開。", "生成映像のrights・brand・security、production integration、日本語deployment、既存制作商流との責任境界を面接で検証する必要がある。"],
     next: ["Creative AI Country Manager", "Media Technology General Management", "APAC Enterprise Leadership"],
   },
+  equativ: {
+    name: "Equativ", domain: "広告技術・媒体収益化・Publisher Account Management", officialUrl: "https://jobs.lever.co/equativ/ba1faf59-5901-4caf-9b17-cfa5aaf1fdcd",
+    positive: ["国内8人の初期チームで、20社超の媒体社に対する新規開拓、契約、運用、収益拡大を一貫して担う。", "講談社など国内媒体社の自社データと良質な掲載面を活かすキュレーション事例を公式確認。"],
+    negative: ["日本売上、担当社数、目標、達成率、案件単価、数値報酬は非公開。", "Google等の大規模広告基盤との差、手数料と取引の透明性、広告品質、CTVの国内需要を面接で検証する必要がある。"],
+    next: ["Publisher Business Development", "AdTech Account Management", "Japan・APAC Media Platform Leadership"],
+  },
+  quantexa: {
+    name: "Quantexa", domain: "Decision Intelligence・金融犯罪対策・Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/quantexa",
+    positive: ["東京でFSI Sales DirectorとSolution Engineerを同時採用し、新規開拓から技術検証まで国内で担う。", "世界900人超、評価額26億ドル、100カ国と金融大手の導入実績を会社公式で確認。"],
+    negative: ["日本売上、顧客数、職種別人数、目標、達成率、数値報酬は非公開。", "金融機関の既存データ基盤との差、名寄せ精度、誤検知、技術検証から本番化までの国内支援を面接で検証する必要がある。"],
+    next: ["Data・AI Enterprise Sales", "Financial Crime Solutions Engineering", "Japan・APAC Decision Intelligence Leadership"],
+  },
+  torq: {
+    name: "Torq", domain: "AI SOC・Security Operations・APAC Enterprise Sales", officialUrl: "https://job-boards.greenhouse.io/torq/jobs/5831930004",
+    positive: ["日本またはSingapore勤務のRegional Sales Managerが、新設APAC地域の戦略顧客と販売パートナーを一から開拓する。", "世界430人超、評価額12億ドル、Fortune 500の本番導入と対応時間削減を会社公式で確認。"],
+    negative: ["日本法人、国内拠点、日本専任範囲、日本語要件、国内顧客、日本売上、数値報酬は未確認。", "AI判断の精度、誤作動時の制御、既存SIEM・SOARとの責任境界、日本語の技術支援を面接で検証する必要がある。"],
+    next: ["AI Security Enterprise Sales", "APAC Cybersecurity GTM", "Japan Country Build"],
+  },
   clickhouse: {
     name: "ClickHouse", domain: "Real-time Analytics・OLAP・Professional Services", officialUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
     communityUrl: "https://www.glassdoor.com/Reviews/ClickHouse-Reviews-E2504499.htm", communityLabel: "Glassdoor ClickHouse global reviews",
@@ -1592,7 +1611,11 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(job.companySlug) ? "2026-08-22" : "2026-08-18";
+  const researchedAt = ["equativ", "quantexa", "torq"].includes(job.companySlug)
+    ? "2026-09-13"
+    : ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(job.companySlug)
+      ? "2026-08-22"
+      : "2026-08-18";
   const review = COMPANY_GLOBAL_REVIEW_PROFILES[job.companySlug];
   const reputationHypothesis = roleReputationHypothesis(role, company.name);
   const sourceList = [

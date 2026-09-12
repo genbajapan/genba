@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-12 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-13 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全187社（未着手 45 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全190社（未着手 48 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -14,7 +14,7 @@
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
 |HOT|Channel Talk|15|公開済み|はい|なし|
-|HOT|Cloudera|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果ほか6件|
+|HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Cohere|3|公開済み|はい|なし|
@@ -61,7 +61,7 @@
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
-|Active|Boomi|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Account Executive 4, Direct Sales:海外を含む外部評判sourceほか3件|
+|Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
 |Active|Canva|2|未着手|はい|なし|
 |Active|Cribl|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
@@ -79,6 +79,7 @@
 |Active|Neural Concept|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
 |Active|NiCE|2|公開済み|はい|なし|
+|Active|Quantexa|2|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme、求人:Solution Engineer:海外を含む外部評判source、求人:Solution Engineer:海外reviewの肯定・注意theme|
 |Active|Replit|2|公開済み|はい|なし|
 |Active|Sayari|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
@@ -99,6 +100,7 @@
 |Selective|DataSnipper|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
+|Selective|Equativ|1|未着手|いいえ|求人:Publisher Key Account Manager, Japan:海外を含む外部評判source、求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Genspark|1|未着手|はい|なし|
@@ -123,6 +125,7 @@
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
+|Selective|Torq|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source、求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme|
 |Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Via|1|未着手|はい|なし|

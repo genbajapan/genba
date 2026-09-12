@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-12",
+  "auditedAt": "2026-09-13",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 187,
+    "total": 190,
     "byStatus": {
-      "未着手": 45,
+      "未着手": 48,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 52,
-      "Active": 29,
-      "Selective": 46,
+      "Active": 30,
+      "Selective": 48,
       "求人なし": 60
     },
     "standardReady": 184
@@ -114,9 +114,6 @@
       "status": "未着手",
       "standardReady": false,
       "missingFields": [
-        "日本法人での想定従業員数:gBizINFO監査ステータス",
-        "日本法人での想定従業員数:gBizINFO出典",
-        "日本法人での想定従業員数:定義・対象範囲",
         "ヒーロー説明:解決と事業成果",
         "求人:Forward Deployed AI Engineer:海外を含む外部評判source",
         "求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme",
@@ -548,9 +545,6 @@
       "status": "未着手",
       "standardReady": false,
       "missingFields": [
-        "日本法人での想定従業員数:gBizINFO監査ステータス",
-        "日本法人での想定従業員数:gBizINFO出典",
-        "日本法人での想定従業員数:定義・対象範囲",
         "求人:Account Executive 4, Direct Sales:海外を含む外部評判source",
         "求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme",
         "求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source",
@@ -709,6 +703,20 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "quantexa",
+      "company": "Quantexa",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:FSI Sales Director:海外を含む外部評判source",
+        "求人:FSI Sales Director:海外reviewの肯定・注意theme",
+        "求人:Solution Engineer:海外を含む外部評判source",
+        "求人:Solution Engineer:海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "replit",
@@ -889,6 +897,18 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "equativ",
+      "company": "Equativ",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Publisher Key Account Manager, Japan:海外を含む外部評判source",
+        "求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "fastly",
@@ -1105,6 +1125,19 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "torq",
+      "company": "Torq",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source",
+        "求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "tricentis",
