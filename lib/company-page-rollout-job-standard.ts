@@ -75,6 +75,7 @@ for (const slug of ["recorded-future", "sprinklr"]) batchSlugs.add(slug);
 for (const slug of ["tricentis", "medallia"]) batchSlugs.add(slug);
 for (const slug of ["cloudera", "boomi"]) batchSlugs.add(slug);
 for (const slug of ["equativ", "quantexa", "torq"]) batchSlugs.add(slug);
+for (const slug of ["substack", "tradlinx", "motherduck"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -1210,6 +1211,20 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、日本専任範囲、日本語要件、国内顧客、日本売上、数値報酬は未確認。", "AI判断の精度、誤作動時の制御、既存SIEM・SOARとの責任境界、日本語の技術支援を面接で検証する必要がある。"],
     next: ["AI Security Enterprise Sales", "APAC Cybersecurity GTM", "Japan Country Build"],
   },
+  substack: {
+    name: "Substack", domain: "Creator Economy・Subscriptions・Japan Partnerships", officialUrl: "https://jobs.ashbyhq.com/substack/1c76f297-ed2b-4349-a29d-34f1edf1f3be",
+    communityUrl: "https://www.glassdoor.com/Reviews/Substack-Reviews-E3403284.htm", communityLabel: "Glassdoor Substack global reviews",
+    positive: ["東京RemoteのHead of Partnershipsが、作り手獲得、提携、イベント、ブランドと国内ニーズの本社還流を一つの市場責任として持つ。", "公式Aboutで有料購読500万件超と、基盤内ネットワークが新規購読の半分超を生む構造を確認。"],
+    negative: ["日本法人、国内拠点、在籍人数、日本売上、作り手・読者数、数値報酬は非公開。", "有名人獲得だけでなく日本の継続的な有料転換と小規模な作り手への発見を両立できるか、手数料・決済・モデレーションの責任境界を面接で検証する必要がある。"],
+    next: ["Creator Partnerships Leadership", "Subscription Platform Japan GM", "APAC Media・Creator Economy Leadership"],
+  },
+  tradlinx: {
+    name: "Tradlinx", domain: "Supply Chain Visibility・AI ETA・Japan Market Entry", officialUrl: "https://jobs.ashbyhq.com/cygnify/0154cd14-2240-4a4a-8a78-bb4dec562da7",
+    communityUrl: "https://www.trustpilot.com/review/tradlinx.com", communityLabel: "Trustpilot Tradlinx product reviews",
+    positive: ["最初の日本事業開発責任者として、進出戦略、企業営業、最初の基準顧客、提携、現地化と組織づくりを一貫して担う。", "世界6万社超、主要航路98%、AI到着予測の会社測定値と、Shinwonの効率70%改善事例を公式確認。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内顧客、日本売上、技術支援、数値報酬は未確認。", "船会社データの欠損と予測誤差、物流現場への定着、長い商談の初期支援、韓国本社との意思決定権を面接で検証する必要がある。"],
+    next: ["Supply Chain Enterprise Sales", "Japan Country Manager", "APAC Logistics Technology GTM Leadership"],
+  },
   clickhouse: {
     name: "ClickHouse", domain: "Real-time Analytics・OLAP・Professional Services", officialUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
     communityUrl: "https://www.glassdoor.com/Reviews/ClickHouse-Reviews-E2504499.htm", communityLabel: "Glassdoor ClickHouse global reviews",
@@ -1611,8 +1626,10 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["equativ", "quantexa", "torq"].includes(job.companySlug)
-    ? "2026-09-13"
+  const researchedAt = ["substack", "tradlinx", "motherduck"].includes(job.companySlug)
+    ? "2026-09-14"
+    : ["equativ", "quantexa", "torq"].includes(job.companySlug)
+      ? "2026-09-13"
     : ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(job.companySlug)
       ? "2026-08-22"
       : "2026-08-18";

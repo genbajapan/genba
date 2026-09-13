@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-13",
+  "auditedAt": "2026-09-14",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 190,
+    "total": 193,
     "byStatus": {
-      "未着手": 48,
+      "未着手": 51,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 52,
       "Active": 30,
-      "Selective": 48,
-      "求人なし": 60
+      "Selective": 50,
+      "求人なし": 61
     },
-    "standardReady": 184
+    "standardReady": 187
   },
   "companies": [
     {
@@ -1109,6 +1109,15 @@
       "missingFields": []
     },
     {
+      "slug": "substack",
+      "company": "Substack",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "teamworks",
       "company": "Teamworks",
       "priority": "Selective",
@@ -1138,6 +1147,15 @@
         "求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source",
         "求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme"
       ]
+    },
+    {
+      "slug": "tradlinx",
+      "company": "Tradlinx",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "tricentis",
@@ -1570,6 +1588,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "motherduck",
+      "company": "MotherDuck",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

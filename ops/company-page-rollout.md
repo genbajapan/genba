@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-13 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-14 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全190社（未着手 48 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全193社（未着手 51 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -123,9 +123,11 @@
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
+|Selective|Substack|1|未着手|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Torq|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source、求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme|
+|Selective|Tradlinx|1|未着手|はい|なし|
 |Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Via|1|未着手|はい|なし|
@@ -174,6 +176,7 @@
 |求人なし|Mistral AI|0|公開済み|はい|なし|
 |求人なし|monday.com|0|公開済み|はい|なし|
 |求人なし|MongoDB|0|公開済み|はい|なし|
+|求人なし|MotherDuck|0|未着手|はい|なし|
 |求人なし|Patsnap|0|公開済み|はい|なし|
 |求人なし|Pendo|0|公開済み|はい|なし|
 |求人なし|Pigment|0|公開済み|はい|なし|

@@ -300,6 +300,18 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://retool.com/", locale: "global" },
     globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/retool/"),
   },
+  substack: {
+    officialWebsite: { url: "https://substack.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/substack/"),
+  },
+  tradlinx: {
+    officialWebsite: { url: "https://www.tradlinx.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/tradlinxcorp"),
+  },
+  motherduck: {
+    officialWebsite: { url: "https://motherduck.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/motherduck/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

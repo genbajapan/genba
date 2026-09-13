@@ -49,6 +49,7 @@ import { companies20260910Daily, jobs20260910Daily } from "@/lib/company-additio
 import { companies20260911Daily, jobs20260911Daily } from "@/lib/company-additions-2026-09-11-daily";
 import { companies20260912Daily, jobs20260912Daily } from "@/lib/company-additions-2026-09-12-daily";
 import { companies20260913Daily, jobs20260913Daily } from "@/lib/company-additions-2026-09-13-daily";
+import { companies20260914Daily, jobs20260914Daily } from "@/lib/company-additions-2026-09-14-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -970,6 +971,7 @@ const companyRecords: Company[] = [
   ...companies20260911Daily,
   ...companies20260912Daily,
   ...companies20260913Daily,
+  ...companies20260914Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1408,6 +1410,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260914Daily,
   ...jobs20260913Daily,
   ...jobs20260912Daily,
   ...jobs20260911Daily,
