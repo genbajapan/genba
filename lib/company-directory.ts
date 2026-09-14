@@ -312,6 +312,16 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://motherduck.com/", locale: "global" },
     globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/motherduck/"),
   },
+  alteryx: {
+    officialWebsite: { url: "https://www.alteryx.com/ja/", locale: "ja" },
+  },
+  acronis: {
+    officialWebsite: { url: "https://www.acronis.com/ja-jp/", locale: "ja" },
+  },
+  telnyx: {
+    officialWebsite: { url: "https://telnyx.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/telnyx/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

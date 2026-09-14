@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-14 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-15 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全193社（未着手 51 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全196社（未着手 54 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -84,11 +84,14 @@
 |Active|Sayari|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
 |Active|Speak|2|公開済み|はい|なし|
+|Active|Telnyx|2|未着手|はい|なし|
 |Active|Twilio|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zendesk|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
+|Selective|Acronis|1|未着手|はい|なし|
+|Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|

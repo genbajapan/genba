@@ -76,6 +76,7 @@ for (const slug of ["tricentis", "medallia"]) batchSlugs.add(slug);
 for (const slug of ["cloudera", "boomi"]) batchSlugs.add(slug);
 for (const slug of ["equativ", "quantexa", "torq"]) batchSlugs.add(slug);
 for (const slug of ["substack", "tradlinx", "motherduck"]) batchSlugs.add(slug);
+for (const slug of ["alteryx", "acronis", "telnyx"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -1225,6 +1226,27 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用主体、国内顧客、日本売上、技術支援、数値報酬は未確認。", "船会社データの欠損と予測誤差、物流現場への定着、長い商談の初期支援、韓国本社との意思決定権を面接で検証する必要がある。"],
     next: ["Supply Chain Enterprise Sales", "Japan Country Manager", "APAC Logistics Technology GTM Leadership"],
   },
+  alteryx: {
+    name: "Alteryx", domain: "Analytics Automation・Data Preparation・Enterprise SDR", officialUrl: "https://alteryx.wd108.myworkdayjobs.com/en-US/AlteryxCareers/job/Sales-Development-Representative--Japan_R12203-1",
+    communityUrl: "https://www.glassdoor.com/Reviews/Alteryx-Reviews-E351220.htm", communityLabel: "Glassdoor Alteryx global reviews",
+    positive: ["東京のSales Development Representativeとして、問い合わせと狙う企業への新規開拓を担い、Account Executiveと分析自動化の営業機会を作る。", "公式Aboutで8,000社超、75万人超のコミュニティ、年間3.8億超の分析工程と、島津製作所の国内事例を確認。"],
+    negative: ["日本売上、職種別人数、目標、達成率、案件単価、数値報酬は非公開。", "表計算・BI・Python・生成AIとの棲み分け、データ担当以外の利用定着、問い合わせと新規開拓の比率、東京出社頻度を面接で検証する必要がある。"],
+    next: ["Enterprise Account Executive", "Analytics Platform Sales", "Japan・APAC Data GTM Leadership"],
+  },
+  acronis: {
+    name: "Acronis", domain: "Cyber Protection・MSP・Cloud Services Sales", officialUrl: "https://www.acronis.com/en/careers/job/r-100909/",
+    communityUrl: "https://www.glassdoor.com/Reviews/Acronis-Reviews-E152824.htm", communityLabel: "Glassdoor Acronis global reviews",
+    positive: ["サービス事業者候補の開拓、案件評価、利用開始、小規模契約の受注までを持ち、大規模案件は上位営業へつなぐ育成型の営業職。", "1,800人超、2万社超のサービス事業者、75万社超の保護対象企業と、日本のサービス事業者事例を会社公式で確認。"],
+    negative: ["日本売上、担当候補数、目標、達成率、販売手数料、数値報酬は非公開。", "バックアップ・セキュリティの競合が多い中で、サービス事業者の利益と運用品質をどう両立するか、営業から上位担当への引き継ぎ基準を面接で検証する必要がある。"],
+    next: ["Cloud Partner Account Executive", "Cybersecurity Channel Sales", "Japan・APAC MSP GTM Leadership"],
+  },
+  telnyx: {
+    name: "Telnyx", domain: "Communications API・Voice AI・Japan Market Entry", officialUrl: "https://job-boards.greenhouse.io/telnyx54",
+    communityUrl: "https://www.glassdoor.com/Reviews/Telnyx-Reviews-E1349439.htm", communityLabel: "Glassdoor Telnyx global reviews",
+    positive: ["東京でFounding Account ExecutiveとForward Deployed Engineerを同時募集し、最初のEnterprise Sales Podとして企業開拓から本番稼働までを担う。", "公式サイトで1万4,000社超、45カ国超の認可、Voice AIの200ミリ秒未満の遅延と、BluStreamの導入期間短縮事例を確認。"],
+    negative: ["日本法人、国内拠点、雇用主体、既存顧客、日本売上、次の採用計画、数値報酬は未確認。", "通信規制、番号、障害対応、日本語支援を初期2人でどこまで持つか、指名企業30〜40社の選定根拠と本社の技術・契約支援を面接で検証する必要がある。"],
+    next: ["Japan Enterprise Sales Leadership", "Forward Deployed Engineering Leadership", "APAC Communications・Voice AI GTM"],
+  },
   clickhouse: {
     name: "ClickHouse", domain: "Real-time Analytics・OLAP・Professional Services", officialUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
     communityUrl: "https://www.glassdoor.com/Reviews/ClickHouse-Reviews-E2504499.htm", communityLabel: "Glassdoor ClickHouse global reviews",
@@ -1626,8 +1648,10 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["substack", "tradlinx", "motherduck"].includes(job.companySlug)
-    ? "2026-09-14"
+  const researchedAt = ["alteryx", "acronis", "telnyx"].includes(job.companySlug)
+    ? "2026-09-15"
+    : ["substack", "tradlinx", "motherduck"].includes(job.companySlug)
+      ? "2026-09-14"
     : ["equativ", "quantexa", "torq"].includes(job.companySlug)
       ? "2026-09-13"
     : ["workiva", "outsystems", "sailpoint", "pingcap", "think-cell"].includes(job.companySlug)

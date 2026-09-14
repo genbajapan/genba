@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-14",
+  "auditedAt": "2026-09-15",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 193,
+    "total": 196,
     "byStatus": {
-      "未着手": 51,
+      "未着手": 54,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 52,
-      "Active": 30,
-      "Selective": 50,
+      "Active": 31,
+      "Selective": 52,
       "求人なし": 61
     },
-    "standardReady": 187
+    "standardReady": 190
   },
   "companies": [
     {
@@ -755,6 +755,15 @@
       "missingFields": []
     },
     {
+      "slug": "telnyx",
+      "company": "Telnyx",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "twilio",
       "company": "Twilio",
       "priority": "Active",
@@ -796,6 +805,24 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "acronis",
+      "company": "Acronis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "alteryx",
+      "company": "Alteryx",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
