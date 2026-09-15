@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-15 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-16 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全196社（未着手 54 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全199社（未着手 57 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -13,7 +13,7 @@
 |HOT|Braze|5|公開済み|はい|なし|
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
-|HOT|Channel Talk|15|公開済み|はい|なし|
+|HOT|Channel Talk|14|公開済み|はい|なし|
 |HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
@@ -35,6 +35,7 @@
 |HOT|iDeals|3|公開済み|はい|なし|
 |HOT|Jamf|3|未着手|はい|なし|
 |HOT|KnowBe4|4|公開済み|はい|なし|
+|HOT|Mapbox|3|未着手|はい|なし|
 |HOT|Matterport|3|未着手|はい|なし|
 |HOT|Mendix|3|公開済み|はい|なし|
 |HOT|Miro|8|公開済み|はい|なし|
@@ -108,6 +109,7 @@
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
+|Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
@@ -126,6 +128,7 @@
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
+|Selective|Sprout.ai|1|未着手|はい|なし|
 |Selective|Substack|1|未着手|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|

@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-15",
+  "auditedAt": "2026-09-16",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 196,
+    "total": 199,
     "byStatus": {
-      "未着手": 54,
+      "未着手": 57,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 52,
+      "HOT": 53,
       "Active": 31,
-      "Selective": 52,
+      "Selective": 54,
       "求人なし": 61
     },
-    "standardReady": 190
+    "standardReady": 193
   },
   "companies": [
     {
@@ -101,7 +101,7 @@
       "slug": "channel-talk",
       "company": "Channel Talk",
       "priority": "HOT",
-      "salesRoles": 15,
+      "salesRoles": 14,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -300,6 +300,15 @@
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "mapbox",
+      "company": "Mapbox",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -974,6 +983,15 @@
       "missingFields": []
     },
     {
+      "slug": "horizon3",
+      "company": "Horizon3",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "kinaxis",
       "company": "Kinaxis",
       "priority": "Selective",
@@ -1132,6 +1150,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sprout-ai",
+      "company": "Sprout.ai",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

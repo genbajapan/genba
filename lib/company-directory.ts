@@ -322,6 +322,18 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
     officialWebsite: { url: "https://telnyx.com/", locale: "global" },
     globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/telnyx/"),
   },
+  mapbox: {
+    officialWebsite: { url: "https://www.mapbox.com/ja/", locale: "ja" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/mapbox/"),
+  },
+  "sprout-ai": {
+    officialWebsite: { url: "https://sprout.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/sprout-ai/"),
+  },
+  horizon3: {
+    officialWebsite: { url: "https://horizon3.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/horizon3ai/"),
+  },
 };
 
 const undisclosedPattern = /(非公開|非開示|確認でき|未確認)/;

@@ -77,6 +77,7 @@ for (const slug of ["cloudera", "boomi"]) batchSlugs.add(slug);
 for (const slug of ["equativ", "quantexa", "torq"]) batchSlugs.add(slug);
 for (const slug of ["substack", "tradlinx", "motherduck"]) batchSlugs.add(slug);
 for (const slug of ["alteryx", "acronis", "telnyx"]) batchSlugs.add(slug);
+for (const slug of ["mapbox", "sprout-ai", "horizon3"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -1247,6 +1248,27 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用主体、既存顧客、日本売上、次の採用計画、数値報酬は未確認。", "通信規制、番号、障害対応、日本語支援を初期2人でどこまで持つか、指名企業30〜40社の選定根拠と本社の技術・契約支援を面接で検証する必要がある。"],
     next: ["Japan Enterprise Sales Leadership", "Forward Deployed Engineering Leadership", "APAC Communications・Voice AI GTM"],
   },
+  mapbox: {
+    name: "Mapbox", domain: "Location Intelligence・Automotive・Enterprise GTM", officialUrl: "https://jobs.ashbyhq.com/mapbox",
+    communityUrl: "https://www.glassdoor.com/Reviews/Mapbox-Reviews-E1188028.htm", communityLabel: "Glassdoor Mapbox global reviews",
+    positive: ["日本で企業営業、自動車事業開発、技術営業の3職種を公式募集し、新規開拓から設計・導入・利用拡大までを強化。", "登録開発者400万人超、2023年時点の日本チーム50人超、トヨタの車載ナビ採用を会社公式で確認。"],
+    negative: ["日本売上、現在の国内人数、目標、達成率、案件期間、数値報酬は非公開。", "Google、HERE、TomTom等との差、車両の長い製品寿命、地図データの責任、技術検証から量産までの支援境界を面接で検証する必要がある。"],
+    next: ["Strategic Automotive Account Executive", "Location Solutions Architecture Leadership", "Japan・APAC Mobility GTM Leadership"],
+  },
+  "sprout-ai": {
+    name: "Sprout.ai", domain: "Insurance AI・Customer Delivery・Technical Project Management", officialUrl: "https://jobs.ashbyhq.com/sprout-ai/f9c25a5a-d1bb-4e15-9ead-867af2b38932",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Sprout.ai", communityLabel: "Glassdoor Sprout.ai review search",
+    positive: ["日本のTechnical Project Managerが、保険会社の技術検証から本番稼働、利用定着、継続的な問題解決までを担う。", "2024年の請求処理300万件超、日本拠点とCountry Manager、4大陸での顧客稼働を会社公式で確認。"],
+    negative: ["日本法人、国内の正確な人数、顧客名、案件数、同時担当数、数値報酬は非公開。", "判断精度と説明責任、顧客データの境界、人の最終判断、技術検証から本番契約への条件を面接で検証する必要がある。"],
+    next: ["Insurance AI Delivery Leadership", "Customer Success・Implementation Leadership", "Japan・APAC Insurance Technology Leadership"],
+  },
+  horizon3: {
+    name: "Horizon3", domain: "Autonomous Pentesting・Exposure Management・Japan Market Entry", officialUrl: "https://jobs.ashbyhq.com/horizon3ai/27401a87-09e4-49ce-a76d-678f8e962c48",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Horizon3.ai", communityLabel: "Glassdoor Horizon3.ai review search",
+    positive: ["日本担当Enterprise Account Executiveが新規企業、技術評価、価値検証、契約、販売パートナーを横断する。", "顧客環境7,000超、累計31万回超の自律型侵入テスト、ARR前年比120%増、商流の90%がパートナー経由と会社発表。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内顧客、日本語の技術支援、数値報酬は未確認。", "本番検証の安全性と責任、販売パートナーの技術力、修復支援、顧客成功との境界を面接で検証する必要がある。"],
+    next: ["Japan Enterprise Sales Leadership", "Cybersecurity Channel Leadership", "APAC Proactive Security GTM Leadership"],
+  },
   clickhouse: {
     name: "ClickHouse", domain: "Real-time Analytics・OLAP・Professional Services", officialUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
     communityUrl: "https://www.glassdoor.com/Reviews/ClickHouse-Reviews-E2504499.htm", communityLabel: "Glassdoor ClickHouse global reviews",
@@ -1648,8 +1670,10 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["alteryx", "acronis", "telnyx"].includes(job.companySlug)
-    ? "2026-09-15"
+  const researchedAt = ["mapbox", "sprout-ai", "horizon3"].includes(job.companySlug)
+    ? "2026-09-16"
+    : ["alteryx", "acronis", "telnyx"].includes(job.companySlug)
+      ? "2026-09-15"
     : ["substack", "tradlinx", "motherduck"].includes(job.companySlug)
       ? "2026-09-14"
     : ["equativ", "quantexa", "torq"].includes(job.companySlug)
