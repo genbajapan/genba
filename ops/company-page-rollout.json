@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-16",
+  "auditedAt": "2026-09-17",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 199,
+    "total": 202,
     "byStatus": {
-      "未着手": 57,
+      "未着手": 60,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,8 +28,8 @@
     "byPriority": {
       "HOT": 53,
       "Active": 31,
-      "Selective": 54,
-      "求人なし": 61
+      "Selective": 56,
+      "求人なし": 62
     },
     "standardReady": 193
   },
@@ -226,7 +226,7 @@
       "slug": "extreme-networks",
       "company": "Extreme Networks",
       "priority": "HOT",
-      "salesRoles": 4,
+      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -863,6 +863,20 @@
       "missingFields": []
     },
     {
+      "slug": "axis-communications",
+      "company": "Axis Communications",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Sales Engineer:職種別の報酬調査",
+        "求人:Sales Engineer:ポジティブ・ネガティブ評判",
+        "求人:Sales Engineer:市場価値"
+      ]
+    },
+    {
       "slug": "behavox",
       "company": "Behavox",
       "priority": "Selective",
@@ -990,6 +1004,20 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "jfrog",
+      "company": "JFrog",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Business Development Representative:職種別の報酬調査",
+        "求人:Business Development Representative:ポジティブ・ネガティブ評判",
+        "求人:Business Development Representative:市場価値"
+      ]
     },
     {
       "slug": "kinaxis",
@@ -1734,6 +1762,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "rogo",
+      "company": "Rogo",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "scandit",

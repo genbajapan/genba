@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-16 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-17 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全199社（未着手 57 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全202社（未着手 60 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -26,7 +26,7 @@
 |HOT|DocuSign|6|公開済み|はい|なし|
 |HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
-|HOT|Extreme Networks|4|公開済み|はい|なし|
+|HOT|Extreme Networks|3|公開済み|はい|なし|
 |HOT|Figma|8|公開済み|はい|なし|
 |HOT|Fivetran|4|公開済み|はい|なし|
 |HOT|GitLab|4|公開済み|はい|なし|
@@ -96,6 +96,7 @@
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
+|Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|
 |Selective|Behavox|1|公開済み|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
@@ -110,6 +111,7 @@
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Horizon3|1|未着手|はい|なし|
+|Selective|JFrog|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
@@ -192,6 +194,7 @@
 |求人なし|Qualtrics|0|公開済み|はい|なし|
 |求人なし|Retool|0|公開済み|はい|なし|
 |求人なし|Rippling|0|公開済み|はい|なし|
+|求人なし|Rogo|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Scandit|0|公開済み|はい|なし|
 |求人なし|Sierra|0|公開済み|はい|なし|
 |求人なし|Supabase|0|未着手|はい|なし|
