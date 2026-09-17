@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-17 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全202社（未着手 60 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全205社（未着手 63 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -54,7 +54,6 @@
 |HOT|Similarweb|4|公開済み|はい|なし|
 |HOT|Sprinklr|3|未着手|はい|なし|
 |HOT|SUSE|4|未着手|はい|なし|
-|HOT|Tanium|3|公開済み|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
 |HOT|WalkMe|5|公開済み|はい|なし|
@@ -85,6 +84,7 @@
 |Active|Sayari|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
 |Active|Speak|2|公開済み|はい|なし|
+|Active|Tanium|2|公開済み|はい|なし|
 |Active|Telnyx|2|未着手|はい|なし|
 |Active|Twilio|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
@@ -108,6 +108,7 @@
 |Selective|Equativ|1|未着手|いいえ|求人:Publisher Key Account Manager, Japan:海外を含む外部評判source、求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
+|Selective|Gainsight|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Enterprise Account Executive:職種別の報酬調査、求人:Enterprise Account Executive:ポジティブ・ネガティブ評判、求人:Enterprise Account Executive:市場価値|
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Horizon3|1|未着手|はい|なし|
@@ -116,7 +117,9 @@
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
+|Selective|Minitab|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Executive:職種別の報酬調査、求人:Account Executive:ポジティブ・ネガティブ評判、求人:Account Executive:市場価値|
 |Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|

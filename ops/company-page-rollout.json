@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-17",
+  "auditedAt": "2026-09-18",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 202,
+    "total": 205,
     "byStatus": {
-      "未着手": 60,
+      "未着手": 63,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 53,
-      "Active": 31,
-      "Selective": 56,
+      "HOT": 52,
+      "Active": 32,
+      "Selective": 59,
       "求人なし": 62
     },
     "standardReady": 193
@@ -475,15 +475,6 @@
       "missingFields": []
     },
     {
-      "slug": "tanium",
-      "company": "Tanium",
-      "priority": "HOT",
-      "salesRoles": 3,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "uipath",
       "company": "UiPath",
       "priority": "HOT",
@@ -764,6 +755,15 @@
       "missingFields": []
     },
     {
+      "slug": "tanium",
+      "company": "Tanium",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "telnyx",
       "company": "Telnyx",
       "priority": "Active",
@@ -979,6 +979,20 @@
       "missingFields": []
     },
     {
+      "slug": "gainsight",
+      "company": "Gainsight",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Enterprise Account Executive:職種別の報酬調査",
+        "求人:Enterprise Account Executive:ポジティブ・ネガティブ評判",
+        "求人:Enterprise Account Executive:市場価値"
+      ]
+    },
+    {
       "slug": "genspark",
       "company": "Genspark",
       "priority": "Selective",
@@ -1056,6 +1070,20 @@
       "missingFields": []
     },
     {
+      "slug": "mattermost",
+      "company": "Mattermost",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Technical Sales Engineer / Lead:職種別の報酬調査",
+        "求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判",
+        "求人:Technical Sales Engineer / Lead:市場価値"
+      ]
+    },
+    {
       "slug": "medallia",
       "company": "Medallia",
       "priority": "Selective",
@@ -1063,6 +1091,20 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "minitab",
+      "company": "Minitab",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Account Executive:職種別の報酬調査",
+        "求人:Account Executive:ポジティブ・ネガティブ評判",
+        "求人:Account Executive:市場価値"
+      ]
     },
     {
       "slug": "ninjaone",

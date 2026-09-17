@@ -53,6 +53,7 @@ import { companies20260914Daily, jobs20260914Daily } from "@/lib/company-additio
 import { companies20260915Daily, jobs20260915Daily } from "@/lib/company-additions-2026-09-15-daily";
 import { companies20260916Daily, jobs20260916Daily } from "@/lib/company-additions-2026-09-16-daily";
 import { companies20260917Daily, jobs20260917Daily } from "@/lib/company-additions-2026-09-17-daily";
+import { companies20260918Daily, jobs20260918Daily } from "@/lib/company-additions-2026-09-18-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -978,6 +979,7 @@ const companyRecords: Company[] = [
   ...companies20260915Daily,
   ...companies20260916Daily,
   ...companies20260917Daily,
+  ...companies20260918Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1012,6 +1014,7 @@ const preEntrySignalCompanySlugs = new Set([
   "vanta",
   "antithesis",
   "vizcom",
+  "mattermost",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1416,6 +1419,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260918Daily,
   ...jobs20260917Daily,
   ...jobs20260916Daily,
   ...jobs20260915Daily,
@@ -3054,6 +3058,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "tanium-customer-success-manager-japan-8024983",
   "extreme-networks-premier-service-delivery-engineer-japan",
   "channel-talk-customer-experience-8fe67af8",
   "walkme-director-alliances-and-channels",
@@ -3191,7 +3196,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-17",
+      lastChecked: "2026-09-18",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3242,7 +3247,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-17";
+  const auditedLastChecked = "2026-09-18";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3252,13 +3257,23 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-17",
+        lastChecked: "2026-09-18",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-tanium-customer-success-manager-ended-20260918",
+    companySlug: "tanium",
+    date: "2026-09-18",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "TaniumのCustomer Success Manager求人が終了",
+    summary: "公式Greenhouseの現行求人一覧から求人ID 8024983が消えたため公開求人から除外しました。別の日本求人は検知しましたが、スケジュール実行では既存企業への新規求人追加を行いません。",
+    source: { label: "Tanium Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/tanium" },
+  },
   {
     id: "signal-extreme-networks-premier-service-delivery-ended-20260917",
     companySlug: "extreme-networks",
