@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-19",
+  "auditedAt": "2026-09-20",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 208,
+    "total": 211,
     "byStatus": {
-      "未着手": 66,
+      "未着手": 69,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,8 +28,8 @@
     "byPriority": {
       "HOT": 53,
       "Active": 33,
-      "Selective": 60,
-      "求人なし": 62
+      "Selective": 62,
+      "求人なし": 63
     },
     "standardReady": 193
   },
@@ -516,7 +516,7 @@
       "slug": "walkme",
       "company": "WalkMe",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -853,6 +853,20 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "acquia",
+      "company": "Acquia",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Lead Solutions Engineer:職種別の報酬調査",
+        "求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判",
+        "求人:Lead Solutions Engineer:市場価値"
+      ]
     },
     {
       "slug": "acronis",
@@ -1282,6 +1296,20 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "stackadapt",
+      "company": "StackAdapt",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Senior Sales Manager, Japan:職種別の報酬調査",
+        "求人:Senior Sales Manager, Japan:ポジティブ・ネガティブ評判",
+        "求人:Senior Sales Manager, Japan:市場価値"
+      ]
     },
     {
       "slug": "substack",
@@ -1875,6 +1903,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "sentry",
+      "company": "Sentry",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "sierra",

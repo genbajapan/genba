@@ -55,6 +55,7 @@ import { companies20260916Daily, jobs20260916Daily } from "@/lib/company-additio
 import { companies20260917Daily, jobs20260917Daily } from "@/lib/company-additions-2026-09-17-daily";
 import { companies20260918Daily, jobs20260918Daily } from "@/lib/company-additions-2026-09-18-daily";
 import { companies20260919Daily, jobs20260919Daily } from "@/lib/company-additions-2026-09-19-daily";
+import { companies20260920Daily, jobs20260920Daily } from "@/lib/company-additions-2026-09-20-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -982,6 +983,7 @@ const companyRecords: Company[] = [
   ...companies20260917Daily,
   ...companies20260918Daily,
   ...companies20260919Daily,
+  ...companies20260920Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1422,6 +1424,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260920Daily,
   ...jobs20260919Daily,
   ...jobs20260918Daily,
   ...jobs20260917Daily,
@@ -3062,6 +3065,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "walkme-customer-success-manager-japan",
   "walkme-customer-success-manager-2",
   "tanium-customer-success-manager-japan-8024983",
   "extreme-networks-premier-service-delivery-engineer-japan",
@@ -3201,7 +3205,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-19",
+      lastChecked: "2026-09-20",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3252,7 +3256,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-19";
+  const auditedLastChecked = "2026-09-20";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3262,13 +3266,23 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-19",
+        lastChecked: "2026-09-20",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-walkme-customer-success-manager-japan-ended-20260920",
+    companySlug: "walkme",
+    date: "2026-09-20",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "WalkMeのCustomer Success Manager求人が終了",
+    summary: "公式求人URLが404となったため公開求人から除外しました。これだけで採用停止や日本事業縮小を示すものではありません。",
+    source: { label: "WalkMe Careers", url: "https://www.walkme.com/jobs/" },
+  },
   {
     id: "signal-walkme-customer-success-manager-ended-20260919",
     companySlug: "walkme",

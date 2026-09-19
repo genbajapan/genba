@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-19 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全208社（未着手 66 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全211社（未着手 69 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -57,7 +57,7 @@
 |HOT|SUSE|4|未着手|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
-|HOT|WalkMe|5|公開済み|はい|なし|
+|HOT|WalkMe|4|公開済み|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
 |Active|3E|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Executive:職種別の報酬調査、求人:Business Development Executive:ポジティブ・ネガティブ評判、求人:Business Development Executive:市場価値ほか3件|
 |Active|Appian|2|未着手|はい|なし|
@@ -93,6 +93,7 @@
 |Active|Zendesk|2|公開済み|はい|なし|
 |Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
+|Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
 |Selective|Acronis|1|未着手|はい|なし|
 |Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
@@ -137,6 +138,7 @@
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Sprout.ai|1|未着手|はい|なし|
+|Selective|StackAdapt|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Senior Sales Manager, Japan:職種別の報酬調査、求人:Senior Sales Manager, Japan:ポジティブ・ネガティブ評判、求人:Senior Sales Manager, Japan:市場価値|
 |Selective|Substack|1|未着手|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
@@ -202,6 +204,7 @@
 |求人なし|Rippling|0|公開済み|はい|なし|
 |求人なし|Rogo|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Scandit|0|公開済み|はい|なし|
+|求人なし|Sentry|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Sierra|0|公開済み|はい|なし|
 |求人なし|Supabase|0|未着手|はい|なし|
 |求人なし|Synthesia|0|公開済み|はい|なし|

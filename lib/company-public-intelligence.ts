@@ -48,6 +48,7 @@ import { applyDaily20260916Closures, daily20260916IntelligenceBySlug } from "@/l
 import { applyDaily20260917Closures, daily20260917IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-09-17";
 import { applyDaily20260918Closures, daily20260918IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-09-18";
 import { applyDaily20260919Closures, daily20260919IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-09-19";
+import { applyDaily20260920Closures, daily20260920IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-09-20";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
 import { applyCompanyPageRolloutBatchTwo } from "@/lib/company-page-rollout-batch-02";
@@ -9686,6 +9687,7 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20260917IntelligenceBySlug,
   ...daily20260918IntelligenceBySlug,
   ...daily20260919IntelligenceBySlug,
+  ...daily20260920IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9726,6 +9728,7 @@ applyDaily20260916Closures(intelligenceBySlug);
 applyDaily20260917Closures(intelligenceBySlug);
 applyDaily20260918Closures(intelligenceBySlug);
 applyDaily20260919Closures(intelligenceBySlug);
+applyDaily20260920Closures(intelligenceBySlug);
 applyPreEntrySignalAudit(intelligenceBySlug);
 applyJapanInsuredHeadcountAudit(intelligenceBySlug);
 applyCompanyBasicInformationAudit20260825(intelligenceBySlug);
