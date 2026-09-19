@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-18",
+  "auditedAt": "2026-09-19",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 205,
+    "total": 208,
     "byStatus": {
-      "未着手": 63,
+      "未着手": 66,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 52,
-      "Active": 32,
-      "Selective": 59,
+      "HOT": 53,
+      "Active": 33,
+      "Selective": 60,
       "求人なし": 62
     },
     "standardReady": 193
@@ -203,6 +203,26 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "edb",
+      "company": "EDB",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Director Sales:職種別の報酬調査",
+        "求人:Director Sales:ポジティブ・ネガティブ評判",
+        "求人:Director Sales:市場価値",
+        "求人:Senior Account Executive:職種別の報酬調査",
+        "求人:Senior Account Executive:ポジティブ・ネガティブ評判",
+        "求人:Senior Account Executive:市場価値",
+        "求人:Sales Development Rep:職種別の報酬調査",
+        "求人:Sales Development Rep:ポジティブ・ネガティブ評判",
+        "求人:Sales Development Rep:市場価値"
+      ]
     },
     {
       "slug": "elastic",
@@ -509,6 +529,23 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "3e",
+      "company": "3E",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Business Development Executive:職種別の報酬調査",
+        "求人:Business Development Executive:ポジティブ・ネガティブ評判",
+        "求人:Business Development Executive:市場価値",
+        "求人:Account Manager:職種別の報酬調査",
+        "求人:Account Manager:ポジティブ・ネガティブ評判",
+        "求人:Account Manager:市場価値"
+      ]
     },
     {
       "slug": "appian",
@@ -1104,6 +1141,20 @@
         "求人:Account Executive:職種別の報酬調査",
         "求人:Account Executive:ポジティブ・ネガティブ評判",
         "求人:Account Executive:市場価値"
+      ]
+    },
+    {
+      "slug": "mixpanel",
+      "company": "Mixpanel",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Senior Enterprise Account Executive, Japan:職種別の報酬調査",
+        "求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判",
+        "求人:Senior Enterprise Account Executive, Japan:市場価値"
       ]
     },
     {

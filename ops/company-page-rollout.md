@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-19 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全205社（未着手 63 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全208社（未着手 66 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -24,6 +24,7 @@
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|DeepL|8|公開済み|はい|なし|
 |HOT|DocuSign|6|公開済み|はい|なし|
+|HOT|EDB|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Director Sales:職種別の報酬調査、求人:Director Sales:ポジティブ・ネガティブ評判、求人:Director Sales:市場価値ほか6件|
 |HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
 |HOT|Extreme Networks|3|公開済み|はい|なし|
@@ -58,6 +59,7 @@
 |HOT|Verkada|6|公開済み|はい|なし|
 |HOT|WalkMe|5|公開済み|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
+|Active|3E|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Executive:職種別の報酬調査、求人:Business Development Executive:ポジティブ・ネガティブ評判、求人:Business Development Executive:市場価値ほか3件|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
@@ -120,6 +122,7 @@
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
 |Selective|Minitab|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Executive:職種別の報酬調査、求人:Account Executive:ポジティブ・ネガティブ評判、求人:Account Executive:市場価値|
+|Selective|Mixpanel|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Senior Enterprise Account Executive, Japan:職種別の報酬調査、求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判、求人:Senior Enterprise Account Executive, Japan:市場価値|
 |Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
