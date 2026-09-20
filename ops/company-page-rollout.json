@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-20",
+  "auditedAt": "2026-09-21",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 211,
+    "total": 214,
     "byStatus": {
-      "未着手": 69,
+      "未着手": 72,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 53,
-      "Active": 33,
-      "Selective": 62,
+      "Active": 34,
+      "Selective": 64,
       "求人なし": 63
     },
     "standardReady": 193
@@ -742,6 +742,24 @@
       "missingFields": []
     },
     {
+      "slug": "proofpoint",
+      "company": "Proofpoint",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Business Development Representative:勤務地・言語の日本語表記",
+        "求人:Business Development Representative:職種別の報酬調査",
+        "求人:Business Development Representative:ポジティブ・ネガティブ評判",
+        "求人:Business Development Representative:市場価値",
+        "求人:Senior Sales Engineer - Tokyo:勤務地・言語の日本語表記",
+        "求人:Senior Sales Engineer - Tokyo:職種別の報酬調査",
+        "求人:Senior Sales Engineer - Tokyo:ポジティブ・ネガティブ評判",
+        "求人:Senior Sales Engineer - Tokyo:市場価値"
+      ]
+    },
+    {
       "slug": "quantexa",
       "company": "Quantexa",
       "priority": "Active",
@@ -935,6 +953,20 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "bluecat",
+      "company": "BlueCat",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Senior Sales Manager:勤務地・言語の日本語表記",
+        "求人:Senior Sales Manager:職種別の報酬調査",
+        "求人:Senior Sales Manager:ポジティブ・ネガティブ評判",
+        "求人:Senior Sales Manager:市場価値"
+      ]
     },
     {
       "slug": "cambly",
@@ -1287,6 +1319,25 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "sonatype",
+      "company": "Sonatype",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "日本法人での想定従業員数:法人未特定時に0人と断定しない",
+        "ヒーロー説明:解決と事業成果",
+        "求人:Enterprise Account Executive, Japan & SEA:勤務地・言語の日本語表記",
+        "求人:Enterprise Account Executive, Japan & SEA:職種別の報酬調査",
+        "求人:Enterprise Account Executive, Japan & SEA:ポジティブ・ネガティブ評判",
+        "求人:Enterprise Account Executive, Japan & SEA:市場価値"
+      ]
     },
     {
       "slug": "sprout-ai",

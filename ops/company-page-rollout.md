@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-21 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全211社（未着手 69 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全214社（未着手 72 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -81,6 +81,7 @@
 |Active|Neural Concept|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
 |Active|NiCE|2|公開済み|はい|なし|
+|Active|Proofpoint|2|未着手|いいえ|求人:Business Development Representative:勤務地・言語の日本語表記、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値ほか4件|
 |Active|Quantexa|2|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme、求人:Solution Engineer:海外を含む外部評判source、求人:Solution Engineer:海外reviewの肯定・注意theme|
 |Active|Replit|2|公開済み|はい|なし|
 |Active|Sayari|2|公開済み|はい|なし|
@@ -101,6 +102,7 @@
 |Selective|Ashby|1|未着手|はい|なし|
 |Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|
 |Selective|Behavox|1|公開済み|はい|なし|
+|Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
@@ -137,6 +139,7 @@
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
+|Selective|Sonatype|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか5件|
 |Selective|Sprout.ai|1|未着手|はい|なし|
 |Selective|StackAdapt|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Senior Sales Manager, Japan:職種別の報酬調査、求人:Senior Sales Manager, Japan:ポジティブ・ネガティブ評判、求人:Senior Sales Manager, Japan:市場価値|
 |Selective|Substack|1|未着手|はい|なし|

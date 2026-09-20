@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-09-21";
+
+export const companies20260921Daily: Company[] = [
+  {
+    slug: "bluecat",
+    name: "BlueCat",
+    category: "DNS・DHCP・IPアドレス管理・ネットワーク運用",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "トロント（カナダ）／ニューヨーク（米国）",
+    japanPresence: "BlueCat Japan KK・東京。日本オフィスの現行営業求人を公式確認",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "DNS、DHCP、IPアドレス管理を中核に、企業ネットワークの可視化、保護、自動化を支える。日本の大手顧客を担う営業職を公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.lever.co/bluecatnetworks",
+    tags: ["DDI", "Network Operations", "Enterprise Sales", "Japan"],
+  },
+  {
+    slug: "proofpoint",
+    name: "Proofpoint",
+    category: "人・メール・データ・AIエージェントセキュリティ",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "サニーベール（米国）",
+    japanPresence: "日本プルーフポイント株式会社・東京本社／大阪支社。国内の現行求人を公式確認",
+    hiringStatus: "採用中",
+    salesRoles: 2,
+    description: "メール、クラウド、データ損失、内部脅威を、人と情報のやり取りを軸に保護する。日本でBDRとSenior Sales Engineerを公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers",
+    tags: ["Cybersecurity", "Email Security", "Data Security", "BDR", "Sales Engineering", "Japan"],
+  },
+  {
+    slug: "sonatype",
+    name: "Sonatype",
+    category: "ソフトウェアサプライチェーン・OSS・AIガバナンス",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "フルトン（米国）",
+    japanPresence: "日本法人・国内拠点・日本勤務求人は未確認。シンガポールで日本・東南アジア担当営業を公式募集",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "オープンソース部品の保管、脆弱性・ライセンス評価、危険な部品の遮断、SBOM管理を開発工程へ組み込む。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.lever.co/sonatype",
+    entryStatus: "pre-entry-signal",
+    tags: ["日本進出の兆しあり", "Software Supply Chain", "DevSecOps", "OSS", "Singapore", "Japan Coverage"],
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、顧客課題を事業成果へ変え、複数の関係者を動かしたい人に向く。`,
+      thingsToKnow: "目標、担当範囲、達成率、支援体制、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を案件創出、受注、導入、利用、顧客KPIで定量化できれば、隣接する企業向け技術企業の同職種へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客成果、再利用できる実行の型が次の役割の土台になる。",
+      priorCompanies: "同領域の顧客課題、複数の意思決定者、成果責任を持った経験が隣接する。",
+      nextCompanies: "担当規模と成果を数字で残せれば、同領域の専門職、地域責任者、管理職へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20260921Daily: Job[] = [
+  makeJob({
+    id: "bluecat-senior-sales-manager-japan-8a67af9e",
+    companySlug: "bluecat",
+    title: "Senior Sales Manager",
+    segment: "Enterprise Sales / Network Infrastructure",
+    location: "Japan Office",
+    workStyle: "Hybrid。出社頻度は公式求人で未記載",
+    language: "日本語・英語。詳細水準は公式求人で未記載",
+    source: { label: "BlueCat Careers (Lever)", url: "https://jobs.lever.co/bluecatnetworks/8a67af9e-b75e-4698-b301-d7a0dc0aaba3" },
+    descriptionSummary: "日本の主要顧客と新規顧客を担当し、技術チームと連携して案件発掘から提案、交渉、受注までの営業サイクルを担う。",
+    genbaTake: "DDIの単品営業ではなく、顧客・パートナー・国内技術チームを動かし、ネットワーク運用全体の改善へ提案を広げる役割。",
+    compensationReality: "報酬構成は基本給50%・変動給50%。金額、目標額、達成率は非公開。",
+    desiredProfile: "公式求人は企業向け技術営業、販売経路の開拓、交渉、正確な予測、長期的な顧客・パートナー関係を重視する。",
+  }),
+  makeJob({
+    id: "proofpoint-business-development-representative-r13339",
+    companySlug: "proofpoint",
+    title: "Business Development Representative",
+    segment: "Business Development / Cybersecurity",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。出社頻度は公式求人で未記載",
+    language: "日本語・英語。詳細水準は公式求人を確認",
+    source: { label: "Proofpoint Careers (Workday)", url: "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers/job/Business-Development-Representative_R13339" },
+    descriptionSummary: "日本市場でインバウンドとアウトバウンドの両方から対象企業を開拓し、課題を確認して質の高い商談をつくる。",
+    genbaTake: "件数を積むだけでなく、複数のセキュリティ課題から優先度を見極め、日本の営業・マーケティングへ再現できる商談創出の型を作る役割。",
+    compensationReality: "給与、変動給、目標額、達成率は公式求人で未記載。",
+    desiredProfile: "公式求人は商談創出、電話・メールでの開拓、課題把握、営業・マーケティング連携、学習力を重視する。",
+  }),
+  makeJob({
+    id: "proofpoint-senior-sales-engineer-tokyo-r13892",
+    companySlug: "proofpoint",
+    title: "Senior Sales Engineer - Tokyo",
+    segment: "Solutions Engineering / Cybersecurity",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。出社頻度は公式求人で未記載",
+    language: "日本語・英語。詳細水準は公式求人を確認",
+    source: { label: "Proofpoint Careers (Workday)", url: "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers/job/Senior-Sales-Engineer---Tokyo_R13892" },
+    descriptionSummary: "大手企業の課題を把握し、メール脅威対策、データ損失防止、内部脅威、クラウド保護の提案、デモ、実証、技術評価を担う。",
+    genbaTake: "製品説明に留まらず、人とデータのリスクを顧客の既存環境へ落とし込み、複数製品を組み合わせた技術的な勝ち筋を作る役割。",
+    compensationReality: "給与、変動給、目標額、達成率は公式求人で未記載。",
+    desiredProfile: "公式求人は企業向けセキュリティ提案、要件整理、ソリューション設計、実演、実証、競合比較を重視する。",
+  }),
+  makeJob({
+    id: "sonatype-enterprise-account-executive-japan-sea-4694e03a",
+    companySlug: "sonatype",
+    title: "Enterprise Account Executive, Japan & SEA",
+    segment: "Enterprise Sales / Software Supply Chain",
+    location: "Singapore - Remote",
+    workStyle: "Hybrid。シンガポール勤務で、日本勤務求人ではない",
+    language: "日本語必須、英語での業務遂行が必要",
+    source: { label: "Sonatype Careers (Lever)", url: "https://jobs.lever.co/sonatype/4694e03a-5c74-4e8c-9725-bd4c81db4240" },
+    descriptionSummary: "シンガポールを拠点に、日本、タイ、ベトナム、フィリピンの大手企業を新規開拓し、提案から契約、既存拡大までを担う。",
+    genbaTake: "日本専任・日本勤務ではなく、4市場を横断して日本需要を検証する越境営業。応募時は市場配分、出張、就労資格、国内支援体制の確認が必要。",
+    compensationReality: "平均新規契約額5万米ドル超の記載あり。給与、変動給、目標額、達成率は非公開。",
+    desiredProfile: "公式求人は企業向けソフトウェア営業5年以上、日本語、DevSecOps・OSSの知識、新規開拓、複雑な契約を重視する。",
+  }),
+];
