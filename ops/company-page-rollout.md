@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-21 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全214社（未着手 72 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全217社（未着手 75 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -107,6 +107,7 @@
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
+|Selective|DataRobot|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:AI Engineer - Professional Services:勤務地・言語の日本語表記、求人:AI Engineer - Professional Services:職種別の報酬調査、求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判ほか1件|
 |Selective|DataSnipper|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
@@ -117,6 +118,7 @@
 |Selective|Genspark|1|未着手|はい|なし|
 |Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Horizon3|1|未着手|はい|なし|
+|Selective|Illumio|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Enterprise Sales Executive:勤務地・言語の日本語表記、求人:Enterprise Sales Executive:職種別の報酬調査、求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判ほか1件|
 |Selective|JFrog|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
@@ -131,6 +133,7 @@
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
+|Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
 |Selective|Recorded Future|1|未着手|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|

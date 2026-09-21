@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-21",
+  "auditedAt": "2026-09-22",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 214,
+    "total": 217,
     "byStatus": {
-      "未着手": 72,
+      "未着手": 75,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,7 +28,7 @@
     "byPriority": {
       "HOT": 53,
       "Active": 34,
-      "Selective": 64,
+      "Selective": 67,
       "求人なし": 63
     },
     "standardReady": 193
@@ -1005,6 +1005,21 @@
       "missingFields": []
     },
     {
+      "slug": "datarobot",
+      "company": "DataRobot",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:解決と事業成果",
+        "求人:AI Engineer - Professional Services:勤務地・言語の日本語表記",
+        "求人:AI Engineer - Professional Services:職種別の報酬調査",
+        "求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判",
+        "求人:AI Engineer - Professional Services:市場価値"
+      ]
+    },
+    {
       "slug": "datasnipper",
       "company": "DataSnipper",
       "priority": "Selective",
@@ -1101,6 +1116,21 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "illumio",
+      "company": "Illumio",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:解決と事業成果",
+        "求人:Enterprise Sales Executive:勤務地・言語の日本語表記",
+        "求人:Enterprise Sales Executive:職種別の報酬調査",
+        "求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判",
+        "求人:Enterprise Sales Executive:市場価値"
+      ]
     },
     {
       "slug": "jfrog",
@@ -1247,6 +1277,20 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "qumulo",
+      "company": "Qumulo",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記",
+        "求人:Senior Customer Success Manager (APAC):職種別の報酬調査",
+        "求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判",
+        "求人:Senior Customer Success Manager (APAC):市場価値"
+      ]
     },
     {
       "slug": "recorded-future",
