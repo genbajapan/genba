@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-23 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全217社（未着手 75 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全220社（未着手 78 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -107,6 +107,7 @@
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
+|Selective|D-Fend Solutions|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Presales Field Engineer:勤務地・言語の日本語表記ほか3件|
 |Selective|DataRobot|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:AI Engineer - Professional Services:勤務地・言語の日本語表記、求人:AI Engineer - Professional Services:職種別の報酬調査、求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判ほか1件|
 |Selective|DataSnipper|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
@@ -152,6 +153,7 @@
 |Selective|Tradlinx|1|未着手|はい|なし|
 |Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
+|Selective|Veeam|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Solution Architect (Professional Services):勤務地・言語の日本語表記ほか3件|
 |Selective|Via|1|未着手|はい|なし|
 |Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
@@ -164,6 +166,7 @@
 |求人なし|6sense|0|公開済み|はい|なし|
 |求人なし|Addepar|0|公開済み|はい|なし|
 |求人なし|Airtable|0|公開済み|はい|なし|
+|求人なし|Aiven|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Amplitude|0|公開済み|はい|なし|
 |求人なし|Apollo.io|0|公開済み|はい|なし|
 |求人なし|Atlassian|0|公開済み|はい|なし|

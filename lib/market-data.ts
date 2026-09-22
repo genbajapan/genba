@@ -58,6 +58,7 @@ import { companies20260919Daily, jobs20260919Daily } from "@/lib/company-additio
 import { companies20260920Daily, jobs20260920Daily } from "@/lib/company-additions-2026-09-20-daily";
 import { companies20260921Daily, jobs20260921Daily } from "@/lib/company-additions-2026-09-21-daily";
 import { companies20260922Daily, jobs20260922Daily } from "@/lib/company-additions-2026-09-22-daily";
+import { companies20260923Daily, jobs20260923Daily } from "@/lib/company-additions-2026-09-23-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -988,6 +989,7 @@ const companyRecords: Company[] = [
   ...companies20260920Daily,
   ...companies20260921Daily,
   ...companies20260922Daily,
+  ...companies20260923Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1429,6 +1431,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260923Daily,
   ...jobs20260922Daily,
   ...jobs20260921Daily,
   ...jobs20260920Daily,
@@ -3212,7 +3215,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-22",
+      lastChecked: "2026-09-23",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3263,7 +3266,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-22";
+  const auditedLastChecked = "2026-09-23";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3273,7 +3276,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-22",
+        lastChecked: "2026-09-23",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;

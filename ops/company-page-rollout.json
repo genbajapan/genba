@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-22",
+  "auditedAt": "2026-09-23",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 217,
+    "total": 220,
     "byStatus": {
-      "未着手": 75,
+      "未着手": 78,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,8 +28,8 @@
     "byPriority": {
       "HOT": 53,
       "Active": 34,
-      "Selective": 67,
-      "求人なし": 63
+      "Selective": 69,
+      "求人なし": 64
     },
     "standardReady": 193
   },
@@ -1005,6 +1005,23 @@
       "missingFields": []
     },
     {
+      "slug": "d-fend-solutions",
+      "company": "D-Fend Solutions",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Presales Field Engineer:勤務地・言語の日本語表記",
+        "求人:Presales Field Engineer:職種別の報酬調査",
+        "求人:Presales Field Engineer:ポジティブ・ネガティブ評判",
+        "求人:Presales Field Engineer:市場価値"
+      ]
+    },
+    {
       "slug": "datarobot",
       "company": "DataRobot",
       "priority": "Selective",
@@ -1474,6 +1491,23 @@
       "missingFields": []
     },
     {
+      "slug": "veeam",
+      "company": "Veeam",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Solution Architect (Professional Services):勤務地・言語の日本語表記",
+        "求人:Solution Architect (Professional Services):職種別の報酬調査",
+        "求人:Solution Architect (Professional Services):ポジティブ・ネガティブ評判",
+        "求人:Solution Architect (Professional Services):市場価値"
+      ]
+    },
+    {
       "slug": "via",
       "company": "Via",
       "priority": "Selective",
@@ -1580,6 +1614,18 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "aiven",
+      "company": "Aiven",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "ヒーロー説明:解決と事業成果"
+      ]
     },
     {
       "slug": "amplitude",
