@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-23",
+  "auditedAt": "2026-09-24",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 220,
+    "total": 223,
     "byStatus": {
-      "未着手": 78,
+      "未着手": 81,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 53,
+      "HOT": 54,
       "Active": 34,
-      "Selective": 69,
-      "求人なし": 64
+      "Selective": 70,
+      "求人なし": 65
     },
-    "standardReady": 193
+    "standardReady": 196
   },
   "companies": [
     {
@@ -428,6 +428,15 @@
       "priority": "HOT",
       "salesRoles": 5,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "qnx",
+      "company": "QNX",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1319,6 +1328,15 @@
       "missingFields": []
     },
     {
+      "slug": "rocket-software",
+      "company": "Rocket Software",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "rokt",
       "company": "Rokt",
       "priority": "Selective",
@@ -1938,6 +1956,15 @@
     {
       "slug": "motherduck",
       "company": "MotherDuck",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "neo4j",
+      "company": "Neo4j",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",

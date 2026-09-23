@@ -78,6 +78,7 @@ for (const slug of ["equativ", "quantexa", "torq"]) batchSlugs.add(slug);
 for (const slug of ["substack", "tradlinx", "motherduck"]) batchSlugs.add(slug);
 for (const slug of ["alteryx", "acronis", "telnyx"]) batchSlugs.add(slug);
 for (const slug of ["mapbox", "sprout-ai", "horizon3"]) batchSlugs.add(slug);
+for (const slug of ["rocket-software", "qnx"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -187,6 +188,20 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  "rocket-software": {
+    name: "Rocket Software", domain: "Legacy Modernization・Enterprise Data・Sales Engineering", officialUrl: "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Rocket%20Software", communityLabel: "Glassdoor Rocket Software global review search",
+    positive: ["東京のPrincipal Sales EngineerがVerticaの設計、実演、実証、性能ベンチマーク、競合比較を主導する。", "会社公式は従業員3,000人超、顧客1万2,500社超、東京・横浜の国内2拠点を公開している。"],
+    negative: ["日本売上、Verticaの国内顧客数、技術営業人数、PoC転換率、数値報酬は非公開。", "基幹近代化と分析基盤で購買者が異なるため、担当範囲、競合、評価期間、営業と導入の責任境界を面接で検証する必要がある。"],
+    next: ["Principal・Lead Sales Engineering", "Data Platform Solutions Architecture", "Japan・APAC Technical GTM Leadership"],
+  },
+  qnx: {
+    name: "QNX", domain: "Real-time OS・Embedded Safety・Automotive GTM", officialUrl: "https://bb.wd3.myworkdayjobs.com/BlackBerry",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=BlackBerry%20QNX", communityLabel: "Glassdoor BlackBerry QNX global review search",
+    positive: ["東京で戦略営業、技術営業、APAC顧客マーケティングの3職種を公式募集し、販売から量産・利用拡大までを横断する。", "Q1 FY2027のQNX部門売上は7,230万ドル、世界2億7,500万台超の車両搭載を会社公式・開示資料で確認できる。"],
+    negative: ["日本売上、国内顧客数、営業・技術・支援の人数、目標達成率、数値報酬は非公開。", "安全認証、量産期間、長期支援が案件と役割の負荷を左右するため、担当社数、並行案件、出張、技術部門との責任分界を面接で検証する必要がある。"],
+    next: ["Embedded・Automotive Strategic Sales", "Principal Field Applications Engineering", "APAC Customer・Industry GTM Leadership"],
+  },
   tricentis: {
     name: "Tricentis", domain: "Continuous Testing・Quality Engineering・Enterprise Sales", officialUrl: "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers/job/JP---Tokyo/Senior-Account-Executive_JR105896",
     communityUrl: "https://www.glassdoor.com/Reviews/Tricentis-Reviews-E1225908.htm", communityLabel: "Glassdoor Tricentis global reviews",
@@ -1672,6 +1687,8 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   const role = profileForRole(job, company.domain);
   const researchedAt = ["mapbox", "sprout-ai", "horizon3"].includes(job.companySlug)
     ? "2026-09-16"
+    : ["rocket-software", "qnx"].includes(job.companySlug)
+      ? "2026-09-24"
     : ["alteryx", "acronis", "telnyx"].includes(job.companySlug)
       ? "2026-09-15"
     : ["substack", "tradlinx", "motherduck"].includes(job.companySlug)

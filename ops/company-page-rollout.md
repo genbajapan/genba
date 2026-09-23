@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-23 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-24 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全220社（未着手 78 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全223社（未着手 81 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -48,6 +48,7 @@
 |HOT|Omnissa|10|未着手|はい|なし|
 |HOT|OutSystems|7|公開済み|はい|なし|
 |HOT|PagerDuty|5|公開済み|はい|なし|
+|HOT|QNX|3|未着手|はい|なし|
 |HOT|Rubrik|3|公開済み|はい|なし|
 |HOT|SailPoint|4|公開済み|はい|なし|
 |HOT|Saviynt|4|公開済み|はい|なし|
@@ -136,6 +137,7 @@
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
 |Selective|Recorded Future|1|未着手|はい|なし|
+|Selective|Rocket Software|1|未着手|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
 |Selective|RZR|1|未着手|はい|なし|
@@ -202,6 +204,7 @@
 |求人なし|monday.com|0|公開済み|はい|なし|
 |求人なし|MongoDB|0|公開済み|はい|なし|
 |求人なし|MotherDuck|0|未着手|はい|なし|
+|求人なし|Neo4j|0|未着手|はい|なし|
 |求人なし|Patsnap|0|公開済み|はい|なし|
 |求人なし|Pendo|0|公開済み|はい|なし|
 |求人なし|Pigment|0|公開済み|はい|なし|

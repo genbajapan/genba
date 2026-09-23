@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-09-24";
+
+export const companies20260924Daily: Company[] = [
+  {
+    slug: "rocket-software",
+    name: "Rocket Software",
+    category: "基幹システム近代化・企業データ・分析基盤",
+    broadCategory: "AI・データ基盤",
+    hq: "ウォルサム（米国）",
+    japanPresence: "Rocket Software Japan Ltd.。東京・横浜拠点と東京の現行求人を公式確認",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "止めにくい基幹システムのアプリケーション、データ、アクセスを置き換えずに近代化する。東京でVerticaのPrincipal Sales Engineerを公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
+    tags: ["Mainframe", "Modernization", "Vertica", "Data Analytics", "Sales Engineering", "Tokyo"],
+  },
+  {
+    slug: "qnx",
+    name: "QNX",
+    category: "安全重要システム向けリアルタイムOS・組み込み基盤",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "オタワ（カナダ）",
+    japanPresence: "BlackBerry Japan・東京。日本営業チームと東京の現行営業・技術・顧客マーケティング求人を公式確認",
+    hiringStatus: "積極採用",
+    salesRoles: 3,
+    description: "自動車、医療、産業、ロボットなど停止や誤作動が重大な領域へ、リアルタイムOS、ハイパーバイザー、開発・支援を提供。",
+    lastChecked: checkedAt,
+    careersUrl: "https://bb.wd3.myworkdayjobs.com/BlackBerry",
+    tags: ["RTOS", "Embedded", "Automotive", "Safety", "Sales", "Field Engineering", "Tokyo"],
+  },
+  {
+    slug: "neo4j",
+    name: "Neo4j",
+    category: "グラフデータベース・知識グラフ・AI推論基盤",
+    broadCategory: "AI・データ基盤",
+    hq: "サンマテオ（米国）",
+    japanPresence: "日本法人・国内拠点・日本求人は未確認。APACはSingapore・Sydney拠点、Auraは東京・大阪リージョン対応",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    description: "データ同士の関係をグラフとして保持し、不正検知、推薦、知識検索、説明可能なAIの文脈へ変えるグラフインテリジェンス基盤。",
+    lastChecked: checkedAt,
+    careersUrl: "https://neo4j.com/careers/",
+    entryStatus: "not-entered",
+    tags: ["日本未進出", "Graph Database", "Knowledge Graph", "GraphRAG", "AI", "APAC"],
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、技術要件を顧客の事業継続・製品安全・運用品質へ変えたい人に向く。`,
+      thingsToKnow: "目標、担当範囲、達成率、支援体制、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を提案、実証、導入、性能・安全性の指標で定量化できれば、隣接する企業向け技術企業へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客成果、再利用できる設計・実行の型が次の役割の土台になる。",
+      priorCompanies: "企業向けソフトウェア、データ基盤、組み込み、技術提案で複数の意思決定者を動かした経験が隣接する。",
+      nextCompanies: "担当規模と成果を数字で残せれば、企業営業、技術営業、顧客技術責任者へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20260924Daily: Job[] = [
+  makeJob({
+    id: "rocket-software-principal-sales-engineer-vertica-tokyo-r2026-6540",
+    companySlug: "rocket-software",
+    title: "Principal Sales Engineer – Vertica",
+    segment: "Sales Engineering / Data Analytics",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。顧客ワークショップ、実演、実証、性能検証を含む",
+    language: "公式求人で日本語水準の明記は未確認。英語求人",
+    source: { label: "Rocket Software Careers (Workday)", url: "https://rocket.wd5.myworkdayjobs.com/rocket_careers/job/Tokyo-Japan/Principal-Sales-Engineer_R2026-6540" },
+    descriptionSummary: "大規模分析基盤の商談で技術責任者となり、設計、実演、実証、性能ベンチマーク、競合比較、提携先との共同提案を担う。",
+    genbaTake: "製品説明だけでなく、顧客のデータ量、SQL、処理時間、費用を再現した検証を設計し、技術結果を投資判断へ変える役割。",
+    compensationReality: "給与、変動給、株式、評価KPI、出社日数は公式求人で未記載。",
+    desiredProfile: "公式求人は8〜12年以上の技術営業・コンサル、分析DB、SQL、実証・性能検証、クラウド・データ連携を重視する。",
+  }),
+  makeJob({
+    id: "qnx-strategic-account-manager-general-embedded-tokyo-20260105",
+    companySlug: "qnx",
+    title: "Strategic Account Manager (General Embedded)",
+    segment: "Strategic Sales / Embedded Software",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。国内出張は最大50%",
+    language: "日本語・英語で業務遂行できることを必須とする",
+    source: { label: "BlackBerry QNX Careers (Workday)", url: "https://bb.wd3.myworkdayjobs.com/en-US/BlackBerry/job/QNX--Strategic-Account-Manager--General-Embedded-_20260105-1" },
+    descriptionSummary: "日本の産業自動化、ロボット、医療機器の大手顧客を担当し、製品計画とQNXの安全・組み込み基盤を結ぶ複雑な営業を担う。",
+    genbaTake: "ライセンス販売だけでなく、顧客製品の長期ロードマップ、量産、安全性、技術支援を一つの取引計画へ束ねる役割。",
+    compensationReality: "報酬、変動給、株式、担当社数、達成率は公式求人で未記載。",
+    desiredProfile: "公式求人は日本の大手顧客営業、産業自動化・ロボット・医療機器、複雑な交渉、日本語・英語を重視する。",
+  }),
+  makeJob({
+    id: "qnx-field-application-engineer-sales-engineer-tokyo-20260035",
+    companySlug: "qnx",
+    title: "Field Application Engineer / Sales Engineer",
+    segment: "Field Engineering / Automotive",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。顧客訪問・イベントを含み、出張は平均25%",
+    language: "日本語・英語で顧客・技術部門と連携できることを求める",
+    source: { label: "BlackBerry QNX Careers (Workday)", url: "https://bb.wd3.myworkdayjobs.com/en-US/BlackBerry/job/QNX--Field-Application-Engineer-Sales-Engineer_20260035" },
+    descriptionSummary: "日本の自動車顧客の技術責任者として、要件分析、設計助言、実演、性能検証、開発・量産までの技術関係を担う。",
+    genbaTake: "販売前の実演に閉じず、顧客製品へ組み込まれ量産されるまで、顧客とQNXの開発部門をつなぐ役割。",
+    compensationReality: "給与、変動給、株式、評価KPIは公式求人で未記載。",
+    desiredProfile: "公式求人は組み込み・リアルタイム開発、C/C++、Linux、自動車、顧客と開発部門の橋渡し、日本語・英語を重視する。",
+  }),
+  makeJob({
+    id: "qnx-senior-customer-marketing-manager-apac-tokyo-20260102",
+    companySlug: "qnx",
+    title: "Senior Customer Marketing Manager, APAC",
+    segment: "Customer Marketing / APAC",
+    location: "Tokyo, Japan",
+    workStyle: "東京勤務。中国・インド・日本・韓国を中心とするAPAC担当",
+    language: "日本語・英語で業務遂行できることを求める",
+    source: { label: "BlackBerry QNX Careers (Workday)", url: "https://bb.wd3.myworkdayjobs.com/en-US/BlackBerry/job/QNX--Senior-Customer-Marketing-Manager--APAC_20260102-1" },
+    descriptionSummary: "APACの重要顧客に対し、営業・製品と共同で顧客別施策、技術イベント、経営層向け説明、事例・支持者づくりを担う。",
+    genbaTake: "広く認知を取るだけでなく、大手顧客の採用拡大、継続、支持者化を顧客別の計画と成果へ落とす役割。",
+    compensationReality: "給与、賞与、評価KPI、出張頻度は公式求人で未記載。",
+    desiredProfile: "公式求人はB2B顧客マーケティング、自動車・組み込み、営業との顧客計画、経営層対応、日本語・英語を重視する。",
+  }),
+];
