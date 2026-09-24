@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-24 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-25 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全223社（未着手 81 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全226社（未着手 84 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -66,7 +66,6 @@
 |Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
 |Active|Canva|2|未着手|はい|なし|
-|Active|Cribl|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
 |Active|Dragos|2|公開済み|はい|なし|
@@ -105,9 +104,12 @@
 |Selective|Behavox|1|公開済み|はい|なし|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
 |Selective|Cambly|1|公開済み|はい|なし|
+|Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
+|Selective|CircleCI|1|未着手|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
+|Selective|Cribl|1|公開済み|はい|なし|
 |Selective|D-Fend Solutions|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Presales Field Engineer:勤務地・言語の日本語表記ほか3件|
 |Selective|DataRobot|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:AI Engineer - Professional Services:勤務地・言語の日本語表記、求人:AI Engineer - Professional Services:職種別の報酬調査、求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判ほか1件|
 |Selective|DataSnipper|1|公開済み|はい|なし|
@@ -155,11 +157,11 @@
 |Selective|Tradlinx|1|未着手|はい|なし|
 |Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
+|Selective|Vectra AI|1|未着手|はい|なし|
 |Selective|Veeam|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Solution Architect (Professional Services):勤務地・言語の日本語表記ほか3件|
 |Selective|Via|1|未着手|はい|なし|
 |Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
-|Selective|Wasabi Technologies|1|公開済み|はい|なし|
 |Selective|WitnessAI|1|未着手|はい|なし|
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
@@ -226,6 +228,7 @@
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|Vercel|0|公開済み|はい|なし|
+|求人なし|Wasabi Technologies|0|公開済み|はい|なし|
 |求人なし|WatchGuard Technologies|0|公開済み|はい|なし|
 |求人なし|Webflow|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|

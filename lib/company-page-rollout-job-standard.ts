@@ -79,6 +79,7 @@ for (const slug of ["substack", "tradlinx", "motherduck"]) batchSlugs.add(slug);
 for (const slug of ["alteryx", "acronis", "telnyx"]) batchSlugs.add(slug);
 for (const slug of ["mapbox", "sprout-ai", "horizon3"]) batchSlugs.add(slug);
 for (const slug of ["rocket-software", "qnx"]) batchSlugs.add(slug);
+for (const slug of ["vectra-ai", "circleci", "catapult-sports"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -188,6 +189,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  "vectra-ai": {
+    name: "Vectra AI", domain: "Network Detection and Response・AI Cybersecurity・Pre-Sales", officialUrl: "https://www.vectra.ai/about/jobs?gh_jid=7724894",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Vectra%20AI", communityLabel: "Glassdoor Vectra AI global review search",
+    positive: ["東京のSecurity Engineer, Pre-Salesが調査、設計、実演、実証、RFP/RFI、導入設計の確認を担う。", "会社公式は従業員600人超、顧客1,700社超、監視ホスト7百万超を公開し、近鉄百貨店の国内事例を確認できる。"],
+    negative: ["日本売上、国内顧客数、技術営業人数、実証転換率、数値報酬は非公開。", "EDR・SIEMとの責任分界、データの取得範囲、誤検知、SOCの運用負荷、顧客・提携先訪問の頻度を実証と面接で検証する必要がある。"],
+    next: ["Principal Security Sales Engineering", "NDR・SOC Solutions Architecture", "Japan・APAC Cybersecurity Technical GTM Leadership"],
+  },
+  circleci: {
+    name: "CircleCI", domain: "CI/CD・Developer Tools・APAC Strategic Sales", officialUrl: "https://www.circleci.com/careers/jobs/8790033002/?gh_jid=8790033002",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=CircleCI", communityLabel: "Glassdoor CircleCI global review search",
+    positive: ["東京のStrategic Client Account Executiveが日本を除くAPACの大手顧客で新規開拓と既存拡大を担う。", "公式求人は1日300万件超のジョブ実行を説明し、ANAシステムズの月平均1,000時間の工数削減事例を確認できる。"],
+    negative: ["日本売上、国内顧客数、営業人数、担当社数、目標達成率、数値報酬は非公開。", "勤務地は東京だが担当は日本を除くAPACである。国別の割当、出張、GitHub Actions・GitLab・Jenkins等への勝因、技術営業・導入支援の地域体制を面接で検証する必要がある。"],
+    next: ["APAC Strategic Account Executive", "Developer Tools Enterprise Sales Leadership", "APAC CI/CD・Platform GTM Leadership"],
+  },
+  "catapult-sports": {
+    name: "Catapult Sports", domain: "Sports Technology・Performance Analytics・Customer Success", officialUrl: "https://job-boards.greenhouse.io/catapultsports/jobs/8055068",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Catapult%20Sports", communityLabel: "Glassdoor Catapult Sports global review search",
+    positive: ["日本のCustomer Success Specialistがプロチーム、競技団体、大学等の導入、教育、定着、更新、拡張を担う。", "会社公式は従業員900人超、5,500チーム超、40競技超、100カ国超への展開を公開している。"],
+    negative: ["日本売上、国内顧客数、担当チーム数、更新率、数値報酬は非公開。", "競技日程に伴う移動、現場対応、製品別の担当範囲、営業・技術支援との責任分界、更新・拡張目標を面接で検証する必要がある。"],
+    next: ["Senior Customer Success Manager", "Sports Performance Solutions Leadership", "Japan・APAC Sports Technology Commercial Leadership"],
+  },
   "rocket-software": {
     name: "Rocket Software", domain: "Legacy Modernization・Enterprise Data・Sales Engineering", officialUrl: "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Rocket%20Software", communityLabel: "Glassdoor Rocket Software global review search",
@@ -1685,7 +1707,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["mapbox", "sprout-ai", "horizon3"].includes(job.companySlug)
+  const researchedAt = ["vectra-ai", "circleci", "catapult-sports"].includes(job.companySlug)
+    ? "2026-09-25"
+    : ["mapbox", "sprout-ai", "horizon3"].includes(job.companySlug)
     ? "2026-09-16"
     : ["rocket-software", "qnx"].includes(job.companySlug)
       ? "2026-09-24"

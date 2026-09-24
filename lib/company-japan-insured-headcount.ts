@@ -10,6 +10,7 @@ const DAILY_20260825_CHECKED_AT = "2026-08-25";
 const DAILY_20260826_CHECKED_AT = "2026-08-26";
 const DAILY_20260827_CHECKED_AT = "2026-08-27";
 const DAILY_20260902_CHECKED_AT = "2026-09-02";
+const DAILY_20260925_CHECKED_AT = "2026-09-25";
 const GBIZ_PROFILE_BASE = "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=";
 const GBIZ_SEARCH_URL = "https://info.gbiz.go.jp/";
 
@@ -146,6 +147,7 @@ const AUDITED_SLUGS = new Set([
   "clickhouse",
   "behavox", "chainguard", "glance", "getyourguide", "antithesis",
   "kong", "perplexity", "linear",
+  "catapult-sports",
 ]);
 
 // 利益相反・編集方針により公開対象外のため、この一斉監査では触らない。
@@ -154,7 +156,9 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 function sourceFor(slug: string, entity?: VerifiedEntity): ResearchSource {
-  const checkedAt = ["kong", "perplexity", "linear"].includes(slug)
+  const checkedAt = ["catapult-sports"].includes(slug)
+    ? DAILY_20260925_CHECKED_AT
+    : ["kong", "perplexity", "linear"].includes(slug)
     ? DAILY_20260902_CHECKED_AT
     : ["glance", "getyourguide", "antithesis"].includes(slug)
     ? DAILY_20260827_CHECKED_AT

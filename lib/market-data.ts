@@ -60,6 +60,7 @@ import { companies20260921Daily, jobs20260921Daily } from "@/lib/company-additio
 import { companies20260922Daily, jobs20260922Daily } from "@/lib/company-additions-2026-09-22-daily";
 import { companies20260923Daily, jobs20260923Daily } from "@/lib/company-additions-2026-09-23-daily";
 import { companies20260924Daily, jobs20260924Daily } from "@/lib/company-additions-2026-09-24-daily";
+import { companies20260925Daily, jobs20260925Daily } from "@/lib/company-additions-2026-09-25-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -992,6 +993,7 @@ const companyRecords: Company[] = [
   ...companies20260922Daily,
   ...companies20260923Daily,
   ...companies20260924Daily,
+  ...companies20260925Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1433,6 +1435,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260925Daily,
   ...jobs20260923Daily,
   ...jobs20260924Daily,
   ...jobs20260922Daily,
@@ -3208,6 +3211,8 @@ const closedJobIds = new Set([
   "pagerduty-professional-services-consultant-7991",
   "braze-manager-business-development",
   "bluematrix-client-success-manager-tokyo",
+  "cribl-6098546004",
+  "wasabi-inside-sales-representative-japan",
 ]);
 
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
@@ -3218,7 +3223,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-24",
+      lastChecked: "2026-09-25",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3269,7 +3274,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-24";
+  const auditedLastChecked = "2026-09-25";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3279,13 +3284,33 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-24",
+        lastChecked: "2026-09-25",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-cribl-regional-sales-director-japan-ended-20260925",
+    companySlug: "cribl",
+    date: "2026-09-25",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "CriblのRegional Sales Director, Japan求人が終了",
+    summary: "公式Greenhouse APIから当該求人IDが消失したため公開求人から除外しました。日本の他求人は継続中です。",
+    source: { label: "Cribl Greenhouse API", url: "https://boards-api.greenhouse.io/v1/boards/cribl/jobs?content=true" },
+  },
+  {
+    id: "signal-wasabi-inside-sales-representative-japan-ended-20260925",
+    companySlug: "wasabi",
+    date: "2026-09-25",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "WasabiのInside Sales Representative - Japan求人が終了",
+    summary: "公式Greenhouse APIから当該求人IDが消失したため公開求人から除外しました。これだけで日本事業縮小を示すものではありません。",
+    source: { label: "Wasabi Greenhouse API", url: "https://boards-api.greenhouse.io/v1/boards/wasabi/jobs" },
+  },
   {
     id: "signal-walkme-customer-success-manager-japan-ended-20260920",
     companySlug: "walkme",
