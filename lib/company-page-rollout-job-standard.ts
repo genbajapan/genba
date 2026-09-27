@@ -80,6 +80,8 @@ for (const slug of ["alteryx", "acronis", "telnyx"]) batchSlugs.add(slug);
 for (const slug of ["mapbox", "sprout-ai", "horizon3"]) batchSlugs.add(slug);
 for (const slug of ["rocket-software", "qnx"]) batchSlugs.add(slug);
 for (const slug of ["vectra-ai", "circleci", "catapult-sports"]) batchSlugs.add(slug);
+for (const slug of ["box", "applied-intuition", "chalk"]) batchSlugs.add(slug);
+for (const slug of ["keeper-security", "liquid-ai"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -189,6 +191,41 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  "keeper-security": {
+    name: "Keeper Security", domain: "Privileged Access Management・Identity Security・Customer Success", officialUrl: "https://job-boards.greenhouse.io/keepersecurity/jobs/4408913009",
+    communityUrl: "https://www.glassdoor.com/Reviews/Keeper-Security-Reviews-E1109689.htm", communityLabel: "Glassdoor Keeper Security global reviews（日本の対象チームへ一般化しない、2026-09-28確認）",
+    positive: ["東京のCustomer Success Manager, APACが導入、利用、四半期レビュー、更新、追加販売、問題解決を担う。", "会社公式は150カ国超、導入企業93,000社超、保護利用者400万人を公開し、国内顧客事例と日本法人を確認できる。"],
+    negative: ["日本売上、国内顧客数、担当社数、売上目標、達成率、数値報酬は非公開。", "技術支援と営業責任の境界、更新・追加販売のcredit、顧客portfolio、東京への出社頻度を面接で検証する必要がある。"],
+    next: ["Senior Customer Success Manager", "Identity Security Customer Leadership", "Japan・APAC Customer Success Leadership"],
+  },
+  "liquid-ai": {
+    name: "Liquid AI", domain: "Foundation Models・Japanese Multimodal AI・Applied Machine Learning", officialUrl: "https://www.liquid.ai/careers",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Liquid%20AI", communityLabel: "Glassdoor Liquid AI global review search（日本の対象チームへ一般化しない、2026-09-28確認）",
+    positive: ["東京のML ScientistとApplied ML職が、日本語マルチモーダル研究と日本企業への本番配備を担う。", "MIT CSAIL発の創業チーム、2.5億ドルのSeries A、東京拠点を会社公式で確認できる。"],
+    negative: ["日本売上、国内顧客名、モデルの用途別成果、東京チーム人数、数値報酬は非公開。", "研究と顧客配備の責任分界、実機の性能目標、計算資源、出社・出張、米国本社との意思決定を面接で検証する必要がある。"],
+    next: ["Senior Applied ML Engineer・Research Scientist", "Japanese Multimodal AI Technical Leadership", "Japan・APAC Foundation Model Leadership"],
+  },
+  box: {
+    name: "Box", domain: "Intelligent Content Management・Enterprise AI・Solutions Engineering", officialUrl: "https://job-boards.greenhouse.io/boxinc/jobs/8054660",
+    communityUrl: "https://www.glassdoor.ca/Reviews/Box-Reviews-E254092.htm", communityLabel: "Glassdoor Box global reviews（3.9/5・1,342件、2026-09-27確認）",
+    positive: ["東京のEnterprise Solutions Engineerが従業員2,000名以上の大手企業で、課題整理、実証、アーキテクチャ、セキュリティ、AI利用統制、導入後の拡張を担う。", "会社公式は世界12万社、日本23,000社超の利用を公開し、山口産業の月100〜150時間の作業工数削減事例を確認できる。"],
+    negative: ["日本売上、技術営業人数、担当社数、実証転換率、数値報酬は非公開。", "Microsoft・Google・Dropbox・既存ファイルサーバーとの棲み分け、AI利用時の権限・データ所在、導入後の利用定着責任を面接と実証で検証する必要がある。"],
+    next: ["Principal Solutions Engineer", "Enterprise Content・AI Solutions Architecture", "Japan・APAC Technical GTM Leadership"],
+  },
+  "applied-intuition": {
+    name: "Applied Intuition", domain: "Physical AI・Vehicle OS・Solution Engineering", officialUrl: "https://jobs.ashbyhq.com/applied/3783c384-117a-4849-804b-82b2e35a8c8d",
+    communityUrl: "https://www.glassdoor.com/Overview/Working-at-Applied-Intuition-EI_IE2598562.11,28.htm", communityLabel: "Glassdoor Applied Intuition global reviews（3.4/5・174件、2026-09-27確認）",
+    positive: ["東京のSolution EngineerがAPACの完成車メーカーのVehicle OSプロジェクトで、技術要件、会議、進捗、本社開発との接続を担う。", "公式求人は企業価値150億ドル、世界大手完成車メーカー上位20社のうち18社が利用、東京チーム60人超と説明している。"],
+    negative: ["日本売上、国内顧客数、担当プログラム数、評価KPI、数値報酬は非公開。", "長い車両開発周期、顧客固有の車載基盤、機能安全、本社との意思決定、原則週5日出社と出張負荷を面接で検証する必要がある。"],
+    next: ["Senior Solution Engineer", "Vehicle OS・Autonomy Program Leadership", "Japan・APAC Physical AI Technical GTM Leadership"],
+  },
+  chalk: {
+    name: "Chalk", domain: "Machine Learning Data Platform・Forward Deployed Engineering", officialUrl: "https://jobs.ashbyhq.com/chalk/96eeb4e1-4621-4c03-b46e-ed2630b48811/",
+    communityUrl: "https://www.glassdoor.com/Reviews/Chalk-Reviews-E11060982.htm", communityLabel: "Glassdoor Chalk global reviews（3件・評価が大きく分かれる、2026-09-27確認）",
+    positive: ["日本リモートのForward Deployed Engineerが、顧客の特徴量パイプラインを実装し、受注前後の技術窓口として営業と開発をつなぐ。", "会社公式は5,000万ドルのSeries A、企業価値5億ドル、Verisoulの更新速度10倍・検知精度4倍の事例を公開している。"],
+    negative: ["日本法人、国内拠点、日本事業責任者、日本語の契約・請求・障害対応、国内顧客事例、数値報酬は未確認。", "求人だけで正式進出とは判断できず、顧客訪問・時差・出張、営業と実装の責任分界、案件の再利用性を面接で検証する必要がある。"],
+    next: ["Senior Forward Deployed Engineer", "Machine Learning Platform Solutions Leadership", "Japan・APAC Data Infrastructure Technical GTM Leadership"],
+  },
   "vectra-ai": {
     name: "Vectra AI", domain: "Network Detection and Response・AI Cybersecurity・Pre-Sales", officialUrl: "https://www.vectra.ai/about/jobs?gh_jid=7724894",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Vectra%20AI", communityLabel: "Glassdoor Vectra AI global review search",
@@ -1707,7 +1744,11 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["vectra-ai", "circleci", "catapult-sports"].includes(job.companySlug)
+  const researchedAt = ["keeper-security", "liquid-ai"].includes(job.companySlug)
+    ? "2026-09-28"
+    : ["box", "applied-intuition", "chalk"].includes(job.companySlug)
+    ? "2026-09-27"
+    : ["vectra-ai", "circleci", "catapult-sports"].includes(job.companySlug)
     ? "2026-09-25"
     : ["mapbox", "sprout-ai", "horizon3"].includes(job.companySlug)
     ? "2026-09-16"

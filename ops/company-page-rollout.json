@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-25",
+  "auditedAt": "2026-09-28",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 226,
+    "total": 232,
     "byStatus": {
-      "未着手": 84,
+      "未着手": 90,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 54,
-      "Active": 33,
-      "Selective": 73,
-      "求人なし": 66
+      "Active": 34,
+      "Selective": 77,
+      "求人なし": 67
     },
-    "standardReady": 199
+    "standardReady": 203
   },
   "companies": [
     {
@@ -199,7 +199,7 @@
       "slug": "docusign",
       "company": "DocuSign",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -679,6 +679,17 @@
       "missingFields": []
     },
     {
+      "slug": "liquid-ai",
+      "company": "Liquid AI",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:解決と事業成果"
+      ]
+    },
+    {
       "slug": "marqvision",
       "company": "MarqVision",
       "priority": "Active",
@@ -914,6 +925,15 @@
       "missingFields": []
     },
     {
+      "slug": "applied-intuition",
+      "company": "Applied Intuition",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "appsflyer",
       "company": "AppsFlyer",
       "priority": "Selective",
@@ -969,6 +989,15 @@
       ]
     },
     {
+      "slug": "box",
+      "company": "Box",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "cambly",
       "company": "Cambly",
       "priority": "Selective",
@@ -992,6 +1021,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "chalk",
+      "company": "Chalk",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1189,6 +1227,15 @@
         "求人:Business Development Representative:ポジティブ・ネガティブ評判",
         "求人:Business Development Representative:市場価値"
       ]
+    },
+    {
+      "slug": "keeper-security",
+      "company": "Keeper Security",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "kinaxis",
@@ -1790,6 +1837,18 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "exa",
+      "company": "Exa",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "ヒーロー説明:解決と事業成果"
+      ]
     },
     {
       "slug": "gamma",

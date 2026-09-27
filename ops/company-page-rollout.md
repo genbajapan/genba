@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-25 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-28 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全226社（未着手 84 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全232社（未着手 90 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -23,7 +23,7 @@
 |HOT|Darktrace|3|未着手|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|DeepL|8|公開済み|はい|なし|
-|HOT|DocuSign|6|公開済み|はい|なし|
+|HOT|DocuSign|5|公開済み|はい|なし|
 |HOT|EDB|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Director Sales:職種別の報酬調査、求人:Director Sales:ポジティブ・ネガティブ評判、求人:Director Sales:市場価値ほか6件|
 |HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
@@ -74,6 +74,7 @@
 |Active|Glean|2|公開済み|はい|なし|
 |Active|Grafana Labs|2|公開済み|はい|なし|
 |Active|Kong|2|未着手|はい|なし|
+|Active|Liquid AI|2|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |Active|MarqVision|2|公開済み|はい|なし|
 |Active|Meltwater|2|未着手|はい|なし|
 |Active|Menlo Security|2|未着手|はい|なし|
@@ -98,14 +99,17 @@
 |Selective|Acronis|1|未着手|はい|なし|
 |Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
+|Selective|Applied Intuition|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
 |Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|
 |Selective|Behavox|1|公開済み|はい|なし|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
+|Selective|Box|1|未着手|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
+|Selective|Chalk|1|未着手|はい|なし|
 |Selective|CircleCI|1|未着手|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
@@ -124,6 +128,7 @@
 |Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Illumio|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Enterprise Sales Executive:勤務地・言語の日本語表記、求人:Enterprise Sales Executive:職種別の報酬調査、求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判ほか1件|
 |Selective|JFrog|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値|
+|Selective|Keeper Security|1|未着手|はい|なし|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
@@ -185,6 +190,7 @@
 |求人なし|Deel|0|公開済み|はい|なし|
 |求人なし|Deepgram|0|公開済み|はい|なし|
 |求人なし|Dropbox|0|公開済み|はい|なし|
+|求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Gamma|0|未着手|はい|なし|
 |求人なし|Gong|0|公開済み|はい|なし|
 |求人なし|Gurobi Optimization|0|公開済み|はい|なし|
