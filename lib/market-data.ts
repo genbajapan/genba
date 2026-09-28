@@ -63,6 +63,7 @@ import { companies20260924Daily, jobs20260924Daily } from "@/lib/company-additio
 import { companies20260925Daily, jobs20260925Daily } from "@/lib/company-additions-2026-09-25-daily";
 import { companies20260927Daily, jobs20260927Daily } from "@/lib/company-additions-2026-09-27-daily";
 import { companies20260928Daily, jobs20260928Daily } from "@/lib/company-additions-2026-09-28-daily";
+import { companies20260929Daily, jobs20260929Daily } from "@/lib/company-additions-2026-09-29-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -998,6 +999,7 @@ const companyRecords: Company[] = [
   ...companies20260925Daily,
   ...companies20260927Daily,
   ...companies20260928Daily,
+  ...companies20260929Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1035,6 +1037,7 @@ const preEntrySignalCompanySlugs = new Set([
   "mattermost",
   "mixpanel",
   "sonatype",
+  "sparta-commodities",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1439,6 +1442,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20260929Daily,
   ...jobs20260928Daily,
   ...jobs20260927Daily,
   ...jobs20260925Daily,
@@ -3087,6 +3091,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "jfrog-business-development-representative-tokyo-6870647",
   "docusign-market-development-representative-japan",
   "walkme-customer-success-manager-japan",
   "walkme-customer-success-manager-2",
@@ -3230,7 +3235,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: "2026-09-28",
+      lastChecked: "2026-09-29",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3281,7 +3286,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = "2026-09-28";
+  const auditedLastChecked = "2026-09-29";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3291,13 +3296,23 @@ export const companies = publishedCompanyRecords.map((company): Company => {
         entryStatus: "pre-entry-signal",
         salesRoles,
         hiringStatus,
-        lastChecked: "2026-09-28",
+        lastChecked: "2026-09-29",
         tags: [...new Set([salesRoles > 0 ? "日本進出の兆しあり" : "過去に日本進出の兆しあり", ...standardized.tags.filter((tag) => tag !== "日本未進出")])],
       }
     : standardized;
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-jfrog-business-development-representative-ended-20260929",
+    companySlug: "jfrog",
+    date: "2026-09-29",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "JFrogのBusiness Development Representative求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式採用一覧にも東京求人を確認できなかったため公開求人から除外しました。これだけで日本事業縮小や採用停止を意味しません。",
+    source: { label: "JFrog Careers", url: "https://join.jfrog.com/positions/" },
+  },
   {
     id: "signal-docusign-market-development-representative-ended-20260927",
     companySlug: "docusign",

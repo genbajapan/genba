@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-28",
+  "auditedAt": "2026-09-29",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 232,
+    "total": 235,
     "byStatus": {
-      "未着手": 90,
+      "未着手": 93,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 54,
-      "Active": 34,
-      "Selective": 77,
-      "求人なし": 67
+      "Active": 35,
+      "Selective": 78,
+      "求人なし": 68
     },
-    "standardReady": 203
+    "standardReady": 206
   },
   "companies": [
     {
@@ -634,6 +634,15 @@
       "missingFields": []
     },
     {
+      "slug": "entrupy",
+      "company": "Entrupy",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "fusion-worldwide",
       "company": "Fusion Worldwide",
       "priority": "Active",
@@ -1215,20 +1224,6 @@
       ]
     },
     {
-      "slug": "jfrog",
-      "company": "JFrog",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本法人での想定従業員数:gBizINFO監査ステータス",
-        "求人:Business Development Representative:職種別の報酬調査",
-        "求人:Business Development Representative:ポジティブ・ネガティブ評判",
-        "求人:Business Development Representative:市場価値"
-      ]
-    },
-    {
       "slug": "keeper-security",
       "company": "Keeper Security",
       "priority": "Selective",
@@ -1240,6 +1235,15 @@
     {
       "slug": "kinaxis",
       "company": "Kinaxis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "kpler",
+      "company": "Kpler",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
@@ -1482,6 +1486,15 @@
         "求人:Enterprise Account Executive, Japan & SEA:ポジティブ・ネガティブ評判",
         "求人:Enterprise Account Executive, Japan & SEA:市場価値"
       ]
+    },
+    {
+      "slug": "sparta-commodities",
+      "company": "Sparta",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "sprout-ai",
@@ -1939,6 +1952,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "jfrog",
+      "company": "JFrog",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス"
+      ]
     },
     {
       "slug": "klaviyo",

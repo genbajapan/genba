@@ -82,6 +82,7 @@ for (const slug of ["rocket-software", "qnx"]) batchSlugs.add(slug);
 for (const slug of ["vectra-ai", "circleci", "catapult-sports"]) batchSlugs.add(slug);
 for (const slug of ["box", "applied-intuition", "chalk"]) batchSlugs.add(slug);
 for (const slug of ["keeper-security", "liquid-ai"]) batchSlugs.add(slug);
+for (const slug of ["kpler", "entrupy", "sparta-commodities"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -191,6 +192,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  kpler: {
+    name: "Kpler", domain: "Trade Intelligence・Commodities・Maritime Data", officialUrl: "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Kpler", communityLabel: "Glassdoor Kpler global review search（日本の対象チームへ一般化しない、2026-09-29確認）",
+    positive: ["東京のCommercial Sales Manager - Japanが、日本のエネルギー・海運・コモディティ企業で試用、契約更新、追加販売、複数製品への拡張を担う。", "会社公式は850人超、69カ国出身、13拠点を公開し、東京オフィス開設記念イベントを案内している。"],
+    negative: ["日本売上、国内顧客名、担当社数、売上目標、達成率、数値報酬は非公開。", "新規と既存の配分、Customer Successとの責任分界、データ品質への異議対応、出社・出張頻度を面接で検証する必要がある。"],
+    next: ["Senior Commercial Sales Manager", "Japan Commodities Sales Leadership", "APAC Trade Intelligence Leadership"],
+  },
+  entrupy: {
+    name: "Entrupy", domain: "AI Authentication・Fraud Prevention・Machine Learning Operations", officialUrl: "https://www.entrupy.com/careers/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Entrupy", communityLabel: "Glassdoor Entrupy global review search（日本の対象チームへ一般化しない、2026-09-29確認）",
+    positive: ["日本のBDRが見込み客の調査、適格化、商談・実演設定、CRMと転換率の改善を担う。", "日本リモートのAuthentication Specialistが画像評価、タグ付け、品質試験を通じて鑑定品質と機械学習データを改善する。"],
+    negative: ["日本売上、国内顧客数、営業目標、鑑定処理件数、判定品質KPI、数値報酬は非公開。", "BDRは営業への引継ぎ基準を、鑑定職は週末・祝日勤務、追加補償、誤判定時の責任分界を面接で検証する必要がある。"],
+    next: ["Senior Business Development・Authentication Specialist", "Japan Sales Development・Authentication Operations Lead", "APAC Authentication・Fraud Prevention Leadership"],
+  },
+  "sparta-commodities": {
+    name: "Sparta", domain: "Commodity Trading Intelligence・Oil Markets・Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Sparta%20Commodities", communityLabel: "Glassdoor Sparta Commodities global review search（日本の対象チームへ一般化しない、2026-09-29確認）",
+    positive: ["SingaporeのAccount Executive, Japan & Koreaが新規開拓70%、獲得顧客の育成30%で日本と韓国の企業契約を担う。", "会社公式は200社超の石油・取引企業、30社超の仲介・データ・技術提携先、4,200万ドルのSeries Bを公開している。"],
+    negative: ["日本法人、国内拠点、日本勤務求人、日本語の契約・請求・支援体制、国内顧客の数値成果、数値報酬は未確認。", "Singaporeへ週4日出社する条件、日本・韓国間の担当配分、APAC出張、地域目標、顧客育成の責任を面接で検証する必要がある。"],
+    next: ["Senior Account Executive", "Japan・Korea Sales Leadership", "APAC Commodity Intelligence Leadership"],
+  },
   "keeper-security": {
     name: "Keeper Security", domain: "Privileged Access Management・Identity Security・Customer Success", officialUrl: "https://job-boards.greenhouse.io/keepersecurity/jobs/4408913009",
     communityUrl: "https://www.glassdoor.com/Reviews/Keeper-Security-Reviews-E1109689.htm", communityLabel: "Glassdoor Keeper Security global reviews（日本の対象チームへ一般化しない、2026-09-28確認）",
@@ -1744,7 +1766,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["keeper-security", "liquid-ai"].includes(job.companySlug)
+  const researchedAt = ["kpler", "entrupy", "sparta-commodities"].includes(job.companySlug)
+    ? "2026-09-29"
+    : ["keeper-security", "liquid-ai"].includes(job.companySlug)
     ? "2026-09-28"
     : ["box", "applied-intuition", "chalk"].includes(job.companySlug)
     ? "2026-09-27"

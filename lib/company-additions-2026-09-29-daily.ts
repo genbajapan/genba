@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-09-29";
+
+export const companies20260929Daily: Company[] = [
+  {
+    slug: "kpler",
+    name: "Kpler",
+    category: "エネルギー・海運・コモディティの取引インテリジェンス",
+    broadCategory: "コマース・業界特化",
+    hq: "ブリュッセル（ベルギー）",
+    japanPresence: "東京で日本向け営業を公式募集。2026年10月27日の東京オフィス開設記念イベントを会社公式で案内",
+    hiringStatus: "採用中",
+    salesRoles: 2,
+    description: "船舶、貨物、需給、価格、リスクのデータを統合し、世界の現物取引を可視化。東京でCommercial Sales Manager - Japanを公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
+    tags: ["Trade Intelligence", "Commodities", "Maritime", "Energy", "Sales", "Tokyo", "Japan"],
+  },
+  {
+    slug: "entrupy",
+    name: "Entrupy",
+    category: "AIによるブランド品の真贋鑑定・不正返品対策",
+    broadCategory: "コマース・業界特化",
+    hq: "ニューヨーク（米国）",
+    japanPresence: "Entrupy Japan・東京。日本語サイト、国内窓口、日本拠点の公式求人を確認",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "画像、機械学習、独自データで高額商品の真贋を判定し、再販・小売の在庫と信用を保護。日本でBDRを公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://www.entrupy.com/careers/apply/?gh_jid=5107413007",
+    tags: ["AI Authentication", "Computer Vision", "Luxury Resale", "Fraud Prevention", "BDR", "Japan"],
+  },
+  {
+    slug: "sparta-commodities",
+    name: "Sparta",
+    category: "原油・石油製品取引向け市場インテリジェンス",
+    broadCategory: "コマース・業界特化",
+    hq: "ジュネーブ（スイス）",
+    japanPresence: "日本法人・国内拠点・日本勤務求人は未確認。SingaporeでJapan & Korea担当AEを公式募集",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "価格、先物曲線、裁定機会、輸送、ブレンドを一つの取引判断基盤へ統合。Singaporeから日本市場を開拓するAEを公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797",
+    tags: ["Commodity Intelligence", "Oil Trading", "Market Data", "AI", "Singapore", "Pre-entry"],
+    entryStatus: "pre-entry-signal",
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、専門データを顧客の判断と事業成果へ変えたい人に向く。`,
+      thingsToKnow: "目標、達成率、担当範囲、支援体制、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を商談、導入、利用、更新、顧客KPIで定量化できれば、隣接する業界特化型ソフトウェア企業へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客成果、再利用できる市場開拓の型が次の役割の土台になる。",
+      priorCompanies: "企業向けソフトウェア、データ、対象業界で複数の意思決定者を動かした経験が隣接する。",
+      nextCompanies: "担当市場と成果を数字で残せれば、企業営業、地域リード、事業開発、顧客戦略へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20260929Daily: Job[] = [
+  makeJob({
+    id: "kpler-commercial-sales-manager-japan-4aeb9439",
+    companySlug: "kpler",
+    title: "Commercial Sales Manager - Japan",
+    segment: "Mid-Market Sales / Commodities Intelligence",
+    location: "Tokyo",
+    workStyle: "Hybrid。具体的な出社日数は公式求人で未確認",
+    language: "日本語母語水準と流暢な英語を必須とする",
+    source: { label: "Kpler Careers (Lever)", url: "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78" },
+    descriptionSummary: "日本のエネルギー・海運・コモディティ企業で、日々の顧客接点、試用、契約更新、追加販売、別製品提案を担う。",
+    genbaTake: "新規開拓だけでなく、取引データを顧客の判断へ定着させ、更新と拡張まで持つ商用営業職。",
+    compensationReality: "給与、変動給、株式、売上目標、達成率、担当社数は公式求人で未記載。",
+    desiredProfile: "公式求人はSaaS・DaaS営業5年以上、エネルギー・海運・コモディティ知識、日本語と英語、交渉・顧客対応を重視する。",
+  }),
+  makeJob({
+    id: "entrupy-business-development-representative-japan-5107413007",
+    companySlug: "entrupy",
+    title: "Business Development Representative (BDR) - Japan",
+    segment: "Business Development / AI Authentication",
+    location: "日本（ハイブリッド）",
+    workStyle: "Hybrid - Japan。具体的な出社日数と勤務地は公式求人で未確認",
+    language: "日本語と英語を必須とし、韓国語・タイ語・ベトナム語を歓迎する",
+    source: { label: "Entrupy Careers (Greenhouse)", url: "https://www.entrupy.com/careers/apply/?gh_jid=5107413007" },
+    descriptionSummary: "日本の見込み客を調査・開拓し、問い合わせ対応、適格化、商談・実演設定、CRM管理、転換率分析を通じて営業機会を作る。",
+    genbaTake: "定型的な連絡量だけでなく、高級品再販・真贋鑑定の市場理解を使い、日本の販売開発プロセス自体を改善する役割。",
+    compensationReality: "給与、変動給、株式、目標商談数、達成率、担当業界は公式求人で未記載。",
+    desiredProfile: "公式求人は営業・見込み客開拓・顧客対応2〜5年、SaaSまたは技術営業、日本語と英語、CRM運用を重視する。",
+  }),
+  makeJob({
+    id: "entrupy-authentication-specialist-blg-japan-5137476007",
+    companySlug: "entrupy",
+    title: "Authentication Specialist I - BLG",
+    segment: "Authentication Operations / Machine Learning Data",
+    location: "日本（リモート）",
+    workStyle: "日本国内のリモート勤務。週末・祝日や通常時間外の勤務可能性を公式求人で明記",
+    language: "日本語母語水準と業務で使える英語を必須とする",
+    source: { label: "Entrupy Careers (Greenhouse)", url: "https://www.entrupy.com/careers/apply/?gh_jid=5137476007" },
+    descriptionSummary: "バッグ・革小物のリアルタイム鑑定を監視し、画像データの評価・タグ付け、品質試験、追加情報の依頼を通じて判定品質と機械学習データを改善する。",
+    genbaTake: "鑑定処理だけでなく、人の専門判断を一貫した画像データへ変え、AIの学習品質、判定精度、顧客向けSLAを同時に支える役割。",
+    compensationReality: "具体的な給与額、評価KPI、1日当たりの処理件数は未記載。週末・祝日勤務には追加補償があると公式求人で説明。",
+    desiredProfile: "公式求人は日本語、英語、類似画像の大量分析、正確性、集中力、時間管理、技術への適応を重視する。",
+  }),
+  makeJob({
+    id: "sparta-commodities-account-executive-japan-korea-d1904eef",
+    companySlug: "sparta-commodities",
+    title: "Account Executive, Japan & Korea",
+    segment: "Enterprise Sales / Commodity Trading Intelligence",
+    location: "シンガポール",
+    workStyle: "Singaporeオフィスへ週4日出社し、APACへ頻繁に出張。日本勤務求人ではない",
+    language: "英語に加え、日本語または韓国語の業務水準を必須とする",
+    source: { label: "Sparta Careers (Ashby)", url: "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797" },
+    descriptionSummary: "Singaporeを拠点に日本・韓国のエネルギー企業を開拓し、新規商談70%、獲得顧客の育成30%で複数製品の企業契約を担う。",
+    genbaTake: "日本の正式採用ではなく、Singaporeから東京本社と現地取引デスクを結び、日本需要と販売再現性を検証する進出前シグナル。",
+    compensationReality: "給与、変動給、株式、地域目標、達成率は公式求人で未記載。勤務地はSingaporeであり、日本から応募可能とは扱わない。",
+    desiredProfile: "公式求人は企業向け営業5年以上、6〜7桁規模の契約、商品・エネルギー市場、日本語または韓国語、Singapore勤務を重視する。",
+  }),
+];
