@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-09-29 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-09-30 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全235社（未着手 93 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全238社（未着手 96 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -98,6 +98,7 @@
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
 |Selective|Acronis|1|未着手|はい|なし|
+|Selective|adjoe|1|未着手|はい|なし|
 |Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|Applied Intuition|1|未着手|はい|なし|
@@ -140,6 +141,7 @@
 |Selective|Mixpanel|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Senior Enterprise Account Executive, Japan:職種別の報酬調査、求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判、求人:Senior Enterprise Account Executive, Japan:市場価値|
 |Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
+|Selective|Pallet|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
@@ -149,6 +151,7 @@
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runway|1|公開済み|はい|なし|
 |Selective|RZR|1|未着手|はい|なし|
+|Selective|SecurityScorecard|1|未着手|はい|なし|
 |Selective|Shift Technology|1|未着手|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|

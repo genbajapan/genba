@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-29",
+  "auditedAt": "2026-09-30",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 235,
+    "total": 238,
     "byStatus": {
-      "未着手": 93,
+      "未着手": 96,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 54,
       "Active": 35,
-      "Selective": 78,
+      "Selective": 81,
       "求人なし": 68
     },
-    "standardReady": 206
+    "standardReady": 209
   },
   "companies": [
     {
@@ -916,6 +916,15 @@
       "missingFields": []
     },
     {
+      "slug": "adjoe",
+      "company": "adjoe",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "alteryx",
       "company": "Alteryx",
       "priority": "Selective",
@@ -1347,6 +1356,15 @@
       "missingFields": []
     },
     {
+      "slug": "pallet",
+      "company": "Pallet",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "patch",
       "company": "Patch",
       "priority": "Selective",
@@ -1426,6 +1444,15 @@
     {
       "slug": "rzr",
       "company": "RZR",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "securityscorecard",
+      "company": "SecurityScorecard",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",

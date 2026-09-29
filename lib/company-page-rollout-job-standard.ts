@@ -83,12 +83,26 @@ for (const slug of ["vectra-ai", "circleci", "catapult-sports"]) batchSlugs.add(
 for (const slug of ["box", "applied-intuition", "chalk"]) batchSlugs.add(slug);
 for (const slug of ["keeper-security", "liquid-ai"]) batchSlugs.add(slug);
 for (const slug of ["kpler", "entrupy", "sparta-commodities"]) batchSlugs.add(slug);
+for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "securityscorecard-country-manager-japan-8167848": {
+    headline: "公式求人に総報酬年23万〜27.5万米ドルを掲載",
+    summary: "基本給と賞与を含む総報酬レンジと株式対象の可能性は確認できるが、基本給・変動給の内訳、目標額、達成率、株式数は公開されていない。",
+    breakdown: [{ label: "総報酬", value: "23万〜27.5万米ドル", status: "公式掲載", detail: "年額。基本給と賞与を含むが内訳は非公開。" }],
+  },
+  "pallet-sales-director-tokyo-5186143007": {
+    headline: "公式求人にOTE年2,100万〜5,000万円、50:50を掲載",
+    summary: "OTE、基本給とコミッションの比率、株式、上限なしの加速報酬は確認できるが、目標額、達成率、初年度保証、株式数は公開されていない。",
+    breakdown: [
+      { label: "OTE", value: "2,100万〜5,000万円", status: "公式掲載", detail: "経験・能力で変動する年額。" },
+      { label: "Pay mix", value: "50 / 50", status: "公式掲載", detail: "基本給50%、目標コミッション50%。" },
+    ],
+  },
   "ashby-product-support-specialist-apac-033ce772": {
     headline: "公式求人に日本向け年収640.95万〜780万円と株式を掲載",
     summary: "日本向け給与レンジと株式の存在は確認できるが、昇給、評価、為替調整、福利厚生の詳細は公開されていない。",
@@ -192,6 +206,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  adjoe: {
+    name: "adjoe", domain: "Mobile AdTech・Publisher Growth・Rewarded Advertising", officialUrl: "https://adjoe.io/careers/open-positions/30d19b10-25c8-47dd-a074-4d8b55eb0152/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=adjoe", communityLabel: "Glassdoor adjoe global review search（日本の対象チームへ一般化しない、2026-09-30確認）",
+    positive: ["東京のSupply Growth Manager - Japanがアプリ運営会社の広告収益、利用継続、ARPDAU等を分析し、利用拡大と製品改善を担う。", "会社公式は東京オフィス、日本責任者、250人超、1,000社超の提携スタジオ、7.7億人の利用者を公開している。"],
+    negative: ["日本売上、国内顧客数、担当社数、売上目標、達成率、数値報酬は非公開。", "顧客拡張と新規開拓の配分、広告品質・不正時の責任、出社頻度、APAC支援の範囲を面接で検証する必要がある。"],
+    next: ["Senior Supply Growth Manager", "Japan Publisher Growth Leadership", "APAC Mobile Advertising Leadership"],
+  },
+  securityscorecard: {
+    name: "SecurityScorecard", domain: "Cybersecurity Ratings・Third-Party Risk・Country Leadership", officialUrl: "https://job-boards.greenhouse.io/securityscorecard/jobs/8167848",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=SecurityScorecard", communityLabel: "Glassdoor SecurityScorecard global review search（日本の対象チームへ一般化しない、2026-09-30確認）",
+    positive: ["Remote JapanのCountry Managerが新規ARR、3〜4倍の商談量、販売パートナー、日本市場戦略、将来の採用・育成まで担う。", "日本法人、日本語サイト、国内顧客事例があり、現行求人は1,200万社超の評価と2万5千組織超の利用を掲載する。"],
+    negative: ["日本売上、目標額、達成率、国内人員、既存商談量、基本給・変動給の内訳は非公開。", "中央のCustomer Success・Solutions Engineeringとの責任、既存顧客の引継ぎ、パートナー案件のcredit、採用権限を面接で検証する必要がある。"],
+    next: ["APAC Sales Leadership", "International Country Leadership", "Cybersecurity Executive Leadership"],
+  },
+  pallet: {
+    name: "Pallet", domain: "Logistics AI Agents・Enterprise Sales・Japan Market Entry", officialUrl: "https://job-boards.greenhouse.io/pallet/jobs/5186143007",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Pallet", communityLabel: "Glassdoor Pallet global review search（日本の対象チームへ一般化しない、2026-09-30確認）",
+    positive: ["東京の最初のSales Directorとして、大手物流企業の開拓、業務発見、試行、投資対効果、契約、国際展開の販売方法を作る。", "公式求人は累計5,000万ドル調達、2年未満で売上700%成長、将来の東京オフィス開設を掲載する。"],
+    negative: ["日本法人、国内支援組織、既存顧客、商談量、目標額、達成率、雇用主体は未確認。", "業務時間の約75%を顧客訪問・出張へ使い、オフィス開設後は週5日出社と明記され、立ち上げ負荷と実行権限を検証する必要がある。"],
+    next: ["Japan General Manager", "APAC Enterprise Sales Leadership", "Logistics AI Go-to-Market Leadership"],
+  },
   kpler: {
     name: "Kpler", domain: "Trade Intelligence・Commodities・Maritime Data", officialUrl: "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Kpler", communityLabel: "Glassdoor Kpler global review search（日本の対象チームへ一般化しない、2026-09-29確認）",
@@ -1766,7 +1801,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["kpler", "entrupy", "sparta-commodities"].includes(job.companySlug)
+  const researchedAt = ["adjoe", "securityscorecard", "pallet"].includes(job.companySlug)
+    ? "2026-09-30"
+    : ["kpler", "entrupy", "sparta-commodities"].includes(job.companySlug)
     ? "2026-09-29"
     : ["keeper-security", "liquid-ai"].includes(job.companySlug)
     ? "2026-09-28"
