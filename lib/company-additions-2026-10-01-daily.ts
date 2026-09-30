@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-10-01";
+
+export const companies20261001Daily: Company[] = [
+  {
+    slug: "litmus",
+    name: "Litmus",
+    category: "製造現場のデータをAIへつなぐ産業エッジ基盤",
+    broadCategory: "AI・データ基盤",
+    hq: "サンタクララ（米国）",
+    japanPresence: "Litmus Automation Japan・東京。日本オフィス、Panasonic Solution Technologiesとの提携、日本・Asia向け公式求人2件を確認",
+    hiringStatus: "採用中",
+    salesRoles: 2,
+    description: "工場の設備・制御システムからデータを収集・意味付けし、クラウド、分析、AIへ接続。日本で営業責任者と導入技術職を公式募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
+    tags: ["Industrial AI", "Edge Data", "IIoT", "Manufacturing", "Sales Leadership", "Customer Success", "Japan"],
+  },
+  {
+    slug: "hiya",
+    name: "Hiya",
+    category: "発信者認証・迷惑電話対策・音声インテリジェンス",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "シアトル（米国）",
+    japanPresence: "東京拠点のCountry Manager, Japanを公式募集。日本法人・国内オフィス・既存の国内人員数は未確認",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "通信事業者網で発信者を識別し、詐欺・迷惑電話を検知。企業の電話には認証済みの名称を表示して顧客接続を改善。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337",
+    tags: ["Voice Security", "Caller Identity", "Telecommunications", "Country Manager", "Remote", "Japan"],
+  },
+  {
+    slug: "hoxhunt",
+    name: "Hoxhunt",
+    category: "従業員の行動変容による人的サイバーリスク管理",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "ヘルシンキ（フィンランド）",
+    japanPresence: "日本法人・国内拠点・日本勤務求人は未確認。SingaporeでAPAC担当Enterprise Account Executiveを公式募集",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "AIと行動科学で一人ひとりにフィッシング訓練を出し、実際の不審メール報告、対応、人的リスクの改善までを測定。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62",
+    tags: ["Human Risk Management", "Security Awareness", "Phishing", "AI", "Singapore", "Pre-entry"],
+    entryStatus: "pre-entry-signal",
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、技術・行動・顧客成果を一つの事業責任へつなげたい人に向く。`,
+      thingsToKnow: "目標、達成率、担当範囲、国内の支援体制、評価・昇進、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を商談、導入、利用、更新、顧客KPIで定量化できれば、隣接する企業向けソフトウェア企業へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客成果、再利用できる市場開拓・導入支援の型が次の役割の土台になる。",
+      priorCompanies: "企業向けソフトウェア、対象業界、複数の意思決定者を動かす営業・導入・顧客支援の経験が隣接する。",
+      nextCompanies: "担当市場と成果を数字で残せれば、企業営業、地域リード、顧客技術、事業開発、セキュリティ領域へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20261001Daily: Job[] = [
+  makeJob({
+    id: "litmus-sales-director-japan-asia-a2250c34",
+    companySlug: "litmus",
+    title: "Sales Director - Japan & Asia",
+    segment: "Sales Leadership / Industrial AI",
+    location: "Japan / APAC",
+    workStyle: "Remote。日本・Asiaへの出張を25〜40%想定し、EMEA・APACへの国際出張もあり",
+    language: "日本語と英語の両方を必須とする",
+    source: { label: "Litmus Careers (Ashby)", url: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f" },
+    descriptionSummary: "日本とIndiaを除くAsiaの営業戦略、企業商談、商談量、予測、地域区分、採用・育成、販売パートナーを持ち、営業組織を拡大する。",
+    genbaTake: "完成した販売組織の管理ではなく、日本の製造業を起点に、営業・技術営業・開拓・地域責任者の採用と複数国の販売再現性を作る役割。",
+    compensationReality: "競争力のある給与、業績賞与、株式を案内するが、具体額、変動比率、売上目標、達成率、株式数は未記載。",
+    desiredProfile: "公式求人は企業向けソフトウェア営業10年以上、管理職5年以上、製造・産業市場、複雑な大型商談、MEDDIC、日本語と英語を重視する。",
+  }),
+  makeJob({
+    id: "litmus-customer-success-application-engineer-japan-79414eda",
+    companySlug: "litmus",
+    title: "Customer Success Application Engineer (Japan)",
+    segment: "Technical Delivery / Industrial Edge",
+    location: "Japan / APAC",
+    workStyle: "Remote。顧客向け24時間365日支援の当番参加を明記。出社日数と当番頻度は未確認",
+    language: "日本語と英語の流暢さを必須とする",
+    source: { label: "Litmus Careers (Ashby)", url: "https://jobs.ashbyhq.com/litmus/79414eda-3c38-497f-9922-4149ab1fbc10/" },
+    descriptionSummary: "製造顧客の要件確認、概念実証、Litmus Edgeの設定、本番導入、障害原因分析、Level 2支援、提案技術レビュー、製品への現場フィードバックを担う。",
+    genbaTake: "問い合わせ対応だけでなく、工場の設備データを概念実証から本番へ移し、顧客価値、再利用できる導入設計、製品改善まで持つ技術顧客成功職。",
+    compensationReality: "給与、賞与、株式、当番手当、担当顧客数、導入件数、評価KPIは公式求人で未記載。",
+    desiredProfile: "公式求人は製造現場でのソフトウェア・自動化・IIoT導入、ネットワーク、Linux、DB、PythonまたはJavaScript、Docker・Kubernetes・クラウドを重視する。",
+  }),
+  makeJob({
+    id: "hiya-country-manager-japan-69e4a937",
+    companySlug: "hiya",
+    title: "Country Manager, Japan",
+    segment: "Country Leadership / Voice Security",
+    location: "Tokyo, Japan",
+    workStyle: "Remote。東京を拠点に顧客・通信事業者へ近接し、国内外の出張あり",
+    language: "日本語は流暢または母語水準、英語は高い業務水準を必須とする",
+    source: { label: "Hiya Careers (Ashby)", url: "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337" },
+    descriptionSummary: "日本の市場戦略、通信事業者との提携、主要顧客、新規事業、契約交渉、既存顧客拡張、規制・競争動向を持ち、国内で持続可能な事業基盤を作る。",
+    genbaTake: "通信事業者へ製品を売るだけでなく、ネットワーク組込み、企業向け発信者認証、詐欺対策を束ね、日本での商用モデルと信頼をゼロから作る国責任者。",
+    compensationReality: "競争力のある給与、年次賞与、目標超過時のOTE上振れを案内するが、具体額、基本給・変動給の比率、目標、株式は未記載。",
+    desiredProfile: "公式求人は事業開発・提携・企業営業・商用責任7年以上、日本の通信事業者との経験、複雑な交渉、日本語・英語、国内就労資格を重視する。",
+  }),
+  makeJob({
+    id: "hoxhunt-enterprise-account-executive-apac-b770639c",
+    companySlug: "hoxhunt",
+    title: "Enterprise Account Executive, APAC",
+    segment: "Enterprise Sales / Human Risk Management",
+    location: "Singapore",
+    workStyle: "Singaporeオフィスを使うハイブリッド。日本勤務求人ではない",
+    language: "公式求人に言語要件の明記なし。APACの企業営業に必要な言語と担当国は選考で確認",
+    source: { label: "Hoxhunt Careers (Ashby)", url: "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62" },
+    descriptionSummary: "SingaporeからAPACの大企業で自ら商談を作り、CISO・CIOを含む複雑な購買を進め、人的サイバーリスクの削減を提案する。",
+    genbaTake: "日本の正式採用ではなく、SingaporeからAPACの需要と企業営業の再現性を検証する段階。日本担当、国内雇用、既存顧客支援は未確認。",
+    compensationReality: "競争力のある基本給とコミッションを案内するが、具体額、変動比率、売上目標、達成率、株式は未記載。勤務地はSingaporeであり、日本から応募可能とは扱わない。",
+    desiredProfile: "公式求人は企業向けSaaSの新規営業3年以上、大型・複雑商談、自律的な商談創出、C-levelとの関係、サイバーセキュリティ経験を重視する。",
+  }),
+];

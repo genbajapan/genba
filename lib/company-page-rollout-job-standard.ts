@@ -84,6 +84,7 @@ for (const slug of ["box", "applied-intuition", "chalk"]) batchSlugs.add(slug);
 for (const slug of ["keeper-security", "liquid-ai"]) batchSlugs.add(slug);
 for (const slug of ["kpler", "entrupy", "sparta-commodities"]) batchSlugs.add(slug);
 for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug);
+for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -206,6 +207,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  litmus: {
+    name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Litmus%20Automation", communityLabel: "Glassdoor Litmus Automation global review search（日本の対象チームへ一般化しない、2026-10-01確認）",
+    positive: ["日本・AsiaのSales Directorが地域戦略、複数国の営業組織、商談量、予測、採用・育成、販売パートナーを担う。", "日本のApplication Engineerが製造顧客の概念実証、本番導入、障害原因分析、製品改善を担い、東京オフィスと国内提携も確認できる。"],
+    negative: ["日本売上、国内顧客名、国内在籍人数、売上目標、達成率、数値報酬は非公開。", "営業職の出張25〜40%、技術職の24時間365日支援当番について、頻度、補償、地域分担、既存案件の引継ぎを面接で検証する必要がある。"],
+    next: ["Japan & Asia Sales Leadership・Principal Application Engineer", "APAC Industrial Data Leadership", "Manufacturing AI・OT Data Executive Leadership"],
+  },
+  hiya: {
+    name: "Hiya", domain: "Voice Security・Telecom Partnerships・Country Leadership", officialUrl: "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Hiya", communityLabel: "Glassdoor Hiya global review search（日本の対象チームへ一般化しない、2026-10-01確認）",
+    positive: ["東京のCountry Managerが日本の市場戦略、通信事業者提携、主要顧客、新規契約、既存顧客拡張を一貫して担う。", "会社公式は5億人超、40カ国超、月280億件超の通話分析を掲載し、通信網と端末への組込み基盤を持つ。"],
+    negative: ["日本法人、国内オフィス、既存人員、日本の通信事業者提携、日本売上、目標額、達成率、数値報酬は未確認。", "雇用主体、既存顧客・商談の引継ぎ、製品・法務・顧客成功の地域支援、誤判定時の責任を面接で検証する必要がある。"],
+    next: ["Japan Country Leadership", "APAC Telecom Partnerships Leadership", "Voice Security・Identity Executive Leadership"],
+  },
+  hoxhunt: {
+    name: "Hoxhunt", domain: "Human Risk Management・Security Awareness・APAC Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Hoxhunt", communityLabel: "Glassdoor Hoxhunt global review search（日本の対象チームへ一般化しない、2026-10-01確認）",
+    positive: ["SingaporeのEnterprise Account Executive, APACが大企業の商談を自ら作り、CISO・CIOを含む複雑な購買を進める。", "会社公式は270人超とSingaporeを含む主要拠点を掲載し、顧客事例では参加率、報告、失敗率の改善を数値で確認できる。"],
+    negative: ["日本法人、国内拠点、日本勤務・日本専任求人、日本語の販売・契約・導入・事故対応、国内顧客事例は未確認。", "Singapore求人の担当国、日本企業の既存商談、地域目標、支援体制、言語、数値報酬は非公開。日本から応募可能とは扱わない。"],
+    next: ["Senior Enterprise Account Executive", "APAC Human Risk Management Leadership", "Cybersecurity Sales Leadership"],
+  },
   adjoe: {
     name: "adjoe", domain: "Mobile AdTech・Publisher Growth・Rewarded Advertising", officialUrl: "https://adjoe.io/careers/open-positions/30d19b10-25c8-47dd-a074-4d8b55eb0152/",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=adjoe", communityLabel: "Glassdoor adjoe global review search（日本の対象チームへ一般化しない、2026-09-30確認）",
@@ -1801,7 +1823,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["adjoe", "securityscorecard", "pallet"].includes(job.companySlug)
+  const researchedAt = ["litmus", "hiya", "hoxhunt"].includes(job.companySlug)
+    ? "2026-10-01"
+    : ["adjoe", "securityscorecard", "pallet"].includes(job.companySlug)
     ? "2026-09-30"
     : ["kpler", "entrupy", "sparta-commodities"].includes(job.companySlug)
     ? "2026-09-29"

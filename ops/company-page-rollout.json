@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-09-30",
+  "auditedAt": "2026-10-01",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 238,
+    "total": 241,
     "byStatus": {
-      "未着手": 96,
+      "未着手": 99,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 54,
-      "Active": 35,
-      "Selective": 81,
+      "HOT": 53,
+      "Active": 36,
+      "Selective": 84,
       "求人なし": 68
     },
     "standardReady": 209
@@ -154,7 +154,7 @@
       "slug": "coupa",
       "company": "Coupa",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -238,15 +238,6 @@
       "company": "ElevenLabs",
       "priority": "HOT",
       "salesRoles": 10,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "extreme-networks",
-      "company": "Extreme Networks",
-      "priority": "HOT",
-      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -696,6 +687,18 @@
       "standardReady": false,
       "missingFields": [
         "ヒーロー説明:解決と事業成果"
+      ]
+    },
+    {
+      "slug": "litmus",
+      "company": "Litmus",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Sales Director - Japan & Asia:勤務地・言語の日本語表記",
+        "求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記"
       ]
     },
     {
@@ -1159,6 +1162,15 @@
       ]
     },
     {
+      "slug": "extreme-networks",
+      "company": "Extreme Networks",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "fastly",
       "company": "Fastly",
       "priority": "Selective",
@@ -1209,6 +1221,17 @@
       "missingFields": []
     },
     {
+      "slug": "hiya",
+      "company": "Hiya",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
+    },
+    {
       "slug": "horizon3",
       "company": "Horizon3",
       "priority": "Selective",
@@ -1216,6 +1239,17 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "hoxhunt",
+      "company": "Hoxhunt",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記"
+      ]
     },
     {
       "slug": "illumio",
