@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-01",
+  "auditedAt": "2026-10-02",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 241,
+    "total": 244,
     "byStatus": {
-      "未着手": 99,
+      "未着手": 102,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 53,
-      "Active": 36,
-      "Selective": 84,
+      "HOT": 52,
+      "Active": 37,
+      "Selective": 87,
       "求人なし": 68
     },
-    "standardReady": 209
+    "standardReady": 210
   },
   "companies": [
     {
@@ -450,15 +450,6 @@
       "missingFields": []
     },
     {
-      "slug": "saviynt",
-      "company": "Saviynt",
-      "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "sensor-tower",
       "company": "Sensor Tower",
       "priority": "HOT",
@@ -806,6 +797,15 @@
       "missingFields": []
     },
     {
+      "slug": "saviynt",
+      "company": "Saviynt",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "sayari",
       "company": "Sayari",
       "priority": "Active",
@@ -964,6 +964,15 @@
       "missingFields": []
     },
     {
+      "slug": "armis",
+      "company": "Armis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "ashby",
       "company": "Ashby",
       "priority": "Selective",
@@ -1080,6 +1089,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "cohesity",
+      "company": "Cohesity",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:解決と事業成果"
+      ]
     },
     {
       "slug": "cribl",
@@ -1465,6 +1485,17 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "runpod",
+      "company": "Runpod",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "runway",

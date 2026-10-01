@@ -85,6 +85,7 @@ for (const slug of ["keeper-security", "liquid-ai"]) batchSlugs.add(slug);
 for (const slug of ["kpler", "entrupy", "sparta-commodities"]) batchSlugs.add(slug);
 for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug);
 for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
+for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -207,6 +208,33 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  cohesity: {
+    name: "Cohesity", domain: "Data Security・Cyber Resilience・Channel Development", officialUrl: "https://www.cohesity.com/careers/open-positions/?gh_jid=fbb6c49dd8c11001d8381318e10e0000&type=wd",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Cohesity", communityLabel: "Glassdoor Cohesity global review search（日本の対象チームへ一般化しない、2026-10-02確認）",
+    positive: ["NTT Channel Development Managerが販売パートナーの事業計画、案件創出、販売・技術支援、共同マーケティング、予測、成約率まで担う。", "Veritas事業統合後の広いデータ保護製品群、13,600社超の顧客、国内顧客事例、日本法人と東京拠点を確認できる。"],
+    negative: ["日本売上、国内在籍人数、担当販売パートナー数、売上目標、達成率、数値報酬は非公開。", "50%超の出張、NTT内の担当範囲、既存案件の引継ぎ、直販との案件配分、統合後の製品・支援体制を面接で検証する必要がある。"],
+    next: ["Senior Channel Development Manager", "Japan Alliances Leadership", "APJ Data Security Channel Leadership"],
+  },
+  armis: {
+    name: "Armis", domain: "Cyber Exposure Management・OT/IoT Security・Solutions Consulting", officialUrl: "https://job-boards.greenhouse.io/armissecurity/jobs/5765358004",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Armis", communityLabel: "Glassdoor Armis global review search（日本の対象チームへ一般化しない、2026-10-02確認）",
+    positive: ["東京のSr Advisory Solution Consultantが営業と顧客要件を整理し、製品説明、デモ、環境分析、概念実証、導入方針を担う。", "会社公式は年換算売上3億ドル超、Fortune企業・政府機関への導入、Takeda Pharmaceuticalsを含む顧客例を掲載する。"],
+    negative: ["日本法人名、国内在籍人数、日本売上、担当案件数、技術目標、数値報酬は非公開。", "ServiceNow統合後の組織・製品・案件配分、概念実証から本番への転換率、出社・出張、既存SEとの担当境界を面接で検証する必要がある。"],
+    next: ["Principal Solution Consultant", "Japan Solutions Consulting Leadership", "APJ Cyber Exposure・OT Security Leadership"],
+  },
+  celonis: {
+    name: "Celonis", domain: "Process Intelligence・Enterprise Transformation", officialUrl: "https://careers.celonis.com/join-us/offices/tokyo",
+    positive: ["Enterprise accountとEcosystem leadershipを同時に採用し、直販と国内SIerによるprocess transformationの両方を重視している。", "業務dataからvalueを発見し実行へつなぐため、C-level business case、process、data、partner deliveryを横断する経験を得られる可能性がある。"],
+    negative: ["日本営業だけのquota達成率、昇進、離職、平均在籍、配属先managementを判断できる十分な公開集計はない。", "category education、data接続、業務owner合意、partner deliveryが必要で、PoCから本番・拡張への転換負荷を面接で確認する必要がある。"],
+    next: ["Process Mining・AutomationのEnterprise AE／Sales Leadership", "Value Engineering・Transformation Consulting", "SIer・Technology Ecosystem Leadership"],
+  },
+  runpod: {
+    name: "Runpod", domain: "AI Infrastructure・GPU Cloud・APAC Enterprise Sales", officialUrl: "https://jobs.ashbyhq.com/runpod/e3a0f565-dde7-4b3d-8ede-b582cd068f8c",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Runpod", communityLabel: "Glassdoor Runpod global review search（日本の対象チームへ一般化しない、2026-10-02確認）",
+    positive: ["日本を候補地とするAPAC営業がAI企業、研究機関、大企業の機械学習部門を開拓し、技術評価、SLA、価格、契約、高額の年間契約まで担う。", "会社公式は100万人超の開発者、年換算売上1.2億ドル、Series A 1億ドル、月200億件超の推論リクエストを掲載する。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内顧客、GPU提供地域、日本語の導入・障害対応は未確認。", "OTEは13万〜30万米ドルと幅が広く、日本での基本給・変動給比率、目標、達成率、既存案件、技術支援の境界を面接で検証する必要がある。"],
+    next: ["Senior Account Executive APAC", "Japan Country Leadership", "APAC AI Infrastructure Sales Leadership"],
+  },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Litmus%20Automation", communityLabel: "Glassdoor Litmus Automation global review search（日本の対象チームへ一般化しない、2026-10-01確認）",
@@ -1126,12 +1154,6 @@ const companyResearch: Record<string, {
     negative: ["SAP傘下での日本組織、territory、製品統合、quota creditが今後も変わる可能性があり、公開情報だけで配属先の実態を確定できない。", "日本職種別の給与・OTE、達成率、昇進、離職、出社頻度は公開情報で確認できない。"],
     next: ["Digital Adoption・Employee ExperienceのGTM", "SAP・業務ApplicationのAlliance／Value Engineering", "Change Management・Transformation Consulting"],
   },
-  celonis: {
-    name: "Celonis", domain: "Process Intelligence・Enterprise Transformation", officialUrl: "https://careers.celonis.com/join-us/offices/tokyo",
-    positive: ["Enterprise accountとEcosystem leadershipを同時に採用し、直販と国内SIerによるprocess transformationの両方を重視している。", "業務dataからvalueを発見し実行へつなぐため、C-level business case、process、data、partner deliveryを横断する経験を得られる可能性がある。"],
-    negative: ["日本営業だけのquota達成率、昇進、離職、平均在籍、配属先managementを判断できる十分な公開集計はない。", "category education、data接続、業務owner合意、partner deliveryが必要で、PoCから本番・拡張への転換負荷を面接で確認する必要がある。"],
-    next: ["Process Mining・AutomationのEnterprise AE／Sales Leadership", "Value Engineering・Transformation Consulting", "SIer・Technology Ecosystem Leadership"],
-  },
   confluent: {
     name: "Confluent", domain: "Data Streaming・Cloud Data Infrastructure", officialUrl: "https://careers.confluent.io/jobs",
     positive: ["data in motionをapplication、analytics、AIへつなぐ製品は、developer・data・platform・business buyerを横断する技術営業の学習機会になり得る。", "ただし現行日本求人は公式Careerで再現確認できず、特定roleの機会としては断定できない。"],
@@ -1823,7 +1845,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["litmus", "hiya", "hoxhunt"].includes(job.companySlug)
+  const researchedAt = ["cohesity", "armis", "runpod"].includes(job.companySlug)
+    ? "2026-10-02"
+    : ["litmus", "hiya", "hoxhunt"].includes(job.companySlug)
     ? "2026-10-01"
     : ["adjoe", "securityscorecard", "pallet"].includes(job.companySlug)
     ? "2026-09-30"

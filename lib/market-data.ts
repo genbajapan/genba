@@ -66,6 +66,7 @@ import { companies20260928Daily, jobs20260928Daily } from "@/lib/company-additio
 import { companies20260929Daily, jobs20260929Daily } from "@/lib/company-additions-2026-09-29-daily";
 import { companies20260930Daily, jobs20260930Daily } from "@/lib/company-additions-2026-09-30-daily";
 import { companies20261001Daily, jobs20261001Daily } from "@/lib/company-additions-2026-10-01-daily";
+import { companies20261002Daily, jobs20261002Daily } from "@/lib/company-additions-2026-10-02-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1004,6 +1005,7 @@ const companyRecords: Company[] = [
   ...companies20260929Daily,
   ...companies20260930Daily,
   ...companies20261001Daily,
+  ...companies20261002Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1043,6 +1045,7 @@ const preEntrySignalCompanySlugs = new Set([
   "sonatype",
   "sparta-commodities",
   "hoxhunt",
+  "runpod",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1447,6 +1450,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261002Daily,
   ...jobs20261001Daily,
   ...jobs20260930Daily,
   ...jobs20260929Daily,
@@ -3098,6 +3102,8 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "saviynt-associate-principal-training-engineer-japan-current",
+  "saviynt-principal-engineer-professional-services-japan-current",
   "extreme-networks-sr-services-sales-ae-tokyo-dc7de9db",
   "extreme-networks-senior-systems-engineer-tokyo-current",
   "coupa-adr",
@@ -3245,7 +3251,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-01" ? job.lastChecked : "2026-10-01",
+      lastChecked: job.lastChecked > "2026-10-02" ? job.lastChecked : "2026-10-02",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3296,7 +3302,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-01" ? company.lastChecked : "2026-10-01";
+  const auditedLastChecked = company.lastChecked > "2026-10-02" ? company.lastChecked : "2026-10-02";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3313,6 +3319,26 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-saviynt-training-engineer-ended-20261002",
+    companySlug: "saviynt",
+    date: "2026-10-02",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "SaviyntのAssociate Principal Training Engineer求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式採用一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Saviynt Careers", url: "https://saviynt.com/careers/job-openings/associate-principal-training-engineer-japan" },
+  },
+  {
+    id: "signal-saviynt-professional-services-ended-20261002",
+    companySlug: "saviynt",
+    date: "2026-10-02",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "SaviyntのPrincipal Engineer, Professional Services求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式採用一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Saviynt Careers", url: "https://saviynt.com/careers/job-openings/principal-engineer-professional-services-japan" },
+  },
   {
     id: "signal-extreme-networks-services-sales-ended-20261001",
     companySlug: "extreme-networks",
