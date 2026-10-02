@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-02 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-03 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全244社（未着手 102 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全247社（未着手 105 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -99,6 +99,7 @@
 |Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
 |Selective|Acronis|1|未着手|はい|なし|
 |Selective|adjoe|1|未着手|はい|なし|
+|Selective|Alta Ares|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Business Development Manager — Japan:勤務地・言語の日本語表記、外貨の円換算:facts[2].value=5,000万ユーロ|
 |Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|Applied Intuition|1|未着手|はい|なし|
@@ -106,8 +107,10 @@
 |Selective|Armis|1|未着手|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
 |Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|
+|Selective|Back Market|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、ヒーロー説明:解決と事業成果、外貨の円換算:marketStatus.growthSummary=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。,marketStatus.genbaVerdict.body=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。 一方、日本の顧客基盤、ramped sellerの達成率、案件単価は非公開であり、求人の勢いとterritoryの実現可能性を分けて判断する必要がある。,facts[3].value=30億ユーロ|
 |Selective|Behavox|1|公開済み|はい|なし|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
+|Selective|Bounce|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Box|1|未着手|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Catapult Sports|1|未着手|はい|なし|
@@ -129,7 +132,6 @@
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Gainsight|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Enterprise Account Executive:職種別の報酬調査、求人:Enterprise Account Executive:ポジティブ・ネガティブ評判、求人:Enterprise Account Executive:市場価値|
 |Selective|Genspark|1|未着手|はい|なし|
-|Selective|Hightouch|1|公開済み|はい|なし|
 |Selective|Hiya|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Hoxhunt|1|未着手|いいえ|求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記|
@@ -208,6 +210,7 @@
 |求人なし|Halcyon|0|公開済み|はい|なし|
 |求人なし|Harvey|0|公開済み|はい|なし|
 |求人なし|Hebbia|0|未着手|はい|なし|
+|求人なし|Hightouch|0|公開済み|はい|なし|
 |求人なし|Intercom / Fin|0|公開済み|はい|なし|
 |求人なし|Ironclad|0|公開済み|はい|なし|
 |求人なし|Island|0|公開済み|はい|なし|

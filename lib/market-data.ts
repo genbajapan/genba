@@ -67,6 +67,7 @@ import { companies20260929Daily, jobs20260929Daily } from "@/lib/company-additio
 import { companies20260930Daily, jobs20260930Daily } from "@/lib/company-additions-2026-09-30-daily";
 import { companies20261001Daily, jobs20261001Daily } from "@/lib/company-additions-2026-10-01-daily";
 import { companies20261002Daily, jobs20261002Daily } from "@/lib/company-additions-2026-10-02-daily";
+import { companies20261003Daily, jobs20261003Daily } from "@/lib/company-additions-2026-10-03-daily";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1006,6 +1007,7 @@ const companyRecords: Company[] = [
   ...companies20260930Daily,
   ...companies20261001Daily,
   ...companies20261002Daily,
+  ...companies20261003Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1046,6 +1048,7 @@ const preEntrySignalCompanySlugs = new Set([
   "sparta-commodities",
   "hoxhunt",
   "runpod",
+  "alta-ares",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1450,6 +1453,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261003Daily,
   ...jobs20261002Daily,
   ...jobs20261001Daily,
   ...jobs20260930Daily,
@@ -3102,6 +3106,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "hightouch-enterprise-account-executive-apac-japan-current",
   "saviynt-associate-principal-training-engineer-japan-current",
   "saviynt-principal-engineer-professional-services-japan-current",
   "extreme-networks-sr-services-sales-ae-tokyo-dc7de9db",
@@ -3251,7 +3256,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-02" ? job.lastChecked : "2026-10-02",
+      lastChecked: job.lastChecked > "2026-10-03" ? job.lastChecked : "2026-10-03",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3302,7 +3307,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-02" ? company.lastChecked : "2026-10-02";
+  const auditedLastChecked = company.lastChecked > "2026-10-03" ? company.lastChecked : "2026-10-03";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3319,6 +3324,16 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-hightouch-enterprise-ae-ended-20261003",
+    companySlug: "hightouch",
+    date: "2026-10-03",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "HightouchのEnterprise Account Executive求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式採用一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Hightouch Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/hightouch/jobs/5836057004" },
+  },
   {
     id: "signal-saviynt-training-engineer-ended-20261002",
     companySlug: "saviynt",

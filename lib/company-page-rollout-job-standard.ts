@@ -86,6 +86,7 @@ for (const slug of ["kpler", "entrupy", "sparta-commodities"]) batchSlugs.add(sl
 for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug);
 for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
+for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -234,6 +235,27 @@ const companyResearch: Record<string, {
     positive: ["日本を候補地とするAPAC営業がAI企業、研究機関、大企業の機械学習部門を開拓し、技術評価、SLA、価格、契約、高額の年間契約まで担う。", "会社公式は100万人超の開発者、年換算売上1.2億ドル、Series A 1億ドル、月200億件超の推論リクエストを掲載する。"],
     negative: ["日本法人、国内拠点、雇用主体、国内顧客、GPU提供地域、日本語の導入・障害対応は未確認。", "OTEは13万〜30万米ドルと幅が広く、日本での基本給・変動給比率、目標、達成率、既存案件、技術支援の境界を面接で検証する必要がある。"],
     next: ["Senior Account Executive APAC", "Japan Country Leadership", "APAC AI Infrastructure Sales Leadership"],
+  },
+  "back-market": {
+    name: "Back Market", domain: "Circular Commerce・Marketplace・Seller Business Development", officialUrl: "https://jobs.ashbyhq.com/backmarket/7df95846-0fb0-4a42-9f35-71674ee096fd",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Back%20Market", communityLabel: "Glassdoor Back Market global review search（日本の対象チームへ一般化しない、2026-10-03確認）",
+    positive: ["東京のBusiness Development Managerが新規出品者の獲得・導入と既存出品者の品揃え、調達、価格、品質、販売成長を担う。", "会社公式は18百万人の顧客、17市場、1,800の専門出品事業者、日本向けサービスと東京のAPAC組織を掲載する。"],
+    negative: ["日本売上、国内在籍人数、担当出品者数、目標、達成率、数値報酬は非公開。", "新規獲得と既存成長の配分、品質・返品への責任、在庫・価格の意思決定、グローバルとの時差、出社・出張を面接で検証する必要がある。"],
+    next: ["Senior Business Development Manager", "Japan Marketplace Leadership", "APAC Circular Commerce Leadership"],
+  },
+  bounce: {
+    name: "Bounce", domain: "Travel Tech・Marketplace・Japan Partnerships", officialUrl: "https://jobs.ashbyhq.com/Bounce/dde5e989-1be1-4fa5-ada4-bd36626577c0",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Bounce%20Luggage", communityLabel: "Glassdoor Bounce global review search（日本の対象チームへ一般化しない、2026-10-03確認）",
+    positive: ["東京のBusiness Development Managerが大手提携、手荷物保管網、配送・ロッカーの0→1を担う。", "会社公式は世界2万超の保管拠点と100万件超のレビューを掲載し、日本の複数都市で現行サービスを確認できる。"],
+    negative: ["日本法人、国内在籍人数、日本売上、都市別の利用・品質、目標、数値報酬は非公開。", "契約職の期間・更新、正社員登用、拠点品質と事故時の責任、新規事業の投資権限、出社・出張を面接で検証する必要がある。"],
+    next: ["Senior Business Development Manager", "Japan General Manager", "APAC Travel Marketplace Leadership"],
+  },
+  "alta-ares": {
+    name: "Alta Ares", domain: "Defense AI・Counter-UAS・Japan Market Entry", officialUrl: "https://jobs.ashbyhq.com/alta-ares/7c82c080-2c9a-41cf-8936-d5719b59f47b",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Alta%20Ares", communityLabel: "Glassdoor Alta Ares global review search（日本の対象チームへ一般化しない、2026-10-03確認）",
+    positive: ["東京・名古屋のBusiness Development Managerが日本市場最初の専任者として、防衛省・防衛装備庁、自衛隊、産業パートナー、実証、契約を担う。", "会社公式は2026年6月の5,000万ユーロ調達を公表し、求人は約90人と複数地域での展開を説明する。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内契約・実証、情報保全・輸出管理・量産・保守体制、数値報酬は未確認。", "市場参入の権限と予算、国内産業パートナー、政府調達の時間軸、出張、安全保障上の要件を面接で検証する必要がある。"],
+    next: ["Japan Country Director", "APAC Defense Business Development Leadership", "International Defense Partnerships Leadership"],
   },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
@@ -1845,7 +1867,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["cohesity", "armis", "runpod"].includes(job.companySlug)
+  const researchedAt = ["back-market", "bounce", "alta-ares"].includes(job.companySlug)
+    ? "2026-10-03"
+    : ["cohesity", "armis", "runpod"].includes(job.companySlug)
     ? "2026-10-02"
     : ["litmus", "hiya", "hoxhunt"].includes(job.companySlug)
     ? "2026-10-01"
