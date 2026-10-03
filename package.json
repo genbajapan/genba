@@ -11,7 +11,9 @@
     "validate:hiring-heat": "node scripts/validate-hiring-heat.mjs",
     "validate:playbooks": "node scripts/validate-company-playbooks.mjs",
     "validate:company-scale": "node scripts/validate-company-scale.mjs",
-    "check": "npm run validate:agents && npm run validate:hiring-heat && npm run validate:playbooks && npm run validate:company-scale && npm run build"
+    "validate:newsletter-style": "node scripts/validate-newsletter-style.mjs",
+    "newsletter:render": "node scripts/render-newsletter.mjs",
+    "check": "npm run validate:agents && npm run validate:hiring-heat && npm run validate:playbooks && npm run validate:company-scale && npm run validate:newsletter-style && npm run build"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
