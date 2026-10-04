@@ -107,5 +107,4 @@ for (const intelligence of [skydio, alarmCom, magnetForensics]) {
 export const daily20261004IntelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   skydio,
   "alarm-com": alarmCom,
-  "magnet-forensics": magnetForensics,
 };

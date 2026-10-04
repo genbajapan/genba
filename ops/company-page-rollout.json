@@ -31,7 +31,7 @@
       "Selective": 93,
       "求人なし": 70
     },
-    "standardReady": 211
+    "standardReady": 212
   },
   "companies": [
     {
@@ -1385,11 +1385,8 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本法人での想定従業員数:定義・対象範囲",
-        "求人:Enterprise Account Executive – North Asia:勤務地・言語の日本語表記"
-      ]
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "mambu",

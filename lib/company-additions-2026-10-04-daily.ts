@@ -31,21 +31,6 @@ export const companies20261004Daily: Company[] = [
     careersUrl: "https://job-boards.greenhouse.io/alarmcom/jobs/8733921002",
     tags: ["Physical Security", "IoT", "Smart Property", "Channel Sales", "Japan"],
   },
-  {
-    slug: "magnet-forensics",
-    name: "Magnet Forensics",
-    category: "デジタル証拠の取得・解析・捜査ワークフロー",
-    broadCategory: "セキュリティ・IT運用",
-    hq: "ウォータールー（カナダ）",
-    japanPresence: "日本法人・国内オフィスは未確認。日本を主市場とするNorth Asia営業求人と国内トレーニングパートナーを公式確認",
-    hiringStatus: "採用中",
-    salesRoles: 1,
-    description: "端末、クラウド、車載機器などのデジタル証拠を取得・解析・共有し、捜査と企業調査を支援。日本を中心にNorth Asiaを開拓する企業営業職を募集。",
-    lastChecked: checkedAt,
-    careersUrl: "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
-    tags: ["Digital Forensics", "Cybersecurity", "Investigations", "Enterprise Sales", "Pre-entry"],
-    entryStatus: "pre-entry-signal",
-  },
 ];
 
 type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
@@ -94,19 +79,5 @@ export const jobs20261004Daily: Job[] = [
     genbaTake: "エンド顧客への直販ではなく、設置・監視・販売を担う事業者が継続収益を作れるよう、地域ごとの提携網と導入後の成長を設計する役割。",
     compensationReality: "日本の給与、変動給、目標、達成率、株式、出張手当は未記載。",
     desiredProfile: "公式求人は営業・事業開発5年以上、新規開拓と既存深耕、クラウド・IoTへの理解、日本語・英語、複数国への高頻度出張を重視する。",
-  }),
-  makeJob({
-    id: "magnet-forensics-enterprise-account-executive-north-asia-dd9fcd02",
-    companySlug: "magnet-forensics",
-    title: "Enterprise Account Executive – North Asia",
-    segment: "Japan Enterprise Cybersecurity Sales / North Asia",
-    location: "Tokyo / Japan / Nagoya / Osaka / Yokohama",
-    workStyle: "Remote。日本を主市場とし、韓国・台湾・香港を含め30〜50%の出張を想定",
-    language: "日本語・英語ともに流暢。韓国語または中国語は歓迎条件",
-    source: { label: "Magnet Forensics Careers (Lever)", url: "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85" },
-    descriptionSummary: "日本の企業CISO、SOC、インシデント対応部門へ新規・拡大商談を作り、技術評価、商務交渉、販売パートナーを含む企業営業をNorth Asiaで担う。",
-    genbaTake: "日本市場を自ら開拓しつつ、証拠保全、企業調査、インシデント対応という技術・法務・信頼が重い商談を終結まで動かす先行営業職。",
-    compensationReality: "日本の給与、変動給、目標、達成率、株式、雇用主体は未記載。",
-    desiredProfile: "公式求人は企業向けサイバーセキュリティ営業7年以上、日本のCISO・SOC・対応組織との関係、MEDDPICC、直販とパートナー販売、日本語・英語を重視する。",
   }),
 ];

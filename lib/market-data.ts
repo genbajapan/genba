@@ -70,6 +70,7 @@ import { companies20261002Daily, jobs20261002Daily } from "@/lib/company-additio
 import { companies20261003Daily, jobs20261003Daily } from "@/lib/company-additions-2026-10-03-daily";
 import { companies20261004Daily, jobs20261004Daily } from "@/lib/company-additions-2026-10-04-daily";
 import { companies20261005Daily, jobs20261005Daily } from "@/lib/company-additions-2026-10-05-daily";
+import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1011,6 +1012,7 @@ const companyRecords: Company[] = [
   ...companies20261002Daily,
   ...companies20261003Daily,
   ...companies20261004Daily,
+  magnetForensicsCompany20261004,
   ...companies20261005Daily,
 ];
 
@@ -1459,6 +1461,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 
 const jobRecords: Job[] = [
   ...jobs20261004Daily,
+  magnetForensicsJob20261004,
   ...jobs20261005Daily,
   ...jobs20261003Daily,
   ...jobs20261002Daily,

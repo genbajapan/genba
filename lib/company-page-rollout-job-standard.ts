@@ -87,8 +87,9 @@ for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug
 for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
-for (const slug of ["skydio", "alarm-com", "magnet-forensics"]) batchSlugs.add(slug);
+for (const slug of ["skydio", "alarm-com"]) batchSlugs.add(slug);
 for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
+batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -277,7 +278,7 @@ const companyResearch: Record<string, {
     name: "Magnet Forensics", domain: "Digital Forensics・Enterprise Cybersecurity Sales・North Asia", officialUrl: "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Magnet%20Forensics", communityLabel: "Glassdoor Magnet Forensics global review search（日本の対象チームへ一般化しない、2026-10-04確認）",
     positive: ["日本を主市場とするEnterprise Account ExecutiveがCISO、SOC、インシデント対応部門への新規・拡大商談、技術評価、商務、販売パートナーを担う。", "会社公式は100カ国超、6,000超の機関・企業、Fortune 100の70%超を掲載し、日本のトレーニングパートナーも確認できる。"],
-    negative: ["日本法人、国内オフィス、雇用主体、国内顧客名、既存案件、日本売上、数値報酬は未確認。", "日本からNorth Asiaまで30〜50%の出張、長い技術・法務評価、証拠データの取扱い、販売パートナー依存、現地技術支援を面接で検証する必要がある。"],
+    negative: ["日本法人、国内オフィス、雇用主体、国内顧客名、既存案件、日本売上、数値報酬は未確認。", "日本から北アジアまで30〜50%の出張、長い技術・法務評価、証拠データの取扱い、販売パートナー依存、現地技術支援を面接で検証する必要がある。"],
     next: ["Senior Enterprise Account Executive", "Japan Country Leadership", "North Asia Digital Investigation Sales Leadership"],
   },
   legora: {

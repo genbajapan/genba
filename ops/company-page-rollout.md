@@ -143,7 +143,7 @@
 |Selective|Kpler|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
-|Selective|Magnet Forensics|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Enterprise Account Executive – North Asia:勤務地・言語の日本語表記|
+|Selective|Magnet Forensics|1|未着手|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
