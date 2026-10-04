@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-04 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-05 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全250社（未着手 108 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全253社（未着手 111 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -35,6 +35,7 @@
 |HOT|iDeals|3|公開済み|はい|なし|
 |HOT|Jamf|3|未着手|はい|なし|
 |HOT|KnowBe4|4|公開済み|はい|なし|
+|HOT|Legora|4|未着手|はい|なし|
 |HOT|Mapbox|3|未着手|はい|なし|
 |HOT|Matterport|3|未着手|はい|なし|
 |HOT|Mendix|3|公開済み|はい|なし|
@@ -156,6 +157,7 @@
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
 |Selective|Recorded Future|1|未着手|はい|なし|
+|Selective|Rescale|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |Selective|Rocket Software|1|未着手|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runpod|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
@@ -205,6 +207,7 @@
 |求人なし|Decagon|0|未着手|はい|なし|
 |求人なし|Deel|0|公開済み|はい|なし|
 |求人なし|Deepgram|0|公開済み|はい|なし|
+|求人なし|Drata|0|未着手|いいえ|日本語の事業領域・本社表記、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない、ヒーロー説明:解決と事業成果|
 |求人なし|Dropbox|0|公開済み|はい|なし|
 |求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Gamma|0|未着手|はい|なし|

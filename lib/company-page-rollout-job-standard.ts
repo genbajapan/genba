@@ -88,6 +88,7 @@ for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
 for (const slug of ["skydio", "alarm-com", "magnet-forensics"]) batchSlugs.add(slug);
+for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -278,6 +279,20 @@ const companyResearch: Record<string, {
     positive: ["日本を主市場とするEnterprise Account ExecutiveがCISO、SOC、インシデント対応部門への新規・拡大商談、技術評価、商務、販売パートナーを担う。", "会社公式は100カ国超、6,000超の機関・企業、Fortune 100の70%超を掲載し、日本のトレーニングパートナーも確認できる。"],
     negative: ["日本法人、国内オフィス、雇用主体、国内顧客名、既存案件、日本売上、数値報酬は未確認。", "日本からNorth Asiaまで30〜50%の出張、長い技術・法務評価、証拠データの取扱い、販売パートナー依存、現地技術支援を面接で検証する必要がある。"],
     next: ["Senior Enterprise Account Executive", "Japan Country Leadership", "North Asia Digital Investigation Sales Leadership"],
+  },
+  legora: {
+    name: "Legora", domain: "Legal AI・Japan GTM・Legal Engineering", officialUrl: "https://jobs.ashbyhq.com/legora",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Legora", communityLabel: "Glassdoor Legora global review search（日本の対象チームへ一般化しない、2026-10-05確認）",
+    positive: ["東京で営業、Engagement Manager、Legal Engineer、その責任者を同時募集し、市場開拓から業務設計・定着までの機能を作ろうとしている。", "会社公式は875人超、2,080社超、2026年3月の5.5億ドル調達を掲載する。"],
+    negative: ["日本法人名、オフィス所在地、国内在籍人数、日本顧客名、日本の数値報酬は未確認。", "On-siteの出社頻度、既存案件、目標・達成率、利用定着の責任分界、日本法・データへの対応を選考で検証する必要がある。"],
+    next: ["Japan Enterprise Sales・Engagement Leadership", "Japan Legal Engineering Leadership", "APAC Legal AI Leadership"],
+  },
+  rescale: {
+    name: "Rescale", domain: "Digital Engineering・HPC・Japan Solutions Architecture", officialUrl: "https://jobs.ashbyhq.com/rescale/08a43132-a891-42b8-9aa3-feb0a2a49c83",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Rescale", communityLabel: "Glassdoor Rescale global review search（日本の対象チームへ一般化しない、2026-10-05確認）",
+    positive: ["日本のSolutions Architectが研究開発顧客のワークフロー、HPC、解析ソフト、クラウドとセキュリティを一つの技術評価へまとめる。", "2016年から日本法人と東京オフィスがあり、住友電工、日産、住友精密工業等の国内公式事例を確認できる。"],
+    negative: ["日本の公式在籍人数、担当顧客数、商談支援と導入の配分、数値報酬は未公開。", "出社・出張、営業との目標共有、技術検証の同時案件数、クラウド障害と解析ソフトの切り分け責任を選考で検証する必要がある。"],
+    next: ["Senior Solutions Architect", "Japan Solution Consulting Leadership", "APAC Digital Engineering Leadership"],
   },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
@@ -1889,7 +1904,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["skydio", "alarm-com", "magnet-forensics"].includes(job.companySlug)
+  const researchedAt = ["legora", "rescale"].includes(job.companySlug)
+    ? "2026-10-05"
+    : ["skydio", "alarm-com", "magnet-forensics"].includes(job.companySlug)
     ? "2026-10-04"
     : ["back-market", "bounce", "alta-ares"].includes(job.companySlug)
     ? "2026-10-03"

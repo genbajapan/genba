@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-04",
+  "auditedAt": "2026-10-05",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 250,
+    "total": 253,
     "byStatus": {
-      "未着手": 108,
+      "未着手": 111,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 52,
+      "HOT": 53,
       "Active": 37,
-      "Selective": 92,
-      "求人なし": 69
+      "Selective": 93,
+      "求人なし": 70
     },
-    "standardReady": 210
+    "standardReady": 211
   },
   "companies": [
     {
@@ -311,6 +311,15 @@
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "legora",
+      "company": "Legora",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1520,6 +1529,18 @@
       "missingFields": []
     },
     {
+      "slug": "rescale",
+      "company": "Rescale",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
+    },
+    {
       "slug": "rocket-software",
       "company": "Rocket Software",
       "priority": "Selective",
@@ -1995,6 +2016,20 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "drata",
+      "company": "Drata",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本語の事業領域・本社表記",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "日本法人での想定従業員数:法人未特定時に0人と断定しない",
+        "ヒーロー説明:解決と事業成果"
+      ]
     },
     {
       "slug": "dropbox",
