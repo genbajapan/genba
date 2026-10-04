@@ -39,5 +39,8 @@ magnetForensics.sources.push(
   { id: "gbiz-headcount-magnet-forensics", label: "gBizINFO Magnet Forensics法人検索", url: "https://info.gbiz.go.jp/", kind: "公的機関", scope: "日本法人・事業所情報の確認", checkedAt },
 );
 magnetForensics.companyStats.japanHeadcount = { value: "対象法人未特定", detail: "gBizINFOの法人プロフィールと事業所情報を検索したが、ブランドと結びつく国内法人を特定できない。健康保険・厚生年金の被保険者数ではなく、日本在住者、EOR雇用者、制度対象外の従業者を含む人数とも断定しない。", sourceId: "gbiz-headcount-magnet-forensics" };
+magnetForensics.marketStatus.milestones = magnetForensics.marketStatus.milestones.map((item) =>
+  item.label.includes("創業") ? { ...item, year: item.year.replace(/年$/, "") } : item,
+);
 
 export const magnetForensicsIntelligence20261004: Record<string, CompanyPublicIntelligence> = { "magnet-forensics": magnetForensics };
