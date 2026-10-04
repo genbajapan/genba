@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-03 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-04 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全247社（未着手 105 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全250社（未着手 108 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -99,6 +99,7 @@
 |Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
 |Selective|Acronis|1|未着手|はい|なし|
 |Selective|adjoe|1|未着手|はい|なし|
+|Selective|Alarm.com|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Alta Ares|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Business Development Manager — Japan:勤務地・言語の日本語表記、外貨の円換算:facts[2].value=5,000万ユーロ|
 |Selective|Alteryx|1|未着手|はい|なし|
 |Selective|Antithesis|1|未着手|はい|なし|
@@ -141,6 +142,7 @@
 |Selective|Kpler|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
+|Selective|Magnet Forensics|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Enterprise Account Executive – North Asia:勤務地・言語の日本語表記|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
@@ -163,6 +165,7 @@
 |Selective|Shift Technology|1|未着手|はい|なし|
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
+|Selective|Skydio|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Sonatype|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか5件|
 |Selective|Sparta|1|未着手|はい|なし|

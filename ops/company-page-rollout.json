@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-03",
+  "auditedAt": "2026-10-04",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 247,
+    "total": 250,
     "byStatus": {
-      "未着手": 105,
+      "未着手": 108,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,7 +28,7 @@
     "byPriority": {
       "HOT": 52,
       "Active": 37,
-      "Selective": 89,
+      "Selective": 92,
       "求人なし": 69
     },
     "standardReady": 210
@@ -928,6 +928,17 @@
       "missingFields": []
     },
     {
+      "slug": "alarm-com",
+      "company": "Alarm.com",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
+    },
+    {
       "slug": "alta-ares",
       "company": "Alta Ares",
       "priority": "Selective",
@@ -1360,6 +1371,18 @@
       "missingFields": []
     },
     {
+      "slug": "magnet-forensics",
+      "company": "Magnet Forensics",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Enterprise Account Executive – North Asia:勤務地・言語の日本語表記"
+      ]
+    },
+    {
       "slug": "mambu",
       "company": "Mambu",
       "priority": "Selective",
@@ -1578,6 +1601,17 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "skydio",
+      "company": "Skydio",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス"
+      ]
     },
     {
       "slug": "sonar",

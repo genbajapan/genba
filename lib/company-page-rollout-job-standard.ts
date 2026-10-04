@@ -87,6 +87,7 @@ for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug
 for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
+for (const slug of ["skydio", "alarm-com", "magnet-forensics"]) batchSlugs.add(slug);
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -256,6 +257,27 @@ const companyResearch: Record<string, {
     positive: ["東京・名古屋のBusiness Development Managerが日本市場最初の専任者として、防衛省・防衛装備庁、自衛隊、産業パートナー、実証、契約を担う。", "会社公式は2026年6月の5,000万ユーロ調達を公表し、求人は約90人と複数地域での展開を説明する。"],
     negative: ["日本法人、国内拠点、雇用主体、国内契約・実証、情報保全・輸出管理・量産・保守体制、数値報酬は未確認。", "市場参入の権限と予算、国内産業パートナー、政府調達の時間軸、出張、安全保障上の要件を面接で検証する必要がある。"],
     next: ["Japan Country Director", "APAC Defense Business Development Leadership", "International Defense Partnerships Leadership"],
+  },
+  skydio: {
+    name: "Skydio", domain: "Autonomous Drones・Customer Deployment・Japan Technical Operations", officialUrl: "https://jobs.ashbyhq.com/skydio/9e21861e-a035-4283-8e85-42a22908af8c",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Skydio", communityLabel: "Glassdoor Skydio global review search（日本の対象チームへ一般化しない、2026-10-04確認）",
+    positive: ["東京のDeployment and Support Engineerが機体、Dock、クラウド、企業ネットワークの導入から障害解析、顧客定着、製品改善まで担う。", "日本法人、東京オフィス、国内顧客事例を確認でき、Japan Infrastructure Waymarkは300機超の運用と橋梁点検事業70倍を紹介する。"],
+    negative: ["国内在籍人数、日本の導入案件数、担当顧客数、稼働率、障害件数、数値報酬は非公開。", "年間30〜50%の出張、米国本社との時差対応、顧客現場の安全責任、資格取得、障害時の担当範囲を面接で検証する必要がある。"],
+    next: ["Senior Deployment Engineer", "Japan Customer Operations Leadership", "APAC Robotics・Autonomy Technical Leadership"],
+  },
+  "alarm-com": {
+    name: "Alarm.com", domain: "Physical Security IoT・Channel Business Development・Japan", officialUrl: "https://job-boards.greenhouse.io/alarmcom/jobs/8733921002",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Alarm.com", communityLabel: "Glassdoor Alarm.com global review search（日本の対象チームへ一般化しない、2026-10-04確認）",
+    positive: ["日本担当Business Development Managerが統合・販売・監視事業者を新規開拓し、既存パートナーの採用・売上・長期関係を担う。", "日本向けサービス、国内ハードウェアパートナー、東京拠点の日本語対応チームを確認し、世界900万超の顧客と1万2,000超のサービス事業者を掲載する。"],
+    negative: ["日本法人名、国内在籍人数、日本売上、担当パートナー数、目標、達成率、数値報酬は非公開。", "日本・フィリピン・ベトナム・グアムへの60〜70%の出張、直販とパートナー支援の境界、障害・設置責任を面接で検証する必要がある。"],
+    next: ["Senior Business Development Manager", "Japan Channel Leadership", "APAC Smart Property・Security Leadership"],
+  },
+  "magnet-forensics": {
+    name: "Magnet Forensics", domain: "Digital Forensics・Enterprise Cybersecurity Sales・North Asia", officialUrl: "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Magnet%20Forensics", communityLabel: "Glassdoor Magnet Forensics global review search（日本の対象チームへ一般化しない、2026-10-04確認）",
+    positive: ["日本を主市場とするEnterprise Account ExecutiveがCISO、SOC、インシデント対応部門への新規・拡大商談、技術評価、商務、販売パートナーを担う。", "会社公式は100カ国超、6,000超の機関・企業、Fortune 100の70%超を掲載し、日本のトレーニングパートナーも確認できる。"],
+    negative: ["日本法人、国内オフィス、雇用主体、国内顧客名、既存案件、日本売上、数値報酬は未確認。", "日本からNorth Asiaまで30〜50%の出張、長い技術・法務評価、証拠データの取扱い、販売パートナー依存、現地技術支援を面接で検証する必要がある。"],
+    next: ["Senior Enterprise Account Executive", "Japan Country Leadership", "North Asia Digital Investigation Sales Leadership"],
   },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
@@ -1867,7 +1889,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["back-market", "bounce", "alta-ares"].includes(job.companySlug)
+  const researchedAt = ["skydio", "alarm-com", "magnet-forensics"].includes(job.companySlug)
+    ? "2026-10-04"
+    : ["back-market", "bounce", "alta-ares"].includes(job.companySlug)
     ? "2026-10-03"
     : ["cohesity", "armis", "runpod"].includes(job.companySlug)
     ? "2026-10-02"
