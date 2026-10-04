@@ -87,6 +87,7 @@ for (const slug of ["adjoe", "securityscorecard", "pallet"]) batchSlugs.add(slug
 for (const slug of ["litmus", "hiya", "hoxhunt"]) batchSlugs.add(slug);
 for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
+batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -256,6 +257,13 @@ const companyResearch: Record<string, {
     positive: ["東京・名古屋のBusiness Development Managerが日本市場最初の専任者として、防衛省・防衛装備庁、自衛隊、産業パートナー、実証、契約を担う。", "会社公式は2026年6月の5,000万ユーロ調達を公表し、求人は約90人と複数地域での展開を説明する。"],
     negative: ["日本法人、国内拠点、雇用主体、国内契約・実証、情報保全・輸出管理・量産・保守体制、数値報酬は未確認。", "市場参入の権限と予算、国内産業パートナー、政府調達の時間軸、出張、安全保障上の要件を面接で検証する必要がある。"],
     next: ["Japan Country Director", "APAC Defense Business Development Leadership", "International Defense Partnerships Leadership"],
+  },
+  "magnet-forensics": {
+    name: "Magnet Forensics", domain: "Digital Forensics・Enterprise Cybersecurity Sales・North Asia", officialUrl: "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Magnet%20Forensics", communityLabel: "Glassdoor Magnet Forensics global review search（日本の対象チームへ一般化しない、2026-10-04確認）",
+    positive: ["日本を主市場とするEnterprise Account ExecutiveがCISO、SOC、インシデント対応部門への新規・拡大商談、技術評価、商務、販売パートナーを担う。", "会社公式は100カ国超、6,000超の機関・企業、Fortune 100の70%超を掲載し、日本のトレーニングパートナーも確認できる。"],
+    negative: ["日本法人、国内オフィス、雇用主体、国内顧客名、既存案件、日本売上、数値報酬は未確認。", "日本から北アジアまで30〜50%の出張、長い技術・法務評価、証拠データの取扱い、販売パートナー依存、現地技術支援を面接で検証する必要がある。"],
+    next: ["Senior Enterprise Account Executive", "Japan Country Leadership", "North Asia Digital Investigation Sales Leadership"],
   },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",

@@ -68,6 +68,7 @@ import { companies20260930Daily, jobs20260930Daily } from "@/lib/company-additio
 import { companies20261001Daily, jobs20261001Daily } from "@/lib/company-additions-2026-10-01-daily";
 import { companies20261002Daily, jobs20261002Daily } from "@/lib/company-additions-2026-10-02-daily";
 import { companies20261003Daily, jobs20261003Daily } from "@/lib/company-additions-2026-10-03-daily";
+import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
 import { strengthenRolloutBatchOneJob } from "@/lib/company-page-rollout-job-standard";
@@ -1008,6 +1009,7 @@ const companyRecords: Company[] = [
   ...companies20261001Daily,
   ...companies20261002Daily,
   ...companies20261003Daily,
+  magnetForensicsCompany20261004,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1049,6 +1051,7 @@ const preEntrySignalCompanySlugs = new Set([
   "hoxhunt",
   "runpod",
   "alta-ares",
+  "magnet-forensics",
 ]);
 
 type WaveTwoJobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile"> & {
@@ -1453,6 +1456,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  magnetForensicsJob20261004,
   ...jobs20261003Daily,
   ...jobs20261002Daily,
   ...jobs20261001Daily,

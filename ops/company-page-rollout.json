@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-03",
+  "auditedAt": "2026-10-04",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 247,
+    "total": 248,
     "byStatus": {
-      "未着手": 105,
+      "未着手": 106,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 52,
       "Active": 37,
-      "Selective": 89,
+      "Selective": 90,
       "求人なし": 69
     },
-    "standardReady": 210
+    "standardReady": 211
   },
   "companies": [
     {
@@ -1356,6 +1356,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "magnet-forensics",
+      "company": "Magnet Forensics",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

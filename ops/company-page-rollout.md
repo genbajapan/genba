@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-03 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-04 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全247社（未着手 105 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全248社（未着手 106 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -141,6 +141,7 @@
 |Selective|Kpler|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
+|Selective|Magnet Forensics|1|未着手|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
