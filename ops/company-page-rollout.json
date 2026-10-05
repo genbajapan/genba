@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-05",
+  "auditedAt": "2026-10-06",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 253,
+    "total": 256,
     "byStatus": {
-      "未着手": 111,
+      "未着手": 114,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 53,
+      "HOT": 55,
       "Active": 37,
-      "Selective": 93,
+      "Selective": 94,
       "求人なし": 70
     },
-    "standardReady": 212
+    "standardReady": 215
   },
   "companies": [
     {
@@ -103,6 +103,15 @@
       "priority": "HOT",
       "salesRoles": 14,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "cic",
+      "company": "CIC",
+      "priority": "HOT",
+      "salesRoles": 5,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -201,6 +210,15 @@
       "priority": "HOT",
       "salesRoles": 5,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ecovadis",
+      "company": "EcoVadis",
+      "priority": "HOT",
+      "salesRoles": 3,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1333,6 +1351,15 @@
         "求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判",
         "求人:Enterprise Sales Executive:市場価値"
       ]
+    },
+    {
+      "slug": "ionq",
+      "company": "IonQ",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "keeper-security",

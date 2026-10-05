@@ -89,6 +89,7 @@ for (const slug of ["cohesity", "armis", "runpod"]) batchSlugs.add(slug);
 for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
 for (const slug of ["skydio", "alarm-com"]) batchSlugs.add(slug);
 for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
+for (const slug of ["ecovadis", "cic", "ionq"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -294,6 +295,27 @@ const companyResearch: Record<string, {
     positive: ["日本のSolutions Architectが研究開発顧客のワークフロー、HPC、解析ソフト、クラウドとセキュリティを一つの技術評価へまとめる。", "2016年から日本法人と東京オフィスがあり、住友電工、日産、住友精密工業等の国内公式事例を確認できる。"],
     negative: ["日本の公式在籍人数、担当顧客数、商談支援と導入の配分、数値報酬は未公開。", "出社・出張、営業との目標共有、技術検証の同時案件数、クラウド障害と解析ソフトの切り分け責任を選考で検証する必要がある。"],
     next: ["Senior Solutions Architect", "Japan Solution Consulting Leadership", "APAC Digital Engineering Leadership"],
+  },
+  ecovadis: {
+    name: "EcoVadis", domain: "Sustainable Procurement・Supplier Risk・Japan", officialUrl: "https://careers.ecovadis.com/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=EcoVadis", communityLabel: "Glassdoor EcoVadis global review search（日本の対象チームへ一般化しない、2026-10-06確認）",
+    positive: ["東京で営業開拓、サステナビリティ評価、人事運営を同時採用し、日本の約55人組織を機能横断で拡張している。", "会社公式は15万社超の評価対象企業と富士通の国内活用事例を掲載し、調達・サプライチェーンの規制対応を具体的な顧客課題へつなげられる。"],
+    negative: ["日本の売上、顧客数、営業目標・達成率、職種別人数、数値報酬、離職・昇進は非公開。", "評価依頼企業と評価対象企業の双方に価値を説明する構造、方法論の品質と処理量、顧客の改善責任の境界を選考で検証する必要がある。"],
+    next: ["Sustainable Procurement・ESG Data Leadership", "Supplier Risk・Compliance GTM", "Sustainability Analytics・Operations Leadership"],
+  },
+  cic: {
+    name: "CIC", domain: "Innovation Campus・Startup Ecosystem・Japan & APAC", officialUrl: "https://jp.cic.com/career/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Cambridge%20Innovation%20Center", communityLabel: "Glassdoor CIC global review search（日本の対象チームへ一般化しない、2026-10-06確認）",
+    positive: ["東京・福岡・大阪の3拠点と、経営運営、人事、マーケティング、IT、会計の5求人から、日本をアジア拡張の運営基盤にする投資が見える。", "約450の国内会員企業と、行政・企業・研究機関をつなぐ支援実績があり、拠点運営だけでなく社会実装とエコシステム設計の経験を得られる。"],
+    negative: ["国内の総在籍人数、売上、拠点別採算、職種別給与、昇進・離職は非公開。", "6カ月契約から無期契約への移行条件、出社・オンコール・拠点間移動、行政事業と民間事業の優先順位を職種別に確認する必要がある。"],
+    next: ["Innovation Ecosystem・Campus Leadership", "Startup Acceleration・Public Private Programs", "APAC Operations・Marketing・Corporate Leadership"],
+  },
+  ionq: {
+    name: "IonQ", domain: "Quantum Computing・Japan Market Entry・Enterprise GTM", officialUrl: "https://www.ionq.com/careers",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=IonQ", communityLabel: "Glassdoor IonQ global review search（日本の対象チームへ一般化しない、2026-10-06確認）",
+    positive: ["豊田通商との販売提携、国内初案件、産総研とのMOU、大阪のCountry Manager求人が揃い、日本市場立ち上げの具体的な役割が見える。", "2026年Q2売上8,010万ドル、前年同期比287%増を会社公表し、量子計算だけでなくネットワーク、センシング、セキュリティへ事業を広げている。"],
+    negative: ["日本法人・常設オフィス・雇用主体・国内在籍人数・技術支援人数、日本の売上・案件規模・数値報酬は未確認。", "技術成熟度、長い実証期間、輸出管理、古典計算との差、販売パートナーと直販の責任分界を顧客KPIと契約条件で検証する必要がある。"],
+    next: ["Japan Quantum Country Leadership", "Deep Tech Enterprise GTM", "APAC Quantum・HPC・AI Partnerships"],
   },
   litmus: {
     name: "Litmus", domain: "Industrial AI・Edge Data・Japan & Asia Sales Leadership", officialUrl: "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
@@ -1905,7 +1927,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["legora", "rescale"].includes(job.companySlug)
+  const researchedAt = ["ecovadis", "cic", "ionq"].includes(job.companySlug)
+    ? "2026-10-06"
+    : ["legora", "rescale"].includes(job.companySlug)
     ? "2026-10-05"
     : ["skydio", "alarm-com", "magnet-forensics"].includes(job.companySlug)
     ? "2026-10-04"

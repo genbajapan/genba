@@ -70,6 +70,7 @@ import { companies20261002Daily, jobs20261002Daily } from "@/lib/company-additio
 import { companies20261003Daily, jobs20261003Daily } from "@/lib/company-additions-2026-10-03-daily";
 import { companies20261004Daily, jobs20261004Daily } from "@/lib/company-additions-2026-10-04-daily";
 import { companies20261005Daily, jobs20261005Daily } from "@/lib/company-additions-2026-10-05-daily";
+import { companies20261006Daily, jobs20261006Daily } from "@/lib/company-additions-2026-10-06-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1014,6 +1015,7 @@ const companyRecords: Company[] = [
   ...companies20261004Daily,
   magnetForensicsCompany20261004,
   ...companies20261005Daily,
+  ...companies20261006Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1460,6 +1462,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261006Daily,
   ...jobs20261004Daily,
   magnetForensicsJob20261004,
   ...jobs20261005Daily,
@@ -3266,7 +3269,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-05" ? job.lastChecked : "2026-10-05",
+      lastChecked: job.lastChecked > "2026-10-06" ? job.lastChecked : "2026-10-06",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3317,7 +3320,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-05" ? company.lastChecked : "2026-10-05";
+  const auditedLastChecked = company.lastChecked > "2026-10-06" ? company.lastChecked : "2026-10-06";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };

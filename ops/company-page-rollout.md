@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-05 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-06 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全253社（未着手 111 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全256社（未着手 114 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -14,6 +14,7 @@
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
 |HOT|Channel Talk|14|公開済み|はい|なし|
+|HOT|CIC|5|未着手|はい|なし|
 |HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
@@ -24,6 +25,7 @@
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|DeepL|8|公開済み|はい|なし|
 |HOT|DocuSign|5|公開済み|はい|なし|
+|HOT|EcoVadis|3|未着手|はい|なし|
 |HOT|EDB|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Director Sales:職種別の報酬調査、求人:Director Sales:ポジティブ・ネガティブ評判、求人:Director Sales:市場価値ほか6件|
 |HOT|Elastic|3|公開済み|はい|なし|
 |HOT|ElevenLabs|10|公開済み|はい|なし|
@@ -138,6 +140,7 @@
 |Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Hoxhunt|1|未着手|いいえ|求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記|
 |Selective|Illumio|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Enterprise Sales Executive:勤務地・言語の日本語表記、求人:Enterprise Sales Executive:職種別の報酬調査、求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判ほか1件|
+|Selective|IonQ|1|未着手|はい|なし|
 |Selective|Keeper Security|1|未着手|はい|なし|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Kpler|1|未着手|はい|なし|
