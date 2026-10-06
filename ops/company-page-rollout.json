@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-06",
+  "auditedAt": "2026-10-07",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 256,
+    "total": 259,
     "byStatus": {
-      "未着手": 114,
+      "未着手": 117,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 55,
-      "Active": 37,
-      "Selective": 94,
+      "HOT": 56,
+      "Active": 38,
+      "Selective": 95,
       "求人なし": 70
     },
-    "standardReady": 215
+    "standardReady": 218
   },
   "companies": [
     {
@@ -67,6 +67,15 @@
       "priority": "HOT",
       "salesRoles": 3,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "blackpanda",
+      "company": "Blackpanda",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -856,6 +865,15 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "streamhub",
+      "company": "Streamhub",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1657,6 +1675,15 @@
       "missingFields": [
         "日本法人での想定従業員数:gBizINFO監査ステータス"
       ]
+    },
+    {
+      "slug": "solace",
+      "company": "Solace",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "sonar",

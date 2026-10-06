@@ -90,6 +90,7 @@ for (const slug of ["back-market", "bounce", "alta-ares"]) batchSlugs.add(slug);
 for (const slug of ["skydio", "alarm-com"]) batchSlugs.add(slug);
 for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
 for (const slug of ["ecovadis", "cic", "ionq"]) batchSlugs.add(slug);
+for (const slug of ["blackpanda", "streamhub", "solace"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -213,6 +214,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  blackpanda: {
+    name: "Blackpanda", domain: "Cyber Incident Response・DFIR・Partner Sales", officialUrl: "https://blackpanda.bamboohr.com/careers",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Blackpanda", communityLabel: "Glassdoor Blackpanda global review search（日本の対象チームへ一般化しない、2026-10-07確認）",
+    positive: ["Blackpanda Japan株式会社、東京拠点、SB C&Sとの協業と、日本の営業・顧客成功・インシデント対応4求人を確認できる。", "IR-1は24時間365日の緊急対応を、平時の診断、定額契約、保険と結び、事故前後の責任を一つの運用にする。"],
+    negative: ["日本の総在籍人数、売上、目標、達成率、担当社数、数値報酬は非公開。", "夜間・休日の待機、重大事故時の勤務、権限、地域支援、保険との責任境界を職種別に面接で検証する必要がある。"],
+    next: ["Senior Incident Response・DFIR Leadership", "Japan Cybersecurity Customer Success Leadership", "APAC Security Partner Sales Leadership"],
+  },
+  streamhub: {
+    name: "Streamhub", domain: "Video Analytics・Audience Data・Media Technology", officialUrl: "https://streamhub.breezy.hr/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Streamhub", communityLabel: "Glassdoor Streamhub global review search（日本の対象チームへ一般化しない、2026-10-07確認）",
+    positive: ["東京オフィスと営業開拓・技術顧客支援の2求人を確認し、会社公式求人は全社20〜50人の小規模組織と記載する。", "放送局横断の動画データ基盤catch-anをVideo Researchと共同開発し、日本の放送・広告業界での利用を会社公式が説明する。"],
+    negative: ["日本法人名、国内在籍人数、日本売上、目標、達成率、担当社数、株式条件は非公開。", "小規模組織で営業、技術支援、導入、顧客拡大の境界が広い可能性があり、データ実装と商用責任の配分を面接で検証する必要がある。"],
+    next: ["Senior Account Manager・Japan Sales Leadership", "Technical Account Management Leadership", "APAC Media Data Business Leadership"],
+  },
+  solace: {
+    name: "Solace", domain: "Real-time Data・Event Mesh・Japan Market Development", officialUrl: "https://solace.com/careers/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Solace", communityLabel: "Glassdoor Solace global review search（日本の対象チームへ一般化しない、2026-10-07確認）",
+    positive: ["シンガポールのAPAC営業開拓拠点で、日本・韓国市場専任の初のSDRを募集し、日韓英の3言語で市場を作る責任を明記する。", "会社公式は大企業のアプリ、クラウド、機器、AIエージェントへリアルタイムデータを届けるEvent Meshを中核にする。"],
+    negative: ["日本法人、国内常設拠点、国内雇用、社名入り国内顧客事例、日本語の導入・障害対応は未確認。", "給与、変動給、目標、達成率、日本と韓国の担当配分、商談後の担当営業・技術支援を面接で検証する必要がある。"],
+    next: ["Account Executive Japan・Korea", "APAC Sales Development Leadership", "Japan Country Market Development"],
+  },
   cohesity: {
     name: "Cohesity", domain: "Data Security・Cyber Resilience・Channel Development", officialUrl: "https://www.cohesity.com/careers/open-positions/?gh_jid=fbb6c49dd8c11001d8381318e10e0000&type=wd",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Cohesity", communityLabel: "Glassdoor Cohesity global review search（日本の対象チームへ一般化しない、2026-10-02確認）",
@@ -1927,7 +1949,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["ecovadis", "cic", "ionq"].includes(job.companySlug)
+  const researchedAt = ["blackpanda", "streamhub", "solace"].includes(job.companySlug)
+    ? "2026-10-07"
+    : ["ecovadis", "cic", "ionq"].includes(job.companySlug)
     ? "2026-10-06"
     : ["legora", "rescale"].includes(job.companySlug)
     ? "2026-10-05"

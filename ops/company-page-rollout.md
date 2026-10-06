@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-06 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-07 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全256社（未着手 114 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全259社（未着手 117 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -10,6 +10,7 @@
 |HOT|Anthropic|9|公開済み|はい|なし|
 |HOT|Appier|4|未着手|はい|なし|
 |HOT|Black Duck|3|公開済み|はい|なし|
+|HOT|Blackpanda|4|未着手|はい|なし|
 |HOT|Braze|5|公開済み|はい|なし|
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
@@ -92,6 +93,7 @@
 |Active|Sayari|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
 |Active|Speak|2|公開済み|はい|なし|
+|Active|Streamhub|2|未着手|はい|なし|
 |Active|Tanium|2|公開済み|はい|なし|
 |Active|Telnyx|2|未着手|はい|なし|
 |Active|Twilio|2|公開済み|はい|なし|
@@ -171,6 +173,7 @@
 |Selective|Shopify|1|公開済み|はい|なし|
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Skydio|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス|
+|Selective|Solace|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Sonatype|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか5件|
 |Selective|Sparta|1|未着手|はい|なし|
