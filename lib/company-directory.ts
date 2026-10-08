@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  entrust: {
+    officialWebsite: { url: "https://www.entrust.com/ja/", locale: "ja" },
+    globalScaleFallback: { value: "2,500人超", detail: "会社公式資料の公開値。現在値は変動している可能性がある。", sourceUrl: "https://www.entrust.com/sites/default/files/documentation/casestudies/dps-emea-3key-qscd-remote-signing-cs.pdf", sourceLabel: "Entrust会社公式資料" },
+  },
+  "fitch-solutions": {
+    officialWebsite: { url: "https://www.fitchsolutions.com/ja", locale: "ja" },
+    globalScaleFallback: { value: "5,000人超", detail: "Fitch Group全体の会社公式値。Fitch Solutions単体ではない。", sourceUrl: "https://www.fitch.group/history/", sourceLabel: "Fitch Group会社公式" },
+  },
+  "element-biosciences": {
+    officialWebsite: { url: "https://www.elementbiosciences.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/element-biosciences/"),
+  },
   "babel-street": {
     officialWebsite: { url: "https://www.babelstreet.com/", locale: "global" },
     globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/babel-street/"),

@@ -92,7 +92,9 @@ const claroty = buildDailyCompanyIntelligence({
     watches: ["日本法人・常設拠点","日本専任の営業・技術求人","国内顧客の社名入り事例","国内パートナー","日本語の導入・障害対応","SDR採用後の組織拡張"],
   },
 }, checkedAt);
-claroty.salesFabeOverview.summary = "製造・医療・ビル・公共インフラの運用部門に対し、「止めにくい接続資産を正確に把握できない」「脆弱性と事業影響の優先順位を決められない」「遠隔接続と脅威を一貫して統制できない」という課題を解決する。主力製品は、接続資産の発見・分類から脆弱性、通信、遠隔接続、脅威までを一つのCPS保護基盤で管理する。競合優位性は、独自通信や機器の文脈を、現場を止めにくい受動的な可視化と事業影響の優先付けへつなげる点にある。顧客への一番のメリットは、ITと現場が同じ資産・リスク情報で意思決定し、停止・安全・監査のリスクを優先順位に沿って改善できることにある。";
+if (claroty.salesFabeOverview) {
+  claroty.salesFabeOverview.summary = "製造・医療・ビル・公共インフラの運用部門に対し、「止めにくい接続資産を正確に把握できない」「脆弱性と事業影響の優先順位を決められない」「遠隔接続と脅威を一貫して統制できない」という課題を解決する。主力製品は、接続資産の発見・分類から脆弱性、通信、遠隔接続、脅威までを一つのCPS保護基盤で管理する。競合優位性は、独自通信や機器の文脈を、現場を止めにくい受動的な可視化と事業影響の優先付けへつなげる点にある。顧客への一番のメリットは、ITと現場が同じ資産・リスク情報で意思決定し、停止・安全・監査のリスクを優先順位に沿って改善できることにある。";
+}
 claroty.sources.push(
   { id: "claroty-japan-job", label: "Claroty Sales Development Representative", url: "https://claroty.com/open-positions/AF.A6D", kind: "企業公式", scope: "日本向け求人・役割・働き方", checkedAt },
   { id: "claroty-office-list", label: "Claroty Careers and worldwide offices", url: "https://claroty.com/careers", kind: "企業公式", scope: "APJ本部・世界拠点・日本拠点未掲載", checkedAt },

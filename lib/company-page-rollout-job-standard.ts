@@ -92,6 +92,7 @@ for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
 for (const slug of ["ecovadis", "cic", "ionq"]) batchSlugs.add(slug);
 for (const slug of ["blackpanda", "streamhub", "solace"]) batchSlugs.add(slug);
 for (const slug of ["babel-street", "hudl", "claroty"]) batchSlugs.add(slug);
+for (const slug of ["entrust", "fitch-solutions", "element-biosciences"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -215,6 +216,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  entrust: {
+    name: "Entrust", domain: "Identity Security・PKI・Data Protection Presales", officialUrl: "https://entrust.wd1.myworkdayjobs.com/EntrustCareers/job/Japan---Tokyo/Tech-Sales-Consultant---Data-Protection-Solutions_R004181",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Entrust", communityLabel: "Glassdoor Entrust global review search（日本の対象チームへ一般化しない、2026-10-09確認）",
+    positive: ["1998年設立のエントラストジャパン、東京オフィス、国内顧客事例、日本の技術営業求人を会社公式で確認できる。", "PKI、HSM、暗号鍵、証明書管理、ポスト量子移行を一つの技術営業領域として扱える。"],
+    negative: ["国内の正確な現在人数、日本売上、目標、達成率、担当社数、数値報酬は非公開。", "実証から導入までの責任、担当する製品・顧客・販売パートナーの配分、出張、障害対応を選考で検証する必要がある。"],
+    next: ["Data Security Solutions Architect", "PKI・Cryptography Presales Leadership", "Japan・APAC Identity Security Leadership"],
+  },
+  "fitch-solutions": {
+    name: "Fitch Solutions", domain: "Financial Intelligence・Credit Risk・Customer Success", officialUrl: "https://careers.fitch.group/job/Tokyo-Senior-Customer-Success-Manager-andor-Customer-Success-Manager%2C-Tokyo-Toky/1397082433/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Fitch%20Solutions", communityLabel: "Glassdoor Fitch Solutions global review search（日本の対象チームへ一般化しない、2026-10-09確認）",
+    positive: ["2026年の東京オフィス移転、関連国内法人の事業所被保険者30人、東京の顧客成功求人を確認できる。", "信用、市場、国・業界リスクのデータを、導入、利用、更新、拡大まで顧客の意思決定へ定着させる。"],
+    negative: ["Fitch Solutions単体の国内人数、日本売上、担当契約額、更新率、拡大目標、数値報酬は非公開。", "格付け部門との利益相反管理、製品ごとの責任、営業との更新・拡大評価、担当社数を選考で検証する必要がある。"],
+    next: ["Financial Data Customer Success Leadership", "Credit・Market Intelligence Account Management", "Japan・APAC Client Strategy Leadership"],
+  },
+  "element-biosciences": {
+    name: "Element Biosciences", domain: "Genomics・Multiomics・Japan Country Leadership", officialUrl: "https://job-boards.greenhouse.io/elementbiosciences/jobs/6214062004",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Element%20Biosciences", communityLabel: "Glassdoor Element Biosciences global review search（日本の対象チームへ一般化しない、2026-10-09確認）",
+    positive: ["日本在住必須のCountry Managerが、日本戦略、売上、重点顧客、販売代理店、技術課題を直接持つ強い進出シグナル。", "40超の国への顧客拡大、Series E、AVITIからマルチオミクスへの製品拡張を会社公式で確認できる。"],
+    negative: ["日本法人、常設拠点、雇用主体、国内技術支援、社名入り国内事例、数値報酬は未確認。", "出張最大50%、時間外の顧客支援、装置と消耗品の目標、代理店・本社との権限配分を選考で検証する必要がある。"],
+    next: ["Japan Life Science General Manager", "APJ Genomics Commercial Leadership", "Precision Medicine Business Leadership"],
+  },
   "babel-street": {
     name: "Babel Street", domain: "Risk Intelligence・Identity・Japan Sales Development", officialUrl: "https://job-boards.greenhouse.io/babelstreet/jobs/8239615",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Babel%20Street", communityLabel: "Glassdoor Babel Street global review search（日本の対象チームへ一般化しない、2026-10-08確認）",
@@ -1973,6 +1995,10 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   const role = profileForRole(job, company.domain);
   const researchedAt = ["blackpanda", "streamhub", "solace"].includes(job.companySlug)
     ? "2026-10-07"
+    : ["entrust", "fitch-solutions", "element-biosciences"].includes(job.companySlug)
+    ? "2026-10-09"
+    : ["babel-street", "hudl", "claroty"].includes(job.companySlug)
+    ? "2026-10-08"
     : ["ecovadis", "cic", "ionq"].includes(job.companySlug)
     ? "2026-10-06"
     : ["legora", "rescale"].includes(job.companySlug)

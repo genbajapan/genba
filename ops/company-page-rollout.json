@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 262,
+    "total": 265,
     "byStatus": {
-      "未着手": 120,
+      "未着手": 123,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 56,
       "Active": 38,
-      "Selective": 97,
+      "Selective": 100,
       "求人なし": 71
     },
-    "standardReady": 221
+    "standardReady": 224
   },
   "companies": [
     {
@@ -217,7 +217,7 @@
       "slug": "docusign",
       "company": "DocuSign",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -1281,6 +1281,24 @@
       "missingFields": []
     },
     {
+      "slug": "element-biosciences",
+      "company": "Element Biosciences",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "entrust",
+      "company": "Entrust",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "equativ",
       "company": "Equativ",
       "priority": "Selective",
@@ -1316,6 +1334,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "fitch-solutions",
+      "company": "Fitch Solutions",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

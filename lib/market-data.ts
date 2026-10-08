@@ -73,6 +73,7 @@ import { companies20261005Daily, jobs20261005Daily } from "@/lib/company-additio
 import { companies20261006Daily, jobs20261006Daily } from "@/lib/company-additions-2026-10-06-daily";
 import { companies20261007Daily, jobs20261007Daily } from "@/lib/company-additions-2026-10-07-daily";
 import { companies20261008Daily, jobs20261008Daily } from "@/lib/company-additions-2026-10-08-daily";
+import { companies20261009Daily, jobs20261009Daily } from "@/lib/company-additions-2026-10-09-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1020,6 +1021,7 @@ const companyRecords: Company[] = [
   ...companies20261006Daily,
   ...companies20261007Daily,
   ...companies20261008Daily,
+  ...companies20261009Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1466,6 +1468,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261009Daily,
   ...jobs20261008Daily,
   ...jobs20261006Daily,
   ...jobs20261007Daily,
@@ -3125,6 +3128,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "docusign-partner-account-manager-salesforce-japan",
   "veeam-solution-architect-professional-services-tokyo-99420332992",
   "hightouch-enterprise-account-executive-apac-japan-current",
   "saviynt-associate-principal-training-engineer-japan-current",
@@ -3276,7 +3280,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-08" ? job.lastChecked : "2026-10-08",
+      lastChecked: job.lastChecked > "2026-10-09" ? job.lastChecked : "2026-10-09",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3327,7 +3331,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-08" ? company.lastChecked : "2026-10-08";
+  const auditedLastChecked = company.lastChecked > "2026-10-09" ? company.lastChecked : "2026-10-09";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
