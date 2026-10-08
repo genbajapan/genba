@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-07 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-09 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全259社（未着手 117 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全262社（未着手 120 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -113,6 +113,7 @@
 |Selective|Armis|1|未着手|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
 |Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|
+|Selective|Babel Street|1|未着手|はい|なし|
 |Selective|Back Market|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、ヒーロー説明:解決と事業成果、外貨の円換算:marketStatus.growthSummary=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。,marketStatus.genbaVerdict.body=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。 一方、日本の顧客基盤、ramped sellerの達成率、案件単価は非公開であり、求人の勢いとterritoryの実現可能性を分けて判断する必要がある。,facts[3].value=30億ユーロ|
 |Selective|Behavox|1|公開済み|はい|なし|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
@@ -124,6 +125,7 @@
 |Selective|Chalk|1|未着手|はい|なし|
 |Selective|CircleCI|1|未着手|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
+|Selective|Claroty|1|未着手|はい|なし|
 |Selective|CodeRabbit|1|公開済み|はい|なし|
 |Selective|Cohesity|1|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |Selective|Cribl|1|公開済み|はい|なし|
@@ -141,6 +143,7 @@
 |Selective|Hiya|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Hoxhunt|1|未着手|いいえ|求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記|
+|Selective|Hudl|1|未着手|はい|なし|
 |Selective|Illumio|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Enterprise Sales Executive:勤務地・言語の日本語表記、求人:Enterprise Sales Executive:職種別の報酬調査、求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判ほか1件|
 |Selective|IonQ|1|未着手|はい|なし|
 |Selective|Keeper Security|1|未着手|はい|なし|
@@ -187,7 +190,6 @@
 |Selective|Tricentis|1|未着手|はい|なし|
 |Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Vectra AI|1|未着手|はい|なし|
-|Selective|Veeam|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Solution Architect (Professional Services):勤務地・言語の日本語表記ほか3件|
 |Selective|Via|1|未着手|はい|なし|
 |Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
@@ -260,6 +262,7 @@
 |求人なし|Temporal|0|未着手|はい|なし|
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
+|求人なし|Veeam|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Vercel|0|公開済み|はい|なし|
 |求人なし|Wasabi Technologies|0|公開済み|はい|なし|
 |求人なし|WatchGuard Technologies|0|公開済み|はい|なし|

@@ -91,6 +91,7 @@ for (const slug of ["skydio", "alarm-com"]) batchSlugs.add(slug);
 for (const slug of ["legora", "rescale"]) batchSlugs.add(slug);
 for (const slug of ["ecovadis", "cic", "ionq"]) batchSlugs.add(slug);
 for (const slug of ["blackpanda", "streamhub", "solace"]) batchSlugs.add(slug);
+for (const slug of ["babel-street", "hudl", "claroty"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -214,6 +215,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  "babel-street": {
+    name: "Babel Street", domain: "Risk Intelligence・Identity・Japan Sales Development", officialUrl: "https://job-boards.greenhouse.io/babelstreet/jobs/8239615",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Babel%20Street", communityLabel: "Glassdoor Babel Street global review search（日本の対象チームへ一般化しない、2026-10-08確認）",
+    positive: ["会社公式が日本での事業拠点を明記し、日本を勤務地とする営業開拓求人と野村総合研究所の国内事例を確認できる。", "多言語の本人照合、公開情報調査、取引先・脅威リスクを、根拠と出典を保った意思決定へつなぐ。"],
+    negative: ["日本法人名、所在地、国内の正確な人数、売上、顧客数は非公開。", "目標、達成率、基本給・変動給の内訳、担当市場配分、行政・規制産業の販売期間を選考で検証する必要がある。"],
+    next: ["Japan Account Executive", "APAC Risk Intelligence Sales", "Identity・OSINT Business Development"],
+  },
+  hudl: {
+    name: "Hudl", domain: "Sports Technology・Video Analytics・Japan Sales", officialUrl: "https://job-boards.greenhouse.io/hudl/jobs/8108360",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Hudl", communityLabel: "Glassdoor Hudl global review search（日本の対象チームへ一般化しない、2026-10-08確認）",
+    positive: ["Hudl Japan K.K.、渋谷オフィス、日本地域責任者、Jリーグとの複数年提携、東京の営業求人を会社公式で確認できる。", "撮影、映像分析、選手データ、スカウティングを競技現場の一つの流れへ統合する。"],
+    negative: ["国内の正確な人数、売上、目標、達成率、担当チーム数、株式条件は非公開。", "競技日程に伴う顧客訪問、出張、時間外対応と、新規・既存の売上配分を選考で検証する必要がある。"],
+    next: ["Japan Sports Technology Sales Leadership", "APAC Professional Sports Sales", "Sports Data・Video Partnerships"],
+  },
+  claroty: {
+    name: "Claroty", domain: "Cyber-Physical Security・OT・Japan Sales Development", officialUrl: "https://claroty.com/open-positions/AF.A6D",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Claroty", communityLabel: "Glassdoor Claroty global review search（日本の対象チームへ一般化しない、2026-10-08確認）",
+    positive: ["日本語を母語水準で求める日本向けリモートSDR求人を確認し、OT・医療・建物・公共部門のCPS保護という明確な専門領域を持つ。", "1,300社超、22,000超拠点、60超の国という会社公式の導入規模と、2026年Series F 1.5億ドルを確認できる。"],
+    negative: ["日本法人、常設拠点、国内技術支援、社名入り国内事例、日本の数値報酬は未確認。", "雇用主体、日本と他APJ市場の担当比率、営業への引継ぎ、目標・達成率、顧客訪問を選考で検証する必要がある。"],
+    next: ["Japan Cybersecurity Account Executive", "APJ Sales Development Leadership", "OT・IoMT Security Business Development"],
+  },
   blackpanda: {
     name: "Blackpanda", domain: "Cyber Incident Response・DFIR・Partner Sales", officialUrl: "https://blackpanda.bamboohr.com/careers",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Blackpanda", communityLabel: "Glassdoor Blackpanda global review search（日本の対象チームへ一般化しない、2026-10-07確認）",

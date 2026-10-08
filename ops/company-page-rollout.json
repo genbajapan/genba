@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-07",
+  "auditedAt": "2026-10-09",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 259,
+    "total": 262,
     "byStatus": {
-      "未着手": 117,
+      "未着手": 120,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 56,
       "Active": 38,
-      "Selective": 95,
-      "求人なし": 70
+      "Selective": 97,
+      "求人なし": 71
     },
-    "standardReady": 218
+    "standardReady": 221
   },
   "companies": [
     {
@@ -1065,6 +1065,15 @@
       ]
     },
     {
+      "slug": "babel-street",
+      "company": "Babel Street",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "back-market",
       "company": "Back Market",
       "priority": "Selective",
@@ -1171,6 +1180,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "claroty",
+      "company": "Claroty",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1354,6 +1372,15 @@
       "missingFields": [
         "求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記"
       ]
+    },
+    {
+      "slug": "hudl",
+      "company": "Hudl",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "illumio",
@@ -1820,23 +1847,6 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
-    },
-    {
-      "slug": "veeam",
-      "company": "Veeam",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本法人での想定従業員数:gBizINFO監査ステータス",
-        "日本法人での想定従業員数:gBizINFO出典",
-        "日本法人での想定従業員数:定義・対象範囲",
-        "求人:Solution Architect (Professional Services):勤務地・言語の日本語表記",
-        "求人:Solution Architect (Professional Services):職種別の報酬調査",
-        "求人:Solution Architect (Professional Services):ポジティブ・ネガティブ評判",
-        "求人:Solution Architect (Professional Services):市場価値"
-      ]
     },
     {
       "slug": "via",
@@ -2504,6 +2514,19 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "veeam",
+      "company": "Veeam",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "vercel",

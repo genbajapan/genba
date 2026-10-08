@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  "babel-street": {
+    officialWebsite: { url: "https://www.babelstreet.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/babel-street/"),
+  },
+  hudl: {
+    officialWebsite: { url: "https://jp.hudl.com/ja/", locale: "ja" },
+    globalScaleFallback: { value: "2,000人", detail: "2026年10月8日時点の日本語公式サイト表示。", sourceUrl: "https://jp.hudl.com/ja/", sourceLabel: "Hudl日本語公式サイト" },
+  },
+  claroty: {
+    officialWebsite: { url: "https://ja.claroty.com/", locale: "ja" },
+    globalScaleFallback: { value: "700人超", detail: "2025年11月の会社公式発表。現在値は変動している可能性がある。", sourceUrl: "https://claroty.com/press-releases/claroty-names-dave-dewalt-as-board-chairman", sourceLabel: "Claroty会社発表" },
+  },
   "cirrus-data": {
     officialWebsite: { url: "https://cirrusdata.com/", locale: "global" },
     globalScaleFallback: linkedInScale("11〜50人規模", "https://www.linkedin.com/company/cirrusdata/"),
