@@ -67,6 +67,8 @@ import { daily20261006IntelligenceBySlug } from "@/lib/company-public-intelligen
 import { daily20261007IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-10-07";
 import { applyDaily20261008Closures, daily20261008IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-10-08";
 import { applyDaily20261009Closures, daily20261009IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-10-09";
+import { applyDaily20261010Closures, daily20261010IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-10-10";
+import { applyDaily20261011Closures, daily20261011IntelligenceBySlug } from "@/lib/company-public-intelligence-daily-2026-10-11";
 import { magnetForensicsIntelligence20261004 } from "@/lib/company-public-intelligence-2026-10-04-magnet";
 import { addYenConversionsDeep } from "@/lib/currency-display";
 import { applyCompanyPageRolloutBatchOne } from "@/lib/company-page-rollout-batch-01";
@@ -9726,6 +9728,8 @@ const intelligenceBySlug: Record<string, CompanyPublicIntelligence> = {
   ...daily20261007IntelligenceBySlug,
   ...daily20261008IntelligenceBySlug,
   ...daily20261009IntelligenceBySlug,
+  ...daily20261010IntelligenceBySlug,
+  ...daily20261011IntelligenceBySlug,
 };
 
 applyCompanyPageRolloutBatchOne(intelligenceBySlug);
@@ -9775,6 +9779,8 @@ applyDaily20261002Closures(intelligenceBySlug);
 applyDaily20261003Closures(intelligenceBySlug);
 applyDaily20261008Closures(intelligenceBySlug);
 applyDaily20261009Closures(intelligenceBySlug);
+applyDaily20261010Closures(intelligenceBySlug);
+applyDaily20261011Closures(intelligenceBySlug);
 applyPreEntrySignalAudit(intelligenceBySlug);
 applyJapanInsuredHeadcountAudit(intelligenceBySlug);
 applyCompanyBasicInformationAudit20260825(intelligenceBySlug);

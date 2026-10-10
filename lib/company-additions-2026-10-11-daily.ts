@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-10-11";
+
+export const companies20261011Daily: Company[] = [
+  {
+    slug: "exotec",
+    name: "Exotec",
+    category: "倉庫自動化・物流ロボティクス",
+    broadCategory: "コマース・業界特化",
+    hq: "クロワ（フランス）",
+    japanPresence: "Exotec Nihon株式会社、東京オフィス・新木場デモセンター、国内導入事例を確認。東京の公式求人1件を確認",
+    hiringStatus: "採用中",
+    salesRoles: 1,
+    description: "倉庫内を三次元に走るSkypodロボット、保管設備、作業ステーション、倉庫実行ソフトウェアを一体提供。日本営業責任者を募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://careers.exotec.com/",
+    tags: ["Warehouse Automation", "Robotics", "Supply Chain", "Enterprise Sales", "Tokyo"],
+  },
+  {
+    slug: "navex",
+    name: "NAVEX",
+    category: "ガバナンス・リスク・コンプライアンス",
+    broadCategory: "セキュリティ・IT運用",
+    hq: "オレゴン州レイクオスウィーゴ（米国）",
+    japanPresence: "日本語公式サイト、東京オフィス、国内顧客事例、東京のAccount DirectorとCustomer Interface Specialist求人を確認。日本法人名とオフィス住所は未確認",
+    hiringStatus: "採用中",
+    salesRoles: 2,
+    description: "内部通報、ポリシー、研修、第三者リスク、規制変更をNAVEX Oneで統合。日本の営業と導入を現地採用する段階。",
+    lastChecked: checkedAt,
+    careersUrl: "https://www.navex.com/ja-jp/company/careers/job-openings/",
+    tags: ["GRC", "Compliance", "Whistleblowing", "Third-Party Risk", "Tokyo"],
+  },
+  {
+    slug: "matter-intelligence",
+    name: "Matter Intelligence",
+    category: "超多波長センシング・物理世界AI",
+    broadCategory: "AI・データ基盤",
+    hq: "カリフォルニア州サンフランシスコ／エルセグンド（米国）",
+    japanPresence: "日本法人・国内拠点・日本在住求人は未確認。日本と韓国を初期重点市場に含む米国勤務のアジア事業開発求人を確認",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    description: "物質の化学組成・温度・形状を捉える超多波長センサーと物理世界モデルを開発。日本の政府・宇宙・防衛市場を調べる段階。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/matter-intelligence",
+    tags: ["日本進出兆候", "Ultraspectral", "Remote Sensing", "Physical AI", "Sovereign"],
+    entryStatus: "pre-entry-signal",
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、顧客の外部環境と現場課題を、製品・運用・社内体制を含む成果へ変えたい人に向く。`,
+      thingsToKnow: "目標、達成率、担当範囲、国内支援体制、評価・昇進、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を商談、導入、利用、運営、顧客KPIで定量化できれば、隣接する海外テクノロジー企業へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客・組織成果、再利用できる実行の型が次の役割の土台になる。",
+      priorCompanies: "企業向け営業、技術導入、規制対応、産業システム、複数関係者を動かす顧客支援の経験が隣接する。",
+      nextCompanies: "担当市場と成果を数字で残せれば、国責任者、専門領域の事業開発、顧客組織、技術・導入責任者へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20261011Daily: Job[] = [
+  makeJob({
+    id: "exotec-vp-sales-japan-509be5c3e9",
+    companySlug: "exotec",
+    title: "VP Sales Japan",
+    segment: "Japan Warehouse Automation Sales Leadership",
+    location: "東京都",
+    workStyle: "ハイブリッド",
+    language: "日本語は母語または同等、英語での業務連携が必要",
+    source: { label: "Exotec Careers", url: "https://careers.exotec.com/_/j/509BE5C3E9/apply" },
+    descriptionSummary: "日本の物流、倉庫、小売、ECで戦略案件を開拓し、経営層・インテグレーター・社内の設計、導入、顧客支援を束ねて受注まで担う。",
+    genbaTake: "ロボット台数を売るのではなく、人手不足、保管密度、処理能力、停止リスクを、長期運用できる倉庫全体の投資計画へ変える日本営業責任者。",
+    desiredProfile: "倉庫自動化、イントラロジスティクス、ロボティクス、搬送設備等の営業責任10年以上、日本での大型案件と経営層・販売パートナー開拓が重視される。",
+    compensationReality: "日本の基本給、変動給、目標、達成率、株式、チーム人数は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "navex-account-director-japan-2517",
+    companySlug: "navex",
+    title: "Account Director",
+    segment: "Japan Enterprise GRC Sales",
+    location: "東京都",
+    workStyle: "当初は出社。チーム構築後にハイブリッド移行予定",
+    language: "日本語・英語ともに業務水準",
+    source: { label: "NAVEX Careers (Dayforce)", url: "https://jobs.dayforcehcm.com/en-US/navex/JobOpenings/jobs/2517/apply" },
+    descriptionSummary: "日本の大企業へGRC基盤を新規開拓し、既存顧客の拡張、実演、提案、交渉、受注、導入連携まで一貫して担う。",
+    genbaTake: "ソフトウェア機能の販売ではなく、内部通報、第三者リスク、研修、規制対応を分断した運用から経営が把握できる統制へ変える営業。",
+    desiredProfile: "大企業向けB2B営業8年以上、企業向けSaaS、価値提案、日本の商習慣、経営層への提案、日本語・英語が重視される。",
+    compensationReality: "日本の基本給、変動給、目標、達成率、株式は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "navex-customer-interface-specialist-japan-5750",
+    companySlug: "navex",
+    title: "Customer Interface Specialist - Japan",
+    segment: "Japan GRC Implementation",
+    location: "東京都",
+    workStyle: "勤務形態と固定出社日数は公式求人で確認できない",
+    language: "日本の顧客とグローバル組織へ対応する日本語・英語が必要",
+    source: { label: "NAVEX Careers (Dayforce)", url: "https://jobs.dayforcehcm.com/en-US/navex/JobOpenings/jobs/5750/apply" },
+    descriptionSummary: "日本顧客の要件、設定、進行、関係者調整をまとめ、GRC製品の導入と利用開始を支える。",
+    genbaTake: "日程管理で終わらず、通報・調査・統制の機密性と日本固有の運用を、世界共通製品で実行できる状態へ変える導入職。",
+    desiredProfile: "導入、プロジェクト管理、顧客支援、企業向けソフトウェアの設定、日英の説明と調整の経験が隣接する。",
+    compensationReality: "日本の給与、賞与、担当案件数、稼働率、評価指標は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "matter-intelligence-head-sovereign-partnerships-d1151da3",
+    companySlug: "matter-intelligence",
+    title: "Head of Sovereign Partnerships",
+    segment: "Indo-Pacific Government Business Development",
+    location: "米国サンフランシスコ",
+    workStyle: "出社。日本国内勤務の求人ではなく、地域内の出張が多い",
+    language: "英語が必須。日本語または韓国語の業務運用は歓迎要件",
+    source: { label: "Matter Intelligence Careers (Ashby)", url: "https://jobs.ashbyhq.com/matter-intelligence/d1151da3-8eda-4b0f-9102-51211f4f5409" },
+    descriptionSummary: "日本・韓国を初期重点市場に、政府・防衛・宇宙・インフラの市場参入、顧客発掘、提携、提案、調達、契約を米国から担う。",
+    genbaTake: "海外営業ではなく、輸出管理、データ主権、国内調達、実証の成立条件を整理し、日本へ拠点や人員を置くべきかまで判断材料を作る役割。",
+    desiredProfile: "インド太平洋の政府・防衛・宇宙分野で8〜12年以上、複雑な調達・提携・提案・契約を主導し、技術要件を事業機会へ変えた経験が重視される。",
+    compensationReality: "給与レンジ、変動給、株式の具体額、出張頻度、日本進出後の勤務条件は公式求人で確認できない。",
+  }),
+];

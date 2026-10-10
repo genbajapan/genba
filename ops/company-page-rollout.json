@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-09",
+  "auditedAt": "2026-10-11",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 265,
+    "total": 271,
     "byStatus": {
-      "未着手": 123,
+      "未着手": 129,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 56,
-      "Active": 38,
-      "Selective": 100,
+      "HOT": 58,
+      "Active": 37,
+      "Selective": 105,
       "求人なし": 71
     },
-    "standardReady": 224
+    "standardReady": 230
   },
   "companies": [
     {
@@ -522,6 +522,15 @@
       "missingFields": []
     },
     {
+      "slug": "tulip-interfaces",
+      "company": "Tulip Interfaces",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "uipath",
       "company": "UiPath",
       "priority": "HOT",
@@ -545,6 +554,15 @@
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "whatnot",
+      "company": "Whatnot",
+      "priority": "HOT",
+      "salesRoles": 9,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -614,15 +632,6 @@
         "求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source",
         "求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme"
       ]
-    },
-    {
-      "slug": "canva",
-      "company": "Canva",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
     },
     {
       "slug": "dataiku",
@@ -761,6 +770,15 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "navex",
+      "company": "NAVEX",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -916,15 +934,6 @@
     {
       "slug": "zendesk",
       "company": "Zendesk",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "zilliz",
-      "company": "Zilliz",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -1139,6 +1148,15 @@
       "missingFields": []
     },
     {
+      "slug": "canva",
+      "company": "Canva",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "catapult-sports",
       "company": "Catapult Sports",
       "priority": "Selective",
@@ -1309,6 +1327,15 @@
         "求人:Publisher Key Account Manager, Japan:海外を含む外部評判source",
         "求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme"
       ]
+    },
+    {
+      "slug": "exotec",
+      "company": "Exotec",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "extreme-networks",
@@ -1493,6 +1520,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "matter-intelligence",
+      "company": "Matter Intelligence",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1740,6 +1776,15 @@
       "missingFields": []
     },
     {
+      "slug": "solve-intelligence",
+      "company": "Solve Intelligence",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "sonar",
       "company": "Sonar",
       "priority": "Selective",
@@ -1932,6 +1977,15 @@
     {
       "slug": "zadara",
       "company": "Zadara",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "zilliz",
+      "company": "Zilliz",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",

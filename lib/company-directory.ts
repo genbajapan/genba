@@ -21,6 +21,30 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  exotec: {
+    officialWebsite: { url: "https://www.exotec.com/ja/", locale: "ja" },
+    globalScaleFallback: { value: "900人超", detail: "2026年10月11日時点の会社公式Careers表示。", sourceUrl: "https://www.exotec.com/ja/careers/", sourceLabel: "Exotec Careers" },
+  },
+  navex: {
+    officialWebsite: { url: "https://www.navex.com/ja-jp/", locale: "ja" },
+    globalScaleFallback: { value: "1,300人超", detail: "2026年10月11日時点の会社公式Careers表示。", sourceUrl: "https://www.navex.com/ja-jp/company/careers/", sourceLabel: "NAVEX Careers" },
+  },
+  "matter-intelligence": {
+    officialWebsite: { url: "https://www.matter.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/matter-intelligence/"),
+  },
+  "tulip-interfaces": {
+    officialWebsite: { url: "https://tulip.co/", locale: "global" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/tulip-interfaces/"),
+  },
+  whatnot: {
+    officialWebsite: { url: "https://www.whatnot.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/whatnot-inc/"),
+  },
+  "solve-intelligence": {
+    officialWebsite: { url: "https://www.solveintelligence.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/solve-intelligence/"),
+  },
   entrust: {
     officialWebsite: { url: "https://www.entrust.com/ja/", locale: "ja" },
     globalScaleFallback: { value: "2,500人超", detail: "会社公式資料の公開値。現在値は変動している可能性がある。", sourceUrl: "https://www.entrust.com/sites/default/files/documentation/casestudies/dps-emea-3key-qscd-remote-signing-cs.pdf", sourceLabel: "Entrust会社公式資料" },

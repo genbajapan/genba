@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-09 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-11 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全265社（未着手 123 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全271社（未着手 129 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -58,16 +58,17 @@
 |HOT|Similarweb|4|公開済み|はい|なし|
 |HOT|Sprinklr|3|未着手|はい|なし|
 |HOT|SUSE|4|未着手|はい|なし|
+|HOT|Tulip Interfaces|4|未着手|はい|なし|
 |HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
 |HOT|WalkMe|4|公開済み|はい|なし|
+|HOT|Whatnot|9|未着手|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
 |Active|3E|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Executive:職種別の報酬調査、求人:Business Development Executive:ポジティブ・ネガティブ評判、求人:Business Development Executive:市場価値ほか3件|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
-|Active|Canva|2|未着手|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
 |Active|Dragos|2|公開済み|はい|なし|
@@ -83,6 +84,7 @@
 |Active|Meltwater|2|未着手|はい|なし|
 |Active|Menlo Security|2|未着手|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
+|Active|NAVEX|2|未着手|はい|なし|
 |Active|Neural Concept|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
 |Active|NiCE|2|公開済み|はい|なし|
@@ -99,7 +101,6 @@
 |Active|Twilio|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
 |Active|Zendesk|2|公開済み|はい|なし|
-|Active|Zilliz|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
 |Selective|Acronis|1|未着手|はい|なし|
@@ -120,6 +121,7 @@
 |Selective|Bounce|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Box|1|未着手|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
+|Selective|Canva|1|未着手|はい|なし|
 |Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Chalk|1|未着手|はい|なし|
@@ -137,6 +139,7 @@
 |Selective|Element Biosciences|1|未着手|はい|なし|
 |Selective|Entrust|1|未着手|はい|なし|
 |Selective|Equativ|1|未着手|いいえ|求人:Publisher Key Account Manager, Japan:海外を含む外部評判source、求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme|
+|Selective|Exotec|1|未着手|はい|なし|
 |Selective|Extreme Networks|1|公開済み|はい|なし|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
@@ -156,6 +159,7 @@
 |Selective|Lighthouse|1|公開済み|はい|なし|
 |Selective|Magnet Forensics|1|未着手|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
+|Selective|Matter Intelligence|1|未着手|はい|なし|
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
 |Selective|Minitab|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Executive:職種別の報酬調査、求人:Account Executive:ポジティブ・ネガティブ評判、求人:Account Executive:市場価値|
@@ -180,6 +184,7 @@
 |Selective|Sitecore|1|未着手|はい|なし|
 |Selective|Skydio|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス|
 |Selective|Solace|1|未着手|はい|なし|
+|Selective|Solve Intelligence|1|未着手|はい|なし|
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Sonatype|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか5件|
 |Selective|Sparta|1|未着手|はい|なし|
@@ -200,6 +205,7 @@
 |Selective|Workato|1|公開済み|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
+|Selective|Zilliz|1|公開済み|はい|なし|
 |求人なし|1Password|0|公開済み|はい|なし|
 |求人なし|6sense|0|公開済み|はい|なし|
 |求人なし|Addepar|0|公開済み|はい|なし|

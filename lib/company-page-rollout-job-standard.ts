@@ -93,6 +93,8 @@ for (const slug of ["ecovadis", "cic", "ionq"]) batchSlugs.add(slug);
 for (const slug of ["blackpanda", "streamhub", "solace"]) batchSlugs.add(slug);
 for (const slug of ["babel-street", "hudl", "claroty"]) batchSlugs.add(slug);
 for (const slug of ["entrust", "fitch-solutions", "element-biosciences"]) batchSlugs.add(slug);
+for (const slug of ["tulip-interfaces", "whatnot", "solve-intelligence"]) batchSlugs.add(slug);
+for (const slug of ["exotec", "navex", "matter-intelligence"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -100,6 +102,11 @@ const officialCompensation: Record<string, {
   summary: string;
   breakdown: Array<{ label: string; value: string; status: string; detail: string }>;
 }> = {
+  "whatnot-staff-software-engineer-japan-6054df86": {
+    headline: "公式求人に基本給年1,900万〜2,600万円と株式を掲載",
+    summary: "基本給レンジと株式の存在は確認できるが、別の表示額も混在するため、適用範囲、賞与、株式数、権利確定条件は選考で確認する。",
+    breakdown: [{ label: "基本給", value: "1,900万〜2,600万円", status: "公式掲載", detail: "日本勤務の年額レンジ。株式あり。" }],
+  },
   "securityscorecard-country-manager-japan-8167848": {
     headline: "公式求人に総報酬年23万〜27.5万米ドルを掲載",
     summary: "基本給と賞与を含む総報酬レンジと株式対象の可能性は確認できるが、基本給・変動給の内訳、目標額、達成率、株式数は公開されていない。",
@@ -216,6 +223,48 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  exotec: {
+    name: "Exotec", domain: "倉庫自動化・物流ロボティクス・日本営業", officialUrl: "https://careers.exotec.com/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Exotec", communityLabel: "Glassdoor Exotec global review search（日本の対象チームへ一般化しない、2026-10-11確認）",
+    positive: ["日本法人、東京オフィス、新木場デモセンター、日本通運などの国内導入、東京の営業責任者求人を確認できる。", "ロボット、倉庫設備、ソフトウェア、24時間監視をまとめ、受注後の長期運用まで価値に含める。"],
+    negative: ["国内の正確な在籍人数、日本売上、営業チーム規模、給与・変動給・目標達成率は非公開。", "大型案件の期間、インテグレーターとの責任、受注後の導入・障害責任、出張頻度を選考で検証する必要がある。"],
+    next: ["Japan Warehouse Automation Leadership", "APAC Logistics Technology", "Industrial Robotics Commercial Leadership"],
+  },
+  navex: {
+    name: "NAVEX", domain: "GRC・内部通報・日本市場", officialUrl: "https://www.navex.com/ja-jp/company/careers/job-openings/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=NAVEX", communityLabel: "Glassdoor NAVEX global review search（日本の対象チームへ一般化しない、2026-10-11確認）",
+    positive: ["日本語公式サイト、東京オフィス、日立の国内顧客事例、東京の営業・導入求人2件を確認できる。", "内部通報から第三者・規制・研修までを統合し、法務、人事、監査、セキュリティを横断する。"],
+    negative: ["国内法人名、オフィス住所、在籍人数、日本売上、給与・変動給・担当規模は非公開。", "営業と導入の支援体制、機密情報の権限、担当社数・案件数、障害・緊急対応を選考で検証する必要がある。"],
+    next: ["Japan GRC Leadership", "Compliance Technology Consulting", "Enterprise Risk Platform Leadership"],
+  },
+  "matter-intelligence": {
+    name: "Matter Intelligence", domain: "超多波長センシング・地理空間AI・日本市場", officialUrl: "https://jobs.ashbyhq.com/matter-intelligence",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Matter%20Intelligence", communityLabel: "Glassdoor Matter Intelligence search（日本市場担当へ一般化しない、2026-10-11確認）",
+    positive: ["日本・韓国を初期重点市場とし、政府・宇宙・防衛の市場参入、提携、調達、実証を担う米国勤務求人を確認できる。", "2,000帯域のセンサー、エッジ計算、物理世界モデルをセンサー層から統合する。"],
+    negative: ["日本法人、国内拠点、日本在住人員、国内顧客、有償実証、日本語の契約・支援は未確認。", "輸出管理、データ主権、政府調達、技術移転、国内パートナー、長い予算サイクルが進出の障壁になる。"],
+    next: ["Japan Sovereign Technology Leadership", "Geospatial AI Business Development", "Aerospace・Government Partnerships"],
+  },
+  "tulip-interfaces": {
+    name: "Tulip Interfaces", domain: "Manufacturing・Composable MES・Japan Market", officialUrl: "https://tulip.co/careers/",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Tulip%20Interfaces", communityLabel: "Glassdoor Tulip Interfaces global review search（日本の対象チームへ一般化しない、2026-10-10確認）",
+    positive: ["2026年リモート・2027年オフィス予定と日本求人4件を確認し、営業・導入・支援・基盤の現地化を同時に進めている。", "製造現場の作業、機器、データ、品質を、現場主導のアプリと世界共通基盤の両方で扱える。"],
+    negative: ["国内雇用主体、現在の拠点の実態、在籍人数、日本売上、報酬は非公開。", "2027年以降の出社条件、営業の目標・達成率、導入の同時案件数、支援の待機、基盤のオンコールを選考で検証する必要がある。"],
+    next: ["Manufacturing Software Leadership", "Japan・APAC Industrial Technology", "Composable MES Product・Customer Leadership"],
+  },
+  whatnot: {
+    name: "Whatnot", domain: "Live Commerce・Marketplace・Japan Launch", officialUrl: "https://jobs.ashbyhq.com/whatnot",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Whatnot", communityLabel: "Glassdoor Whatnot global review search（日本の対象チームへ一般化しない、2026-10-10確認）",
+    positive: ["Whatnot Japan合同会社、渋谷拠点、限定パイロット、東京の公式求人9件を確認できる。", "日本立ち上げで技術、出品者供給、運営、顧客支援、信頼リスクをまとめて作る段階。"],
+    negative: ["国内の正確な在籍人数、取扱高、出品者数、購入者数、給与の多くは非公開。", "国内配送、不正・紛争対応、シフト・休日、職種間の責任境界、日本市場の優先度を選考で検証する必要がある。"],
+    next: ["Japan Marketplace Leadership", "Creator・Seller Growth", "Trust・Commerce Operations Leadership"],
+  },
+  "solve-intelligence": {
+    name: "Solve Intelligence", domain: "Patent AI・Legal Product・Japan Market", officialUrl: "https://jobs.ashbyhq.com/solveintelligence/693f3600-2df6-4e9d-87b3-7a84b6919dab",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Solve%20Intelligence", communityLabel: "Glassdoor Solve Intelligence global review search（日本市場担当へ一般化しない、2026-10-10確認）",
+    positive: ["日本の特許事務所・企業知財部門への実演、導入、日本特許庁実務の品質評価を担う海外拠点求人を確認できる。", "700超の知財組織、6大陸、平均50%超の工数削減と専門製品の実績を会社公式が公開している。"],
+    negative: ["日本法人、国内拠点、日本在住求人、国内雇用主体、日本語導入体制は未確認。", "日本顧客の有償継続利用、データ処理地域、JPO実務の精度、出張頻度、国内展開への権限を選考で検証する必要がある。"],
+    next: ["Japan Legal Technology Leadership", "Patent AI Product Leadership", "Global IP Transformation"],
+  },
   entrust: {
     name: "Entrust", domain: "Identity Security・PKI・Data Protection Presales", officialUrl: "https://entrust.wd1.myworkdayjobs.com/EntrustCareers/job/Japan---Tokyo/Tech-Sales-Consultant---Data-Protection-Solutions_R004181",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Entrust", communityLabel: "Glassdoor Entrust global review search（日本の対象チームへ一般化しない、2026-10-09確認）",
@@ -1993,7 +2042,11 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["blackpanda", "streamhub", "solace"].includes(job.companySlug)
+  const researchedAt = ["exotec", "navex", "matter-intelligence"].includes(job.companySlug)
+    ? "2026-10-11"
+    : ["tulip-interfaces", "whatnot", "solve-intelligence"].includes(job.companySlug)
+    ? "2026-10-10"
+    : ["blackpanda", "streamhub", "solace"].includes(job.companySlug)
     ? "2026-10-07"
     : ["entrust", "fitch-solutions", "element-biosciences"].includes(job.companySlug)
     ? "2026-10-09"
