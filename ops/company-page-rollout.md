@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-11 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-13 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全271社（未着手 129 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全274社（未着手 132 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -55,6 +55,7 @@
 |HOT|Rubrik|3|公開済み|はい|なし|
 |HOT|SailPoint|4|公開済み|はい|なし|
 |HOT|Sensor Tower|5|公開済み|はい|なし|
+|HOT|Shield AI|4|未着手|はい|なし|
 |HOT|Similarweb|4|公開済み|はい|なし|
 |HOT|Sprinklr|3|未着手|はい|なし|
 |HOT|SUSE|4|未着手|はい|なし|
@@ -146,6 +147,7 @@
 |Selective|Fitch Solutions|1|未着手|はい|なし|
 |Selective|Gainsight|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Enterprise Account Executive:職種別の報酬調査、求人:Enterprise Account Executive:ポジティブ・ネガティブ評判、求人:Enterprise Account Executive:市場価値|
 |Selective|Genspark|1|未着手|はい|なし|
+|Selective|Guidewire|1|未着手|はい|なし|
 |Selective|Hiya|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Horizon3|1|未着手|はい|なし|
 |Selective|Hoxhunt|1|未着手|いいえ|求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記|
@@ -277,5 +279,6 @@
 |求人なし|WatchGuard Technologies|0|公開済み|はい|なし|
 |求人なし|Webflow|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
+|求人なし|XBOW|0|未着手|はい|なし|
 
 進捗状態と公開ゲートは `ops/company-page-standard.md` を正本とする。詳細な不足項目は `ops/company-page-rollout.json` を参照。

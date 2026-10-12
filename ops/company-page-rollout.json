@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-11",
+  "auditedAt": "2026-10-13",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 271,
+    "total": 274,
     "byStatus": {
-      "未着手": 129,
+      "未着手": 132,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 58,
+      "HOT": 59,
       "Active": 37,
-      "Selective": 105,
-      "求人なし": 71
+      "Selective": 106,
+      "求人なし": 72
     },
-    "standardReady": 230
+    "standardReady": 233
   },
   "companies": [
     {
@@ -491,6 +491,15 @@
       "priority": "HOT",
       "salesRoles": 5,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "shield-ai",
+      "company": "Shield AI",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1390,6 +1399,15 @@
     {
       "slug": "genspark",
       "company": "Genspark",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "guidewire",
+      "company": "Guidewire",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
@@ -2651,6 +2669,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "xbow",
+      "company": "XBOW",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     }

@@ -95,6 +95,7 @@ for (const slug of ["babel-street", "hudl", "claroty"]) batchSlugs.add(slug);
 for (const slug of ["entrust", "fitch-solutions", "element-biosciences"]) batchSlugs.add(slug);
 for (const slug of ["tulip-interfaces", "whatnot", "solve-intelligence"]) batchSlugs.add(slug);
 for (const slug of ["exotec", "navex", "matter-intelligence"]) batchSlugs.add(slug);
+for (const slug of ["guidewire", "shield-ai", "xbow"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -223,6 +224,27 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  guidewire: {
+    name: "Guidewire", domain: "損害保険基幹クラウド・ソリューション提案・日本市場", officialUrl: "https://guidewire.wd5.myworkdayjobs.com/en-US/external",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Guidewire", communityLabel: "Glassdoor Guidewire global review search（日本の対象チームへ一般化しない、2026-10-12確認）",
+    positive: ["日本法人、東京オフィス、gBizINFO被保険者数60人、国内保険会社の導入事例、東京のソリューションコンサルタント求人を確認できる。", "570社超の顧客、損害保険の契約・請求・保険金支払いを支える製品群、FY2026売上14.754億ドルを会社公式が公開する。"],
+    negative: ["日本の売上、営業・プリセールス人数、給与、変動給、担当社数、目標達成率は非公開。", "長い基幹刷新、移行リスク、提携者との責任、日本固有機能の提供時期、導入後の責任境界を選考で検証する必要がある。"],
+    next: ["Insurance Cloud Solution Leadership", "Japan Enterprise Presales", "Core System Transformation Consulting"],
+  },
+  "shield-ai": {
+    name: "Shield AI", domain: "防衛向け自律飛行AI・航空宇宙・日本事業開発", officialUrl: "https://jobs.lever.co/shieldai?location=Tokyo",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Shield%20AI", communityLabel: "Glassdoor Shield AI global review search（日本の対象チームへ一般化しない、2026-10-12確認）",
+    positive: ["Tokyo拠点、海上自衛隊によるV-BAT選定、東京の事業開発4件・技術2件の公式求人を確認できる。", "Hivemind、V-BAT、X-BATを持ち、通信・GPSが制限される環境での自律飛行をソフトウェアと機体の両面で扱う。"],
+    negative: ["日本法人名、国内在籍人数、給与、変動給、年間受注目標、チーム規模、契約・保守体制は非公開。", "輸出管理、機密情報、長い取得期間、実証、安全性、国内防衛企業との責任分担を選考で検証する必要がある。"],
+    next: ["Japan Defense Technology Leadership", "Northeast Asia Aerospace Business Development", "Autonomy Solution Leadership"],
+  },
+  xbow: {
+    name: "XBOW", domain: "自律型侵入テスト・攻撃的セキュリティ・APAC市場", officialUrl: "https://jobs.ashbyhq.com/xbowcareers",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=XBOW", communityLabel: "Glassdoor XBOW search（APAC・日本市場へ一般化しない、2026-10-12確認）",
+    positive: ["2026年に1.2億ドルを調達し、顧客100社超、従業員250人超、APAC営業求人を会社公式で確認できる。", "GitHub CopilotとGitHub Advanced Securityを生んだ創業者・初期チームが、自律型の攻撃検証へ専門性を転用する。"],
+    negative: ["日本法人、国内拠点、日本在住求人、日本語の契約・支援、国内顧客名は未確認。", "本番環境を攻撃検証する安全境界、データ所在、誤検知、損害責任、国内の緊急対応を日本向けに整える必要がある。"],
+    next: ["Japan Offensive Security Leadership", "APAC Application Security", "Autonomous Security Product Leadership"],
+  },
   exotec: {
     name: "Exotec", domain: "倉庫自動化・物流ロボティクス・日本営業", officialUrl: "https://careers.exotec.com/",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Exotec", communityLabel: "Glassdoor Exotec global review search（日本の対象チームへ一般化しない、2026-10-11確認）",
@@ -2042,7 +2064,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["exotec", "navex", "matter-intelligence"].includes(job.companySlug)
+  const researchedAt = ["guidewire", "shield-ai", "xbow"].includes(job.companySlug)
+    ? "2026-10-12"
+    : ["exotec", "navex", "matter-intelligence"].includes(job.companySlug)
     ? "2026-10-11"
     : ["tulip-interfaces", "whatnot", "solve-intelligence"].includes(job.companySlug)
     ? "2026-10-10"

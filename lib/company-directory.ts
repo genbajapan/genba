@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  guidewire: {
+    officialWebsite: { url: "https://www.guidewire.com/ja/", locale: "ja" },
+    globalScaleFallback: { value: "4,174人", detail: "FY2026 Sustainability Reportの会社公式値。", sourceUrl: "https://www.guidewire.com/about/corporate-sustainability/fiscal-year-2026-sustainability-report", sourceLabel: "Guidewire FY2026 Sustainability Report" },
+  },
+  "shield-ai": {
+    officialWebsite: { url: "https://shield.ai/", locale: "global" },
+    globalScaleFallback: { value: "1,000人超", detail: "2025年6月の10周年会社公式発表。", sourceUrl: "https://shield.ai/ten-years-of-shield-ai/", sourceLabel: "Ten Years of Shield AI" },
+  },
+  xbow: {
+    officialWebsite: { url: "https://xbow.com/", locale: "global" },
+    globalScaleFallback: { value: "250人超", detail: "2026年5月の会社公式発表。", sourceUrl: "https://xbow.com/news/xbow-secures-additional-35m-from-strategic-investors", sourceLabel: "XBOW company announcement" },
+  },
   exotec: {
     officialWebsite: { url: "https://www.exotec.com/ja/", locale: "ja" },
     globalScaleFallback: { value: "900人超", detail: "2026年10月11日時点の会社公式Careers表示。", sourceUrl: "https://www.exotec.com/ja/careers/", sourceLabel: "Exotec Careers" },
