@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-18",
+  "auditedAt": "2026-10-19",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 277,
+    "total": 280,
     "byStatus": {
-      "未着手": 135,
+      "未着手": 138,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 58,
-      "Active": 38,
+      "Active": 40,
       "Selective": 107,
-      "求人なし": 74
+      "求人なし": 75
     },
-    "standardReady": 236
+    "standardReady": 237
   },
   "companies": [
     {
@@ -593,6 +593,21 @@
       ]
     },
     {
+      "slug": "aiand",
+      "company": "ai&",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Account Manager:海外を含む外部評判source",
+        "求人:Account Manager:海外reviewの肯定・注意theme",
+        "求人:AIaaS & PaaS Business Development:海外を含む外部評判source",
+        "求人:AIaaS & PaaS Business Development:海外reviewの肯定・注意theme"
+      ]
+    },
+    {
       "slug": "appian",
       "company": "Appian",
       "priority": "Active",
@@ -817,6 +832,21 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "pitchbook",
+      "company": "PitchBook",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:顧客課題",
+        "求人:Account Manager, PitchBook:海外を含む外部評判source",
+        "求人:Account Manager, PitchBook:海外reviewの肯定・注意theme",
+        "求人:Senior Account Manager, PitchBook:海外を含む外部評判source",
+        "求人:Senior Account Manager, PitchBook:海外reviewの肯定・注意theme"
+      ]
     },
     {
       "slug": "proofpoint",
@@ -2442,6 +2472,15 @@
     {
       "slug": "neo4j",
       "company": "Neo4j",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "nomic-ai",
+      "company": "Nomic",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",

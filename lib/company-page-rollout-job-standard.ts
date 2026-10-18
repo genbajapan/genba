@@ -97,6 +97,7 @@ for (const slug of ["tulip-interfaces", "whatnot", "solve-intelligence"]) batchS
 for (const slug of ["exotec", "navex", "matter-intelligence"]) batchSlugs.add(slug);
 for (const slug of ["guidewire", "shield-ai", "xbow"]) batchSlugs.add(slug);
 for (const slug of ["tenable", "zimperium", "fireworks-ai"]) batchSlugs.add(slug);
+for (const slug of ["aiand", "pitchbook", "nomic-ai"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -225,6 +226,24 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  aiand: {
+    name: "ai&", domain: "ソブリンAI推論・アプリ実行基盤・日本市場", officialUrl: "https://jobs.ashbyhq.com/aiand",
+    positive: ["横浜本社、日本語製品、東京・横浜の営業求人2件を公式確認できる。", "推論、追加学習、アプリ実行を国内基盤で一体化し、創業初期から用途・価格・提携を顧客と作る。"],
+    negative: ["給与、変動給、目標、達成率、担当社数、国内の正確な在籍人数は非公開。", "大手クラウドや国内GPU供給者との差、計算資源の安定性、障害時の責任、データ所在を選考で検証する必要がある。"],
+    next: ["Japan AI Infrastructure Sales", "AI Platform Business Development", "Sovereign AI GTM Leadership"],
+  },
+  pitchbook: {
+    name: "PitchBook", domain: "未公開市場データ・アカウント管理・日本市場", officialUrl: "https://job-boards.greenhouse.io/pitchbookdata",
+    positive: ["東京のAccount Manager求人2件を公式確認し、既存顧客の利用、更新、利用者拡大を担う。", "利用者10万人超、世界3,000人超、1,100万超の企業プロフィールを会社公式が公表する。"],
+    negative: ["日本法人名、国内オフィス住所、国内人数、日本売上、給与、変動給、担当社数、達成率は非公開。", "週5日出社の運用、更新責任、データ品質、競合との差、顧客教育と販売目標の配分を選考で検証する必要がある。"],
+    next: ["Senior Private Markets Account Management", "Data Platform Enterprise Sales", "Japan・APAC Financial Data Leadership"],
+  },
+  "nomic-ai": {
+    name: "Nomic", domain: "建築・設計・建設向けAI・APAC市場", officialUrl: "https://www.nomic.ai/careers",
+    positive: ["Aureconで6,700人へ展開し、Arcadisでは12カ国約150人の試行を会社公式で確認できる。", "APAC最初の上級営業を募集し、図面・仕様書・建築基準を読む業界特化AIの地域展開を進める。"],
+    negative: ["日本法人、国内拠点、日本求人、国内顧客、日本語の契約・支援は未確認。", "APAC求人は豪州・ニュージーランド・シンガポール在住が条件で、日本進出や応募可能性を意味しない。"],
+    next: ["APAC AEC AI Sales", "Japan Vertical AI Market Entry", "Construction Technology Leadership"],
+  },
   tenable: {
     name: "Tenable", domain: "エクスポージャー管理・脆弱性対策・日本企業営業", officialUrl: "https://job-boards.greenhouse.io/tenableinc",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Tenable", communityLabel: "Glassdoor Tenable global review search（日本の対象チームへ一般化しない、2026-10-15確認）",
@@ -2085,7 +2104,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["tenable", "zimperium", "fireworks-ai"].includes(job.companySlug)
+  const researchedAt = ["aiand", "pitchbook", "nomic-ai"].includes(job.companySlug)
+    ? "2026-10-19"
+    : ["tenable", "zimperium", "fireworks-ai"].includes(job.companySlug)
     ? "2026-10-15"
     : ["guidewire", "shield-ai", "xbow"].includes(job.companySlug)
     ? "2026-10-12"

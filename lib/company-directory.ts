@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  aiand: {
+    officialWebsite: { url: "https://www.aiand.com/jp/", locale: "ja" },
+    globalScaleFallback: linkedInScale("11〜50人規模", "https://www.linkedin.com/company/ai-and/"),
+  },
+  pitchbook: {
+    officialWebsite: { url: "https://pitchbook.com/", locale: "global" },
+    globalScaleFallback: { value: "3,000人超", detail: "2024年の会社公式発表。現在値は変動している可能性がある。", sourceUrl: "https://pitchbook.com/media/press-releases/pitchbook-announces-founder-john-gabberts-departure-plans", sourceLabel: "PitchBook company announcement" },
+  },
+  "nomic-ai": {
+    officialWebsite: { url: "https://www.nomic.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("11〜50人規模", "https://www.linkedin.com/company/nomic-ai/"),
+  },
   tenable: {
     officialWebsite: { url: "https://jp.tenable.com/", locale: "ja" },
     globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/tenableinc/"),
@@ -367,6 +379,11 @@ export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
   },
   attio: {
     officialWebsite: { url: "https://attio.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/attio/"),
+  },
+  clickhouse: {
+    officialWebsite: { url: "https://clickhouse.com/ja/", locale: "ja" },
+    globalScaleFallback: linkedInScale("501〜1,000人規模", "https://www.linkedin.com/company/clickhouseinc/"),
   },
   retool: {
     officialWebsite: { url: "https://retool.com/", locale: "global" },

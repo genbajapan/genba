@@ -1,0 +1,126 @@
+import type { Company, Job } from "@/lib/market-data";
+
+const checkedAt = "2026-10-19";
+
+export const companies20261019Daily: Company[] = [
+  {
+    slug: "aiand",
+    name: "ai&",
+    category: "ソブリンAI推論・アプリ実行基盤",
+    broadCategory: "AI・データ基盤",
+    hq: "神奈川県横浜市（日本）",
+    japanPresence: "株式会社エーアイ・アンド、本社は横浜・みなとみらい。東京・横浜の公式求人を確認",
+    hiringStatus: "積極採用",
+    salesRoles: 2,
+    description: "日本国内でAI推論、追加学習、アプリ実行環境を垂直統合。Account ManagerとAIaaS・PaaS事業開発を募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://jobs.ashbyhq.com/aiand",
+    tags: ["Sovereign AI", "AI Inference", "PaaS", "Enterprise Sales", "Yokohama", "Tokyo"],
+  },
+  {
+    slug: "pitchbook",
+    name: "PitchBook",
+    category: "未公開市場データ・投資調査基盤",
+    broadCategory: "経営管理・FinTech",
+    hq: "ワシントン州シアトル（米国）",
+    japanPresence: "東京勤務のAccount Manager求人2件を公式Greenhouseで確認。日本法人名、国内オフィス住所、国内在籍人数は未確認",
+    hiringStatus: "採用中",
+    salesRoles: 2,
+    description: "未公開企業、投資家、ファンド、M&Aのデータと調査を提供。東京で既存顧客の更新・利用拡大を担う2職種を募集。",
+    lastChecked: checkedAt,
+    careersUrl: "https://job-boards.greenhouse.io/pitchbookdata",
+    tags: ["Private Markets", "Data", "Research", "Account Management", "Tokyo"],
+  },
+  {
+    slug: "nomic-ai",
+    name: "Nomic",
+    category: "建築・設計・建設向けAIエージェント",
+    broadCategory: "コマース・業界特化",
+    hq: "ニューヨーク（米国）",
+    japanPresence: "日本法人・国内拠点・日本在住求人・国内顧客名は未確認。豪州・ニュージーランド・シンガポール在住のAPAC営業求人を確認",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    description: "図面、仕様書、建築基準、工事記録を読める業界特化AI。APACの最初の上級営業として地域事業を作る求人を確認。",
+    lastChecked: checkedAt,
+    careersUrl: "https://www.nomic.ai/careers",
+    tags: ["日本未進出", "AEC", "AI Agents", "Document Intelligence", "APAC"],
+    entryStatus: "not-entered",
+  },
+];
+
+type JobDraft = Pick<Job, "id" | "companySlug" | "title" | "segment" | "location" | "workStyle" | "language" | "source" | "descriptionSummary" | "genbaTake" | "desiredProfile" | "compensationReality">;
+
+function makeJob(draft: JobDraft): Job {
+  return {
+    ...draft,
+    firstSeen: checkedAt,
+    lastChecked: checkedAt,
+    careerInsights: {
+      fit: `${draft.segment}で、顧客の判断と導入を継続利用・事業成果へつなげたい人に向く。`,
+      thingsToKnow: "目標、達成率、担当社数、案件期間、評価・昇進、報酬構成は公開情報だけでは十分に分からない。",
+      marketValue: `${draft.segment}の成果を案件創出、受注、更新、拡大、利用、顧客KPIで定量化できれば、隣接する海外テクノロジー企業へ再現性を説明しやすい。`,
+      tenureAndPromotion: "在籍年数だけでなく、担当拡張、顧客・組織成果、再利用できる実行の型が次の役割の土台になる。",
+      priorCompanies: "企業向けSaaS・データ・AI基盤の営業、事業開発、顧客管理、複数関係者を動かす経験が隣接する。",
+      nextCompanies: "担当市場と成果を数字で残せれば、上級企業営業、アカウント責任者、事業開発、顧客組織へ広げやすい。",
+    },
+  };
+}
+
+export const jobs20261019Daily: Job[] = [
+  makeJob({
+    id: "aiand-account-manager-japan-9e603f41",
+    companySlug: "aiand",
+    title: "Account Manager",
+    segment: "Japan Account Management・Expansion",
+    location: "横浜・東京",
+    workStyle: "ハイブリッド。固定出社日数は公式求人で明記なし",
+    language: "日本語・英語ともに業務上流暢な水準",
+    source: { label: "ai& Careers (Ashby)", url: "https://jobs.ashbyhq.com/aiand/9e603f41-a703-4b10-a2e4-b4ef77cfb77e" },
+    descriptionSummary: "日本のスタートアップから大企業までの顧客関係を持ち、利用価値、更新・拡大、新規商談、顧客の声を製品と市場戦略へ戻す責任を担う。",
+    genbaTake: "GPUやAPIの単価だけでなく、推論、追加学習、アプリ実行をどの業務へ定着させるかを顧客と作り、拡大へつなぐアカウント責任者。",
+    desiredProfile: "日本のB2B営業・アカウント管理、AI・クラウド・基盤・開発者向け製品、複数関係者の商談、課題起点の提案経験を重視する。",
+    compensationReality: "給与、変動給、目標、達成率、株式、担当社数は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "aiand-aiaas-paas-business-development-33601126",
+    companySlug: "aiand",
+    title: "AIaaS & PaaS Business Development",
+    segment: "AI Infrastructure Business Development・Partnerships",
+    location: "横浜・東京",
+    workStyle: "ハイブリッド。固定出社日数は公式求人で明記なし",
+    language: "公式求人で必須水準の明記なし。日本企業とグローバル社内の協業を伴う",
+    source: { label: "ai& Careers (Ashby)", url: "https://jobs.ashbyhq.com/aiand/33601126-9a76-42a9-8759-1b2c6e465037" },
+    descriptionSummary: "AI推論・PaaSの案件と提携を発掘し、顧客発見、提案、調達、交渉、受注、拡大を所有。顧客要件を製品・価格・販売資料へ戻す。",
+    genbaTake: "既成市場の販売ではなく、ソブリンAIとアプリ実行基盤の理想顧客、使い方、提携経路、価格構造を実商談から作る立ち上げ職。",
+    desiredProfile: "AI、クラウド、基盤、開発者向け製品の企業営業・事業開発・提携、複雑な契約、技術買い手との課題整理を重視する。",
+    compensationReality: "給与、変動給、目標、達成率、株式、担当範囲は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "pitchbook-account-manager-4624916006",
+    companySlug: "pitchbook",
+    title: "Account Manager, PitchBook",
+    segment: "Private Markets Data Account Management",
+    location: "東京都",
+    workStyle: "週5日オフィス勤務。限定的な出張の可能性あり",
+    language: "日本語・英語ともに流暢な水準",
+    source: { label: "PitchBook Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/pitchbookdata/jobs/4624916006" },
+    descriptionSummary: "既存顧客の主要窓口として利用、満足度、更新、利用者拡大を担い、複数年の成長計画、実演、商談管理、顧客教育を進める。",
+    genbaTake: "データライセンスの更新ではなく、投資・M&A・事業開発の判断導線へPitchBookを定着させ、利用者と用途を増やす役割。",
+    desiredProfile: "営業またはアカウント管理2年以上、複雑な商談、更新・拡大、顧客実演、私募市場への関心、日本での就労資格を求める。",
+    compensationReality: "日本の給与、変動給、目標、達成率、株式、担当社数は公式求人で確認できない。",
+  }),
+  makeJob({
+    id: "pitchbook-senior-account-manager-4625512006",
+    companySlug: "pitchbook",
+    title: "Senior Account Manager, PitchBook",
+    segment: "Senior Private Markets Data Account Management",
+    location: "東京都",
+    workStyle: "週5日オフィス勤務。限定的な出張の可能性あり",
+    language: "日本語・英語ともに流暢な水準",
+    source: { label: "PitchBook Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/pitchbookdata/jobs/4625512006" },
+    descriptionSummary: "中核顧客の主要窓口として四半期の販売・継続目標、複数年の利用拡大、実演、事業レビュー、顧客教育、商談予測を担う。",
+    genbaTake: "私募市場データを誰がどの判断に使うかまで理解し、更新率と利用拡大を同時に持つ上級アカウント職。",
+    desiredProfile: "営業またはアカウント管理4年以上、複雑な契約と意思決定者への提案、更新・利用拡大、私募市場への関心を重視する。",
+    compensationReality: "日本の給与、変動給、目標、達成率、株式、担当社数は公式求人で確認できない。",
+  }),
+];
