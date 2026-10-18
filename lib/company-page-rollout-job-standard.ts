@@ -96,6 +96,7 @@ for (const slug of ["entrust", "fitch-solutions", "element-biosciences"]) batchS
 for (const slug of ["tulip-interfaces", "whatnot", "solve-intelligence"]) batchSlugs.add(slug);
 for (const slug of ["exotec", "navex", "matter-intelligence"]) batchSlugs.add(slug);
 for (const slug of ["guidewire", "shield-ai", "xbow"]) batchSlugs.add(slug);
+for (const slug of ["tenable", "zimperium", "fireworks-ai"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -224,6 +225,26 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  tenable: {
+    name: "Tenable", domain: "エクスポージャー管理・脆弱性対策・日本企業営業", officialUrl: "https://job-boards.greenhouse.io/tenableinc",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Tenable", communityLabel: "Glassdoor Tenable global review search（日本の対象チームへ一般化しない、2026-10-15確認）",
+    positive: ["日本法人、東京オフィス、国内顧客事例、東京のCommercial Territory Account Manager求人を確認できる。", "4万社超の顧客とNessusを起点とする脆弱性知識を持ち、IT、クラウド、ID、OTの攻撃面を横断する。"],
+    negative: ["国内の正確な在籍人数、日本売上、営業人数、給与、変動給、担当社数、目標達成率は非公開。", "既存ツールとの重複、修正責任、販売パートナーと直販の境界、技術支援体制を選考で検証する必要がある。"],
+    next: ["Japan Exposure Management Leadership", "Enterprise Cybersecurity Sales", "Security Risk Platform Leadership"],
+  },
+  zimperium: {
+    name: "Zimperium", domain: "モバイル端末・アプリセキュリティ・日本販売責任", officialUrl: "https://jobs.lever.co/zimperium",
+    communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Zimperium", communityLabel: "Glassdoor Zimperium global review search（日本の対象チームへ一般化しない、2026-10-15確認）",
+    positive: ["日本を主要市場として公式に掲載し、SoftBank・TOYOとの国内実績と東京のSales Director求人を確認できる。", "端末上のAI検知、端末防御、アプリ検査・改ざん防止を一つのモバイル攻撃面として扱う。"],
+    negative: ["日本法人名、国内拠点住所、在籍人数、日本売上、給与、変動給、目標、チーム人数は非公開。", "端末管理・アプリ開発・SOCの責任境界、販売パートナー、導入後の技術・顧客支援を選考で検証する必要がある。"],
+    next: ["Japan Mobile Security Leadership", "APAC Application Security Sales", "Cybersecurity Country Leadership"],
+  },
+  "fireworks-ai": {
+    name: "Fireworks AI", domain: "生成AI推論・学習基盤・APAC市場", officialUrl: "https://fireworks.ai/careers",
+    positive: ["SingaporeでAI Field Engineer、Applied ML、Cloud Infrastructureの3職種を募集し、APACの技術導入と基盤を同時に増強する。", "PyTorch出身チームが推論、学習、評価を統合し、2026年に年率換算売上10億ドル超を会社公式で公表する。"],
+    negative: ["日本法人、国内拠点、日本在住求人、国内顧客、日本語の契約・支援、データ所在は未確認。", "Singapore採用は日本への進出を保証せず、国内の需要、契約、支援、請求、クラウド接続を確認する必要がある。"],
+    next: ["Japan AI Infrastructure Leadership", "APAC Field Engineering", "Enterprise AI Platform Leadership"],
+  },
   guidewire: {
     name: "Guidewire", domain: "損害保険基幹クラウド・ソリューション提案・日本市場", officialUrl: "https://guidewire.wd5.myworkdayjobs.com/en-US/external",
     communityUrl: "https://www.glassdoor.com/Search/results.htm?keyword=Guidewire", communityLabel: "Glassdoor Guidewire global review search（日本の対象チームへ一般化しない、2026-10-12確認）",
@@ -2064,7 +2085,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["guidewire", "shield-ai", "xbow"].includes(job.companySlug)
+  const researchedAt = ["tenable", "zimperium", "fireworks-ai"].includes(job.companySlug)
+    ? "2026-10-15"
+    : ["guidewire", "shield-ai", "xbow"].includes(job.companySlug)
     ? "2026-10-12"
     : ["exotec", "navex", "matter-intelligence"].includes(job.companySlug)
     ? "2026-10-11"

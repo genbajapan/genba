@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-13 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-18 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全274社（未着手 132 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全277社（未着手 135 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -20,8 +20,7 @@
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|7|公開済み|はい|なし|
 |HOT|Cohere|3|公開済み|はい|なし|
-|HOT|Coupa|4|公開済み|はい|なし|
-|HOT|Cursor|5|公開済み|はい|なし|
+|HOT|Cursor|4|公開済み|はい|なし|
 |HOT|Darktrace|3|未着手|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
 |HOT|DeepL|8|公開済み|はい|なし|
@@ -70,6 +69,7 @@
 |Active|Asana|2|公開済み|はい|なし|
 |Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
+|Active|Coupa|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
 |Active|Dragos|2|公開済み|はい|なし|
@@ -194,6 +194,7 @@
 |Selective|StackAdapt|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Senior Sales Manager, Japan:職種別の報酬調査、求人:Senior Sales Manager, Japan:ポジティブ・ネガティブ評判、求人:Senior Sales Manager, Japan:市場価値|
 |Selective|Substack|1|未着手|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
+|Selective|Tenable|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Torq|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source、求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme|
 |Selective|Tradlinx|1|未着手|はい|なし|
@@ -204,10 +205,10 @@
 |Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
 |Selective|WitnessAI|1|未着手|はい|なし|
-|Selective|Workato|1|公開済み|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
 |Selective|Zadara|1|公開済み|はい|なし|
 |Selective|Zilliz|1|公開済み|はい|なし|
+|Selective|Zimperium|1|未着手|はい|なし|
 |求人なし|1Password|0|公開済み|はい|なし|
 |求人なし|6sense|0|公開済み|はい|なし|
 |求人なし|Addepar|0|公開済み|はい|なし|
@@ -229,6 +230,7 @@
 |求人なし|Drata|0|未着手|いいえ|日本語の事業領域・本社表記、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない、ヒーロー説明:解決と事業成果|
 |求人なし|Dropbox|0|公開済み|はい|なし|
 |求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
+|求人なし|Fireworks AI|0|未着手|はい|なし|
 |求人なし|Gamma|0|未着手|はい|なし|
 |求人なし|Gong|0|公開済み|はい|なし|
 |求人なし|Gurobi Optimization|0|公開済み|はい|なし|
@@ -278,6 +280,7 @@
 |求人なし|Wasabi Technologies|0|公開済み|はい|なし|
 |求人なし|WatchGuard Technologies|0|公開済み|はい|なし|
 |求人なし|Webflow|0|公開済み|はい|なし|
+|求人なし|Workato|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
 |求人なし|XBOW|0|未着手|はい|なし|
 

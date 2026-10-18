@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  tenable: {
+    officialWebsite: { url: "https://jp.tenable.com/", locale: "ja" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/tenableinc/"),
+  },
+  zimperium: {
+    officialWebsite: { url: "https://zimperium.com/", locale: "global" },
+    globalScaleFallback: { value: "約300人", detail: "会社公式Corporate Fact Sheetの公開値。現在値は変動している可能性がある。", sourceUrl: "https://zimperium.com/hubfs/Zimperium/Corporate%20Fact%20Sheet%2025.pdf", sourceLabel: "Zimperium Corporate Fact Sheet" },
+  },
+  "fireworks-ai": {
+    officialWebsite: { url: "https://fireworks.ai/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/fireworks-ai/"),
+  },
   guidewire: {
     officialWebsite: { url: "https://www.guidewire.com/ja/", locale: "ja" },
     globalScaleFallback: { value: "4,174人", detail: "FY2026 Sustainability Reportの会社公式値。", sourceUrl: "https://www.guidewire.com/about/corporate-sustainability/fiscal-year-2026-sustainability-report", sourceLabel: "Guidewire FY2026 Sustainability Report" },
