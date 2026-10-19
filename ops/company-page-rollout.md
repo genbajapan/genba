@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-19 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全280社（未着手 138 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全283社（未着手 141 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -68,7 +68,6 @@
 |Active|ai&|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Manager:海外を含む外部評判source、求人:Account Manager:海外reviewの肯定・注意theme、求人:AIaaS & PaaS Business Development:海外を含む外部評判sourceほか1件|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
-|Active|BlueMatrix|2|公開済み|はい|なし|
 |Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
 |Active|Coupa|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
@@ -120,7 +119,9 @@
 |Selective|Babel Street|1|未着手|はい|なし|
 |Selective|Back Market|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、ヒーロー説明:解決と事業成果、外貨の円換算:marketStatus.growthSummary=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。,marketStatus.genbaVerdict.body=会社公式は2026年7月時点で18百万人の顧客と17市場、2025年にはGMV 30億ユーロ予測を公表。日本向けサービスと東京のAPAC組織を展開し、出品者開拓職を募集している。 一方、日本の顧客基盤、ramped sellerの達成率、案件単価は非公開であり、求人の勢いとterritoryの実現可能性を分けて判断する必要がある。,facts[3].value=30億ユーロ|
 |Selective|Behavox|1|公開済み|はい|なし|
+|Selective|BlackLine|1|未着手|いいえ|日本オフィス:住所のみ、日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲ほか2件|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
+|Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Bounce|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Box|1|未着手|はい|なし|
 |Selective|Cambly|1|公開済み|はい|なし|
@@ -208,6 +209,7 @@
 |Selective|Vonage|1|公開済み|はい|なし|
 |Selective|WitnessAI|1|未着手|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
+|Selective|Wrike|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Partner Account Manager:海外を含む外部評判sourceほか1件|
 |Selective|Zadara|1|公開済み|はい|なし|
 |Selective|Zilliz|1|公開済み|はい|なし|
 |Selective|Zimperium|1|未着手|はい|なし|
@@ -258,6 +260,7 @@
 |求人なし|MotherDuck|0|未着手|はい|なし|
 |求人なし|Neo4j|0|未着手|はい|なし|
 |求人なし|Nomic|0|未着手|はい|なし|
+|求人なし|Omni|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない|
 |求人なし|Patsnap|0|公開済み|はい|なし|
 |求人なし|Pendo|0|公開済み|はい|なし|
 |求人なし|Pigment|0|公開済み|はい|なし|

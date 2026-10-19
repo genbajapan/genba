@@ -98,6 +98,7 @@ for (const slug of ["exotec", "navex", "matter-intelligence"]) batchSlugs.add(sl
 for (const slug of ["guidewire", "shield-ai", "xbow"]) batchSlugs.add(slug);
 for (const slug of ["tenable", "zimperium", "fireworks-ai"]) batchSlugs.add(slug);
 for (const slug of ["aiand", "pitchbook", "nomic-ai"]) batchSlugs.add(slug);
+for (const slug of ["wrike", "blackline", "omni-analytics"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -226,6 +227,24 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  wrike: {
+    name: "Wrike", domain: "ワークマネジメント・パートナー営業・日本市場", officialUrl: "https://job-boards.greenhouse.io/wrike/jobs/4725613005",
+    positive: ["東京のPartner Account Manager求人と、2019年からの日本法人・東京拠点を会社公式で確認できる。", "顧客2万社以上、利用者200万人以上、従業員1,000人以上と国内導入事例を公式公開する。"],
+    negative: ["国内人数、日本売上、給与、変動給、目標、達成率、担当パートナー数は非公開。", "直販とパートナーの責任分担、案件登録、sourced・influencedの売上認定、導入支援力を選考で検証する必要がある。"],
+    next: ["Japan Partner Sales", "Work Management Alliances", "APAC Channel Leadership"],
+  },
+  blackline: {
+    name: "BlackLine", domain: "決算・経理自動化・企業営業・日本市場", officialUrl: "https://www.blackline.jp/careers/",
+    positive: ["東京のAccount Executive求人、日本法人、赤坂オフィス、日本責任者を会社公式で確認できる。", "4,400社以上の顧客と、自動化率や業務時間削減を含む複数の国内導入事例を公式公開する。"],
+    negative: ["国内人数、日本売上、給与、OTE、目標、達成率、担当社数は非公開。", "ERPや他の決算基盤との境界、導入体制、パートナーと直販の分担、数値成果までの期間を選考で検証する必要がある。"],
+    next: ["Enterprise Finance Transformation Sales", "CFO Platform Leadership", "Japan・APAC Finance SaaS GTM"],
+  },
+  "omni-analytics": {
+    name: "Omni", domain: "AI分析・セマンティックレイヤー・APAC市場", officialUrl: "https://jobs.ashbyhq.com/omni",
+    positive: ["2026年Series Cで1.2億ドルを調達し、評価額15億ドル・前年売上4倍を会社公式が公表する。", "SydneyでAPAC事業開発・営業、Singaporeで初の現地企業営業を公式採用している。"],
+    negative: ["日本法人、国内拠点、日本求人、国内顧客、日本語の契約・支援は未確認。", "APAC採用はAustralia・Singapore在住が条件で、日本進出や日本からの応募可能性を意味しない。"],
+    next: ["APAC Analytics Sales", "Japan AI Data Platform Market Entry", "Enterprise BI Leadership"],
+  },
   aiand: {
     name: "ai&", domain: "ソブリンAI推論・アプリ実行基盤・日本市場", officialUrl: "https://jobs.ashbyhq.com/aiand",
     positive: ["横浜本社、日本語製品、東京・横浜の営業求人2件を公式確認できる。", "推論、追加学習、アプリ実行を国内基盤で一体化し、創業初期から用途・価格・提携を顧客と作る。"],
@@ -2104,7 +2123,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["aiand", "pitchbook", "nomic-ai"].includes(job.companySlug)
+  const researchedAt = ["wrike", "blackline", "omni-analytics"].includes(job.companySlug)
+    ? "2026-10-20"
+    : ["aiand", "pitchbook", "nomic-ai"].includes(job.companySlug)
     ? "2026-10-19"
     : ["tenable", "zimperium", "fireworks-ai"].includes(job.companySlug)
     ? "2026-10-15"

@@ -21,6 +21,17 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  wrike: {
+    officialWebsite: { url: "https://www.wrike.com/ja/", locale: "ja" },
+    globalScaleFallback: { value: "1,000人以上", detail: "2026年10月20日時点の会社公式表示。", sourceUrl: "https://www.wrike.com/company/", sourceLabel: "Wrike会社情報" },
+  },
+  blackline: {
+    officialWebsite: { url: "https://www.blackline.jp/", locale: "ja" },
+  },
+  "omni-analytics": {
+    officialWebsite: { url: "https://omni.co/", locale: "global" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/exploreomni/"),
+  },
   aiand: {
     officialWebsite: { url: "https://www.aiand.com/jp/", locale: "ja" },
     globalScaleFallback: linkedInScale("11〜50人規模", "https://www.linkedin.com/company/ai-and/"),
