@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-20 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-21 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全283社（未着手 141 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全286社（未着手 144 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -150,6 +150,7 @@
 |Selective|Fitch Solutions|1|未着手|はい|なし|
 |Selective|Gainsight|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Enterprise Account Executive:職種別の報酬調査、求人:Enterprise Account Executive:ポジティブ・ネガティブ評判、求人:Enterprise Account Executive:市場価値|
 |Selective|Genspark|1|未着手|はい|なし|
+|Selective|Green Hills Software|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Field Application Engineer (Tokyo, Japan):海外を含む外部評判source、求人:Field Application Engineer (Tokyo, Japan):海外reviewの肯定・注意theme|
 |Selective|Guidewire|1|未着手|はい|なし|
 |Selective|Hiya|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Horizon3|1|未着手|はい|なし|
@@ -171,11 +172,13 @@
 |Selective|Mixpanel|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Senior Enterprise Account Executive, Japan:職種別の報酬調査、求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判、求人:Senior Enterprise Account Executive, Japan:市場価値|
 |Selective|NinjaOne|1|未着手|はい|なし|
 |Selective|o9 Solutions|1|未着手|はい|なし|
+|Selective|Orca AI|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Customer Success Manager:海外を含む外部評判source、求人:Customer Success Manager:海外reviewの肯定・注意theme|
 |Selective|Pallet|1|未着手|はい|なし|
 |Selective|Patch|1|公開済み|はい|なし|
 |Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
+|Selective|Reaktor|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:テックリード＆クライアントリード:海外を含む外部評判source、求人:テックリード＆クライアントリード:海外reviewの肯定・注意themeほか1件|
 |Selective|Recorded Future|1|未着手|はい|なし|
 |Selective|Rescale|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |Selective|Rocket Software|1|未着手|はい|なし|

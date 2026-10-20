@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-20",
+  "auditedAt": "2026-10-21",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 283,
+    "total": 286,
     "byStatus": {
-      "未着手": 141,
+      "未着手": 144,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,7 +28,7 @@
     "byPriority": {
       "HOT": 58,
       "Active": 39,
-      "Selective": 110,
+      "Selective": 113,
       "求人なし": 76
     },
     "standardReady": 237
@@ -1452,6 +1452,19 @@
       "missingFields": []
     },
     {
+      "slug": "green-hills-software",
+      "company": "Green Hills Software",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "求人:Field Application Engineer (Tokyo, Japan):海外を含む外部評判source",
+        "求人:Field Application Engineer (Tokyo, Japan):海外reviewの肯定・注意theme"
+      ]
+    },
+    {
       "slug": "guidewire",
       "company": "Guidewire",
       "priority": "Selective",
@@ -1666,6 +1679,19 @@
       "missingFields": []
     },
     {
+      "slug": "orca-ai",
+      "company": "Orca AI",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:Customer Success Manager:海外を含む外部評判source",
+        "求人:Customer Success Manager:海外reviewの肯定・注意theme"
+      ]
+    },
+    {
       "slug": "pallet",
       "company": "Pallet",
       "priority": "Selective",
@@ -1713,6 +1739,21 @@
         "求人:Senior Customer Success Manager (APAC):職種別の報酬調査",
         "求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判",
         "求人:Senior Customer Success Manager (APAC):市場価値"
+      ]
+    },
+    {
+      "slug": "reaktor",
+      "company": "Reaktor",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "求人:テックリード＆クライアントリード:海外を含む外部評判source",
+        "求人:テックリード＆クライアントリード:海外reviewの肯定・注意theme",
+        "外貨の円換算:marketStatus.growthSummary=2000年創業。Reaktor Groupは2026年第1四半期に690人、2025年売上1.177億ユーロ、119の稼働顧客を公表。日本は2014年設立で、会社概要は2023年7月時点31人。,marketStatus.genbaVerdict.body=2000年創業。Reaktor Groupは2026年第1四半期に690人、2025年売上1.177億ユーロ、119の稼働顧客を公表。日本は2014年設立で、会社概要は2023年7月時点31人。 一方、日本の顧客基盤、ramped sellerの達成率、案件単価は非公開であり、求人の勢いとterritoryの実現可能性を分けて判断する必要がある。,facts[2].value=1.177億ユーロ"
       ]
     },
     {

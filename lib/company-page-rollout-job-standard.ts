@@ -99,6 +99,7 @@ for (const slug of ["guidewire", "shield-ai", "xbow"]) batchSlugs.add(slug);
 for (const slug of ["tenable", "zimperium", "fireworks-ai"]) batchSlugs.add(slug);
 for (const slug of ["aiand", "pitchbook", "nomic-ai"]) batchSlugs.add(slug);
 for (const slug of ["wrike", "blackline", "omni-analytics"]) batchSlugs.add(slug);
+for (const slug of ["reaktor", "green-hills-software", "orca-ai"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1729,6 +1730,24 @@ const companyResearch: Record<string, {
     negative: ["日本売上、team人数、担当社数、utilization、on-call頻度、数値報酬は非公開。", "最大35%のtravelとglobal 24x7 support scheduling、migration・production incidentの責任境界を面接で検証する必要がある。"],
     next: ["Principal Data Platform Consultant", "Solutions Architecture・TAM Leadership", "APJ Professional Services Leadership"],
   },
+  reaktor: {
+    name: "Reaktor", domain: "Digital Product Development・Technology Consulting・Client Leadership", officialUrl: "https://www.reaktor.com/ja-jp/careers/senior-technical-lead-tokyo",
+    positive: ["東京のテックリード＆クライアントリードとして技術方針、実装、顧客関係、案件の成長を同じ責任で持つ。", "Reaktor Groupは690人、2025年売上1.177億ユーロ、日本法人は会社概要で31人と公式確認。"],
+    negative: ["日本の案件単価、売上、担当社数、売上責任、給与・賞与は非公開。", "顧客先とリモートの比率、手を動かす時間、案件開拓と技術品質の評価配分を面接で検証する必要がある。"],
+    next: ["Principal Technology Consultant", "Client・Engineering Leadership", "Digital Product Japan Leadership"],
+  },
+  "green-hills-software": {
+    name: "Green Hills Software", domain: "Embedded Systems・Functional Safety・Field Application Engineering", officialUrl: "https://www.ghs.com/corporate/jobs_field_app_engineer_japan.html",
+    positive: ["東京のField Application Engineerとして製品評価、技術提案、導入、研修、デバイスドライバー、販売前後支援を横断する。", "創業以来の黒字、50カ国超への展開、日本法人とAISINの車載選定を会社公式で確認。"],
+    negative: ["日本売上、顧客数、技術・営業人数、担当社数、給与・賞与は非公開。", "機能安全認証の範囲、顧客先での実装責任、出張、販売目標への関与を面接で検証する必要がある。"],
+    next: ["Principal Embedded Solutions Engineer", "Functional Safety・Security Architecture", "Japan Field Engineering Leadership"],
+  },
+  "orca-ai": {
+    name: "Orca AI", domain: "Maritime AI・Customer Success・Japan Market Building", officialUrl: "https://www.comeet.com/jobs/Orca-AI/86.003/customer-success-manager/9D.27B",
+    positive: ["日本のCustomer Success Managerとして導入、利用、満足、継続、拡大と、日本顧客・海外チーム間の運用を持つ。", "Series B 7,250万ドル、累計1.11億ドル、Anglo-Easternの750隻超との提携とSeaspanの定量事例を会社公式で確認。"],
+    negative: ["日本法人、国内拠点、雇用主体、既存顧客名、国内チーム、給与・賞与は未確認。", "船上設置、技術支援、事故時の責任、継続・拡大目標、国内外出張の実態を面接で検証する必要がある。"],
+    next: ["Maritime Customer Success Leadership", "Japan Market Lead", "APAC Fleet Technology Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2123,7 +2142,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["wrike", "blackline", "omni-analytics"].includes(job.companySlug)
+  const researchedAt = ["reaktor", "green-hills-software", "orca-ai"].includes(job.companySlug)
+    ? "2026-10-21"
+    : ["wrike", "blackline", "omni-analytics"].includes(job.companySlug)
     ? "2026-10-20"
     : ["aiand", "pitchbook", "nomic-ai"].includes(job.companySlug)
     ? "2026-10-19"

@@ -21,6 +21,18 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  reaktor: {
+    officialWebsite: { url: "https://www.reaktor.com/ja-jp/", locale: "ja" },
+    globalScaleFallback: { value: "690人", detail: "Reaktor Groupの2026年第1四半期会社公式値。", sourceUrl: "https://www.group.reaktor.com/en/ipo", sourceLabel: "Reaktor Group IPO information" },
+  },
+  "green-hills-software": {
+    officialWebsite: { url: "https://www.ghs.com/japan/", locale: "ja" },
+    globalScaleFallback: linkedInScale("201〜500人規模", "https://www.linkedin.com/company/green-hills-software"),
+  },
+  "orca-ai": {
+    officialWebsite: { url: "https://www.orca-ai.io/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/orca-ai"),
+  },
   wrike: {
     officialWebsite: { url: "https://www.wrike.com/ja/", locale: "ja" },
     globalScaleFallback: { value: "1,000人以上", detail: "2026年10月20日時点の会社公式表示。", sourceUrl: "https://www.wrike.com/company/", sourceLabel: "Wrike会社情報" },
