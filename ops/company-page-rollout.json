@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-21",
+  "auditedAt": "2026-10-22",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,18 +18,18 @@
     "求人なし"
   ],
   "counts": {
-    "total": 286,
+    "total": 288,
     "byStatus": {
-      "未着手": 144,
+      "未着手": 146,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 58,
-      "Active": 39,
-      "Selective": 113,
-      "求人なし": 76
+      "Active": 40,
+      "Selective": 112,
+      "求人なし": 78
     },
     "standardReady": 237
   },
@@ -762,6 +762,20 @@
       "missingFields": []
     },
     {
+      "slug": "megaport",
+      "company": "Megaport",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:Sales Development Representative:海外を含む外部評判source",
+        "求人:Sales Development Representative:海外reviewの肯定・注意theme",
+        "求人:Sales Executive:海外を含む外部評判source",
+        "求人:Sales Executive:海外reviewの肯定・注意theme"
+      ]
+    },
+    {
       "slug": "meltwater",
       "company": "Meltwater",
       "priority": "Active",
@@ -1389,15 +1403,6 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "extreme-networks",
-      "company": "Extreme Networks",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2324,6 +2329,15 @@
       ]
     },
     {
+      "slug": "extreme-networks",
+      "company": "Extreme Networks",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "fireworks-ai",
       "company": "Fireworks AI",
       "priority": "求人なし",
@@ -2756,6 +2770,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "tradinghub",
+      "company": "TradingHub",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "veeam",

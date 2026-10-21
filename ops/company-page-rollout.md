@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-21 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全286社（未着手 144 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全288社（未着手 146 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -82,6 +82,7 @@
 |Active|Liquid AI|2|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |Active|Litmus|2|未着手|いいえ|求人:Sales Director - Japan & Asia:勤務地・言語の日本語表記、求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記|
 |Active|MarqVision|2|公開済み|はい|なし|
+|Active|Megaport|2|未着手|いいえ|求人:Sales Development Representative:海外を含む外部評判source、求人:Sales Development Representative:海外reviewの肯定・注意theme、求人:Sales Executive:海外を含む外部評判source、求人:Sales Executive:海外reviewの肯定・注意theme|
 |Active|Meltwater|2|未着手|はい|なし|
 |Active|Menlo Security|2|未着手|はい|なし|
 |Active|Mirakl|2|公開済み|はい|なし|
@@ -144,7 +145,6 @@
 |Selective|Entrust|1|未着手|はい|なし|
 |Selective|Equativ|1|未着手|いいえ|求人:Publisher Key Account Manager, Japan:海外を含む外部評判source、求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme|
 |Selective|Exotec|1|未着手|はい|なし|
-|Selective|Extreme Networks|1|公開済み|はい|なし|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Fitch Solutions|1|未着手|はい|なし|
@@ -237,6 +237,7 @@
 |求人なし|Drata|0|未着手|いいえ|日本語の事業領域・本社表記、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない、ヒーロー説明:解決と事業成果|
 |求人なし|Dropbox|0|公開済み|はい|なし|
 |求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
+|求人なし|Extreme Networks|0|公開済み|はい|なし|
 |求人なし|Fireworks AI|0|未着手|はい|なし|
 |求人なし|Gamma|0|未着手|はい|なし|
 |求人なし|Gong|0|公開済み|はい|なし|
@@ -284,6 +285,7 @@
 |求人なし|Temporal|0|未着手|はい|なし|
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
+|求人なし|TradingHub|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Veeam|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Vercel|0|公開済み|はい|なし|
 |求人なし|Wasabi Technologies|0|公開済み|はい|なし|

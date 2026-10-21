@@ -100,6 +100,7 @@ for (const slug of ["tenable", "zimperium", "fireworks-ai"]) batchSlugs.add(slug
 for (const slug of ["aiand", "pitchbook", "nomic-ai"]) batchSlugs.add(slug);
 for (const slug of ["wrike", "blackline", "omni-analytics"]) batchSlugs.add(slug);
 for (const slug of ["reaktor", "green-hills-software", "orca-ai"]) batchSlugs.add(slug);
+for (const slug of ["megaport", "tradinghub"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1748,6 +1749,18 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用主体、既存顧客名、国内チーム、給与・賞与は未確認。", "船上設置、技術支援、事故時の責任、継続・拡大目標、国内外出張の実態を面接で検証する必要がある。"],
     next: ["Maritime Customer Success Leadership", "Japan Market Lead", "APAC Fleet Technology Leadership"],
   },
+  megaport: {
+    name: "Megaport", domain: "Network as a Service・Multicloud Connectivity・Enterprise Sales", officialUrl: "https://jobs.lever.co/megaport",
+    positive: ["日本のSDRとSales Executiveが、案件創出、新規開拓、既存拡大、直販、販売パートナーを分担する。", "会社公式は31カ国超、顧客4,000社超、対応拠点1,200超、従業員600人超を掲載。"],
+    negative: ["日本売上、国内顧客数、チーム人数、担当社数、quota、給与・変動給は非公開。", "Sales Executiveは販売パートナー行事へ通常週1〜2回参加し、100万ドル超の企業商談経験を求める。実際の出張、案件期間、技術支援体制を面接で検証する必要がある。"],
+    next: ["Enterprise Network Sales", "Cloud Connectivity Sales Leadership", "Japan GTM Leadership"],
+  },
+  tradinghub: {
+    name: "TradingHub", domain: "Trade Surveillance・Financial Markets・Japan Market Building", officialUrl: "https://jobs.ashbyhq.com/tradinghub/635d2759-fae5-430d-851f-24c2bd1e6a15",
+    positive: ["東京の最初のRelationship Management採用として、顧客関係、提案、営業全工程、売上拡大、製品要望を横断する。", "会社公式は1日1.35億件超、世界運用資産の25%相当、45カ国超、投資銀行18社の監視規模を掲載。"],
+    negative: ["日本法人、国内拠点、雇用主体、国内顧客、チーム人数、給与・賞与は未確認。", "金融商品、市場不正規制、金融庁・証券取引等監視委員会の深い知識を求める。販売と顧客管理の境界、導入支援、目標を面接で検証する必要がある。"],
+    next: ["Japan RegTech Leadership", "Financial Markets Solutions Leadership", "APAC Relationship Management Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2142,7 +2155,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["reaktor", "green-hills-software", "orca-ai"].includes(job.companySlug)
+  const researchedAt = ["megaport", "tradinghub"].includes(job.companySlug)
+    ? "2026-10-22"
+    : ["reaktor", "green-hills-software", "orca-ai"].includes(job.companySlug)
     ? "2026-10-21"
     : ["wrike", "blackline", "omni-analytics"].includes(job.companySlug)
     ? "2026-10-20"
