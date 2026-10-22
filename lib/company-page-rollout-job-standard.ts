@@ -101,6 +101,7 @@ for (const slug of ["aiand", "pitchbook", "nomic-ai"]) batchSlugs.add(slug);
 for (const slug of ["wrike", "blackline", "omni-analytics"]) batchSlugs.add(slug);
 for (const slug of ["reaktor", "green-hills-software", "orca-ai"]) batchSlugs.add(slug);
 for (const slug of ["megaport", "tradinghub"]) batchSlugs.add(slug);
+for (const slug of ["kraken-technologies", "ciq"]) batchSlugs.add(slug);
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1761,6 +1762,18 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用主体、国内顧客、チーム人数、給与・賞与は未確認。", "金融商品、市場不正規制、金融庁・証券取引等監視委員会の深い知識を求める。販売と顧客管理の境界、導入支援、目標を面接で検証する必要がある。"],
     next: ["Japan RegTech Leadership", "Financial Markets Solutions Leadership", "APAC Relationship Management Leadership"],
   },
+  "kraken-technologies": {
+    name: "Kraken Technologies", domain: "Utility AI・Energy Transformation・Customer Operations", officialUrl: "https://jobs.ashbyhq.com/krakentech",
+    positive: ["東京・日本向け12件が、顧客変革、導入、Customer Success、データ、系統連携、開発、人事運用を横断する。", "会社公式は9,000万超の顧客アカウント、2,000人超、30カ国、契約済み年次収益5億ドルを掲載。東京ガスの国内定量事例も確認。"],
+    negative: ["職種別の給与・賞与・株式、担当社数、目標、達成率、案件期間、国内売上は非公開。", "求人ごとに顧客訪問・出張・現地対応・リモート条件が異なる。顧客側の成果責任、標準製品と個別対応の境界を面接で検証する必要がある。"],
+    next: ["Utility Transformation Leadership", "Energy Platform Customer Leadership", "Japan Utility Technology Leadership"],
+  },
+  ciq: {
+    name: "CIQ", domain: "Enterprise Linux・AI/HPC Infrastructure・Solutions Architecture", officialUrl: "https://job-boards.greenhouse.io/ciq/jobs/5414772008",
+    positive: ["日本在住必須のSr. Linux Solutions Architectが、顧客・販売パートナーの技術探索、設計、実証、導入・拡張を営業と並走して担う。", "会社公式はRocky Linux稼働環境275万超、企業LinuxからAI/HPCオーケストレーションまで9製品、トヨタシステムズを顧客一覧へ掲載。"],
+    negative: ["日本法人、国内拠点、雇用・契約・請求主体、日本語支援、国内有償顧客数、給与・賞与は未確認。", "営業目標への関与、担当社数、PoC同時数、顧客訪問、障害時の支援境界を面接で検証する必要がある。"],
+    next: ["Principal Linux Solutions Architect", "AI・HPC Infrastructure Leadership", "Japan Open Source GTM Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2155,7 +2168,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["megaport", "tradinghub"].includes(job.companySlug)
+  const researchedAt = ["kraken-technologies", "ciq"].includes(job.companySlug)
+    ? "2026-10-23"
+    : ["megaport", "tradinghub"].includes(job.companySlug)
     ? "2026-10-22"
     : ["reaktor", "green-hills-software", "orca-ai"].includes(job.companySlug)
     ? "2026-10-21"

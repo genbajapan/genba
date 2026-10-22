@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-22",
+  "auditedAt": "2026-10-23",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 288,
+    "total": 290,
     "byStatus": {
-      "未着手": 146,
+      "未着手": 148,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 58,
+      "HOT": 59,
       "Active": 40,
-      "Selective": 112,
+      "Selective": 113,
       "求人なし": 78
     },
-    "standardReady": 237
+    "standardReady": 239
   },
   "companies": [
     {
@@ -329,6 +329,15 @@
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "kraken-technologies",
+      "company": "Kraken Technologies",
+      "priority": "HOT",
+      "salesRoles": 12,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1246,6 +1255,15 @@
     {
       "slug": "chalk",
       "company": "Chalk",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ciq",
+      "company": "CIQ",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",

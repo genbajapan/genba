@@ -21,6 +21,14 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  "kraken-technologies": {
+    officialWebsite: { url: "https://www.kraken.tech/ja/", locale: "ja" },
+    globalScaleFallback: { value: "2,000人超", detail: "2026年10月23日時点の会社公式About表示。", sourceUrl: "https://www.kraken.tech/about", sourceLabel: "Kraken会社情報" },
+  },
+  ciq: {
+    officialWebsite: { url: "https://ciq.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/ctrliq"),
+  },
   reaktor: {
     officialWebsite: { url: "https://www.reaktor.com/ja-jp/", locale: "ja" },
     globalScaleFallback: { value: "690人", detail: "Reaktor Groupの2026年第1四半期会社公式値。", sourceUrl: "https://www.group.reaktor.com/en/ipo", sourceLabel: "Reaktor Group IPO information" },

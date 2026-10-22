@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-22 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-23 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全288社（未着手 146 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全290社（未着手 148 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -37,6 +37,7 @@
 |HOT|iDeals|3|公開済み|はい|なし|
 |HOT|Jamf|3|未着手|はい|なし|
 |HOT|KnowBe4|4|公開済み|はい|なし|
+|HOT|Kraken Technologies|12|未着手|はい|なし|
 |HOT|Legora|4|未着手|はい|なし|
 |HOT|Mapbox|3|未着手|はい|なし|
 |HOT|Matterport|3|未着手|はい|なし|
@@ -130,6 +131,7 @@
 |Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Chalk|1|未着手|はい|なし|
+|Selective|CIQ|1|未着手|はい|なし|
 |Selective|CircleCI|1|未着手|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|Claroty|1|未着手|はい|なし|
