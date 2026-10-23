@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-23",
+  "auditedAt": "2026-10-24",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,20 +18,20 @@
     "求人なし"
   ],
   "counts": {
-    "total": 290,
+    "total": 291,
     "byStatus": {
-      "未着手": 148,
+      "未着手": 149,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 59,
-      "Active": 40,
+      "Active": 41,
       "Selective": 113,
       "求人なし": 78
     },
-    "standardReady": 239
+    "standardReady": 240
   },
   "companies": [
     {
@@ -760,6 +760,15 @@
         "求人:Sales Director - Japan & Asia:勤務地・言語の日本語表記",
         "求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記"
       ]
+    },
+    {
+      "slug": "lucid-vision-labs",
+      "company": "LUCID Vision Labs",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "marqvision",

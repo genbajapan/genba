@@ -11,6 +11,7 @@ const glassdoor = (name: string, id: string) => `https://www.glassdoor.com/Revie
 // 2026-08-17確認。数値は取得地域・filterで揺れるため、記事本文では快照としてのみ使う。
 // 個別投稿は事実認定せず、職種別の面接質問を作るための外部signalとして扱う。
 export const COMPANY_GLOBAL_REVIEW_PROFILES: Record<string, CompanyGlobalReviewProfile> = {
+  "lucid-vision-labs": { source: { label: "Glassdoor LUCID Vision Labs global reviews", url: glassdoor("LUCID-Vision-Labs", "3044769") }, snapshot: "3.8/5、15件", positive: "技術、製品、同僚、学習機会に関する肯定theme", caution: "小標本。経営、成長途上のprocess、role・manager差は個別確認が必要", scope: "global全職種の小標本。日本の対象職種・配属先の専用集計ではない" },
   "kraken-technologies": { source: { label: "Glassdoor Kraken Technologies global reviews", url: glassdoor("Kraken", "8860582") }, snapshot: "4.3/5、226件。暗号資産取引所の同名企業ではなく、energy transition事業の企業ページを確認", positive: "culture、柔軟な働き方、学習機会に関する肯定theme", caution: "高い速度、workload、組織拡大時の役割・manager差", scope: "global全職種。日本の対象職種・配属先の専用集計ではない" },
   ciq: { source: { label: "Glassdoor CIQ global reviews", url: glassdoor("CIQ", "6673669") }, snapshot: "3.5/5、14件、59%が推奨", positive: "open sourceのmission、技術力、remote・autonomyに関する肯定theme", caution: "小標本、leadership・優先順位・WLBへの評価差、startup環境の曖昧さ", scope: "global全職種の小標本。日本の対象職種・配属先の専用集計ではない" },
   "cirrus-data": { source: { label: "Glassdoor Cirrus Data Solutions global reviews", url: glassdoor("Cirrus-Data-Solutions", "836227") }, snapshot: "4.4/5、3件。表示地域で5件となる小標本", positive: "product、柔軟性、friendlyな環境に関する肯定theme", caution: "hard sell、remote team、標本の小ささ。日本role・現managerの評価ではない", scope: "global全職種の極小標本" },

@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-23 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-24 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全290社（未着手 148 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全291社（未着手 149 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -82,6 +82,7 @@
 |Active|Kong|2|未着手|はい|なし|
 |Active|Liquid AI|2|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |Active|Litmus|2|未着手|いいえ|求人:Sales Director - Japan & Asia:勤務地・言語の日本語表記、求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記|
+|Active|LUCID Vision Labs|2|未着手|はい|なし|
 |Active|MarqVision|2|公開済み|はい|なし|
 |Active|Megaport|2|未着手|いいえ|求人:Sales Development Representative:海外を含む外部評判source、求人:Sales Development Representative:海外reviewの肯定・注意theme、求人:Sales Executive:海外を含む外部評判source、求人:Sales Executive:海外reviewの肯定・注意theme|
 |Active|Meltwater|2|未着手|はい|なし|

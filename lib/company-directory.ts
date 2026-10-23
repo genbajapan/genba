@@ -21,6 +21,10 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  "lucid-vision-labs": {
+    officialWebsite: { url: "https://thinklucid.com/ja/", locale: "ja" },
+    globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/lucid-vision-labs"),
+  },
   "kraken-technologies": {
     officialWebsite: { url: "https://www.kraken.tech/ja/", locale: "ja" },
     globalScaleFallback: { value: "2,000人超", detail: "2026年10月23日時点の会社公式About表示。", sourceUrl: "https://www.kraken.tech/about", sourceLabel: "Kraken会社情報" },

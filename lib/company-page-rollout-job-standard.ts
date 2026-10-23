@@ -102,6 +102,7 @@ for (const slug of ["wrike", "blackline", "omni-analytics"]) batchSlugs.add(slug
 for (const slug of ["reaktor", "green-hills-software", "orca-ai"]) batchSlugs.add(slug);
 for (const slug of ["megaport", "tradinghub"]) batchSlugs.add(slug);
 for (const slug of ["kraken-technologies", "ciq"]) batchSlugs.add(slug);
+batchSlugs.add("lucid-vision-labs");
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1774,6 +1775,12 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用・契約・請求主体、日本語支援、国内有償顧客数、給与・賞与は未確認。", "営業目標への関与、担当社数、PoC同時数、顧客訪問、障害時の支援境界を面接で検証する必要がある。"],
     next: ["Principal Linux Solutions Architect", "AI・HPC Infrastructure Leadership", "Japan Open Source GTM Leadership"],
   },
+  "lucid-vision-labs": {
+    name: "LUCID Vision Labs", domain: "Machine Vision・Industrial Camera・Japan Customer Engineering", officialUrl: "https://thinklucid.com/ja/careers/",
+    positive: ["東京のInside Sales / Customer ServiceとField Applications Engineerが、受注運用から製品選定、設計採用、導入支援までを分担する。", "会社公式で日本法人・東京拠点と国内ロボティクス事例を確認。公開グローバル規模は51〜200人。"],
+    negative: ["日本の正確な在籍人数、現地責任者、売上、給与、賞与、目標、担当社数は非公開。", "顧客訪問、展示会、設計採用目標、問い合わせ量、営業と技術の責任境界を面接で検証する必要がある。"],
+    next: ["Senior Field Applications Engineer", "Machine Vision Sales Engineering Leadership", "Japan・APAC Technical Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2168,7 +2175,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = ["kraken-technologies", "ciq"].includes(job.companySlug)
+  const researchedAt = job.companySlug === "lucid-vision-labs"
+    ? "2026-10-24"
+    : ["kraken-technologies", "ciq"].includes(job.companySlug)
     ? "2026-10-23"
     : ["megaport", "tradinghub"].includes(job.companySlug)
     ? "2026-10-22"
