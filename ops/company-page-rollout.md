@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-24 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-25 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全291社（未着手 149 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全292社（未着手 150 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -116,6 +116,7 @@
 |Selective|Antithesis|1|未着手|はい|なし|
 |Selective|Applied Intuition|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
+|Selective|Apryse|1|未着手|はい|なし|
 |Selective|Armis|1|未着手|はい|なし|
 |Selective|Ashby|1|未着手|はい|なし|
 |Selective|Axis Communications|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Sales Engineer:職種別の報酬調査、求人:Sales Engineer:ポジティブ・ネガティブ評判、求人:Sales Engineer:市場価値|

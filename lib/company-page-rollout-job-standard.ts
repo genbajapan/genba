@@ -103,6 +103,7 @@ for (const slug of ["reaktor", "green-hills-software", "orca-ai"]) batchSlugs.ad
 for (const slug of ["megaport", "tradinghub"]) batchSlugs.add(slug);
 for (const slug of ["kraken-technologies", "ciq"]) batchSlugs.add(slug);
 batchSlugs.add("lucid-vision-labs");
+batchSlugs.add("apryse");
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1781,6 +1782,12 @@ const companyResearch: Record<string, {
     negative: ["日本の正確な在籍人数、現地責任者、売上、給与、賞与、目標、担当社数は非公開。", "顧客訪問、展示会、設計採用目標、問い合わせ量、営業と技術の責任境界を面接で検証する必要がある。"],
     next: ["Senior Field Applications Engineer", "Machine Vision Sales Engineering Leadership", "Japan・APAC Technical Leadership"],
   },
+  apryse: {
+    name: "Apryse", domain: "Document SDK・Developer Tools・Japan Enterprise Sales", officialUrl: "https://jobs.lever.co/apryse/45fb8fc3-c804-4547-86df-f64b3507f2ed",
+    positive: ["日本全域を担当するEnterprise Account Executiveが、CTO、製品、開発責任者と複雑なSDK評価から受注までを担う。", "会社公式は従業員670人超、導入企業2万社超、Fortune 100の85%での利用を掲載。"],
+    negative: ["日本法人、国内拠点、雇用・契約主体、国内チーム人数、給与・OTEは未確認。", "目標、担当社数、販売パートナー、技術評価と導入後支援の責任境界を面接で検証する必要がある。"],
+    next: ["Senior Enterprise Account Executive", "Developer Tools Sales Leadership", "Japan Market Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2175,7 +2182,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = job.companySlug === "lucid-vision-labs"
+  const researchedAt = job.companySlug === "apryse"
+    ? "2026-10-25"
+    : job.companySlug === "lucid-vision-labs"
     ? "2026-10-24"
     : ["kraken-technologies", "ciq"].includes(job.companySlug)
     ? "2026-10-23"

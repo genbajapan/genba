@@ -21,6 +21,10 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  apryse: {
+    officialWebsite: { url: "https://apryse.com/", locale: "global" },
+    globalScaleFallback: { value: "670人超", detail: "2026年10月25日時点の会社公式Careers表示。", sourceUrl: "https://apryse.com/company/careers", sourceLabel: "Apryse Careers" },
+  },
   "lucid-vision-labs": {
     officialWebsite: { url: "https://thinklucid.com/ja/", locale: "ja" },
     globalScaleFallback: linkedInScale("51〜200人規模", "https://www.linkedin.com/company/lucid-vision-labs"),

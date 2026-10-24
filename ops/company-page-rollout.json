@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-24",
+  "auditedAt": "2026-10-25",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 291,
+    "total": 292,
     "byStatus": {
-      "未着手": 149,
+      "未着手": 150,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 59,
       "Active": 41,
-      "Selective": 113,
+      "Selective": 114,
       "求人なし": 78
     },
-    "standardReady": 240
+    "standardReady": 241
   },
   "companies": [
     {
@@ -1100,6 +1100,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "apryse",
+      "company": "Apryse",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
