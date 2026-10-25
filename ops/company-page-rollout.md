@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-25 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-26 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全292社（未着手 150 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全293社（未着手 151 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -94,6 +94,7 @@
 |Active|NiCE|2|公開済み|はい|なし|
 |Active|PitchBook|2|未着手|いいえ|ヒーロー説明:顧客課題、求人:Account Manager, PitchBook:海外を含む外部評判source、求人:Account Manager, PitchBook:海外reviewの肯定・注意theme、求人:Senior Account Manager, PitchBook:海外を含む外部評判sourceほか1件|
 |Active|Proofpoint|2|未着手|いいえ|求人:Business Development Representative:勤務地・言語の日本語表記、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値ほか4件|
+|Active|Qdrant|2|未着手|はい|なし|
 |Active|Quantexa|2|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme、求人:Solution Engineer:海外を含む外部評判source、求人:Solution Engineer:海外reviewの肯定・注意theme|
 |Active|Replit|2|公開済み|はい|なし|
 |Active|Saviynt|2|公開済み|はい|なし|

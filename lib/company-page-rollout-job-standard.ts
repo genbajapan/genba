@@ -104,6 +104,7 @@ for (const slug of ["megaport", "tradinghub"]) batchSlugs.add(slug);
 for (const slug of ["kraken-technologies", "ciq"]) batchSlugs.add(slug);
 batchSlugs.add("lucid-vision-labs");
 batchSlugs.add("apryse");
+batchSlugs.add("qdrant");
 batchSlugs.add("magnet-forensics");
 
 const officialCompensation: Record<string, {
@@ -1788,6 +1789,13 @@ const companyResearch: Record<string, {
     negative: ["日本法人、国内拠点、雇用・契約主体、国内チーム人数、給与・OTEは未確認。", "目標、担当社数、販売パートナー、技術評価と導入後支援の責任境界を面接で検証する必要がある。"],
     next: ["Senior Enterprise Account Executive", "Developer Tools Sales Leadership", "Japan Market Leadership"],
   },
+  qdrant: {
+    name: "Qdrant", domain: "Vector Database・AI Infrastructure・APAC Technical GTM", officialUrl: "https://jobs.ashbyhq.com/qdrant.tech",
+    communityUrl: "https://www.glassdoor.com/Reviews/Qdrant-Solutions-Reviews-E8013344.htm", communityLabel: "Glassdoor Qdrant Solutions global reviews",
+    positive: ["日本を勤務地に含むAPAC向けTechnical Success ManagerとSolutions Engineerが、技術評価、本番設計、運用、利用拡大を分担する。", "会社公式は100人超、2.5億ダウンロード超、GitHub 2.9万スター、2026年3月のSeries B 5,000万ドルを掲載。"],
+    negative: ["日本法人、国内拠点、雇用主体、日本専任営業、国内顧客、日本語支援、給与・賞与は未確認。", "地域横断求人のため日本への配分、担当社数、同時実証数、障害対応、顧客訪問・出張を面接で検証する必要がある。"],
+    next: ["Principal Solutions Engineer", "Technical Success Leadership", "Japan・APAC AI Infrastructure Leadership"],
+  },
 };
 
 type RoleArchetype =
@@ -2182,7 +2190,9 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   if (!batchSlugs.has(job.companySlug)) return job;
   const company = companyResearch[job.companySlug];
   const role = profileForRole(job, company.domain);
-  const researchedAt = job.companySlug === "apryse"
+  const researchedAt = job.companySlug === "qdrant"
+    ? "2026-10-26"
+    : job.companySlug === "apryse"
     ? "2026-10-25"
     : job.companySlug === "lucid-vision-labs"
     ? "2026-10-24"

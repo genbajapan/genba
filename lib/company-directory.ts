@@ -21,6 +21,10 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  qdrant: {
+    officialWebsite: { url: "https://qdrant.tech/", locale: "global" },
+    globalScaleFallback: { value: "100人超", detail: "2026年10月26日時点の会社公式About表示。20カ国超に分散。", sourceUrl: "https://qdrant.tech/about-us/", sourceLabel: "Qdrant About" },
+  },
   apryse: {
     officialWebsite: { url: "https://apryse.com/", locale: "global" },
     globalScaleFallback: { value: "670人超", detail: "2026年10月25日時点の会社公式Careers表示。", sourceUrl: "https://apryse.com/company/careers", sourceLabel: "Apryse Careers" },
