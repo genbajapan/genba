@@ -21,6 +21,10 @@ const linkedInScale = (value: string, sourceUrl: string): CompanyDirectoryEntry[
 });
 
 export const companyDirectoryBySlug: Record<string, CompanyDirectoryEntry> = {
+  hootsuite: {
+    officialWebsite: { url: "https://www.hootsuite.com/", locale: "global" },
+    globalScaleFallback: linkedInScale("1,001〜5,000人規模", "https://www.linkedin.com/company/hootsuite/"),
+  },
   qdrant: {
     officialWebsite: { url: "https://qdrant.tech/", locale: "global" },
     globalScaleFallback: { value: "100人超", detail: "2026年10月26日時点の会社公式About表示。20カ国超に分散。", sourceUrl: "https://qdrant.tech/about-us/", sourceLabel: "Qdrant About" },

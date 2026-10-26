@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-26 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-27 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全293社（未着手 151 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全294社（未着手 152 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -18,17 +18,14 @@
 |HOT|CIC|5|未着手|はい|なし|
 |HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
-|HOT|Cognition|7|公開済み|はい|なし|
-|HOT|Cohere|3|公開済み|はい|なし|
+|HOT|Cognition|6|公開済み|はい|なし|
 |HOT|Cursor|4|公開済み|はい|なし|
 |HOT|Darktrace|3|未着手|はい|なし|
 |HOT|dbt Labs|4|公開済み|はい|なし|
-|HOT|DeepL|8|公開済み|はい|なし|
 |HOT|DocuSign|4|公開済み|はい|なし|
 |HOT|EcoVadis|3|未着手|はい|なし|
 |HOT|EDB|3|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Director Sales:職種別の報酬調査、求人:Director Sales:ポジティブ・ネガティブ評判、求人:Director Sales:市場価値ほか6件|
 |HOT|Elastic|3|公開済み|はい|なし|
-|HOT|ElevenLabs|10|公開済み|はい|なし|
 |HOT|Figma|8|公開済み|はい|なし|
 |HOT|Fivetran|4|公開済み|はい|なし|
 |HOT|GitLab|4|公開済み|はい|なし|
@@ -46,7 +43,7 @@
 |HOT|Monotype|6|未着手|はい|なし|
 |HOT|Netskope|10|公開済み|はい|なし|
 |HOT|New Relic|7|公開済み|はい|なし|
-|HOT|Notion|12|公開済み|はい|なし|
+|HOT|Notion|11|公開済み|はい|なし|
 |HOT|Okta|7|公開済み|はい|なし|
 |HOT|Omnissa|10|未着手|はい|なし|
 |HOT|OutSystems|7|公開済み|はい|なし|
@@ -54,26 +51,26 @@
 |HOT|QNX|3|未着手|はい|なし|
 |HOT|Rubrik|3|公開済み|はい|なし|
 |HOT|SailPoint|4|公開済み|はい|なし|
-|HOT|Sensor Tower|5|公開済み|はい|なし|
+|HOT|Sensor Tower|4|公開済み|はい|なし|
 |HOT|Shield AI|4|未着手|はい|なし|
 |HOT|Similarweb|4|公開済み|はい|なし|
 |HOT|Sprinklr|3|未着手|はい|なし|
 |HOT|SUSE|4|未着手|はい|なし|
 |HOT|Tulip Interfaces|4|未着手|はい|なし|
-|HOT|UiPath|3|公開済み|はい|なし|
 |HOT|Verkada|6|公開済み|はい|なし|
 |HOT|WalkMe|4|公開済み|はい|なし|
-|HOT|Whatnot|9|未着手|はい|なし|
+|HOT|Whatnot|4|未着手|はい|なし|
 |HOT|Wiz|7|公開済み|はい|なし|
-|Active|3E|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Business Development Executive:職種別の報酬調査、求人:Business Development Executive:ポジティブ・ネガティブ評判、求人:Business Development Executive:市場価値ほか3件|
 |Active|ai&|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Manager:海外を含む外部評判source、求人:Account Manager:海外reviewの肯定・注意theme、求人:AIaaS & PaaS Business Development:海外を含む外部評判sourceほか1件|
 |Active|Appian|2|未着手|はい|なし|
 |Active|Asana|2|公開済み|はい|なし|
 |Active|Boomi|2|未着手|いいえ|求人:Account Executive 4, Direct Sales:海外を含む外部評判source、求人:Account Executive 4, Direct Sales:海外reviewの肯定・注意theme、求人:Enterprise Account Executive, Direct Sales:海外を含む外部評判source、求人:Enterprise Account Executive, Direct Sales:海外reviewの肯定・注意theme|
+|Active|Cohere|2|公開済み|はい|なし|
 |Active|Coupa|2|公開済み|はい|なし|
 |Active|Dataiku|2|公開済み|はい|なし|
 |Active|Dialpad|2|公開済み|はい|なし|
 |Active|Dragos|2|公開済み|はい|なし|
+|Active|ElevenLabs|2|公開済み|はい|なし|
 |Active|Entrupy|2|未着手|はい|なし|
 |Active|Fusion Worldwide|2|公開済み|はい|なし|
 |Active|GetYourGuide|2|未着手|はい|なし|
@@ -81,7 +78,6 @@
 |Active|Grafana Labs|2|公開済み|はい|なし|
 |Active|Kong|2|未着手|はい|なし|
 |Active|Liquid AI|2|未着手|いいえ|ヒーロー説明:解決と事業成果|
-|Active|Litmus|2|未着手|いいえ|求人:Sales Director - Japan & Asia:勤務地・言語の日本語表記、求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記|
 |Active|LUCID Vision Labs|2|未着手|はい|なし|
 |Active|MarqVision|2|公開済み|はい|なし|
 |Active|Megaport|2|未着手|いいえ|求人:Sales Development Representative:海外を含む外部評判source、求人:Sales Development Representative:海外reviewの肯定・注意theme、求人:Sales Executive:海外を含む外部評判source、求人:Sales Executive:海外reviewの肯定・注意theme|
@@ -94,18 +90,15 @@
 |Active|NiCE|2|公開済み|はい|なし|
 |Active|PitchBook|2|未着手|いいえ|ヒーロー説明:顧客課題、求人:Account Manager, PitchBook:海外を含む外部評判source、求人:Account Manager, PitchBook:海外reviewの肯定・注意theme、求人:Senior Account Manager, PitchBook:海外を含む外部評判sourceほか1件|
 |Active|Proofpoint|2|未着手|いいえ|求人:Business Development Representative:勤務地・言語の日本語表記、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値ほか4件|
-|Active|Qdrant|2|未着手|はい|なし|
-|Active|Quantexa|2|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme、求人:Solution Engineer:海外を含む外部評判source、求人:Solution Engineer:海外reviewの肯定・注意theme|
-|Active|Replit|2|公開済み|はい|なし|
 |Active|Saviynt|2|公開済み|はい|なし|
 |Active|Sayari|2|公開済み|はい|なし|
 |Active|Schrödinger|2|公開済み|はい|なし|
-|Active|Speak|2|公開済み|はい|なし|
 |Active|Streamhub|2|未着手|はい|なし|
 |Active|Tanium|2|公開済み|はい|なし|
 |Active|Telnyx|2|未着手|はい|なし|
 |Active|Twilio|2|公開済み|はい|なし|
 |Active|Ubiquiti|2|公開済み|はい|なし|
+|Active|UiPath|2|公開済み|はい|なし|
 |Active|Zendesk|2|公開済み|はい|なし|
 |Selective|Abnormal AI|1|公開済み|はい|なし|
 |Selective|Acquia|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Lead Solutions Engineer:職種別の報酬調査、求人:Lead Solutions Engineer:ポジティブ・ネガティブ評判、求人:Lead Solutions Engineer:市場価値|
@@ -114,7 +107,6 @@
 |Selective|Alarm.com|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Alta Ares|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Business Development Manager — Japan:勤務地・言語の日本語表記、外貨の円換算:facts[2].value=5,000万ユーロ|
 |Selective|Alteryx|1|未着手|はい|なし|
-|Selective|Antithesis|1|未着手|はい|なし|
 |Selective|Applied Intuition|1|未着手|はい|なし|
 |Selective|AppsFlyer|1|公開済み|はい|なし|
 |Selective|Apryse|1|未着手|はい|なし|
@@ -127,9 +119,7 @@
 |Selective|BlackLine|1|未着手|いいえ|日本オフィス:住所のみ、日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲ほか2件|
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
-|Selective|Bounce|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Box|1|未着手|はい|なし|
-|Selective|Cambly|1|公開済み|はい|なし|
 |Selective|Canva|1|未着手|はい|なし|
 |Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
@@ -138,12 +128,10 @@
 |Selective|CircleCI|1|未着手|はい|なし|
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|Claroty|1|未着手|はい|なし|
-|Selective|CodeRabbit|1|公開済み|はい|なし|
 |Selective|Cohesity|1|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |Selective|Cribl|1|公開済み|はい|なし|
 |Selective|D-Fend Solutions|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Presales Field Engineer:勤務地・言語の日本語表記ほか3件|
 |Selective|DataRobot|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:AI Engineer - Professional Services:勤務地・言語の日本語表記、求人:AI Engineer - Professional Services:職種別の報酬調査、求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判ほか1件|
-|Selective|DataSnipper|1|公開済み|はい|なし|
 |Selective|DoubleVerify|1|公開済み|はい|なし|
 |Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Element Biosciences|1|未着手|はい|なし|
@@ -153,21 +141,18 @@
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
 |Selective|Fitch Solutions|1|未着手|はい|なし|
-|Selective|Gainsight|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Enterprise Account Executive:職種別の報酬調査、求人:Enterprise Account Executive:ポジティブ・ネガティブ評判、求人:Enterprise Account Executive:市場価値|
-|Selective|Genspark|1|未着手|はい|なし|
 |Selective|Green Hills Software|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Field Application Engineer (Tokyo, Japan):海外を含む外部評判source、求人:Field Application Engineer (Tokyo, Japan):海外reviewの肯定・注意theme|
 |Selective|Guidewire|1|未着手|はい|なし|
 |Selective|Hiya|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
-|Selective|Horizon3|1|未着手|はい|なし|
-|Selective|Hoxhunt|1|未着手|いいえ|求人:Enterprise Account Executive, APAC:勤務地・言語の日本語表記|
+|Selective|Hootsuite|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |Selective|Hudl|1|未着手|はい|なし|
-|Selective|Illumio|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Enterprise Sales Executive:勤務地・言語の日本語表記、求人:Enterprise Sales Executive:職種別の報酬調査、求人:Enterprise Sales Executive:ポジティブ・ネガティブ評判ほか1件|
 |Selective|IonQ|1|未着手|はい|なし|
 |Selective|Keeper Security|1|未着手|はい|なし|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Kpler|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
 |Selective|Lighthouse|1|公開済み|はい|なし|
+|Selective|Litmus|1|未着手|いいえ|求人:Customer Success Application Engineer (Japan):勤務地・言語の日本語表記|
 |Selective|Magnet Forensics|1|未着手|はい|なし|
 |Selective|Mambu|1|公開済み|はい|なし|
 |Selective|Matter Intelligence|1|未着手|はい|なし|
@@ -179,13 +164,13 @@
 |Selective|o9 Solutions|1|未着手|はい|なし|
 |Selective|Orca AI|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Customer Success Manager:海外を含む外部評判source、求人:Customer Success Manager:海外reviewの肯定・注意theme|
 |Selective|Pallet|1|未着手|はい|なし|
-|Selective|Patch|1|公開済み|はい|なし|
-|Selective|Perplexity|1|未着手|はい|なし|
 |Selective|Planet|1|公開済み|はい|なし|
+|Selective|Qdrant|1|未着手|はい|なし|
+|Selective|Quantexa|1|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme|
 |Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
 |Selective|Reaktor|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:テックリード＆クライアントリード:海外を含む外部評判source、求人:テックリード＆クライアントリード:海外reviewの肯定・注意themeほか1件|
 |Selective|Recorded Future|1|未着手|はい|なし|
-|Selective|Rescale|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
+|Selective|Replit|1|公開済み|はい|なし|
 |Selective|Rocket Software|1|未着手|はい|なし|
 |Selective|Rokt|1|未着手|はい|なし|
 |Selective|Runpod|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
@@ -201,56 +186,64 @@
 |Selective|Sonar|1|公開済み|はい|なし|
 |Selective|Sonatype|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか5件|
 |Selective|Sparta|1|未着手|はい|なし|
+|Selective|Speak|1|公開済み|はい|なし|
 |Selective|Sprout.ai|1|未着手|はい|なし|
 |Selective|StackAdapt|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Senior Sales Manager, Japan:職種別の報酬調査、求人:Senior Sales Manager, Japan:ポジティブ・ネガティブ評判、求人:Senior Sales Manager, Japan:市場価値|
-|Selective|Substack|1|未着手|はい|なし|
 |Selective|Teamworks|1|未着手|はい|なし|
 |Selective|Tenable|1|未着手|はい|なし|
 |Selective|think-cell|1|公開済み|はい|なし|
 |Selective|Torq|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source、求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme|
-|Selective|Tradlinx|1|未着手|はい|なし|
 |Selective|Tricentis|1|未着手|はい|なし|
-|Selective|Vanta|1|公開済み|はい|なし|
 |Selective|Vectra AI|1|未着手|はい|なし|
 |Selective|Via|1|未着手|はい|なし|
-|Selective|Vizcom|1|未着手|はい|なし|
 |Selective|Vonage|1|公開済み|はい|なし|
-|Selective|WitnessAI|1|未着手|はい|なし|
 |Selective|Workiva|1|公開済み|はい|なし|
 |Selective|Wrike|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Partner Account Manager:海外を含む外部評判sourceほか1件|
 |Selective|Zadara|1|公開済み|はい|なし|
 |Selective|Zilliz|1|公開済み|はい|なし|
 |Selective|Zimperium|1|未着手|はい|なし|
 |求人なし|1Password|0|公開済み|はい|なし|
+|求人なし|3E|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス|
 |求人なし|6sense|0|公開済み|はい|なし|
 |求人なし|Addepar|0|公開済み|はい|なし|
 |求人なし|Airtable|0|公開済み|はい|なし|
 |求人なし|Aiven|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Amplitude|0|公開済み|はい|なし|
+|求人なし|Antithesis|0|未着手|はい|なし|
 |求人なし|Apollo.io|0|公開済み|はい|なし|
 |求人なし|Atlassian|0|公開済み|はい|なし|
 |求人なし|Attio|0|公開済み|はい|なし|
+|求人なし|Bounce|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
+|求人なし|Cambly|0|公開済み|はい|なし|
 |求人なし|Chainguard|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|ClickHouse|0|公開済み|はい|なし|
 |求人なし|Cockroach Labs|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典|
+|求人なし|CodeRabbit|0|公開済み|はい|なし|
 |求人なし|Confluent|0|公開済み|はい|なし|
 |求人なし|Contentsquare|0|公開済み|はい|なし|
+|求人なし|DataSnipper|0|公開済み|はい|なし|
 |求人なし|Decagon|0|未着手|はい|なし|
 |求人なし|Deel|0|公開済み|はい|なし|
 |求人なし|Deepgram|0|公開済み|はい|なし|
+|求人なし|DeepL|0|公開済み|はい|なし|
 |求人なし|Drata|0|未着手|いいえ|日本語の事業領域・本社表記、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない、ヒーロー説明:解決と事業成果|
 |求人なし|Dropbox|0|公開済み|はい|なし|
 |求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Extreme Networks|0|公開済み|はい|なし|
 |求人なし|Fireworks AI|0|未着手|はい|なし|
+|求人なし|Gainsight|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス|
 |求人なし|Gamma|0|未着手|はい|なし|
+|求人なし|Genspark|0|未着手|はい|なし|
 |求人なし|Gong|0|公開済み|はい|なし|
 |求人なし|Gurobi Optimization|0|公開済み|はい|なし|
 |求人なし|Halcyon|0|公開済み|はい|なし|
 |求人なし|Harvey|0|公開済み|はい|なし|
 |求人なし|Hebbia|0|未着手|はい|なし|
 |求人なし|Hightouch|0|公開済み|はい|なし|
+|求人なし|Horizon3|0|未着手|はい|なし|
+|求人なし|Hoxhunt|0|未着手|はい|なし|
+|求人なし|Illumio|0|未着手|いいえ|ヒーロー説明:解決と事業成果|
 |求人なし|Intercom / Fin|0|公開済み|はい|なし|
 |求人なし|Ironclad|0|公開済み|はい|なし|
 |求人なし|Island|0|公開済み|はい|なし|
@@ -270,19 +263,23 @@
 |求人なし|Neo4j|0|未着手|はい|なし|
 |求人なし|Nomic|0|未着手|はい|なし|
 |求人なし|Omni|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない|
+|求人なし|Patch|0|公開済み|はい|なし|
 |求人なし|Patsnap|0|公開済み|はい|なし|
 |求人なし|Pendo|0|公開済み|はい|なし|
+|求人なし|Perplexity|0|未着手|はい|なし|
 |求人なし|Pigment|0|公開済み|はい|なし|
 |求人なし|Pinecone|0|公開済み|はい|なし|
 |求人なし|PingCAP|0|公開済み|はい|なし|
 |求人なし|Postman|0|公開済み|はい|なし|
 |求人なし|Qualtrics|0|公開済み|はい|なし|
+|求人なし|Rescale|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Retool|0|公開済み|はい|なし|
 |求人なし|Rippling|0|公開済み|はい|なし|
 |求人なし|Rogo|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Scandit|0|公開済み|はい|なし|
 |求人なし|Sentry|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Sierra|0|公開済み|はい|なし|
+|求人なし|Substack|0|未着手|はい|なし|
 |求人なし|Supabase|0|未着手|はい|なし|
 |求人なし|Synthesia|0|公開済み|はい|なし|
 |求人なし|Sysdig|0|公開済み|はい|なし|
@@ -291,11 +288,15 @@
 |求人なし|Tines|0|公開済み|はい|なし|
 |求人なし|Tools for Humanity (World)|0|公開済み|はい|なし|
 |求人なし|TradingHub|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
+|求人なし|Tradlinx|0|未着手|はい|なし|
+|求人なし|Vanta|0|公開済み|はい|なし|
 |求人なし|Veeam|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Vercel|0|公開済み|はい|なし|
+|求人なし|Vizcom|0|未着手|はい|なし|
 |求人なし|Wasabi Technologies|0|公開済み|はい|なし|
 |求人なし|WatchGuard Technologies|0|公開済み|はい|なし|
 |求人なし|Webflow|0|公開済み|はい|なし|
+|求人なし|WitnessAI|0|未着手|はい|なし|
 |求人なし|Workato|0|公開済み|はい|なし|
 |求人なし|Writer|0|公開済み|はい|なし|
 |求人なし|XBOW|0|未着手|はい|なし|

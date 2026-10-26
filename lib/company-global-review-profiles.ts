@@ -11,6 +11,7 @@ const glassdoor = (name: string, id: string) => `https://www.glassdoor.com/Revie
 // 2026-08-17確認。数値は取得地域・filterで揺れるため、記事本文では快照としてのみ使う。
 // 個別投稿は事実認定せず、職種別の面接質問を作るための外部signalとして扱う。
 export const COMPANY_GLOBAL_REVIEW_PROFILES: Record<string, CompanyGlobalReviewProfile> = {
+  hootsuite: { source: { label: "Glassdoor Hootsuite global reviews", url: glassdoor("Hootsuite", "617216") }, snapshot: "3.3/5、820件前後の公開レビュー", positive: "同僚、ブランド、柔軟性、学習機会を評価する声", caution: "組織変更、経営、キャリアの予見性、業務量に関する声", scope: "global全職種。日本の対象チームの体験とは分けて扱う" },
   qdrant: { source: { label: "Glassdoor Qdrant Solutions global reviews", url: glassdoor("Qdrant-Solutions", "8013344") }, snapshot: "公開employee reviewは6件の極小標本", positive: "技術的な挑戦、分散勤務、影響範囲を期待するsignal", caution: "極小標本で、日本・対象職種・現在の組織体験は判断できない", scope: "global全職種の極小標本。Japan・APAC技術職専用ではない" },
   apryse: { source: { label: "Glassdoor Apryse global reviews", url: glassdoor("Apryse", "351810") }, snapshot: "3.8/5、110件", positive: "WLB、diversity、culture、careerに関する肯定theme", caution: "global全職種の集計で、日本の対象営業・配属先の専用集計ではない", scope: "global全職種。日本の対象職種と母集団が異なる" },
   "lucid-vision-labs": { source: { label: "Glassdoor LUCID Vision Labs global reviews", url: glassdoor("LUCID-Vision-Labs", "3044769") }, snapshot: "3.8/5、15件", positive: "技術、製品、同僚、学習機会に関する肯定theme", caution: "小標本。経営、成長途上のprocess、role・manager差は個別確認が必要", scope: "global全職種の小標本。日本の対象職種・配属先の専用集計ではない" },

@@ -106,6 +106,7 @@ batchSlugs.add("lucid-vision-labs");
 batchSlugs.add("apryse");
 batchSlugs.add("qdrant");
 batchSlugs.add("magnet-forensics");
+batchSlugs.add("hootsuite");
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -233,6 +234,13 @@ const companyResearch: Record<string, {
   negative: string[];
   next: string[];
 }> = {
+  hootsuite: {
+    name: "Hootsuite", domain: "Social Media Management・Renewal & Expansion・Japan", officialUrl: "https://job-boards.greenhouse.io/hootsuite/jobs/8312189",
+    communityUrl: "https://www.glassdoor.com/Reviews/Hootsuite-Reviews-E617216.htm", communityLabel: "Glassdoor Hootsuite global reviews（日本の対象チームへ一般化しない、2026-10-27確認）",
+    positive: ["東京のSenior Account ManagerがEmerging Marketsの更新、解約リスク、追加・クロスセル、幹部関係、予測を一貫して持つ。", "会社公式は企業顧客6,000社以上、利用者20万人以上、200カ国以上を掲載し、SNS運用から顧客対応・リスニングまで拡張余地がある。"],
+    negative: ["日本法人名、国内人数、日本売上、顧客構成、給与、変動給、目標、達成率、担当社数は非公開。", "カスタマーサクセスとの分担、解約リスクの早期検知、データ費用とSNS各社の仕様変更、東京の出社頻度を選考で検証する必要がある。"],
+    next: ["Enterprise Account Management", "Social Media・Customer Experience Growth Leadership", "Japan・APAC Customer Growth Leadership"],
+  },
   wrike: {
     name: "Wrike", domain: "ワークマネジメント・パートナー営業・日本市場", officialUrl: "https://job-boards.greenhouse.io/wrike/jobs/4725613005",
     positive: ["東京のPartner Account Manager求人と、2019年からの日本法人・東京拠点を会社公式で確認できる。", "顧客2万社以上、利用者200万人以上、従業員1,000人以上と国内導入事例を公式公開する。"],
@@ -2192,6 +2200,8 @@ export function strengthenRolloutBatchOneJob<T extends JobLike>(job: T): T {
   const role = profileForRole(job, company.domain);
   const researchedAt = job.companySlug === "qdrant"
     ? "2026-10-26"
+    : job.companySlug === "hootsuite"
+    ? "2026-10-27"
     : job.companySlug === "apryse"
     ? "2026-10-25"
     : job.companySlug === "lucid-vision-labs"

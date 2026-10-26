@@ -86,6 +86,7 @@ import { companies20261023Daily, jobs20261023Daily } from "@/lib/company-additio
 import { companies20261024Daily, jobs20261024Daily } from "@/lib/company-additions-2026-10-24-daily";
 import { companies20261025Daily, jobs20261025Daily } from "@/lib/company-additions-2026-10-25-daily";
 import { companies20261026Daily, jobs20261026Daily } from "@/lib/company-additions-2026-10-26-daily";
+import { companies20261027Daily, jobs20261027Daily } from "@/lib/company-additions-2026-10-27-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1046,6 +1047,7 @@ const companyRecords: Company[] = [
   ...companies20261024Daily,
   ...companies20261025Daily,
   ...companies20261026Daily,
+  ...companies20261027Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1495,6 +1497,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 const jobRecords: Job[] = [
   ...jobs20261025Daily,
   ...jobs20261026Daily,
+  ...jobs20261027Daily,
   ...jobs20261024Daily,
   ...jobs20261023Daily,
   ...jobs20261022Daily,
@@ -3315,6 +3318,57 @@ const closedJobIds = new Set([
   "bluematrix-client-success-manager-tokyo",
   "cribl-6098546004",
   "wasabi-inside-sales-representative-japan",
+  "qdrant-senior-solutions-engineer-apac-512b651a",
+  "whatnot-customer-experience-manager-japan-93f4e65d",
+  "whatnot-marketing-manager-japan-dae66ab7",
+  "whatnot-category-associate-japan-a6f3c20d",
+  "whatnot-trust-risk-agent-japan-1e1e4a05",
+  "whatnot-localization-qa-japanese-577326cf",
+  "rescale-solutions-architect-japan-08a43132",
+  "bounce-business-development-manager-japan-dde5e989",
+  "litmus-sales-director-japan-asia-a2250c34",
+  "hoxhunt-enterprise-account-executive-apac-b770639c",
+  "illumio-enterprise-sales-executive-japan-a4f93cba",
+  "3e-business-development-executive-japan-a46635ae",
+  "3e-account-manager-japan-574f4328",
+  "gainsight-enterprise-account-executive-japan-923f3346",
+  "horizon3-enterprise-account-executive-japan-27401a87",
+  "substack-head-partnerships-japan-1c76f297",
+  "tradlinx-japan-business-development-manager-0154cd14",
+  "quantexa-solution-engineer-72a9cd98",
+  "perplexity-customer-success-enterprise-support-lead-apac-ab448b33",
+  "genspark-solutions-engineer-japan-1218b768",
+  "vizcom-senior-enterprise-account-executive-apac-5724060e",
+  "speak-sales-development-representative-japan-ad2f9ef5",
+  "deepl-lead-solutions-consultant-apj-d930454d",
+  "deepl-senior-solutions-consultant-tokyo-d5cea1af",
+  "vanta-sales-engineer-japan-0d8925dc",
+  "antithesis-solutions-engineer-japan-26d53e9b",
+  "witnessai-senior-sales-engineer-japan-2674ec49",
+  "coderabbit-account-executive-japan-0e889e16",
+  "datasnipper-sales-account-executive-japan-3adf1eee",
+  "uipath-commercial-sales-account-executive-japan-current",
+  "sensor-tower-product-marketing-manager-apac-japan-current",
+  "replit-founding-account-executive-japan-current",
+  "patch-enterprise-account-executive-apac-tokyo-current",
+  "cohere-forward-deployed-engineer-infrastructure-japan",
+  "cognition-gtm-operations-japan",
+  "cambly-sales-director-apac",
+  "deepl-senior-manager-customer-success-japan",
+  "deepl-sales-enablement-manager-apj",
+  "deepl-product-gtm-specialist-voice-japan",
+  "deepl-renewal-success-manager-japan",
+  "deepl-enterprise-account-executive-apac",
+  "deepl-senior-customer-success-manager-japan",
+  "notion-head-enterprise-solutions-consultants-japan",
+  "elevenlabs-product-marketing-agents-japan-eligible",
+  "elevenlabs-deployment-strategist-singapore-japan-eligible",
+  "elevenlabs-forward-deployed-engineer-singapore-japan-eligible",
+  "elevenlabs-enterprise-solutions-engineer-singapore-japan-eligible",
+  "elevenlabs-content-creator-strategist-japan-eligible",
+  "elevenlabs-b2b-seo-aeo-expert-japan-eligible",
+  "elevenlabs-apac-communications-japan-eligible",
+  "elevenlabs-product-marketing-agents-government-japan-eligible",
 ]);
 
 const publishedCompanyBySlug = new Map(publishedCompanyRecords.map((company) => [company.slug, company]));
@@ -3325,7 +3379,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-26" ? job.lastChecked : "2026-10-26",
+      lastChecked: job.lastChecked > "2026-10-27" ? job.lastChecked : "2026-10-27",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3376,7 +3430,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-26" ? company.lastChecked : "2026-10-26";
+  const auditedLastChecked = company.lastChecked > "2026-10-27" ? company.lastChecked : "2026-10-27";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
