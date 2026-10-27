@@ -1,6 +1,6 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-27 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-28 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
 全294社（未着手 152 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
@@ -167,7 +167,6 @@
 |Selective|Planet|1|公開済み|はい|なし|
 |Selective|Qdrant|1|未着手|はい|なし|
 |Selective|Quantexa|1|未着手|いいえ|求人:FSI Sales Director:海外を含む外部評判source、求人:FSI Sales Director:海外reviewの肯定・注意theme|
-|Selective|Qumulo|1|未着手|いいえ|求人:Senior Customer Success Manager (APAC):勤務地・言語の日本語表記、求人:Senior Customer Success Manager (APAC):職種別の報酬調査、求人:Senior Customer Success Manager (APAC):ポジティブ・ネガティブ評判、求人:Senior Customer Success Manager (APAC):市場価値|
 |Selective|Reaktor|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:テックリード＆クライアントリード:海外を含む外部評判source、求人:テックリード＆クライアントリード:海外reviewの肯定・注意themeほか1件|
 |Selective|Recorded Future|1|未着手|はい|なし|
 |Selective|Replit|1|公開済み|はい|なし|
@@ -272,6 +271,7 @@
 |求人なし|PingCAP|0|公開済み|はい|なし|
 |求人なし|Postman|0|公開済み|はい|なし|
 |求人なし|Qualtrics|0|公開済み|はい|なし|
+|求人なし|Qumulo|0|未着手|はい|なし|
 |求人なし|Rescale|0|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Retool|0|公開済み|はい|なし|
 |求人なし|Rippling|0|公開済み|はい|なし|

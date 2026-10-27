@@ -3168,6 +3168,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "qumulo-senior-customer-success-manager-apac-dfaec4ee",
   "extreme-networks-systems-engineer-tokyo-current",
   "bluematrix-client-sales-manager-tokyo-c4e24c6f",
   "coupa-customer-solution-partner-services-sales",
@@ -3379,7 +3380,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-27" ? job.lastChecked : "2026-10-27",
+      lastChecked: job.lastChecked > "2026-10-28" ? job.lastChecked : "2026-10-28",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3430,7 +3431,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-27" ? company.lastChecked : "2026-10-27";
+  const auditedLastChecked = company.lastChecked > "2026-10-28" ? company.lastChecked : "2026-10-28";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3447,6 +3448,16 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-qumulo-senior-customer-success-manager-ended-20261028",
+    companySlug: "qumulo",
+    date: "2026-10-28",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "QumuloのSenior Customer Success Manager求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式求人一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Qumulo Careers (Ashby)", url: "https://jobs.ashbyhq.com/qumulo/dfaec4ee-6675-4a3c-b658-22871e48074b" },
+  },
   {
     id: "signal-hightouch-enterprise-ae-ended-20261003",
     companySlug: "hightouch",
