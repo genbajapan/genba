@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-28",
+  "auditedAt": "2026-10-29",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,16 +18,16 @@
     "求人なし"
   ],
   "counts": {
-    "total": 294,
+    "total": 295,
     "byStatus": {
-      "未着手": 152,
+      "未着手": 153,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
       "HOT": 55,
-      "Active": 39,
+      "Active": 40,
       "Selective": 101,
       "求人なし": 99
     },
@@ -309,7 +309,7 @@
       "slug": "kraken-technologies",
       "company": "Kraken Technologies",
       "priority": "HOT",
-      "salesRoles": 12,
+      "salesRoles": 11,
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
@@ -808,6 +808,23 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "optro",
+      "company": "Optro",
+      "priority": "Active",
+      "salesRoles": 2,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO出典",
+        "求人:Enterprise Account Executive (Japan):職種別の報酬調査",
+        "求人:Enterprise Account Executive (Japan):ポジティブ・ネガティブ評判",
+        "求人:Enterprise Account Executive (Japan):市場価値",
+        "求人:Regional Alliance Manager (Japan):職種別の報酬調査",
+        "求人:Regional Alliance Manager (Japan):ポジティブ・ネガティブ評判",
+        "求人:Regional Alliance Manager (Japan):市場価値"
+      ]
     },
     {
       "slug": "pitchbook",

@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-28 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-29 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全294社（未着手 152 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全295社（未着手 153 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -34,7 +34,7 @@
 |HOT|iDeals|3|公開済み|はい|なし|
 |HOT|Jamf|3|未着手|はい|なし|
 |HOT|KnowBe4|4|公開済み|はい|なし|
-|HOT|Kraken Technologies|12|未着手|はい|なし|
+|HOT|Kraken Technologies|11|未着手|はい|なし|
 |HOT|Legora|4|未着手|はい|なし|
 |HOT|Mapbox|3|未着手|はい|なし|
 |HOT|Matterport|3|未着手|はい|なし|
@@ -88,6 +88,7 @@
 |Active|Neural Concept|2|公開済み|はい|なし|
 |Active|Nexthink|2|公開済み|はい|なし|
 |Active|NiCE|2|公開済み|はい|なし|
+|Active|Optro|2|未着手|いいえ|日本法人での想定従業員数:gBizINFO出典、求人:Enterprise Account Executive (Japan):職種別の報酬調査、求人:Enterprise Account Executive (Japan):ポジティブ・ネガティブ評判、求人:Enterprise Account Executive (Japan):市場価値ほか3件|
 |Active|PitchBook|2|未着手|いいえ|ヒーロー説明:顧客課題、求人:Account Manager, PitchBook:海外を含む外部評判source、求人:Account Manager, PitchBook:海外reviewの肯定・注意theme、求人:Senior Account Manager, PitchBook:海外を含む外部評判sourceほか1件|
 |Active|Proofpoint|2|未着手|いいえ|求人:Business Development Representative:勤務地・言語の日本語表記、求人:Business Development Representative:職種別の報酬調査、求人:Business Development Representative:ポジティブ・ネガティブ評判、求人:Business Development Representative:市場価値ほか4件|
 |Active|Saviynt|2|公開済み|はい|なし|

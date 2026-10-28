@@ -87,6 +87,7 @@ import { companies20261024Daily, jobs20261024Daily } from "@/lib/company-additio
 import { companies20261025Daily, jobs20261025Daily } from "@/lib/company-additions-2026-10-25-daily";
 import { companies20261026Daily, jobs20261026Daily } from "@/lib/company-additions-2026-10-26-daily";
 import { companies20261027Daily, jobs20261027Daily } from "@/lib/company-additions-2026-10-27-daily";
+import { companies20261029Daily, jobs20261029Daily } from "@/lib/company-additions-2026-10-29-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1048,6 +1049,7 @@ const companyRecords: Company[] = [
   ...companies20261025Daily,
   ...companies20261026Daily,
   ...companies20261027Daily,
+  ...companies20261029Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1495,6 +1497,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261029Daily,
   ...jobs20261025Daily,
   ...jobs20261026Daily,
   ...jobs20261027Daily,
@@ -3168,6 +3171,7 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "kraken-mid-backend-engineer-japan-ebceacfe",
   "qumulo-senior-customer-success-manager-apac-dfaec4ee",
   "extreme-networks-systems-engineer-tokyo-current",
   "bluematrix-client-sales-manager-tokyo-c4e24c6f",
@@ -3380,7 +3384,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-28" ? job.lastChecked : "2026-10-28",
+      lastChecked: job.lastChecked > "2026-10-29" ? job.lastChecked : "2026-10-29",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3431,7 +3435,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-28" ? company.lastChecked : "2026-10-28";
+  const auditedLastChecked = company.lastChecked > "2026-10-29" ? company.lastChecked : "2026-10-29";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3448,6 +3452,16 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-kraken-mid-backend-engineer-ended-20261029",
+    companySlug: "kraken-technologies",
+    date: "2026-10-29",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Kraken TechnologiesのBackend Engineer求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式Ashby一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Kraken Technologies Careers (Ashby)", url: "https://jobs.ashbyhq.com/krakentech/ebceacfe-b47a-43bf-b963-06be91b2adb0" },
+  },
   {
     id: "signal-qumulo-senior-customer-success-manager-ended-20261028",
     companySlug: "qumulo",
