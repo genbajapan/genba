@@ -42,6 +42,6 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
 - 日本求人: 2026-10-29に公式Ashby一覧と各求人を確認。Enterprise Account ExecutiveとRegional Alliance Managerの2件。日本法人、常設拠点、雇用主体は公開情報で未確認
   - https://jobs.ashbyhq.com/optro/79f39121-fb47-4448-b666-785de56ece4b
   - https://jobs.ashbyhq.com/optro/cecd6175-00c2-4403-88c4-828d073d93b5
-- Genba掲載確認: 本番公開工程で主要URLとUTM保持を確認予定
+- Genba掲載確認: 2026-10-29の本番公開後、企業ページHTTP 200、求人2件、最終更新日、UTM保持を確認
   - https://genbajapan.com/companies/optro
 - X未投稿ドラフト: Macロックのため認証済みブラウザを操作できず、保存未実施。回避操作は行っていない

@@ -40,6 +40,6 @@ https://genbajapan.com/newsletter?utm_source=x&utm_medium=organic_social&utm_cam
   - https://www.hootsuite.com/customers
 - 日本求人: 2026-10-29に公式GreenhouseでSenior Account Manager (Japanese/English) 1件を確認。東京オフィス通勤圏のハイブリッド勤務。給与、変動給、目標、担当社数は未確認
   - https://job-boards.greenhouse.io/hootsuite/jobs/8312189
-- Genba掲載確認: 本番公開工程で主要URLとUTM保持を確認予定
+- Genba掲載確認: 2026-10-29の本番公開後、企業ページHTTP 200、求人1件、最終更新日、UTM保持を確認
   - https://genbajapan.com/companies/hootsuite
 - X未投稿ドラフト: Macロックのため認証済みブラウザを操作できず、保存未実施。回避操作は行っていない
