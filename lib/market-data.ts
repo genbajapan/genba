@@ -3171,6 +3171,8 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "dragos-advisory-solutions-architect-japan-current",
+  "dragos-senior-enterprise-account-executive-japan-current",
   "kraken-mid-backend-engineer-japan-ebceacfe",
   "qumulo-senior-customer-success-manager-apac-dfaec4ee",
   "extreme-networks-systems-engineer-tokyo-current",
@@ -3384,7 +3386,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-29" ? job.lastChecked : "2026-10-29",
+      lastChecked: job.lastChecked > "2026-10-30" ? job.lastChecked : "2026-10-30",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3435,7 +3437,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-29" ? company.lastChecked : "2026-10-29";
+  const auditedLastChecked = company.lastChecked > "2026-10-30" ? company.lastChecked : "2026-10-30";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3452,6 +3454,16 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-dragos-two-japan-roles-ended-20261030",
+    companySlug: "dragos",
+    date: "2026-10-30",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "Dragosの日本向け2求人が終了",
+    summary: "Advisory Solutions ArchitectとSenior Enterprise Account Executiveの旧公式求人が一覧へ戻り、現行公式一覧にも日本求人を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Dragos Careers (Greenhouse)", url: "https://job-boards.greenhouse.io/dragos" },
+  },
   {
     id: "signal-kraken-mid-backend-engineer-ended-20261029",
     companySlug: "kraken-technologies",
