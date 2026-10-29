@@ -562,8 +562,10 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     category: "OT・ICSサイバーセキュリティ",
     hq: "メリーランド州ハノーバー（米国）",
     japanPresence: "日本Remote team・Macnica partner（2023年参入、日本法人・officeは確認不能）",
-    description: "工場・重要インフラのasset可視化、脆弱性優先度、脅威検知・対応を提供。日本でEnterprise AEとAdvisory Solutions Architectを公式募集。",
-    lastChecked: "2026-08-17",
+    description: "工場・重要インフラのasset可視化、脆弱性優先度、脅威検知・対応を提供。2026年8月に日本向け2求人を確認したが、10月30日時点の現行求人は0件。",
+    hiringStatus: "継続観測",
+    salesRoles: 0,
+    lastChecked: "2026-10-30",
   },
   elastic: {
     category: "Search AI・Observability・Security基盤",

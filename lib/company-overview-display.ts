@@ -56,7 +56,9 @@ function normalizedYear(value: string) {
 }
 
 function resolveJapanEntryYear(input: JapanOfficeDisplayInput) {
-  if (input.entryStatus === "pre-entry-signal") return "日本GTM・採用を確認";
+  if (input.entryStatus === "pre-entry-signal") {
+    return /^過去/.test(input.japanSinceValue) ? "過去に日本GTM・採用を確認" : "日本GTM・採用を確認";
+  }
   if (input.entryStatus === "not-entered" || /未設立|未進出/.test(input.japanSinceValue)) return "日本未進出";
   if (/(?:未確認|確認不能|非公開|不明|未特定|確認済み|採用|求人|GTM)/i.test(input.japanSinceValue)) return "日本進出年未確認";
   const fromStat = normalizedYear(input.japanSinceValue);

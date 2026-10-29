@@ -135,10 +135,10 @@ function patchDragos(intelligence: CompanyPublicIntelligence) {
     companyId: "rollout-dragos-about", jobId: "rollout-dragos-jobs-20260817", customersId: "rollout-dragos-macnica", externalId: "rollout-dragos-meti-factory", financeId: "rollout-dragos-accenture",
     targets: ["セキュリティ責任者・CISO・OT Security", "工場・Plant・制御・設備", "監視運用・SOC・Incident Response", "重要インフラ経営・Risk", "販売代理・SI・MSSP"], competitors: "Claroty、Nozomi Networks、Armis、Microsoft Defender for IoT、Palo Alto・Fortinet等security suite、OT consulting・MSSP、manual inventory",
     feature: "Dragos Platform 3.0でOT・IT・IoT・IIoT asset可視化、OT文脈付き脆弱性優先度、threat detection、investigation、responseを提供し、WorldViewとIR servicesを組み合わせる。", advantage: "OT practitioner由来のthreat intelligenceとincident response知見をproductへcodifyし、停止を避けるpassive中心のvisibilityとMacnica deliveryを組み合わせる。", benefit: "asset accuracy、対応対象の絞り込み、調査時間、SOC連携、incident readinessを改善し、patchが難しい現場の停止riskを下げる可能性がある。", evidence: "日本のnamed end-customerと定量ROIは確認できない。Macnica経由の市場参入とglobal 20カ国・11業種・400社超は、日本customer outcomeとは別尺度。",
-    marketVerdict: "結論：工場DXとOT接続、ransomware・supply-chain riskは追い風。日本責任者と営業・初technical hireを確認したが、Dragos単体売上・ARR・利益、日本法人・国内customer outcomeは非公開。", marketParagraphs: ["工場・重要インフラでcloud・vendor・supply-chain接続が増える一方、IT台帳とCVSSだけではOT asset、業務impact、停止を避ける優先度が分からない。", "今後3〜5年は半導体・製造・energy・transportのOT governanceが追い風だが、passive coverage、air-gap、partner delivery、既存SOC、multi-site costが選定条件になる。", "Genba分析：一拠点でasset accuracy、優先対応削減、investigation time、SOC連携、運用負荷をClaroty・Nozomi・Armis・現状維持と同条件で比較する。"],
-    cultureHeadline: "公式Careersはremote-first、Transparency、Authenticity、Mission-Driven、Trust、results over conformityを掲げる。日本2求人もRemote。OTE上限は公開するが内訳は非公開。", classification: "フルリモート", displayLabel: "日本・リモート", officeDays: "出社指定なし", remoteOnly: "現行2求人はRemote", flexibility: "会社は可能な職種でWFHと年複数回onsiteを説明。日本個別の頻度は非公開",
+    marketVerdict: "結論：工場DXとOT接続、ransomware・supply-chain riskは追い風。日本責任者と2026年8月の営業・技術求人を確認したが、10月30日時点の現行求人は0件。Dragos単体売上・ARR・利益、日本法人・国内customer outcomeは非公開。", marketParagraphs: ["工場・重要インフラでcloud・vendor・supply-chain接続が増える一方、IT台帳とCVSSだけではOT asset、業務impact、停止を避ける優先度が分からない。", "今後3〜5年は半導体・製造・energy・transportのOT governanceが追い風だが、passive coverage、air-gap、partner delivery、既存SOC、multi-site costが選定条件になる。", "Genba分析：一拠点でasset accuracy、優先対応削減、investigation time、SOC連携、運用負荷をClaroty・Nozomi・Armis・現状維持と同条件で比較する。"],
+    cultureHeadline: "公式Careersはremote-first、Transparency、Authenticity、Mission-Driven、Trust、results over conformityを掲げる。過去の日本2求人はRemoteだったが、現行求人0件のため現在の日本向け勤務条件は確認できない。", classification: "フルリモート", displayLabel: "Remote-first（現行日本求人0件）", officeDays: "現行日本求人なし", remoteOnly: "会社全体はremote-first。現在の日本向け個別条件は確認不能", flexibility: "会社は可能な職種でWFHと年複数回onsiteを説明。過去求人の条件を将来の採用へ転用しない",
     goodFor: ["OT・critical infrastructureのmissionへ寄せたい", "salesとtechnical country buildを作りたい", "threat intelとincident responseを売りたい"], cautionFor: ["国内named customer proofを必須にする", "単体財務の透明性を求める", "日本の常設officeを必須にする"],
-    unresolved: [["単体財務", "取引発表は3社合算ARRのみ。", "Dragos単体revenue、ARR、growth、profit、FCF、retentionは？"], ["取引状態", "Accenture majority stakeは2026年8〜9月close予定。", "close、governance、product・channel autonomy、employee impactは？"], ["日本delivery", "Country Manager、AE、初technical hire、Macnicaを確認。", "日本法人、office、customer、installed base、support・IR SLAは？"], ["PoC・operability", "OT-native visibilityとintelを訴求。", "asset coverage、false positive、air-gap、upgrade、multi-site、existing SOC、TCOは？"], ["報酬・達成", "OTE上限はAE 3,184万円、ASA 3,000万円。", "base・variable、quota、ramp、attainment、partner credit、equityは？"]],
+    unresolved: [["単体財務", "取引発表は3社合算ARRのみ。", "Dragos単体revenue、ARR、growth、profit、FCF、retentionは？"], ["取引状態", "Accenture majority stakeは2026年8〜9月close予定。", "close、governance、product・channel autonomy、employee impactは？"], ["日本delivery", "Country Manager、Macnica、過去のAE・初technical hire求人を確認。", "日本法人、office、customer、installed base、support・IR SLA、採用再開条件は？"], ["PoC・operability", "OT-native visibilityとintelを訴求。", "asset coverage、false positive、air-gap、upgrade、multi-site、existing SOC、TCOは？"], ["報酬・達成", "過去求人のOTE上限はAE 3,184万円、ASA 3,000万円。", "採用再開時のbase・variable、quota、ramp、attainment、partner credit、equityは？"]],
   }));
   intelligence.facts = [
     { label: "単体売上高・ARR・収益性", value: "非公開", detail: "3社合算指標からDragos単体を推定しない。", sourceIds: ["rollout-dragos-accenture"] },
@@ -146,19 +146,19 @@ function patchDragos(intelligence: CompanyPublicIntelligence) {
     { label: "2023年資金調達", value: "0.74億米ドル（約116.6億円）／累計4.40億米ドル（約693.3億円）", detail: "Series D extensionと累計調達で、売上・利益ではない。", sourceIds: ["rollout-dragos-series-d", "rollout-b09-customs-usd-20260816"] },
   ];
   intelligence.companyStats.globalHeadcount = { value: "約580人", detail: "2026年Accenture取引発表。", sourceId: "rollout-dragos-accenture" };
-  intelligence.companyStats.japanHeadcount = { value: "非公開", detail: "AEと日本初technical hireの募集は現在人数を示さない。", sourceId: "rollout-dragos-jobs-20260817" };
-  intelligence.companyStats.japanOffice = { value: "確認不能", detail: "Japan Remote求人はあるが、日本法人・常設office住所は確認できない。", sourceId: "rollout-dragos-jobs-20260817" };
+  intelligence.companyStats.japanHeadcount = { value: "非公開", detail: "過去のAE・technical求人とCountry Managerの存在から現在人数を推測しない。", sourceId: "rollout-dragos-jobs-20260817" };
+  intelligence.companyStats.japanOffice = { value: "確認不能", detail: "過去のJapan Remote求人は確認できるが、日本法人・常設office住所は確認できない。", sourceId: "rollout-dragos-jobs-20260817" };
   intelligence.companyStats.japanSince = { value: "2023年", detail: "Macnica経由の市場参入。日本法人設立年ではない。", sourceId: "rollout-dragos-japan-entry" };
   intelligence.customerProof = [{ company: "国内named customerは確認不能", products: "Dragos Platform・WorldView・Services", outcome: "Macnica経由で2023年に日本提供を開始。", implication: "global 400社超や名古屋港attack記事を日本顧客成果へ転用しない。", sourceId: "rollout-dragos-macnica" }];
-  intelligence.roleLens = { salesMotion: "Senior Enterprise AEがpartnerとenergy・water・transport・manufacturingを開拓し、Advisory Solutions Architectがpre-salesからpost-sales・enablementまで支える。", compensation: "AEは最大3,184万円OTE、ASAは最大3,000万円OTE。base・variable内訳とequity額は非公開。", quota: "quota、担当社数、ACV、cycle、attainment、partner・services・renewal creditは非公開。", collaboration: "AE、ASA、Macnica、Microsoft・Omron等partner、global Product・Intel・IR、顧客CISO・OT・SOC・Plantが連携する。" };
-  intelligence.salesAppeal = { intro: "OT securityの日本country buildで、commercialとtechnicalの両面を担う希少性を整理した。", points: [
-    { title: "日本territoryを初期から作る", detail: "Senior Enterprise AEがenergy・water・transport・manufacturingをpartnerと開拓する高自律ICとして募集されている。", sourceIds: ["rollout-dragos-jobs-20260817"] },
-    { title: "日本初technical hireと伴走する", detail: "Advisory Solutions Architectはpre-sales、PoC、post-sales guidance、partner enablementまで顧客lifecycleを横断する。", sourceIds: ["rollout-dragos-jobs-20260817"] },
+  intelligence.roleLens = { salesMotion: "過去求人では、Senior Enterprise AEがpartnerとenergy・water・transport・manufacturingを開拓し、Advisory Solutions Architectがpre-salesからpost-sales・enablementまで支える設計だった。", compensation: "過去求人はAE最大3,184万円OTE、ASA最大3,000万円OTE。現行求人0件で、将来の募集条件へは転用しない。", quota: "過去求人のquota、担当社数、ACV、cycle、attainment、partner・services・renewal creditは非公開。", collaboration: "過去求人ではAE、ASA、Macnica、global Product・Intel・IR、顧客CISO・OT・SOC・Plantの連携を想定。" };
+  intelligence.salesAppeal = { intro: "2026年8月に確認した過去求人から、OT securityの日本country buildで担う可能性があった仕事を整理した。現行求人は0件。", points: [
+    { title: "過去に日本territory担当を募集", detail: "Senior Enterprise AEがenergy・water・transport・manufacturingをpartnerと開拓する高自律ICとして募集されていた。", sourceIds: ["rollout-dragos-jobs-20260817"] },
+    { title: "過去に日本初technical hireを募集", detail: "Advisory Solutions Architectはpre-sales、PoC、post-sales guidance、partner enablementまで顧客lifecycleを横断する求人だった。", sourceIds: ["rollout-dragos-jobs-20260817"] },
     { title: "OT固有の停止riskを売る", detail: "IT securityの検知数ではなく、asset accuracy、優先対応、investigation time、incident readinessを商談KPIにする。", sourceIds: ["rollout-dragos-meti-factory", "rollout-dragos-about"] },
   ] };
   addSources(intelligence, [
     { id: "rollout-dragos-about", label: "Dragos About", url: "https://www.dragos.com/about", kind: "企業公式", scope: "創業・CEO・本社", checkedAt: researchedAt },
-    { id: "rollout-dragos-jobs-20260817", label: "Dragos現行日本求人", url: "https://job-boards.greenhouse.io/dragos", kind: "企業公式", scope: "日本2求人・Remote・言語・OTE", checkedAt: researchedAt },
+    { id: "rollout-dragos-jobs-20260817", label: "Dragos公式求人一覧", url: "https://job-boards.greenhouse.io/dragos", kind: "企業公式", scope: "2026年8月に日本2求人を確認、2026年10月30日に終了確認", checkedAt: "2026-10-30" },
     { id: "rollout-dragos-accenture", label: "Dragos・Accenture取引発表", url: "https://www.dragos.com/resources/press-release/dragos-ot-cybersecurity-with-accenture", kind: "企業公式", scope: "取引評価・3社合算ARR・人員", checkedAt: researchedAt },
     { id: "rollout-dragos-series-d", label: "Dragos Series D extension", url: "https://www.dragos.com/resources/press-release/dragos-raises-74m-in-series-d-round-extension-funding", kind: "企業公式", scope: "資金調達・日本参入", checkedAt: researchedAt },
     { id: "rollout-dragos-japan-entry", label: "Dragos日本参入", url: "https://www.dragos.com/resources/press-release/dragos-raises-74m-in-series-d-round-extension-funding", kind: "企業公式", scope: "2023年日本市場参入", checkedAt: researchedAt },
@@ -168,6 +168,8 @@ function patchDragos(intelligence: CompanyPublicIntelligence) {
     { id: "rollout-b09-customs-usd-20260816", label: "税関 2026年8月16日〜22日公示レート", url: "https://www.customs.go.jp/tetsuzuki/kawase/kawase2026/kouji-rate20260816-20260822.pdf", kind: "公的機関", scope: "円換算レート（1米ドル=157.56円）", checkedAt: researchedAt },
   ]);
   refreshSourceDates(intelligence);
+  intelligence.researchedAt = "2026-10-30";
+  intelligence.sources = intelligence.sources.map((source) => source.id === "rollout-dragos-jobs-20260817" ? { ...source, checkedAt: "2026-10-30" } : source);
 }
 
 function patchElastic(intelligence: CompanyPublicIntelligence) {

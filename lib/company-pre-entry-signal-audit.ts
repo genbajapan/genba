@@ -8,6 +8,7 @@ type ActiveSignalProfile = {
   roleSignal: string;
   marketContext: string;
   checkedAt?: string;
+  active?: boolean;
 };
 
 const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
@@ -49,9 +50,11 @@ const activeSignalProfiles: Record<string, ActiveSignalProfile> = {
   },
   dragos: {
     name: "Dragos",
-    jobUrl: "https://job-boards.greenhouse.io/dragos/jobs/5254855008",
-    roleSignal: "Senior Enterprise AEとAdvisory Solutions Architectの日本向け現行求人を確認",
-    marketContext: "国内partnerとRemote teamは確認できるが、日本法人・常設拠点は確認できない",
+    jobUrl: "https://job-boards.greenhouse.io/dragos",
+    roleSignal: "2026年8月にSenior Enterprise AEとAdvisory Solutions Architectの日本向け求人を確認したが、2026年10月30日時点の現行求人は0件",
+    marketContext: "Country Managerと国内partner、過去のRemote採用は確認できるが、日本法人・常設拠点は確認できない",
+    checkedAt: "2026-10-30",
+    active: false,
   },
   cribl: {
     name: "Cribl",
@@ -134,12 +137,13 @@ function unique(values: string[]) {
 
 function buildAssessment(profile: ActiveSignalProfile, companySourceIds: string[], jobSourceId: string, registrySourceId: string): JapanEntryAssessment {
   const evidenceIds = unique([jobSourceId, ...companySourceIds]);
+  const hasActiveSignal = profile.active !== false;
   return {
-    verdict: `日本進出の兆しあり。${profile.roleSignal}。一方、${profile.marketContext}ため、日本法人がある企業とは扱わない。`,
+    verdict: `${hasActiveSignal ? "日本進出の兆しあり" : "過去に日本進出の兆しあり"}。${profile.roleSignal}。一方、${profile.marketContext}ため、日本法人がある企業とは扱わない。`,
     factSignals: [
-      { title: "現行の日本市場担当求人", body: profile.roleSignal, sourceIds: [jobSourceId] },
+      { title: hasActiveSignal ? "現行の日本市場担当求人" : "日本向け求人の確認履歴", body: profile.roleSignal, sourceIds: [jobSourceId] },
       { title: "法人・拠点の確認状況", body: profile.marketContext, sourceIds: [registrySourceId, jobSourceId] },
-      { title: "日本市場への投資意図", body: "公式求人で日本territory、pipeline、partner、顧客対応または市場立ち上げを担う役割を確認した。", sourceIds: [jobSourceId] },
+      { title: "日本市場への投資意図", body: hasActiveSignal ? "公式求人で日本territory、pipeline、partner、顧客対応または市場立ち上げを担う役割を確認した。" : "過去の公式求人で日本territory、partner、顧客対応を担う役割を確認したが、現行求人0件のため採用継続は確認できない。", sourceIds: [jobSourceId] },
       { title: "製品・事業の基盤", body: "海外の製品・顧客・事業基盤は既存の公式情報で確認できるが、日本の売上・顧客数・renewalへは置き換えない。", sourceIds: evidenceIds },
     ],
     hurdles: [
@@ -167,12 +171,13 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
     const jobSourceId = `pre-entry-signal-job-${slug}`;
     const registrySourceId = `gbiz-headcount-${slug}`;
     const profileCheckedAt = profile.checkedAt ?? checkedAt;
+    const hasActiveSignal = profile.active !== false;
     const jobSource: ResearchSource = {
       id: jobSourceId,
-      label: `${profile.name}公式日本市場求人`,
+      label: `${profile.name}公式求人一覧`,
       url: profile.jobUrl,
       kind: "企業公式",
-      scope: `${profile.roleSignal}・${profileCheckedAt}現行確認`,
+      scope: `${profile.roleSignal}・${profileCheckedAt}${hasActiveSignal ? "現行確認" : "終了確認"}`,
       checkedAt: profileCheckedAt,
     };
     if (!intelligence.sources.some((source) => source.id === jobSourceId)) intelligence.sources.push(jobSource);
@@ -185,12 +190,12 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
 
     intelligence.researchedAt = profileCheckedAt;
     intelligence.marketStatus.genbaVerdict = {
-      headline: "日本進出の兆しあり：現行の日本市場担当求人を確認。",
+      headline: hasActiveSignal ? "日本進出の兆しあり：現行の日本市場担当求人を確認。" : "過去に日本進出の兆しあり：現行の日本向け公式求人は0件。",
       body: `${profile.roleSignal}。${profile.marketContext}。日本で働く担当者がいる場合を含む分類で、求人を日本法人設立・拠点開設・国内売上の証明とは分けて継続観測する。`,
     };
     intelligence.marketStatus.japanGrowth = {
       ...intelligence.marketStatus.japanGrowth,
-      headline: "日本市場担当を採用中。法人・常設拠点の確認前にGTMを組成する段階。",
+      headline: hasActiveSignal ? "日本市場担当を採用中。法人・常設拠点の確認前にGTMを組成する段階。" : "過去に日本市場担当を採用。現行求人は0件で、法人・常設拠点は未確認。",
       narrative: `${profile.roleSignal}。${profile.marketContext}。Genbaでは日本法人の確認と日本採用を別軸で扱い、雇用主体が本国法人・EORなどのどれかを公開情報から確定できない場合は日本進出済み企業の採用温度から除外する。`,
       entryAssessment: assessment,
       sourceIds: unique([
@@ -206,8 +211,8 @@ export function applyPreEntrySignalAudit(records: Record<string, CompanyPublicIn
       sourceId: registrySourceId,
     };
     intelligence.companyStats.japanSince = {
-      value: "日本GTM・採用を確認",
-      detail: "日本市場担当者や求人を確認しているが、その確認時点を法人設立年や常設拠点の開設年として扱わない。",
+      value: hasActiveSignal ? "日本GTM・採用を確認" : "過去に日本GTM・採用を確認",
+      detail: hasActiveSignal ? "日本市場担当者や求人を確認しているが、その確認時点を法人設立年や常設拠点の開設年として扱わない。" : "過去の日本市場担当者・求人は確認できるが、現行求人は0件。過去の採用時点を法人設立年や常設拠点の開設年として扱わない。",
       sourceId: jobSourceId,
     };
   }

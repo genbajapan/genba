@@ -453,11 +453,11 @@ const pendoIntelligence: CompanyPublicIntelligence = buildIntelligence({
 });
 
 const dragosIntelligence: CompanyPublicIntelligence = buildIntelligence({
-  slug: "dragos", name: "Dragos", jobUrl: "https://job-boards.greenhouse.io/dragos/jobs/5254855008", officialUrl: "https://www.dragos.com/", customersUrl: "https://www.dragos.com/resources/case-studies/", externalUrl: "https://www.meti.go.jp/policy/netsecurity/wg1/keieiguideline.html", financeUrl: "https://www.dragos.com/company/press-releases/",
+  slug: "dragos", name: "Dragos", jobUrl: "https://job-boards.greenhouse.io/dragos", officialUrl: "https://www.dragos.com/", customersUrl: "https://www.dragos.com/resources/case-studies/", externalUrl: "https://www.meti.go.jp/policy/netsecurity/wg1/keieiguideline.html", financeUrl: "https://www.dragos.com/company/press-releases/",
   salesSnapshot: "「工場・電力・交通のassetを止めずにcyber riskを把握できない課題」をCISOへ問う会社。「IT security toolではOT protocolと現場影響を判断できない課題」を操業責任者へ可視化する会社。「可視化・threat intelligence・incident responseが別契約になる課題」をOT security platformへ束ねる会社で、社会infraの継続性を売る営業としての面白さがある。",
-  growthSummary: "ICS/OT cybersecurityに特化し、energy、water、transport、manufacturingを守る。日本で自律的にterritoryとdistribution partnerを作るSenior Enterprise AEを採用。", ipoSummary: "非公開企業。IPO時期、日本売上、顧客数は未公表。",
+  growthSummary: "ICS/OT cybersecurityに特化し、energy、water、transport、manufacturingを守る。日本では2026年8月に営業・技術求人を確認したが、10月30日時点の現行求人は0件。", ipoSummary: "非公開企業。IPO時期、日本売上、顧客数は未公表。",
   milestones: [
-    { year: "2016", label: "創業", detail: "industrial control system防御に特化。", source: "company" }, { year: "2020", label: "platform拡張", detail: "asset visibility、detection、responseを統合。", source: "company" }, { year: "2021", label: "大型調達", detail: "global expansionへ投資。", source: "finance" }, { year: "2025", label: "community defense", detail: "threat intelligenceとserviceを拡張。", source: "company" }, { year: "2026", label: "Japan Senior AE", detail: "日本市場leadの営業を募集。", source: "job" },
+    { year: "2016", label: "創業", detail: "industrial control system防御に特化。", source: "company" }, { year: "2020", label: "platform拡張", detail: "asset visibility、detection、responseを統合。", source: "company" }, { year: "2021", label: "大型調達", detail: "global expansionへ投資。", source: "finance" }, { year: "2025", label: "community defense", detail: "threat intelligenceとserviceを拡張。", source: "company" }, { year: "2026", label: "Japan求人の確認履歴", detail: "8月に営業・技術求人を確認したが、10月30日時点では終了。", source: "job" },
   ],
   issueLenses: [
     { title: "既存顧客の導入目的から見る課題", body: "公開事例はenergy、manufacturing、utilityでasset inventory、threat detection、incident readinessを改善する。共通課題は操業を止められないためscanやpatchをITと同じ方法で進められないこと。" },
@@ -469,7 +469,7 @@ const dragosIntelligence: CompanyPublicIntelligence = buildIntelligence({
   ],
   openingHook: "重大incident時に止めてはいけないassetを、owner・firmware・network pathまで何分で一覧化できますか。", valueHypothesis: "asset coverage、unknown asset、critical finding、alert fidelity、response exercise時間、downtime riskを測る。", objection: "既存SIEM・EDRとnetwork監視で足りる。", reframe: "検知件数ではなく、OT protocol理解、safety context、操業を止めない導入、incident時の現場支援で比較する。",
   facts: [
-    { label: "創業", value: "2016年", detail: "US発のOT security企業。" }, { label: "focus", value: "ICS / OT", detail: "critical infrastructureに特化。" }, { label: "target", value: "Energy / Water / Transport / Manufacturing", detail: "公式求人記載。" }, { label: "motion", value: "Direct + Distributor", detail: "Japan求人の責任範囲。" }, { label: "日本拠点", value: "Japan remote", detail: "公式求人勤務地。" }, { label: "日本求人", value: "Senior Enterprise AE 1件", detail: "公式求人を確認。" },
+    { label: "創業", value: "2016年", detail: "US発のOT security企業。" }, { label: "focus", value: "ICS / OT", detail: "critical infrastructureに特化。" }, { label: "target", value: "Energy / Water / Transport / Manufacturing", detail: "過去の公式求人記載。" }, { label: "motion", value: "Direct + Distributor", detail: "過去のJapan求人の責任範囲。" }, { label: "日本拠点", value: "常設拠点未確認", detail: "過去のJapan Remote求人を常設拠点の根拠にしない。" }, { label: "日本求人", value: "現行0件", detail: "2026年10月30日に公式一覧で確認。" },
   ],
   customers: [
     { company: "公開energy事例", products: "Dragos Platform", outcome: "asset visibilityとthreat detection改善を紹介。", implication: "utilityの操業継続を売る。" }, { company: "公開manufacturing事例", products: "Dragos Platform", outcome: "複数siteのOT risk統合を紹介。", implication: "plant横展開のland-and-expand。" }, { company: "公開critical infrastructure事例", products: "Services / Intelligence", outcome: "incident readinessと専門支援を紹介。", implication: "productとexpertiseを一体で売る。" },
@@ -477,7 +477,7 @@ const dragosIntelligence: CompanyPublicIntelligence = buildIntelligence({
   externalSignals: [
     { label: "経営ガイドライン", value: "supply chainを含むcyber経営", detail: "経産省は経営課題としてのcybersecurityを要求。", caveat: "業界別の強制要件は個別確認。" }, { label: "critical infrastructure", value: "操業継続責任", detail: "physical impactを伴うincidentへの備えが必要。", caveat: "riskはsiteとasset構成で異なる。" },
   ],
-  role: "日本territoryの売上責任を持ち、energy・water・transport・manufacturingのenterpriseとdistribution partnerを自律的に開拓するSenior AE。", organization: "mission-drivenなOT専門家とremote-first commercial teamの協働組織。", careerValue: "OT security、critical infrastructure、channel、country buildの希少な経験を積める。", globalHeadcount: "非公開", japanPresence: "Japan / remote", japanSince: "日本市場leadの求人を確認",
+  role: "過去求人では、日本territoryの売上責任を持ち、energy・water・transport・manufacturingのenterpriseとdistribution partnerを自律的に開拓するSenior AEを募集。", organization: "mission-drivenなOT専門家とremote-first commercial teamの協働組織。", careerValue: "OT security、critical infrastructure、channel、country buildの希少な経験を積める可能性がある。", globalHeadcount: "非公開", japanPresence: "Country Manager・Macnica partnerを確認／常設拠点未確認", japanSince: "2023年市場参入・過去に日本求人を確認",
   solutions: [
     { name: "Dragos Platform", valueProp: "OT asset可視化、detection、investigation。", url: "https://www.dragos.com/platform/", competitors: "Claroty、Nozomi Networks。", differentiation: "OT threat intelligenceとresponse知見。" }, { name: "WorldView", valueProp: "industrial threat intelligenceを提供。", url: "https://www.dragos.com/platform/worldview/", competitors: "threat intelligence各社。", differentiation: "ICS adversaryと技法に特化。" }, { name: "OT-CERT / Services", valueProp: "incident responseとcommunity支援。", url: "https://www.dragos.com/services/", competitors: "consulting、MSSP。", differentiation: "frontline OT expertise。" },
   ],

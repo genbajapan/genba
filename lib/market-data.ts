@@ -856,9 +856,9 @@ const companyRecords: Company[] = [
     lastChecked: "2026-08-12", careersUrl: "https://www.pendo.io/careers/", tags: ["Enterprise", "Product Analytics", "Digital Adoption", "MEDDPICC", "Hybrid"],
   },
   {
-    slug: "dragos", name: "Dragos", category: "OT / ICS Cybersecurity", broadCategory: "セキュリティ・IT運用", hq: "Hanover, US", japanPresence: "Japan / remote", hiringStatus: "採用中", salesRoles: 1,
-    description: "energy、water、transport、manufacturingへOT securityを売り日本territoryを作るSenior Enterprise AEを募集。",
-    lastChecked: "2026-08-12", careersUrl: "https://www.dragos.com/careers/", tags: ["Enterprise", "OT Security", "Critical Infrastructure", "Channel", "Country Build"],
+    slug: "dragos", name: "Dragos", category: "OT / ICS Cybersecurity", broadCategory: "セキュリティ・IT運用", hq: "Hanover, US", japanPresence: "Japan / remote", hiringStatus: "継続観測", salesRoles: 0,
+    description: "2026年8月に日本向けSenior Enterprise AEとAdvisory Solutions Architectを確認。10月30日時点の現行求人は0件で、採用再開を継続観測。",
+    lastChecked: "2026-10-30", careersUrl: "https://job-boards.greenhouse.io/dragos", tags: ["Enterprise", "OT Security", "Critical Infrastructure", "Channel", "Country Build"],
   },
   {
     slug: "anthropic", name: "Anthropic", category: "Frontier AI / Enterprise AI", broadCategory: "AI・データ基盤", hq: "San Francisco, US", japanPresence: "東京オフィス", hiringStatus: "採用中", salesRoles: 1,
