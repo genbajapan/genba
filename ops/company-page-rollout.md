@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-10-30 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-10-31 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全295社（未着手 153 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全296社（未着手 154 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -15,7 +15,7 @@
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|5|公開済み|はい|なし|
 |HOT|Channel Talk|14|公開済み|はい|なし|
-|HOT|CIC|5|未着手|はい|なし|
+|HOT|CIC|4|未着手|はい|なし|
 |HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
 |HOT|Cloudflare|4|公開済み|はい|なし|
 |HOT|Cognition|6|公開済み|はい|なし|
@@ -120,7 +120,6 @@
 |Selective|BlueCat|1|未着手|いいえ|求人:Senior Sales Manager:勤務地・言語の日本語表記、求人:Senior Sales Manager:職種別の報酬調査、求人:Senior Sales Manager:ポジティブ・ネガティブ評判、求人:Senior Sales Manager:市場価値|
 |Selective|BlueMatrix|1|公開済み|はい|なし|
 |Selective|Box|1|未着手|はい|なし|
-|Selective|Canva|1|未着手|はい|なし|
 |Selective|Catapult Sports|1|未着手|はい|なし|
 |Selective|Censys|1|公開済み|はい|なし|
 |Selective|Chalk|1|未着手|はい|なし|
@@ -136,7 +135,6 @@
 |Selective|Dynatrace|1|公開済み|はい|なし|
 |Selective|Element Biosciences|1|未着手|はい|なし|
 |Selective|Entrust|1|未着手|はい|なし|
-|Selective|Equativ|1|未着手|いいえ|求人:Publisher Key Account Manager, Japan:海外を含む外部評判source、求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme|
 |Selective|Exotec|1|未着手|はい|なし|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Fireblocks|1|公開済み|はい|なし|
@@ -148,6 +146,7 @@
 |Selective|Hudl|1|未着手|はい|なし|
 |Selective|IonQ|1|未着手|はい|なし|
 |Selective|Keeper Security|1|未着手|はい|なし|
+|Selective|Keyloop|1|未着手|はい|なし|
 |Selective|Kinaxis|1|未着手|はい|なし|
 |Selective|Kpler|1|未着手|はい|なし|
 |Selective|Liferay|1|未着手|はい|なし|
@@ -214,6 +213,7 @@
 |求人なし|Attio|0|公開済み|はい|なし|
 |求人なし|Bounce|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲|
 |求人なし|Cambly|0|公開済み|はい|なし|
+|求人なし|Canva|0|未着手|はい|なし|
 |求人なし|Chainguard|0|公開済み|はい|なし|
 |求人なし|Clay|0|公開済み|はい|なし|
 |求人なし|ClickHouse|0|公開済み|はい|なし|
@@ -229,6 +229,7 @@
 |求人なし|Dragos|0|公開済み|はい|なし|
 |求人なし|Drata|0|未着手|いいえ|日本語の事業領域・本社表記、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しない、ヒーロー説明:解決と事業成果|
 |求人なし|Dropbox|0|公開済み|はい|なし|
+|求人なし|Equativ|0|未着手|はい|なし|
 |求人なし|Exa|0|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、ヒーロー説明:解決と事業成果|
 |求人なし|Extreme Networks|0|公開済み|はい|なし|
 |求人なし|Fireworks AI|0|未着手|はい|なし|

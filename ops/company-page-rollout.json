@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-30",
+  "auditedAt": "2026-10-31",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,9 +18,9 @@
     "求人なし"
   ],
   "counts": {
-    "total": 295,
+    "total": 296,
     "byStatus": {
-      "未着手": 153,
+      "未着手": 154,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
@@ -28,10 +28,10 @@
     "byPriority": {
       "HOT": 55,
       "Active": 39,
-      "Selective": 101,
-      "求人なし": 100
+      "Selective": 100,
+      "求人なし": 102
     },
-    "standardReady": 244
+    "standardReady": 246
   },
   "companies": [
     {
@@ -119,7 +119,7 @@
       "slug": "cic",
       "company": "CIC",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
@@ -1153,15 +1153,6 @@
       "missingFields": []
     },
     {
-      "slug": "canva",
-      "company": "Canva",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "catapult-sports",
       "company": "Catapult Sports",
       "priority": "Selective",
@@ -1313,18 +1304,6 @@
       "missingFields": []
     },
     {
-      "slug": "equativ",
-      "company": "Equativ",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "求人:Publisher Key Account Manager, Japan:海外を含む外部評判source",
-        "求人:Publisher Key Account Manager, Japan:海外reviewの肯定・注意theme"
-      ]
-    },
-    {
       "slug": "exotec",
       "company": "Exotec",
       "priority": "Selective",
@@ -1425,6 +1404,15 @@
     {
       "slug": "keeper-security",
       "company": "Keeper Security",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "keyloop",
+      "company": "Keyloop",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
@@ -2092,6 +2080,15 @@
       "missingFields": []
     },
     {
+      "slug": "canva",
+      "company": "Canva",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "chainguard",
       "company": "Chainguard",
       "priority": "求人なし",
@@ -2230,6 +2227,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "equativ",
+      "company": "Equativ",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },

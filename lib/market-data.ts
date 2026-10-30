@@ -88,6 +88,7 @@ import { companies20261025Daily, jobs20261025Daily } from "@/lib/company-additio
 import { companies20261026Daily, jobs20261026Daily } from "@/lib/company-additions-2026-10-26-daily";
 import { companies20261027Daily, jobs20261027Daily } from "@/lib/company-additions-2026-10-27-daily";
 import { companies20261029Daily, jobs20261029Daily } from "@/lib/company-additions-2026-10-29-daily";
+import { companies20261031Daily, jobs20261031Daily } from "@/lib/company-additions-2026-10-31-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1050,6 +1051,7 @@ const companyRecords: Company[] = [
   ...companies20261026Daily,
   ...companies20261027Daily,
   ...companies20261029Daily,
+  ...companies20261031Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1497,6 +1499,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261031Daily,
   ...jobs20261029Daily,
   ...jobs20261025Daily,
   ...jobs20261026Daily,
@@ -3171,6 +3174,9 @@ const jobRecords: Job[] = [
 ];
 
 const closedJobIds = new Set([
+  "cic-marketing-director-tokyo-672575fe",
+  "equativ-publisher-key-account-manager-japan-ba1faf59",
+  "canva-japan-growth-marketing-lead-6000000001289995",
   "dragos-advisory-solutions-architect-japan-current",
   "dragos-senior-enterprise-account-executive-japan-current",
   "kraken-mid-backend-engineer-japan-ebceacfe",
@@ -3386,7 +3392,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-30" ? job.lastChecked : "2026-10-30",
+      lastChecked: job.lastChecked > "2026-10-31" ? job.lastChecked : "2026-10-31",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3437,7 +3443,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-30" ? company.lastChecked : "2026-10-30";
+  const auditedLastChecked = company.lastChecked > "2026-10-31" ? company.lastChecked : "2026-10-31";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3454,6 +3460,36 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  {
+    id: "signal-cic-marketing-director-ended-20261031",
+    companySlug: "cic",
+    date: "2026-10-31",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "CICのMarketing Director求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式Lever一覧にも当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "CIC Careers (Lever)", url: "https://jobs.lever.co/cic" },
+  },
+  {
+    id: "signal-equativ-publisher-kam-ended-20261031",
+    companySlug: "equativ",
+    date: "2026-10-31",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "EquativのPublisher Key Account Manager求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式Lever一覧にも日本の当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Equativ Careers (Lever)", url: "https://jobs.lever.co/equativ" },
+  },
+  {
+    id: "signal-canva-growth-marketing-ended-20261031",
+    companySlug: "canva",
+    date: "2026-10-31",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: "CanvaのJapan Growth Marketing Lead求人が終了",
+    summary: "旧公式求人URLが404を返し、現行の公式求人一覧にも日本の当該職を確認できなかったため公開求人から除外しました。これだけで日本事業縮小を意味しません。",
+    source: { label: "Canva Careers", url: "https://www.lifeatcanva.com/en/jobs/" },
+  },
   {
     id: "signal-dragos-two-japan-roles-ended-20261030",
     companySlug: "dragos",

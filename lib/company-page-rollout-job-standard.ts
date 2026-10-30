@@ -107,6 +107,7 @@ batchSlugs.add("apryse");
 batchSlugs.add("qdrant");
 batchSlugs.add("magnet-forensics");
 batchSlugs.add("hootsuite");
+batchSlugs.add("keyloop");
 
 const officialCompensation: Record<string, {
   headline: string;
@@ -240,6 +241,13 @@ const companyResearch: Record<string, {
     positive: ["東京のSenior Account ManagerがEmerging Marketsの更新、解約リスク、追加・クロスセル、幹部関係、予測を一貫して持つ。", "会社公式は企業顧客6,000社以上、利用者20万人以上、200カ国以上を掲載し、SNS運用から顧客対応・リスニングまで拡張余地がある。"],
     negative: ["日本法人名、国内人数、日本売上、顧客構成、給与、変動給、目標、達成率、担当社数は非公開。", "カスタマーサクセスとの分担、解約リスクの早期検知、データ費用とSNS各社の仕様変更、東京の出社頻度を選考で検証する必要がある。"],
     next: ["Enterprise Account Management", "Social Media・Customer Experience Growth Leadership", "Japan・APAC Customer Growth Leadership"],
+  },
+  keyloop: {
+    name: "Keyloop", domain: "Automotive Retail Technology・Dealer Management・Account Growth", officialUrl: "https://jobs.lever.co/keyloop/9558b231-82a5-4f8e-86b2-b5379b77f3b8",
+    communityUrl: "https://www.glassdoor.com/Reviews/Keyloop-Reviews-E3713413.htm", communityLabel: "Glassdoor Keyloop global reviews（日本の対象チームへ一般化しない、2026-10-31確認）",
+    positive: ["日本のSenior Account Managerが既存・新規顧客を担当し、販売店の課題整理、提案、契約、利用拡大を一貫して持つ。", "会社公式は2万以上の小売事業者、80以上の自動車メーカー、90カ国以上、従業員2,200人超を掲載する。"],
+    negative: ["日本売上、顧客数、営業・Customer Success・Professional Servicesの人数、給与、変動給、目標、達成率、担当社数は非公開。", "販売店管理システムの移行負荷、メーカー純正・競合製品との共存、既存・新規の責任配分、国内支援体制を面接で検証する必要がある。"],
+    next: ["Enterprise Account Management", "Automotive Retail Technology Sales Leadership", "Japan・APAC Industry SaaS Leadership"],
   },
   wrike: {
     name: "Wrike", domain: "ワークマネジメント・パートナー営業・日本市場", officialUrl: "https://job-boards.greenhouse.io/wrike/jobs/4725613005",
