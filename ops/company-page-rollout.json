@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-10-31",
+  "auditedAt": "2026-11-01",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -26,10 +26,10 @@
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 55,
-      "Active": 39,
-      "Selective": 100,
-      "求人なし": 102
+      "HOT": 47,
+      "Active": 33,
+      "Selective": 97,
+      "求人なし": 119
     },
     "standardReady": 246
   },
@@ -38,7 +38,7 @@
       "slug": "anaplan",
       "company": "Anaplan",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -47,7 +47,7 @@
       "slug": "anthropic",
       "company": "Anthropic",
       "priority": "HOT",
-      "salesRoles": 9,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -58,15 +58,6 @@
       "priority": "HOT",
       "salesRoles": 4,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "black-duck",
-      "company": "Black Duck",
-      "priority": "HOT",
-      "salesRoles": 3,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -101,7 +92,7 @@
       "slug": "celonis",
       "company": "Celonis",
       "priority": "HOT",
-      "salesRoles": 5,
+      "salesRoles": 4,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -145,7 +136,7 @@
       "slug": "cloudflare",
       "company": "Cloudflare",
       "priority": "HOT",
-      "salesRoles": 4,
+      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -196,15 +187,6 @@
       "missingFields": []
     },
     {
-      "slug": "ecovadis",
-      "company": "EcoVadis",
-      "priority": "HOT",
-      "salesRoles": 3,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "edb",
       "company": "EDB",
       "priority": "HOT",
@@ -234,38 +216,11 @@
       "missingFields": []
     },
     {
-      "slug": "figma",
-      "company": "Figma",
-      "priority": "HOT",
-      "salesRoles": 8,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "fivetran",
       "company": "Fivetran",
       "priority": "HOT",
       "salesRoles": 4,
       "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "gitlab",
-      "company": "GitLab",
-      "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "glance",
-      "company": "Glance",
-      "priority": "HOT",
-      "salesRoles": 5,
-      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -293,15 +248,6 @@
       "priority": "HOT",
       "salesRoles": 3,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "knowbe4",
-      "company": "KnowBe4",
-      "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -381,7 +327,7 @@
       "slug": "new-relic",
       "company": "New Relic",
       "priority": "HOT",
-      "salesRoles": 7,
+      "salesRoles": 5,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -391,15 +337,6 @@
       "company": "Notion",
       "priority": "HOT",
       "salesRoles": 11,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "okta",
-      "company": "Okta",
-      "priority": "HOT",
-      "salesRoles": 7,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -477,15 +414,6 @@
       "missingFields": []
     },
     {
-      "slug": "similarweb",
-      "company": "Similarweb",
-      "priority": "HOT",
-      "salesRoles": 4,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "sprinklr",
       "company": "Sprinklr",
       "priority": "HOT",
@@ -516,7 +444,7 @@
       "slug": "verkada",
       "company": "Verkada",
       "priority": "HOT",
-      "salesRoles": 6,
+      "salesRoles": 3,
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
@@ -623,15 +551,6 @@
       "missingFields": []
     },
     {
-      "slug": "dialpad",
-      "company": "Dialpad",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "elevenlabs",
       "company": "ElevenLabs",
       "priority": "Active",
@@ -655,15 +574,6 @@
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "getyourguide",
-      "company": "GetYourGuide",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -783,17 +693,8 @@
       "missingFields": []
     },
     {
-      "slug": "nexthink",
-      "company": "Nexthink",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "nice",
-      "company": "NiCE",
+      "slug": "okta",
+      "company": "Okta",
       "priority": "Active",
       "salesRoles": 2,
       "status": "公開済み",
@@ -815,21 +716,6 @@
         "求人:Regional Alliance Manager (Japan):職種別の報酬調査",
         "求人:Regional Alliance Manager (Japan):ポジティブ・ネガティブ評判",
         "求人:Regional Alliance Manager (Japan):市場価値"
-      ]
-    },
-    {
-      "slug": "pitchbook",
-      "company": "PitchBook",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "ヒーロー説明:顧客課題",
-        "求人:Account Manager, PitchBook:海外を含む外部評判source",
-        "求人:Account Manager, PitchBook:海外reviewの肯定・注意theme",
-        "求人:Senior Account Manager, PitchBook:海外を含む外部評判source",
-        "求人:Senior Account Manager, PitchBook:海外reviewの肯定・注意theme"
       ]
     },
     {
@@ -887,29 +773,11 @@
       "missingFields": []
     },
     {
-      "slug": "tanium",
-      "company": "Tanium",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "telnyx",
       "company": "Telnyx",
       "priority": "Active",
       "salesRoles": 2,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "twilio",
-      "company": "Twilio",
-      "priority": "Active",
-      "salesRoles": 2,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1042,15 +910,6 @@
       "missingFields": []
     },
     {
-      "slug": "armis",
-      "company": "Armis",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "ashby",
       "company": "Ashby",
       "priority": "Selective",
@@ -1096,8 +955,8 @@
       ]
     },
     {
-      "slug": "behavox",
-      "company": "Behavox",
+      "slug": "black-duck",
+      "company": "Black Duck",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -1158,15 +1017,6 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "censys",
-      "company": "Censys",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1268,8 +1118,8 @@
       ]
     },
     {
-      "slug": "doubleverify",
-      "company": "DoubleVerify",
+      "slug": "dialpad",
+      "company": "Dialpad",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
@@ -1282,6 +1132,15 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ecovadis",
+      "company": "EcoVadis",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -1322,6 +1181,15 @@
       "missingFields": []
     },
     {
+      "slug": "figma",
+      "company": "Figma",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "fireblocks",
       "company": "Fireblocks",
       "priority": "Selective",
@@ -1336,6 +1204,24 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "getyourguide",
+      "company": "GetYourGuide",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "gitlab",
+      "company": "GitLab",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1384,24 +1270,6 @@
       ]
     },
     {
-      "slug": "hudl",
-      "company": "Hudl",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "ionq",
-      "company": "IonQ",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "keeper-security",
       "company": "Keeper Security",
       "priority": "Selective",
@@ -1443,15 +1311,6 @@
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
-      "slug": "lighthouse",
-      "company": "Lighthouse",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -1543,6 +1402,15 @@
         "求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判",
         "求人:Senior Enterprise Account Executive, Japan:市場価値"
       ]
+    },
+    {
+      "slug": "nice",
+      "company": "NiCE",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
     },
     {
       "slug": "ninjaone",
@@ -1704,15 +1572,6 @@
       "missingFields": []
     },
     {
-      "slug": "shift-technology",
-      "company": "Shift Technology",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "shopify",
       "company": "Shopify",
       "priority": "Selective",
@@ -1769,25 +1628,6 @@
       "missingFields": []
     },
     {
-      "slug": "sonatype",
-      "company": "Sonatype",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本法人での想定従業員数:gBizINFO監査ステータス",
-        "日本法人での想定従業員数:gBizINFO出典",
-        "日本法人での想定従業員数:定義・対象範囲",
-        "日本法人での想定従業員数:法人未特定時に0人と断定しない",
-        "ヒーロー説明:解決と事業成果",
-        "求人:Enterprise Account Executive, Japan & SEA:勤務地・言語の日本語表記",
-        "求人:Enterprise Account Executive, Japan & SEA:職種別の報酬調査",
-        "求人:Enterprise Account Executive, Japan & SEA:ポジティブ・ネガティブ評判",
-        "求人:Enterprise Account Executive, Japan & SEA:市場価値"
-      ]
-    },
-    {
       "slug": "sparta-commodities",
       "company": "Sparta",
       "priority": "Selective",
@@ -1838,15 +1678,6 @@
       "missingFields": []
     },
     {
-      "slug": "tenable",
-      "company": "Tenable",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": true,
-      "missingFields": []
-    },
-    {
       "slug": "think-cell",
       "company": "think-cell",
       "priority": "Selective",
@@ -1856,24 +1687,20 @@
       "missingFields": []
     },
     {
-      "slug": "torq",
-      "company": "Torq",
-      "priority": "Selective",
-      "salesRoles": 1,
-      "status": "未着手",
-      "standardReady": false,
-      "missingFields": [
-        "日本法人での想定従業員数:定義・対象範囲",
-        "求人:Regional Sales Manager (Asia-Pacific):海外を含む外部評判source",
-        "求人:Regional Sales Manager (Asia-Pacific):海外reviewの肯定・注意theme"
-      ]
-    },
-    {
       "slug": "tricentis",
       "company": "Tricentis",
       "priority": "Selective",
       "salesRoles": 1,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "twilio",
+      "company": "Twilio",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2042,6 +1869,15 @@
       "missingFields": []
     },
     {
+      "slug": "armis",
+      "company": "Armis",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "atlassian",
       "company": "Atlassian",
       "priority": "求人なし",
@@ -2053,6 +1889,15 @@
     {
       "slug": "attio",
       "company": "Attio",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "behavox",
+      "company": "Behavox",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
@@ -2085,6 +1930,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "censys",
+      "company": "Censys",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2199,6 +2053,15 @@
       "missingFields": []
     },
     {
+      "slug": "doubleverify",
+      "company": "DoubleVerify",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "dragos",
       "company": "Dragos",
       "priority": "求人なし",
@@ -2299,6 +2162,15 @@
       "missingFields": []
     },
     {
+      "slug": "glance",
+      "company": "Glance",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "gong",
       "company": "Gong",
       "priority": "求人なし",
@@ -2371,6 +2243,15 @@
       "missingFields": []
     },
     {
+      "slug": "hudl",
+      "company": "Hudl",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "illumio",
       "company": "Illumio",
       "priority": "求人なし",
@@ -2387,6 +2268,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "ionq",
+      "company": "IonQ",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
       "standardReady": true,
       "missingFields": []
     },
@@ -2438,6 +2328,15 @@
       "missingFields": []
     },
     {
+      "slug": "knowbe4",
+      "company": "KnowBe4",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "lakera",
       "company": "Lakera",
       "priority": "求人なし",
@@ -2461,6 +2360,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "lighthouse",
+      "company": "Lighthouse",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2533,6 +2441,15 @@
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "nexthink",
+      "company": "Nexthink",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
       "standardReady": true,
       "missingFields": []
     },
@@ -2623,6 +2540,17 @@
       "missingFields": []
     },
     {
+      "slug": "pitchbook",
+      "company": "PitchBook",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "ヒーロー説明:顧客課題"
+      ]
+    },
+    {
       "slug": "postman",
       "company": "Postman",
       "priority": "求人なし",
@@ -2711,6 +2639,15 @@
       ]
     },
     {
+      "slug": "shift-technology",
+      "company": "Shift Technology",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "sierra",
       "company": "Sierra",
       "priority": "求人なし",
@@ -2718,6 +2655,30 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "similarweb",
+      "company": "Similarweb",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "sonatype",
+      "company": "Sonatype",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "日本法人での想定従業員数:法人未特定時に0人と断定しない",
+        "ヒーロー説明:解決と事業成果"
+      ]
     },
     {
       "slug": "substack",
@@ -2765,8 +2726,26 @@
       "missingFields": []
     },
     {
+      "slug": "tanium",
+      "company": "Tanium",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "公開済み",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
       "slug": "temporal",
       "company": "Temporal",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": true,
+      "missingFields": []
+    },
+    {
+      "slug": "tenable",
+      "company": "Tenable",
       "priority": "求人なし",
       "salesRoles": 0,
       "status": "未着手",
@@ -2790,6 +2769,17 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "torq",
+      "company": "Torq",
+      "priority": "求人なし",
+      "salesRoles": 0,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:定義・対象範囲"
+      ]
     },
     {
       "slug": "tradinghub",

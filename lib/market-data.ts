@@ -3173,7 +3173,49 @@ const jobRecords: Job[] = [
   },
 ];
 
+const closedJobs20261101: Array<{
+  companySlug: string;
+  companyName: string;
+  provider: "Greenhouse" | "Lever" | "SmartRecruiters";
+  boardUrl: string;
+  jobIds: string[];
+}> = [
+  { companySlug: "pitchbook", companyName: "PitchBook", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/pitchbookdata", jobIds: ["pitchbook-account-manager-4624916006", "pitchbook-senior-account-manager-4625512006"] },
+  { companySlug: "tenable", companyName: "Tenable", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/tenableinc", jobIds: ["tenable-commercial-territory-account-manager-japan-5379199008"] },
+  { companySlug: "hudl", companyName: "Hudl", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/hudl", jobIds: ["hudl-account-executive-ii-tokyo-8108360"] },
+  { companySlug: "ionq", companyName: "IonQ", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/ionq", jobIds: ["ionq-country-manager-enterprise-japan-6001723004"] },
+  { companySlug: "armis", companyName: "Armis", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/armissecurity", jobIds: ["armis-sr-advisory-solution-consultant-japan-5765358004"] },
+  { companySlug: "torq", companyName: "Torq", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/torq", jobIds: ["torq-regional-sales-manager-apac-5831930004"] },
+  { companySlug: "shift-technology", companyName: "Shift Technology", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/shifttechnology", jobIds: ["shift-technology-sales-executive-b2b-insurance-7651254003"] },
+  { companySlug: "okta", companyName: "Okta", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/oktajp", jobIds: ["okta-sales-development-representative-japan-8102282", "okta-ae-sme", "okta-ae-auth0", "okta-digital-media-senior-specialist", "okta-auth0-technical-account-manager"] },
+  { companySlug: "anaplan", companyName: "Anaplan", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/anaplan", jobIds: ["anaplan-enterprise-account-executive-manufacturing-8365786002"] },
+  { companySlug: "anthropic", companyName: "Anthropic", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/anthropic", jobIds: ["anthropic-enterprise-ae-telecommunications-japan-5096041008", "anthropic-partner-solutions-architect-japan", "anthropic-channel-account-manager-japan", "anthropic-customer-success-manager-japan", "anthropic-enterprise-ae-fsi-japan"] },
+  { companySlug: "tanium", companyName: "Tanium", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/tanium", jobIds: ["tanium-senior-value-engineering-manager-japan-7518622", "tanium-director-strategic-accounts-japan"] },
+  { companySlug: "similarweb", companyName: "Similarweb", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/similarweb", jobIds: ["similarweb-customer-success-manager-smb-enterprise-7741468", "similarweb-enterprise-account-manager-japan-7865101", "similarweb-sales-manager-inside-sales-japan-8016360", "similarweb-head-of-sales-japan-korea"] },
+  { companySlug: "black-duck", companyName: "Black Duck", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/blackduck", jobIds: ["black-duck-sales-engineer-japan-5254222008", "black-duck-regional-sales-manager-japan"] },
+  { companySlug: "twilio", companyName: "Twilio", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/twilio", jobIds: ["twilio-strategic-account-executive-japan-8088055"] },
+  { companySlug: "behavox", companyName: "Behavox", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/behavox", jobIds: ["behavox-enterprise-account-executive-japan-8157133"] },
+  { companySlug: "glance", companyName: "Glance", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/glance", jobIds: ["glance-director-commerce-partnerships-japan-7213756", "glance-manager-commerce-partnerships-japan-8020092", "glance-senior-manager-commerce-partnerships-japan-8020086", "glance-senior-manager-distribution-partnerships-japan-8019884", "glance-director-distribution-partnerships-bd-tokyo-7938622"] },
+  { companySlug: "getyourguide", companyName: "GetYourGuide", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/getyourguide", jobIds: ["getyourguide-new-business-development-manager-japanese-8050667"] },
+  { companySlug: "gitlab", companyName: "GitLab", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/gitlab", jobIds: ["gitlab-senior-ecosystem-sales-manager-japan-8640173002", "gitlab-senior-commercial-legal-counsel-apac-8500014002", "gitlab-senior-professional-services-engineer-japan-8623542002"] },
+  { companySlug: "doubleverify", companyName: "DoubleVerify", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/doubleverify", jobIds: ["doubleverify-associate-business-director-sales-tokyo"] },
+  { companySlug: "nice", companyName: "NiCE", provider: "Greenhouse", boardUrl: "https://job-boards.eu.greenhouse.io/nice", jobIds: ["nice-senior-business-analyst-japan-current"] },
+  { companySlug: "knowbe4", companyName: "KnowBe4", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/knowbe4", jobIds: ["knowbe4-director-sales-enterprise-japan-current", "knowbe4-partner-account-manager-japan-current", "knowbe4-regional-ae-enterprise-japan-current", "knowbe4-sales-engineer-japan-current"] },
+  { companySlug: "lighthouse", companyName: "Lighthouse", provider: "Greenhouse", boardUrl: "https://job-boards.eu.greenhouse.io/lighthouse", jobIds: ["lighthouse-business-development-manager-ae-japan-current"] },
+  { companySlug: "figma", companyName: "Figma", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/figma", jobIds: ["figma-account-executive-smb-tokyo-current", "figma-account-executive-strategic-tokyo-current", "figma-manager-solutions-consulting-tokyo-current", "figma-onboarding-manager-customer-experience-tokyo-current", "figma-senior-manager-enterprise-sales-tokyo-current", "figma-senior-sales-enablement-manager-tokyo-current", "figma-technical-account-manager-tokyo-current"] },
+  { companySlug: "dialpad", companyName: "Dialpad", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/dialpad", jobIds: ["dialpad-sales-engineer-iii-japan"] },
+  { companySlug: "censys", companyName: "Censys", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/censys", jobIds: ["censys-senior-solutions-engineer-japan"] },
+  { companySlug: "cloudflare", companyName: "Cloudflare", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/cloudflare", jobIds: ["cloudflare-director-enterprise-sales-japan"] },
+  { companySlug: "celonis", companyName: "Celonis", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/celonis", jobIds: ["celonis-portfolio-ae"] },
+  { companySlug: "new-relic", companyName: "New Relic", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/newrelic", jobIds: ["newrelic-ae-enterprise", "newrelic-senior-technical-success-manager-japan"] },
+  { companySlug: "verkada", companyName: "Verkada", provider: "Greenhouse", boardUrl: "https://job-boards.greenhouse.io/verkada", jobIds: ["verkada-account-executive-tokyo", "verkada-account-executive-osaka", "verkada-enterprise-account-executive-osaka"] },
+  { companySlug: "sonatype", companyName: "Sonatype", provider: "Lever", boardUrl: "https://jobs.lever.co/sonatype", jobIds: ["sonatype-enterprise-account-executive-japan-sea-4694e03a"] },
+  { companySlug: "ecovadis", companyName: "EcoVadis", provider: "SmartRecruiters", boardUrl: "https://jobs.smartrecruiters.com/ecovadis", jobIds: ["ecovadis-sales-development-associate-japanese-744000141295519", "ecovadis-sustainability-analyst-japanese-744000148224301"] },
+  { companySlug: "nexthink", companyName: "Nexthink", provider: "SmartRecruiters", boardUrl: "https://jobs.smartrecruiters.com/Nexthink", jobIds: ["nexthink-customer-success-manager-japan-current", "nexthink-solution-consultant-japan-current"] },
+];
+
 const closedJobIds = new Set([
+  ...closedJobs20261101.flatMap((record) => record.jobIds),
   "cic-marketing-director-tokyo-672575fe",
   "equativ-publisher-key-account-manager-japan-ba1faf59",
   "canva-japan-growth-marketing-lead-6000000001289995",
@@ -3392,7 +3434,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-10-31" ? job.lastChecked : "2026-10-31",
+      lastChecked: job.lastChecked > "2026-11-01" ? job.lastChecked : "2026-11-01",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3443,7 +3485,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-10-31" ? company.lastChecked : "2026-10-31";
+  const auditedLastChecked = company.lastChecked > "2026-11-01" ? company.lastChecked : "2026-11-01";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
@@ -3460,6 +3502,18 @@ export const companies = publishedCompanyRecords.map((company): Company => {
 });
 
 const signalRecords: Signal[] = [
+  ...closedJobs20261101.map((record): Signal => ({
+    id: `signal-${record.companySlug}-jobs-ended-20261101`,
+    companySlug: record.companySlug,
+    date: "2026-11-01",
+    type: "組織シグナル",
+    confidence: "公式確認",
+    title: `${record.companyName}の公式求人${record.jobIds.length}件が掲載終了`,
+    summary: record.provider === "Greenhouse"
+      ? "個別URLがエラーページへ転送され、現行の公式Greenhouse一覧にも当該求人を確認できなかったため公開求人から除外しました。これだけで日本事業の縮小や採用停止を意味しません。"
+      : `現行の公式${record.provider}一覧に当該求人を確認できなかったため公開求人から除外しました。これだけで日本事業の縮小や採用停止を意味しません。`,
+    source: { label: `${record.companyName} Careers (${record.provider})`, url: record.boardUrl },
+  })),
   {
     id: "signal-cic-marketing-director-ended-20261031",
     companySlug: "cic",
