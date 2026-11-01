@@ -3434,7 +3434,7 @@ export const jobs = jobRecords
     const datedJob = {
       ...job,
       title: jobTitleOverrides20260829[job.id] ?? job.title,
-      lastChecked: job.lastChecked > "2026-11-01" ? job.lastChecked : "2026-11-01",
+      lastChecked: job.lastChecked > "2026-11-02" ? job.lastChecked : "2026-11-02",
     };
     const company = publishedCompanyBySlug.get(job.companySlug);
     const strengthened = company ? strengthenCareerInsights(datedJob, company) : datedJob;
@@ -3485,7 +3485,7 @@ export const companies = publishedCompanyRecords.map((company): Company => {
     salesRoles,
     hiringStatus,
   };
-  const auditedLastChecked = company.lastChecked > "2026-11-01" ? company.lastChecked : "2026-11-01";
+  const auditedLastChecked = company.lastChecked > "2026-11-02" ? company.lastChecked : "2026-11-02";
   const standardized = auditedPresence
     ? { ...standardizedBase, japanPresence: auditedPresence, lastChecked: auditedLastChecked }
     : { ...standardizedBase, lastChecked: auditedLastChecked };
