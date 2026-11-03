@@ -8,10 +8,10 @@ export type CompanyStoryPrimerData = {
   eyebrow: string;
   title: string;
   lead: string;
-  essence: {
-    shallow: string;
-    deep: string;
-    memoryHook: string;
+  memoryHook: string;
+  originImage: {
+    src: string;
+    alt: string;
   };
   origin: Array<{
     marker: string;
@@ -52,10 +52,10 @@ const elevenLabsStory: CompanyStoryPrimerData = {
   eyebrow: "START HERE / 3分でつかむ",
   title: "吹き替えへの\n違和感から始まった。\n人と技術の会話を\n作り直す会社。",
   lead: "ElevenLabsを単なる「AI音声生成ツール」と捉えると、いま何を目指している会社なのかを見誤ります。出発点は、言語が変わっても話者の声と感情を失わない吹き替え。その技術を、制作・開発・顧客対応へ広げています。",
-  essence: {
-    shallow: "AIで、人間らしい声を作る会社",
-    deep: "声・言語・会話を、あらゆる製品や業務へ組み込める基盤にする会社",
-    memoryHook: "「声を作る」から「人と技術の接点を作る」へ",
+  memoryHook: "「声を作る」から「人と技術の接点を作る」へ",
+  originImage: {
+    src: "/images/companies/elevenlabs/founding-story-four-panel.jpg",
+    alt: "ポーランドで吹き替えへの違和感を覚え、問いを立て、人間らしい音声技術を開発し、制作・開発・会話へ広げるまでを描いた4コマの編集図解",
   },
   origin: [
     {

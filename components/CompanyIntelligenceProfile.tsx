@@ -723,7 +723,7 @@ export default function CompanyIntelligenceProfile({
               )}
               {companyStory ? (
                 <div className="company-story-hero-summary">
-                  <strong>{companyStory.essence.memoryHook}</strong>
+                  <strong>{companyStory.memoryHook}</strong>
                   <p>{companyStory.lead}</p>
                   <a href="#company-story">まず3分で会社をつかむ ↓</a>
                 </div>

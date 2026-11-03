@@ -26,28 +26,31 @@ export default function CompanyStoryPrimer({ story }: { story: CompanyStoryPrime
           </div>
         </header>
 
-        <div className="company-story-essence" aria-label="ElevenLabsの本質">
-          <div>
-            <span>一見すると</span>
-            <p>{story.essence.shallow}</p>
-          </div>
-          <span className="company-story-arrow" aria-hidden="true">→</span>
-          <div className="company-story-essence-deep">
-            <span>本質は</span>
-            <p>{story.essence.deep}</p>
-          </div>
-          <strong>{story.essence.memoryHook}</strong>
-        </div>
-
         <section className="company-story-block company-story-origin" aria-labelledby="company-origin-title">
           <div className="company-story-section-heading">
             <div><span>01</span><p>FOUNDING STORY</p></div>
             <h3 id="company-origin-title">なぜ、この会社が生まれたのか。</h3>
           </div>
-          <div className="company-story-timeline">
+          <figure className="company-origin-comic">
+            <div className="company-origin-comic-image">
+              <img
+                src={story.originImage.src}
+                alt={story.originImage.alt}
+                width="1536"
+                height="1024"
+                loading="lazy"
+              />
+              <span>GENBA EDITORIAL RECONSTRUCTION</span>
+            </div>
+            <figcaption>
+              <strong>これは実際の場面の記録ではありません。</strong>
+              公式に確認できる創業背景を、流れが伝わるようGenbaが4コマに再構成した編集図解です。人物は実在の創業者を描いたものではありません。
+            </figcaption>
+          </figure>
+          <div className="company-origin-beats">
             {story.origin.map((item, index) => (
               <article key={item.title}>
-                <div className="company-story-timeline-marker"><span>{String(index + 1).padStart(2, "0")}</span><i /></div>
+                <div className="company-origin-beat-number">{String(index + 1).padStart(2, "0")}</div>
                 <div>
                   <small>{item.marker}</small>
                   <h4>{item.title}</h4>
@@ -123,31 +126,34 @@ export default function CompanyStoryPrimer({ story }: { story: CompanyStoryPrime
           </div>
         </section>
 
-        <section className="company-story-block company-story-culture" aria-labelledby="company-culture-title">
-          <div className="company-story-section-heading">
+        <details className="company-story-block company-story-culture" id="company-culture">
+          <summary>
             <div><span>05</span><p>CULTURE, WITH EVIDENCE</p></div>
-            <h3 id="company-culture-title">「カルチャーが良い」とは書かない。確認できる範囲を分ける。</h3>
+            <h3 id="company-culture-title">働き方は、宣伝文句ではなく根拠ごとに確認する</h3>
+            <i aria-hidden="true">＋</i>
+          </summary>
+          <div className="company-story-culture-body" aria-labelledby="company-culture-title">
+            <div className="company-culture-evidence-grid">
+              <article className="company-culture-verified">
+                <span>公開情報で確認できる事実</span>
+                <ul>{story.culture.verified.map((item) => <li key={item}>{item}</li>)}</ul>
+              </article>
+              <article className="company-culture-stated">
+                <span>会社が掲げていること</span>
+                <ul>{story.culture.stated.map((item) => <li key={item}>{item}</li>)}</ul>
+                <small>実態を第三者が検証したものではなく、公式採用ページ上の説明です。</small>
+              </article>
+              <article className="company-culture-unknown">
+                <span>公開情報では分からないこと</span>
+                <ul>{story.culture.unknown.map((item) => <li key={item}>{item}</li>)}</ul>
+              </article>
+            </div>
+            <footer className="company-story-culture-source">
+              <SourceLink source={story.culture.source} />
+              <time dateTime={story.verifiedAt}>最終確認日 {story.verifiedAt.replaceAll("-", ".")}</time>
+            </footer>
           </div>
-          <div className="company-culture-evidence-grid">
-            <article className="company-culture-verified">
-              <span>公開情報で確認できる事実</span>
-              <ul>{story.culture.verified.map((item) => <li key={item}>{item}</li>)}</ul>
-            </article>
-            <article className="company-culture-stated">
-              <span>会社が掲げていること</span>
-              <ul>{story.culture.stated.map((item) => <li key={item}>{item}</li>)}</ul>
-              <small>実態を第三者が検証したものではなく、公式採用ページ上の説明です。</small>
-            </article>
-            <article className="company-culture-unknown">
-              <span>公開情報では分からないこと</span>
-              <ul>{story.culture.unknown.map((item) => <li key={item}>{item}</li>)}</ul>
-            </article>
-          </div>
-          <footer className="company-story-culture-source">
-            <SourceLink source={story.culture.source} />
-            <time dateTime={story.verifiedAt}>最終確認日 {story.verifiedAt.replaceAll("-", ".")}</time>
-          </footer>
-        </section>
+        </details>
       </Container>
     </section>
   );
