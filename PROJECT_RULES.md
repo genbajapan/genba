@@ -26,7 +26,7 @@ Genbaは「外資戦士と予備軍の作戦会議室。」を掲げる、無料
 
 読者は原則無料とし、主な支払者は採用企業・採用支援会社・関連B2B企業とする。
 
-企業データベースは、日本語情報が乏しい小中規模外資を中核としつつ、読者が検索・比較の入口にできる認知度の高いアンカー企業も基礎掲載する。具体的な選定基準とデイリータスクの追加配分は、`docs/09-pivot-business-plan.md`と`ops/daily-task-workflow.md`を正本とする。
+企業データベースは、日本語情報が乏しい小中規模外資を中核としつつ、読者が検索・比較の入口にできる認知度の高いアンカー企業も基礎掲載する。公開対象が300社へ到達した後は、`今、キャリア判断のために見る価値がある外資IT企業300社`を維持し、純増ではなく入れ替えで選定品質を高める。具体的な採用・残留・除外基準は`ops/genba-300-selection-standard.md`、事業上の位置づけは`docs/09-pivot-business-plan.md`、デイリータスクの実行手順は`ops/daily-task-workflow.md`を正本とする。
 
 ## 3. 必ず参照する正本
 
@@ -39,6 +39,7 @@ Genbaは「外資戦士と予備軍の作戦会議室。」を掲げる、無料
 - 法務確認状況: `ops/legal-checklist.md`
 - 日次更新: `ops/daily-workflow.md`
 - 拡張運用(企業追加・全社更新・X下書き・SEO/AEO点検): `ops/daily-task-workflow.md`
+- Genba 300の採用・残留・除外: `ops/genba-300-selection-standard.md`
 - 日本未進出企業の標準: `ops/pre-entry-company-standard.md`
 - 企業ページ標準: `ops/company-page-standard.md`
 - 企業ページの課題啓蒙・売り方: `ops/company-selling-playbook-standard.md`
