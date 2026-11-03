@@ -43,13 +43,14 @@ export type CompanyStoryPrimerData = {
     unknown: string[];
     source: CompanyStorySource;
   };
+  brandGuide: CompanyStorySource;
   verifiedAt: string;
 };
 
 const elevenLabsStory: CompanyStoryPrimerData = {
   slug: "elevenlabs",
   eyebrow: "START HERE / 3分でつかむ",
-  title: "吹き替えへの違和感から、\n人と技術の会話を作り直す\n会社へ。",
+  title: "吹き替えへの\n違和感から始まった。\n人と技術の会話を\n作り直す会社。",
   lead: "ElevenLabsを単なる「AI音声生成ツール」と捉えると、いま何を目指している会社なのかを見誤ります。出発点は、言語が変わっても話者の声と感情を失わない吹き替え。その技術を、制作・開発・顧客対応へ広げています。",
   essence: {
     shallow: "AIで、人間らしい声を作る会社",
@@ -143,6 +144,7 @@ const elevenLabsStory: CompanyStoryPrimerData = {
     ],
     source: { label: "公式採用ページ", url: "https://elevenlabs.io/careers" },
   },
+  brandGuide: { label: "ElevenLabs公式ブランドガイド", url: "https://elevenlabs.io/brand" },
   verifiedAt: "2026-11-03",
 };
 

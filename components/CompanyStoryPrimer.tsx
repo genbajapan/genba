@@ -6,13 +6,24 @@ function SourceLink({ source }: { source: CompanyStorySource }) {
 }
 
 export default function CompanyStoryPrimer({ story }: { story: CompanyStoryPrimerData }) {
+  const waveBars = [18, 34, 55, 76, 43, 68, 92, 58, 36, 71, 84, 49, 27, 62, 88, 66, 39, 73, 96, 52, 31, 60, 79, 46, 24, 41, 69, 90, 57, 33, 64, 81];
+
   return (
-    <section className="company-story-primer" id="company-story" aria-labelledby="company-story-title">
+    <section className={`company-story-primer company-story-primer-${story.slug}`} id="company-story" aria-labelledby="company-story-title">
       <Container>
         <header className="company-story-intro">
-          <p className="company-story-eyebrow">{story.eyebrow}</p>
-          <h2 id="company-story-title">{story.title}</h2>
-          <p>{story.lead}</p>
+          <div className="company-story-intro-copy">
+            <p className="company-story-eyebrow">{story.eyebrow}</p>
+            <h2 id="company-story-title">{story.title}</h2>
+          </div>
+          <div className="company-story-audio-stage">
+            <div className="company-story-audio-meta"><span>VOICE</span><i /><span>LANGUAGE</span><i /><span>INTERACTION</span></div>
+            <div className="company-story-voice-orb" aria-hidden="true"><span /><i /><b /></div>
+            <div className="company-story-wave" aria-hidden="true">
+              {waveBars.map((height, index) => <i key={`${height}-${index}`} style={{ height: `${height}%` }} />)}
+            </div>
+            <p>{story.lead}</p>
+          </div>
         </header>
 
         <div className="company-story-essence" aria-label="ElevenLabsの本質">
@@ -62,7 +73,8 @@ export default function CompanyStoryPrimer({ story }: { story: CompanyStoryPrime
             <div className="company-product-connector" aria-hidden="true"><i /><i /><i /></div>
             <div className="company-product-lanes">
               {story.productSystem.map((product, index) => (
-                <article key={product.name}>
+                <article className={`company-product-lane company-product-lane-${index + 1}`} key={product.name}>
+                  <div className="company-product-brand-motif" aria-hidden="true"><i /><i /><i /></div>
                   <span>0{index + 1} / {product.audience}</span>
                   <h4>{product.name}</h4>
                   <p>{product.job}</p>
@@ -72,6 +84,7 @@ export default function CompanyStoryPrimer({ story }: { story: CompanyStoryPrime
               ))}
             </div>
           </div>
+          <p className="company-product-brand-note">製品別の色とモチーフは、<SourceLink source={story.brandGuide} />に基づく編集表現です。GenbaはElevenLabsの公式サイトではありません。</p>
         </section>
 
         <section className="company-story-block company-story-direction" aria-labelledby="company-direction-title">

@@ -675,7 +675,7 @@ export default function CompanyIntelligenceProfile({
 
   return (
     <>
-      <section className="company-command-hero" id="company-top">
+      <section className={`company-command-hero ${companyStory ? `company-command-hero-branded company-command-hero-${company.slug}` : ""}`} id="company-top">
         <Container>
           <div className="company-breadcrumbs">
             <Link href="/companies">企業データ</Link>
@@ -685,7 +685,11 @@ export default function CompanyIntelligenceProfile({
           <div className="company-command-grid">
             <div className="company-identity">
               <div className="company-identity-topline">
-                <span className="company-monogram" aria-hidden="true">{company.name.slice(0, 1)}</span>
+                {companyStory ? (
+                  <span className="company-monogram company-monogram-elevenlabs" aria-label="ElevenLabs"><i /><i /></span>
+                ) : (
+                  <span className="company-monogram" aria-hidden="true">{company.name.slice(0, 1)}</span>
+                )}
                 <div>
                   <p className="eyebrow eyebrow-light">{companyStory ? "COMPANY STORY / FIELD DOSSIER" : "COMPANY FIELD DOSSIER"}</p>
                   {company.entryStatus === "pre-entry-signal"
