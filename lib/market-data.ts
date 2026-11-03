@@ -89,6 +89,7 @@ import { companies20261026Daily, jobs20261026Daily } from "@/lib/company-additio
 import { companies20261027Daily, jobs20261027Daily } from "@/lib/company-additions-2026-10-27-daily";
 import { companies20261029Daily, jobs20261029Daily } from "@/lib/company-additions-2026-10-29-daily";
 import { companies20261031Daily, jobs20261031Daily } from "@/lib/company-additions-2026-10-31-daily";
+import { companies20261104Daily, jobs20261104Daily } from "@/lib/company-additions-2026-11-04-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1052,6 +1053,7 @@ const companyRecords: Company[] = [
   ...companies20261027Daily,
   ...companies20261029Daily,
   ...companies20261031Daily,
+  ...companies20261104Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1499,6 +1501,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 }
 
 const jobRecords: Job[] = [
+  ...jobs20261104Daily,
   ...jobs20261031Daily,
   ...jobs20261029Daily,
   ...jobs20261025Daily,

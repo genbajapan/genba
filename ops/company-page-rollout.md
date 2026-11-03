@@ -1,8 +1,8 @@
 # 企業ページ 共通企業ページv1 展開進捗
 
-最終監査: 2026-11-02 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
+最終監査: 2026-11-04 / 公開見本: [Figma](/companies/figma) / 基準コミット: `66ca2e2`
 
-全296社（未着手 154 / 調査中 0 / 検証済み 0 / 公開済み 142）
+全300社（未着手 158 / 調査中 0 / 検証済み 0 / 公開済み 142）
 
 |優先度|企業|営業求人|進捗|標準充足|主な不足|
 |---|---|---:|---|---|---|
@@ -13,6 +13,7 @@
 |HOT|Braze|5|公開済み|はい|なし|
 |HOT|Cato Networks|9|公開済み|はい|なし|
 |HOT|Celonis|4|公開済み|はい|なし|
+|HOT|Channel Corp.|4|未着手|いいえ|求人:アカウントエグゼクティブ（Account Executive）:職種別の報酬調査、求人:アカウントエグゼクティブ（Account Executive）:ポジティブ・ネガティブ評判、求人:アカウントエグゼクティブ（Account Executive）:市場価値、求人:アカウントマネジメント（Renewal & Expansion）:職種別の報酬調査ほか8件|
 |HOT|Channel Talk|14|公開済み|はい|なし|
 |HOT|CIC|4|未着手|はい|なし|
 |HOT|Cloudera|3|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:Forward Deployed AI Engineer:海外を含む外部評判source、求人:Forward Deployed AI Engineer:海外reviewの肯定・注意theme、求人:Forward Deployed AI Engineer, Japan / Korea (Senior/Principal Level):海外を含む外部評判sourceほか3件|
@@ -112,6 +113,7 @@
 |Selective|Cirrus Data Solutions|1|公開済み|はい|なし|
 |Selective|Claroty|1|未着手|はい|なし|
 |Selective|Cohesity|1|未着手|いいえ|ヒーロー説明:解決と事業成果|
+|Selective|ConcertAI|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、求人:Sales Manager, Japan:職種別の報酬調査、求人:Sales Manager, Japan:ポジティブ・ネガティブ評判ほか1件|
 |Selective|Cribl|1|公開済み|はい|なし|
 |Selective|D-Fend Solutions|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、求人:Presales Field Engineer:勤務地・言語の日本語表記ほか3件|
 |Selective|DataRobot|1|未着手|いいえ|ヒーロー説明:解決と事業成果、求人:AI Engineer - Professional Services:勤務地・言語の日本語表記、求人:AI Engineer - Professional Services:職種別の報酬調査、求人:AI Engineer - Professional Services:ポジティブ・ネガティブ評判ほか1件|
@@ -120,6 +122,7 @@
 |Selective|EcoVadis|1|未着手|はい|なし|
 |Selective|Element Biosciences|1|未着手|はい|なし|
 |Selective|Entrust|1|未着手|はい|なし|
+|Selective|Everpure（旧Pure Storage）|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、求人:Account Executive, Emerging (SocialInfra accounts), Japan:職種別の報酬調査、求人:Account Executive, Emerging (SocialInfra accounts), Japan:ポジティブ・ネガティブ評判ほか1件|
 |Selective|Exotec|1|未着手|はい|なし|
 |Selective|Fastly|1|公開済み|はい|なし|
 |Selective|Figma|1|公開済み|はい|なし|
@@ -143,6 +146,7 @@
 |Selective|Mattermost|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Technical Sales Engineer / Lead:職種別の報酬調査、求人:Technical Sales Engineer / Lead:ポジティブ・ネガティブ評判、求人:Technical Sales Engineer / Lead:市場価値|
 |Selective|Medallia|1|未着手|はい|なし|
 |Selective|Minitab|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、求人:Account Executive:職種別の報酬調査、求人:Account Executive:ポジティブ・ネガティブ評判、求人:Account Executive:市場価値|
+|Selective|Mistplay|1|未着手|いいえ|日本法人での想定従業員数:gBizINFO監査ステータス、日本法人での想定従業員数:gBizINFO出典、日本法人での想定従業員数:定義・対象範囲、日本法人での想定従業員数:法人未特定時に0人と断定しないほか3件|
 |Selective|Mixpanel|1|未着手|いいえ|日本法人での想定従業員数:定義・対象範囲、求人:Senior Enterprise Account Executive, Japan:職種別の報酬調査、求人:Senior Enterprise Account Executive, Japan:ポジティブ・ネガティブ評判、求人:Senior Enterprise Account Executive, Japan:市場価値|
 |Selective|NiCE|1|公開済み|はい|なし|
 |Selective|NinjaOne|1|未着手|はい|なし|

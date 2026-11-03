@@ -4,7 +4,7 @@
     "path": "/companies/figma",
     "commit": "66ca2e2"
   },
-  "auditedAt": "2026-11-02",
+  "auditedAt": "2026-11-04",
   "statusOrder": [
     "未着手",
     "調査中",
@@ -18,17 +18,17 @@
     "求人なし"
   ],
   "counts": {
-    "total": 296,
+    "total": 300,
     "byStatus": {
-      "未着手": 154,
+      "未着手": 158,
       "調査中": 0,
       "検証済み": 0,
       "公開済み": 142
     },
     "byPriority": {
-      "HOT": 47,
+      "HOT": 48,
       "Active": 33,
-      "Selective": 97,
+      "Selective": 100,
       "求人なし": 119
     },
     "standardReady": 246
@@ -96,6 +96,28 @@
       "status": "公開済み",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "channel-corp",
+      "company": "Channel Corp.",
+      "priority": "HOT",
+      "salesRoles": 4,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "求人:アカウントエグゼクティブ（Account Executive）:職種別の報酬調査",
+        "求人:アカウントエグゼクティブ（Account Executive）:ポジティブ・ネガティブ評判",
+        "求人:アカウントエグゼクティブ（Account Executive）:市場価値",
+        "求人:アカウントマネジメント（Renewal & Expansion）:職種別の報酬調査",
+        "求人:アカウントマネジメント（Renewal & Expansion）:ポジティブ・ネガティブ評判",
+        "求人:アカウントマネジメント（Renewal & Expansion）:市場価値",
+        "求人:カスタマーサクセス（AX Consultant）:職種別の報酬調査",
+        "求人:カスタマーサクセス（AX Consultant）:ポジティブ・ネガティブ評判",
+        "求人:カスタマーサクセス（AX Consultant）:市場価値",
+        "求人:パートナーセールス（Partner Sales）:職種別の報酬調査",
+        "求人:パートナーセールス（Partner Sales）:ポジティブ・ネガティブ評判",
+        "求人:パートナーセールス（Partner Sales）:市場価値"
+      ]
     },
     {
       "slug": "channel-talk",
@@ -1077,6 +1099,21 @@
       ]
     },
     {
+      "slug": "concertai",
+      "company": "ConcertAI",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "求人:Sales Manager, Japan:職種別の報酬調査",
+        "求人:Sales Manager, Japan:ポジティブ・ネガティブ評判",
+        "求人:Sales Manager, Japan:市場価値"
+      ]
+    },
+    {
       "slug": "cribl",
       "company": "Cribl",
       "priority": "Selective",
@@ -1161,6 +1198,21 @@
       "status": "未着手",
       "standardReady": true,
       "missingFields": []
+    },
+    {
+      "slug": "everpure",
+      "company": "Everpure（旧Pure Storage）",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "求人:Account Executive, Emerging (SocialInfra accounts), Japan:職種別の報酬調査",
+        "求人:Account Executive, Emerging (SocialInfra accounts), Japan:ポジティブ・ネガティブ評判",
+        "求人:Account Executive, Emerging (SocialInfra accounts), Japan:市場価値"
+      ]
     },
     {
       "slug": "exotec",
@@ -1387,6 +1439,23 @@
         "求人:Account Executive:職種別の報酬調査",
         "求人:Account Executive:ポジティブ・ネガティブ評判",
         "求人:Account Executive:市場価値"
+      ]
+    },
+    {
+      "slug": "mistplay",
+      "company": "Mistplay",
+      "priority": "Selective",
+      "salesRoles": 1,
+      "status": "未着手",
+      "standardReady": false,
+      "missingFields": [
+        "日本法人での想定従業員数:gBizINFO監査ステータス",
+        "日本法人での想定従業員数:gBizINFO出典",
+        "日本法人での想定従業員数:定義・対象範囲",
+        "日本法人での想定従業員数:法人未特定時に0人と断定しない",
+        "求人:Senior Account Executive I, Japan:職種別の報酬調査",
+        "求人:Senior Account Executive I, Japan:ポジティブ・ネガティブ評判",
+        "求人:Senior Account Executive I, Japan:市場価値"
       ]
     },
     {

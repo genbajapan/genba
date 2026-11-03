@@ -26,5 +26,7 @@ next-env.d.ts
 .vercel
 .env*
 
-# local operational state
-/.genba-state/
+# local operational state (Genba 300の継続判定だけGit管理し、公開アセットには含めない)
+!/.genba-state/
+/.genba-state/*
+!/.genba-state/genba-300-selection.json
