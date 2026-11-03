@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import Container from "@/components/Container";
 import CompanyImprovementRequest from "@/components/CompanyImprovementRequest";
+import CompanyStoryPrimer from "@/components/CompanyStoryPrimer";
 import DossierNav from "@/components/DossierNav";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import SignalCard from "@/components/SignalCard";
@@ -15,6 +16,7 @@ import { getJapanOfficeDisplay, getUniqueOverviewFacts } from "@/lib/company-ove
 import { getCompanyPublicIntelligence, getResearchSource } from "@/lib/company-public-intelligence";
 import type { CompanyPublicIntelligence, SalesFabeOverview } from "@/lib/company-public-intelligence";
 import { getCompanyScaleComparisons } from "@/lib/company-scale-comparison";
+import { getCompanyStoryPrimer } from "@/lib/company-story-primer";
 import type { Company, Job, Signal, Source } from "@/lib/market-data";
 
 type ProfileProps = {
@@ -583,6 +585,7 @@ export default function CompanyIntelligenceProfile({
   const isNotEntered = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
+  const companyStory = getCompanyStoryPrimer(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
   const salesSnapshot = salesView?.summary ?? company.description;
   const salesFabeOverview = publicIntel?.salesFabeOverview;
@@ -684,7 +687,7 @@ export default function CompanyIntelligenceProfile({
               <div className="company-identity-topline">
                 <span className="company-monogram" aria-hidden="true">{company.name.slice(0, 1)}</span>
                 <div>
-                  <p className="eyebrow eyebrow-light">COMPANY FIELD DOSSIER</p>
+                  <p className="eyebrow eyebrow-light">{companyStory ? "COMPANY STORY / FIELD DOSSIER" : "COMPANY FIELD DOSSIER"}</p>
                   {company.entryStatus === "pre-entry-signal"
                     ? <span className="pre-entry-badge pre-entry-badge-hero"><i /> {getPreEntrySignalLabel(company)}</span>
                     : isPreEntry
@@ -695,7 +698,7 @@ export default function CompanyIntelligenceProfile({
               <h1>{company.name}</h1>
               <p className="company-category">{company.category} <span>/</span> {company.hq}</p>
               {company.entryStatus === "pre-entry-signal" && <p className="pre-entry-definition">{getPreEntrySignalDefinition(company)}</p>}
-              {publicIntel && (
+              {publicIntel && !companyStory && (
                 <div className="company-sales-snapshot-heading">
                   <span>セールス観点から見たこの会社</span>
                   <details className="fabe-help">
@@ -714,7 +717,13 @@ export default function CompanyIntelligenceProfile({
                   </details>
                 </div>
               )}
-              {salesFabeOverview ? (
+              {companyStory ? (
+                <div className="company-story-hero-summary">
+                  <strong>{companyStory.essence.memoryHook}</strong>
+                  <p>{companyStory.lead}</p>
+                  <a href="#company-story">まず3分で会社をつかむ ↓</a>
+                </div>
+              ) : salesFabeOverview ? (
                 <div className="company-sales-overview">
                   <div className="company-sales-segments" aria-label="主な対象領域">
                     <strong>主な対象領域</strong>
@@ -725,7 +734,7 @@ export default function CompanyIntelligenceProfile({
               ) : (
                 <p className="company-description">{salesSnapshot}</p>
               )}
-              {(salesMarketOutlook || salesView?.expanded) && (
+              {!companyStory && (salesMarketOutlook || salesView?.expanded) && (
                 <details className="company-sales-evidence">
                   <summary>
                     <span className="company-sales-evidence-label-closed">{salesMarketOutlook?.title ?? "導入実績・成果指標・日本市場の見立てを見る"}</span>
@@ -767,7 +776,7 @@ export default function CompanyIntelligenceProfile({
                   )}
                 </details>
               )}
-              {salesFabeOverview && <SalesFabeDetails overview={salesFabeOverview} intelligence={publicIntel} />}
+              {!companyStory && salesFabeOverview && <SalesFabeDetails overview={salesFabeOverview} intelligence={publicIntel} />}
               <div className="company-tag-row">
                 {company.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
@@ -804,6 +813,8 @@ export default function CompanyIntelligenceProfile({
           <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} />
         </Container>
       </div>
+
+      {companyStory && <CompanyStoryPrimer story={companyStory} />}
 
       <section className="content-section company-intelligence-section">
         <Container className="company-intelligence-layout">
@@ -1210,7 +1221,7 @@ export default function CompanyIntelligenceProfile({
                 </div>
               )}
 
-              {publicIntel?.cultureDeepDive ? (
+              {companyStory ? null : publicIntel?.cultureDeepDive ? (
                 <CultureDossier intelligence={publicIntel} companyName={company.name} />
               ) : (
                 <>
