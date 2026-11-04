@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-03T21:11:57.249Z",
-  "runDate": "2026-11-04",
+  "updatedAt": "2026-11-04T21:12:31.119Z",
+  "runDate": "2026-11-05",
   "publicCount": 300,
   "initialAssessment": {
     "completedAt": "2026-11-03T21:11:57.250Z",
@@ -32,63 +32,108 @@
     "automaticSwapThreshold": "初回は既存44点以下かつ候補が15点以上高い、または即時除外のみ。"
   },
   "dailyReview": {
-    "fixedGroup": 3,
+    "fixedGroup": 4,
     "fixedGroupCount": 43,
     "fixedGroupSlugs": [
-      "acquia",
-      "alarm-com",
-      "apollo-io",
-      "asana",
-      "behavox",
-      "bounce",
-      "celonis",
-      "ciq",
-      "cloudflare",
-      "confluent",
-      "dataiku",
-      "deepl",
-      "dynatrace",
-      "entrust",
-      "figma",
-      "gamma",
-      "grafana-labs",
-      "hightouch",
-      "ideals",
-      "jamf",
-      "kong",
-      "liferay",
-      "lucid-vision-labs",
-      "matterport",
-      "mirakl",
-      "monotype",
-      "nexthink",
-      "omni-analytics",
-      "patch",
-      "pitchbook",
-      "quantexa",
-      "rippling",
-      "rzr",
-      "sensor-tower",
-      "sitecore",
-      "sparta-commodities",
-      "supabase",
-      "telnyx",
-      "tradinghub",
-      "vanta",
-      "vonage",
-      "wiz",
-      "zendesk"
+      "acronis",
+      "alta-ares",
+      "appian",
+      "ashby",
+      "black-duck",
+      "box",
+      "censys",
+      "circleci",
+      "cockroach-labs",
+      "contentsquare",
+      "datarobot",
+      "dialpad",
+      "ecovadis",
+      "equativ",
+      "fireblocks",
+      "genspark",
+      "green-hills-software",
+      "hiya",
+      "illumio",
+      "jfrog",
+      "kpler",
+      "lighthouse",
+      "magnet-forensics",
+      "medallia",
+      "miro",
+      "motherduck",
+      "nice",
+      "omnissa",
+      "patsnap",
+      "planet",
+      "qumulo",
+      "rocket-software",
+      "sailpoint",
+      "sentry",
+      "sixsense",
+      "speak",
+      "suse",
+      "temporal",
+      "tradlinx",
+      "vectra-ai",
+      "walkme",
+      "workato",
+      "zilliz"
     ],
     "allSavedCareerUrlsChecked": true,
     "urlSummary": {
-      "active": 270,
+      "active": 272,
       "ended": 19,
-      "blocked": 5,
-      "error": 6,
+      "blocked": 4,
+      "error": 5,
       "skipped": 0
     },
-    "changedCompanies": [],
+    "changedCompanies": [
+      {
+        "slug": "channel-talk",
+        "name": "Channel Talk",
+        "previousTotal": 92,
+        "total": 96,
+        "previousUrlCategory": "error",
+        "urlCategory": "active",
+        "status": 200
+      },
+      {
+        "slug": "megaport",
+        "name": "Megaport",
+        "previousTotal": 88,
+        "total": 92,
+        "previousUrlCategory": "error",
+        "urlCategory": "active",
+        "status": 200
+      },
+      {
+        "slug": "meltwater",
+        "name": "Meltwater",
+        "previousTotal": 96,
+        "total": 98,
+        "previousUrlCategory": "blocked",
+        "urlCategory": "active",
+        "status": 200
+      },
+      {
+        "slug": "walkme",
+        "name": "WalkMe",
+        "previousTotal": 96,
+        "total": 92,
+        "previousUrlCategory": "active",
+        "urlCategory": "error",
+        "status": 0
+      }
+    ],
     "topAdditionCandidates": [
+      {
+        "slug": "weka",
+        "name": "WEKA",
+        "total": 86,
+        "rationale": "東京勤務のRegional Sales Managerを現行公式求人で確認。同社が日本最初のSales Executiveと明記し、AIデータ基盤のポートフォリオ価値も高い。",
+        "contrary": "日本法人の雇用主体と国内組織規模は公式確認が必要。既存除外候補は2回連続の深掘り条件をまだ満たさない。",
+        "confidence": "高"
+      },
       {
         "slug": "avepoint",
         "name": "AvePoint",
@@ -98,19 +143,11 @@
         "confidence": "中"
       },
       {
-        "slug": "digicert",
-        "name": "DigiCert",
-        "total": 71,
-        "rationale": "日本法人とデジタルトラスト領域の比較価値。",
-        "contrary": "公式Career上で日本の現行対象職種を特定できず、国内人数も未確認。",
-        "confidence": "中"
-      },
-      {
-        "slug": "hyland",
-        "name": "Hyland",
-        "total": 70,
-        "rationale": "東京拠点と企業コンテンツ管理・AIの業務導線を確認。",
-        "contrary": "検索で確認したJapan CSMの直接URLは実取得で410となり、現行求人として採用できない。",
+        "slug": "vast-data",
+        "name": "VAST Data",
+        "total": 72,
+        "rationale": "AIデータ基盤の差別化に加え、公式連絡先で東京拠点を確認。",
+        "contrary": "日本向け現行公式求人と国内組織規模は確認できない。",
         "confidence": "中"
       }
     ],
@@ -166,7 +203,7 @@
     ],
     "swapPairs": [],
     "decision": "入れ替えなし",
-    "decisionReason": "即時除外を公式確認した企業がなく、初回自動入れ替え条件（既存44点以下かつ15点差）を満たす高確信度の組み合わせがない。候補上位はCareer・国内規模の追加確認が必要。"
+    "decisionReason": "即時除外を公式確認した企業がなく、継続判定の2回確認・10点差を満たす高確信度の組み合わせがない。候補上位はCareer・国内規模の追加確認が必要。"
   },
   "companies": [
     {
@@ -183,7 +220,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -191,7 +228,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/1password",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -217,7 +254,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -236,7 +273,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/3E",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -262,7 +299,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -270,7 +307,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://abnormal.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -295,7 +332,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -303,7 +340,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/acquia",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -328,15 +365,23 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://www.acronis.com/en/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.acronis.com/en/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -359,7 +404,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -367,7 +412,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://addepar.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -393,7 +438,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -401,7 +446,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://adjoe.io/careers/open-positions/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -426,7 +471,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -434,7 +479,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/aiand",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -459,7 +504,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -467,7 +512,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/airtable",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -493,7 +538,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -501,7 +546,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://aiven.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -527,7 +572,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -535,7 +580,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/alarmcom/jobs/8733921002",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -560,15 +605,26 @@
       },
       "total": 87,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 87,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/alta-ares/7c82c080-2c9a-41cf-8936-d5719b59f47b",
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/alta-ares/7c82c080-2c9a-41cf-8936-d5719b59f47b",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -594,7 +650,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -602,7 +658,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://alteryx.wd108.myworkdayjobs.com/en-US/AlteryxCareers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -625,7 +681,7 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -633,7 +689,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://job-boards.greenhouse.io/amplitude",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -659,7 +715,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -667,7 +723,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/anaplan",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人5件",
@@ -690,7 +746,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -698,7 +754,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.anthropic.com/careers/jobs",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -721,7 +777,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -729,7 +785,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/antithesis",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -755,7 +811,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -763,7 +819,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.apollo.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -789,15 +845,23 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 94,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://careers.appian.com/jobs",
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.appian.com/jobs",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -820,7 +884,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -828,7 +892,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/appier/?offices%5B%5D=23561",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -851,7 +915,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -859,7 +923,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/applied/3783c384-117a-4849-804b-82b2e35a8c8d",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -884,7 +948,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -892,7 +956,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.appsflyer.com/tokyo/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -915,7 +979,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -923,7 +987,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/apryse",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -948,7 +1012,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -956,7 +1020,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/armissecurity?error=true",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -982,7 +1046,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -990,7 +1054,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://asana.com/jobs/tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -1013,15 +1077,25 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 91,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/ashby",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/ashby",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1046,7 +1120,7 @@
       },
       "total": 78,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1054,7 +1128,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1080,7 +1154,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1088,7 +1162,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://attio.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1114,7 +1188,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1122,7 +1196,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://axis.wd3.myworkdayjobs.com/External_Career_Site",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1147,7 +1221,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1155,7 +1229,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/babelstreet",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1180,7 +1254,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1188,7 +1262,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/backmarket/7df95846-0fb0-4a42-9f35-71674ee096fd",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1213,7 +1287,7 @@
       },
       "total": 74,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -1232,7 +1306,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/behavox?error=true",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1258,15 +1332,25 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://job-boards.greenhouse.io/blackduck",
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/blackduck",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1291,7 +1375,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1299,7 +1383,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.blackline.jp/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1324,7 +1408,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1332,7 +1416,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://blackpanda.bamboohr.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -1357,7 +1441,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1365,7 +1449,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/bluecatnetworks",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1388,7 +1472,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1396,7 +1480,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/BlueMatrix?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1421,7 +1505,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1429,7 +1513,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://boomi.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -1452,7 +1536,7 @@
       },
       "total": 73,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -1472,7 +1556,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/Bounce/dde5e989-1be1-4fa5-ada4-bd36626577c0",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1499,15 +1583,25 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 94,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://job-boards.greenhouse.io/boxinc/jobs/8054660",
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/boxinc/jobs/8054660",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1532,7 +1626,7 @@
       },
       "total": 99,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1540,7 +1634,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://japancloud.jp/career/companies/braze/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人5件",
@@ -1563,7 +1657,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1571,7 +1665,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Cambly",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1597,7 +1691,7 @@
       },
       "total": 82,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1605,7 +1699,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.lifeatcanva.com/en/jobs/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1630,7 +1724,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1638,7 +1732,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.catapult.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1663,7 +1757,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1671,7 +1765,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.catonetworks.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人9件",
@@ -1694,7 +1788,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1702,7 +1796,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.celonis.com/join-us/offices/tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -1725,15 +1819,26 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 76,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://censys.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://censys.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1759,7 +1864,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1767,7 +1872,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/chainguard",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -1793,7 +1898,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1801,7 +1906,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/chalk/96eeb4e1-4621-4c03-b46e-ed2630b48811/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1826,7 +1931,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1834,7 +1939,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://channel.io/jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -1852,30 +1957,27 @@
         "japanMomentum": 20,
         "informationAsymmetry": 20,
         "productStrength": 15,
-        "evidenceFreshness": 6,
+        "evidenceFreshness": 10,
         "portfolioContribution": 9
       },
-      "total": 92,
-      "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "total": 96,
+      "confidence": "高",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
         "url": "https://jobs.lever.co/zoyi?department=Japan",
-        "status": 0,
-        "category": "error",
+        "status": 200,
+        "category": "active",
         "finalUrl": "https://jobs.lever.co/zoyi?department=Japan",
-        "checkedAt": "2026-11-04",
-        "error": "The operation was aborted due to timeout"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人14件",
         "国内観測人数100人以下",
         "保存済み一次情報10件・構造化事実4件"
       ],
-      "contrary": [
-        "Career URLはerror（HTTP 取得不能）"
-      ]
+      "contrary": []
     },
     {
       "slug": "cic",
@@ -1891,7 +1993,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1899,7 +2001,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jp.cic.com/career/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -1924,7 +2026,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1932,7 +2034,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/ciq",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1957,15 +2059,25 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://circleci.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://circleci.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -1990,7 +2102,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -1998,7 +2110,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2023,7 +2135,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2031,7 +2143,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://claroty.com/open-positions",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2056,7 +2168,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2064,7 +2176,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.clay.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2090,7 +2202,7 @@
       },
       "total": 71,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -2110,7 +2222,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://job-boards.greenhouse.io/clickhouse?error=true",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2137,7 +2249,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2145,7 +2257,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cloudera.wd5.myworkdayjobs.com/External_Career",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -2168,7 +2280,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2176,7 +2288,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.cloudflare.com/careers/jobs/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -2199,15 +2311,26 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.cockroachlabs.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.cockroachlabs.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2233,7 +2356,7 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2241,7 +2364,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/coderabbit/0e889e16-a2a3-47f3-bce9-ce87ef795762",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2268,7 +2391,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2276,7 +2399,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cognition.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人6件",
@@ -2301,7 +2424,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2309,7 +2432,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/cohere",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -2334,7 +2457,7 @@
       },
       "total": 86,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2342,7 +2465,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.cohesity.com/careers/open-positions/?gh_jid=fbb6c49dd8c11001d8381318e10e0000&type=wd",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2368,7 +2491,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2376,12 +2499,12 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/concertai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
         "国内人数は未確認",
-        "保存済み一次情報7件・構造化事実6件"
+        "保存済み一次情報8件・構造化事実6件"
       ],
       "contrary": [
         "国内の正確な在籍人数は未確認"
@@ -2401,7 +2524,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2409,7 +2532,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.ibm.com/careers/search?q=confluent",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2434,15 +2557,25 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/contentsquare",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/contentsquare",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2467,7 +2600,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2475,7 +2608,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/coupa",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -2498,7 +2631,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2506,7 +2639,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cribl.io/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2531,7 +2664,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2539,7 +2672,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cursor.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -2564,7 +2697,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2572,7 +2705,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/d-fendsolutions",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2597,7 +2730,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2605,7 +2738,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://darktrace.wd3.myworkdayjobs.com/DarktaceExternal",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -2628,7 +2761,7 @@
       },
       "total": 90,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2636,7 +2769,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.dataiku.com/company/join-us",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -2661,15 +2794,23 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 97,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://www.datarobot.com/jp/careers/open-positions/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.datarobot.com/jp/careers/open-positions/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2692,7 +2833,7 @@
       },
       "total": 73,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -2712,7 +2853,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/datasnipper/3adf1eee-09c2-4187-837b-0579591afe3a",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2739,7 +2880,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2747,7 +2888,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.getdbt.com/about-us/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -2772,7 +2913,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2780,7 +2921,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://decagon.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2806,7 +2947,7 @@
       },
       "total": 72,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -2824,7 +2965,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/deel",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2849,7 +2990,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2857,7 +2998,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Deepgram",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2883,7 +3024,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2891,7 +3032,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/DeepL",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -2916,15 +3057,23 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://job-boards.greenhouse.io/dialpad/jobs/8606879002",
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/dialpad/jobs/8606879002",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -2947,7 +3096,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2955,7 +3104,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.docusign.com/careers-home",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -2978,7 +3127,7 @@
       },
       "total": 82,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -2986,7 +3135,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/doubleverify",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3011,7 +3160,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3019,7 +3168,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/dragos",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3045,7 +3194,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3053,7 +3202,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/drata",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3079,7 +3228,7 @@
       },
       "total": 81,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3087,7 +3236,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.dropbox.jobs/en/jobs/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3112,7 +3261,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3120,7 +3269,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://apply.careers.dynatrace.com/job/Tokyo-Sr-Solutions-Engineer-Toky-100-0005/1390103700/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3143,15 +3292,25 @@
       },
       "total": 81,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 81,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはerror（HTTP 取得不能）"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://careers.ecovadis.com/",
         "status": 0,
         "category": "error",
         "finalUrl": "https://careers.ecovadis.com/",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-05",
         "error": "fetch failed"
       },
       "rationale": [
@@ -3177,7 +3336,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3185,7 +3344,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.enterprisedb.com/jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -3210,7 +3369,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3218,7 +3377,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.elastic.co/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -3241,7 +3400,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3249,7 +3408,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/elementbiosciences",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3274,7 +3433,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3282,7 +3441,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://elevenlabs.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -3307,7 +3466,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3315,7 +3474,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.entrupy.com/careers/apply/?gh_jid=5107413007",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -3340,7 +3499,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3348,7 +3507,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://entrust.wd1.myworkdayjobs.com/EntrustCareers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3371,15 +3530,25 @@
       },
       "total": 81,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 81,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/equativ?location=Tokyo",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/equativ?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3404,7 +3573,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3412,7 +3581,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/purestorage",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3437,7 +3606,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3445,7 +3614,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://exa.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3471,7 +3640,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3479,7 +3648,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.exotec.com/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3504,7 +3673,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3512,7 +3681,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/extremenetworks?location=Tokyo%2C+Japan",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3537,7 +3706,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3545,7 +3714,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fastly.com/about/careers/current-openings",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3568,7 +3737,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3576,7 +3745,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.figma.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3599,15 +3768,25 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.fireblocks.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fireblocks.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3632,7 +3811,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3640,7 +3819,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://fireworks.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3666,7 +3845,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3674,7 +3853,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.fitch.group/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3697,7 +3876,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3705,7 +3884,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fivetran.com/careers/job?gh_jid=7818344003",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -3730,7 +3909,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3738,7 +3917,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/fusionworldwide",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -3761,7 +3940,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3769,7 +3948,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/gainsight",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3795,7 +3974,7 @@
       },
       "total": 80,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3803,7 +3982,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.gamma.app/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3829,15 +4008,26 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 75,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/genspark",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/genspark",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3863,7 +4053,7 @@
       },
       "total": 93,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3871,7 +4061,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://getyourguide.careers/location/tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3896,7 +4086,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3904,7 +4094,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://about.gitlab.com/jobs/all-jobs/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -3927,7 +4117,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3935,7 +4125,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/glance?error=true",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -3961,7 +4151,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -3969,7 +4159,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.glean.com/jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -3994,7 +4184,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4002,7 +4192,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.gong.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4028,7 +4218,7 @@
       },
       "total": 85,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4036,7 +4226,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://grafana.com/about/careers/open-positions/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -4062,15 +4252,26 @@
       },
       "total": 88,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.ghs.com/corporate/career.html",
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.ghs.com/corporate/career.html",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4096,7 +4297,7 @@
       },
       "total": 99,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4104,7 +4305,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://guidewire.wd5.myworkdayjobs.com/en-US/external",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4127,7 +4328,7 @@
       },
       "total": 73,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -4146,7 +4347,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://jobs.lever.co/GurobiOptimization/79a51557-6123-4373-acd7-50adc3a0cfa2",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-05",
         "error": "The operation was aborted due to timeout"
       },
       "rationale": [
@@ -4173,7 +4374,7 @@
       },
       "total": 72,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -4192,7 +4393,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.halcyon.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4218,7 +4419,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4226,7 +4427,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.harvey.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4252,7 +4453,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4260,7 +4461,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/hebbia-ai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4286,7 +4487,7 @@
       },
       "total": 74,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -4306,7 +4507,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://job-boards.greenhouse.io/hightouch",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4333,15 +4534,25 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4366,7 +4577,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4374,7 +4585,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/hootsuite",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4399,7 +4610,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4407,7 +4618,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/horizon3ai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4433,7 +4644,7 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4441,7 +4652,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4468,7 +4679,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4476,7 +4687,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.hubspot.jp/work-in-tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人8件",
@@ -4499,7 +4710,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4507,7 +4718,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/hudl",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4533,7 +4744,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4541,7 +4752,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/ideals",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -4566,15 +4777,25 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 80,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.illumio.com/company/careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.illumio.com/company/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4599,7 +4820,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4607,7 +4828,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://fin.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4633,7 +4854,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4641,7 +4862,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.ionq.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4667,7 +4888,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4675,7 +4896,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://ironcladapp.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4701,7 +4922,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4709,7 +4930,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.island.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4735,7 +4956,7 @@
       },
       "total": 76,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4743,7 +4964,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://careers.ivanti.com/",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-05",
         "error": "fetch failed"
       },
       "rationale": [
@@ -4770,7 +4991,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4778,7 +4999,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.jamf.com/about/careers/jobs/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -4801,15 +5022,26 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 75,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://join.jfrog.com/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://join.jfrog.com/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4835,7 +5067,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4843,7 +5075,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/keepersecurity/jobs/4408913009",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4868,7 +5100,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4876,7 +5108,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/keyloop?location=Japan",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4901,7 +5133,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4909,7 +5141,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://join.kinaxis.com/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -4932,7 +5164,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4940,7 +5172,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.klaviyo.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4966,7 +5198,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -4974,7 +5206,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.knowbe4.com/careers/locations/tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -4999,7 +5231,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5007,7 +5239,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://open.talentio.com/r/1/c/japancloud/homes/4310",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5032,15 +5264,25 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 94,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5065,7 +5307,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5073,7 +5315,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/krakentech",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人11件",
@@ -5096,7 +5338,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5104,7 +5346,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/lakera.ai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5130,7 +5372,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5138,7 +5380,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.langchain.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5164,7 +5406,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5172,7 +5414,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/launchdarkly",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5198,7 +5440,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5206,7 +5448,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/legora",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -5231,7 +5473,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5239,7 +5481,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.jobvite.com/liferay/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5262,14 +5504,25 @@
       },
       "total": 74,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
       "deepReviewHistory": [
         {
           "date": "2026-11-04",
           "score": 74,
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で初回確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "score": 74,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": [
             "Career URLはended（HTTP 404）",
             "国内の正確な在籍人数は未確認",
@@ -5282,7 +5535,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.mylighthouse.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5309,7 +5562,7 @@
       },
       "total": 80,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5317,7 +5570,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://linear.app/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5343,7 +5596,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5351,7 +5604,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.liquid.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5376,7 +5629,7 @@
       },
       "total": 88,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5384,7 +5637,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5410,7 +5663,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5418,7 +5671,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/lovable",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5444,7 +5697,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5452,7 +5705,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.lucanet.com/en/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -5478,7 +5731,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5486,7 +5739,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://thinklucid.com/ja/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5511,15 +5764,25 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 93,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5544,7 +5807,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5552,7 +5815,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers-mambu.icims.com/jobs/3352/senior-account-executive-%28channel%29/job?in_iframe=1",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5577,7 +5840,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5585,7 +5848,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/mapbox",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -5608,7 +5871,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5616,7 +5879,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/marqvision",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5641,7 +5904,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5649,7 +5912,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/matter-intelligence",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5674,7 +5937,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5682,7 +5945,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/mattermost",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5707,7 +5970,7 @@
       },
       "total": 97,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5715,7 +5978,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.costargroup.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -5740,15 +6003,25 @@
       },
       "total": 89,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 89,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.medallia.com/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.medallia.com/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5768,21 +6041,20 @@
         "japanMomentum": 20,
         "informationAsymmetry": 17,
         "productStrength": 15,
-        "evidenceFreshness": 6,
+        "evidenceFreshness": 10,
         "portfolioContribution": 5
       },
-      "total": 88,
-      "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "total": 92,
+      "confidence": "高",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
         "url": "https://jobs.lever.co/megaport",
-        "status": 0,
-        "category": "error",
+        "status": 200,
+        "category": "active",
         "finalUrl": "https://jobs.lever.co/megaport",
-        "checkedAt": "2026-11-04",
-        "error": "The operation was aborted due to timeout"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5790,7 +6062,6 @@
         "保存済み一次情報12件・構造化事実6件"
       ],
       "contrary": [
-        "Career URLはerror（HTTP 取得不能）",
         "国内の正確な在籍人数は未確認"
       ]
     },
@@ -5803,29 +6074,27 @@
         "japanMomentum": 20,
         "informationAsymmetry": 20,
         "productStrength": 15,
-        "evidenceFreshness": 7,
+        "evidenceFreshness": 9,
         "portfolioContribution": 9
       },
-      "total": 96,
+      "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
         "url": "https://meltwatercareers.ttcportals.com/search/jobs/in/tokyo-japan",
-        "status": 403,
-        "category": "blocked",
+        "status": 200,
+        "category": "active",
         "finalUrl": "https://meltwatercareers.ttcportals.com/search/jobs/in/tokyo-japan",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
         "国内観測人数100人以下",
         "保存済み一次情報6件・構造化事実6件"
       ],
-      "contrary": [
-        "Career URLはblocked（HTTP 403）"
-      ]
+      "contrary": []
     },
     {
       "slug": "mendix",
@@ -5841,7 +6110,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5849,7 +6118,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/mendix?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -5874,7 +6143,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5882,7 +6151,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.menlosecurity.com/ja-jp/about/life-at-menlo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5907,7 +6176,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5915,7 +6184,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/minitab",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -5940,7 +6209,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -5948,7 +6217,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.mirakl.com/ja-jp/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -5971,15 +6240,25 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 91,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://miro.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://miro.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人8件",
@@ -6004,7 +6283,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6012,7 +6291,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/mistplay?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6037,7 +6316,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6045,7 +6324,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/mistral.ai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6071,7 +6350,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6079,7 +6358,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/mixpanel",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6104,7 +6383,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6112,7 +6391,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://monday.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6137,7 +6416,7 @@
       },
       "total": 72,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -6156,7 +6435,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.mongodb.com/company/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6182,7 +6461,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6190,7 +6469,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://monotype.wd1.myworkdayjobs.com/olapic",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人6件",
@@ -6213,15 +6492,26 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/MotherDuck",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/MotherDuck",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6247,7 +6537,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6255,7 +6545,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.navex.com/ja-jp/company/careers/job-openings/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -6280,7 +6570,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6288,7 +6578,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://neo4j.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6314,7 +6604,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6322,7 +6612,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.netskope.com/company/careers/open-positions?gh_jid=7493456",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人10件",
@@ -6345,7 +6635,7 @@
       },
       "total": 86,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6353,7 +6643,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/neuralconcept/9b018838-aad4-48a6-8d6b-f2a544e0fbed",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -6379,7 +6669,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6387,7 +6677,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://newrelic.com/jp/about/culture-and-hiring",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人5件",
@@ -6410,7 +6700,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6418,7 +6708,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.smartrecruiters.com/Nexthink",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6443,15 +6733,23 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://job-boards.eu.greenhouse.io/nice/jobs/4661611101",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.nice.com/careers/apply",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6474,7 +6772,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6482,7 +6780,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.jobvite.com/ninjaone/jobs",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6507,7 +6805,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6515,7 +6813,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.nomic.ai/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6541,7 +6839,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6549,7 +6847,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.notion.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人11件",
@@ -6572,7 +6870,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6580,7 +6878,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6605,7 +6903,7 @@
       },
       "total": 86,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6613,7 +6911,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.okta.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -6636,7 +6934,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6644,7 +6942,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/omni",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6670,15 +6968,23 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://www.omnissa.com/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.omnissa.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人10件",
@@ -6701,7 +7007,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6709,7 +7015,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/optro",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -6734,7 +7040,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6742,7 +7048,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.orca-ai.io/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6767,7 +7073,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6775,7 +7081,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Senior-Account-Executive_R1544",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人7件",
@@ -6800,7 +7106,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6808,7 +7114,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://japancloud.jp/career/companies/pagerduty/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人5件",
@@ -6831,7 +7137,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6839,7 +7145,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/pallet/jobs/5186143007",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -6864,7 +7170,7 @@
       },
       "total": 74,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -6884,7 +7190,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/patch.io/1d73e679-d6f7-42c1-9545-74c31e97e7da",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6911,14 +7217,24 @@
       },
       "total": 73,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
       "deepReviewHistory": [
         {
           "date": "2026-11-04",
           "score": 73,
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で初回確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "現行求人がないことだけでは除外しない"
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "score": 73,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": [
             "Career URLはended（HTTP 404）",
             "現行求人がないことだけでは除外しない"
@@ -6930,7 +7246,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.lever.co/patsnap/0875a720-5be3-41de-9dd9-d989618bfb53",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6956,7 +7272,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6964,7 +7280,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.pendo.io/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -6989,7 +7305,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -6997,7 +7313,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/perplexity",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7023,7 +7339,7 @@
       },
       "total": 82,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7031,7 +7347,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/pigment/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7057,7 +7373,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7065,7 +7381,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.pinecone.io/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7091,7 +7407,7 @@
       },
       "total": 71,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -7111,7 +7427,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.lever.co/pingcap/5de30748-2a1e-45be-bea5-ddf514d3719c",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7138,7 +7454,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7146,7 +7462,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/pitchbookdata",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7172,15 +7488,23 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://www.planet.com/company/careers/",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.planet.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7203,7 +7527,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7211,7 +7535,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.postman.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7236,7 +7560,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7244,7 +7568,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -7267,7 +7591,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7275,7 +7599,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/qdrant.tech",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7300,7 +7624,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7308,7 +7632,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://bb.wd3.myworkdayjobs.com/BlackBerry",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -7333,7 +7657,7 @@
       },
       "total": 71,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -7351,7 +7675,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.qualtrics.com/careers/us/en",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7376,7 +7700,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7384,7 +7708,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/quantexa",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7409,15 +7733,26 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 75,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/qumulo",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/qumulo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7443,7 +7778,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7451,7 +7786,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.reaktor.com/ja-jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7474,7 +7809,7 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7482,7 +7817,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/recordedfuture",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7505,7 +7840,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7513,7 +7848,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/replit",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7538,7 +7873,7 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7546,7 +7881,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/rescale",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7571,7 +7906,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7579,7 +7914,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://retool.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7605,7 +7940,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7613,7 +7948,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.rippling.com/en-AU/careers/open-roles",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7639,15 +7974,25 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7672,7 +8017,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7680,7 +8025,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/rogo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -7706,7 +8051,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7714,7 +8059,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.rokt.com/jp/company/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7737,7 +8082,7 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7745,7 +8090,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.rubrik.com/company/careers/departments/sales",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -7770,7 +8115,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7778,7 +8123,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/runpod/e3a0f565-dde7-4b3d-8ede-b582cd068f8c",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7803,7 +8148,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7811,7 +8156,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7836,7 +8181,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7844,7 +8189,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/rzr",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -7869,15 +8214,25 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Strategic-Account-Executive--Agentic-Technologies-Specialist--Japan_R013034-1",
         "status": 200,
         "category": "active",
         "finalUrl": "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Strategic-Account-Executive--Agentic-Technologies-Specialist--Japan_R013034-1",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -7902,7 +8257,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7910,7 +8265,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/saviynt?department=Sales",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -7935,7 +8290,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -7943,7 +8298,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/sayari",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -7968,7 +8323,7 @@
       },
       "total": 74,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -7987,7 +8342,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.scandit.com/jp/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8013,7 +8368,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8021,7 +8376,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.schrodinger.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -8044,7 +8399,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8052,7 +8407,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/securityscorecard/jobs/8167848",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8077,7 +8432,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8085,7 +8440,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sensortower.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -8110,15 +8465,26 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.ashbyhq.com/sentry",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sentry",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8144,7 +8510,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8152,7 +8518,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/shieldai?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -8177,7 +8543,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8185,7 +8551,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.shift-technology.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8211,7 +8577,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8219,7 +8585,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.shopify.com/careers/product-partnerships-lead_d9993b7d-d973-409c-9da3-0c8d48cff776",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8242,7 +8608,7 @@
       },
       "total": 74,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -8261,7 +8627,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sierra.ai/jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8287,7 +8653,7 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8295,7 +8661,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/similarweb",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8320,7 +8686,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8328,7 +8694,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.jobvite.com/support/job-seeker-support/?invalid=1",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8353,15 +8719,27 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 76,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはblocked（HTTP 403）",
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://6sense.com/careers/",
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://6sense.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8388,7 +8766,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8396,7 +8774,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/skydio/9e21861e-a035-4283-8e85-42a22908af8c",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8421,7 +8799,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8429,7 +8807,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://solace.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8454,7 +8832,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8462,7 +8840,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/solveintelligence",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8487,7 +8865,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8495,7 +8873,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sonarsource",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8518,7 +8896,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8526,7 +8904,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sonatype",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8552,7 +8930,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8560,7 +8938,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8585,15 +8963,25 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.speak.com/jp/careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.speak.com/jp/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8618,7 +9006,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8626,7 +9014,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sprinklr.wd1.myworkdayjobs.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -8649,7 +9037,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8657,7 +9045,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sprout-ai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8682,7 +9070,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8690,7 +9078,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/stackadapt",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -8715,7 +9103,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8723,7 +9111,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://streamhub.breezy.hr/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -8748,7 +9136,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8756,7 +9144,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/substack",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8782,7 +9170,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8790,7 +9178,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://supabase.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8816,15 +9204,23 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
+        }
+      ],
       "urlCheck": {
         "url": "https://suse.wd3.myworkdayjobs.com/jobsatsuse",
         "status": 200,
         "category": "active",
         "finalUrl": "https://suse.wd3.myworkdayjobs.com/jobsatsuse",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -8847,7 +9243,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8855,7 +9251,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.synthesia.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8881,7 +9277,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8889,7 +9285,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sysdig?department=Sales",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8914,7 +9310,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8922,7 +9318,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tailscale.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8948,7 +9344,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8956,7 +9352,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/tanium",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -8982,7 +9378,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -8990,7 +9386,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/teamworks",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9015,7 +9411,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9023,7 +9419,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/telnyx54",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -9048,15 +9444,26 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://temporal.io/careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://temporal.io/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9082,7 +9489,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9090,7 +9497,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/tenableinc",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9116,7 +9523,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9124,7 +9531,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.eu.greenhouse.io/think-cell/jobs/4953129101",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9149,7 +9556,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9157,7 +9564,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.tines.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9183,7 +9590,7 @@
       },
       "total": 74,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -9202,7 +9609,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Tools%20for%20Humanity",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9228,7 +9635,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9236,7 +9643,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/torq",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9262,7 +9669,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9270,7 +9677,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/tradinghub",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9296,14 +9703,25 @@
       },
       "total": 70,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
       "deepReviewHistory": [
         {
           "date": "2026-11-04",
           "score": 70,
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で初回確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "score": 70,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": [
             "Career URLはended（HTTP 404）",
             "国内の正確な在籍人数は未確認",
@@ -9316,7 +9734,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/cygnify",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9343,7 +9761,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9351,7 +9769,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9374,7 +9792,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9382,7 +9800,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tulip.co/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -9407,7 +9825,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9415,7 +9833,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/twilio",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9438,7 +9856,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9446,7 +9864,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.ui.com/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -9471,7 +9889,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9479,7 +9897,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.uipath.com/careers/jobs",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -9502,7 +9920,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9510,7 +9928,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.vanta.com/company/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9536,15 +9954,25 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.vectra.ai/about/careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.vectra.ai/about/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9569,7 +9997,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9577,7 +10005,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.veeam.com/en/search-jobs",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9603,7 +10031,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9611,7 +10039,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://vercel.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9637,7 +10065,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9645,7 +10073,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.verkada.com/jp/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人3件",
@@ -9668,7 +10096,7 @@
       },
       "total": 89,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9676,7 +10104,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://ridewithvia.com/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9701,7 +10129,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9709,7 +10137,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/vizcom",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9735,7 +10163,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9743,7 +10171,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/vonage/jobs/8528707002",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -9763,27 +10191,40 @@
         "japanMomentum": 20,
         "informationAsymmetry": 20,
         "productStrength": 15,
-        "evidenceFreshness": 10,
+        "evidenceFreshness": 6,
         "portfolioContribution": 9
       },
-      "total": 96,
-      "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "total": 92,
+      "confidence": "探索中",
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはerror（HTTP 取得不能）"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/walkme?location=Tokyo",
-        "status": 200,
-        "category": "active",
+        "status": 0,
+        "category": "error",
         "finalUrl": "https://jobs.lever.co/walkme?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05",
+        "error": "The operation was aborted due to timeout"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
         "国内観測人数100人以下",
         "保存済み一次情報13件・構造化事実4件"
       ],
-      "contrary": []
+      "contrary": [
+        "Career URLはerror（HTTP 取得不能）"
+      ]
     },
     {
       "slug": "wasabi",
@@ -9799,7 +10240,7 @@
       },
       "total": 72,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": "2026-11-04",
       "deepReviewHistory": [
         {
@@ -9818,7 +10259,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://wasabi.com/company/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9844,7 +10285,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9852,7 +10293,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/watchguard?team=Sales",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9878,7 +10319,7 @@
       },
       "total": 76,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9886,7 +10327,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://webflow.com/company/careers/roles",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-05",
         "error": "fetch failed"
       },
       "rationale": [
@@ -9914,7 +10355,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9922,7 +10363,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/whatnot",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人4件",
@@ -9947,7 +10388,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9955,7 +10396,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/witnessai",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -9981,7 +10422,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -9989,7 +10430,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.wiz.io/careers/not-found",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人7件",
@@ -10014,15 +10455,25 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "現行求人がないことだけでは除外しない"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://www.workato.com/careers",
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.workato.com/careers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -10047,7 +10498,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10055,7 +10506,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/Account-Executive_R10985",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -10080,7 +10531,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10088,7 +10539,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/wrike",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -10113,7 +10564,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10121,7 +10572,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://writer.com/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -10147,7 +10598,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10155,7 +10606,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/xbowcareers",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内の公開求人は保存データ上0件",
@@ -10181,7 +10632,7 @@
       },
       "total": 86,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10189,7 +10640,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/Zadara?location=Tokyo",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -10214,7 +10665,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10222,7 +10673,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.zendesk.co.jp/company/careers/",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人2件",
@@ -10245,15 +10696,25 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
-      "lastDeepReviewAt": null,
-      "deepReviewHistory": [],
+      "evidenceCheckedAt": "2026-11-05",
+      "lastDeepReviewAt": "2026-11-05",
+      "deepReviewHistory": [
+        {
+          "date": "2026-11-05",
+          "score": 90,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
+        }
+      ],
       "urlCheck": {
         "url": "https://jobs.lever.co/zilliz",
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/zilliz",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -10278,7 +10739,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-05",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -10286,7 +10747,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/zimperium",
-        "checkedAt": "2026-11-04"
+        "checkedAt": "2026-11-05"
       },
       "rationale": [
         "180日以内に確認した公開求人1件",
@@ -10300,6 +10761,19 @@
   ],
   "candidates": [
     {
+      "slug": "weka",
+      "name": "WEKA",
+      "total": 86,
+      "eligibility": "入れ替え候補",
+      "officialUrls": [
+        "https://www.weka.io/careers?gh_jid=5199234007",
+        "https://www.weka.io/careers"
+      ],
+      "rationale": "東京勤務のRegional Sales Managerを現行公式求人で確認。同社が日本最初のSales Executiveと明記し、AIデータ基盤のポートフォリオ価値も高い。",
+      "contrary": "日本法人の雇用主体と国内組織規模は公式確認が必要。既存除外候補は2回連続の深掘り条件をまだ満たさない。",
+      "confidence": "高"
+    },
+    {
       "slug": "avepoint",
       "name": "AvePoint",
       "total": 74,
@@ -10310,6 +10784,19 @@
       ],
       "rationale": "日本法人・責任者・国内製品情報と強いMicrosoft 365データ統制領域。",
       "contrary": "実行日に公式ATSで日本の現行対象職種を確認できず、Career要件を満たす追加調査が必要。",
+      "confidence": "中"
+    },
+    {
+      "slug": "vast-data",
+      "name": "VAST Data",
+      "total": 72,
+      "eligibility": "入れ替え候補",
+      "officialUrls": [
+        "https://www.vastdata.com/careers",
+        "https://www.vastdata.com/contact"
+      ],
+      "rationale": "AIデータ基盤の差別化に加え、公式連絡先で東京拠点を確認。",
+      "contrary": "日本向け現行公式求人と国内組織規模は確認できない。",
       "confidence": "中"
     },
     {
@@ -10339,18 +10826,6 @@
       "confidence": "中"
     },
     {
-      "slug": "weka",
-      "name": "WEKA",
-      "total": 68,
-      "eligibility": "監視",
-      "officialUrls": [
-        "https://www.weka.io/company/careers"
-      ],
-      "rationale": "AI・高性能データ基盤としてポートフォリオ価値がある。",
-      "contrary": "実行日に日本向け現行公式求人と国内法人・組織を確認できない。",
-      "confidence": "探索中"
-    },
-    {
       "slug": "forescout",
       "name": "Forescout",
       "total": 67,
@@ -10363,27 +10838,15 @@
       "confidence": "探索中"
     },
     {
-      "slug": "vast-data",
-      "name": "VAST Data",
-      "total": 66,
-      "eligibility": "監視",
-      "officialUrls": [
-        "https://www.vastdata.com/careers"
-      ],
-      "rationale": "AIデータ基盤として差別化と比較価値がある。",
-      "contrary": "日本向け現行公式求人、法人・拠点、国内人数の確認が不足。",
-      "confidence": "探索中"
-    },
-    {
       "slug": "precisely",
       "name": "Precisely",
       "total": 65,
       "eligibility": "監視",
       "officialUrls": [
-        "https://www.precisely.com/careers"
+        "https://www.precisely.com/careers-and-culture/"
       ],
-      "rationale": "データ完全性・位置情報・統制で既存企業との差を説明できる。",
-      "contrary": "日本の現行対象職種を公式Careerで確認できない。",
+      "rationale": "日本法人とデータ完全性・位置情報・統制で既存企業との差を説明できる。",
+      "contrary": "現行の国際求人一覧で日本の対象職種を確認できない。",
       "confidence": "探索中"
     },
     {
@@ -10404,10 +10867,10 @@
       "total": 63,
       "eligibility": "監視",
       "officialUrls": [
-        "https://www.nintex.com/company/careers/"
+        "https://www.nintex.com/careers/jobs/"
       ],
       "rationale": "業務自動化・ワークフローで読者との関連がある。",
-      "contrary": "日本の現行対象職種と直近180日の国内シグナルを確認できない。",
+      "contrary": "現行12件の公式一覧に日本の対象職種がなく、直近180日の国内シグナルを確認できない。",
       "confidence": "探索中"
     },
     {
@@ -10424,19 +10887,31 @@
     }
   ],
   "rotations": [],
+  "notificationBacklog": [
+    {
+      "date": "2026-11-04",
+      "type": "listing-change",
+      "status": "pending",
+      "sentAt": null,
+      "changeId": "2026-11-04-add-4-remove-0",
+      "additions": [
+        "channel-corp",
+        "concertai",
+        "everpure",
+        "mistplay"
+      ],
+      "removals": [],
+      "failureReason": "Macがロックされ、Kitのテスト送信画面を操作できなかった。掲載変更は検証後に公開し、通知はpendingのまま次回にchangeIdを照合して再送する。"
+    }
+  ],
   "notification": {
-    "date": "2026-11-04",
-    "type": "listing-change",
+    "date": "2026-11-05",
+    "type": "no-change",
     "status": "pending",
     "sentAt": null,
-    "changeId": "2026-11-04-add-4-remove-0",
-    "additions": [
-      "channel-corp",
-      "concertai",
-      "everpure",
-      "mistplay"
-    ],
+    "changeId": "2026-11-05-no-change",
+    "additions": [],
     "removals": [],
-    "failureReason": "Macがロックされ、Kitのテスト送信画面を操作できなかった。掲載変更は検証後に公開し、通知はpendingのまま次回にchangeIdを照合して再送する。"
+    "failureReason": "Macがロックされ、Kitのテスト送信画面を操作できなかった。2026-11-04掲載変更通知もnotificationBacklogに保持し、changeIdを照合して次回に重複なく再送する。"
   }
 }

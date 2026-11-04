@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { build } from "esbuild";
 
 const projectRoot = process.cwd();
@@ -8,6 +9,14 @@ const runDate = process.env.GENBA_RUN_DATE ?? new Intl.DateTimeFormat("sv-SE", {
 const concurrency = Number.parseInt(process.env.GENBA_URL_CONCURRENCY ?? "8", 10);
 const timeoutMs = Number.parseInt(process.env.GENBA_URL_TIMEOUT_MS ?? "12000", 10);
 const skipNetwork = process.argv.includes("--skip-network");
+const previous = fs.existsSync(statePath) ? JSON.parse(fs.readFileSync(statePath, "utf8")) : null;
+let headState = null;
+try {
+  headState = JSON.parse(execFileSync("git", ["show", "HEAD:.genba-state/genba-300-selection.json"], { cwd: projectRoot, encoding: "utf8" }));
+} catch {
+  // The state file may not exist in HEAD during the first initialization.
+}
+const baseline = previous?.runDate === runDate && headState?.runDate !== runDate ? headState : previous;
 
 const bundle = await build({
   stdin: {
@@ -151,41 +160,67 @@ function scoreCompany(company, index) {
 }
 
 const scoredCompanies = sortedCompanies.map(scoreCompany);
+const previousCompanies = new Map((baseline?.companies ?? []).map((company) => [company.slug, company]));
+for (const record of scoredCompanies) {
+  const earlier = previousCompanies.get(record.slug);
+  record.lastDeepReviewAt = earlier?.lastDeepReviewAt ?? null;
+  record.deepReviewHistory = earlier?.deepReviewHistory ?? [];
+}
+
 const bottomTwenty = [...scoredCompanies].sort((a, b) => a.total - b.total || a.slug.localeCompare(b.slug)).slice(0, 20);
-for (const record of bottomTwenty) {
+const weekday = new Date(`${runDate}T12:00:00+09:00`).getDay();
+const weekdayGroup = scoredCompanies.filter((company) => company.fixedGroup === weekday);
+for (const record of weekdayGroup) {
   record.lastDeepReviewAt = runDate;
-  record.deepReviewHistory.push({
+  const dailyReview = {
     date: runDate,
     score: record.total,
     verdict: record.total <= 44 ? "除外候補" : record.total <= 54 ? "要観察" : "残留",
-    evidence: "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で初回確認。",
+    evidence: "保存済み公式情報、企業ページ構造、現行Career URLの応答、国内規模の保存値を同一基準で日次深掘り確認。",
     contrary: record.contrary,
-  });
+  };
+  if (!record.deepReviewHistory.some((item) => item.date === runDate)) record.deepReviewHistory.push(dailyReview);
 }
 
 const candidatePool = [
   { slug: "avepoint", name: "AvePoint", total: 74, eligibility: "追加調査", officialUrls: ["https://www.avepoint.com/about", "https://www.avepoint.com/ir/governance/leadership/ken-shiomitsu"], rationale: "日本法人・責任者・国内製品情報と強いMicrosoft 365データ統制領域。", contrary: "実行日に公式ATSで日本の現行対象職種を確認できず、Career要件を満たす追加調査が必要。", confidence: "中" },
   { slug: "digicert", name: "DigiCert", total: 71, eligibility: "追加調査", officialUrls: ["https://www.digicert.com/jp/careers", "https://www.digicert.com/master-services-agreement-jp/"], rationale: "日本法人とデジタルトラスト領域の比較価値。", contrary: "公式Career上で日本の現行対象職種を特定できず、国内人数も未確認。", confidence: "中" },
   { slug: "hyland", name: "Hyland", total: 70, eligibility: "追加調査", officialUrls: ["https://www.hyland.com/ja/company/about/locations", "https://www.hyland.com/en/company/careers"], rationale: "東京拠点と企業コンテンツ管理・AIの業務導線を確認。", contrary: "検索で確認したJapan CSMの直接URLは実取得で410となり、現行求人として採用できない。", confidence: "中" },
-  { slug: "weka", name: "WEKA", total: 68, eligibility: "監視", officialUrls: ["https://www.weka.io/company/careers"], rationale: "AI・高性能データ基盤としてポートフォリオ価値がある。", contrary: "実行日に日本向け現行公式求人と国内法人・組織を確認できない。", confidence: "探索中" },
+  { slug: "weka", name: "WEKA", total: 86, eligibility: "入れ替え候補", officialUrls: ["https://www.weka.io/careers?gh_jid=5199234007", "https://www.weka.io/careers"], rationale: "東京勤務のRegional Sales Managerを現行公式求人で確認。同社が日本最初のSales Executiveと明記し、AIデータ基盤のポートフォリオ価値も高い。", contrary: "日本法人の雇用主体と国内組織規模は公式確認が必要。既存除外候補は2回連続の深掘り条件をまだ満たさない。", confidence: "高" },
   { slug: "forescout", name: "Forescout", total: 67, eligibility: "監視", officialUrls: ["https://www.forescout.com/company/careers/"], rationale: "OT・IoT・ネットワーク資産可視化のセキュリティ領域。", contrary: "実行日に日本の対象職種と国内100人以下の根拠を確認できない。", confidence: "探索中" },
-  { slug: "vast-data", name: "VAST Data", total: 66, eligibility: "監視", officialUrls: ["https://www.vastdata.com/careers"], rationale: "AIデータ基盤として差別化と比較価値がある。", contrary: "日本向け現行公式求人、法人・拠点、国内人数の確認が不足。", confidence: "探索中" },
-  { slug: "precisely", name: "Precisely", total: 65, eligibility: "監視", officialUrls: ["https://www.precisely.com/careers"], rationale: "データ完全性・位置情報・統制で既存企業との差を説明できる。", contrary: "日本の現行対象職種を公式Careerで確認できない。", confidence: "探索中" },
+  { slug: "vast-data", name: "VAST Data", total: 72, eligibility: "入れ替え候補", officialUrls: ["https://www.vastdata.com/careers", "https://www.vastdata.com/contact"], rationale: "AIデータ基盤の差別化に加え、公式連絡先で東京拠点を確認。", contrary: "日本向け現行公式求人と国内組織規模は確認できない。", confidence: "中" },
+  { slug: "precisely", name: "Precisely", total: 65, eligibility: "監視", officialUrls: ["https://www.precisely.com/careers-and-culture/"], rationale: "日本法人とデータ完全性・位置情報・統制で既存企業との差を説明できる。", contrary: "現行の国際求人一覧で日本の対象職種を確認できない。", confidence: "探索中" },
   { slug: "planview", name: "Planview", total: 64, eligibility: "監視", officialUrls: ["https://www.planview.com/company/careers/"], rationale: "戦略ポートフォリオ・製品開発投資管理の業務領域。", contrary: "日本の現行公式求人と国内人数を確認できない。", confidence: "探索中" },
-  { slug: "nintex", name: "Nintex", total: 63, eligibility: "監視", officialUrls: ["https://www.nintex.com/company/careers/"], rationale: "業務自動化・ワークフローで読者との関連がある。", contrary: "日本の現行対象職種と直近180日の国内シグナルを確認できない。", confidence: "探索中" },
+  { slug: "nintex", name: "Nintex", total: 63, eligibility: "監視", officialUrls: ["https://www.nintex.com/careers/jobs/"], rationale: "業務自動化・ワークフローで読者との関連がある。", contrary: "現行12件の公式一覧に日本の対象職種がなく、直近180日の国内シグナルを確認できない。", confidence: "探索中" },
   { slug: "checkmarx", name: "Checkmarx", total: 62, eligibility: "監視", officialUrls: ["https://checkmarx.com/company/careers/"], rationale: "アプリケーションセキュリティの比較価値。", contrary: "実行日に日本向け現行公式求人と国内組織規模を確認できない。", confidence: "探索中" },
 ].sort((a, b) => b.total - a.total);
 
-const weekday = new Date(`${runDate}T12:00:00+09:00`).getDay();
-const weekdayGroup = scoredCompanies.filter((company) => company.fixedGroup === weekday);
 const urlSummary = Object.fromEntries(["active", "ended", "blocked", "error", "skipped"].map((category) => [category, urlChecks.filter((item) => item.category === category).length]));
-const previous = fs.existsSync(statePath) ? JSON.parse(fs.readFileSync(statePath, "utf8")) : null;
+const changedCompanies = scoredCompanies.filter((company) => {
+  const earlier = previousCompanies.get(company.slug);
+  return earlier && (earlier.total !== company.total || earlier.urlCheck?.category !== company.urlCheck.category || earlier.urlCheck?.status !== company.urlCheck.status);
+}).map((company) => ({
+  slug: company.slug,
+  name: company.name,
+  previousTotal: previousCompanies.get(company.slug)?.total,
+  total: company.total,
+  previousUrlCategory: previousCompanies.get(company.slug)?.urlCheck?.category,
+  urlCategory: company.urlCheck.category,
+  status: company.urlCheck.status,
+}));
+const currentChangeId = `${runDate}-no-change`;
+const priorNotification = baseline?.notification;
+const notificationBacklog = [...(previous?.notificationBacklog ?? baseline?.notificationBacklog ?? [])]
+  .filter((item, index, items) => item.changeId !== currentChangeId && items.findIndex((candidate) => candidate.changeId === item.changeId) === index);
+if (priorNotification?.status === "pending" && priorNotification.changeId !== currentChangeId && !notificationBacklog.some((item) => item.changeId === priorNotification.changeId)) {
+  notificationBacklog.push(priorNotification);
+}
 const state = {
   schemaVersion: 1,
   updatedAt: new Date().toISOString(),
   runDate,
   publicCount: companies.length,
-  initialAssessment: {
+  initialAssessment: baseline?.initialAssessment ?? {
     completedAt: new Date().toISOString(),
     scoringBasis: "ops/genba-300-selection-standard.mdのA〜Fを、保存済み公式求人、企業ページ構造、国内規模、一次情報件数、当日Career URL応答へ機械的に対応させた初回スコア。未確認項目は加点せず、下位20社は同じ根拠で深掘り。",
     bottomTwentySlugs: bottomTwenty.map((item) => item.slug),
@@ -198,23 +233,24 @@ const state = {
     fixedGroupSlugs: weekdayGroup.map((item) => item.slug),
     allSavedCareerUrlsChecked: !skipNetwork,
     urlSummary,
-    changedCompanies: [],
+    changedCompanies,
     topAdditionCandidates: candidatePool.slice(0, 3).map(({ slug, name, total, rationale, contrary, confidence }) => ({ slug, name, total, rationale, contrary, confidence })),
     topExclusionCandidates: bottomTwenty.slice(0, 3).map(({ slug, name, total, rationale, contrary, confidence }) => ({ slug, name, total, rationale, contrary, confidence })),
     swapPairs: [],
     decision: "入れ替えなし",
-    decisionReason: "即時除外を公式確認した企業がなく、初回自動入れ替え条件（既存44点以下かつ15点差）を満たす高確信度の組み合わせがない。候補上位はCareer・国内規模の追加確認が必要。",
+    decisionReason: "即時除外を公式確認した企業がなく、継続判定の2回確認・10点差を満たす高確信度の組み合わせがない。候補上位はCareer・国内規模の追加確認が必要。",
   },
   companies: scoredCompanies,
   candidates: candidatePool,
-  rotations: previous?.rotations ?? [],
+  rotations: baseline?.rotations ?? [],
+  notificationBacklog,
   notification: {
     date: runDate,
-    type: "listing-change",
+    type: "no-change",
     status: "pending",
     sentAt: null,
-    changeId: `${runDate}-add-4-remove-0`,
-    additions: ["channel-corp", "concertai", "everpure", "mistplay"],
+    changeId: currentChangeId,
+    additions: [],
     removals: [],
     failureReason: null,
   },
