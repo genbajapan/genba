@@ -13,8 +13,8 @@ export const companies20260825Daily: Company[] = [
     hiringStatus: "採用中",
     salesRoles: 1,
     description: "大規模データを低遅延で集計するオープンソースの列指向databaseとmanaged cloudを提供。日本でconsulting、architecture、導入、supportを横断するSenior Consulting Engineerを公式募集。",
-    lastChecked: checkedAt,
-    careersUrl: "https://job-boards.greenhouse.io/clickhouse/jobs/6140123004",
+    lastChecked: "2026-11-11",
+    careersUrl: "https://clickhouse.com/company/careers",
     tags: ["Real-time Analytics", "Data Warehouse", "Observability", "Open Source", "Consulting", "Japan Remote"],
   },
 ];

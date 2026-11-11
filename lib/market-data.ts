@@ -90,6 +90,7 @@ import { companies20261027Daily, jobs20261027Daily } from "@/lib/company-additio
 import { companies20261029Daily, jobs20261029Daily } from "@/lib/company-additions-2026-10-29-daily";
 import { companies20261031Daily, jobs20261031Daily } from "@/lib/company-additions-2026-10-31-daily";
 import { companies20261104Daily, jobs20261104Daily } from "@/lib/company-additions-2026-11-04-daily";
+import { companies20261111Daily, jobs20261111Daily } from "@/lib/company-additions-2026-11-11-daily";
 import { magnetForensicsCompany20261004, magnetForensicsJob20261004 } from "@/lib/company-additions-2026-10-04-magnet";
 import { jobTitleOverrides20260829, jobs20260829FullAudit } from "@/lib/job-audit-2026-08-29";
 import { strengthenCareerInsights } from "@/lib/career-insight-quality";
@@ -1054,6 +1055,7 @@ const companyRecords: Company[] = [
   ...companies20261029Daily,
   ...companies20261031Daily,
   ...companies20261104Daily,
+  ...companies20261111Daily,
 ];
 
 // 構造化データは標準改善・調査履歴として保持しつつ、編集方針または利益相反方針に合わない企業は公開対象から除外する。
@@ -1072,6 +1074,7 @@ if (unclassifiedPaymentCompanies.length) {
 
 const publiclyExcludedCompanySlugs = new Set([
   "salesforce", "servicenow", "datadog", "zscaler", "veeva", "perforce",
+  "tradlinx", "bounce", "patch",
   ...paymentConflictCompanySlugs,
 ]);
 const publishedCompanyRecords = companyRecords.filter((company) => !publiclyExcludedCompanySlugs.has(company.slug));
@@ -1502,6 +1505,7 @@ function rolloutCareerInsights(domain: string): Job["careerInsights"] {
 
 const jobRecords: Job[] = [
   ...jobs20261104Daily,
+  ...jobs20261111Daily,
   ...jobs20261031Daily,
   ...jobs20261029Daily,
   ...jobs20261025Daily,

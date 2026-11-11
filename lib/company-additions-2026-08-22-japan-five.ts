@@ -55,8 +55,8 @@ export const companies20260822JapanFive: Company[] = [
     hiringStatus: "採用中",
     salesRoles: 1,
     description: "MySQL互換の分散SQL database TiDBで、scale、可用性、transactionとanalyticsの統合を支える。東京でPoC・benchmark・architectureを担うSolution Architectを公式募集。",
-    lastChecked: checkedAt,
-    careersUrl: "https://jobs.lever.co/pingcap/5de30748-2a1e-45be-bea5-ddf514d3719c",
+    lastChecked: "2026-11-11",
+    careersUrl: "https://www.pingcap.com/careers/",
     tags: ["TiDB", "Distributed SQL", "HTAP", "Cloud Database", "Solution Architect", "PoC", "Tokyo"],
   },
   {
