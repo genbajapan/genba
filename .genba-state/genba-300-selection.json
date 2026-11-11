@@ -13056,11 +13056,11 @@
   "notification": {
     "date": "2026-11-10",
     "type": "no-change",
-    "status": "pending",
-    "sentAt": null,
+    "status": "sent",
+    "sentAt": "2026-11-11T09:40:07+09:00",
     "changeId": "2026-11-10-no-change",
     "additions": [],
     "removals": [],
-    "failureReason": "Kitのテキストメール下書き26915726を作成し、宛先js@genbajapan.com、件名・本文・変更IDを確認してSend preview直前まで到達した。外部メッセージ送信はUI操作時の確認が必要なため、無人実行では送信せずpendingで保持する。2026-11-04から2026-11-09までの未送信通知もnotificationBacklogに保持し、changeIdを照合して重複なく再送する。"
+    "failureReason": null
   }
 }
