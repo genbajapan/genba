@@ -17,6 +17,7 @@ const verifiedCareerUrlOverrides = new Map([
   ["patsnap", "https://careers.patsnap.com/"],
   ["hightouch", "https://hightouch.com/careers"],
   ["lighthouse", "https://www.mylighthouse.com/company/careers"],
+  ["via", "https://ridewithvia.com/careers/"],
 ]);
 const reviewedScoreOverrides = new Map([
   ["weka", { breakdown: { careerUsefulness: 25, japanMomentum: 19, informationAsymmetry: 18, productStrength: 15, evidenceFreshness: 8, portfolioContribution: 8 }, confidence: "高" }],
