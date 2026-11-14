@@ -20,6 +20,11 @@ const verifiedCareerUrlOverrides = new Map([
   ["via", "https://ridewithvia.com/careers/"],
 ]);
 const reviewedScoreOverrides = new Map([
+  ["qualtrics", { breakdown: { careerUsefulness: 22, japanMomentum: 18, informationAsymmetry: 12, productStrength: 14, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
+  ["deel", { breakdown: { careerUsefulness: 22, japanMomentum: 18, informationAsymmetry: 13, productStrength: 15, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
+  ["halcyon", { breakdown: { careerUsefulness: 18, japanMomentum: 20, informationAsymmetry: 16, productStrength: 15, evidenceFreshness: 10, portfolioContribution: 10 }, confidence: "高" }],
+  ["mongodb", { breakdown: { careerUsefulness: 25, japanMomentum: 20, informationAsymmetry: 11, productStrength: 15, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
+  ["wasabi", { breakdown: { careerUsefulness: 13, japanMomentum: 18, informationAsymmetry: 15, productStrength: 14, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
   ["weka", { breakdown: { careerUsefulness: 25, japanMomentum: 19, informationAsymmetry: 18, productStrength: 15, evidenceFreshness: 8, portfolioContribution: 8 }, confidence: "高" }],
   ["avepoint", { breakdown: { careerUsefulness: 19, japanMomentum: 20, informationAsymmetry: 13, productStrength: 14, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
   ["vast-data", { breakdown: { careerUsefulness: 15, japanMomentum: 17, informationAsymmetry: 18, productStrength: 15, evidenceFreshness: 10, portfolioContribution: 8 }, confidence: "高" }],
