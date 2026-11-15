@@ -585,6 +585,7 @@ export default function CompanyIntelligenceProfile({
   const isNotEntered = company.entryStatus === "not-entered";
   const profile = getCompanyDecisionProfile(company, companyJobs, companySignals, allCompanies);
   const publicIntel = getCompanyPublicIntelligence(company.slug);
+  const showDecisionSection = !publicIntel?.hiddenSections?.includes("decision");
   const companyStory = getCompanyStoryPrimer(company.slug);
   const salesView = publicIntel ? getCompanyFABESalesView(publicIntel) : undefined;
   const salesSnapshot = salesView?.summary ?? company.description;
@@ -814,7 +815,7 @@ export default function CompanyIntelligenceProfile({
 
       <div className="dossier-nav-wrap">
         <Container>
-          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} />
+          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} showDecision={showDecisionSection} />
         </Container>
       </div>
 
@@ -1426,7 +1427,7 @@ export default function CompanyIntelligenceProfile({
               )}
             </section>
 
-            <section className="intel-section" id="decision">
+            {showDecisionSection && <section className="intel-section" id="decision">
               <div className="intel-heading">
                 {publicIntel ? (
                   <div><p className="intel-kicker">04 / GENBA HYPOTHESES</p><h2>{publicIntel.aeInterviewHypotheses ? "AEとして見抜くべき、5つの未解決論点。" : "公開情報から読み解く、5つの仮説。"}</h2></div>
@@ -1497,7 +1498,7 @@ export default function CompanyIntelligenceProfile({
                   <div className="probability-note"><span aria-hidden="true">%</span><div><strong>合格確率は表示しません</strong><p>応募・合否実績がない状態で数字を作らず、求人要件との一致点と不足情報を示します。</p></div></div>
                 </>
               )}
-            </section>
+            </section>}
 
             <section className="intel-section" id="solution">
               <div className="intel-heading">

@@ -424,6 +424,8 @@ export type SalesFabeOverview = {
 export type CompanyPublicIntelligence = {
   researchedAt: string;
   salesSnapshot: string;
+  // 明示的に承認された企業別例外のみ、対象セクションを公開画面から隠す。調査データは保持する。
+  hiddenSections?: Array<"decision">;
   // 会社概要の上段に表示する、公開確認済みの経営責任者。未設定時は従来レイアウトを使う。
   overviewLeadership?: Array<{
     label: string;
@@ -8699,6 +8701,7 @@ const elevenLabsSources: ResearchSource[] = [
 
 const elevenLabsIntelligence: CompanyPublicIntelligence = {
   researchedAt: "2026-08-11",
+  hiddenSections: ["decision"],
   salesSnapshot: "ElevenLabsは、メディア、ゲーム、教育、顧客対応などの企業が、高品質なAI音声を多言語のコンテンツや会話型エージェントへ組み込むための音声AI基盤。「収録や吹き替えに時間と費用がかかる」「言語や話者を増やしてグローバル展開できない」「顧客対応を自動化すると会話品質が落ちる」といった課題を解決する。音声デモの分かりやすさを入口に、制作工程、海外展開、コンタクトセンターの本番業務へ提案を広げ、技術、事業、権利管理を横断できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,

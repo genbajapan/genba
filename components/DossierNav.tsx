@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAeInterviewHypotheses = false }: { companyName: string; isPreEntry: boolean; hasPlaybook: boolean; hasAeInterviewHypotheses?: boolean }) {
+export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAeInterviewHypotheses = false, showDecision = true }: { companyName: string; isPreEntry: boolean; hasPlaybook: boolean; hasAeInterviewHypotheses?: boolean; showDecision?: boolean }) {
   const navRef = useRef<HTMLElement>(null);
   const [showMoreHint, setShowMoreHint] = useState(false);
 
@@ -51,7 +51,7 @@ export default function DossierNav({ companyName, isPreEntry, hasPlaybook, hasAe
         <a href="#overview" onClick={() => openTargetDisclosure("overview")}>会社概要</a>
         <a href="#work-there" onClick={() => openTargetDisclosure("work-there")}>{isPreEntry ? "海外で働く人" : "働く人を見る"}</a>
         <a href="#roles" onClick={() => openTargetDisclosure("roles")}>{isPreEntry ? "進出時の論点" : "募集中ポジション"}</a>
-        <a href="#decision" onClick={() => openTargetDisclosure("decision")}>{hasAeInterviewHypotheses ? "面接の仮説" : "5つの仮説"}</a>
+        {showDecision && <a href="#decision" onClick={() => openTargetDisclosure("decision")}>{hasAeInterviewHypotheses ? "面接の仮説" : "5つの仮説"}</a>}
         <a href="#solution" onClick={() => openTargetDisclosure("solution")}>ソリューション深掘り</a>
         {hasPlaybook && <a href="#playbook" onClick={() => openTargetDisclosure("playbook")}>想定できる売り方</a>}
         <a href="#compare" onClick={() => openTargetDisclosure("compare")}>併願候補</a>
