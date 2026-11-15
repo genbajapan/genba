@@ -687,7 +687,7 @@ export default function CompanyIntelligenceProfile({
             <div className="company-identity">
               <div className="company-identity-topline">
                 {companyStory ? (
-                  <span className="company-monogram company-monogram-elevenlabs" aria-label="ElevenLabs"><i /><i /></span>
+                  <span className="company-monogram company-monogram-elevenlabs" aria-hidden="true">EL</span>
                 ) : (
                   <span className="company-monogram" aria-hidden="true">{company.name.slice(0, 1)}</span>
                 )}
