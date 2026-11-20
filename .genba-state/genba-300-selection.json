@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T01:35:33.916Z",
-  "runDate": "2026-11-19",
+  "updatedAt": "2026-11-20T01:29:45.914Z",
+  "runDate": "2026-11-20",
   "publicCount": 300,
   "initialAssessment": {
     "completedAt": "2026-11-03T21:11:57.250Z",
@@ -32,52 +32,52 @@
     "automaticSwapThreshold": "既存下位10%と候補を同一基準で比較し、原則8点差。5〜7点差は複数の項目改善と既存側の複数弱化を公式確認した場合。404単独では除外しない。"
   },
   "dailyReview": {
-    "fixedGroup": 4,
+    "fixedGroup": 5,
     "fixedGroupCount": 43,
     "fixedGroupSlugs": [
-      "acronis",
-      "alta-ares",
-      "appian",
-      "ashby",
-      "behavox",
-      "box",
-      "censys",
-      "circleci",
-      "cockroach-labs",
-      "contentsquare",
-      "datarobot",
-      "dialpad",
-      "ecovadis",
-      "equativ",
-      "fireblocks",
-      "genspark",
-      "green-hills-software",
-      "hiya",
-      "illumio",
-      "jfrog",
-      "kpler",
-      "lighthouse",
-      "magnet-forensics",
-      "medallia",
-      "miro",
-      "motherduck",
-      "nice",
-      "omnissa",
-      "pendo",
-      "postman",
-      "reaktor",
-      "rogo",
-      "saviynt",
-      "shield-ai",
-      "skydio",
-      "sprinklr",
-      "synthesia",
-      "tenable",
-      "tulip-interfaces",
-      "veeam",
-      "wasabi",
-      "workato",
-      "zilliz"
+      "addepar",
+      "alteryx",
+      "appier",
+      "atlassian",
+      "black-duck",
+      "braze",
+      "chainguard",
+      "cirrus-data",
+      "coderabbit",
+      "coupa",
+      "datasnipper",
+      "docusign",
+      "edb",
+      "everpure",
+      "fireworks-ai",
+      "getyourguide",
+      "guidewire",
+      "hootsuite",
+      "intercom",
+      "keeper-security",
+      "kraken-technologies",
+      "linear",
+      "mambu",
+      "megaport",
+      "mistplay",
+      "navex",
+      "ninjaone",
+      "optro",
+      "perplexity",
+      "proofpoint",
+      "recorded-future",
+      "rokt",
+      "sayari",
+      "shift-technology",
+      "solace",
+      "sprout-ai",
+      "sysdig",
+      "think-cell",
+      "twilio",
+      "vercel",
+      "watchguard",
+      "workiva",
+      "zimperium"
     ],
     "allSavedCareerUrlsChecked": true,
     "urlSummary": {
@@ -181,7 +181,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -210,7 +210,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/1password",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/1password"
       },
       "rationale": [
@@ -237,7 +237,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -266,7 +266,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/3E",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/3E"
       },
       "rationale": [
@@ -293,7 +293,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -320,7 +320,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://abnormal.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.abnormal.ai/"
       },
       "rationale": [
@@ -346,7 +346,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -373,7 +373,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/acquia",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/acquia"
       },
       "rationale": [
@@ -399,7 +399,7 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -429,7 +429,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.acronis.com/en/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.acronis.com/en/careers/"
       },
       "rationale": [
@@ -453,8 +453,8 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -475,6 +475,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -482,7 +492,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://addepar.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://addepar.com/careers/"
       },
       "rationale": [
@@ -509,7 +519,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -536,7 +546,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://adjoe.io/careers/open-positions/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://adjoe.io/careers/open-positions/30d19b10-25c8-47dd-a074-4d8b55eb0152/"
       },
       "rationale": [
@@ -562,7 +572,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -589,7 +599,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/aiand",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/aiand"
       },
       "rationale": [
@@ -615,7 +625,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -634,7 +644,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/airtable",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/airtable"
       },
       "rationale": [
@@ -661,7 +671,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -690,7 +700,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://aiven.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://aiven.io/careers"
       },
       "rationale": [
@@ -717,7 +727,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -744,7 +754,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/alarmcom/jobs/8733921002",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/alarmcom/jobs/8733921002"
       },
       "rationale": [
@@ -770,7 +780,7 @@
       },
       "total": 87,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -809,7 +819,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/alta-ares/7c82c080-2c9a-41cf-8936-d5719b59f47b",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/alta-ares/7c82c080-2c9a-41cf-8936-d5719b59f47b"
       },
       "rationale": [
@@ -836,8 +846,8 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -852,6 +862,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 96,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -859,7 +876,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://alteryx.wd108.myworkdayjobs.com/en-US/AlteryxCareers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://alteryx.wd108.myworkdayjobs.com/en-US/AlteryxCareers"
       },
       "rationale": [
@@ -883,7 +900,7 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -912,7 +929,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://job-boards.greenhouse.io/amplitude",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/amplitude"
       },
       "rationale": [
@@ -939,7 +956,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -962,7 +979,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/anaplan",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/anaplan"
       },
       "rationale": [
@@ -986,7 +1003,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -1002,7 +1019,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.anthropic.com/careers/jobs",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.anthropic.com/careers/jobs"
       },
       "rationale": [
@@ -1026,7 +1043,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -1055,7 +1072,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/antithesis",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/antithesis"
       },
       "rationale": [
@@ -1082,7 +1099,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -1111,7 +1128,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.apollo.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.apollo.io/careers"
       },
       "rationale": [
@@ -1138,7 +1155,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -1168,7 +1185,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.appian.com/jobs",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.appian.com/jobs"
       },
       "rationale": [
@@ -1192,8 +1209,8 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -1208,6 +1225,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 98,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -1215,7 +1239,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/appier/?offices%5B%5D=23561",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/appier/?offices%5B%5D=23561"
       },
       "rationale": [
@@ -1239,7 +1263,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -1266,7 +1290,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/applied/3783c384-117a-4849-804b-82b2e35a8c8d",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/applied/3783c384-117a-4849-804b-82b2e35a8c8d"
       },
       "rationale": [
@@ -1292,7 +1316,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -1315,7 +1339,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.appsflyer.com/tokyo/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.appsflyer.com/tokyo/"
       },
       "rationale": [
@@ -1339,7 +1363,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -1357,7 +1381,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/apryse",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/apryse"
       },
       "rationale": [
@@ -1383,7 +1407,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -1412,7 +1436,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/armissecurity?error=true",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/armissecurity/jobs/5765358004"
       },
       "rationale": [
@@ -1439,7 +1463,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -1462,7 +1486,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://asana.com/jobs/tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://asana.com/jobs/tokyo"
       },
       "rationale": [
@@ -1486,7 +1510,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -1522,7 +1546,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/ashby",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/ashby"
       },
       "rationale": [
@@ -1548,8 +1572,8 @@
       },
       "total": 78,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -1570,6 +1594,16 @@
             "Career URLはended（HTTP 404）",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -1577,7 +1611,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://join.atlassian.com/atlassian-talent-community/jobs/21718?lang=en-us"
       },
       "rationale": [
@@ -1604,7 +1638,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -1633,7 +1667,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://attio.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://attio.com/careers"
       },
       "rationale": [
@@ -1660,7 +1694,7 @@
       },
       "total": 84,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -1679,7 +1713,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.avepoint.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.avepoint.com/careers"
       },
       "rationale": [
@@ -1706,7 +1740,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-08",
       "deepReviewHistory": [
         {
@@ -1724,7 +1758,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://axis.wd3.myworkdayjobs.com/External_Career_Site",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://axis.wd3.myworkdayjobs.com/External_Career_Site"
       },
       "rationale": [
@@ -1750,7 +1784,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -1777,7 +1811,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/babelstreet",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/babelstreet"
       },
       "rationale": [
@@ -1803,7 +1837,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -1839,7 +1873,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/backmarket/7df95846-0fb0-4a42-9f35-71674ee096fd",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/backmarket/7df95846-0fb0-4a42-9f35-71674ee096fd"
       },
       "rationale": [
@@ -1865,7 +1899,7 @@
       },
       "total": 74,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -1904,7 +1938,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/behavox?error=true",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/behavox/jobs/7959497"
       },
       "rationale": [
@@ -1931,8 +1965,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-05",
@@ -1951,6 +1985,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -1958,7 +2001,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/blackduck",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/blackduck"
       },
       "rationale": [
@@ -1984,7 +2027,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -2011,7 +2054,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.blackline.jp/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.blackline.jp/careers/"
       },
       "rationale": [
@@ -2037,7 +2080,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -2064,7 +2107,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://blackpanda.bamboohr.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://blackpanda.bamboohr.com/careers"
       },
       "rationale": [
@@ -2090,7 +2133,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-08",
       "deepReviewHistory": [
         {
@@ -2106,7 +2149,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/bluecatnetworks",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/bluecatnetworks"
       },
       "rationale": [
@@ -2130,7 +2173,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -2157,7 +2200,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/BlueMatrix?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/BlueMatrix?location=Tokyo"
       },
       "rationale": [
@@ -2183,7 +2226,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -2213,7 +2256,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://boomi.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://boomi.com/company/careers/"
       },
       "rationale": [
@@ -2237,7 +2280,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -2273,7 +2316,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/boxinc/jobs/8054660",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/boxinc/jobs/8054660"
       },
       "rationale": [
@@ -2299,8 +2342,8 @@
       },
       "total": 99,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -2315,6 +2358,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 99,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -2322,7 +2372,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://japancloud.jp/career/companies/braze/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://japancloud.jp/career/companies/braze/"
       },
       "rationale": [
@@ -2346,7 +2396,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -2375,7 +2425,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Cambly",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/Cambly"
       },
       "rationale": [
@@ -2402,7 +2452,7 @@
       },
       "total": 80,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -2430,7 +2480,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.lifeatcanva.com/en/jobs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.lifeatcanva.com/en/jobs/"
       },
       "rationale": [
@@ -2457,7 +2507,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -2475,7 +2525,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.catapult.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.catapult.com/careers"
       },
       "rationale": [
@@ -2501,7 +2551,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -2524,7 +2574,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.catonetworks.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.catonetworks.com/careers/"
       },
       "rationale": [
@@ -2548,7 +2598,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -2571,7 +2621,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.celonis.com/join-us/offices/tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.celonis.com/join-us/offices/tokyo"
       },
       "rationale": [
@@ -2595,7 +2645,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -2634,7 +2684,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://censys.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://censys.com/careers/"
       },
       "rationale": [
@@ -2661,8 +2711,8 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -2683,6 +2733,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -2690,7 +2750,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/chainguard",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/chainguard"
       },
       "rationale": [
@@ -2717,7 +2777,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -2744,7 +2804,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/chalk/96eeb4e1-4621-4c03-b46e-ed2630b48811/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/chalk/96eeb4e1-4621-4c03-b46e-ed2630b48811/"
       },
       "rationale": [
@@ -2770,7 +2830,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -2793,7 +2853,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://channel.io/jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://channel.io/jp/careers"
       },
       "rationale": [
@@ -2817,7 +2877,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -2833,7 +2893,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/zoyi?department=Japan",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/zoyi?department=Japan"
       },
       "rationale": [
@@ -2857,7 +2917,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -2884,7 +2944,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jp.cic.com/career/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jp.cic.com/career/"
       },
       "rationale": [
@@ -2910,7 +2970,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -2937,7 +2997,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/ciq",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/ciq"
       },
       "rationale": [
@@ -2963,7 +3023,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -2999,7 +3059,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://circleci.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://circleci.com/careers/"
       },
       "rationale": [
@@ -3025,8 +3085,8 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -3045,6 +3105,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 91,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -3052,7 +3121,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.smartrecruiters.com/CirrusDataSolutionsInc/743999891680073-account-executive-in-tokyo"
       },
       "rationale": [
@@ -3078,7 +3147,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -3105,7 +3174,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://claroty.com/open-positions",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://claroty.com/open-positions"
       },
       "rationale": [
@@ -3131,7 +3200,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -3160,7 +3229,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.clay.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.clay.com/careers"
       },
       "rationale": [
@@ -3187,7 +3256,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -3218,7 +3287,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://clickhouse.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://clickhouse.com/company/careers"
       },
       "rationale": [
@@ -3244,7 +3313,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -3267,7 +3336,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cloudera.wd5.myworkdayjobs.com/External_Career",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://cloudera.wd5.myworkdayjobs.com/External_Career"
       },
       "rationale": [
@@ -3291,7 +3360,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -3314,7 +3383,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.cloudflare.com/careers/jobs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.cloudflare.com/careers/jobs/"
       },
       "rationale": [
@@ -3338,7 +3407,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -3377,7 +3446,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.cockroachlabs.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.cockroachlabs.com/careers/"
       },
       "rationale": [
@@ -3404,8 +3473,8 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -3428,6 +3497,17 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 75,
+          "verdict": "比較対象",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -3435,7 +3515,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/coderabbit/0e889e16-a2a3-47f3-bce9-ce87ef795762",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/coderabbit/0e889e16-a2a3-47f3-bce9-ce87ef795762"
       },
       "rationale": [
@@ -3463,7 +3543,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -3490,7 +3570,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cognition.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://cognition.com/careers"
       },
       "rationale": [
@@ -3516,7 +3596,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -3543,7 +3623,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/cohere",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/cohere"
       },
       "rationale": [
@@ -3569,7 +3649,7 @@
       },
       "total": 86,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -3588,7 +3668,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.cohesity.com/careers/open-positions/?gh_jid=fbb6c49dd8c11001d8381318e10e0000&type=wd",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.cohesity.com/careers/open-positions/?gh_jid=fbb6c49dd8c11001d8381318e10e0000&type=wd"
       },
       "rationale": [
@@ -3615,7 +3695,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -3642,7 +3722,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/concertai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/concertai"
       },
       "rationale": [
@@ -3668,7 +3748,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -3695,7 +3775,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.ibm.com/careers/search?q=confluent",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.confluent.io/jobs"
       },
       "rationale": [
@@ -3721,7 +3801,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -3757,7 +3837,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/contentsquare",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/contentsquare"
       },
       "rationale": [
@@ -3783,8 +3863,8 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -3799,6 +3879,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 93,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -3806,7 +3893,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/coupa",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/coupa"
       },
       "rationale": [
@@ -3830,7 +3917,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -3857,7 +3944,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cribl.io/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://cribl.io/careers/"
       },
       "rationale": [
@@ -3883,7 +3970,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -3910,7 +3997,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://cursor.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://cursor.com/careers"
       },
       "rationale": [
@@ -3936,7 +4023,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -3954,7 +4041,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/d-fendsolutions",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/d-fendsolutions"
       },
       "rationale": [
@@ -3980,7 +4067,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -4003,7 +4090,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://darktrace.wd3.myworkdayjobs.com/DarktaceExternal",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://darktrace.wd3.myworkdayjobs.com/DarktaceExternal"
       },
       "rationale": [
@@ -4027,7 +4114,7 @@
       },
       "total": 90,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -4054,7 +4141,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.dataiku.com/company/join-us",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.dataiku.com/company/join-us/"
       },
       "rationale": [
@@ -4080,7 +4167,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -4110,7 +4197,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.datarobot.com/jp/careers/open-positions/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.datarobot.com/jp/careers/open-positions/"
       },
       "rationale": [
@@ -4134,8 +4221,8 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-04",
@@ -4168,6 +4255,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 77,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -4175,7 +4272,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.datasnipper.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.datasnipper.com/"
       },
       "rationale": [
@@ -4202,7 +4299,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -4229,7 +4326,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.getdbt.com/about-us/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.getdbt.com/about-us/careers"
       },
       "rationale": [
@@ -4255,7 +4352,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -4284,7 +4381,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://decagon.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://decagon.ai/careers"
       },
       "rationale": [
@@ -4311,7 +4408,7 @@
       },
       "total": 86,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -4338,7 +4435,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/deel",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/deel"
       },
       "rationale": [
@@ -4364,7 +4461,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -4393,7 +4490,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Deepgram",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/Deepgram"
       },
       "rationale": [
@@ -4420,7 +4517,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -4447,7 +4544,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/DeepL",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/DeepL"
       },
       "rationale": [
@@ -4473,7 +4570,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -4503,7 +4600,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/dialpad?error=true",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/dialpad/jobs/8606879002"
       },
       "rationale": [
@@ -4527,8 +4624,8 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -4543,6 +4640,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -4550,7 +4654,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.docusign.com/careers-home",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.docusign.com/"
       },
       "rationale": [
@@ -4574,7 +4678,7 @@
       },
       "total": 82,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -4601,7 +4705,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/doubleverify",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/doubleverify"
       },
       "rationale": [
@@ -4627,7 +4731,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -4656,7 +4760,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/dragos",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/dragos"
       },
       "rationale": [
@@ -4683,7 +4787,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -4702,7 +4806,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/drata",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/drata"
       },
       "rationale": [
@@ -4729,7 +4833,7 @@
       },
       "total": 79,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -4757,7 +4861,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.dropbox.jobs/en/jobs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.dropbox.com/all-jobs"
       },
       "rationale": [
@@ -4784,7 +4888,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -4807,7 +4911,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://apply.careers.dynatrace.com/job/Tokyo-Sr-Solutions-Engineer-Toky-100-0005/1390103700/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://apply.careers.dynatrace.com/job/Tokyo-Sr-Solutions-Engineer-Toky-100-0005/1390103700/"
       },
       "rationale": [
@@ -4831,7 +4935,7 @@
       },
       "total": 81,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -4867,7 +4971,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://careers.ecovadis.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.ecovadis.com/",
         "error": "fetch failed"
       },
@@ -4894,8 +4998,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -4914,6 +5018,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -4921,7 +5034,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.enterprisedb.com/jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.enterprisedb.com/jp/careers"
       },
       "rationale": [
@@ -4947,7 +5060,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -4970,7 +5083,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.elastic.co/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.elastic.co/"
       },
       "rationale": [
@@ -4994,7 +5107,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -5021,7 +5134,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/elementbiosciences",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/elementbiosciences"
       },
       "rationale": [
@@ -5047,7 +5160,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -5065,7 +5178,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://elevenlabs.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://elevenlabs.io/careers"
       },
       "rationale": [
@@ -5091,7 +5204,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -5118,7 +5231,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.entrupy.com/careers/apply/?gh_jid=5107413007",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.entrupy.com/careers/apply/?gh_jid=5107413007"
       },
       "rationale": [
@@ -5144,7 +5257,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -5167,7 +5280,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://entrust.wd1.myworkdayjobs.com/EntrustCareers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://entrust.wd1.myworkdayjobs.com/EntrustCareers"
       },
       "rationale": [
@@ -5191,7 +5304,7 @@
       },
       "total": 81,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -5227,7 +5340,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/equativ?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/equativ?location=Tokyo"
       },
       "rationale": [
@@ -5253,8 +5366,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -5273,6 +5386,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -5280,7 +5402,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/purestorage",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/purestorage"
       },
       "rationale": [
@@ -5306,7 +5428,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -5335,7 +5457,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://exa.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://exa.ai/careers"
       },
       "rationale": [
@@ -5362,7 +5484,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -5389,7 +5511,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.exotec.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.exotec.com/"
       },
       "rationale": [
@@ -5415,7 +5537,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -5433,7 +5555,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/extremenetworks?location=Tokyo%2C+Japan",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/extremenetworks?location=Tokyo%2C+Japan"
       },
       "rationale": [
@@ -5459,7 +5581,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -5482,7 +5604,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fastly.com/about/careers/current-openings",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.fastly.com/about/careers/current-openings"
       },
       "rationale": [
@@ -5506,7 +5628,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -5529,7 +5651,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.figma.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/figma/jobs/5729844004"
       },
       "rationale": [
@@ -5553,7 +5675,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -5589,7 +5711,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fireblocks.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.fireblocks.com/careers/"
       },
       "rationale": [
@@ -5615,8 +5737,8 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -5637,6 +5759,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -5644,7 +5776,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://fireworks.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://fireworks.ai/careers"
       },
       "rationale": [
@@ -5671,7 +5803,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -5694,7 +5826,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.fitch.group/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.fitch.group/"
       },
       "rationale": [
@@ -5718,7 +5850,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -5745,7 +5877,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.fivetran.com/careers/job?gh_jid=7818344003",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.fivetran.com/careers/job?gh_jid=7818344003"
       },
       "rationale": [
@@ -5771,7 +5903,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -5787,7 +5919,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/fusionworldwide",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/fusionworldwide"
       },
       "rationale": [
@@ -5811,7 +5943,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -5840,7 +5972,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/gainsight",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/gainsight"
       },
       "rationale": [
@@ -5867,7 +5999,7 @@
       },
       "total": 80,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -5896,7 +6028,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.gamma.app/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.gamma.app/"
       },
       "rationale": [
@@ -5923,7 +6055,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -5962,7 +6094,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/genspark",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/genspark"
       },
       "rationale": [
@@ -5989,8 +6121,8 @@
       },
       "total": 89,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -6011,6 +6143,16 @@
             "Career URLはended（HTTP 404）",
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 89,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "Career URLはended（HTTP 404）",
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -6018,7 +6160,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.getyourguide.careers/location/tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://getyourguide.careers/location/tokyo"
       },
       "rationale": [
@@ -6045,7 +6187,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -6068,7 +6210,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://about.gitlab.com/jobs/all-jobs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://about.gitlab.com/jobs/all-jobs/"
       },
       "rationale": [
@@ -6092,7 +6234,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -6121,7 +6263,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/glance?error=true",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/glance/jobs/7938622"
       },
       "rationale": [
@@ -6148,7 +6290,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -6166,7 +6308,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.glean.com/jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.glean.com/jp/careers"
       },
       "rationale": [
@@ -6192,7 +6334,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -6221,7 +6363,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.gong.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.gong.io/careers"
       },
       "rationale": [
@@ -6248,7 +6390,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -6275,7 +6417,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/grafanalabs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://grafana.com/about/careers/open-positions/"
       },
       "rationale": [
@@ -6301,7 +6443,7 @@
       },
       "total": 88,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -6340,7 +6482,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://www.ghs.com/corporate/career.html",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.ghs.com/corporate/career.html"
       },
       "rationale": [
@@ -6367,8 +6509,8 @@
       },
       "total": 99,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -6383,6 +6525,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 99,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -6390,7 +6539,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://guidewire.wd5.myworkdayjobs.com/en-US/external",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://guidewire.wd5.myworkdayjobs.com/en-US/external"
       },
       "rationale": [
@@ -6414,7 +6563,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -6452,7 +6601,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.gurobi.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.gurobi.com/company/careers"
       },
       "rationale": [
@@ -6478,7 +6627,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -6517,7 +6666,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.halcyon.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.halcyon.ai/careers"
       },
       "rationale": [
@@ -6544,7 +6693,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -6563,7 +6712,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.harvey.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.harvey.ai/careers"
       },
       "rationale": [
@@ -6590,7 +6739,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -6619,7 +6768,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/hebbia-ai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/hebbia-ai"
       },
       "rationale": [
@@ -6646,7 +6795,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -6686,7 +6835,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://hightouch.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://hightouch.com/careers"
       },
       "rationale": [
@@ -6713,7 +6862,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -6749,7 +6898,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/hiya/69e4a937-3275-44c9-b640-4cce3d663337"
       },
       "rationale": [
@@ -6775,8 +6924,8 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -6795,6 +6944,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 90,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -6802,7 +6960,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/hootsuite",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/hootsuite"
       },
       "rationale": [
@@ -6828,7 +6986,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -6857,7 +7015,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/horizon3ai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/horizon3ai"
       },
       "rationale": [
@@ -6884,7 +7042,7 @@
       },
       "total": 75,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -6915,7 +7073,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/hoxhunt/b770639c-917c-4ac2-b7a5-8c4294d74a62"
       },
       "rationale": [
@@ -6943,7 +7101,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -6959,7 +7117,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.hubspot.jp/work-in-tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.hubspot.jp/work-in-tokyo"
       },
       "rationale": [
@@ -6983,7 +7141,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -7012,7 +7170,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/hudl",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/hudl"
       },
       "rationale": [
@@ -7039,7 +7197,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -7066,7 +7224,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/ideals",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/ideals"
       },
       "rationale": [
@@ -7092,7 +7250,7 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -7128,7 +7286,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.illumio.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.illumio.com/company/careers"
       },
       "rationale": [
@@ -7154,8 +7312,8 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -7176,6 +7334,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -7183,7 +7351,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://fin.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.intercom.com/careers"
       },
       "rationale": [
@@ -7210,7 +7378,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -7239,7 +7407,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.ionq.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.ionq.com/careers"
       },
       "rationale": [
@@ -7266,7 +7434,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -7295,7 +7463,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://ironcladapp.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://ironcladapp.com/careers"
       },
       "rationale": [
@@ -7322,7 +7490,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -7341,7 +7509,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.island.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.island.io/careers"
       },
       "rationale": [
@@ -7368,7 +7536,7 @@
       },
       "total": 76,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -7397,7 +7565,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://careers.ivanti.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.ivanti.com/",
         "error": "fetch failed"
       },
@@ -7425,7 +7593,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -7448,7 +7616,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.jamf.com/about/careers/jobs/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.jamf.com/about/careers/jobs/"
       },
       "rationale": [
@@ -7472,7 +7640,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -7511,7 +7679,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://join.jfrog.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://join.jfrog.com/"
       },
       "rationale": [
@@ -7538,8 +7706,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -7558,6 +7726,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -7565,7 +7742,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/keepersecurity/jobs/4408913009",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/keepersecurity/jobs/4408913009"
       },
       "rationale": [
@@ -7591,7 +7768,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -7618,7 +7795,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/keyloop?location=Japan",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/keyloop?location=Japan"
       },
       "rationale": [
@@ -7644,7 +7821,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -7667,7 +7844,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://join.kinaxis.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://join.kinaxis.com/search-jobs"
       },
       "rationale": [
@@ -7691,7 +7868,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -7710,7 +7887,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.klaviyo.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.klaviyo.com/careers"
       },
       "rationale": [
@@ -7737,7 +7914,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -7764,7 +7941,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.knowbe4.com/careers/locations/tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.knowbe4.com/careers/locations/tokyo"
       },
       "rationale": [
@@ -7790,7 +7967,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -7817,7 +7994,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://open.talentio.com/r/1/c/japancloud/homes/4310",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://open.talentio.com/r/1/c/japancloud/homes/4310"
       },
       "rationale": [
@@ -7843,7 +8020,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -7879,7 +8056,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/kpler/4aeb9439-99c7-4013-b6c6-493b36d50a78"
       },
       "rationale": [
@@ -7905,8 +8082,8 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -7921,6 +8098,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 91,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -7928,7 +8112,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/krakentech",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/krakentech"
       },
       "rationale": [
@@ -7952,7 +8136,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -7981,7 +8165,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/lakera.ai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/lakera.ai"
       },
       "rationale": [
@@ -8008,7 +8192,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -8037,7 +8221,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.langchain.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.langchain.com/careers"
       },
       "rationale": [
@@ -8064,7 +8248,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -8083,7 +8267,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/launchdarkly",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/launchdarkly"
       },
       "rationale": [
@@ -8110,7 +8294,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -8137,7 +8321,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/legora",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/legora"
       },
       "rationale": [
@@ -8163,7 +8347,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -8186,7 +8370,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.jobvite.com/liferay/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.jobvite.com/liferay/"
       },
       "rationale": [
@@ -8210,7 +8394,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -8261,7 +8445,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.mylighthouse.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.mylighthouse.com/company/careers"
       },
       "rationale": [
@@ -8288,8 +8472,8 @@
       },
       "total": 80,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -8310,6 +8494,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 80,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -8317,7 +8511,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://linear.app/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://linear.app/careers"
       },
       "rationale": [
@@ -8344,7 +8538,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -8371,7 +8565,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.liquid.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.liquid.ai/careers"
       },
       "rationale": [
@@ -8397,7 +8591,7 @@
       },
       "total": 88,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -8426,7 +8620,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/litmus/a2250c34-6808-40c9-b23a-f4783949c01f"
       },
       "rationale": [
@@ -8453,7 +8647,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -8472,7 +8666,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/lovable",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/lovable"
       },
       "rationale": [
@@ -8499,7 +8693,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -8528,7 +8722,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.lucanet.com/en/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.lucanet.com/en/careers/"
       },
       "rationale": [
@@ -8555,7 +8749,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -8582,7 +8776,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://thinklucid.com/ja/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://thinklucid.com/ja/careers/"
       },
       "rationale": [
@@ -8608,7 +8802,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -8644,7 +8838,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/magnetforensics/dd9fcd02-0997-48a4-829f-e4a3eeccfa85"
       },
       "rationale": [
@@ -8670,8 +8864,8 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -8690,6 +8884,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 93,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -8697,7 +8900,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers-mambu.icims.com/jobs/3352/senior-account-executive-%28channel%29/job?in_iframe=1",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers-mambu.icims.com/jobs/3352/senior-account-executive-%28channel%29/job?in_iframe=1"
       },
       "rationale": [
@@ -8723,7 +8926,7 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -8746,7 +8949,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/mapbox",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/mapbox"
       },
       "rationale": [
@@ -8770,7 +8973,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -8797,7 +9000,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/marqvision",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.marqvision.com/careers"
       },
       "rationale": [
@@ -8823,7 +9026,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -8841,7 +9044,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/matter-intelligence",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/matter-intelligence"
       },
       "rationale": [
@@ -8867,7 +9070,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -8894,7 +9097,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/mattermost",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/mattermost"
       },
       "rationale": [
@@ -8920,7 +9123,7 @@
       },
       "total": 97,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -8947,7 +9150,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.costargroup.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.costargroup.com/careers"
       },
       "rationale": [
@@ -8973,7 +9176,7 @@
       },
       "total": 89,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -9009,7 +9212,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.medallia.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.medallia.com/"
       },
       "rationale": [
@@ -9035,8 +9238,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -9055,6 +9258,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -9062,7 +9274,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/megaport",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/megaport"
       },
       "rationale": [
@@ -9088,7 +9300,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -9115,7 +9327,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://meltwatercareers.ttcportals.com/search/jobs/in/tokyo-japan",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://meltwatercareers.ttcportals.com/search/jobs/in/tokyo-japan"
       },
       "rationale": [
@@ -9141,7 +9353,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -9168,7 +9380,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/mendix?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/mendix?location=Tokyo"
       },
       "rationale": [
@@ -9194,7 +9406,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -9212,7 +9424,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.menlosecurity.com/ja-jp/about/life-at-menlo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.menlosecurity.com/ja-jp/about/life-at-menlo"
       },
       "rationale": [
@@ -9238,7 +9450,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -9265,7 +9477,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/minitab",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/minitab"
       },
       "rationale": [
@@ -9291,7 +9503,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -9314,7 +9526,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.mirakl.com/ja-jp/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.mirakl.com/ja-jp/company/careers/"
       },
       "rationale": [
@@ -9338,7 +9550,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -9374,7 +9586,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://miro.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://miro.com/careers/"
       },
       "rationale": [
@@ -9400,8 +9612,8 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -9420,6 +9632,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 95,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -9427,7 +9648,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/mistplay?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/mistplay?location=Tokyo"
       },
       "rationale": [
@@ -9453,7 +9674,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -9482,7 +9703,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/mistral.ai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/mistral.ai"
       },
       "rationale": [
@@ -9509,7 +9730,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -9536,7 +9757,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/mixpanel",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/mixpanel"
       },
       "rationale": [
@@ -9562,7 +9783,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -9580,7 +9801,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://monday.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://monday.com/careers"
       },
       "rationale": [
@@ -9606,7 +9827,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -9645,7 +9866,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.mongodb.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.mongodb.com/careers/"
       },
       "rationale": [
@@ -9672,7 +9893,7 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -9695,7 +9916,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://monotype.wd1.myworkdayjobs.com/olapic",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://monotype.wd1.myworkdayjobs.com/olapic"
       },
       "rationale": [
@@ -9719,7 +9940,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -9758,7 +9979,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/MotherDuck",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/MotherDuck"
       },
       "rationale": [
@@ -9785,8 +10006,8 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -9805,6 +10026,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 88,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -9812,7 +10042,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.navex.com/ja-jp/company/careers/job-openings/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.navex.com/ja-jp/company/careers/job-openings/"
       },
       "rationale": [
@@ -9838,7 +10068,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -9867,7 +10097,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://neo4j.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://neo4j.com/careers/"
       },
       "rationale": [
@@ -9894,7 +10124,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -9917,7 +10147,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.netskope.com/company/careers/open-positions?gh_jid=7493456",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.netskope.com/company/careers/open-positions/?gh_jid=7493456"
       },
       "rationale": [
@@ -9941,7 +10171,7 @@
       },
       "total": 86,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -9960,7 +10190,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/neuralconcept/9b018838-aad4-48a6-8d6b-f2a544e0fbed",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/neuralconcept/9b018838-aad4-48a6-8d6b-f2a544e0fbed"
       },
       "rationale": [
@@ -9987,7 +10217,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -10010,7 +10240,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://newrelic.com/jp/about/culture-and-hiring",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://newrelic.com/jp/about/culture-and-hiring"
       },
       "rationale": [
@@ -10034,7 +10264,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -10061,7 +10291,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.smartrecruiters.com/Nexthink",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.smartrecruiters.com/Nexthink"
       },
       "rationale": [
@@ -10087,7 +10317,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -10117,7 +10347,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.nice.com/careers/apply",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.eu.greenhouse.io/nice/jobs/4661611101"
       },
       "rationale": [
@@ -10141,8 +10371,8 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -10161,6 +10391,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 91,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -10168,7 +10407,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.jobvite.com/support/job-seeker-support?invalid=1",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.jobvite.com/ninjaone/jobs"
       },
       "rationale": [
@@ -10194,7 +10433,7 @@
       },
       "total": 81,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -10223,7 +10462,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.nomic.ai/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.nomic.ai/careers"
       },
       "rationale": [
@@ -10250,7 +10489,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -10273,7 +10512,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.notion.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.notion.com/careers"
       },
       "rationale": [
@@ -10297,7 +10536,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -10315,7 +10554,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal"
       },
       "rationale": [
@@ -10341,7 +10580,7 @@
       },
       "total": 86,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -10364,7 +10603,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.okta.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.okta.com/company/careers/"
       },
       "rationale": [
@@ -10388,7 +10627,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -10417,7 +10656,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/omni",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/omni"
       },
       "rationale": [
@@ -10444,7 +10683,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -10474,7 +10713,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.omnissa.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.omnissa.com/careers/"
       },
       "rationale": [
@@ -10498,8 +10737,8 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -10518,6 +10757,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 93,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -10525,7 +10773,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/optro",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/optro"
       },
       "rationale": [
@@ -10551,7 +10799,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -10578,7 +10826,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.orca-ai.io/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.orca-ai.io/"
       },
       "rationale": [
@@ -10604,7 +10852,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -10631,7 +10879,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Senior-Account-Executive_R1544",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://outsystems.wd503.myworkdayjobs.com/en-US/OutSystems/job/Senior-Account-Executive_R1544"
       },
       "rationale": [
@@ -10657,7 +10905,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -10673,7 +10921,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://japancloud.jp/career/companies/pagerduty/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://japancloud.jp/career/companies/pagerduty/"
       },
       "rationale": [
@@ -10697,7 +10945,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -10724,7 +10972,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/pallet?error=true",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/pallet/jobs/5186143007"
       },
       "rationale": [
@@ -10750,7 +10998,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -10797,7 +11045,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.patsnap.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.patsnap.com/"
       },
       "rationale": [
@@ -10823,7 +11071,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -10859,7 +11107,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.pendo.io/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.pendo.io/careers/"
       },
       "rationale": [
@@ -10885,8 +11133,8 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -10907,6 +11155,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 78,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -10914,7 +11172,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/perplexity",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/perplexity"
       },
       "rationale": [
@@ -10941,7 +11199,7 @@
       },
       "total": 82,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -10970,7 +11228,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/pigment/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/pigment/"
       },
       "rationale": [
@@ -10997,7 +11255,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -11026,7 +11284,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.pinecone.io/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.pinecone.io/careers/"
       },
       "rationale": [
@@ -11053,7 +11311,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -11084,7 +11342,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.pingcap.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.pingcap.com/careers/"
       },
       "rationale": [
@@ -11111,7 +11369,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -11130,7 +11388,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/pitchbookdata",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/pitchbookdata"
       },
       "rationale": [
@@ -11157,7 +11415,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -11187,7 +11445,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.planet.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.planet.com/company/careers/"
       },
       "rationale": [
@@ -11211,7 +11469,7 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -11247,7 +11505,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.postman.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.postman.com/company/careers/"
       },
       "rationale": [
@@ -11273,8 +11531,8 @@
       },
       "total": 97,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -11289,6 +11547,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 97,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -11296,7 +11561,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://proofpoint.wd5.myworkdayjobs.com/en-US/ProofpointCareers"
       },
       "rationale": [
@@ -11320,7 +11585,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -11347,7 +11612,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/qdrant.tech",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/qdrant.tech"
       },
       "rationale": [
@@ -11373,7 +11638,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -11400,7 +11665,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://bb.wd3.myworkdayjobs.com/BlackBerry",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://bb.wd3.myworkdayjobs.com/BlackBerry"
       },
       "rationale": [
@@ -11426,7 +11691,7 @@
       },
       "total": 84,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -11453,7 +11718,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.qualtrics.com/careers/us/en",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.qualtrics.com/careers/"
       },
       "rationale": [
@@ -11479,7 +11744,7 @@
       },
       "total": 91,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -11497,7 +11762,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/quantexa",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/quantexa"
       },
       "rationale": [
@@ -11523,7 +11788,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -11562,7 +11827,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/qumulo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/qumulo"
       },
       "rationale": [
@@ -11589,7 +11854,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -11619,7 +11884,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.reaktor.com/ja-jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.reaktor.com/ja-jp/careers"
       },
       "rationale": [
@@ -11643,8 +11908,8 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -11659,6 +11924,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -11666,7 +11938,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/recordedfuture",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/recordedfuture"
       },
       "rationale": [
@@ -11690,7 +11962,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -11717,7 +11989,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/replit",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/replit"
       },
       "rationale": [
@@ -11743,7 +12015,7 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -11770,7 +12042,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/rescale",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/rescale"
       },
       "rationale": [
@@ -11796,7 +12068,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -11815,7 +12087,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://retool.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://retool.com/careers"
       },
       "rationale": [
@@ -11842,7 +12114,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -11861,7 +12133,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.rippling.com/en-AU/careers/open-roles",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.rippling.com/en-AU/careers/open-roles"
       },
       "rationale": [
@@ -11888,7 +12160,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -11924,7 +12196,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://rocket.wd5.myworkdayjobs.com/rocket_careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://rocket.wd5.myworkdayjobs.com/rocket_careers"
       },
       "rationale": [
@@ -11950,7 +12222,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -11989,7 +12261,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/rogo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/rogo"
       },
       "rationale": [
@@ -12016,8 +12288,8 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -12032,6 +12304,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 98,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -12039,7 +12318,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.rokt.com/jp/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.rokt.com/jp/company/careers"
       },
       "rationale": [
@@ -12063,7 +12342,7 @@
       },
       "total": 92,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -12090,7 +12369,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://www.rubrik.com/company/careers/departments/sales",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.rubrik.com/company/careers/departments/sales"
       },
       "rationale": [
@@ -12116,7 +12395,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -12143,7 +12422,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/runpod/e3a0f565-dde7-4b3d-8ede-b582cd068f8c",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/runpod/e3a0f565-dde7-4b3d-8ede-b582cd068f8c"
       },
       "rationale": [
@@ -12169,7 +12448,7 @@
       },
       "total": 85,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -12187,7 +12466,7 @@
         "status": 404,
         "category": "ended",
         "finalUrl": "https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/runway-ml/5d5a91ae-b091-425c-96b5-2d4a88d0c796"
       },
       "rationale": [
@@ -12214,7 +12493,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -12232,7 +12511,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/rzr",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/rzr"
       },
       "rationale": [
@@ -12258,7 +12537,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -12294,7 +12573,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Strategic-Account-Executive--Agentic-Technologies-Specialist--Japan_R013034-1",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://sailpoint.wd1.myworkdayjobs.com/en-US/SailPoint/job/Strategic-Account-Executive--Agentic-Technologies-Specialist--Japan_R013034-1"
       },
       "rationale": [
@@ -12320,7 +12599,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -12356,7 +12635,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/saviynt?department=Sales",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/saviynt?department=Sales"
       },
       "rationale": [
@@ -12382,8 +12661,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -12402,6 +12681,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -12409,7 +12697,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/sayari",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/sayari"
       },
       "rationale": [
@@ -12435,7 +12723,7 @@
       },
       "total": 74,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -12474,7 +12762,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.scandit.com/jp/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.scandit.com/jp/careers/"
       },
       "rationale": [
@@ -12501,7 +12789,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -12524,7 +12812,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.schrodinger.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.schrodinger.com/company/careers/"
       },
       "rationale": [
@@ -12548,7 +12836,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -12566,7 +12854,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/securityscorecard/jobs/8167848",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/securityscorecard/jobs/8167848"
       },
       "rationale": [
@@ -12592,7 +12880,7 @@
       },
       "total": 91,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -12610,7 +12898,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sensortower.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://sensortower.com/careers"
       },
       "rationale": [
@@ -12636,7 +12924,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -12675,7 +12963,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sentry",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/sentry"
       },
       "rationale": [
@@ -12702,7 +12990,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -12738,7 +13026,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/shieldai?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/shieldai?location=Tokyo"
       },
       "rationale": [
@@ -12764,8 +13052,8 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -12786,6 +13074,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 76,
+          "verdict": "比較対象",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -12793,7 +13091,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.shift-technology.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.shift-technology.com/careers"
       },
       "rationale": [
@@ -12820,7 +13118,7 @@
       },
       "total": 92,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -12845,7 +13143,7 @@
         "status": 410,
         "category": "ended",
         "finalUrl": "https://www.shopify.com/careers/product-partnerships-lead_d9993b7d-d973-409c-9da3-0c8d48cff776",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.shopify.com/careers/product-partnerships-lead_d9993b7d-d973-409c-9da3-0c8d48cff776"
       },
       "rationale": [
@@ -12871,7 +13169,7 @@
       },
       "total": 74,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -12910,7 +13208,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sierra.ai/jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://sierra.ai/jp/careers"
       },
       "rationale": [
@@ -12937,7 +13235,7 @@
       },
       "total": 80,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -12955,7 +13253,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/similarweb",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/similarweb"
       },
       "rationale": [
@@ -12981,7 +13279,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -12999,7 +13297,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.jobvite.com/support/job-seeker-support?invalid=1",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.jobvite.com/sitecore/"
       },
       "rationale": [
@@ -13025,7 +13323,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -13067,7 +13365,7 @@
         "status": 403,
         "category": "blocked",
         "finalUrl": "https://6sense.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://6sense.com/careers/"
       },
       "rationale": [
@@ -13095,7 +13393,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -13131,7 +13429,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/skydio/9e21861e-a035-4283-8e85-42a22908af8c",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/skydio/9e21861e-a035-4283-8e85-42a22908af8c"
       },
       "rationale": [
@@ -13157,8 +13455,8 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -13177,6 +13475,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 93,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -13184,7 +13491,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://solace.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://solace.com/careers/"
       },
       "rationale": [
@@ -13210,7 +13517,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -13237,7 +13544,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/solveintelligence",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/solveintelligence"
       },
       "rationale": [
@@ -13263,7 +13570,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -13286,7 +13593,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sonarsource",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/sonarsource"
       },
       "rationale": [
@@ -13310,7 +13617,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -13329,7 +13636,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sonatype",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/sonatype"
       },
       "rationale": [
@@ -13356,7 +13663,7 @@
       },
       "total": 95,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -13374,7 +13681,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/sparta-commodities/d1904eef-6762-4fe1-af9f-8a07235a9797"
       },
       "rationale": [
@@ -13400,7 +13707,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -13436,7 +13743,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.speak.com/jp/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.speak.com/jp/careers"
       },
       "rationale": [
@@ -13462,7 +13769,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -13492,7 +13799,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://sprinklr.wd1.myworkdayjobs.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://sprinklr.wd1.myworkdayjobs.com/careers"
       },
       "rationale": [
@@ -13516,8 +13823,8 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -13536,6 +13843,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 90,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -13543,7 +13859,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/sprout-ai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/sprout-ai"
       },
       "rationale": [
@@ -13569,7 +13885,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -13596,7 +13912,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/stackadapt",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/stackadapt"
       },
       "rationale": [
@@ -13622,7 +13938,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -13649,7 +13965,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://streamhub.breezy.hr/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://streamhub.breezy.hr/"
       },
       "rationale": [
@@ -13675,7 +13991,7 @@
       },
       "total": 76,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -13694,7 +14010,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/substack",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/substack"
       },
       "rationale": [
@@ -13721,7 +14037,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -13740,7 +14056,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://supabase.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://supabase.com/careers"
       },
       "rationale": [
@@ -13767,7 +14083,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -13797,7 +14113,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://suse.wd3.myworkdayjobs.com/jobsatsuse",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://suse.wd3.myworkdayjobs.com/jobsatsuse"
       },
       "rationale": [
@@ -13821,7 +14137,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -13860,7 +14176,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.synthesia.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.synthesia.io/careers"
       },
       "rationale": [
@@ -13887,8 +14203,8 @@
       },
       "total": 77,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -13907,6 +14223,15 @@
           "contrary": [
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 77,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -13914,7 +14239,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/sysdig?department=Sales",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/sysdig?department=Sales"
       },
       "rationale": [
@@ -13940,7 +14265,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -13969,7 +14294,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tailscale.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://tailscale.com/careers"
       },
       "rationale": [
@@ -13996,7 +14321,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -14025,7 +14350,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/tanium",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/tanium"
       },
       "rationale": [
@@ -14052,7 +14377,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -14070,7 +14395,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/teamworks",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/teamworks"
       },
       "rationale": [
@@ -14096,7 +14421,7 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -14114,7 +14439,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/telnyx54",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/telnyx54"
       },
       "rationale": [
@@ -14140,7 +14465,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -14179,7 +14504,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://temporal.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://temporal.io/careers"
       },
       "rationale": [
@@ -14206,7 +14531,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -14245,7 +14570,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/tenableinc",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/tenableinc"
       },
       "rationale": [
@@ -14272,8 +14597,8 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -14292,6 +14617,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 90,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -14299,7 +14633,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.eu.greenhouse.io/think-cell/jobs/4953129101",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.eu.greenhouse.io/think-cell/jobs/4953129101"
       },
       "rationale": [
@@ -14325,7 +14659,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -14354,7 +14688,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.tines.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.tines.com/careers/"
       },
       "rationale": [
@@ -14381,7 +14715,7 @@
       },
       "total": 74,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -14420,7 +14754,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/Tools%20for%20Humanity",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/Tools%20for%20Humanity"
       },
       "rationale": [
@@ -14447,7 +14781,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -14466,7 +14800,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/torq",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/torq"
       },
       "rationale": [
@@ -14493,7 +14827,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -14512,7 +14846,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/tradinghub",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/tradinghub"
       },
       "rationale": [
@@ -14539,7 +14873,7 @@
       },
       "total": 96,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -14569,7 +14903,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://tricentis.wd1.myworkdayjobs.com/Tricentis_Careers"
       },
       "rationale": [
@@ -14593,7 +14927,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -14629,7 +14963,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://tulip.co/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://tulip.co/careers/"
       },
       "rationale": [
@@ -14655,8 +14989,8 @@
       },
       "total": 98,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-08",
@@ -14671,6 +15005,13 @@
           "verdict": "残留",
           "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
           "contrary": []
+        },
+        {
+          "date": "2026-11-20",
+          "score": 98,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": []
         }
       ],
       "urlCheck": {
@@ -14678,7 +15019,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/twilio",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/twilio"
       },
       "rationale": [
@@ -14702,7 +15043,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -14729,7 +15070,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.ui.com/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.ui.com/"
       },
       "rationale": [
@@ -14755,7 +15096,7 @@
       },
       "total": 88,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -14778,7 +15119,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.uipath.com/careers/jobs",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.uipath.com/careers/jobs"
       },
       "rationale": [
@@ -14802,7 +15143,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": null,
       "deepReviewHistory": [],
       "urlCheck": {
@@ -14810,7 +15151,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.vanta.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.vanta.com/careers"
       },
       "rationale": [
@@ -14837,7 +15178,7 @@
       },
       "total": 83,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -14856,7 +15197,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.vastdata.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.vastdata.com/careers"
       },
       "rationale": [
@@ -14883,7 +15224,7 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -14919,7 +15260,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.vectra.ai/about/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.vectra.ai/about/careers"
       },
       "rationale": [
@@ -14945,7 +15286,7 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -14984,7 +15325,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://careers.veeam.com/en/search-jobs",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://careers.veeam.com/en/search-jobs"
       },
       "rationale": [
@@ -15011,8 +15352,8 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -15033,6 +15374,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 79,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -15040,7 +15391,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://vercel.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://vercel.com/careers"
       },
       "rationale": [
@@ -15067,7 +15418,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -15090,7 +15441,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.verkada.com/jp/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.verkada.com/jp/careers/"
       },
       "rationale": [
@@ -15114,7 +15465,7 @@
       },
       "total": 89,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -15141,7 +15492,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://ridewithvia.com/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://ridewithvia.com/careers/"
       },
       "rationale": [
@@ -15167,7 +15518,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-10",
       "deepReviewHistory": [
         {
@@ -15186,7 +15537,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/vizcom",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/vizcom"
       },
       "rationale": [
@@ -15213,7 +15564,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -15231,7 +15582,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/vonage/jobs/8528707002",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/vonage/jobs/8528707002"
       },
       "rationale": [
@@ -15257,7 +15608,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -15289,7 +15640,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/walkme?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/walkme?location=Tokyo"
       },
       "rationale": [
@@ -15313,7 +15664,7 @@
       },
       "total": 78,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -15362,7 +15713,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://wasabi.com/company/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://wasabi.com/company/careers"
       },
       "rationale": [
@@ -15389,8 +15740,8 @@
       },
       "total": 75,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-07",
@@ -15411,6 +15762,16 @@
             "国内の正確な在籍人数は未確認",
             "現行求人がないことだけでは除外しない"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 75,
+          "verdict": "比較対象",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認",
+            "現行求人がないことだけでは除外しない"
+          ]
         }
       ],
       "urlCheck": {
@@ -15418,7 +15779,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/watchguard?team=Sales",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/watchguard?team=Sales"
       },
       "rationale": [
@@ -15445,7 +15806,7 @@
       },
       "total": 76,
       "confidence": "探索中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -15476,7 +15837,7 @@
         "status": 0,
         "category": "error",
         "finalUrl": "https://webflow.com/company/careers/roles",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://webflow.com/company/careers/roles",
         "error": "fetch failed"
       },
@@ -15505,7 +15866,7 @@
       },
       "total": 93,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -15523,7 +15884,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.weka.io/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.weka.io/careers"
       },
       "rationale": [
@@ -15549,7 +15910,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -15567,7 +15928,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/whatnot",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/whatnot"
       },
       "rationale": [
@@ -15593,7 +15954,7 @@
       },
       "total": 78,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -15622,7 +15983,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/witnessai",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/witnessai"
       },
       "rationale": [
@@ -15649,7 +16010,7 @@
       },
       "total": 89,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -15676,7 +16037,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.wiz.io/careers/not-found",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.wiz.io/careers/job/4650055006/mid-market-account-executive-japan"
       },
       "rationale": [
@@ -15702,7 +16063,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -15738,7 +16099,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.workato.com/careers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.workato.com/careers"
       },
       "rationale": [
@@ -15764,8 +16125,8 @@
       },
       "total": 94,
       "confidence": "中",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -15784,6 +16145,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 94,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -15791,7 +16161,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/Account-Executive_R10985",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/Account-Executive_R10985"
       },
       "rationale": [
@@ -15817,7 +16187,7 @@
       },
       "total": 94,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-14",
       "deepReviewHistory": [
         {
@@ -15844,7 +16214,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://job-boards.greenhouse.io/wrike",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://job-boards.greenhouse.io/wrike"
       },
       "rationale": [
@@ -15870,7 +16240,7 @@
       },
       "total": 76,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-15",
       "deepReviewHistory": [
         {
@@ -15899,7 +16269,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://writer.com/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://writer.com/company/careers/"
       },
       "rationale": [
@@ -15926,7 +16296,7 @@
       },
       "total": 79,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-09",
       "deepReviewHistory": [
         {
@@ -15945,7 +16315,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.ashbyhq.com/xbowcareers",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.ashbyhq.com/xbowcareers"
       },
       "rationale": [
@@ -15972,7 +16342,7 @@
       },
       "total": 86,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-17",
       "deepReviewHistory": [
         {
@@ -15999,7 +16369,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/Zadara?location=Tokyo",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/Zadara?location=Tokyo"
       },
       "rationale": [
@@ -16025,7 +16395,7 @@
       },
       "total": 96,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-18",
       "deepReviewHistory": [
         {
@@ -16048,7 +16418,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://www.zendesk.co.jp/company/careers/",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://www.zendesk.co.jp/careers"
       },
       "rationale": [
@@ -16072,7 +16442,7 @@
       },
       "total": 90,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
+      "evidenceCheckedAt": "2026-11-20",
       "lastDeepReviewAt": "2026-11-19",
       "deepReviewHistory": [
         {
@@ -16108,7 +16478,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/zilliz",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/zilliz"
       },
       "rationale": [
@@ -16134,8 +16504,8 @@
       },
       "total": 92,
       "confidence": "高",
-      "evidenceCheckedAt": "2026-11-19",
-      "lastDeepReviewAt": "2026-11-13",
+      "evidenceCheckedAt": "2026-11-20",
+      "lastDeepReviewAt": "2026-11-20",
       "deepReviewHistory": [
         {
           "date": "2026-11-06",
@@ -16154,6 +16524,15 @@
           "contrary": [
             "国内の正確な在籍人数は未確認"
           ]
+        },
+        {
+          "date": "2026-11-20",
+          "score": 92,
+          "verdict": "残留",
+          "evidence": "保存済み公式情報、企業ページ構造、現行Career・ATSの後継URLを含む応答、国内規模の保存値を同一基準で日次深掘り確認。",
+          "contrary": [
+            "国内の正確な在籍人数は未確認"
+          ]
         }
       ],
       "urlCheck": {
@@ -16161,7 +16540,7 @@
         "status": 200,
         "category": "active",
         "finalUrl": "https://jobs.lever.co/zimperium",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "requestedUrl": "https://jobs.lever.co/zimperium"
       },
       "rationale": [
@@ -16439,15 +16818,13 @@
     }
   ],
   "notification": {
-    "date": "2026-11-19",
+    "date": "2026-11-20",
     "type": "no-change",
     "status": "sent",
-    "sentAt": "2026-11-19T10:50:00+09:00",
-    "changeId": "2026-11-19-no-change",
+    "sentAt": "2026-11-20T10:39:26+09:00",
+    "changeId": "2026-11-20-no-change",
     "additions": [],
     "removals": [],
-    "failureReason": null,
-    "kitBroadcastId": 27151078,
-    "recipient": "js@genbajapan.com"
+    "failureReason": null
   }
 }
