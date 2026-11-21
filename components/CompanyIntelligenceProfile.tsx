@@ -830,15 +830,18 @@ export default function CompanyIntelligenceProfile({
         </Container>
       </section>
 
-      <div className="dossier-nav-wrap">
-        <Container>
-          <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} showDecision={showDecisionSection} />
-        </Container>
-      </div>
+      {!companyStory && (
+        <div className="dossier-nav-wrap">
+          <Container>
+            <DossierNav companyName={company.name} isPreEntry={isPreEntry} hasPlaybook={Boolean(publicIntel)} hasAeInterviewHypotheses={Boolean(publicIntel?.aeInterviewHypotheses)} showDecision={showDecisionSection} />
+          </Container>
+        </div>
+      )}
 
       {companyStory && <CompanyStoryPrimer story={companyStory} jobs={companyJobs} />}
 
-      <section className="content-section company-intelligence-section">
+      {!companyStory && (
+        <section className="content-section company-intelligence-section">
         <Container className="company-intelligence-layout">
           <main className="company-intelligence-main">
             <section className="intel-section" id="overview">
@@ -1732,7 +1735,8 @@ export default function CompanyIntelligenceProfile({
             </section>
           </main>
         </Container>
-      </section>
+        </section>
+      )}
 
       <CompanyImprovementRequest companyName={company.name} companySlug={company.slug} />
     </>

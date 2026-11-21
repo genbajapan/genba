@@ -103,150 +103,16 @@ export default function CompanyStoryPrimer({ story, jobs }: { story: CompanyStor
                 ))}
               </div>
               <p className="company-quick-jobs-note">{story.quickRead.otherJobs.summary} <SourceLink source={story.quickRead.otherJobs.source} /></p>
-              <a className="company-quick-jobs-all" href="#roles">求人の詳細と応募前の確認点を見る ↓</a>
+              <a className="company-quick-jobs-all" href={story.quickRead.otherJobs.source.url} target="_blank" rel="noreferrer">ElevenLabsの全求人を公式で見る ↗</a>
             </article>
           </div>
 
           <footer className="company-quick-read-foot">
             <span>ここまでで約3分</span>
-            <p>さらに知りたい人は、創業ストーリー、製品構造、働き方の根拠へ。</p>
+            <p>創業・規模・日本組織・製品・求人を、このページ内で完結。</p>
             <time dateTime={story.verifiedAt}>最終確認 {story.verifiedAt.replaceAll("-", ".")}</time>
           </footer>
         </section>
-
-        <div className="company-story-deep-dive-heading">
-          <span>DEEP DIVE / OPTIONAL</span>
-          <strong>ここから先は、気になる論点だけ深掘り。</strong>
-        </div>
-
-        <section className="company-story-block company-story-origin" aria-labelledby="company-origin-title">
-          <div className="company-story-section-heading">
-            <div><span>01</span><p>FOUNDING STORY</p></div>
-            <h3 id="company-origin-title">なぜ、この会社が生まれたのか。</h3>
-          </div>
-          <figure className="company-origin-comic">
-            <div className="company-origin-comic-image">
-              <img
-                src={story.originImage.src}
-                alt={story.originImage.alt}
-                width="1536"
-                height="1024"
-                loading="lazy"
-              />
-              <span>GENBA EDITORIAL RECONSTRUCTION</span>
-            </div>
-            <figcaption>
-              <strong>これは実際の場面の記録ではありません。</strong>
-              公式に確認できる創業背景を、流れが伝わるようGenbaが4コマに再構成した編集図解です。人物は実在の創業者を描いたものではありません。
-            </figcaption>
-          </figure>
-          <div className="company-origin-beats">
-            {story.origin.map((item, index) => (
-              <article key={item.title}>
-                <div className="company-origin-beat-number">{String(index + 1).padStart(2, "0")}</div>
-                <div>
-                  <small>{item.marker}</small>
-                  <h4>{item.title}</h4>
-                  <p>{item.body}</p>
-                  <SourceLink source={item.source} />
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="company-story-block company-story-products" aria-labelledby="company-products-title">
-          <div className="company-story-section-heading">
-            <div><span>02</span><p>PRODUCT ESSENCE</p></div>
-            <h3 id="company-products-title">3つの製品ではなく、1つの音声基盤を3方向へ届ける。</h3>
-          </div>
-          <div className="company-product-system" aria-label="音声・言語・会話の基盤モデルを、ElevenCreative、ElevenAPI、ElevenAgentsの3製品群として提供する構造図">
-            <div className="company-product-core">
-              <span>共通する技術の核</span>
-              <strong>音声・言語・会話の基盤モデル</strong>
-              <p>声の自然さ、話者らしさ、多言語、低遅延、安全性</p>
-            </div>
-            <div className="company-product-connector" aria-hidden="true"><i /><i /><i /></div>
-            <div className="company-product-lanes">
-              {story.productSystem.map((product, index) => (
-                <article className={`company-product-lane company-product-lane-${index + 1}`} key={product.name}>
-                  <div className="company-product-brand-motif" aria-hidden="true"><i /><i /><i /></div>
-                  <span>0{index + 1} / {product.audience}</span>
-                  <h4>{product.name}</h4>
-                  <p>{product.job}</p>
-                  <strong>{product.outcome}</strong>
-                  <SourceLink source={product.source} />
-                </article>
-              ))}
-            </div>
-          </div>
-          <p className="company-product-brand-note">製品別の色とモチーフは、<SourceLink source={story.brandGuide} />に基づく編集表現です。GenbaはElevenLabsの公式サイトではありません。</p>
-        </section>
-
-        <section className="company-story-block company-story-direction" aria-labelledby="company-direction-title">
-          <div className="company-story-section-heading">
-            <div><span>03</span><p>WHERE IT IS GOING</p></div>
-            <h3 id="company-direction-title">この先、何になろうとしているのか。</h3>
-          </div>
-          <div className="company-story-direction-grid">
-            <article>
-              <span className="company-story-evidence-label">公式が示す方向</span>
-              <p>{story.direction.official}</p>
-              <SourceLink source={story.direction.source} />
-            </article>
-            <article>
-              <span className="company-story-analysis-label">Genbaの見立て</span>
-              <p>{story.direction.analysis}</p>
-              <small>公開情報からの編集分析であり、会社の公式見解ではありません。</small>
-            </article>
-          </div>
-        </section>
-
-        <section className="company-story-block company-story-japan" aria-labelledby="company-japan-title">
-          <div className="company-story-section-heading">
-            <div><span>04</span><p>WHY JAPAN MATTERS</p></div>
-            <h3 id="company-japan-title">日本では、何が始まっているのか。</h3>
-          </div>
-          <div className="company-story-japan-grid">
-            {story.japan.map((item) => (
-              <article key={item.title}>
-                <span>{item.label}</span>
-                <h4>{item.title}</h4>
-                <p>{item.body}</p>
-                <SourceLink source={item.source} />
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <details className="company-story-block company-story-culture" id="company-culture">
-          <summary>
-            <div><span>05</span><p>CULTURE, WITH EVIDENCE</p></div>
-            <h3 id="company-culture-title">働き方は、宣伝文句ではなく根拠ごとに確認する</h3>
-            <i aria-hidden="true">＋</i>
-          </summary>
-          <div className="company-story-culture-body" aria-labelledby="company-culture-title">
-            <div className="company-culture-evidence-grid">
-              <article className="company-culture-verified">
-                <span>公開情報で確認できる事実</span>
-                <ul>{story.culture.verified.map((item) => <li key={item}>{item}</li>)}</ul>
-              </article>
-              <article className="company-culture-stated">
-                <span>会社が掲げていること</span>
-                <ul>{story.culture.stated.map((item) => <li key={item}>{item}</li>)}</ul>
-                <small>実態を第三者が検証したものではなく、公式採用ページ上の説明です。</small>
-              </article>
-              <article className="company-culture-unknown">
-                <span>公開情報では分からないこと</span>
-                <ul>{story.culture.unknown.map((item) => <li key={item}>{item}</li>)}</ul>
-              </article>
-            </div>
-            <footer className="company-story-culture-source">
-              <SourceLink source={story.culture.source} />
-              <time dateTime={story.verifiedAt}>最終確認日 {story.verifiedAt.replaceAll("-", ".")}</time>
-            </footer>
-          </div>
-        </details>
       </Container>
     </section>
   );
