@@ -9,6 +9,37 @@ export type CompanyStoryPrimerData = {
   title: string;
   lead: string;
   memoryHook: string;
+  quickRead: {
+    origin: {
+      roots: string;
+      founded: string;
+      founders: string;
+      mission: string;
+      story: string;
+      source: CompanyStorySource;
+    };
+    scale: Array<{
+      value: string;
+      label: string;
+      detail: string;
+      source: CompanyStorySource;
+    }>;
+    japan: {
+      launched: string;
+      address: string;
+      leader: string;
+      leaderContext: string;
+      note: string;
+      source: CompanyStorySource;
+      leaderLink: CompanyStorySource;
+      peopleLink: CompanyStorySource;
+    };
+    featuredJobIds: string[];
+    otherJobs: {
+      summary: string;
+      source: CompanyStorySource;
+    };
+  };
   originImage: {
     src: string;
     alt: string;
@@ -22,6 +53,7 @@ export type CompanyStoryPrimerData = {
   productSystem: Array<{
     name: string;
     audience: string;
+    problem: string;
     job: string;
     outcome: string;
     source: CompanyStorySource;
@@ -53,6 +85,37 @@ const elevenLabsStory: CompanyStoryPrimerData = {
   title: "吹き替えへの\n違和感から始まった。\n人と技術の会話を\n作り直す会社。",
   lead: "ElevenLabsを単なる「AI音声生成ツール」と捉えると、いま何を目指している会社なのかを見誤ります。出発点は、言語が変わっても話者の声と感情を失わない吹き替え。その技術を、制作・開発・顧客対応へ広げています。",
   memoryHook: "「声を作る」から「人と技術の接点を作る」へ",
+  quickRead: {
+    origin: {
+      roots: "ポーランド発",
+      founded: "2022年創業",
+      founders: "Mati Staniszewski / Piotr Dabkowski",
+      mission: "人と技術の関わり方を変え、コミュニケーションと創作をシームレスにする。",
+      story: "ポーランドで海外作品を見て育った幼なじみ2人が、吹き替えで俳優の声と感情が失われる違和感から創業。2023年1月に人間らしい音声モデルを公開し、現在は制作・開発・顧客対応の3領域へ広げています。",
+      source: { label: "公式About", url: "https://elevenlabs.io/about" },
+    },
+    scale: [
+      { value: "530人", label: "全社人員", detail: "2026年5月の公式発表時点", source: { label: "公式成長発表", url: "https://elevenlabs.io/blog/500m-arr-and-new-investors" } },
+      { value: "50カ国超", label: "メンバー所在国", detail: "公式採用ページの説明", source: { label: "公式採用ページ", url: "https://elevenlabs.io/careers" } },
+      { value: "$500M+", label: "ARR", detail: "2026年4月到達。売上高とは異なる", source: { label: "公式成長発表", url: "https://elevenlabs.io/blog/500m-arr-and-new-investors" } },
+      { value: "$22B", label: "評価額", detail: "2026年9月の最終評価額", source: { label: "公式About", url: "https://elevenlabs.io/about" } },
+    ],
+    japan: {
+      launched: "2025年4月14日",
+      address: "東京都千代田区丸の内1-6-5",
+      leader: "田村 元（Hajime Jim Tamura）氏",
+      leaderContext: "日本・韓国 General Manager。日本法人は同社初の海外子会社として設立。公開情報で国内人数は確認できません。",
+      note: "LinkedInの公開プロフィールは変動するため、人数を固定表示せず、在籍者と責任者をその場で確認できる導線にしています。",
+      source: { label: "日本法人設立の公式発表", url: "https://elevenlabs.io/blog/elevenlabs-establishes-japanese-subsidiary-elevenlabs-gk" },
+      leaderLink: { label: "田村氏をLinkedInで確認", url: "https://www.linkedin.com/search/results/people/?keywords=Hajime%20Tamura%20ElevenLabs" },
+      peopleLink: { label: "日本の在籍者をLinkedInで探す", url: "https://www.linkedin.com/search/results/people/?keywords=ElevenLabs%20Japan" },
+    },
+    featuredJobIds: ["elevenlabs-japan-sales-development", "elevenlabs-japan-account-manager"],
+    otherJobs: {
+      summary: "このほか、日本をsecondary locationに含むグローバル職として、Transcription / Subtitling Specialist、Marketplace Operations、Offline Media Buyerの3件を確認。日本専任ではないため上の件数には含めていません。",
+      source: { label: "全求人を公式採用ページで確認", url: "https://elevenlabs.io/careers" },
+    },
+  },
   originImage: {
     src: "/images/companies/elevenlabs/founding-story-four-panel.jpg",
     alt: "ポーランドで吹き替えへの違和感を覚え、問いを立て、人間らしい音声技術を開発し、制作・開発・会話へ広げるまでを描いた4コマの編集図解",
@@ -87,6 +150,7 @@ const elevenLabsStory: CompanyStoryPrimerData = {
     {
       name: "ElevenCreative",
       audience: "制作者・マーケター",
+      problem: "収録・吹き替え・多言語展開に、時間と費用がかかる",
       job: "音声、音楽、効果音、動画を作り、多言語化する",
       outcome: "制作と海外展開を速くする",
       source: { label: "公式説明", url: "https://elevenlabs.io/about" },
@@ -94,6 +158,7 @@ const elevenLabsStory: CompanyStoryPrimerData = {
     {
       name: "ElevenAPI",
       audience: "開発者・プロダクト組織",
+      problem: "自然な音声を、自社製品へ低遅延で組み込みにくい",
       job: "低遅延の音声モデルを、製品や業務へ組み込む",
       outcome: "音声体験を自社製品の一部にする",
       source: { label: "開発者向け概要", url: "https://elevenlabs.io/docs/overview/intro/" },
@@ -101,6 +166,7 @@ const elevenLabsStory: CompanyStoryPrimerData = {
     {
       name: "ElevenAgents",
       audience: "顧客対応・業務部門",
+      problem: "顧客対応を24時間・多言語化すると、品質と運用が崩れる",
       job: "電話やチャットで、知識と業務ツールを使って会話する",
       outcome: "会話を業務の完了までつなぐ",
       source: { label: "ElevenAgents概要", url: "https://elevenlabs.io/docs/eleven-agents/overview/" },
@@ -145,7 +211,7 @@ const elevenLabsStory: CompanyStoryPrimerData = {
     source: { label: "公式採用ページ", url: "https://elevenlabs.io/careers" },
   },
   brandGuide: { label: "ElevenLabs公式ブランドガイド", url: "https://elevenlabs.io/brand" },
-  verifiedAt: "2026-11-03",
+  verifiedAt: "2026-11-21",
 };
 
 const companyStories: Record<string, CompanyStoryPrimerData> = {

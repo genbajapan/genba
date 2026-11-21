@@ -8682,9 +8682,9 @@ const notionIntelligence: CompanyPublicIntelligence = {
 };
 
 const elevenLabsSources: ResearchSource[] = [
-  { id: "eleven-careers", label: "ElevenLabs Careers", url: "https://elevenlabs.io/careers", kind: "企業公式", scope: "組織・働き方・採用一覧", checkedAt: "2026-08-11" },
-  { id: "eleven-job-ae", label: "Account Executive, Japan", url: "https://jobs.ashbyhq.com/elevenlabs/ac7cc39a-a58b-4ef2-961a-ca16e060a361", kind: "企業公式", scope: "日本AEの職務・要件", checkedAt: "2026-08-11" },
-  { id: "eleven-job-am", label: "Account Manager, Japan", url: "https://jobs.ashbyhq.com/elevenlabs/15eb4b53-fdd8-49e6-8c7c-0951f6e40b99", kind: "企業公式", scope: "日本AMの職務・要件", checkedAt: "2026-08-11" },
+  { id: "eleven-careers", label: "ElevenLabs Careers", url: "https://elevenlabs.io/careers", kind: "企業公式", scope: "組織・働き方・採用一覧", checkedAt: "2026-11-21" },
+  { id: "eleven-job-sdr", label: "Sales Development - Japan", url: "https://jobs.ashbyhq.com/ElevenLabs/5db6aeaa-1074-41cd-8f2c-10ccfac73918", kind: "企業公式", scope: "日本Sales Developmentの職務・要件", checkedAt: "2026-11-21" },
+  { id: "eleven-job-am", label: "Account Manager - Japan", url: "https://jobs.ashbyhq.com/ElevenLabs/15eb4b53-fdd8-49e6-8c7c-0951f6e40b99", kind: "企業公式", scope: "日本AMの職務・要件", checkedAt: "2026-11-21" },
   { id: "eleven-japan", label: "ElevenLabs日本法人設立", url: "https://elevenlabs.io/blog/elevenlabs-establishes-japanese-subsidiary-elevenlabs-gk", kind: "企業公式", scope: "日本法人・責任者・国内協業", checkedAt: "2026-08-11" },
   { id: "eleven-series-d", label: "ElevenLabs Series D", url: "https://elevenlabs.io/blog/series-d", kind: "企業公式", scope: "資金調達・評価額・ARR", checkedAt: "2026-08-11" },
   { id: "eleven-arr", label: "$500M ARR and new investors", url: "https://elevenlabs.io/blog/500m-arr-and-new-investors", kind: "企業公式", scope: "最新ARR・成長", checkedAt: "2026-08-11" },
@@ -8700,20 +8700,21 @@ const elevenLabsSources: ResearchSource[] = [
 ];
 
 const elevenLabsIntelligence: CompanyPublicIntelligence = {
-  researchedAt: "2026-08-11",
+  researchedAt: "2026-11-21",
   hiddenSections: ["decision"],
   salesSnapshot: "ElevenLabsは、メディア、ゲーム、教育、顧客対応などの企業が、高品質なAI音声を多言語のコンテンツや会話型エージェントへ組み込むための音声AI基盤。「収録や吹き替えに時間と費用がかかる」「言語や話者を増やしてグローバル展開できない」「顧客対応を自動化すると会話品質が落ちる」といった課題を解決する。音声デモの分かりやすさを入口に、制作工程、海外展開、コンタクトセンターの本番業務へ提案を広げ、技術、事業、権利管理を横断できる点が、営業としての面白さ。",
   marketStatus: {
     isPublic: false,
-    growthSummary: "ElevenLabsは2023年に製品を公開した非公開AI企業。2025年末ARR 3.5億ドルから2026年最初の4カ月で5億ドル超へ伸び、2026年2月のSeries Dでは5億ドルを調達し評価額110億ドル。製品は音声生成・認識・cloning・dubbingから、会話型agentとAPI platformへ広がる。日本では2025年4月に初の海外子会社を東京へ設立し、2026年8月時点でAEとAMを採用している。",
+    growthSummary: "ElevenLabsは2023年に製品を公開した非公開AI企業。2025年末ARR 3.5億ドルから2026年最初の4カ月で5億ドル超へ伸び、2026年9月時点の最終評価額は220億ドル。製品はElevenCreative、ElevenAPI、ElevenAgentsの3基盤へ広がる。日本では2025年4月に初の海外子会社を東京へ設立し、2026年11月21日時点でSales DevelopmentとAccount Managerを採用している。",
     ipoOutlookSummary: "IPOの時期・計画は公式には確認できない。高い評価額と急成長はequityの魅力になりうる一方、非公開株の行使価格、希薄化、流動性、税務を分けて確認する必要がある。",
-    genbaVerdict: { headline: "超高速成長のVoice AIを、日本でPoCから本番利用と拡張へ変える局面。", body: "ARR 5億ドル超、300万超のvoice agent、Fortune 500企業の75%超で従業員利用というglobal signalは強い。日本でも法人・責任者・TBS事例・権利保護partner・2営業求人を確認できる。一方、日本のARR、顧客数、quota達成率、agentの本番KPIは非公開。AEはself-source、AMはagent設計とNRRまで負い、成長市場でも役割の広さと実装負荷を見極める必要がある。" },
+    genbaVerdict: { headline: "超高速成長のVoice AIを、日本で市場開拓から本番利用・拡張へつなぐ局面。", body: "ARR 5億ドル超、300万超のvoice agent、Fortune 500企業の75%超で従業員利用というglobal signalは強い。日本でも法人・責任者・TBS事例・権利保護partner・2営業求人を確認できる。一方、日本のARR、顧客数、quota達成率、agentの本番KPIは非公開。Sales Developmentは新市場のアウトバウンド、AMはagent設計とNRRまで負い、役割の広さと支援体制を見極める必要がある。" },
     milestones: [
       { year: "2023", label: "製品を公開", detail: "AI voice platformを立ち上げ、text-to-speechとvoice cloningから利用を拡大。", sourceId: "eleven-series-d" },
       { year: "2025", label: "日本法人を設立", detail: "4月に東京で初の海外子会社ElevenLabs Japan合同会社を設立。", sourceId: "eleven-japan" },
       { year: "2025年末", label: "ARR 3.5億ドル", detail: "公式発表で2025年末ARRを3.5億ドルと更新。", sourceId: "eleven-arr" },
       { year: "2026年2月", label: "Series D / $11B評価", detail: "5億ドルを調達し、評価額110億ドル。", sourceId: "eleven-series-d" },
       { year: "2026年4月", label: "ARR 5億ドル超", detail: "2026年最初の4カ月でARR 5億ドルを突破。", sourceId: "eleven-arr" },
+      { year: "2026年9月", label: "最終評価額 $22B", detail: "公式採用情報で最終評価額220億ドル、累計調達額7.81億ドルと説明。", sourceId: "eleven-careers" },
     ],
     growthDrivers: [
       { title: "ARRの急拡大とEnterprise利用", body: "2025年末ARR 3.5億ドルから4カ月で5億ドル超へ成長。300万超のvoice agentとFortune 500企業の75%超での従業員利用を公式に掲げ、developer/self-serveからEnterpriseまで入口が広い。", sourceId: "eleven-arr" },
@@ -8721,20 +8722,20 @@ const elevenLabsIntelligence: CompanyPublicIntelligence = {
       { title: "日本法人とlocal ecosystem", body: "東京法人をAsia hubとして設立し、TBS、DOCOMO Innovations、MBC C&I、LLSOLLUとの協業を公表。AILASとはvoice IDとconsentを組み合わせ、音声権利への国内懸念にも対応する。", sourceId: "eleven-japan" },
     ],
     japanGrowth: {
-      headline: "初の海外子会社を東京に置き、新規獲得と既存拡張を同時採用。",
-      narrative: "2025年4月、ElevenLabsは初の海外子会社としてElevenLabs Japan合同会社を東京に設立し、日本・韓国GMに田村元氏を任命。TBSのKASSOで多言語dubbingを支援し、DOCOMO Innovationsによる技術評価、AILASとの音声ID・consent連携を公表した。2026年8月にはAEとAMを採用し、新規logoと既存顧客のagent設計・NRRを並行して強化している。ただし日本のARR、顧客数、production agent数、従業員数は非公開で、国内の成長率は断定しない。",
+      headline: "初の海外子会社を東京に置き、市場開拓と既存拡張を同時採用。",
+      narrative: "2025年4月、ElevenLabsは初の海外子会社としてElevenLabs Japan合同会社を東京に設立し、日本・韓国GMに田村元氏を任命。TBSのKASSOで多言語dubbingを支援し、DOCOMO Innovationsによる技術評価、AILASとの音声ID・consent連携を公表した。2026年11月にはSales DevelopmentとAccount Managerを公開採用し、アウトバウンドの仕組み化と既存顧客のagent設計・NRRを並行して強化している。ただし日本のARR、顧客数、production agent数、従業員数は非公開で、国内の成長率は断定しない。",
       qualitativeSignals: [
         { label: "2025年4月に日本法人", detail: "初の海外子会社を東京へ設立し、Asia expansionのhubと位置づけ。", sourceId: "eleven-japan" },
         { label: "国内の商用・技術・安全性partner", detail: "TBS、DOCOMO Innovations、AILASとの取り組みを公式発表。", sourceId: "eleven-ailas" },
-        { label: "日本営業求人2件", detail: "新規AEと、agent設計・NRRを持つAMを公式APIで確認。", sourceId: "eleven-job-ae" },
+        { label: "日本専任求人2件", detail: "Sales Developmentと、agent設計・NRRを持つAMを公式APIで確認。", sourceId: "eleven-job-sdr" },
       ],
-      sourceIds: ["eleven-japan", "eleven-job-ae", "eleven-job-am", "eleven-ailas", "eleven-tbs"],
+      sourceIds: ["eleven-japan", "eleven-job-sdr", "eleven-job-am", "eleven-ailas", "eleven-tbs"],
     },
     riskHypotheses: [
-      { title: "超高速成長は、日本teamのrole幅とenablement負荷も大きくする", body: "AEはself-source、AMはagent設計・API連携・利用分析・NRRまで担当。製品とmodelの更新が速い中、日本のSolutions、Support、Legal、CS体制が不足すると個人へ負荷が集中する可能性がある。", confidence: "中", evidence: ["AEにself-sourced pipelineを要求", "AMにtechnical designとexpansion quotaを要求", "global headcountは500人超まで拡大"], counterSignal: "Series D資金とDeloitte等のpartnerはEnterprise deliveryを補強できる。", sourceIds: ["eleven-job-ae", "eleven-job-am", "eleven-headcount", "eleven-series-d", "eleven-deloitte"] },
+      { title: "超高速成長は、日本teamのrole幅とenablement負荷も大きくする", body: "Sales Developmentは新市場のアウトバウンド戦略とプロセス構築、AMはagent設計・API連携・利用分析・NRRまで担当。製品とmodelの更新が速い中、日本のSolutions、Support、Legal、CS体制が不足すると個人へ負荷が集中する可能性がある。", confidence: "中", evidence: ["Sales Developmentに新市場でのlead listとprocess構築を要求", "AMにtechnical designとexpansion quotaを要求", "global headcountは500人超まで拡大"], counterSignal: "Series D資金とDeloitte等のpartnerはEnterprise deliveryを補強できる。", sourceIds: ["eleven-job-sdr", "eleven-job-am", "eleven-headcount", "eleven-series-d", "eleven-deloitte"] },
       { title: "音声品質だけでなく権利・安全性・本番運用が購買条件になる", body: "voice cloningとagentは本人同意、なりすまし、data handling、失言、業務systemへの誤操作を伴う。デモ成功後もsecurity・legal・brand reviewで販売cycleが長くなる可能性がある。", confidence: "高", evidence: ["AILASとvoice ID・consentを連携", "AIUC-1で5,000 adversarial simulationとinsuranceを提供", "AM求人がconversation logとperformance監視を要求"], counterSignal: "権利保護とinsuranceを製品化している点は、規制懸念を競争力へ変える材料になる。", sourceIds: ["eleven-ailas", "eleven-aiuc", "eleven-job-am"] },
     ],
-    sourceIds: ["eleven-series-d", "eleven-arr", "eleven-japan", "eleven-job-ae", "eleven-job-am", "eleven-aiuc"],
+    sourceIds: ["eleven-series-d", "eleven-arr", "eleven-japan", "eleven-job-sdr", "eleven-job-am", "eleven-aiuc"],
   },
   sellingPlaybook: {
     frameIntro: "ElevenLabsの売り方は「人による音声制作・顧客対応の品質を保ったまま、言語・時間帯・需要量を広げられない」という課題が起点。自然なAI音声のdemoではなく、多言語contentとvoice agentを本番運用し、制作cycle・応答capacity・到達市場を拡大するplatformとして、権利・安全性・human handoffまで含めて提案する。",
@@ -8755,18 +8756,18 @@ const elevenLabsIntelligence: CompanyPublicIntelligence = {
   },
   facts: [
     { label: "ARR", value: "$500M超", detail: "2026年最初の4カ月で突破。2025年末は$350M。", sourceIds: ["eleven-arr"] },
-    { label: "Series D", value: "$500M / 評価額$11B", detail: "2026年2月の公式発表。", sourceIds: ["eleven-series-d"] },
+    { label: "最終評価額", value: "$22B", detail: "2026年9月時点。累計調達額は$781M。", sourceIds: ["eleven-careers"] },
     { label: "Voice agents", value: "300万超", detail: "2026年2月時点の公式発表。production比率・日本比率は非公開。", sourceIds: ["eleven-aiuc"] },
     { label: "Enterprise利用signal", value: "Fortune 500の75%超", detail: "該当企業の従業員がElevenLabs技術を利用。企業契約率を意味しない。", sourceIds: ["eleven-aiuc"] },
-    { label: "グローバル組織", value: "500人超", detail: "2026年6月の公式blog時点。", sourceIds: ["eleven-headcount"] },
-    { label: "日本の公開営業求人", value: "2件", detail: "AEとAMを2026年8月11日に公式APIで確認。", sourceIds: ["eleven-job-ae", "eleven-job-am"] },
+    { label: "グローバル組織", value: "530人", detail: "2026年5月の公式発表時点。50カ国超にメンバー。", sourceIds: ["eleven-arr", "eleven-careers"] },
+    { label: "日本の公開専任求人", value: "2件", detail: "Sales DevelopmentとAMを2026年11月21日に公式APIで確認。", sourceIds: ["eleven-job-sdr", "eleven-job-am"] },
   ],
   hypotheses: [
-    { topic: "PRODUCT / MARKET", title: "Voice modelからEnterprise agent platformへ拡張するhypergrowth", conclusion: "ARR 5億ドル超と300万agentは需要の強さを示す。Creative・Agents・APIの三方向を持ち、日本では新規と拡張を同時採用しているため、単品音声生成より本番workflowのplatform化が成長軸とみます。", confidence: "高", evidence: ["2026年4月にARR 5億ドル超", "300万超のvoice agent", "AEとAMを日本で同時採用"], counterSignals: ["日本のARR・production顧客数は非公開", "agent数は有料・本番のみとは限らない"], interviewQuestions: ["日本でproduction化が進む上位3 use caseは", "Creative、Agents、API別の日本pipelineとNRRは"], sourceIds: ["eleven-arr", "eleven-aiuc", "eleven-job-ae", "eleven-job-am", "eleven-docs"] },
-    { topic: "SALES MOTION", title: "AEのself-sourceとAMのtechnical expansionをつなぐ", conclusion: "AEが新規pipelineを自ら作り、AMがagent設計・利用改善・multiproduct adoption・NRRを持つ。new logoの契約より、本番利用量と拡張までが一連のsales motionです。", confidence: "高", evidence: ["AEにself-sourced pipelineを明記", "AMにexpansion quotaとNRR ownership", "AMがAPI/SDKとagent flowを設計"], counterSignals: ["renewal、Solutions、Supportとの役割境界は不明", "usage-based revenueのcredit ruleは未開示"], interviewQuestions: ["AE/AM/Solutionsのhandoffとaccount ownershipは", "契約、usage、renewal、cross-sellのquota creditはどう分かれるか"], sourceIds: ["eleven-job-ae", "eleven-job-am"] },
-    { topic: "QUOTA ATTAINABILITY", title: "全社ARRより、日本のproduction conversionを確認したい", conclusion: "global成長は強いが、日本のquota達成率、平均ACV、sales cycle、PoC-to-production率は非公開。voice品質のdemoからintegration・security・legalを越える力が達成を左右します。", confidence: "探索中", evidence: ["日本法人設立から約1年", "TBSの国内事例", "AE/AMを同時採用"], counterSignals: ["全社ARRは短期間で大幅成長", "Deloitte等のpartnerがEnterprise実装を補強"], interviewQuestions: ["fully-rampedの達成者比率、平均ACV、sales cycleは", "PoC-to-production率と、最も多い失注・停滞理由は"], sourceIds: ["eleven-arr", "eleven-japan", "eleven-tbs", "eleven-deloitte", "eleven-job-ae"] },
-    { topic: "COMPENSATION", title: "日本報酬は未確認。usage creditとequityを分けて見る", conclusion: "日本求人に給与、OTE、Pay Mix、equityの記載はありません。高速成長や評価額ではなく、quota計上ルール、ramp保証、同teamの実支給と株式条件で判断すべきです。", confidence: "探索中", evidence: ["日本2求人に給与レンジ記載なし", "ElevenLabsは非公開企業", "AMはNRRとexpansion quotaを持つ"], counterSignals: ["Series Dの大型調達は採用投資余力のsignal", "equity付与の可能性はあるが日本条件は未確認"], interviewQuestions: ["base/variable、quota、accelerator、ramp保証は", "usage増、renewal、multiproductのcreditとequity条件は"], sourceIds: ["eleven-job-ae", "eleven-job-am", "eleven-series-d"] },
-    { topic: "CULTURE / CAREER", title: "remote・high ownershipで、技術と商売の境界を越える", conclusion: "30超の国でremote/asynchronousに働き、AEは市場開拓、AMはagent設計まで持つ。役割の境界を待たず、英語でglobal product teamと動ける人ほど機会を得やすそうです。", confidence: "中", evidence: ["careersでremote・asynchronous・high ownershipを掲げる", "日本AEにproduct intuitionを要求", "日本AMにtechnical integrationを要求"], counterSignals: ["日本teamのmanager差・昇進・離職は非公開", "広いownershipは支援不足の場合に負荷へ転じる"], interviewQuestions: ["日本teamのmeeting cadence、時差、意思決定範囲は", "直近12カ月の昇進・離職と、Solutions/Supportのcoverageは"], sourceIds: ["eleven-careers", "eleven-job-ae", "eleven-job-am"] },
+    { topic: "PRODUCT / MARKET", title: "Voice modelからEnterprise agent platformへ拡張するhypergrowth", conclusion: "ARR 5億ドル超と300万agentは需要の強さを示す。Creative・Agents・APIの三方向を持ち、日本では市場開拓と拡張を同時採用しているため、単品音声生成より本番workflowのplatform化が成長軸とみます。", confidence: "高", evidence: ["2026年4月にARR 5億ドル超", "300万超のvoice agent", "Sales DevelopmentとAMを日本で同時採用"], counterSignals: ["日本のARR・production顧客数は非公開", "agent数は有料・本番のみとは限らない"], interviewQuestions: ["日本でproduction化が進む上位3 use caseは", "Creative、Agents、API別の日本pipelineとNRRは"], sourceIds: ["eleven-arr", "eleven-aiuc", "eleven-job-sdr", "eleven-job-am", "eleven-docs"] },
+    { topic: "SALES MOTION", title: "Sales Developmentの市場開拓とAMのtechnical expansionをつなぐ", conclusion: "Sales Developmentが新市場の見込み顧客とアウトバウンドプロセスを作り、AMがagent設計・利用改善・multiproduct adoption・NRRを持つ。商談創出から本番利用量と拡張までをつなぐ体制です。", confidence: "高", evidence: ["Sales Developmentにlead listとoutreach改善を明記", "AMにexpansion quotaとNRR ownership", "AMがAPI/SDKとagent flowを設計"], counterSignals: ["Account Executive、Solutions、Supportとの役割境界は不明", "usage-based revenueのcredit ruleは未開示"], interviewQuestions: ["Sales Development/AE/AM/Solutionsのhandoffは", "契約、usage、renewal、cross-sellのquota creditはどう分かれるか"], sourceIds: ["eleven-job-sdr", "eleven-job-am"] },
+    { topic: "QUOTA ATTAINABILITY", title: "全社ARRより、日本のproduction conversionを確認したい", conclusion: "global成長は強いが、日本のquota達成率、平均ACV、sales cycle、PoC-to-production率は非公開。voice品質のdemoからintegration・security・legalを越える力が達成を左右します。", confidence: "探索中", evidence: ["日本法人設立から約1年半", "TBSの国内事例", "Sales Development/AMを同時採用"], counterSignals: ["全社ARRは短期間で大幅成長", "Deloitte等のpartnerがEnterprise実装を補強"], interviewQuestions: ["fully-rampedの達成者比率、平均ACV、sales cycleは", "PoC-to-production率と、最も多い失注・停滞理由は"], sourceIds: ["eleven-arr", "eleven-japan", "eleven-tbs", "eleven-deloitte", "eleven-job-sdr"] },
+    { topic: "COMPENSATION", title: "日本報酬は未確認。usage creditとequityを分けて見る", conclusion: "日本求人に給与、OTE、Pay Mix、equityの記載はありません。高速成長や評価額ではなく、quota計上ルール、ramp保証、同teamの実支給と株式条件で判断すべきです。", confidence: "探索中", evidence: ["日本2求人に給与レンジ記載なし", "ElevenLabsは非公開企業", "AMはNRRとexpansion quotaを持つ"], counterSignals: ["Series Dの大型調達は採用投資余力のsignal", "equity付与の可能性はあるが日本条件は未確認"], interviewQuestions: ["base/variable、quota、accelerator、ramp保証は", "usage増、renewal、multiproductのcreditとequity条件は"], sourceIds: ["eleven-job-sdr", "eleven-job-am", "eleven-series-d"] },
+    { topic: "CULTURE / CAREER", title: "remote・high ownershipで、役割の境界を越える", conclusion: "50カ国超のglobal teamで働き、Sales Developmentは市場とプロセスの立ち上げ、AMはagent設計まで持つ。役割定義を待たず、英語でglobal product teamと動ける人ほど機会を得やすそうです。", confidence: "中", evidence: ["careersでhigh-velocity・high ownershipを掲げる", "日本Sales Developmentにprocess構築を要求", "日本AMにtechnical integrationを要求"], counterSignals: ["日本teamのmanager差・昇進・離職は非公開", "広いownershipは支援不足の場合に負荷へ転じる"], interviewQuestions: ["日本teamのmeeting cadence、時差、意思決定範囲は", "直近12カ月の昇進・離職と、Solutions/Supportのcoverageは"], sourceIds: ["eleven-careers", "eleven-job-sdr", "eleven-job-am"] },
   ],
   cultureNotes: { organizationReadTitle: "高いownershipで、model・product・顧客運用をつなぐ。", hypothesis: { title: "速さと安全性を同時に扱える人が合いそう。", body: "remote/asynchronousで役割の範囲が広く、製品更新も市場変化も速い。一方、voice AIは権利・安全性・brand riskを伴うため、勢いだけで進めず、仮説・実験・停止条件・学びを文書化できる人が向きそうです。" }, careerValue: { title: "AI agentを本番KPIとNRRまで持つ経験。", body: "音声modelのdemoではなく、API統合、agent運用、安全性、利用量拡大まで経験できれば希少性が高い。ただし日本のenablementと役割分担は面接確認が必要です。", confidence: "中" } },
   customerProof: [
@@ -8775,20 +8776,20 @@ const elevenLabsIntelligence: CompanyPublicIntelligence = {
     { company: "AILAS", products: "Voice ID / consent + ElevenLabs", outcome: "本人確認済みvoice IDと同意情報をElevenLabsのAI音声作成workflowへ接続する協業を発表。", implication: "日本市場のvoice権利・同意を、導入障壁ではなくgovernance提案へ変える材料。", sourceId: "eleven-ailas" },
   ],
   externalSignals: [
-    { label: "成長signal", value: "ARR $500M超", detail: "2025年末$350Mから2026年4月までに$500M超。Series D評価額は$11B。", caveat: "全世界値で、日本の売上・営業生産性ではありません。", sourceId: "eleven-arr" },
+    { label: "成長signal", value: "ARR $500M超", detail: "2025年末$350Mから2026年4月までに$500M超。最終評価額は2026年9月時点で$22B。", caveat: "全世界値で、日本の売上・営業生産性ではありません。", sourceId: "eleven-arr" },
     { label: "agent adoption signal", value: "300万agents", detail: "Fortune 500の75%超で従業員利用と公式発表。", caveat: "agentの有料・production比率と、日本比率は開示されていません。", sourceId: "eleven-aiuc" },
   ],
-  roleLens: { salesMotion: "AEが日本のnew logoとself-sourced pipelineを作り、AMがagent設計・利用改善・NRR・multiproduct expansionを担う。契約締結より、production化とusage拡大までが成長モーション。", compensation: "日本固有の基本給、OTE、Pay Mix、accelerator、equityは非公開。usage-based productでは契約額・消費量・更新・cross-sellのcredit定義が実支給を左右する。", quota: "AE/AMのquota、達成率、平均ACV、rampは非公開。PoC-to-production率、usage forecast、technical/legal reviewの期間をteam実績で確認したい。", collaboration: "AEはGrowth、AMは顧客のtechnical teamと連携。実運用ではSolutions、Product、Engineering、Support、Legal/Safety、partnerを束ね、agentの品質・統合・governance・KPIを同時に管理する必要がある。" },
+  roleLens: { salesMotion: "Sales Developmentが日本の見込み顧客調査・outbound・商談創出を作り、AMがagent設計・利用改善・NRR・multiproduct expansionを担う。商談創出からproduction化とusage拡大までが成長モーション。", compensation: "日本固有の基本給、変動給、OTE、Pay Mix、accelerator、equityは非公開。職種ごとのKPIと商談・利用量・更新・cross-sellのcredit定義が実支給を左右する。", quota: "Sales Development/AMのquota、達成率、平均ACV、rampは非公開。商談認定条件、PoC-to-production率、usage forecast、technical/legal reviewの期間をteam実績で確認したい。", collaboration: "Sales DevelopmentはAccount Executive、AMは顧客のtechnical teamと連携。実運用ではSolutions、Product、Engineering、Support、Legal/Safety、partnerを束ねる必要がある。" },
   leadership: { name: "田村 元 (Hajime Jim Tamura)", role: "General Manager, Japan & Korea", read: "2025年4月の日本法人設立時に就任。SAP Japan、NetSuite Japan、Microsoft、Asana Japan等で日本GTMを率いた経歴を公式発表し、日本をAsia expansionのhubと位置づけている。", sourceId: "eleven-japan" },
-  companyStats: { globalHeadcount: { value: "500人超", detail: "2026年6月の公式blog時点。", sourceId: "eleven-headcount" }, japanHeadcount: { value: "非公開", detail: "日本単体の従業員数は公式に確認できていない。" }, japanOffice: { value: "東京 / remote求人", detail: "日本法人本拠は東京。営業2求人はJapan remote。", sourceId: "eleven-japan" }, japanSince: { value: "2025年4月", detail: "ElevenLabs Japan合同会社を初の海外子会社として設立。", sourceId: "eleven-japan" } },
+  companyStats: { globalHeadcount: { value: "530人", detail: "2026年5月の公式発表時点。", sourceId: "eleven-arr" }, japanHeadcount: { value: "非公開", detail: "日本単体の従業員数は公式に確認できていない。" }, japanOffice: { value: "東京都千代田区丸の内1-6-5", detail: "初の海外子会社を東京に設立。公開求人はremote-first。", sourceId: "eleven-japan" }, japanSince: { value: "2025年4月", detail: "ElevenLabs Japan合同会社を初の海外子会社として設立。", sourceId: "eleven-japan" } },
   salesAppeal: { intro: "求人票だけでは見えにくい、ElevenLabs Japanで営業する具体的な面白さを公開情報から整理しました。", points: [
-    { title: "急成長するAI categoryを、日本で市場開拓できる", detail: "ARR 5億ドル超のglobal demandを背景に、設立約1年の日本法人でnew logoとindustry use caseを作る。完成したterritoryより市場定義に近い営業経験になりうる。", sourceIds: ["eleven-arr", "eleven-japan", "eleven-job-ae"] },
+    { title: "急成長するAI categoryを、日本で市場開拓できる", detail: "ARR 5億ドル超のglobal demandを背景に、設立約1年の日本法人でnew logoとindustry use caseを作る。完成したterritoryより市場定義に近い営業経験になりうる。", sourceIds: ["eleven-arr", "eleven-japan", "eleven-job-sdr"] },
     { title: "AI demoをproduction KPIへ変える経験", detail: "Agentはconversation flow、tool integration、voice、log分析まで対象。応答率、完了率、cost、CSAT等を改善し、利用量とNRRへつなげる技術・commercial両面の経験を積める。", sourceIds: ["eleven-agents", "eleven-job-am"] },
     { title: "安全性と権利保護を含めたEnterprise提案", detail: "AILASとのvoice ID・consent、AIUC-1 insuranceとadversarial simulationを持ち、AI riskを避けるだけでなく導入条件として設計できる。", sourceIds: ["eleven-ailas", "eleven-aiuc"] },
   ] },
   interviewPrep: { intro: "全社ARRの勢いより、日本のterritory、production conversion、usage credit、技術支援体制を確認したいポイントです。", questions: [
-    { question: "日本のAE/AMでfully-rampedのquota達成者比率、平均ACV、sales cycleは。", why: "global ARRと日本teamの達成再現性を分けて判断する。", sourceIds: ["eleven-arr", "eleven-job-ae", "eleven-job-am"] },
-    { question: "AEのself-source比率と、PoC-to-production率、主な停滞理由は。", why: "認知・demo需要が継続売上へ変わる実態を見る。", sourceIds: ["eleven-job-ae", "eleven-aiuc"] },
+    { question: "日本のSales Development/AMでfully-rampedの達成率と、主要KPIは。", why: "global ARRと日本teamの達成再現性を分けて判断する。", sourceIds: ["eleven-arr", "eleven-job-sdr", "eleven-job-am"] },
+    { question: "Sales Developmentの商談認定条件と、AEへの引き渡し後のPoC-to-production率は。", why: "outboundが継続売上へ変わる実態を見る。", sourceIds: ["eleven-job-sdr", "eleven-aiuc"] },
     { question: "AM、Solutions、Support、Productの導入・障害・renewal責任はどう分かれるか。", why: "technical designとcommercial ownershipが一人へ集中しないか確認する。", sourceIds: ["eleven-job-am", "eleven-agents"] },
     { question: "契約額、usage、renewal、multiproduct expansionのquota creditとforecast方法は。", why: "usage-based businessで実支給と達成管理を理解する。", sourceIds: ["eleven-job-am", "eleven-docs"] },
   ] },

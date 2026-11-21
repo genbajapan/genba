@@ -733,8 +733,8 @@ const batchTwoCompanyPatches: Record<string, Partial<Company>> = {
     category: "音声AI・会話型AI・コンテンツ制作",
     hq: "ロンドン（英国）／ニューヨーク（米国）",
     japanPresence: "ElevenLabs Japan合同会社・東京（2025年4月設立）",
-    description: "音声生成、音声認識、dubbing、会話型AI AgentとAPIを提供。日本で新規開拓のAccount Executiveと拡張を担うAccount Managerを公式募集。",
-    lastChecked: "2026-08-17",
+    description: "音声・映像制作、音声AI API、会話型AI Agentの3基盤を提供。日本でSales DevelopmentとAccount Managerを公式募集。",
+    lastChecked: "2026-11-21",
   },
   mirakl: {
     category: "企業向けマーケットプレイス・コマース基盤",

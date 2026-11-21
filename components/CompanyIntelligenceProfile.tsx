@@ -787,6 +787,22 @@ export default function CompanyIntelligenceProfile({
               </div>
             </div>
 
+            {companyStory ? (
+              <aside className="company-story-route" aria-label="ElevenLabsを3分で理解する5つの入口">
+                <div className="company-story-route-head">
+                  <span>3 MINUTE ROUTE</span>
+                  <strong>5つだけ、順番に。</strong>
+                </div>
+                <ol>
+                  <li><a href="#quick-origin"><span>01</span><div><small>創業</small><strong>{companyStory.quickRead.origin.roots} / {companyStory.quickRead.origin.founded}</strong></div></a></li>
+                  <li><a href="#quick-scale"><span>02</span><div><small>全体規模</small><strong>{companyStory.quickRead.scale[0]?.value} / {companyStory.quickRead.scale[1]?.value}</strong></div></a></li>
+                  <li><a href="#quick-japan"><span>03</span><div><small>日本組織</small><strong>東京 / 2025年設立</strong></div></a></li>
+                  <li><a href="#quick-products"><span>04</span><div><small>課題と製品</small><strong>Creative / API / Agents</strong></div></a></li>
+                  <li><a href="#quick-jobs"><span>05</span><div><small>日本専任求人</small><strong>{companyStory.quickRead.featuredJobIds.filter((jobId) => companyJobs.some((job) => job.id === jobId)).length}件を確認</strong></div></a></li>
+                </ol>
+                <a className="company-story-route-start" href="#company-story">3分で読み始める ↓</a>
+              </aside>
+            ) : (
             <aside className={`decision-console decision-console-${profile.tone} ${isPreEntry ? "decision-console-pre-entry" : ""}`} aria-label={isPreEntry ? "Genba日本進出可能性サマリー" : "Genba応募判断サマリー"}>
               <div className="decision-console-head">
                 <span>GENBA VIEW</span>
@@ -809,6 +825,7 @@ export default function CompanyIntelligenceProfile({
                 {publicIntel ? "公開事実とGenba仮説を分離し、反証材料まで含めて判断材料を示します。" : "企業の優劣や合格確率ではなく、現在確認できる応募判断材料を示しています。"}
               </div>
             </aside>
+            )}
           </div>
         </Container>
       </section>
@@ -819,7 +836,7 @@ export default function CompanyIntelligenceProfile({
         </Container>
       </div>
 
-      {companyStory && <CompanyStoryPrimer story={companyStory} />}
+      {companyStory && <CompanyStoryPrimer story={companyStory} jobs={companyJobs} />}
 
       <section className="content-section company-intelligence-section">
         <Container className="company-intelligence-layout">

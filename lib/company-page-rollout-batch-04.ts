@@ -73,19 +73,19 @@ function patchElevenLabs(intelligence: CompanyPublicIntelligence) {
   ensureMilestone(intelligence, "2022", "創業", "Mati Staniszewski氏とPiotr Dabkowski氏が創業。", "eleven-series-d");
   applyStandard(intelligence, buildCompactPatch({
     slug: "elevenlabs", leaderName: "Mati Staniszewski", leaderLabel: "共同創業者・CEO", leaderUrl: "https://elevenlabs.io/blog/authors/mati-staniszewski", localName: "田村 元", localLabel: "General Manager, Japan & Korea", localUrl: "https://elevenlabs.io/blog/elevenlabs-establishes-japanese-subsidiary-elevenlabs-gk",
-    companyId: "eleven-careers", jobId: "eleven-job-ae", customersId: "rollout-eleven-tbs-direct", externalId: "rollout-eleven-meti-content", financeId: "eleven-arr",
+    companyId: "eleven-careers", jobId: "eleven-job-sdr", customersId: "rollout-eleven-tbs-direct", externalId: "rollout-eleven-meti-content", financeId: "eleven-arr",
     targets: ["コンタクトセンター・顧客対応", "メディア・放送・ローカライズ", "開発者・AI Platform", "マーケティング・クリエイティブ", "公共・アクセシビリティ"], competitors: "OpenAI、Google、Microsoft、AWS、Deepgram・Cartesia・Resemble、Genesys・Twilio、HeyGen・従来のdubbing studio／BPO",
     feature: "ElevenAgents、ElevenCreative、ElevenAPIとして、音声生成・認識、dubbing、music・media制作、voice／chat agent、integration・monitoringを提供する。", advantage: "自然なvoice・多言語・低latencyを、Creative、API、Agentのproduction workflowとconsent・monitoringまで連続して扱う。", benefit: "収録・吹替・顧客対応を言語とvolumeに比例させず、公開速度、応答capacity、accessibilityを広げる。", evidence: "TBSはKASSOを英語・スペイン語・ポルトガル語へdubbing。視聴・収益・削減率は非公開で、DOCOMOは評価段階、AILAS・Nottaは協業で顧客成果ではない。",
-    marketVerdict: "結論：日本発contentの海外展開と24時間・多言語supportは追い風。ARRの急成長と日本専任AE・AMは強いsignalだが、日本の売上・利益・本番顧客成果とquotaは非公開。", marketParagraphs: ["日本発contentの海外売上拡大、supportの24時間・多言語化、voice interface需要が同時に進む一方、人の収録・dubbing・BPOは言語とvolumeに比例してcostとlead timeが増える。", "今後3〜5年はVoice Agent、localization、accessibilityが追い風になる。一方、日本語品質、latency、誤応答、本人同意・著作権、個人data、human oversightが本番調達のgateになる。", "Genba分析：contentはcost／minute、review、公開速度、engagement、agentはcontainment、AHT、CSAT、handoff、error・停止条件をblind testと本番pilotで測る。secondary location求人は日本専任teamと混同しない。"],
-    cultureHeadline: "日本専任AE・AMはRemote。日本から応募可能なglobal・APAC求人もRemoteだが、主勤務地・timezone・言語は個別で、日本専任とは限らない。", classification: "フルリモート", displayLabel: "日本専任2求人はリモート", officeDays: "必須日数の明記なし", remoteOnly: "日本専任求人はRemote", flexibility: "global求人はtimezone条件を個別確認",
+    marketVerdict: "結論：日本発contentの海外展開と24時間・多言語supportは追い風。ARRの急成長と日本専任Sales Development・AMは強いsignalだが、日本の売上・利益・本番顧客成果とquotaは非公開。", marketParagraphs: ["日本発contentの海外売上拡大、supportの24時間・多言語化、voice interface需要が同時に進む一方、人の収録・dubbing・BPOは言語とvolumeに比例してcostとlead timeが増える。", "今後3〜5年はVoice Agent、localization、accessibilityが追い風になる。一方、日本語品質、latency、誤応答、本人同意・著作権、個人data、human oversightが本番調達のgateになる。", "Genba分析：contentはcost／minute、review、公開速度、engagement、agentはcontainment、AHT、CSAT、handoff、error・停止条件をblind testと本番pilotで測る。secondary location求人は日本専任teamと混同しない。"],
+    cultureHeadline: "日本専任Sales Development・AMはRemote。日本をsecondary locationに含むglobal求人もあるが、主勤務地・timezone・言語は個別で、日本専任とは限らない。", classification: "フルリモート", displayLabel: "日本専任2求人はリモート", officeDays: "必須日数の明記なし", remoteOnly: "日本専任求人はRemote", flexibility: "global求人はtimezone条件を個別確認",
     goodFor: ["Voice AIを本番KPIで売りたい", "remote・asynchronousに自走したい", "技術・commercial・AI safetyを横断したい"], cautionFor: ["完成済みの日本playbookを求める", "音声demoだけの提案を望む", "権利・security・human handoffを避けたい"],
-    unresolved: [["日本のproduction traction", "global ARRとagent数は日本の達成再現性を示さない。", "日本ARR、production顧客、上位use case、PoC-to-production率は？"], ["専任・secondary location", "10対象求人のうち8件はglobal／APACのsecondary location。", "日本案件比率、reporting、timezone、travel、言語、採用優先度は？"], ["AE・AM・Solutionsの境界", "AMはtechnical設計とNRRを持ち、負荷集中の可能性がある。", "deployment、support、renewal、usage、incidentの責任はどう分かれる？"], ["Voice risk", "本人同意、著作権、誤応答、個人dataが調達を止めうる。", "consent、monitoring、watermark、human handoff、on-premをどう検証する？"], ["報酬・達成", "給与、OTE、usage credit、quota、達成率は非公開。", "base／variable、quota、ramp、usage／renewal／cross-sell credit、達成者比率は？"]],
+    unresolved: [["日本のproduction traction", "global ARRとagent数は日本の達成再現性を示さない。", "日本ARR、production顧客、上位use case、PoC-to-production率は？"], ["専任・secondary location", "日本専任2件に加え、secondary locationとして日本を含むglobal求人3件を確認。", "日本案件比率、reporting、timezone、travel、言語、採用優先度は？"], ["Sales Development・AE・AM・Solutionsの境界", "Sales Developmentはprocess構築、AMはtechnical設計とNRRを持ち、広い責任範囲がある。", "商談認定、deployment、support、renewal、usage、incidentの責任はどう分かれる？"], ["Voice risk", "本人同意、著作権、誤応答、個人dataが調達を止めうる。", "consent、monitoring、watermark、human handoff、on-premをどう検証する？"], ["報酬・達成", "給与、変動給、usage credit、quota、達成率は非公開。", "base／variable、quota、ramp、商談／usage／renewal／cross-sell credit、達成者比率は？"]],
   }));
   intelligence.facts = [
     { label: "年間売上高", value: "非公開", detail: "非公開企業。ARRを会計上の年間売上高・純収益として扱わない。", sourceIds: ["eleven-arr"] },
     { label: "収益性", value: "非公開", detail: "営業利益、純利益、EBITDA、FCF、gross margin、cash burnは公開情報で確認できない。", sourceIds: ["eleven-series-d"] },
     { label: "ARR", value: "5億米ドル超（約810.8億円超）", detail: "2026年1〜4月で到達したcompany run-rate。2025年末は3.5億米ドル（約567.5億円）。認識売上ではない。1ドル=162.15円の参照換算。", sourceIds: ["eleven-arr", "rollout-b04-boj-usd-20260716"] },
-    { label: "Series D・評価額", value: "5億米ドル（約810.8億円）／110億米ドル（約1兆7,836.5億円）", detail: "2026年2月の調達額と非公開株評価。売上・利益・将来の株式価値ではない。", sourceIds: ["eleven-series-d", "rollout-b04-boj-usd-20260716"] },
+    { label: "最終評価額", value: "220億米ドル（約3.57兆円）", detail: "2026年9月時点の会社公表値。累計調達額は7.81億米ドル。売上・利益・将来の株式価値ではない。1ドル=162.15円の参照換算。", sourceIds: ["eleven-careers", "rollout-b04-boj-usd-20260716"] },
   ];
   intelligence.companyStats.globalHeadcount = { value: "530人", detail: "2026年5月の会社発表。50カ国超で勤務。", sourceId: "eleven-arr" };
   intelligence.companyStats.japanOffice = { value: "東京都千代田区丸の内1-6-5", detail: "日本法人設立発表の所在地。常設専有officeか登記住所のみかは未確認。", sourceId: "eleven-japan" };
@@ -102,6 +102,10 @@ function patchElevenLabs(intelligence: CompanyPublicIntelligence) {
     { id: "rollout-b04-boj-usd-20260716", label: "日本銀行 外国為替市況 2026年7月16日", url: "https://www.boj.or.jp/en/statistics/market/forex/fxdaily/fxlist/fx260716.pdf", kind: "公的機関", scope: "円換算レート（1米ドル=162.15円）", checkedAt: researchedAt },
   ]);
   refreshSourceDates(intelligence);
+  intelligence.researchedAt = "2026-11-21";
+  intelligence.sources = intelligence.sources.map((source) => ["eleven-careers", "eleven-job-sdr", "eleven-job-am"].includes(source.id)
+    ? { ...source, checkedAt: "2026-11-21" }
+    : source);
 }
 
 function patchMirakl(intelligence: CompanyPublicIntelligence) {
